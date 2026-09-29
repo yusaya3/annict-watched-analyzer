@@ -63,18 +63,24 @@ async function runAnalysis(userList, forceRefresh = false) {
   // お試し機能 (Labs) が存在する場合は分析を追加（完全分離設計）
   try {
     const ExperimentalAnalyzer = require('../lib/labs/experimental-analyzer.js');
-    const { GenreClient } = require('../lib/labs/genre-client.js');
     console.log('\n--- [Labs] お試し機能（カロリー・年代・スタジオ・ジャンル）を分析中 ---');
     const expAnalyzer = new ExperimentalAnalyzer(watchedLists);
 
-    const allTitles = [];
-    for (const animes of Object.values(watchedLists)) {
-      for (const a of animes) {
-        if (a.title) allTitles.push(a.title);
+    // ジャンル取得は独立して試行（タイムアウトしてもLabs全体は返す）
+    let genreMap = {};
+    try {
+      const { GenreClient } = require('../lib/labs/genre-client.js');
+      const allTitles = [];
+      for (const animes of Object.values(watchedLists)) {
+        for (const a of animes) {
+          if (a.title) allTitles.push(a.title);
+        }
       }
+      const genreClient = new GenreClient();
+      genreMap = await genreClient.resolveGenres(allTitles);
+    } catch (genreErr) {
+      console.warn('[Labs] ジャンル取得をスキップ:', genreErr.message);
     }
-    const genreClient = new GenreClient();
-    const genreMap = await genreClient.resolveGenres(allTitles);
 
     report.labs = expAnalyzer.generateLabsReport(genreMap);
   } catch (err) {
