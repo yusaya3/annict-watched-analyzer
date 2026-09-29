@@ -13,7 +13,9 @@ const isVercel = !!process.env.VERCEL;
 const BUNDLED_USERS_FILE = path.resolve(__dirname, '../config/users.json');
 const WRITABLE_USERS_FILE = isVercel ? '/tmp/users.json' : BUNDLED_USERS_FILE;
 const RES_DIR = isVercel ? '/tmp/res' : path.resolve(__dirname, '../static/res');
+const BUNDLED_RES_DIR = path.resolve(__dirname, '../static/res');
 const ANALYSIS_FILE = path.join(RES_DIR, 'analysis.json');
+const BUNDLED_ANALYSIS_FILE = path.join(BUNDLED_RES_DIR, 'analysis.json');
 const LEGACY_VENN_FILE = path.join(RES_DIR, 'venns.json');
 
 function loadUserList() {
@@ -221,12 +223,17 @@ function createApp() {
   // 分析結果の取得API（Vercel環境用 + ローカル共通）
   app.get('/api/analysis', async (req, res) => {
     try {
-      // まず既存の分析結果ファイルを探す
+      // まず書き込み先（/tmp or static/res）を探す
       if (fs.existsSync(ANALYSIS_FILE)) {
         const data = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
         return res.json(data);
       }
-      // ファイルがなければオンデマンドで分析実行
+      // Vercel環境：バンドル済みファイル（static/res）にフォールバック
+      if (isVercel && fs.existsSync(BUNDLED_ANALYSIS_FILE)) {
+        const data = JSON.parse(fs.readFileSync(BUNDLED_ANALYSIS_FILE, 'utf8'));
+        return res.json(data);
+      }
+      // どちらもなければオンデマンドで分析実行
       const users = loadUserList();
       const report = await enqueueAnalysis(users, false);
       res.json(report);
