@@ -1,0 +1,66 @@
+name: Update Annict Users & Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: '実行する操作 (add: 追加, remove: 削除, refresh: 全員再取得)'
+        required: true
+        default: 'add'
+        type: choice
+        options:
+          - add
+          - remove
+          - refresh
+      username:
+        description: '対象のAnnictユーザーID (追加・削除時に入力)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  update-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js 22 のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: 依存パッケージのインストール
+        run: npm ci || npm install
+
+      - name: ユーザーの追加 / 削除処理
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "add" ] && [ -n "${{ github.event.inputs.username }}" ]; then
+            node bin/manage-user-cli.js add "${{ github.event.inputs.username }}"
+          elif [ "${{ github.event.inputs.action }}" = "remove" ] && [ -n "${{ github.event.inputs.username }}" ]; then
+            node bin/manage-user-cli.js remove "${{ github.event.inputs.username }}"
+          fi
+
+      - name: Annict データ取得 ＆ ジャンル照合 ＆ 分析実行
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "refresh" ]; then
+            node bin/annict-analyzer.js --fetch-only --refresh
+          else
+            node bin/annict-analyzer.js --fetch-only
+          fi
+
+      - name: 最新の分析データとキャッシュをコミット＆プッシュ
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add config/users.json static/res/ data/cache/
+          if git diff --staged --quiet; then
+            echo "変更はありませんでした。"
+          else
+            git commit -m "Auto-update analysis data [skip ci] (${{ github.event.inputs.action }} ${{ github.event.inputs.username }})"
+            git push
+          fi

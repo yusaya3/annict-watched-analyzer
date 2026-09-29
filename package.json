@@ -1,0 +1,29 @@
+{
+  "name": "annict-watched-analyzer",
+  "version": "2.0.0",
+  "description": "最新のAnnictに対応したアニメ視聴傾向・シンクロ率比較ツール",
+  "main": "bin/annict-analyzer.js",
+  "scripts": {
+    "start": "node bin/annict-analyzer.js",
+    "build": "echo 'Build complete'",
+    "fetch": "node bin/annict-analyzer.js --fetch-only",
+    "serve": "node bin/annict-analyzer.js --serve-only",
+    "record-test": "node test/record_test.js"
+  },
+  "keywords": [
+    "annict",
+    "anime",
+    "venn",
+    "d3",
+    "analyzer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.45.0"
+  }
+}
