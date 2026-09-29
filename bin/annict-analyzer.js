@@ -43,6 +43,7 @@ function saveUserList(users) {
 }
 
 async function runAnalysis(userList, forceRefresh = false) {
+  const analysisStartTime = Date.now();
   const client = new AnnictClient();
   const watchedLists = {};
 
@@ -68,6 +69,7 @@ async function runAnalysis(userList, forceRefresh = false) {
 
     // ジャンル取得は独立して試行（タイムアウトしてもLabs全体は返す）
     let genreMap = {};
+    let remainingGenres = 0;
     try {
       const { GenreClient } = require('../lib/labs/genre-client.js');
       const allTitles = [];
@@ -77,12 +79,17 @@ async function runAnalysis(userList, forceRefresh = false) {
         }
       }
       const genreClient = new GenreClient();
-      genreMap = await genreClient.resolveGenres(allTitles);
+      const elapsedMs = Date.now() - analysisStartTime;
+      // Vercelの60秒制限を超えないよう、全体で46秒以内に収める動的タイムバジェット
+      const timeBudgetMs = isVercel ? Math.max(4000, 46000 - elapsedMs) : 300000;
+      genreMap = await genreClient.resolveGenres(allTitles, null, timeBudgetMs);
+      remainingGenres = genreClient.lastRemainingCount || 0;
     } catch (genreErr) {
       console.warn('[Labs] ジャンル取得をスキップ:', genreErr.message);
     }
 
     report.labs = expAnalyzer.generateLabsReport(genreMap);
+    report.remainingGenres = remainingGenres;
   } catch (err) {
     console.warn('[Labs] Labs分析の実行中にスキップまたはエラーが発生しました:', err.message);
   }

@@ -117,6 +117,19 @@ function initModals() {
 }
 
 // ユーザー追加APIの呼び出し
+// APIレスポンスの安全なJSONパース（Vercelタイムアウト時の非JSONエラー対策）
+async function parseApiResponse(res) {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    if (res.status === 504 || text.includes('TIMEOUT') || text.includes('Timed Out')) {
+      throw new Error('サーバーの処理制限時間（60秒）を超過しました。もう一度ボタンを押すと、キャッシュされた続きから高速に完了します。');
+    }
+    throw new Error(`サーバー通信エラー (HTTP ${res.status})`);
+  }
+}
+
 async function addUser(username) {
   const loading = document.getElementById('user-modal-loading');
   const statusText = document.getElementById('user-modal-status');
@@ -128,19 +141,19 @@ async function addUser(username) {
     statusText.textContent = `@${username} の視聴データをAnnictから取得・分析中...`;
     btnAddUser.disabled = true;
 
-    const res = await fetch('/api/users', {
+    let res = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username })
     });
 
-    const result = await res.json();
+    let result = await parseApiResponse(res);
     if (!res.ok) {
       throw new Error(result.error || 'ユーザーの追加に失敗しました');
     }
 
     input.value = '';
-    // 状態を更新
+    // 1回目の結果を即座に画面に反映
     state.data = result.report;
     if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
       state.selectedVennUsers.push(username);
@@ -149,9 +162,26 @@ async function addUser(username) {
     renderAllComponents();
     renderModalUserList();
 
+    // 作品数が多く、1回のリクエスト（制限時間内）でジャンル照合が一部残った場合は自動で続きを取得
+    let step = 1;
+    while (result.report && result.report.remainingGenres > 0 && step <= 5) {
+      statusText.textContent = `@${username} のジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品 / ステップ ${step + 1})`;
+      res = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, forceRefresh: false })
+      });
+      result = await parseApiResponse(res);
+      if (!res.ok) break;
+
+      state.data = result.report;
+      renderAllComponents();
+      step++;
+    }
+
   } catch (err) {
     console.error('ユーザー追加エラー:', err);
-    alert(`エラーが発生しました: ${err.message}\n※作品数が多い場合は時間がかかる場合があります。再度お試しいただくか、GitHub Actionsからも更新可能です。`);
+    alert(`エラーが発生しました: ${err.message}`);
   } finally {
     loading.style.display = 'none';
     btnAddUser.disabled = false;
@@ -173,7 +203,7 @@ async function deleteUser(username) {
       method: 'DELETE'
     });
 
-    const result = await res.json();
+    const result = await parseApiResponse(res);
     if (!res.ok) {
       throw new Error(result.error || 'ユーザーの削除に失敗しました');
     }
@@ -204,11 +234,11 @@ async function refreshAllUsers() {
     loading.style.display = 'flex';
     statusText.textContent = '全ユーザーの最新データを再取得中...';
 
-    const res = await fetch('/api/refresh', {
+    let res = await fetch('/api/refresh', {
       method: 'POST'
     });
 
-    const result = await res.json();
+    let result = await parseApiResponse(res);
     if (!res.ok) {
       throw new Error(result.error || '再取得に失敗しました');
     }
@@ -216,6 +246,24 @@ async function refreshAllUsers() {
     state.data = result.report;
     renderAllComponents();
     renderModalUserList();
+
+    // 残りのジャンルがある場合は自動で続きを取得
+    let step = 1;
+    while (result.report && result.report.remainingGenres > 0 && step <= 5) {
+      statusText.textContent = `ジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品)`;
+      const firstUser = result.report.users?.[0] || '';
+      res = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: firstUser, forceRefresh: false })
+      });
+      result = await parseApiResponse(res);
+      if (!res.ok) break;
+      state.data = result.report;
+      renderAllComponents();
+      step++;
+    }
+
     alert('全データの最新同期が完了しました！');
 
   } catch (err) {
