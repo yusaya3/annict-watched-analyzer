@@ -1,7 +1,13 @@
 {
   "version": 2,
-  "public": true,
-  "outputDirectory": "static",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.js" },
+    { "source": "/(.*)", "destination": "/static/$1" }
+  ]
 }

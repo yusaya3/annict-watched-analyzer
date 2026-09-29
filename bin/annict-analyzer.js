@@ -9,10 +9,36 @@ const express = require('express');
 const AnnictClient = require('../lib/annict-client.js');
 const Analyzer = require('../lib/analyzer.js');
 
-const USERS_FILE = path.resolve(__dirname, '../config/users.json');
-const RES_DIR = path.resolve(__dirname, '../static/res');
+const isVercel = !!process.env.VERCEL;
+const BUNDLED_USERS_FILE = path.resolve(__dirname, '../config/users.json');
+const WRITABLE_USERS_FILE = isVercel ? '/tmp/users.json' : BUNDLED_USERS_FILE;
+const RES_DIR = isVercel ? '/tmp/res' : path.resolve(__dirname, '../static/res');
 const ANALYSIS_FILE = path.join(RES_DIR, 'analysis.json');
 const LEGACY_VENN_FILE = path.join(RES_DIR, 'venns.json');
+
+function loadUserList() {
+  if (fs.existsSync(WRITABLE_USERS_FILE)) {
+    try {
+      return JSON.parse(fs.readFileSync(WRITABLE_USERS_FILE, 'utf8'));
+    } catch (e) {}
+  }
+  if (fs.existsSync(BUNDLED_USERS_FILE)) {
+    try {
+      return JSON.parse(fs.readFileSync(BUNDLED_USERS_FILE, 'utf8'));
+    } catch (e) {}
+  }
+  return ['saya15', 'hitobi_syuto'];
+}
+
+function saveUserList(users) {
+  try {
+    const dir = path.dirname(WRITABLE_USERS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(WRITABLE_USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('ユーザー設定保存エラー (読み取り専用環境):', e.message);
+  }
+}
 
 async function runAnalysis(userList, forceRefresh = false) {
   const client = new AnnictClient();
@@ -53,23 +79,27 @@ async function runAnalysis(userList, forceRefresh = false) {
     console.warn('[Labs] Labs分析の実行中にスキップまたはエラーが発生しました:', err.message);
   }
 
-  if (!fs.existsSync(RES_DIR)) {
-    fs.mkdirSync(RES_DIR, { recursive: true });
-  }
+  try {
+    if (!fs.existsSync(RES_DIR)) {
+      fs.mkdirSync(RES_DIR, { recursive: true });
+    }
 
-  // analysis.json 保存
-  fs.writeFileSync(ANALYSIS_FILE, JSON.stringify(report, null, 2), 'utf8');
-  console.log(`[Output] 分析結果を保存しました: ${ANALYSIS_FILE}`);
+    // analysis.json 保存
+    fs.writeFileSync(ANALYSIS_FILE, JSON.stringify(report, null, 2), 'utf8');
+    console.log(`[Output] 分析結果を保存しました: ${ANALYSIS_FILE}`);
 
-  // 旧フォーマット venns.json との互換出力
-  const legacyVenns = [];
-  for (const set of report.vennSets) {
-    legacyVenns.push({
-      area: set.sets,
-      animes: set.animes
-    });
+    // 旧フォーマット venns.json との互換出力
+    const legacyVenns = [];
+    for (const set of report.vennSets) {
+      legacyVenns.push({
+        area: set.sets,
+        animes: set.animes
+      });
+    }
+    fs.writeFileSync(LEGACY_VENN_FILE, JSON.stringify(legacyVenns, null, 2), 'utf8');
+  } catch (err) {
+    console.warn(`[Output] ファイル保存をスキップ (読み取り専用環境): ${err.message}`);
   }
-  fs.writeFileSync(LEGACY_VENN_FILE, JSON.stringify(legacyVenns, null, 2), 'utf8');
 
   console.log('=====================================================');
   console.log('  分析完了！');
@@ -93,12 +123,11 @@ async function main() {
   const forceRefresh = args.includes('--refresh') || args.includes('-f');
   const port = parseInt(process.env.PORT || '3000', 10);
 
-  if (!fs.existsSync(USERS_FILE)) {
-    console.error(`設定ファイルが見つかりません: ${USERS_FILE}`);
+  const users = loadUserList();
+  if (!users || users.length === 0) {
+    console.error('ユーザーリストが空です。config/users.json を確認してください。');
     process.exit(1);
   }
-
-  const users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
 
   // 1. データ取得フェーズ
   if (!isServeOnly) {
@@ -123,7 +152,7 @@ function enqueueAnalysis(userList, forceRefresh = false) {
   return current;
 }
 
-function startServer(port) {
+function createApp() {
   const app = express();
   const staticDir = path.resolve(__dirname, '../static');
 
@@ -132,11 +161,7 @@ function startServer(port) {
 
   // ユーザー設定の取得API
   app.get('/api/users', (req, res) => {
-    if (fs.existsSync(USERS_FILE)) {
-      res.json(JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')));
-    } else {
-      res.json([]);
-    }
+    res.json(loadUserList());
   });
 
   // ユーザー追加＆取得＆再集計API
@@ -147,10 +172,10 @@ function startServer(port) {
         return res.status(400).json({ error: 'ユーザー名を入力してください' });
       }
 
-      let users = fs.existsSync(USERS_FILE) ? JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')) : [];
+      let users = loadUserList();
       if (!users.includes(username)) {
         users.push(username);
-        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+        saveUserList(users);
       }
 
       const report = await enqueueAnalysis(users, req.body.forceRefresh || false);
@@ -165,14 +190,14 @@ function startServer(port) {
   app.delete('/api/users/:username', async (req, res) => {
     try {
       const username = req.params.username.trim().replace(/^@/, '');
-      let users = fs.existsSync(USERS_FILE) ? JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')) : [];
+      let users = loadUserList();
       users = users.filter(u => u.toLowerCase() !== username.toLowerCase());
 
       if (users.length === 0) {
         return res.status(400).json({ error: '最低1人のユーザーが必要です' });
       }
 
-      fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+      saveUserList(users);
       const report = await enqueueAnalysis(users, false);
       res.json({ success: true, users, report });
     } catch (err) {
@@ -184,7 +209,7 @@ function startServer(port) {
   // 全データの強制再取得API
   app.post('/api/refresh', async (req, res) => {
     try {
-      let users = fs.existsSync(USERS_FILE) ? JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')) : [];
+      let users = loadUserList();
       const report = await enqueueAnalysis(users, true);
       res.json({ success: true, users, report });
     } catch (err) {
@@ -193,6 +218,29 @@ function startServer(port) {
     }
   });
 
+  // 分析結果の取得API（Vercel環境用 + ローカル共通）
+  app.get('/api/analysis', async (req, res) => {
+    try {
+      // まず既存の分析結果ファイルを探す
+      if (fs.existsSync(ANALYSIS_FILE)) {
+        const data = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
+        return res.json(data);
+      }
+      // ファイルがなければオンデマンドで分析実行
+      const users = loadUserList();
+      const report = await enqueueAnalysis(users, false);
+      res.json(report);
+    } catch (err) {
+      console.error('分析データ取得エラー:', err);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  return app;
+}
+
+function startServer(port) {
+  const app = createApp();
   const server = app.listen(port, '0.0.0.0', () => {
     console.log('\n=====================================================');
     console.log(`  Webダッシュボードが起動しました:`);
@@ -213,4 +261,5 @@ if (require.main === module) {
   });
 }
 
-module.exports = { main, startServer, runAnalysis };
+module.exports = { createApp, startServer, runAnalysis, main };
+

@@ -150,11 +150,8 @@ async function addUser(username) {
     renderModalUserList();
 
   } catch (err) {
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-      alert(`【Web公開版でのユーザー追加について】\nWeb公開版ではGitHub Actionsから安全に追加・再集計できます。\nGitHubリポジトリの「Actions」タブから「Update Annict Users」を実行してください。`);
-    } else {
-      alert(`エラー: ${err.message}`);
-    }
+    console.error('ユーザー追加エラー:', err);
+    alert(`エラーが発生しました: ${err.message}\n※作品数が多い場合は時間がかかる場合があります。再度お試しいただくか、GitHub Actionsからも更新可能です。`);
   } finally {
     loading.style.display = 'none';
     btnAddUser.disabled = false;
@@ -191,11 +188,8 @@ async function deleteUser(username) {
     renderModalUserList();
 
   } catch (err) {
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-      alert(`【Web公開版でのユーザー削除について】\nWeb公開版ではGitHub Actionsから安全に更新できます。\nGitHubリポジトリの「Actions」タブから「Update Annict Users」を実行してください。`);
-    } else {
-      alert(`エラー: ${err.message}`);
-    }
+    console.error('ユーザー削除エラー:', err);
+    alert(`エラー: ${err.message}`);
   } finally {
     loading.style.display = 'none';
   }
@@ -269,7 +263,11 @@ function renderModalUserList() {
 // データ読み込み
 async function loadData(force = false) {
   try {
-    const res = await fetch(`./res/analysis.json?t=${Date.now()}`);
+    // API経由でデータ取得を試行（Vercel対応）→ フォールバックで静的ファイル
+    let res = await fetch(`/api/analysis?t=${Date.now()}`);
+    if (!res.ok) {
+      res = await fetch(`./res/analysis.json?t=${Date.now()}`);
+    }
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
