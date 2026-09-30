@@ -117,6 +117,26 @@ function initModals() {
 }
 
 // ユーザー追加APIの呼び出し
+const STORAGE_KEY_USERS = 'annict_saved_users_v1';
+
+function saveUsersToStorage(users) {
+  if (Array.isArray(users) && users.length > 0) {
+    try {
+      localStorage.setItem(STORAGE_KEY_USERS, JSON.stringify(users));
+    } catch (e) {}
+  }
+}
+
+function loadUsersFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_USERS);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+  } catch (e) {}
+  return null;
+}
+
 // APIレスポンスの安全なJSONパース（Vercelタイムアウト時の非JSONエラー対策）
 async function parseApiResponse(res) {
   const text = await res.text();
@@ -141,7 +161,7 @@ async function addUser(username) {
     statusText.textContent = `@${username} の最新視聴データをAnnictから取得・分析中...`;
     btnAddUser.disabled = true;
 
-    const currentUsers = state.data?.users || [];
+    const currentUsers = state.data?.users || loadUsersFromStorage() || [];
 
     let res = await fetch('/api/users', {
       method: 'POST',
@@ -155,8 +175,9 @@ async function addUser(username) {
     }
 
     input.value = '';
-    // 1回目の結果を即座に画面に反映
+    // 1回目の結果を即座に画面に反映＆ブラウザに記憶
     state.data = result.report;
+    saveUsersToStorage(result.report.users);
     if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
       state.selectedVennUsers.push(username);
     }
@@ -177,6 +198,7 @@ async function addUser(username) {
       if (!res.ok) break;
 
       state.data = result.report;
+      saveUsersToStorage(result.report.users);
       renderAllComponents();
       step++;
     }
@@ -201,7 +223,10 @@ async function deleteUser(username) {
     loading.style.display = 'flex';
     statusText.textContent = `@${username} を削除し再集計中...`;
 
-    const res = await fetch(`/api/users/${encodeURIComponent(username)}`, {
+    const currentUsers = state.data?.users || loadUsersFromStorage() || [];
+    const query = currentUsers.length > 0 ? `?currentUsers=${encodeURIComponent(currentUsers.join(','))}` : '';
+
+    const res = await fetch(`/api/users/${encodeURIComponent(username)}${query}`, {
       method: 'DELETE'
     });
 
@@ -211,6 +236,7 @@ async function deleteUser(username) {
     }
 
     state.data = result.report;
+    saveUsersToStorage(result.report.users);
     state.selectedVennUsers = state.selectedVennUsers.filter(u => u !== username);
     if (state.selectedVennUsers.length === 0 && result.report.users.length > 0) {
       state.selectedVennUsers = result.report.users.slice(0, 3);
@@ -236,7 +262,7 @@ async function refreshAllUsers(options = {}) {
   const metaUpdated = document.getElementById('meta-updated');
   const origBtnHtml = btnReload ? btnReload.innerHTML : '';
 
-  const users = state.data?.users || [];
+  const users = state.data?.users || loadUsersFromStorage() || [];
   if (users.length === 0) {
     return loadData(true);
   }
@@ -266,6 +292,7 @@ async function refreshAllUsers(options = {}) {
       }
 
       state.data = result.report;
+      saveUsersToStorage(result.report.users);
       renderAllComponents();
       renderModalUserList();
 
@@ -284,6 +311,7 @@ async function refreshAllUsers(options = {}) {
         result = await parseApiResponse(res);
         if (!res.ok) break;
         state.data = result.report;
+        saveUsersToStorage(result.report.users);
         renderAllComponents();
         step++;
       }
@@ -353,8 +381,12 @@ function renderModalUserList() {
 // データ読み込み
 async function loadData(force = false) {
   try {
+    // ブラウザに保存されたユーザーリストがあればサーバーに渡して構成を維持（Vercel再起動対策）
+    const savedUsers = loadUsersFromStorage();
+    const usersParam = savedUsers ? `users=${encodeURIComponent(savedUsers.join(','))}&` : '';
+
     // API経由でデータ取得を試行（Vercel対応）→ フォールバックで静的ファイル
-    let res = await fetch(`/api/analysis?t=${Date.now()}`);
+    let res = await fetch(`/api/analysis?${usersParam}t=${Date.now()}`);
     if (!res.ok) {
       res = await fetch(`./res/analysis.json?t=${Date.now()}`);
     }
@@ -363,6 +395,9 @@ async function loadData(force = false) {
     }
     const data = await res.json();
     state.data = data;
+    if (!savedUsers && Array.isArray(data.users)) {
+      saveUsersToStorage(data.users);
+    }
 
     // ヘッダー情報
     const date = new Date(data.generatedAt);

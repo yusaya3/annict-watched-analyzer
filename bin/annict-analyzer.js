@@ -225,6 +225,13 @@ function createApp() {
     try {
       const username = req.params.username.trim().replace(/^@/, '');
       let users = loadUserList();
+      if (req.query.currentUsers) {
+        const parsed = String(req.query.currentUsers).split(',').map(u => u.trim().replace(/^@/, '')).filter(Boolean);
+        if (parsed.length > 0) users = parsed;
+      } else if (Array.isArray(req.body?.currentUsers) && req.body.currentUsers.length > 0) {
+        users = req.body.currentUsers.map(u => String(u).trim().replace(/^@/, '')).filter(Boolean);
+      }
+
       users = users.filter(u => u.toLowerCase() !== username.toLowerCase());
 
       if (users.length === 0) {
@@ -244,6 +251,10 @@ function createApp() {
   app.post('/api/refresh', async (req, res) => {
     try {
       let users = loadUserList();
+      if (Array.isArray(req.body?.currentUsers) && req.body.currentUsers.length > 0) {
+        users = req.body.currentUsers.map(u => String(u).trim().replace(/^@/, '')).filter(Boolean);
+        saveUserList(users);
+      }
       const report = await enqueueAnalysis(users, true);
       res.json({ success: true, users, report });
     } catch (err) {
@@ -252,22 +263,39 @@ function createApp() {
     }
   });
 
+  // 2つのユーザー配列が同じメンバー構成か判定するヘルパー
+  function isSameUserList(listA, listB) {
+    if (!Array.isArray(listA) || !Array.isArray(listB)) return false;
+    if (listA.length !== listB.length) return false;
+    return listA.every((u, idx) => String(u).toLowerCase() === String(listB[idx]).toLowerCase());
+  }
+
   // 分析結果の取得API（Vercel環境用 + ローカル共通）
   app.get('/api/analysis', async (req, res) => {
     try {
+      // クライアント側（localStorage）に保存されたユーザーリストが指定されている場合
+      const requestedUsers = req.query.users
+        ? String(req.query.users).split(',').map(u => u.trim().replace(/^@/, '')).filter(Boolean)
+        : null;
+
       // まず書き込み先（/tmp or static/res）を探す
       if (fs.existsSync(ANALYSIS_FILE)) {
         const data = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
-        return res.json(data);
+        if (!requestedUsers || isSameUserList(data.users, requestedUsers)) {
+          return res.json(data);
+        }
       }
       // Vercel環境：バンドル済みファイル（static/res）にフォールバック
       if (isVercel && fs.existsSync(BUNDLED_ANALYSIS_FILE)) {
         const data = JSON.parse(fs.readFileSync(BUNDLED_ANALYSIS_FILE, 'utf8'));
-        return res.json(data);
+        if (!requestedUsers || isSameUserList(data.users, requestedUsers)) {
+          return res.json(data);
+        }
       }
-      // どちらもなければオンデマンドで分析実行
-      const users = loadUserList();
-      const report = await enqueueAnalysis(users, false);
+      // 指定されたユーザー構成と異なる場合、またはファイルがない場合はオンデマンドで再集計
+      const targetUsers = (requestedUsers && requestedUsers.length > 0) ? requestedUsers : loadUserList();
+      saveUserList(targetUsers);
+      const report = await enqueueAnalysis(targetUsers, false);
       res.json(report);
     } catch (err) {
       console.error('分析データ取得エラー:', err);
