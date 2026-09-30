@@ -53,7 +53,11 @@ async function runAnalysis(userList, forceRefresh = false) {
 
   for (const username of userList) {
     console.log(`\n--- @${username} のデータを取得中 ---`);
-    const animes = await client.fetchWatchedAnimes(username, forceRefresh);
+    const shouldRefresh =
+      forceRefresh === true ||
+      (typeof forceRefresh === 'string' && forceRefresh.toLowerCase() === username.toLowerCase()) ||
+      (Array.isArray(forceRefresh) && forceRefresh.some(u => u.toLowerCase() === username.toLowerCase()));
+    const animes = await client.fetchWatchedAnimes(username, shouldRefresh);
     watchedLists[username] = animes;
   }
 
@@ -172,6 +176,13 @@ function createApp() {
   const staticDir = path.resolve(__dirname, '../static');
 
   app.use(express.json());
+  // APIレスポンスがブラウザやCDNにキャッシュされないように設定
+  app.use('/api', (req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    next();
+  });
   app.use(express.static(staticDir));
 
   // ユーザー設定の取得API
@@ -188,12 +199,20 @@ function createApp() {
       }
 
       let users = loadUserList();
-      if (!users.includes(username)) {
-        users.push(username);
-        saveUserList(users);
+      // フロントエンド側が保持している現在のユーザー一覧があれば同期（Vercel複数インスタンス対策）
+      if (Array.isArray(req.body.currentUsers) && req.body.currentUsers.length > 0) {
+        users = req.body.currentUsers.map(u => String(u).trim().replace(/^@/, '')).filter(Boolean);
       }
 
-      const report = await enqueueAnalysis(users, req.body.forceRefresh || false);
+      const existingIdx = users.findIndex(u => u.toLowerCase() === username.toLowerCase());
+      if (existingIdx === -1) {
+        users.push(username);
+      }
+      saveUserList(users);
+
+      // 明示的に forceRefresh: false が渡された場合（ジャンル継続ステップ）以外は、対象ユーザーのAnnict最新データを必ず再取得する
+      const refreshTarget = req.body.forceRefresh === false ? false : (req.body.forceRefresh === true ? true : username);
+      const report = await enqueueAnalysis(users, refreshTarget);
       res.json({ success: true, users, report });
     } catch (err) {
       console.error('ユーザー追加エラー:', err);

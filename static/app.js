@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadData();
 
   document.getElementById('btn-reload').addEventListener('click', () => {
-    loadData(true);
+    refreshAllUsers({ fromHeader: true });
   });
 
   document.getElementById('detail-search').addEventListener('input', (e) => {
@@ -138,18 +138,20 @@ async function addUser(username) {
 
   try {
     loading.style.display = 'flex';
-    statusText.textContent = `@${username} の視聴データをAnnictから取得・分析中...`;
+    statusText.textContent = `@${username} の最新視聴データをAnnictから取得・分析中...`;
     btnAddUser.disabled = true;
+
+    const currentUsers = state.data?.users || [];
 
     let res = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username })
+      body: JSON.stringify({ username, currentUsers })
     });
 
     let result = await parseApiResponse(res);
     if (!res.ok) {
-      throw new Error(result.error || 'ユーザーの追加に失敗しました');
+      throw new Error(result.error || 'ユーザーの追加・更新に失敗しました');
     }
 
     input.value = '';
@@ -169,7 +171,7 @@ async function addUser(username) {
       res = await fetch('/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, forceRefresh: false })
+        body: JSON.stringify({ username, currentUsers: state.data?.users || [], forceRefresh: false })
       });
       result = await parseApiResponse(res);
       if (!res.ok) break;
@@ -225,51 +227,84 @@ async function deleteUser(username) {
   }
 }
 
-// 全データ再取得
-async function refreshAllUsers() {
+// 全データ再取得（1人ずつ順番にAnnictから最新データを取得してタイムアウトを防止）
+async function refreshAllUsers(options = {}) {
+  const { fromHeader = false } = options;
   const loading = document.getElementById('user-modal-loading');
   const statusText = document.getElementById('user-modal-status');
+  const btnReload = document.getElementById('btn-reload');
+  const metaUpdated = document.getElementById('meta-updated');
+  const origBtnHtml = btnReload ? btnReload.innerHTML : '';
+
+  const users = state.data?.users || [];
+  if (users.length === 0) {
+    return loadData(true);
+  }
 
   try {
     loading.style.display = 'flex';
-    statusText.textContent = '全ユーザーの最新データを再取得中...';
-
-    let res = await fetch('/api/refresh', {
-      method: 'POST'
-    });
-
-    let result = await parseApiResponse(res);
-    if (!res.ok) {
-      throw new Error(result.error || '再取得に失敗しました');
+    if (btnReload) {
+      btnReload.disabled = true;
+      btnReload.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> <span>Annict最新取得中...</span>';
     }
 
-    state.data = result.report;
-    renderAllComponents();
-    renderModalUserList();
+    for (let i = 0; i < users.length; i++) {
+      const u = users[i];
+      const msg = `@${u} の最新データをAnnictから取得中 (${i + 1}/${users.length})...`;
+      statusText.textContent = msg;
+      if (metaUpdated) metaUpdated.textContent = msg;
 
-    // 残りのジャンルがある場合は自動で続きを取得
-    let step = 1;
-    while (result.report && result.report.remainingGenres > 0 && step <= 5) {
-      statusText.textContent = `ジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品)`;
-      const firstUser = result.report.users?.[0] || '';
-      res = await fetch('/api/users', {
+      let res = await fetch('/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: firstUser, forceRefresh: false })
+        body: JSON.stringify({ username: u, currentUsers: users })
       });
-      result = await parseApiResponse(res);
-      if (!res.ok) break;
+
+      let result = await parseApiResponse(res);
+      if (!res.ok) {
+        throw new Error(result.error || `@${u} の再取得に失敗しました`);
+      }
+
       state.data = result.report;
       renderAllComponents();
-      step++;
+      renderModalUserList();
+
+      // 残りのジャンルがある場合は自動で続きを取得
+      let step = 1;
+      while (result.report && result.report.remainingGenres > 0 && step <= 5) {
+        const genreMsg = `@${u} のジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品)`;
+        statusText.textContent = genreMsg;
+        if (metaUpdated) metaUpdated.textContent = genreMsg;
+
+        res = await fetch('/api/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: u, currentUsers: users, forceRefresh: false })
+        });
+        result = await parseApiResponse(res);
+        if (!res.ok) break;
+        state.data = result.report;
+        renderAllComponents();
+        step++;
+      }
     }
 
-    alert('全データの最新同期が完了しました！');
+    if (!fromHeader) {
+      alert('全ユーザーのAnnict最新データの同期が完了しました！');
+    }
 
   } catch (err) {
     alert(`エラー: ${err.message}`);
   } finally {
     loading.style.display = 'none';
+    if (btnReload) {
+      btnReload.disabled = false;
+      btnReload.innerHTML = origBtnHtml;
+    }
+    if (state.data && metaUpdated) {
+      const date = new Date(state.data.generatedAt);
+      metaUpdated.textContent = `更新: ${date.toLocaleString('ja-JP')}`;
+    }
   }
 }
 
@@ -294,11 +329,18 @@ function renderModalUserList() {
       </div>
       <div class="modal-user-meta">
         <span class="badge">${count} 作品</span>
+        <button class="btn btn-secondary btn-sm btn-refresh-user" data-user="${escapeHtml(u)}" title="このユーザーの最新データをAnnictから再取得" style="padding:0.25rem 0.5rem;font-size:0.75rem;">
+          <i class="fa-solid fa-rotate"></i> 更新
+        </button>
         <button class="btn-danger-outline btn-delete-user" data-user="${escapeHtml(u)}" title="削除">
           <i class="fa-solid fa-trash"></i> 削除
         </button>
       </div>
     `;
+
+    item.querySelector('.btn-refresh-user').addEventListener('click', () => {
+      addUser(u);
+    });
 
     item.querySelector('.btn-delete-user').addEventListener('click', () => {
       deleteUser(u);

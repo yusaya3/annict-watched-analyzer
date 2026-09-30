@@ -1,8 +1,22 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-09-29T08:48:15.717Z",
-  "count": 795,
+  "fetchedAt": "2026-09-30T11:08:29.651Z",
+  "count": 797,
   "animes": [
+    {
+      "id": "13582",
+      "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
+      "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13582"
+    },
+    {
+      "id": "15557",
+      "title": "きみが死ぬまで恋をしたい",
+      "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15557"
+    },
     {
       "id": "16248",
       "title": "片田舎のおっさん、剣聖になるⅡ",
@@ -39,18 +53,18 @@
       "url": "https://annict.com/works/17353"
     },
     {
-      "id": "15036",
-      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
-      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/15036"
-    },
-    {
       "id": "14929",
       "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
       "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/14929"
+    },
+    {
+      "id": "15036",
+      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
+      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15036"
     },
     {
       "id": "16468",

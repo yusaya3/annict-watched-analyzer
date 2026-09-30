@@ -1,8 +1,15 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-09-29T07:14:47.253Z",
-  "count": 777,
+  "fetchedAt": "2026-09-30T11:08:39.117Z",
+  "count": 781,
   "animes": [
+    {
+      "id": "13582",
+      "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
+      "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13582"
+    },
     {
       "id": "8410",
       "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
@@ -16,6 +23,13 @@
       "image": "https://image.annict.com/Z8uEiMsmiE2R7kxMkBj-J4q6eouoWT5S1rpD4ah8QaM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5634/image/master-6287769377ed987f1b4f9a50592462b4.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/8632"
+    },
+    {
+      "id": "16339",
+      "title": "グロウアップショウ ～ひまわりのサーカス団～",
+      "image": "https://image.annict.com/QQ7aCPaZMjpPnu8I--mKo_f8L3Y716LCD6lJ59TK7_U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13037/image/master-8aa0b6ab7ef6a275910799b5c03f56df.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16339"
     },
     {
       "id": "7915",
@@ -466,18 +480,18 @@
       "url": "https://annict.com/works/10087"
     },
     {
-      "id": "13744",
-      "title": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
-      "image": "https://image.annict.com/wHA6RLWHVhByJRNDkgb57VX4R9BBLV25DS-A9Fmgi74/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10550/image/master-dca2f40934eef842f2a535b726eae04d.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/13744"
-    },
-    {
       "id": "12122",
       "title": "劇場版 チェンソーマン レゼ篇",
       "image": "https://image.annict.com/-ncyOgzSAKyuNaE5bbRPq7fk55dTJSh0GolGAiDleoM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8590/image/master-05a6daa3c7c3c9d4bfeed2f85d1da33e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/12122"
+    },
+    {
+      "id": "13744",
+      "title": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
+      "image": "https://image.annict.com/wHA6RLWHVhByJRNDkgb57VX4R9BBLV25DS-A9Fmgi74/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10550/image/master-dca2f40934eef842f2a535b726eae04d.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13744"
     },
     {
       "id": "11852",
@@ -4946,6 +4960,13 @@
       "url": "https://annict.com/works/2870"
     },
     {
+      "id": "6127",
+      "title": "劇場版 空の境界 終章/空の境界",
+      "image": "https://image.annict.com/TO3PvkosmdVbyUmtPeXIrb74YOqWZe0bpxVBLc9QOLI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2934/image/master-31296b965653b5949751ad42639f8843.jpg@webp",
+      "season": "2012年夏",
+      "url": "https://annict.com/works/6127"
+    },
+    {
       "id": "1031",
       "title": "ストライクウィッチーズ2",
       "image": "https://image.annict.com/B-SY8Pt9WbvILiIKN7eYvaLoza8jrNvghi0udNGHakQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/299/image/master-10c1028009088c3579dac891f1edf1d5.jpg@webp",
@@ -5042,6 +5063,13 @@
       "image": "https://image.annict.com/qFyWAAx5D3YYbeCy9rMBNULanciqG1iszU9P7_1qfEo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/147/image/master-faeb4fa1dc7414d1fe7fe58a211eb9b4.jpg@webp",
       "season": "2010年夏",
       "url": "https://annict.com/works/1696"
+    },
+    {
+      "id": "6126",
+      "title": "劇場版 空の境界 第七章 殺人考察 (後)",
+      "image": "https://image.annict.com/98nqOP59c07O__cj5J2ecP1vi5LlsafY1DTAb0_44_8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2933/image/master-4f1f05357656a03e1c1f289b31bdd657.jpg@webp",
+      "season": "2010年夏",
+      "url": "https://annict.com/works/6126"
     },
     {
       "id": "668",
