@@ -452,7 +452,7 @@ function renderModalUserList() {
         <i class="fa-solid fa-user"></i> @${escapeHtml(u)}
       </div>
       <div class="modal-user-meta">
-        <span class="badge">${count} 作品</span>
+        <span class="badge">${count}&nbsp;作品</span>
         <button class="btn btn-secondary btn-sm btn-refresh-user" data-user="${escapeHtml(u)}" title="このユーザーの最新データをAnnictから再取得" style="padding:0.25rem 0.5rem;font-size:0.75rem;">
           <i class="fa-solid fa-rotate"></i> 更新
         </button>

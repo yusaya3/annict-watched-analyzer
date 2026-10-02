@@ -88,6 +88,14 @@ body {
 .subtitle {
   color: var(--text-muted);
   font-size: 0.9rem;
+  line-height: 1.5;
+  word-break: normal;
+  text-wrap: pretty;
+}
+
+.subtitle span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .header-actions {
@@ -607,6 +615,8 @@ body {
   font-weight: 700;
   color: var(--accent-pink);
   font-size: 1.05rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Insights Grid */
@@ -637,12 +647,16 @@ body {
 .text-red { color: var(--accent-pink); }
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.25rem 0.6rem;
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 600;
   background: var(--bg-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .badge-gold { background: rgba(251, 191, 36, 0.2); color: var(--accent-gold); }
@@ -867,17 +881,30 @@ body {
   border: 1px solid var(--border-color);
   padding: 0.6rem 0.9rem;
   border-radius: var(--radius-sm);
+  gap: 0.6rem;
 }
 
 .modal-user-name {
   font-weight: 600;
   font-size: 0.92rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
 }
 
 .modal-user-meta {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.modal-user-meta .badge {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .modal-loading-box {
@@ -1067,7 +1094,7 @@ body {
 
   .modal-user-item {
     padding: 0.5rem 0.65rem;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .modal-user-name {
@@ -1075,12 +1102,23 @@ body {
   }
 
   .modal-user-meta {
-    gap: 0.4rem;
+    gap: 0.35rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .modal-user-meta .badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .modal-user-meta .btn {
-    padding: 0.3rem 0.55rem;
-    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.74rem;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .input-with-button {
