@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-09-30T11:08:39.117Z",
-  "count": 781,
+  "fetchedAt": "2026-10-02T18:58:45.184Z",
+  "count": 782,
   "animes": [
     {
       "id": "13582",
@@ -23,6 +23,13 @@
       "image": "https://image.annict.com/Z8uEiMsmiE2R7kxMkBj-J4q6eouoWT5S1rpD4ah8QaM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5634/image/master-6287769377ed987f1b4f9a50592462b4.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/8632"
+    },
+    {
+      "id": "17197",
+      "title": "Re:ゼロから始める異世界生活 4th season 奪還編",
+      "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17197"
     },
     {
       "id": "16339",
@@ -2664,18 +2671,18 @@
       "url": "https://annict.com/works/6390"
     },
     {
-      "id": "6182",
-      "title": "文豪ストレイドッグス (第3期)",
-      "image": "https://image.annict.com/csKgZRmy4kR0lXOcYdT9dcdZP3uSPCXAi3YgnSeO3Rc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3261/image/master-562c05595e39179bc0dabac082ec0b86.jpg@webp",
-      "season": "2020年夏",
-      "url": "https://annict.com/works/6182"
-    },
-    {
       "id": "6185",
       "title": "ガールズ&パンツァー 最終章 第2話",
       "image": "https://image.annict.com/m6HFnWSxn2-INPZT9T-413Ko-q_0v-3uGrPIRbjUFNg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3009/image/master-816084e810fd4231cdea4b4f7949c8d0.jpg@webp",
       "season": "2020年夏",
       "url": "https://annict.com/works/6185"
+    },
+    {
+      "id": "6182",
+      "title": "文豪ストレイドッグス (第3期)",
+      "image": "https://image.annict.com/csKgZRmy4kR0lXOcYdT9dcdZP3uSPCXAi3YgnSeO3Rc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3261/image/master-562c05595e39179bc0dabac082ec0b86.jpg@webp",
+      "season": "2020年夏",
+      "url": "https://annict.com/works/6182"
     },
     {
       "id": "6284",
