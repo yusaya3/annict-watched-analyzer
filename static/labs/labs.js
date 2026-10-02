@@ -256,7 +256,7 @@ function renderGenres(genreReport) {
     userSummaryContainer.appendChild(card);
   });
 
-  // B. 18ジャンル詳細比較リスト（アコーディオン）
+  // B. ジャンル詳細比較リスト（アコーディオン）
   genres.forEach(g => {
     const card = document.createElement('div');
     card.className = 'genre-accordion-card';
