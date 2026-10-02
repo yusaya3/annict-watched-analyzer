@@ -117,7 +117,7 @@ function initModals() {
 }
 
 // ユーザー追加APIの呼び出し
-const STORAGE_KEY_USERS = 'annict_saved_users_v1';
+const STORAGE_KEY_USERS = 'annict_saved_users_v2';
 
 function saveUsersToStorage(users) {
   if (Array.isArray(users) && users.length > 0) {
@@ -150,110 +150,197 @@ async function parseApiResponse(res) {
   }
 }
 
-async function addUser(username) {
-  const loading = document.getElementById('user-modal-loading');
-  const statusText = document.getElementById('user-modal-status');
-  const btnAddUser = document.getElementById('btn-add-user');
-  const input = document.getElementById('new-username-input');
+// =========================================================================
+// バックグラウンド非同期処理キュー（UIをブロックせず順番に即座に受け付ける）
+// =========================================================================
+const taskQueue = {
+  tasks: [], // { id, type: 'add'|'delete', username, status: 'pending'|'running'|'done'|'error', errorMsg, stepMsg }
+  isProcessing: false,
 
-  try {
-    loading.style.display = 'flex';
-    statusText.textContent = `@${username} の最新視聴データをAnnictから取得・分析中...`;
-    btnAddUser.disabled = true;
+  enqueue(type, username) {
+    const cleanUser = username.trim().replace(/^@/, '');
+    if (!cleanUser) return;
 
-    const currentUsers = state.data?.users || loadUsersFromStorage() || [];
+    // すでに待機中・実行中の同一タスクがあれば重複追加しない
+    const existing = this.tasks.find(t => t.type === type && t.username.toLowerCase() === cleanUser.toLowerCase() && (t.status === 'pending' || t.status === 'running'));
+    if (existing) return;
 
-    let res = await fetch('/api/users', {
+    const task = {
+      id: Date.now() + Math.random(),
+      type,
+      username: cleanUser,
+      status: 'pending',
+      stepMsg: '待機中...',
+      errorMsg: null
+    };
+
+    this.tasks.push(task);
+    renderModalUserList();
+    this.processNext();
+  },
+
+  updateStatusText() {
+    const statusText = document.getElementById('user-modal-status');
+    const runningTask = this.tasks.find(t => t.status === 'running');
+    const pendingCount = this.tasks.filter(t => t.status === 'pending').length;
+
+    if (runningTask) {
+      statusText.textContent = runningTask.stepMsg || `@${runningTask.username} のデータを取得・更新中...`;
+      if (pendingCount > 0) {
+        statusText.textContent += ` (他 ${pendingCount} 件待機中)`;
+      }
+    } else {
+      statusText.textContent = '';
+    }
+  },
+
+  async processNext() {
+    if (this.isProcessing) return;
+    const task = this.tasks.find(t => t.status === 'pending');
+    if (!task) {
+      this.updateStatusText();
+      renderModalUserList();
+      return;
+    }
+
+    this.isProcessing = true;
+    task.status = 'running';
+    task.stepMsg = `@${task.username} の処理を開始中...`;
+    this.updateStatusText();
+    renderModalUserList();
+
+    try {
+      if (task.type === 'add') {
+        task.stepMsg = `@${task.username} の最新データをAnnictから取得中...`;
+        this.updateStatusText();
+        await executeAddUser(task.username, (msg) => {
+          task.stepMsg = msg;
+          this.updateStatusText();
+        });
+      } else if (task.type === 'delete') {
+        task.stepMsg = `@${task.username} をサーバー同期中...`;
+        this.updateStatusText();
+        await executeDeleteUser(task.username);
+      }
+
+      task.status = 'done';
+      task.stepMsg = '完了';
+      // 成功したタスクは1.5秒後に自動消滅
+      setTimeout(() => {
+        this.tasks = this.tasks.filter(t => t.id !== task.id);
+        renderModalUserList();
+      }, 1500);
+
+    } catch (err) {
+      console.error(`タスクエラー [${task.type} @${task.username}]:`, err);
+      task.status = 'error';
+      task.errorMsg = err.message || '通信エラー';
+    } finally {
+      this.isProcessing = false;
+      this.updateStatusText();
+      renderModalUserList();
+      // 次のタスクを順次実行
+      this.processNext();
+    }
+  }
+};
+
+// 実際のユーザー追加通信処理（キューから順番に呼ばれる）
+async function executeAddUser(username, onProgress) {
+  const currentUsers = state.data?.users || loadUsersFromStorage() || [];
+
+  let res = await fetch('/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, currentUsers })
+  });
+
+  let result = await parseApiResponse(res);
+  if (!res.ok) {
+    throw new Error(result.error || 'ユーザーの追加・更新に失敗しました');
+  }
+
+  // 1回目の結果を画面とローカルに即時反映
+  state.data = result.report;
+  saveUsersToStorage(result.report.users);
+  if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
+    state.selectedVennUsers.push(username);
+  }
+
+  renderAllComponents();
+  renderModalUserList();
+
+  // ジャンル照合の継続ステップ
+  let step = 1;
+  while (result.report && result.report.remainingGenres > 0 && step <= 5) {
+    if (onProgress) {
+      onProgress(`@${username} のジャンルデータを照合中... (残り ${result.report.remainingGenres} 作)`);
+    }
+    res = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, currentUsers })
+      body: JSON.stringify({ username, currentUsers: state.data?.users || [], forceRefresh: false })
     });
+    result = await parseApiResponse(res);
+    if (!res.ok) break;
 
-    let result = await parseApiResponse(res);
-    if (!res.ok) {
-      throw new Error(result.error || 'ユーザーの追加・更新に失敗しました');
-    }
-
-    input.value = '';
-    // 1回目の結果を即座に画面に反映＆ブラウザに記憶
     state.data = result.report;
     saveUsersToStorage(result.report.users);
-    if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
-      state.selectedVennUsers.push(username);
-    }
-
     renderAllComponents();
-    renderModalUserList();
-
-    // 作品数が多く、1回のリクエスト（制限時間内）でジャンル照合が一部残った場合は自動で続きを取得
-    let step = 1;
-    while (result.report && result.report.remainingGenres > 0 && step <= 5) {
-      statusText.textContent = `@${username} のジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品 / ステップ ${step + 1})`;
-      res = await fetch('/api/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, currentUsers: state.data?.users || [], forceRefresh: false })
-      });
-      result = await parseApiResponse(res);
-      if (!res.ok) break;
-
-      state.data = result.report;
-      saveUsersToStorage(result.report.users);
-      renderAllComponents();
-      step++;
-    }
-
-  } catch (err) {
-    console.error('ユーザー追加エラー:', err);
-    alert(`エラーが発生しました: ${err.message}`);
-  } finally {
-    loading.style.display = 'none';
-    btnAddUser.disabled = false;
+    step++;
   }
 }
 
-// ユーザー削除APIの呼び出し
-async function deleteUser(username) {
+// 実際のユーザー削除通信処理（キューから順番に呼ばれる）
+async function executeDeleteUser(username) {
+  const currentUsers = state.data?.users || loadUsersFromStorage() || [];
+  const query = currentUsers.length > 0 ? `?currentUsers=${encodeURIComponent(currentUsers.join(','))}` : '';
+
+  const res = await fetch(`/api/users/${encodeURIComponent(username)}${query}`, {
+    method: 'DELETE'
+  });
+
+  const result = await parseApiResponse(res);
+  if (!res.ok) {
+    throw new Error(result.error || 'サーバーでのユーザー削除に失敗しました');
+  }
+
+  state.data = result.report;
+  saveUsersToStorage(result.report.users);
+  renderAllComponents();
+  renderModalUserList();
+}
+
+// UIからのユーザー追加要求（即座に入力クリア＆キューイングで次の操作へ）
+function addUser(username) {
+  const input = document.getElementById('new-username-input');
+  if (input) input.value = '';
+
+  // キューに追加（即時受付）
+  taskQueue.enqueue('add', username);
+}
+
+// UIからのユーザー削除要求（即座に画面から消してキューイング：体感速度0秒！）
+function deleteUser(username) {
   if (!confirm(`@${username} を比較対象から削除しますか？`)) return;
 
-  const loading = document.getElementById('user-modal-loading');
-  const statusText = document.getElementById('user-modal-status');
-
-  try {
-    loading.style.display = 'flex';
-    statusText.textContent = `@${username} を削除し再集計中...`;
-
-    const currentUsers = state.data?.users || loadUsersFromStorage() || [];
-    const query = currentUsers.length > 0 ? `?currentUsers=${encodeURIComponent(currentUsers.join(','))}` : '';
-
-    const res = await fetch(`/api/users/${encodeURIComponent(username)}${query}`, {
-      method: 'DELETE'
-    });
-
-    const result = await parseApiResponse(res);
-    if (!res.ok) {
-      throw new Error(result.error || 'ユーザーの削除に失敗しました');
+  // 1. 楽観的UI更新：UI上からその場ですぐに消す（待たせない！）
+  if (state.data && Array.isArray(state.data.users)) {
+    state.data.users = state.data.users.filter(u => u.toLowerCase() !== username.toLowerCase());
+    saveUsersToStorage(state.data.users);
+    state.selectedVennUsers = state.selectedVennUsers.filter(u => u.toLowerCase() !== username.toLowerCase());
+    if (state.selectedVennUsers.length === 0 && state.data.users.length > 0) {
+      state.selectedVennUsers = state.data.users.slice(0, 3);
     }
-
-    state.data = result.report;
-    saveUsersToStorage(result.report.users);
-    state.selectedVennUsers = state.selectedVennUsers.filter(u => u !== username);
-    if (state.selectedVennUsers.length === 0 && result.report.users.length > 0) {
-      state.selectedVennUsers = result.report.users.slice(0, 3);
-    }
-
     renderAllComponents();
     renderModalUserList();
-
-  } catch (err) {
-    console.error('ユーザー削除エラー:', err);
-    alert(`エラー: ${err.message}`);
-  } finally {
-    loading.style.display = 'none';
   }
+
+  // 2. バックグラウンドキューでサーバーに非同期送信
+  taskQueue.enqueue('delete', username);
 }
 
-// 全データ再取得（1人ずつ順番にAnnictから最新データを取得してタイムアウトを防止）
+// 全データ再取得
 async function refreshAllUsers(options = {}) {
   const { fromHeader = false } = options;
   const loading = document.getElementById('user-modal-loading');
@@ -296,7 +383,6 @@ async function refreshAllUsers(options = {}) {
       renderAllComponents();
       renderModalUserList();
 
-      // 残りのジャンルがある場合は自動で続きを取得
       let step = 1;
       while (result.report && result.report.remainingGenres > 0 && step <= 5) {
         const genreMsg = `@${u} のジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品)`;
@@ -336,21 +422,31 @@ async function refreshAllUsers(options = {}) {
   }
 }
 
-// モーダル内のユーザーリスト描画
+// モーダル内のユーザーリスト描画（待機中・取得中タスクも即座に表示）
 function renderModalUserList() {
   const list = document.getElementById('modal-user-list');
+  if (!list) return;
   list.innerHTML = '';
 
   const users = state.data?.users || [];
-  if (users.length === 0) {
+  const queuedAddTasks = taskQueue.tasks.filter(t => t.type === 'add');
+
+  if (users.length === 0 && queuedAddTasks.length === 0) {
     list.innerHTML = '<p class="text-muted">ユーザーが登録されていません</p>';
     return;
   }
 
+  // 1. 登録済みユーザーのカード
   users.forEach(u => {
-    const count = state.data.userWatchedLists[u]?.length || 0;
+    const count = state.data.userWatchedLists?.[u]?.length || 0;
+    const isDeleting = taskQueue.tasks.some(t => t.type === 'delete' && t.username.toLowerCase() === u.toLowerCase());
+
     const item = document.createElement('div');
     item.className = 'modal-user-item';
+    if (isDeleting) {
+      item.style.opacity = '0.5';
+    }
+
     item.innerHTML = `
       <div class="modal-user-name">
         <i class="fa-solid fa-user"></i> @${escapeHtml(u)}
@@ -367,7 +463,7 @@ function renderModalUserList() {
     `;
 
     item.querySelector('.btn-refresh-user').addEventListener('click', () => {
-      addUser(u);
+      taskQueue.enqueue('add', u);
     });
 
     item.querySelector('.btn-delete-user').addEventListener('click', () => {
@@ -376,16 +472,60 @@ function renderModalUserList() {
 
     list.appendChild(item);
   });
+
+  // 2. キュー内の追加タスクカード（取得中・待機中・エラー）
+  queuedAddTasks.forEach(task => {
+    // すでにusersに含まれている場合は表示不要
+    if (users.some(u => u.toLowerCase() === task.username.toLowerCase()) && task.status === 'done') return;
+
+    const item = document.createElement('div');
+    item.className = 'modal-user-item';
+    item.style.borderLeft = '3px solid var(--accent, #a855f7)';
+    item.style.background = 'rgba(168, 85, 247, 0.06)';
+
+    let badgeHtml = '';
+    if (task.status === 'running') {
+      badgeHtml = `<span class="badge" style="background:#a855f722;color:#c084fc;"><i class="fa-solid fa-spinner fa-spin"></i> 取得中...</span>`;
+    } else if (task.status === 'pending') {
+      badgeHtml = `<span class="badge" style="background:#64748b22;color:#94a3b8;"><i class="fa-solid fa-clock"></i> 待機中...</span>`;
+    } else if (task.status === 'error') {
+      badgeHtml = `<span class="badge" style="background:#ef444422;color:#f87171;" title="${escapeHtml(task.errorMsg)}"><i class="fa-solid fa-triangle-exclamation"></i> 失敗</span>`;
+    } else if (task.status === 'done') {
+      badgeHtml = `<span class="badge" style="background:#10b98122;color:#34d399;"><i class="fa-solid fa-check"></i> 完了</span>`;
+    }
+
+    item.innerHTML = `
+      <div class="modal-user-name">
+        <i class="fa-solid fa-user-plus text-purple"></i> @${escapeHtml(task.username)}
+        <small class="text-muted" style="display:block;font-size:0.75rem;">${escapeHtml(task.stepMsg || '')}</small>
+      </div>
+      <div class="modal-user-meta">
+        ${badgeHtml}
+        ${task.status === 'error' ? `
+          <button class="btn btn-secondary btn-sm btn-retry-task" style="padding:0.2rem 0.4rem;font-size:0.75rem;">
+            <i class="fa-solid fa-rotate-right"></i> 再試行
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    if (task.status === 'error') {
+      item.querySelector('.btn-retry-task')?.addEventListener('click', () => {
+        task.status = 'pending';
+        taskQueue.processNext();
+      });
+    }
+
+    list.appendChild(item);
+  });
 }
 
-// データ読み込み
+// データ読み込み（ブラウザ再起動時も削除・追加状態を100%確実に復元）
 async function loadData(force = false) {
   try {
-    // ブラウザに保存されたユーザーリストがあればサーバーに渡して構成を維持（Vercel再起動対策）
     const savedUsers = loadUsersFromStorage();
     const usersParam = savedUsers ? `users=${encodeURIComponent(savedUsers.join(','))}&` : '';
 
-    // API経由でデータ取得を試行（Vercel対応）→ フォールバックで静的ファイル
     let res = await fetch(`/api/analysis?${usersParam}t=${Date.now()}`);
     if (!res.ok) {
       res = await fetch(`./res/analysis.json?t=${Date.now()}`);
@@ -394,8 +534,23 @@ async function loadData(force = false) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
     const data = await res.json();
+
+    // ★重要: クライアント側の二重防御
+    // もしローカルストレージにユーザーリストが保存されており、サーバーからそれ以外の不要なユーザー（削除済みユーザー等）が返ってきた場合は
+    // クライアント側でも即座にsavedUsersのみにトリミングして、絶対に元の状態に戻らないようにする！
+    if (savedUsers && savedUsers.length > 0 && Array.isArray(data.users)) {
+      const lowerSaved = new Set(savedUsers.map(u => u.toLowerCase()));
+      const needsFilter = data.users.some(u => !lowerSaved.has(u.toLowerCase()));
+      if (needsFilter) {
+        data.users = data.users.filter(u => lowerSaved.has(u.toLowerCase()));
+        if (data.userSummary) {
+          data.userSummary = data.userSummary.filter(s => lowerSaved.has(s.username.toLowerCase()));
+        }
+      }
+    }
+
     state.data = data;
-    if (!savedUsers && Array.isArray(data.users)) {
+    if (Array.isArray(data.users) && data.users.length > 0) {
       saveUsersToStorage(data.users);
     }
 

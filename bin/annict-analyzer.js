@@ -220,7 +220,65 @@ function createApp() {
     }
   });
 
-  // ユーザー削除＆再集計API
+  // 既存の解析データ（/tmp または static/res）を取得するヘルパー
+  function getBaseReport() {
+    try {
+      if (fs.existsSync(ANALYSIS_FILE)) {
+        return JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
+      }
+    } catch (e) {}
+    try {
+      if (fs.existsSync(BUNDLED_ANALYSIS_FILE)) {
+        return JSON.parse(fs.readFileSync(BUNDLED_ANALYSIS_FILE, 'utf8'));
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  // 既存の視聴データから指定ユーザー群のサブセット解析結果を即座に（0.1秒未満で）生成する関数
+  function extractSubsetReport(base, targetUsers) {
+    const subWatched = {};
+    targetUsers.forEach(u => {
+      subWatched[u] = base.userWatchedLists[u] || [];
+    });
+
+    const Analyzer = require('../lib/analyzer.js');
+    const analyzer = new Analyzer(subWatched);
+    const report = analyzer.buildFullReport();
+
+    try {
+      const ExperimentalAnalyzer = require('../lib/labs/experimental-analyzer.js');
+      const exp = new ExperimentalAnalyzer(subWatched);
+      const { GenreClient, classifyAnime } = require('../lib/labs/genre-client.js');
+      const genreClient = new GenreClient();
+      const allTitles = [];
+      for (const animes of Object.values(subWatched)) {
+        for (const a of animes) if (a.title) allTitles.push(a.title);
+      }
+      const uniqueTitles = Array.from(new Set(allTitles));
+      const genreMap = {};
+      for (const title of uniqueTitles) {
+        const entry = genreClient.cache[title] || { genres: [], tags: [] };
+        genreMap[title] = {
+          genres: entry.genres || [],
+          tags: entry.tags || [],
+          category: classifyAnime(entry.genres || [], entry.tags || [], title)
+        };
+      }
+      report.labs = exp.generateLabsReport(genreMap);
+    } catch (e) {
+      console.warn('[SubsetReport] Labs再計算スキップ:', e.message);
+    }
+
+    try {
+      if (!fs.existsSync(RES_DIR)) fs.mkdirSync(RES_DIR, { recursive: true });
+      fs.writeFileSync(ANALYSIS_FILE, JSON.stringify(report, null, 2), 'utf8');
+    } catch (e) {}
+
+    return report;
+  }
+
+  // ユーザー削除＆再集計API（既存データがある場合は0.1秒で即座に完了）
   app.delete('/api/users/:username', async (req, res) => {
     try {
       const username = req.params.username.trim().replace(/^@/, '');
@@ -239,6 +297,14 @@ function createApp() {
       }
 
       saveUserList(users);
+
+      // 既存の解析データに対象ユーザー全員の視聴リストがある場合、外部通信なしで即時再集計（超高速・タイムアウトなし）
+      const base = getBaseReport();
+      if (base && base.userWatchedLists && users.every(u => Array.isArray(base.userWatchedLists[u]))) {
+        const report = extractSubsetReport(base, users);
+        return res.json({ success: true, users, report });
+      }
+
       const report = await enqueueAnalysis(users, false);
       res.json({ success: true, users, report });
     } catch (err) {
@@ -263,11 +329,12 @@ function createApp() {
     }
   });
 
-  // 2つのユーザー配列が同じメンバー構成か判定するヘルパー
+  // 2つのユーザー配列が同じメンバー構成か判定するヘルパー（順不同で判定）
   function isSameUserList(listA, listB) {
     if (!Array.isArray(listA) || !Array.isArray(listB)) return false;
     if (listA.length !== listB.length) return false;
-    return listA.every((u, idx) => String(u).toLowerCase() === String(listB[idx]).toLowerCase());
+    const setA = new Set(listA.map(u => String(u).toLowerCase()));
+    return listB.every(u => setA.has(String(u).toLowerCase()));
   }
 
   // 分析結果の取得API（Vercel環境用 + ローカル共通）
@@ -278,20 +345,26 @@ function createApp() {
         ? String(req.query.users).split(',').map(u => u.trim().replace(/^@/, '')).filter(Boolean)
         : null;
 
-      // まず書き込み先（/tmp or static/res）を探す
-      if (fs.existsSync(ANALYSIS_FILE)) {
-        const data = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
-        if (!requestedUsers || isSameUserList(data.users, requestedUsers)) {
-          return res.json(data);
+      const base = getBaseReport();
+
+      if (base) {
+        // 要求された構成と完全一致していればそのまま返す
+        if (!requestedUsers || isSameUserList(base.users, requestedUsers)) {
+          return res.json(base);
+        }
+
+        // 要求されたユーザー全員の視聴データがベースにある場合（例: ユーザー削除後の3人や2人の場合）
+        // 外部スクレイピングを一切行わず、即座（0.1秒未満）にサブセット再集計して返す！（タイムアウト皆無）
+        if (requestedUsers && requestedUsers.length > 0 && base.userWatchedLists) {
+          const allExist = requestedUsers.every(u => Array.isArray(base.userWatchedLists[u]));
+          if (allExist) {
+            saveUserList(requestedUsers);
+            const report = extractSubsetReport(base, requestedUsers);
+            return res.json(report);
+          }
         }
       }
-      // Vercel環境：バンドル済みファイル（static/res）にフォールバック
-      if (isVercel && fs.existsSync(BUNDLED_ANALYSIS_FILE)) {
-        const data = JSON.parse(fs.readFileSync(BUNDLED_ANALYSIS_FILE, 'utf8'));
-        if (!requestedUsers || isSameUserList(data.users, requestedUsers)) {
-          return res.json(data);
-        }
-      }
+
       // 指定されたユーザー構成と異なる場合、またはファイルがない場合はオンデマンドで再集計
       const targetUsers = (requestedUsers && requestedUsers.length > 0) ? requestedUsers : loadUserList();
       saveUserList(targetUsers);
