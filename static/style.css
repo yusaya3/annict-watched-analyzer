@@ -58,6 +58,19 @@ body {
   gap: 1rem;
 }
 
+.brand-logo-img {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo-img:hover {
+  transform: scale(1.05);
+}
+
 .brand-icon {
   font-size: 2.2rem;
   color: var(--accent-pink);
@@ -925,6 +938,12 @@ body {
     gap: 0.75rem;
   }
 
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+
   .brand-icon {
     font-size: 1.8rem;
   }
@@ -1132,6 +1151,12 @@ body {
 
   .app-header h1 {
     font-size: 1.2rem;
+  }
+
+  .brand-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
   }
 
   .brand-icon {
