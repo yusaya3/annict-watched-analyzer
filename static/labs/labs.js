@@ -339,7 +339,7 @@ function renderGenres(genreReport) {
             </div>
             <div class="genre-names">
               <span class="genre-name-ja">${escapeHtml(g.label)}</span>
-              <span class="genre-name-en">(${escapeHtml(g.id)})</span>
+              <span class="genre-name-en">(${escapeHtml(g.labelEn || g.id)})</span>
             </div>
             ${topUserBadge}
           </div>
