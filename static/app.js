@@ -656,11 +656,24 @@ function renderVenn() {
     return;
   }
 
+  // 画面幅に応じたレスポンシブサイズ
+  const isMobile = window.innerWidth <= 768;
+  const chartWidth = isMobile ? Math.min(360, Math.max(280, window.innerWidth - 48)) : 550;
+  const chartHeight = isMobile ? Math.round(chartWidth * 0.88) : 480;
+
   const chart = venn.VennDiagram()
-    .width(550)
-    .height(480);
+    .width(chartWidth)
+    .height(chartHeight);
 
   const div = d3.select('#venn-chart').datum(sets).call(chart);
+
+  // SVGの完全レスポンシブ化（アスペクト比維持とスケーリング）
+  d3.select('#venn-chart svg')
+    .attr('viewBox', `0 0 ${chartWidth} ${chartHeight}`)
+    .attr('preserveAspectRatio', 'xMidYMid meet')
+    .style('width', '100%')
+    .style('height', 'auto')
+    .style('max-height', isMobile ? '350px' : '480px');
 
   const colors = ['#f43f5e', '#38bdf8', '#a855f7'];
 

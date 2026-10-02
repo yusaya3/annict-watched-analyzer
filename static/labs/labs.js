@@ -229,15 +229,15 @@ function renderGenres(genreReport) {
     (uStat.topGenres || []).forEach((g, idx) => {
       topHtml += `
         <div class="genre-top-item">
-          <div style="display:flex;align-items:center;gap:0.5rem;">
-            <span style="font-size:0.8rem;color:var(--text-muted);font-weight:700;width:18px;">#${idx + 1}</span>
-            <span class="genre-badge-pill" style="background:${g.color}22;color:${g.color};border:1px solid ${g.color}44;">
-              <i class="${g.icon}"></i> ${escapeHtml(g.label)}
+          <div class="genre-top-item-left">
+            <span class="genre-top-rank">#${idx + 1}</span>
+            <span class="genre-badge-pill" style="background:${g.color}22;color:${g.color};border:1px solid ${g.color}44;" title="${escapeHtml(g.label)}">
+              <i class="${g.icon}"></i> <span>${escapeHtml(g.label)}</span>
             </span>
           </div>
-          <div style="text-align:right;">
-            <span style="font-weight:700;color:#fff;">${g.count} 作品</span>
-            <span style="font-size:0.75rem;color:var(--text-muted);margin-left:0.3rem;">(${g.percentage}%)</span>
+          <div class="genre-top-item-right">
+            <span class="genre-top-count">${g.count} 作品</span>
+            <span class="genre-top-pct">(${g.percentage}%)</span>
           </div>
         </div>
       `;
@@ -327,7 +327,7 @@ function renderGenres(genreReport) {
     });
 
     const topUserBadge = g.topUser
-      ? `<span class="badge" style="background:${g.color}22;color:${g.color};border:1px solid ${g.color}44;">最多: @${escapeHtml(g.topUser.username)} (${g.topUser.count}作)</span>`
+      ? `<span class="genre-top-user-pill badge" style="background:${g.color}22;color:${g.color};border:1px solid ${g.color}44;">最多: @${escapeHtml(g.topUser.username)} (${g.topUser.count}作)</span>`
       : '';
 
     card.innerHTML = `
@@ -341,10 +341,10 @@ function renderGenres(genreReport) {
               <span class="genre-name-ja">${escapeHtml(g.label)}</span>
               <span class="genre-name-en">(${escapeHtml(g.labelEn || g.id)})</span>
             </div>
-            ${topUserBadge}
           </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;">
-            <span class="text-muted" style="font-size:0.85rem;font-weight:600;">計 ${g.totalWorksAcrossUsers} 作品</span>
+          <div class="genre-header-meta">
+            ${topUserBadge}
+            <span class="genre-total-pill text-muted">計 ${g.totalWorksAcrossUsers} 作品</span>
             <i class="fa-solid fa-chevron-down genre-toggle-icon"></i>
           </div>
         </div>

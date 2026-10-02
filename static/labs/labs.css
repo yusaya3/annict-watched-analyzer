@@ -392,6 +392,40 @@
   padding: 0.5rem 0.8rem;
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
+  gap: 0.5rem;
+}
+
+.genre-top-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.genre-top-rank {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.genre-top-item-right {
+  text-align: right;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.genre-top-count {
+  font-weight: 700;
+  color: #fff;
+}
+
+.genre-top-pct {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 0.3rem;
 }
 
 .genre-badge-pill {
@@ -436,12 +470,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
 }
 
 .genre-title-wrap {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+}
+
+.genre-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.genre-total-pill {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .genre-icon-box {
@@ -625,5 +674,214 @@
 .genre-anime-season {
   font-size: 0.7rem;
   color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Labs専用 モバイル・タブレット向けレスポンシブスタイル (<= 768px, <= 480px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* バナー */
+  .labs-banner {
+    padding: 0.85rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .labs-title {
+    font-size: 0.95rem;
+  }
+
+  /* 1. 総視聴時間（カロリー） */
+  .calorie-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .calorie-card {
+    padding: 1rem;
+  }
+
+  .calorie-number {
+    font-size: 1.8rem;
+  }
+
+  /* 2. 年代別タイムライン */
+  .timeline-user-bar-item {
+    gap: 0.4rem;
+  }
+
+  .timeline-user-bar-name {
+    width: 75px;
+    font-size: 0.74rem;
+  }
+
+  .timeline-user-bar-stat {
+    width: 45px;
+    font-size: 0.74rem;
+  }
+
+  /* 3. 制作スタジオ別偏愛度 */
+  .studio-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .studio-card {
+    padding: 1rem;
+  }
+
+  .studio-rank-name {
+    font-size: 0.84rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .studio-animes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.5rem;
+  }
+
+  /* 4. ジャンル別比較 */
+  .genre-user-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .genre-user-card {
+    padding: 1rem;
+  }
+
+  .genre-badge-pill {
+    font-size: 0.74rem;
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+  }
+
+  .genre-top-count {
+    font-size: 0.82rem;
+  }
+
+  /* アコーディオンヘッダーのスマホ劇的改善（2段レイアウト） */
+  .genre-accordion-header {
+    padding: 0.85rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .genre-header-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .genre-title-wrap {
+    justify-content: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .genre-icon-box {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .genre-names {
+    gap: 0.35rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .genre-name-ja {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .genre-name-en {
+    font-size: 0.72rem;
+    display: none; /* スマホでは英語名を非表示にして日本語タイトルを広く確保 */
+  }
+
+  .genre-header-meta {
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .genre-top-user-pill {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .genre-total-pill {
+    font-size: 0.78rem;
+  }
+
+  /* ユーザー比較バー */
+  .genre-user-bar-item {
+    gap: 0.4rem;
+  }
+
+  .genre-user-bar-name {
+    width: 75px;
+    font-size: 0.72rem;
+  }
+
+  .genre-user-bar-stat {
+    width: 65px;
+    font-size: 0.72rem;
+  }
+
+  .genre-bar-track {
+    height: 14px;
+  }
+
+  /* アコーディオン本文 */
+  .genre-accordion-body {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .genre-animes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 0.45rem;
+    max-height: 280px;
+  }
+
+  .genre-anime-card {
+    padding: 0.35rem 0.45rem;
+    gap: 0.45rem;
+  }
+
+  .genre-anime-thumb {
+    width: 32px;
+    height: 42px;
+  }
+
+  .genre-anime-title {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .genre-badge-pill {
+    max-width: 135px;
+  }
+
+  .genre-top-count {
+    font-size: 0.78rem;
+  }
+
+  .genre-user-bar-name {
+    width: 68px;
+    font-size: 0.7rem;
+  }
+
+  .genre-user-bar-stat {
+    width: 60px;
+    font-size: 0.7rem;
+  }
 }
 
