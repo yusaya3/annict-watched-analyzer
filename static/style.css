@@ -368,12 +368,24 @@ body {
 .panel-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .panel-header h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+.panel-header .badge {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
 }
 
 .panel-desc {
@@ -457,6 +469,8 @@ body {
   border-radius: 4px;
   background: var(--bg-tertiary);
   flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
 }
 
 .anime-no-thumb {
@@ -1063,6 +1077,52 @@ body {
   .input-with-button .btn {
     width: 100%;
   }
+
+  /* 作品リスト (ベン図詳細) 最適化 */
+  .detail-panel {
+    height: 560px;
+  }
+
+  .anime-item-card {
+    padding: 0.65rem 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .anime-thumb, .anime-no-thumb {
+    width: 62px;
+    height: 83px;
+    border-radius: 6px;
+  }
+
+  .anime-title {
+    font-size: 0.95rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.35;
+  }
+
+  /* 検索・インサイト 作品カードグリッドのスマホ2列化＆引き伸ばしボケ解消 */
+  .anime-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .grid-card-thumb, .grid-card-no-thumb {
+    height: 175px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+  }
+
+  .grid-card-body {
+    padding: 0.6rem;
+  }
+
+  .grid-card-title {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1090,5 +1150,14 @@ body {
 
   #venn-chart svg {
     max-height: 280px;
+  }
+
+  .anime-thumb, .anime-no-thumb {
+    width: 58px;
+    height: 78px;
+  }
+
+  .grid-card-thumb, .grid-card-no-thumb {
+    height: 155px;
   }
 }
