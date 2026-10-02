@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T11:08:39.141Z",
+  "generatedAt": "2026-10-02T15:48:26.640Z",
   "users": [
     "hitobi_syuto",
     "fs495",
@@ -53544,13 +53544,13 @@
       "studioStatsByUser": {
         "hitobi_syuto": {
           "username": "hitobi_syuto",
-          "studioTitle": "A-1 Pictures 最多 (29作品)",
+          "studioTitle": "A-1 Pictures 最多 (25作品)",
           "rankings": [
             {
               "name": "A-1 Pictures",
               "short": "A-1 Pictures",
               "color": "#3b82f6",
-              "count": 29,
+              "count": 25,
               "animes": [
                 {
                   "id": "13720",
@@ -53558,34 +53558,6 @@
                   "image": "https://image.annict.com/7zwf3ZSY5tfW9rO0YanQxlPFX74CSpOM-2RMUeOCj1k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11787/image/master-f9a87ffb8657bf6f5ba09653d92b8b97.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/13720"
-                },
-                {
-                  "id": "12747",
-                  "title": "アイドルマスター シャイニーカラーズ 2nd season",
-                  "image": "https://image.annict.com/EEdfuLNuyDfEzxP25opBqzdlsyFlSoGwo0LHa-KSwA4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9341/image/master-44174312d92d2a5ec1bad2899fa4a5f2.jpg@webp",
-                  "season": "2026年夏",
-                  "url": "https://annict.com/works/12747"
-                },
-                {
-                  "id": "10588",
-                  "title": "アイドルマスター シャイニーカラーズ",
-                  "image": "https://image.annict.com/4gMjWYIQs-qZMlAl6rbOizDIaP6ddlt2_Wy4pHOhAfc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7123/image/master-3e573409c187459fd75647a51435d4c1.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/10588"
-                },
-                {
-                  "id": "7608",
-                  "title": "アイドルマスター ミリオンライブ！",
-                  "image": "https://image.annict.com/pvltKBTot6-XWJ_WV9OUwDM-2TflFar-tFsQpr04BPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6828/image/master-36ab99e2f3fa424a0d87532c733d4dba.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/7608"
-                },
-                {
-                  "id": "9516",
-                  "title": "アイドルマスター シンデレラガールズ U149",
-                  "image": "https://image.annict.com/2ugTuvvLHFVogCHJCrB5dUKhDwIcqYwDovAwQX2MBgY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6423/image/master-569374297fdedfcda89817fc2c676098.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/9516"
                 },
                 {
                   "id": "9061",
@@ -53761,7 +53733,7 @@
               "name": "京都アニメーション",
               "short": "京アニ",
               "color": "#38bdf8",
-              "count": 24,
+              "count": 22,
               "animes": [
                 {
                   "id": "6688",
@@ -53813,13 +53785,6 @@
                   "url": "https://annict.com/works/4170"
                 },
                 {
-                  "id": "4142",
-                  "title": "異能バトルは日常系のなかで",
-                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
-                  "season": "2016年夏",
-                  "url": "https://annict.com/works/4142"
-                },
-                {
                   "id": "549",
                   "title": "境界の彼方",
                   "image": "https://image.annict.com/_VpThDtMNnqkUTWSjcZFGAy8quKXePACYNvKRrZzevg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/381/image/master-06e78c2179e31ca99af0539bb056e357.jpg@webp",
@@ -53867,13 +53832,6 @@
                   "image": "https://image.annict.com/ABbuQpddFTZo0TWSo_MrKqJnitDIkggoAjPzY830BZA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/645/image/master-8b9baed8ea143ed9addf2781d84d4513.jpg@webp",
                   "season": "2012年夏",
                   "url": "https://annict.com/works/1808"
-                },
-                {
-                  "id": "1249",
-                  "title": "男子高校生の日常",
-                  "image": "https://image.annict.com/yRLBdqVJTumR0yNHvqxK24ONP3CBSli07ijzFxDdUVU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/240/image/master-9bd19731e77c9cec49c63c9c604d78be.jpg@webp",
-                  "season": "2012年夏",
-                  "url": "https://annict.com/works/1249"
                 },
                 {
                   "id": "3296",
@@ -54380,6 +54338,77 @@
               ]
             },
             {
+              "name": "サンライズ",
+              "short": "サンライズ",
+              "color": "#ef4444",
+              "count": 9,
+              "animes": [
+                {
+                  "id": "7275",
+                  "title": "ラブライブ！スーパースター!!",
+                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                  "season": "2022年夏",
+                  "url": "https://annict.com/works/7275"
+                },
+                {
+                  "id": "7204",
+                  "title": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
+                  "image": "https://image.annict.com/EyuJEAh9TP3pzoJRfzeHW1wzRB8x88bFo62JEc4DzUA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4244/image/master-e170671a7a840c2770728e1d0dba90fd.jpg@webp",
+                  "season": "2022年夏",
+                  "url": "https://annict.com/works/7204"
+                },
+                {
+                  "id": "4772",
+                  "title": "ラブライブ！サンシャイン!!",
+                  "image": "https://image.annict.com/As2Iv6QA6V2qmHo3r1zn4IVqpPumvyqZmR5vt-GvBY0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1375/image/master-7042fe4d64f379b6502ae3b9edc77ce4.jpg@webp",
+                  "season": "2016年夏",
+                  "url": "https://annict.com/works/4772"
+                },
+                {
+                  "id": "4438",
+                  "title": "ラブライブ！The School Idol Movie",
+                  "image": "https://image.annict.com/SgQm7NBs4_VZIsnG6ErhBmS8Vy6L52Z7gvlpNH6ra24/s:220:293/plain/s3://annict-user-contents/shrine/workimage/947/image/master-252b61b3bb51ca989cdf120827f39f3c.jpg@webp",
+                  "season": "2016年夏",
+                  "url": "https://annict.com/works/4438"
+                },
+                {
+                  "id": "3996",
+                  "title": "ラブライブ！ School idol project (第2期)",
+                  "image": "https://image.annict.com/j2Pa1RaJp_bfU6PiDEmripQFKL3pxNMyTSG1IyQ57OI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/197/image/master-f9dcfc2fd468d59cdca000a5636087d6.jpg@webp",
+                  "season": "2014年夏",
+                  "url": "https://annict.com/works/3996"
+                },
+                {
+                  "id": "2349",
+                  "title": "ラブライブ！ School idol project",
+                  "image": "https://image.annict.com/EC7XCwVTEq7p6JKf9MBmukh_StWHVt6WQKeJLLXuygM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/196/image/master-979c3398954524bab1407112e7b75526.jpg@webp",
+                  "season": "2014年夏",
+                  "url": "https://annict.com/works/2349"
+                },
+                {
+                  "id": "64",
+                  "title": "アクセル・ワールド",
+                  "image": "https://image.annict.com/Bx65d6zUuA2R8ki1SzOjNECMjVD-CDQiCw7Z0EQVSWM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/107/image/master-30cc44d42fa8d48407a6601568c7f3fa.jpg@webp",
+                  "season": "2012年夏",
+                  "url": "https://annict.com/works/64"
+                },
+                {
+                  "id": "1249",
+                  "title": "男子高校生の日常",
+                  "image": "https://image.annict.com/yRLBdqVJTumR0yNHvqxK24ONP3CBSli07ijzFxDdUVU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/240/image/master-9bd19731e77c9cec49c63c9c604d78be.jpg@webp",
+                  "season": "2012年夏",
+                  "url": "https://annict.com/works/1249"
+                },
+                {
+                  "id": "1192",
+                  "title": "TIGER & BUNNY",
+                  "image": "https://image.annict.com/xeMdvkkk9mDmyfu9YNTD1ASnM0ZSKHlmNFvWjo5a9Pw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/220/image/master-ad536a46f6cd4e1d1447ebe0b085f6ea.jpg@webp",
+                  "season": "2012年夏",
+                  "url": "https://annict.com/works/1192"
+                }
+              ]
+            },
+            {
               "name": "J.C.STAFF",
               "short": "J.C.STAFF",
               "color": "#eab308",
@@ -54447,70 +54476,6 @@
                   "image": "https://image.annict.com/Q_WyD6kkoDpDiSfmP_jZElWLk6HnbNUQXtSaHzs6TUg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/692/image/master-a93bfb0908a1a46349fbcaed3516630e.jpg@webp",
                   "season": "2008年冬",
                   "url": "https://annict.com/works/1087"
-                }
-              ]
-            },
-            {
-              "name": "サンライズ",
-              "short": "サンライズ",
-              "color": "#ef4444",
-              "count": 8,
-              "animes": [
-                {
-                  "id": "7275",
-                  "title": "ラブライブ！スーパースター!!",
-                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                  "season": "2022年夏",
-                  "url": "https://annict.com/works/7275"
-                },
-                {
-                  "id": "7204",
-                  "title": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-                  "image": "https://image.annict.com/EyuJEAh9TP3pzoJRfzeHW1wzRB8x88bFo62JEc4DzUA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4244/image/master-e170671a7a840c2770728e1d0dba90fd.jpg@webp",
-                  "season": "2022年夏",
-                  "url": "https://annict.com/works/7204"
-                },
-                {
-                  "id": "4772",
-                  "title": "ラブライブ！サンシャイン!!",
-                  "image": "https://image.annict.com/As2Iv6QA6V2qmHo3r1zn4IVqpPumvyqZmR5vt-GvBY0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1375/image/master-7042fe4d64f379b6502ae3b9edc77ce4.jpg@webp",
-                  "season": "2016年夏",
-                  "url": "https://annict.com/works/4772"
-                },
-                {
-                  "id": "4438",
-                  "title": "ラブライブ！The School Idol Movie",
-                  "image": "https://image.annict.com/SgQm7NBs4_VZIsnG6ErhBmS8Vy6L52Z7gvlpNH6ra24/s:220:293/plain/s3://annict-user-contents/shrine/workimage/947/image/master-252b61b3bb51ca989cdf120827f39f3c.jpg@webp",
-                  "season": "2016年夏",
-                  "url": "https://annict.com/works/4438"
-                },
-                {
-                  "id": "3996",
-                  "title": "ラブライブ！ School idol project (第2期)",
-                  "image": "https://image.annict.com/j2Pa1RaJp_bfU6PiDEmripQFKL3pxNMyTSG1IyQ57OI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/197/image/master-f9dcfc2fd468d59cdca000a5636087d6.jpg@webp",
-                  "season": "2014年夏",
-                  "url": "https://annict.com/works/3996"
-                },
-                {
-                  "id": "2349",
-                  "title": "ラブライブ！ School idol project",
-                  "image": "https://image.annict.com/EC7XCwVTEq7p6JKf9MBmukh_StWHVt6WQKeJLLXuygM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/196/image/master-979c3398954524bab1407112e7b75526.jpg@webp",
-                  "season": "2014年夏",
-                  "url": "https://annict.com/works/2349"
-                },
-                {
-                  "id": "64",
-                  "title": "アクセル・ワールド",
-                  "image": "https://image.annict.com/Bx65d6zUuA2R8ki1SzOjNECMjVD-CDQiCw7Z0EQVSWM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/107/image/master-30cc44d42fa8d48407a6601568c7f3fa.jpg@webp",
-                  "season": "2012年夏",
-                  "url": "https://annict.com/works/64"
-                },
-                {
-                  "id": "1192",
-                  "title": "TIGER & BUNNY",
-                  "image": "https://image.annict.com/xeMdvkkk9mDmyfu9YNTD1ASnM0ZSKHlmNFvWjo5a9Pw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/220/image/master-ad536a46f6cd4e1d1447ebe0b085f6ea.jpg@webp",
-                  "season": "2012年夏",
-                  "url": "https://annict.com/works/1192"
                 }
               ]
             },
@@ -54647,7 +54612,7 @@
               "name": "TRIGGER",
               "short": "TRIGGER",
               "color": "#f59e0b",
-              "count": 2,
+              "count": 3,
               "animes": [
                 {
                   "id": "9820",
@@ -54655,6 +54620,13 @@
                   "image": "https://image.annict.com/ianEaeJP41ATJE8iEiJj6lkdrAdBiuOZIaxMAiM1-0Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6762/image/master-c20219e2d64976720db9355e8c34e195.jpg@webp",
                   "season": "2024年夏",
                   "url": "https://annict.com/works/9820"
+                },
+                {
+                  "id": "4142",
+                  "title": "異能バトルは日常系のなかで",
+                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
+                  "season": "2016年夏",
+                  "url": "https://annict.com/works/4142"
                 },
                 {
                   "id": "515",
@@ -54691,107 +54663,8 @@
         },
         "fs495": {
           "username": "fs495",
-          "studioTitle": "京都アニメーション 最多 (13作品)",
+          "studioTitle": "J.C.STAFF 最多 (13作品)",
           "rankings": [
-            {
-              "name": "京都アニメーション",
-              "short": "京アニ",
-              "color": "#38bdf8",
-              "count": 13,
-              "animes": [
-                {
-                  "id": "16007",
-                  "title": "29歳独身中堅冒険者の日常",
-                  "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-                  "season": "2026年夏",
-                  "url": "https://annict.com/works/16007"
-                },
-                {
-                  "id": "6492",
-                  "title": "小林さんちのメイドラゴンS",
-                  "image": "https://image.annict.com/xduM3HrDqYBzjxXl8OCGxqnbJzD7V2snrHc8CCd15bs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3308/image/master-c1b28ac70d067df68f133533b6ee0734.jpg@webp",
-                  "season": "2022年夏",
-                  "url": "https://annict.com/works/6492"
-                },
-                {
-                  "id": "5036",
-                  "title": "小林さんちのメイドラゴン",
-                  "image": "https://image.annict.com/P__bP7L58DGHkAhFvat8Jp5hNrYwlIBA5mDz8J062bI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1690/image/master-0c50e296ca459201fab61e9477ab61d4.jpg@webp",
-                  "season": "2018年夏",
-                  "url": "https://annict.com/works/5036"
-                },
-                {
-                  "id": "4142",
-                  "title": "異能バトルは日常系のなかで",
-                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
-                  "season": "2016年夏",
-                  "url": "https://annict.com/works/4142"
-                },
-                {
-                  "id": "1063",
-                  "title": "涼宮ハルヒの憂鬱 (2009年版)",
-                  "image": "https://image.annict.com/T3p2ei-dTKNGt--qIP3kZJH8VqYuBUjGdrM7Y9GVoSU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/350/image/master-bfdde1c8323de746b38acb29e011ed04.jpg@webp",
-                  "season": "2010年冬",
-                  "url": "https://annict.com/works/1063"
-                },
-                {
-                  "id": "614",
-                  "title": "CLANNAD -クラナド-",
-                  "image": "https://image.annict.com/1u8A_O2eH2l_-St-CDJzwW1e75Mvvr0roS-3CqbJQXY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/81/image/master-a8e1a17bda397d6887835e8f44cc60be.jpg@webp",
-                  "season": "2007年秋",
-                  "url": "https://annict.com/works/614"
-                },
-                {
-                  "id": "2340",
-                  "title": "らき☆すた",
-                  "image": "https://image.annict.com/4_XWodoeiuScrqFIE0PXVdPGGVlpijsk8YM7lMy0R9k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/318/image/master-dfefe9b3dc20c1d5ce5e93e2b0280ccb.jpg@webp",
-                  "season": "2007年秋",
-                  "url": "https://annict.com/works/2340"
-                },
-                {
-                  "id": "371",
-                  "title": "Kanon（新）",
-                  "image": "https://image.annict.com/JJ7kJCjNLVCuBAp_RsKDssYCeX7UlTBOuDWlkyO66B0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2770/image/master-cdbd4f532fbb264e8075866cb817982a.jpg@webp",
-                  "season": "2007年秋",
-                  "url": "https://annict.com/works/371"
-                },
-                {
-                  "id": "1062",
-                  "title": "涼宮ハルヒの憂鬱",
-                  "image": "https://image.annict.com/Keyg7R1vGl6IxBtBOqteWnG7dP3jmXJVzEeK2Vpkz_4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/328/image/master-738cdce5c50ed2cd8cdbbca6acdc9bf0.jpg@webp",
-                  "season": "2007年秋",
-                  "url": "https://annict.com/works/1062"
-                },
-                {
-                  "id": "11248",
-                  "title": "AIR IN SUMMER",
-                  "image": "https://image.annict.com/aVgjQ0KJEW88hvGEJezl4Dvw1CmSUhGfD-SjusJJwJ0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7591/image/master-7995c95f5f381ea524f7053f1ccbdcd2.jpg@webp",
-                  "season": "2005年秋",
-                  "url": "https://annict.com/works/11248"
-                },
-                {
-                  "id": "241",
-                  "title": "AIR",
-                  "image": "https://image.annict.com/E29OZQXxhxaALY4xDeSVMFHj2tKadKjuSz5TVL2L2rs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1470/image/master-6327142f22b513ce923ab02af901016e.jpg@webp",
-                  "season": "2005年秋",
-                  "url": "https://annict.com/works/241"
-                },
-                {
-                  "id": "370",
-                  "title": "Kanon",
-                  "image": "https://image.annict.com/XrpN2lYTAmbGJYpx6xdhTJyKG_JD-U1C9JAWdheHhSI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2771/image/master-84b8640782ac200dfa79b5c15182c587.jpg@webp",
-                  "season": "2003年秋",
-                  "url": "https://annict.com/works/370"
-                },
-                {
-                  "id": "3339",
-                  "title": "新世紀エヴァンゲリオン 劇場版 THE END OF EVANGELION Air/まごころを、君に",
-                  "image": "https://image.annict.com/PbRovd31fQoIcNxPcTc3_2LoVbljA3-vW8rWBkUVwh8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/321/image/master-16ee0f094b6503c820bbf8c385f1ec51.jpg@webp",
-                  "season": "1999年夏",
-                  "url": "https://annict.com/works/3339"
-                }
-              ]
-            },
             {
               "name": "J.C.STAFF",
               "short": "J.C.STAFF",
@@ -54984,6 +54857,84 @@
               ]
             },
             {
+              "name": "京都アニメーション",
+              "short": "京アニ",
+              "color": "#38bdf8",
+              "count": 10,
+              "animes": [
+                {
+                  "id": "6492",
+                  "title": "小林さんちのメイドラゴンS",
+                  "image": "https://image.annict.com/xduM3HrDqYBzjxXl8OCGxqnbJzD7V2snrHc8CCd15bs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3308/image/master-c1b28ac70d067df68f133533b6ee0734.jpg@webp",
+                  "season": "2022年夏",
+                  "url": "https://annict.com/works/6492"
+                },
+                {
+                  "id": "5036",
+                  "title": "小林さんちのメイドラゴン",
+                  "image": "https://image.annict.com/P__bP7L58DGHkAhFvat8Jp5hNrYwlIBA5mDz8J062bI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1690/image/master-0c50e296ca459201fab61e9477ab61d4.jpg@webp",
+                  "season": "2018年夏",
+                  "url": "https://annict.com/works/5036"
+                },
+                {
+                  "id": "1063",
+                  "title": "涼宮ハルヒの憂鬱 (2009年版)",
+                  "image": "https://image.annict.com/T3p2ei-dTKNGt--qIP3kZJH8VqYuBUjGdrM7Y9GVoSU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/350/image/master-bfdde1c8323de746b38acb29e011ed04.jpg@webp",
+                  "season": "2010年冬",
+                  "url": "https://annict.com/works/1063"
+                },
+                {
+                  "id": "614",
+                  "title": "CLANNAD -クラナド-",
+                  "image": "https://image.annict.com/1u8A_O2eH2l_-St-CDJzwW1e75Mvvr0roS-3CqbJQXY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/81/image/master-a8e1a17bda397d6887835e8f44cc60be.jpg@webp",
+                  "season": "2007年秋",
+                  "url": "https://annict.com/works/614"
+                },
+                {
+                  "id": "2340",
+                  "title": "らき☆すた",
+                  "image": "https://image.annict.com/4_XWodoeiuScrqFIE0PXVdPGGVlpijsk8YM7lMy0R9k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/318/image/master-dfefe9b3dc20c1d5ce5e93e2b0280ccb.jpg@webp",
+                  "season": "2007年秋",
+                  "url": "https://annict.com/works/2340"
+                },
+                {
+                  "id": "371",
+                  "title": "Kanon（新）",
+                  "image": "https://image.annict.com/JJ7kJCjNLVCuBAp_RsKDssYCeX7UlTBOuDWlkyO66B0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2770/image/master-cdbd4f532fbb264e8075866cb817982a.jpg@webp",
+                  "season": "2007年秋",
+                  "url": "https://annict.com/works/371"
+                },
+                {
+                  "id": "1062",
+                  "title": "涼宮ハルヒの憂鬱",
+                  "image": "https://image.annict.com/Keyg7R1vGl6IxBtBOqteWnG7dP3jmXJVzEeK2Vpkz_4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/328/image/master-738cdce5c50ed2cd8cdbbca6acdc9bf0.jpg@webp",
+                  "season": "2007年秋",
+                  "url": "https://annict.com/works/1062"
+                },
+                {
+                  "id": "11248",
+                  "title": "AIR IN SUMMER",
+                  "image": "https://image.annict.com/aVgjQ0KJEW88hvGEJezl4Dvw1CmSUhGfD-SjusJJwJ0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7591/image/master-7995c95f5f381ea524f7053f1ccbdcd2.jpg@webp",
+                  "season": "2005年秋",
+                  "url": "https://annict.com/works/11248"
+                },
+                {
+                  "id": "241",
+                  "title": "AIR",
+                  "image": "https://image.annict.com/E29OZQXxhxaALY4xDeSVMFHj2tKadKjuSz5TVL2L2rs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1470/image/master-6327142f22b513ce923ab02af901016e.jpg@webp",
+                  "season": "2005年秋",
+                  "url": "https://annict.com/works/241"
+                },
+                {
+                  "id": "370",
+                  "title": "Kanon",
+                  "image": "https://image.annict.com/XrpN2lYTAmbGJYpx6xdhTJyKG_JD-U1C9JAWdheHhSI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2771/image/master-84b8640782ac200dfa79b5c15182c587.jpg@webp",
+                  "season": "2003年秋",
+                  "url": "https://annict.com/works/370"
+                }
+              ]
+            },
+            {
               "name": "CloverWorks",
               "short": "CloverWorks",
               "color": "#10b981",
@@ -55055,77 +55006,6 @@
               ]
             },
             {
-              "name": "A-1 Pictures",
-              "short": "A-1 Pictures",
-              "color": "#3b82f6",
-              "count": 9,
-              "animes": [
-                {
-                  "id": "9516",
-                  "title": "アイドルマスター シンデレラガールズ U149",
-                  "image": "https://image.annict.com/2ugTuvvLHFVogCHJCrB5dUKhDwIcqYwDovAwQX2MBgY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6423/image/master-569374297fdedfcda89817fc2c676098.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/9516"
-                },
-                {
-                  "id": "9250",
-                  "title": "リコリス・リコイル",
-                  "image": "https://image.annict.com/fleMWFipNvEFmEkEZ2ABVzKoOxDLzZqZf93YjmfyVzc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6183/image/master-bc58ab4034911f2145d6336e3a6edb8d.jpg@webp",
-                  "season": "2022年夏",
-                  "url": "https://annict.com/works/9250"
-                },
-                {
-                  "id": "7234",
-                  "title": "ソードアート・オンライン アリシゼーション War of Underworld ‐THE LAST SEASON‐",
-                  "image": "https://image.annict.com/EcgyQoP01n2slVNJ61ep6ZeVlyTL3Hu8aE7IhIAMSFA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4273/image/master-0247217cabfe951e32885ecfe92d9592.jpg@webp",
-                  "season": "2020年夏",
-                  "url": "https://annict.com/works/7234"
-                },
-                {
-                  "id": "6587",
-                  "title": "ソードアート・オンライン アリシゼーション War of Underworld",
-                  "image": "https://image.annict.com/FA7t-AxKzkFgIOpWPuA0UdiUYDCXEgihXRMu_wGcKKs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3400/image/master-2f3f5aa39607e7c01eb8f7ccc038c13b.jpg@webp",
-                  "season": "2020年夏",
-                  "url": "https://annict.com/works/6587"
-                },
-                {
-                  "id": "5550",
-                  "title": "ソードアート・オンライン アリシゼーション",
-                  "image": "https://image.annict.com/m6RgYbPvNDZATKgH9krTzwJm6QZ75xoaX6RwYnb0OMA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2177/image/master-0a72107d037423d9f6a9ca90bc2ca5fc.jpg@webp",
-                  "season": "2020年夏",
-                  "url": "https://annict.com/works/5550"
-                },
-                {
-                  "id": "5553",
-                  "title": "ソードアート・オンライン オルタナティブ ガンゲイル・オンライン",
-                  "image": "https://image.annict.com/AUY_Ln4IamIdqZT3IgAOrzyN-U4sZJmlrcRPi_pWeec/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2178/image/master-277d243e2e24ad8ff9bbf06995b505b6.jpg@webp",
-                  "season": "2018年夏",
-                  "url": "https://annict.com/works/5553"
-                },
-                {
-                  "id": "4093",
-                  "title": "ソードアート・オンラインII",
-                  "image": "https://image.annict.com/U6jYCkQAsvbyKQnQiWlg1U-MQiYILqkwyNXCPHMVEHk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/422/image/master-b11b6b4e96532b28cc1a858de020563f.jpg@webp",
-                  "season": "2014年夏",
-                  "url": "https://annict.com/works/4093"
-                },
-                {
-                  "id": "1166",
-                  "title": "ソードアート・オンライン",
-                  "image": "https://image.annict.com/Uzgjc8WmR0NoGT2T_jBBTlXPdEYty-8Jd6Re8JJ3dSg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/102/image/master-e9a7fed93117e3ce66b86ede5cf27eaf.jpg@webp",
-                  "season": "2012年夏",
-                  "url": "https://annict.com/works/1166"
-                },
-                {
-                  "id": "53",
-                  "title": "アイドルマスター XENOGLOSSIA",
-                  "image": "https://image.annict.com/AnF-l1-8ZeXZFLmFlUnzRc0YS7SQHwgQCup7WKtFAjU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6057/image/master-1859da79df75242dd24d72e0493666ee.jpg@webp",
-                  "season": "2007年秋",
-                  "url": "https://annict.com/works/53"
-                }
-              ]
-            },
-            {
               "name": "シャフト",
               "short": "シャフト",
               "color": "#a855f7",
@@ -55193,7 +55073,7 @@
               "name": "サンライズ",
               "short": "サンライズ",
               "color": "#ef4444",
-              "count": 7,
+              "count": 8,
               "animes": [
                 {
                   "id": "9029",
@@ -55236,6 +55116,13 @@
                   "image": "https://image.annict.com/EC7XCwVTEq7p6JKf9MBmukh_StWHVt6WQKeJLLXuygM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/196/image/master-979c3398954524bab1407112e7b75526.jpg@webp",
                   "season": "2014年夏",
                   "url": "https://annict.com/works/2349"
+                },
+                {
+                  "id": "53",
+                  "title": "アイドルマスター XENOGLOSSIA",
+                  "image": "https://image.annict.com/AnF-l1-8ZeXZFLmFlUnzRc0YS7SQHwgQCup7WKtFAjU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6057/image/master-1859da79df75242dd24d72e0493666ee.jpg@webp",
+                  "season": "2007年秋",
+                  "url": "https://annict.com/works/53"
                 },
                 {
                   "id": "2083",
@@ -55297,10 +55184,60 @@
               ]
             },
             {
+              "name": "A-1 Pictures",
+              "short": "A-1 Pictures",
+              "color": "#3b82f6",
+              "count": 6,
+              "animes": [
+                {
+                  "id": "9250",
+                  "title": "リコリス・リコイル",
+                  "image": "https://image.annict.com/fleMWFipNvEFmEkEZ2ABVzKoOxDLzZqZf93YjmfyVzc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6183/image/master-bc58ab4034911f2145d6336e3a6edb8d.jpg@webp",
+                  "season": "2022年夏",
+                  "url": "https://annict.com/works/9250"
+                },
+                {
+                  "id": "7234",
+                  "title": "ソードアート・オンライン アリシゼーション War of Underworld ‐THE LAST SEASON‐",
+                  "image": "https://image.annict.com/EcgyQoP01n2slVNJ61ep6ZeVlyTL3Hu8aE7IhIAMSFA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4273/image/master-0247217cabfe951e32885ecfe92d9592.jpg@webp",
+                  "season": "2020年夏",
+                  "url": "https://annict.com/works/7234"
+                },
+                {
+                  "id": "6587",
+                  "title": "ソードアート・オンライン アリシゼーション War of Underworld",
+                  "image": "https://image.annict.com/FA7t-AxKzkFgIOpWPuA0UdiUYDCXEgihXRMu_wGcKKs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3400/image/master-2f3f5aa39607e7c01eb8f7ccc038c13b.jpg@webp",
+                  "season": "2020年夏",
+                  "url": "https://annict.com/works/6587"
+                },
+                {
+                  "id": "5550",
+                  "title": "ソードアート・オンライン アリシゼーション",
+                  "image": "https://image.annict.com/m6RgYbPvNDZATKgH9krTzwJm6QZ75xoaX6RwYnb0OMA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2177/image/master-0a72107d037423d9f6a9ca90bc2ca5fc.jpg@webp",
+                  "season": "2020年夏",
+                  "url": "https://annict.com/works/5550"
+                },
+                {
+                  "id": "4093",
+                  "title": "ソードアート・オンラインII",
+                  "image": "https://image.annict.com/U6jYCkQAsvbyKQnQiWlg1U-MQiYILqkwyNXCPHMVEHk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/422/image/master-b11b6b4e96532b28cc1a858de020563f.jpg@webp",
+                  "season": "2014年夏",
+                  "url": "https://annict.com/works/4093"
+                },
+                {
+                  "id": "1166",
+                  "title": "ソードアート・オンライン",
+                  "image": "https://image.annict.com/Uzgjc8WmR0NoGT2T_jBBTlXPdEYty-8Jd6Re8JJ3dSg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/102/image/master-e9a7fed93117e3ce66b86ede5cf27eaf.jpg@webp",
+                  "season": "2012年夏",
+                  "url": "https://annict.com/works/1166"
+                }
+              ]
+            },
+            {
               "name": "TRIGGER",
               "short": "TRIGGER",
               "color": "#f59e0b",
-              "count": 5,
+              "count": 6,
               "animes": [
                 {
                   "id": "9820",
@@ -55329,6 +55266,13 @@
                   "image": "https://image.annict.com/daeOai38kaN-VNH06Wil20sqVMV8O0LHE19kGOVU6Go/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1700/image/master-f4ef2cbb6e244b60ebaf3a087d5e9ed0.jpg@webp",
                   "season": "2018年夏",
                   "url": "https://annict.com/works/4997"
+                },
+                {
+                  "id": "4142",
+                  "title": "異能バトルは日常系のなかで",
+                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
+                  "season": "2016年夏",
+                  "url": "https://annict.com/works/4142"
                 },
                 {
                   "id": "515",
@@ -55810,7 +55754,7 @@
               "name": "A-1 Pictures",
               "short": "A-1 Pictures",
               "color": "#3b82f6",
-              "count": 14,
+              "count": 13,
               "animes": [
                 {
                   "id": "13720",
@@ -55818,13 +55762,6 @@
                   "image": "https://image.annict.com/7zwf3ZSY5tfW9rO0YanQxlPFX74CSpOM-2RMUeOCj1k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11787/image/master-f9a87ffb8657bf6f5ba09653d92b8b97.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/13720"
-                },
-                {
-                  "id": "9516",
-                  "title": "アイドルマスター シンデレラガールズ U149",
-                  "image": "https://image.annict.com/2ugTuvvLHFVogCHJCrB5dUKhDwIcqYwDovAwQX2MBgY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6423/image/master-569374297fdedfcda89817fc2c676098.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/9516"
                 },
                 {
                   "id": "9250",
@@ -56289,13 +56226,13 @@
         },
         "saya15": {
           "username": "saya15",
-          "studioTitle": "A-1 Pictures 最多 (39作品)",
+          "studioTitle": "A-1 Pictures 最多 (32作品)",
           "rankings": [
             {
               "name": "A-1 Pictures",
               "short": "A-1 Pictures",
               "color": "#3b82f6",
-              "count": 39,
+              "count": 32,
               "animes": [
                 {
                   "id": "16250",
@@ -56303,41 +56240,6 @@
                   "image": "https://image.annict.com/rqZAyi6WKvfcgtNBegzWT8rMu7V6wTYCVGKX8um7rZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12954/image/master-def3c9606281e89b8587c52037556e58.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/16250"
-                },
-                {
-                  "id": "11018",
-                  "title": "アイドルマスター シャイニーカラーズ 劇場先行上映 第3章",
-                  "image": "https://image.annict.com/bflYfx2lECII8x285YPL_akJbp94_CHshYXViEoUuTU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10416/image/master-5930afd94894314906a8b3e8602dd3f7.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/11018"
-                },
-                {
-                  "id": "7608",
-                  "title": "アイドルマスター ミリオンライブ！",
-                  "image": "https://image.annict.com/pvltKBTot6-XWJ_WV9OUwDM-2TflFar-tFsQpr04BPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6828/image/master-36ab99e2f3fa424a0d87532c733d4dba.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/7608"
-                },
-                {
-                  "id": "11016",
-                  "title": "アイドルマスター シャイニーカラーズ 劇場先行上映 第1章",
-                  "image": "https://image.annict.com/_-dBjSNuPdyUxKDH8XCDQyTihT6-dcGyCcuInjemJDk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7468/image/master-0e05e1493472586a967d7296d0f78962.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/11016"
-                },
-                {
-                  "id": "11017",
-                  "title": "アイドルマスター シャイニーカラーズ 劇場先行上映 第2章",
-                  "image": "https://image.annict.com/x7Ieev7WsWH229wqcwrpxRYjREmz2LTpml-JicHgw5E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10415/image/master-6bf355640d22cf26840a8bf6792ca728.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/11017"
-                },
-                {
-                  "id": "9516",
-                  "title": "アイドルマスター シンデレラガールズ U149",
-                  "image": "https://image.annict.com/2ugTuvvLHFVogCHJCrB5dUKhDwIcqYwDovAwQX2MBgY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6423/image/master-569374297fdedfcda89817fc2c676098.jpg@webp",
-                  "season": "2024年夏",
-                  "url": "https://annict.com/works/9516"
                 },
                 {
                   "id": "9717",
@@ -56417,13 +56319,6 @@
                   "url": "https://annict.com/works/6587"
                 },
                 {
-                  "id": "6649",
-                  "title": "七つの大罪 神々の逆鱗",
-                  "image": "https://image.annict.com/3Odlt-e4kt_gMnXiebgFUoDww2ygRGhfXor_dqiY3Ok/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3523/image/master-d45e631328ddbcbcc4e9d047da5fb61a.jpg@webp",
-                  "season": "2020年夏",
-                  "url": "https://annict.com/works/6649"
-                },
-                {
                   "id": "6081",
                   "title": "かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜",
                   "image": "https://image.annict.com/OvIVbLGjBJnrO6rntnZ0Mq5-QBn6_f0kmw4TCoCUW6o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2838/image/master-58e9eaa948edfa078b417df29e62ff80.jpg@webp",
@@ -56443,13 +56338,6 @@
                   "image": "https://image.annict.com/vtXqWATT3CFUc4oI2ixj0AzCYQJ2zdRs9Y0F-AfU1Xw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2318/image/master-4caaf90e27f3d175d1a6be330c158db1.jpg@webp",
                   "season": "2018年夏",
                   "url": "https://annict.com/works/5750"
-                },
-                {
-                  "id": "5553",
-                  "title": "ソードアート・オンライン オルタナティブ ガンゲイル・オンライン",
-                  "image": "https://image.annict.com/AUY_Ln4IamIdqZT3IgAOrzyN-U4sZJmlrcRPi_pWeec/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2178/image/master-277d243e2e24ad8ff9bbf06995b505b6.jpg@webp",
-                  "season": "2018年夏",
-                  "url": "https://annict.com/works/5553"
                 },
                 {
                   "id": "5458",
@@ -56914,7 +56802,7 @@
               "name": "京都アニメーション",
               "short": "京アニ",
               "color": "#38bdf8",
-              "count": 22,
+              "count": 20,
               "animes": [
                 {
                   "id": "6688",
@@ -56978,13 +56866,6 @@
                   "image": "https://image.annict.com/4VYQb1cdxefJkHn3YNwGUQg1Fx-Z2-EShQzgSMM4hYE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/582/image/master-04bf5dbe9690ef801ce24485bd532c28.jpg@webp",
                   "season": "2016年夏",
                   "url": "https://annict.com/works/4170"
-                },
-                {
-                  "id": "4142",
-                  "title": "異能バトルは日常系のなかで",
-                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
-                  "season": "2016年夏",
-                  "url": "https://annict.com/works/4142"
                 },
                 {
                   "id": "1277",
@@ -57062,13 +56943,6 @@
                   "image": "https://image.annict.com/E29OZQXxhxaALY4xDeSVMFHj2tKadKjuSz5TVL2L2rs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1470/image/master-6327142f22b513ce923ab02af901016e.jpg@webp",
                   "season": "2006年春",
                   "url": "https://annict.com/works/241"
-                },
-                {
-                  "id": "3339",
-                  "title": "新世紀エヴァンゲリオン 劇場版 THE END OF EVANGELION Air/まごころを、君に",
-                  "image": "https://image.annict.com/PbRovd31fQoIcNxPcTc3_2LoVbljA3-vW8rWBkUVwh8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/321/image/master-16ee0f094b6503c820bbf8c385f1ec51.jpg@webp",
-                  "season": "2002年春",
-                  "url": "https://annict.com/works/3339"
                 }
               ]
             },
@@ -57841,7 +57715,7 @@
               "name": "TRIGGER",
               "short": "TRIGGER",
               "color": "#f59e0b",
-              "count": 4,
+              "count": 5,
               "animes": [
                 {
                   "id": "9204",
@@ -57870,6 +57744,13 @@
                   "image": "https://image.annict.com/77SBRAC4yw6-60XmkZrnpInIz1KcU9LbdGah2p-9YQE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2024/image/master-01e65c87c9f816833be675444f44f210.jpg@webp",
                   "season": "2018年夏",
                   "url": "https://annict.com/works/5361"
+                },
+                {
+                  "id": "4142",
+                  "title": "異能バトルは日常系のなかで",
+                  "image": "https://image.annict.com/0uv9-Lp_y9I9zydclWGCU_nEbDJhSi1fX_phf3TOwjo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/597/image/master-e9e735a8d4dbaa37931f24519c9b020d.jpg@webp",
+                  "season": "2016年夏",
+                  "url": "https://annict.com/works/4142"
                 }
               ]
             }
