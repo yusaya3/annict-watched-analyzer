@@ -108,7 +108,7 @@ function renderTimeline(timelineReport, fullData) {
   });
 }
 
-// 3. 制作スタジオ偏愛度の描画
+// 3. 制作スタジオ別視聴傾向の描画（クリックで作品リスト展開機能付き）
 function renderStudios(studioReport) {
   const container = document.getElementById('labs-studio-cards');
   if (!container || !studioReport) return;
@@ -126,14 +126,46 @@ function renderStudios(studioReport) {
       rankListHtml = '<p class="text-muted" style="font-size:0.85rem;">該当する主要スタジオ作品がありません</p>';
     } else {
       rankings.slice(0, 5).forEach((st, idx) => {
+        const drawerId = `studio-drawer-${escapeHtml(userStat.username)}-${idx}`;
+        const animes = st.animes || [];
+
+        // 作品グリッド生成
+        const animesHtml = animes.map(a => {
+          const thumbHtml = a.image
+            ? `<img src="${escapeHtml(a.image)}" class="studio-anime-mini-thumb" alt="${escapeHtml(a.title)}" loading="lazy" onerror="this.outerHTML='<div class=\\'studio-anime-mini-thumb-empty\\'><i class=\\'fa-solid fa-film\\'></i></div>'" />`
+            : `<div class="studio-anime-mini-thumb-empty"><i class="fa-solid fa-film"></i></div>`;
+
+          return `
+            <a href="${escapeHtml(a.url || `https://annict.com/works/${a.id}`)}" target="_blank" rel="noopener noreferrer" class="studio-anime-mini-card" title="${escapeHtml(a.title)} (Annictで見る)">
+              ${thumbHtml}
+              <span class="studio-anime-mini-title">${escapeHtml(a.title)}</span>
+              ${a.season ? `<span class="studio-anime-mini-season"><i class="fa-regular fa-calendar"></i> ${escapeHtml(a.season)}</span>` : ''}
+            </a>
+          `;
+        }).join('');
+
         rankListHtml += `
-          <div class="studio-rank-item">
-            <div class="studio-rank-name">
-              <span style="font-size:0.8rem;color:var(--text-muted);font-weight:700;width:18px;">#${idx + 1}</span>
-              <span class="studio-color-dot" style="background-color: ${st.color};"></span>
-              <span>${escapeHtml(st.name)}</span>
+          <div class="studio-rank-group">
+            <div class="studio-rank-item" data-drawer="${drawerId}" title="クリックして作品一覧を表示 / 閉じる">
+              <div class="studio-rank-name">
+                <span style="font-size:0.8rem;color:var(--text-muted);font-weight:700;width:18px;">#${idx + 1}</span>
+                <span class="studio-color-dot" style="background-color: ${st.color};"></span>
+                <span>${escapeHtml(st.name)}</span>
+              </div>
+              <div class="studio-rank-right">
+                <span class="studio-rank-count">${st.count} 作品</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </div>
             </div>
-            <span class="studio-rank-count">${st.count} 作品</span>
+            <div id="${drawerId}" class="studio-animes-drawer">
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                <span><i class="fa-solid fa-layer-group"></i> 視聴作品 (${animes.length}件):</span>
+                <span style="font-size:0.72rem;">※クリックでAnnict作品ページへ</span>
+              </div>
+              <div class="studio-animes-grid">
+                ${animesHtml}
+              </div>
+            </div>
           </div>
         `;
       });
@@ -145,11 +177,27 @@ function renderStudios(studioReport) {
       </div>
       <div>
         <div class="studio-title-badge"><i class="fa-solid fa-award"></i> ${escapeHtml(userStat.studioTitle)}</div>
+        <small class="text-muted" style="display:block;font-size:0.75rem;margin-top:-0.2rem;margin-bottom:0.4rem;">
+          <i class="fa-solid fa-hand-pointer"></i> 各制作会社を押すと視聴作品一覧を確認できます
+        </small>
       </div>
       <div class="studio-rank-list">
         ${rankListHtml}
       </div>
     `;
+
+    // クリックイベントの登録（アコーディオン開閉）
+    card.querySelectorAll('.studio-rank-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const drawerId = item.getAttribute('data-drawer');
+        const drawer = document.getElementById(drawerId);
+        if (drawer) {
+          const isOpen = drawer.classList.contains('open');
+          drawer.classList.toggle('open', !isOpen);
+          item.classList.toggle('active', !isOpen);
+        }
+      });
+    });
 
     container.appendChild(card);
   });

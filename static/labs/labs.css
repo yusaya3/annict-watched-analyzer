@@ -220,9 +220,37 @@
   justify-content: space-between;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  padding: 0.6rem 0.8rem;
+  padding: 0.65rem 0.85rem;
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.studio-rank-item:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.studio-rank-item.active {
+  border-color: var(--accent-blue);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.studio-rank-item .chevron {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+  margin-left: 0.5rem;
+}
+
+.studio-rank-item.active .chevron {
+  transform: rotate(180deg);
+  color: var(--accent-blue);
 }
 
 .studio-rank-name {
@@ -239,9 +267,94 @@
   flex-shrink: 0;
 }
 
+.studio-rank-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .studio-rank-count {
   font-weight: 700;
   color: var(--accent-pink);
+}
+
+/* スタジオ作品一覧アコーディオンドロワー */
+.studio-animes-drawer {
+  display: none;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+  padding: 0.8rem;
+  margin-top: -1px;
+  margin-bottom: 0.4rem;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.studio-animes-drawer.open {
+  display: block;
+}
+
+.studio-animes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.6rem;
+}
+
+.studio-anime-mini-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  transition: border-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.studio-anime-mini-card:hover {
+  border-color: var(--accent-blue);
+  color: inherit;
+}
+
+.studio-anime-mini-thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--bg-primary);
+}
+
+.studio-anime-mini-thumb-empty {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 3px;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.studio-anime-mini-title {
+  font-weight: 600;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studio-anime-mini-season {
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 /* 4. ジャンル別比較セクション */
