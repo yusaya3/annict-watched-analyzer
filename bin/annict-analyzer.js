@@ -187,6 +187,17 @@ function createApp() {
   });
   app.use(express.static(staticDir));
 
+  // システムステータス＆Annict API接続状態確認API
+  app.get('/api/status', (req, res) => {
+    const client = new AnnictClient();
+    res.json({
+      status: 'ok',
+      hasToken: !!client.apiToken,
+      apiMode: client.apiToken ? 'GraphQL API (高速)' : 'Webスクレイピング (通常)',
+      timestamp: new Date().toISOString()
+    });
+  });
+
   // ユーザー設定の取得API
   app.get('/api/users', (req, res) => {
     res.json(loadUserList());

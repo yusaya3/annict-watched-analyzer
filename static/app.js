@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initTabs();
   initModals();
+  checkApiStatus();
   loadData();
 
   document.getElementById('btn-reload').addEventListener('click', () => {
     refreshAllUsers({ fromHeader: true });
+    checkApiStatus();
   });
 
   document.getElementById('detail-search').addEventListener('input', (e) => {
@@ -28,6 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
     handleGlobalSearch(e.target.value);
   });
 });
+
+// Annict API 接続状態の確認
+async function checkApiStatus() {
+  const statusEl = document.getElementById('api-status-text');
+  if (!statusEl) return;
+  try {
+    const res = await fetch('/api/status');
+    if (res.ok) {
+      const json = await res.json();
+      if (json.hasToken) {
+        statusEl.innerHTML = '<i class="fa-solid fa-bolt" style="color:var(--accent-gold);"></i> <span>公式API: 接続中</span>';
+        if (statusEl.parentElement) {
+          statusEl.parentElement.title = 'Annict 公式 GraphQL API で高速取得しています';
+        }
+      } else {
+        statusEl.innerHTML = '<i class="fa-solid fa-globe" style="color:var(--text-muted);"></i> <span>スクレイピング</span>';
+        if (statusEl.parentElement) {
+          statusEl.parentElement.title = 'Webスクレイピング方式で取得しています (ANNICT_TOKEN未設定)';
+        }
+      }
+    }
+  } catch (e) {
+    statusEl.innerHTML = '<i class="fa-solid fa-circle-check" style="color:var(--accent-green);"></i> <span>稼働中</span>';
+  }
+}
 
 // テーマ切り替え (ダーク / ライト)
 function initThemeToggle() {
