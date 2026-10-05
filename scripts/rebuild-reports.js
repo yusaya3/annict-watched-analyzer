@@ -3,12 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 const Analyzer = require('../lib/analyzer.js');
-const { ImageClient } = require('../lib/image-client.js');
 const ExperimentalAnalyzer = require('../lib/labs/experimental-analyzer.js');
 const { GenreClient, classifyAnime } = require('../lib/labs/genre-client.js');
 
 async function main() {
-  console.log('=== 全レポート（analysis.json & venns.json）の再ビルド開始 ===');
+  console.log('=== Annict純正画像仕様で全レポート（analysis.json & venns.json）の再ビルド開始 ===');
   const cacheDir = path.resolve(__dirname, '../data/cache');
   const resDir = path.resolve(__dirname, '../static/res');
 
@@ -27,10 +26,7 @@ async function main() {
   const users = Object.keys(userWatchedLists);
   console.log(`対象ユーザー (${users.length}名):`, users.join(', '));
 
-  const imageClient = new ImageClient();
-  console.log(`画像キャッシュ件数: ${Object.keys(imageClient.cache).length}`);
-
-  const analyzer = new Analyzer(userWatchedLists, imageClient.cache);
+  const analyzer = new Analyzer(userWatchedLists);
   const report = analyzer.buildFullReport();
 
   // Labs レポート
@@ -66,7 +62,7 @@ async function main() {
   fs.writeFileSync(vennFile, JSON.stringify({ users: users.slice(0, 3), vennSets }, null, 2), 'utf8');
   console.log(`venns.json を更新しました`);
 
-  console.log('=== 再ビルド完了 ===');
+  console.log('=== 再ビルド完了（Annict純正仕様） ===');
 }
 
 main().catch(console.error);

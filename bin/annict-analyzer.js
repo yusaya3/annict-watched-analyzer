@@ -63,25 +63,8 @@ async function runAnalysis(userList, forceRefresh = false) {
     watchedLists[username] = animes;
   }
 
-  // 高画質画像（AniList coverImage）の解決
-  let imageCache = {};
-  try {
-    const { ImageClient } = require('../lib/image-client.js');
-    const imageClient = new ImageClient();
-    const allTitles = [];
-    for (const animes of Object.values(watchedLists)) {
-      for (const a of animes) if (a.title) allTitles.push(a.title);
-    }
-    const elapsedMs = Date.now() - analysisStartTime;
-    const timeBudgetMs = isVercel ? Math.max(3000, 30000 - elapsedMs) : 180000;
-    await imageClient.resolveImages(allTitles, timeBudgetMs);
-    imageCache = imageClient.cache;
-  } catch (imgErr) {
-    console.warn('[ImageClient] 画像取得スキップ:', imgErr.message);
-  }
-
   console.log('\n--- 集合演算・シンクロ率・インサイトの分析中 ---');
-  const analyzer = new Analyzer(watchedLists, imageCache);
+  const analyzer = new Analyzer(watchedLists);
   const report = analyzer.buildFullReport();
 
   // お試し機能 (Labs) が存在する場合は分析を追加（完全分離設計）
@@ -287,12 +270,7 @@ function createApp() {
     });
 
     const Analyzer = require('../lib/analyzer.js');
-    let imageCache = {};
-    try {
-      const { ImageClient } = require('../lib/image-client.js');
-      imageCache = new ImageClient().cache;
-    } catch (e) {}
-    const analyzer = new Analyzer(subWatched, imageCache);
+    const analyzer = new Analyzer(subWatched);
     const report = analyzer.buildFullReport();
 
     try {
@@ -385,6 +363,56 @@ function createApp() {
     const setA = new Set(listA.map(u => String(u).toLowerCase()));
     return listB.every(u => setA.has(String(u).toLowerCase()));
   }
+
+  // Annict公式高解像度OGP画像（s:640:853）オンデマンド取得・キャッシュAPI
+  const hiresCacheFile = isVercel
+    ? '/tmp/annict_hires_cache.json'
+    : path.resolve(__dirname, '../data/cache/annict_hires_cache.json');
+  let hiresCache = {};
+  try {
+    if (fs.existsSync(hiresCacheFile)) {
+      hiresCache = JSON.parse(fs.readFileSync(hiresCacheFile, 'utf8'));
+    }
+  } catch (e) {}
+
+  app.get('/api/annict-image/:workId', async (req, res) => {
+    const workId = req.params.workId;
+    if (!workId || !/^\d+$/.test(workId)) {
+      return res.status(400).json({ error: '無効な作品IDです' });
+    }
+
+    if (hiresCache[workId]) {
+      return res.json({ workId, url: hiresCache[workId] });
+    }
+
+    try {
+      const cheerio = require('cheerio');
+      const fetchRes = await fetch(`https://annict.com/works/${workId}`, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+      });
+      if (!fetchRes.ok) {
+        return res.json({ workId, url: '' });
+      }
+      const html = await fetchRes.text();
+      const $ = cheerio.load(html);
+      let ogImage = $('meta[property="og:image"]').attr('content') || $('meta[name="twitter:image"]').attr('content') || '';
+      if (ogImage && (ogImage.includes('color-white-') || ogImage.includes('no-image'))) {
+        ogImage = '';
+      }
+
+      if (ogImage) {
+        hiresCache[workId] = ogImage;
+        try {
+          fs.writeFileSync(hiresCacheFile, JSON.stringify(hiresCache, null, 2), 'utf8');
+        } catch (e) {}
+      }
+
+      res.json({ workId, url: ogImage });
+    } catch (err) {
+      console.warn(`[AnnictImage] 作品ID ${workId} の高画質画像取得エラー:`, err.message);
+      res.json({ workId, url: '' });
+    }
+  });
 
   // 分析結果の取得API（Vercel環境用 + ローカル共通）
   app.get('/api/analysis', async (req, res) => {

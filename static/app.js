@@ -1153,7 +1153,7 @@ function renderAnimeGrid(container, animes) {
       const imgEl = a.querySelector('.grid-card-thumb');
       imgEl.addEventListener('click', (e) => {
         e.preventDefault();
-        openImageModal(anime.title, anime.image);
+        openImageModal(anime.title, anime.image, anime.id);
       });
     }
 
@@ -1161,8 +1161,8 @@ function renderAnimeGrid(container, animes) {
   });
 }
 
-// 画像プレビューモーダル
-function openImageModal(title, imageUrl) {
+// 画像プレビューモーダル（Annict公式高解像度 OGP画像 プログレッシブローダー対応）
+function openImageModal(title, imageUrl, workId = null) {
   const modal = document.getElementById('image-modal');
   const titleEl = document.getElementById('image-modal-title');
   const imgEl = document.getElementById('image-modal-img');
@@ -1171,6 +1171,23 @@ function openImageModal(title, imageUrl) {
   imgEl.src = imageUrl;
   imgEl.alt = title;
   modal.style.display = 'flex';
+
+  // Annict公式の超高画質OGP画像 (s:640:853) を非同期取得してスムーズにアップグレード
+  const targetId = workId || (imageUrl ? (imageUrl.match(/\/workimage\/(\d+)\//) || [])[1] : null);
+  if (targetId) {
+    fetch(`/api/annict-image/${targetId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.url && modal.style.display === 'flex' && titleEl.textContent === title) {
+          const highResImg = new Image();
+          highResImg.onload = () => {
+            imgEl.src = data.url;
+          };
+          highResImg.src = data.url;
+        }
+      })
+      .catch(() => {});
+  }
 }
 
 // 作品逆引き検索
@@ -1235,7 +1252,7 @@ function handleGlobalSearch(keyword) {
       const imgEl = a.querySelector('.grid-card-thumb');
       imgEl.addEventListener('click', (e) => {
         e.preventDefault();
-        openImageModal(anime.title, anime.image);
+        openImageModal(anime.title, anime.image, anime.id);
       });
     }
 
@@ -1580,7 +1597,7 @@ function renderGroupWorksList() {
     const safeTitle = escapeHtml(work.title);
 
     const thumbHtml = work.image
-      ? `<img src="${work.image}" alt="${safeTitle}" data-title="${safeTitle}" class="grid-card-thumb" loading="lazy" decoding="async" />`
+      ? `<img src="${work.image}" alt="${safeTitle}" data-title="${safeTitle}" data-work-id="${work.id}" class="grid-card-thumb" loading="lazy" decoding="async" />`
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     if (isUnion) {
@@ -1636,7 +1653,8 @@ function renderGroupWorksList() {
       e.stopPropagation();
       const title = thumb.getAttribute('data-title') || thumb.alt;
       const src = thumb.src;
-      openImageModal(title, src);
+      const workId = thumb.getAttribute('data-work-id');
+      openImageModal(title, src, workId);
     }
   };
 }
