@@ -1568,72 +1568,78 @@ function renderGroupWorksList() {
     resultsMetaText.textContent = `表示中: ${filtered.length.toLocaleString()} 件 / 全 ${targetItems.length.toLocaleString()} 件`;
   }
 
-  // 7. カードグリッドの描画
-  gridContainer.innerHTML = '';
+  // 7. カードグリッドの描画（全件一括高速レンダリング）
   if (filtered.length === 0) {
     gridContainer.innerHTML = '<div style="padding:2.5rem 1rem;color:var(--text-muted);grid-column:1/-1;text-align:center;"><i class="fa-solid fa-film" style="font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i>条件に一致する作品はありません</div>';
     return;
   }
 
-  // 大量描画によるフリーズ防止（最大400件まで描画）
-  const displayItems = filtered.slice(0, 400);
-
-  displayItems.forEach(item => {
+  // 和集合・未視聴ともに制限なく全作品を描画
+  const cardsHtml = filtered.map(item => {
     const work = item.work;
-    const a = document.createElement('a');
-    a.className = 'anime-grid-card';
-    a.href = work.url || `https://annict.com/works/${work.id}`;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
+    const url = work.url || `https://annict.com/works/${work.id}`;
+    const safeTitle = escapeHtml(work.title);
 
     const thumbHtml = work.image
-      ? `<img src="${work.image}" alt="${escapeHtml(work.title)}" class="grid-card-thumb" loading="lazy" />`
+      ? `<img src="${work.image}" alt="${safeTitle}" data-title="${safeTitle}" class="grid-card-thumb" loading="lazy" />`
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     if (isUnion) {
       // 和集合: 視聴者バッジと視聴者数タグ
       const watchers = item.watchers || [];
       const userBadgesHtml = watchers.map(u => `<span class="watched-user-badge">@${escapeHtml(u)}</span>`).join('');
+      const seasonHtml = work.season
+        ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>`
+        : `<span style="visibility:hidden;pointer-events:none;"><i class="fa-regular fa-calendar"></i> 年代未設定</span>`;
 
-      a.innerHTML = `
-        ${thumbHtml}
-        <div class="grid-card-body">
-          <div class="grid-card-title" title="${escapeHtml(work.title)}">${escapeHtml(work.title)}</div>
-          <div class="grid-card-meta">
-            ${work.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>` : '<span></span>'}
-            <span class="watched-count-tag"><i class="fa-solid fa-users"></i> ${watchers.length}人視聴</span>
+      return `
+        <a class="anime-grid-card" href="${url}" target="_blank" rel="noopener noreferrer">
+          ${thumbHtml}
+          <div class="grid-card-body">
+            <div class="grid-card-title" title="${safeTitle}">${safeTitle}</div>
+            <div class="grid-card-meta">
+              ${seasonHtml}
+              <span class="watched-count-tag"><i class="fa-solid fa-users"></i> ${watchers.length}人視聴</span>
+            </div>
+            <div class="watched-users-badge-list">
+              ${userBadgesHtml}
+            </div>
           </div>
-          <div class="watched-users-badge-list">
-            ${userBadgesHtml}
-          </div>
-        </div>
+        </a>
       `;
     } else {
       // 未視聴作品: シンプルに作品情報のみ（タイトル・画像・シーズン）
-      a.innerHTML = `
-        ${thumbHtml}
-        <div class="grid-card-body">
-          <div class="grid-card-title" title="${escapeHtml(work.title)}">${escapeHtml(work.title)}</div>
-          <div class="grid-card-meta">
-            ${work.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>` : '<span class="text-muted small">シーズン未設定</span>'}
+      const seasonHtml = work.season
+        ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>`
+        : `<span class="text-muted small">シーズン未設定</span>`;
+
+      return `
+        <a class="anime-grid-card" href="${url}" target="_blank" rel="noopener noreferrer">
+          ${thumbHtml}
+          <div class="grid-card-body">
+            <div class="grid-card-title" title="${safeTitle}">${safeTitle}</div>
+            <div class="grid-card-meta">
+              ${seasonHtml}
+            </div>
           </div>
-        </div>
+        </a>
       `;
     }
+  }).join('');
 
-    // サムネイルクリックでプレビューモーダル
-    if (work.image) {
-      const imgEl = a.querySelector('.grid-card-thumb');
-      if (imgEl) {
-        imgEl.addEventListener('click', (e) => {
-          e.preventDefault();
-          openImageModal(work.title, work.image);
-        });
-      }
+  gridContainer.innerHTML = cardsHtml;
+
+  // 親コンテナへのイベント委譲で画像プレビューモーダルを開く（高速・省メモリ）
+  gridContainer.onclick = (e) => {
+    const thumb = e.target.closest('.grid-card-thumb');
+    if (thumb) {
+      e.preventDefault();
+      e.stopPropagation();
+      const title = thumb.getAttribute('data-title') || thumb.alt;
+      const src = thumb.src;
+      openImageModal(title, src);
     }
-
-    gridContainer.appendChild(a);
-  });
+  };
 }
 
 // 年代判定ヘルパー
