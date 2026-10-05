@@ -6,7 +6,14 @@ const state = {
   selectedVennUsers: [],
   currentPanelAnimes: [],
   activeExclusiveUser: null,
-  activeMissingUser: null
+  activeMissingUser: null,
+  // グループ分析用
+  groupSelectedUsers: [],
+  groupActiveSubtab: 'union', // 'union' または 'unwatched'
+  groupSearchQuery: '',
+  groupEraFilter: 'all',
+  groupSort: 'watchers',
+  popularWorks: []
 };
 
 // 初期化
@@ -29,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('global-search-input').addEventListener('input', (e) => {
     handleGlobalSearch(e.target.value);
   });
+
+  initGroupAnalysis();
+  loadPopularWorks();
 });
 
 // Annict API 接続状態の確認
@@ -113,6 +123,8 @@ function initTabs() {
         targetPane.classList.add('active');
         if (targetId === 'tab-venn') {
           renderVenn();
+        } else if (targetId === 'tab-group') {
+          renderGroupAnalysis();
         } else if (targetId === 'tab-labs') {
           if (window.renderLabsTab && state.data) {
             window.renderLabsTab(state.data.labs, state.data);
@@ -758,6 +770,7 @@ function renderAllComponents() {
   renderVenn();
   renderSimilarity();
   renderInsights();
+  renderGroupAnalysis();
   handleGlobalSearch(document.getElementById('global-search-input').value);
 
   // お試し機能 (Labs) の描画（存在する場合のみ安全に実行）
@@ -1232,3 +1245,420 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+
+// ==========================================================================
+// グループ分析（和集合 & 誰も見ていない人気作品300選）機能
+// ==========================================================================
+
+async function loadPopularWorks() {
+  if (state.popularWorks && state.popularWorks.length > 0) return;
+  try {
+    let res = await fetch(`./res/popular_works.json?t=${Date.now()}`);
+    if (!res.ok) {
+      res = await fetch(`/res/popular_works.json`);
+    }
+    if (res.ok) {
+      const json = await res.json();
+      state.popularWorks = json.works || [];
+      console.log(`[Group] Annict人気作品リストを読み込みました (${state.popularWorks.length}作品)`);
+      if (state.data) {
+        renderGroupWorksList();
+      }
+    }
+  } catch (e) {
+    console.warn('[Group] popular_works.json の取得エラー:', e.message);
+  }
+}
+
+function initGroupAnalysis() {
+  // 1. サブタブ切り替え
+  const subtabBtns = document.querySelectorAll('.group-subtab-btn');
+  subtabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      subtabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.groupActiveSubtab = btn.dataset.subtab;
+
+      const descEl = document.getElementById('group-subtab-desc');
+      const sortSelect = document.getElementById('group-sort-select');
+      if (state.groupActiveSubtab === 'union') {
+        descEl.textContent = '選択したユーザーのうち「誰か1人以上が見ている作品」の全一覧です。';
+        if (sortSelect) {
+          sortSelect.innerHTML = `
+            <option value="watchers">視聴人数が多い順</option>
+            <option value="season-desc">公開年が新しい順</option>
+            <option value="season-asc">公開年が古い順</option>
+            <option value="title">タイトル順</option>
+          `;
+          sortSelect.value = state.groupSort = 'watchers';
+        }
+      } else {
+        descEl.textContent = 'Annictの人気ランキング順をもとに、選択したユーザーが「誰も見ていない」人気作品TOP300です。';
+        if (sortSelect) {
+          sortSelect.innerHTML = `
+            <option value="watchers">Annict人気ランキング順</option>
+            <option value="season-desc">公開年が新しい順</option>
+            <option value="season-asc">公開年が古い順</option>
+            <option value="title">タイトル順</option>
+          `;
+          sortSelect.value = state.groupSort = 'watchers';
+        }
+      }
+
+      renderGroupWorksList();
+    });
+  });
+
+  // 2. 全選択 / 全解除
+  const btnSelectAll = document.getElementById('btn-group-select-all');
+  const btnDeselectAll = document.getElementById('btn-group-deselect-all');
+  if (btnSelectAll) {
+    btnSelectAll.addEventListener('click', () => {
+      if (!state.data || !state.data.users) return;
+      state.groupSelectedUsers = [...state.data.users];
+      renderGroupUserCheckboxes();
+      renderGroupWorksList();
+    });
+  }
+  if (btnDeselectAll) {
+    btnDeselectAll.addEventListener('click', () => {
+      state.groupSelectedUsers = [];
+      renderGroupUserCheckboxes();
+      renderGroupWorksList();
+    });
+  }
+
+  // 3. タイトル検索入力
+  const searchInput = document.getElementById('group-search-input');
+  const clearBtn = document.getElementById('btn-group-clear-search');
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+      state.groupSearchQuery = e.target.value.trim().toLowerCase();
+      if (clearBtn) {
+        clearBtn.style.display = state.groupSearchQuery ? 'block' : 'none';
+      }
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        renderGroupWorksList();
+      }, 120);
+    });
+  }
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        state.groupSearchQuery = '';
+        clearBtn.style.display = 'none';
+        renderGroupWorksList();
+        searchInput.focus();
+      }
+    });
+  }
+
+  // 4. 年代フィルター
+  const eraFilterContainer = document.getElementById('group-era-filters');
+  if (eraFilterContainer) {
+    eraFilterContainer.addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip-btn');
+      if (!chip) return;
+      eraFilterContainer.querySelectorAll('.chip-btn').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.groupEraFilter = chip.dataset.era || 'all';
+      renderGroupWorksList();
+    });
+  }
+
+  // 5. 並び替えソート
+  const sortSelect = document.getElementById('group-sort-select');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', (e) => {
+      state.groupSort = e.target.value;
+      renderGroupWorksList();
+    });
+  }
+}
+
+// グループ分析タブ全体の描画更新
+function renderGroupAnalysis() {
+  if (!state.data || !Array.isArray(state.data.users)) return;
+
+  // 初期化: 初回のみ全ユーザーを選択状態にする
+  if (!state.groupSelectedUsers || state.groupSelectedUsers.length === 0) {
+    state.groupSelectedUsers = [...state.data.users];
+  } else {
+    // 削除されたユーザーを安全に除外
+    state.groupSelectedUsers = state.groupSelectedUsers.filter(u => state.data.users.includes(u));
+  }
+
+  renderGroupUserCheckboxes();
+  renderGroupWorksList();
+}
+
+// ユーザー選択チェックボックスの描画
+function renderGroupUserCheckboxes() {
+  const container = document.getElementById('group-user-checkboxes');
+  const summaryEl = document.getElementById('group-selected-summary');
+  if (!container || !state.data) return;
+
+  const allUsers = state.data.users || [];
+  const selectedSet = new Set(state.groupSelectedUsers);
+
+  if (summaryEl) {
+    summaryEl.textContent = `(全${allUsers.length}人中 ${selectedSet.size}人選択中)`;
+  }
+
+  container.innerHTML = '';
+  allUsers.forEach(username => {
+    const isChecked = selectedSet.has(username);
+    const count = state.data.userWatchedLists?.[username]?.length || 0;
+
+    const label = document.createElement('label');
+    label.className = `chip-checkbox ${isChecked ? 'checked' : ''}`;
+    label.title = `@${username} (${count}作品)`;
+
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.checked = isChecked;
+    input.value = username;
+
+    input.addEventListener('change', () => {
+      if (input.checked) {
+        if (!state.groupSelectedUsers.includes(username)) {
+          state.groupSelectedUsers.push(username);
+        }
+      } else {
+        state.groupSelectedUsers = state.groupSelectedUsers.filter(u => u !== username);
+      }
+      renderGroupUserCheckboxes();
+      renderGroupWorksList();
+    });
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(`@${username} (${count})`));
+    container.appendChild(label);
+  });
+}
+
+// 作品リストの計算・抽出・描画
+function renderGroupWorksList() {
+  const gridContainer = document.getElementById('group-works-grid');
+  const unionBadge = document.getElementById('badge-group-union-count');
+  const unwatchedBadge = document.getElementById('badge-group-unwatched-count');
+  const resultsMetaText = document.getElementById('group-results-count-text');
+  if (!gridContainer || !state.data) return;
+
+  const selectedUsers = state.groupSelectedUsers || [];
+  const userWatchedLists = state.data.userWatchedLists || {};
+
+  // 1. 和集合（誰か1人以上が見ている作品）の集計
+  // Map<workId, { work, watchers: string[] }>
+  const unionMap = new Map();
+  selectedUsers.forEach(u => {
+    const animes = userWatchedLists[u] || [];
+    animes.forEach(a => {
+      const id = String(a.id);
+      if (!unionMap.has(id)) {
+        unionMap.set(id, {
+          work: a,
+          watchers: [u]
+        });
+      } else {
+        const item = unionMap.get(id);
+        if (!item.watchers.includes(u)) {
+          item.watchers.push(u);
+        }
+      }
+    });
+  });
+
+  const unionTotalCount = unionMap.size;
+  if (unionBadge) unionBadge.textContent = `${unionTotalCount.toLocaleString()} 作品`;
+
+  // 2. 誰も見ていない人気作品（300選）の抽出
+  // 選択されたユーザー全員の全視聴作品ID Set
+  const unionWatchedIdSet = new Set(unionMap.keys());
+  const unwatched300List = [];
+  const popularList = state.popularWorks || [];
+
+  if (popularList.length > 0) {
+    for (let i = 0; i < popularList.length; i++) {
+      const pw = popularList[i];
+      const id = String(pw.id);
+      if (!unionWatchedIdSet.has(id)) {
+        unwatched300List.push({
+          work: pw,
+          popularRank: i + 1
+        });
+        if (unwatched300List.length >= 300) {
+          break;
+        }
+      }
+    }
+  }
+
+  const unwatchedTotalCount = unwatched300List.length;
+  if (unwatchedBadge) unwatchedBadge.textContent = `${unwatchedTotalCount.toLocaleString()} 作品`;
+
+  // 3. 現在アクティブなサブタブに応じて表示対象を決定
+  const isUnion = state.groupActiveSubtab === 'union';
+  let targetItems = [];
+
+  if (selectedUsers.length === 0) {
+    gridContainer.innerHTML = '<div style="padding:2.5rem 1rem;color:var(--text-muted);grid-column:1/-1;text-align:center;"><i class="fa-solid fa-user-xmark" style="font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i>対象ユーザーを1人以上選択してください</div>';
+    if (resultsMetaText) resultsMetaText.textContent = '表示中: 0 件';
+    return;
+  }
+
+  if (isUnion) {
+    targetItems = Array.from(unionMap.values());
+  } else {
+    targetItems = unwatched300List;
+  }
+
+  // 4. 絞り込み（検索キーワード & 年代フィルター）
+  const query = state.groupSearchQuery;
+  const era = state.groupEraFilter;
+
+  let filtered = targetItems.filter(item => {
+    const work = item.work;
+    // タイトル検索
+    if (query && !work.title.toLowerCase().includes(query)) {
+      return false;
+    }
+    // 年代フィルター
+    if (era && era !== 'all') {
+      if (!matchWorkEra(work.season, era)) {
+        return false;
+      }
+    }
+    return true;
+  });
+
+  // 5. 並び替え（ソート）
+  const sortMode = state.groupSort;
+  filtered.sort((a, b) => {
+    if (isUnion) {
+      if (sortMode === 'watchers') {
+        const diff = b.watchers.length - a.watchers.length;
+        if (diff !== 0) return diff;
+      }
+    } else {
+      // 未視聴作品の初期ソートはAnnict人気順
+      if (sortMode === 'watchers') {
+        return a.popularRank - b.popularRank;
+      }
+    }
+
+    if (sortMode === 'season-desc') {
+      return compareSeason(b.work.season, a.work.season);
+    } else if (sortMode === 'season-asc') {
+      return compareSeason(a.work.season, b.work.season);
+    } else if (sortMode === 'title') {
+      return a.work.title.localeCompare(b.work.title, 'ja');
+    }
+    return 0;
+  });
+
+  // 6. メタ情報テキストの更新
+  if (resultsMetaText) {
+    resultsMetaText.textContent = `表示中: ${filtered.length.toLocaleString()} 件 / 全 ${targetItems.length.toLocaleString()} 件`;
+  }
+
+  // 7. カードグリッドの描画
+  gridContainer.innerHTML = '';
+  if (filtered.length === 0) {
+    gridContainer.innerHTML = '<div style="padding:2.5rem 1rem;color:var(--text-muted);grid-column:1/-1;text-align:center;"><i class="fa-solid fa-film" style="font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i>条件に一致する作品はありません</div>';
+    return;
+  }
+
+  // 大量描画によるフリーズ防止（最大400件まで描画）
+  const displayItems = filtered.slice(0, 400);
+
+  displayItems.forEach(item => {
+    const work = item.work;
+    const a = document.createElement('a');
+    a.className = 'anime-grid-card';
+    a.href = work.url || `https://annict.com/works/${work.id}`;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+
+    const thumbHtml = work.image
+      ? `<img src="${work.image}" alt="${escapeHtml(work.title)}" class="grid-card-thumb" loading="lazy" />`
+      : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
+
+    if (isUnion) {
+      // 和集合: 視聴者バッジと視聴者数タグ
+      const watchers = item.watchers || [];
+      const userBadgesHtml = watchers.map(u => `<span class="watched-user-badge">@${escapeHtml(u)}</span>`).join('');
+
+      a.innerHTML = `
+        ${thumbHtml}
+        <div class="grid-card-body">
+          <div class="grid-card-title" title="${escapeHtml(work.title)}">${escapeHtml(work.title)}</div>
+          <div class="grid-card-meta">
+            ${work.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>` : '<span></span>'}
+            <span class="watched-count-tag"><i class="fa-solid fa-users"></i> ${watchers.length}人視聴</span>
+          </div>
+          <div class="watched-users-badge-list">
+            ${userBadgesHtml}
+          </div>
+        </div>
+      `;
+    } else {
+      // 未視聴作品: シンプルに作品情報のみ（タイトル・画像・シーズン）
+      a.innerHTML = `
+        ${thumbHtml}
+        <div class="grid-card-body">
+          <div class="grid-card-title" title="${escapeHtml(work.title)}">${escapeHtml(work.title)}</div>
+          <div class="grid-card-meta">
+            ${work.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>` : '<span class="text-muted small">シーズン未設定</span>'}
+          </div>
+        </div>
+      `;
+    }
+
+    // サムネイルクリックでプレビューモーダル
+    if (work.image) {
+      const imgEl = a.querySelector('.grid-card-thumb');
+      if (imgEl) {
+        imgEl.addEventListener('click', (e) => {
+          e.preventDefault();
+          openImageModal(work.title, work.image);
+        });
+      }
+    }
+
+    gridContainer.appendChild(a);
+  });
+}
+
+// 年代判定ヘルパー
+function matchWorkEra(seasonStr, era) {
+  if (!seasonStr) {
+    return era === 'classic'; // シーズン不明・古い作品はclassicに分類
+  }
+  const m = seasonStr.match(/(\d{4})年/);
+  if (!m) return era === 'classic';
+  const year = parseInt(m[1], 10);
+  if (era === '2020s') return year >= 2020 && year <= 2029;
+  if (era === '2010s') return year >= 2010 && year <= 2019;
+  if (era === '2000s') return year >= 2000 && year <= 2009;
+  if (era === 'classic') return year < 2000;
+  return true;
+}
+
+// シーズン文字列の比較ヘルパー (例: "2024年春" vs "2018年秋")
+function compareSeason(aStr, bStr) {
+  const getWeight = (s) => {
+    if (!s) return 0;
+    const m = s.match(/(\d{4})年?(冬|春|夏|秋)?/);
+    if (!m) return 0;
+    const year = parseInt(m[1], 10) || 0;
+    const sMap = { '冬': 1, '春': 2, '夏': 3, '秋': 4 };
+    const seasonWeight = sMap[m[2]] || 0;
+    return year * 10 + seasonWeight;
+  };
+  return getWeight(aStr) - getWeight(bStr);
+}
+

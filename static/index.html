@@ -64,6 +64,9 @@
       <button class="tab-btn" data-tab="tab-similarity">
         <i class="fa-solid fa-handshake"></i> シンクロ率マトリクス
       </button>
+      <button class="tab-btn" data-tab="tab-group">
+        <i class="fa-solid fa-users-viewfinder"></i> グループ分析
+      </button>
       <button class="tab-btn" data-tab="tab-insights">
         <i class="fa-solid fa-lightbulb"></i> トークのネタ・インサイト
       </button>
@@ -147,7 +150,92 @@
         </div>
       </section>
 
-      <!-- 3. インサイトタブ -->
+      <!-- 3. グループ分析タブ (和集合 & 未視聴人気作300選) -->
+      <section id="tab-group" class="tab-pane">
+        <!-- 上部コントロール: ユーザー選択バー -->
+        <div class="card group-control-card">
+          <div class="user-select-bar-header">
+            <div class="control-label-group">
+              <span class="control-label"><i class="fa-solid fa-users"></i> 対象ユーザーの選択:</span>
+              <span class="text-muted small" id="group-selected-summary">読込中...</span>
+            </div>
+            <div class="user-select-actions">
+              <button type="button" id="btn-group-select-all" class="btn btn-xs btn-outline">全選択</button>
+              <button type="button" id="btn-group-deselect-all" class="btn btn-xs btn-outline">全解除</button>
+            </div>
+          </div>
+          <div id="group-user-checkboxes" class="user-chips mt-2">
+            <!-- JSで全ユーザーのチェックボックス動的生成 -->
+          </div>
+        </div>
+
+        <!-- メインカード: サブタブ切り替え & フィルター & 一覧 -->
+        <div class="card mt-3">
+          <!-- サブナビゲーション（切り替えタブ） -->
+          <div class="group-subnav-bar">
+            <div class="group-subnav-tabs">
+              <button type="button" class="group-subtab-btn active" data-subtab="union">
+                <i class="fa-solid fa-circle-nodes"></i> 誰かが見ている作品（和集合）
+                <span id="badge-group-union-count" class="badge badge-subtab">0 作品</span>
+              </button>
+              <button type="button" class="group-subtab-btn" data-subtab="unwatched">
+                <i class="fa-solid fa-sparkles text-gold"></i> 誰も見ていない人気作品（300選）
+                <span id="badge-group-unwatched-count" class="badge badge-subtab">0 作品</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- サブタブ説明文 -->
+          <div class="group-subtab-header">
+            <p id="group-subtab-desc" class="card-desc">
+              選択したユーザーのうち「誰か1人以上が見ている作品」の全一覧です。
+            </p>
+          </div>
+
+          <!-- ツールバー（検索・年代フィルター・ソート） -->
+          <div class="group-toolbar">
+            <div class="search-bar-wrap flex-grow">
+              <i class="fa-solid fa-magnifying-glass search-icon-embed"></i>
+              <input type="text" id="group-search-input" placeholder="タイトルで絞り込み検索..." class="input-text group-search-input" />
+              <button type="button" id="btn-group-clear-search" class="btn-clear-input" style="display: none;" title="検索ワードをクリア">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <!-- 年代フィルターチップ -->
+            <div class="era-filter-group" id="group-era-filters">
+              <button type="button" class="chip-btn active" data-era="all">すべて</button>
+              <button type="button" class="chip-btn" data-era="2020s">2020年代</button>
+              <button type="button" class="chip-btn" data-era="2010s">2010年代</button>
+              <button type="button" class="chip-btn" data-era="2000s">2000年代</button>
+              <button type="button" class="chip-btn" data-era="classic">〜1990年代</button>
+            </div>
+
+            <!-- 並び替えソート（和集合時のみ有効、未視聴時はAnnict人気順） -->
+            <div class="group-sort-wrap" id="group-sort-container">
+              <label for="group-sort-select" class="small text-muted"><i class="fa-solid fa-arrow-down-short-wide"></i> 並び替え:</label>
+              <select id="group-sort-select" class="select-sort">
+                <option value="watchers">視聴人数が多い順</option>
+                <option value="season-desc">公開年が新しい順</option>
+                <option value="season-asc">公開年が古い順</option>
+                <option value="title">タイトル順</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 一覧表示件数ステータス -->
+          <div class="group-results-meta">
+            <span id="group-results-count-text" class="small text-muted">表示中: 0 件</span>
+          </div>
+
+          <!-- 作品グリッドコンテナ -->
+          <div id="group-works-grid" class="anime-cards-grid mt-2">
+            <!-- JSで動的描画 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. インサイトタブ -->
       <section id="tab-insights" class="tab-pane">
         <div class="insights-grid">
           <!-- 全員が見ているアニメ -->

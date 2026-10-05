@@ -203,6 +203,20 @@ function createApp() {
     res.json(loadUserList());
   });
 
+  // Annict人気作品リストの取得API
+  app.get('/api/popular_works', (req, res) => {
+    const tmpFile = path.join(RES_DIR, 'popular_works.json');
+    const bundledFile = path.join(BUNDLED_RES_DIR, 'popular_works.json');
+    const targetFile = fs.existsSync(tmpFile) ? tmpFile : (fs.existsSync(bundledFile) ? bundledFile : null);
+    if (targetFile) {
+      try {
+        const data = JSON.parse(fs.readFileSync(targetFile, 'utf8'));
+        return res.json(data);
+      } catch (e) {}
+    }
+    res.status(404).json({ error: 'Popular works not found' });
+  });
+
   // ユーザー追加＆取得＆再集計API
   app.post('/api/users', async (req, res) => {
     try {
