@@ -415,6 +415,9 @@ async function executeAddUser(username, onProgress) {
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
     state.selectedVennUsers.push(username);
   }
+  if (!state.groupSelectedUsers.includes(username)) {
+    state.groupSelectedUsers.push(username);
+  }
 
   renderAllComponents();
   renderModalUserList();
