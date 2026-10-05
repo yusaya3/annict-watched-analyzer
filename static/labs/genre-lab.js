@@ -79,6 +79,20 @@
         executeInspection(title);
       });
     });
+
+    // スコアリング結果の一括展開・一括折りたたみ
+    const btnExpandAll = document.getElementById('btn-lab-expand-all');
+    const btnCollapseAll = document.getElementById('btn-lab-collapse-all');
+    if (btnExpandAll) {
+      btnExpandAll.addEventListener('click', () => {
+        document.querySelectorAll('#lab-scored-breakdown-list .genre-accordion-card').forEach(c => c.classList.add('open'));
+      });
+    }
+    if (btnCollapseAll) {
+      btnCollapseAll.addEventListener('click', () => {
+        document.querySelectorAll('#lab-scored-breakdown-list .genre-accordion-card').forEach(c => c.classList.remove('open'));
+      });
+    }
   }
 
   // 2. 差分サマリーバナー描画
@@ -263,7 +277,7 @@
     const users = Object.keys(statsByUser);
     const colors = ['#f43f5e', '#38bdf8', '#a855f7', '#fbbf24', '#34d399', '#ec4899'];
 
-    // ユーザー別Top3
+    // ユーザー別Top3サマリーカード
     Object.values(statsByUser).forEach(uStat => {
       const card = document.createElement('div');
       card.className = 'genre-user-card';
@@ -303,13 +317,16 @@
     genres.forEach(g => {
       const card = document.createElement('div');
       card.className = 'genre-accordion-card';
+      card.id = `genre-card-scored-${g.id.replace(/[^a-zA-Z0-9]/g, '_')}`;
 
+      // 各ユーザーの最大値を計算（バーの相対長用）
       let maxCountInGenre = 1;
       users.forEach(u => {
         const c = g.userCounts?.[u] || 0;
         if (c > maxCountInGenre) maxCountInGenre = c;
       });
 
+      // ユーザー別視聴バーグラフ
       let barsHtml = '';
       users.forEach((u, uIdx) => {
         const count = g.userCounts?.[u] || 0;
@@ -328,111 +345,166 @@
         `;
       });
 
-      let userTabsHtml = '';
-      let userAnimesGridsHtml = '';
-      users.forEach((u, uIdx) => {
+      // 全ユーザーの重複を除去した「全員の作品（ユニーク）」を生成
+      const allUniqueMap = new Map();
+      users.forEach(u => {
         const animes = g.animesByUser?.[u] || [];
-        const isActive = uIdx === 0;
+        animes.forEach(a => {
+          const key = String(a.id || a.title);
+          if (!allUniqueMap.has(key)) {
+            allUniqueMap.set(key, {
+              ...a,
+              watchers: [u]
+            });
+          } else {
+            const existing = allUniqueMap.get(key);
+            if (!existing.watchers.includes(u)) {
+              existing.watchers.push(u);
+            }
+          }
+        });
+      });
 
+      // 視聴人数降順 ➜ シーズン降順 ➜ タイトル昇順
+      const allUniqueAnimes = Array.from(allUniqueMap.values()).sort((a, b) => {
+        if (b.watchers.length !== a.watchers.length) {
+          return b.watchers.length - a.watchers.length;
+        }
+        return (b.season || '').localeCompare(a.season || '') || a.title.localeCompare(b.title);
+      });
+
+      // タブ生成（先頭に「全員」、続いて各ユーザー）
+      let userTabsHtml = `
+        <button class="genre-tab-btn active" data-user="__all__">
+          <i class="fa-solid fa-users"></i> 全員 (${allUniqueAnimes.length}作)
+        </button>
+      `;
+
+      users.forEach(u => {
+        const animes = g.animesByUser?.[u] || [];
         userTabsHtml += `
-          <button class="genre-tab-btn ${isActive ? 'active' : ''}" data-scored-user="${escapeHtml(u)}">
+          <button class="genre-tab-btn" data-user="${escapeHtml(u)}">
             <i class="fa-solid fa-user"></i> @${escapeHtml(u)} (${animes.length}作)
           </button>
         `;
+      });
 
-        let cardsHtml = '';
-        if (animes.length === 0) {
-          cardsHtml = '<p class="text-muted" style="padding:1rem;">鑑賞作品がありません</p>';
-        } else {
-          cardsHtml = '<div class="anime-cards-grid">';
-          animes.forEach(a => {
-            const safeTitle = escapeHtml(a.title);
-            const thumb = a.image
-              ? `<img src="${a.image}" alt="${safeTitle}" class="grid-card-thumb" loading="lazy" decoding="async" />`
-              : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
-
-            cardsHtml += `
-              <div class="anime-grid-card">
-                ${thumb}
-                <div class="grid-card-body">
-                  <div class="grid-card-title" title="${safeTitle}">${safeTitle}</div>
-                  <div class="grid-card-meta">
-                    <span class="meta-season"><i class="fa-regular fa-calendar"></i> ${escapeHtml(a.season || '不明')}</span>
-                  </div>
-                </div>
-              </div>
-            `;
-          });
-          cardsHtml += '</div>';
+      // アニメカード生成ヘルパー
+      function buildAnimeCardsHtml(animes, isAll = false) {
+        if (!animes || animes.length === 0) {
+          return '<p class="text-muted" style="font-size:0.85rem;grid-column:1/-1;padding:1.5rem 0.5rem;text-align:center;">該当する作品はありません</p>';
         }
+        return animes.map(a => {
+          const safeTitle = escapeHtml(a.title);
+          const imgUrl = a.image || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" fill="%23334155"><rect width="60" height="80"/></svg>';
+          const watchersBadge = isAll && a.watchers && a.watchers.length > 0
+            ? `<span class="genre-anime-watchers" style="font-size:0.68rem;color:var(--accent-gold);margin-top:2px;display:flex;align-items:center;gap:3px;" title="視聴者: ${a.watchers.map(w => '@' + escapeHtml(w)).join(', ')}">
+                <i class="fa-solid fa-users"></i> ${a.watchers.length}人視聴
+               </span>`
+            : '';
 
+          return `
+            <a href="${escapeHtml(a.url || `https://annict.com/works/${a.id}`)}" target="_blank" rel="noopener noreferrer" class="genre-anime-card" data-anime-title="${safeTitle}" data-anime-image="${escapeHtml(a.image || '')}" data-anime-id="${escapeHtml(String(a.id || ''))}">
+              <img src="${escapeHtml(imgUrl)}" alt="${safeTitle}" class="genre-anime-thumb" loading="lazy" decoding="async" />
+              <div class="genre-anime-info">
+                <span class="genre-anime-title" title="${safeTitle}">${safeTitle}</span>
+                <span class="genre-anime-season">${escapeHtml(a.season || '')}</span>
+                ${watchersBadge}
+              </div>
+            </a>
+          `;
+        }).join('');
+      }
+
+      // グリッドHTMLの組み立て（全員用＋各ユーザー用）
+      let userAnimesGridsHtml = `
+        <div class="genre-animes-grid user-animes-__all__" style="display: grid;">
+          ${buildAnimeCardsHtml(allUniqueAnimes, true)}
+        </div>
+      `;
+
+      users.forEach(u => {
+        const animes = g.animesByUser?.[u] || [];
         userAnimesGridsHtml += `
-          <div class="genre-user-animes-content ${isActive ? 'active' : ''}" data-scored-content="${escapeHtml(u)}">
-            ${cardsHtml}
+          <div class="genre-animes-grid user-animes-${escapeHtml(u)}" style="display: none;">
+            ${buildAnimeCardsHtml(animes, false)}
           </div>
         `;
       });
 
+      const topUserBadge = g.topUser
+        ? `<span class="genre-top-user-pill badge" style="background:${g.color}22;color:${g.color};border:1px solid ${g.color}44;">最多: @${escapeHtml(g.topUser.username)} (${g.topUser.count}作)</span>`
+        : '';
+
       card.innerHTML = `
-        <div class="genre-card-header">
-          <div class="genre-header-left">
-            <span class="genre-icon-badge" style="background:${g.color}22;color:${g.color};">
-              <i class="${g.icon}"></i>
-            </span>
-            <div>
-              <div class="genre-header-title">
-                <span class="genre-main-label">${escapeHtml(g.label)}</span>
-                <span class="genre-en-label text-muted">(${escapeHtml(g.labelEn || '')})</span>
+        <div class="genre-accordion-header">
+          <div class="genre-header-top">
+            <div class="genre-title-wrap">
+              <div class="genre-icon-box" style="background:${g.color};">
+                <i class="${g.icon}"></i>
               </div>
-              <div class="genre-header-sub text-muted">
-                メンバー合計鑑賞数: <strong>${g.totalWorksAcrossUsers}</strong> 作
-                ${g.topUser ? ` / 最多: @${escapeHtml(g.topUser.username)} (${g.topUser.count}作)` : ''}
+              <div class="genre-names">
+                <span class="genre-name-ja">${escapeHtml(g.label)}</span>
+                <span class="genre-name-en">(${escapeHtml(g.labelEn || g.id)})</span>
               </div>
             </div>
+            <div class="genre-header-meta">
+              ${topUserBadge}
+              <span class="genre-total-pill text-muted">全員合計 ${allUniqueAnimes.length} 作品 (延べ ${g.totalWorksAcrossUsers} 作)</span>
+              <i class="fa-solid fa-chevron-down genre-toggle-icon"></i>
+            </div>
           </div>
-          <div class="genre-header-right">
-            <span class="text-muted" style="font-size:0.8rem;">作品リストを展開</span>
-            <i class="fa-solid fa-chevron-down genre-toggle-icon"></i>
+          <div class="genre-user-bars-row">
+            ${barsHtml}
           </div>
         </div>
-
-        <div class="genre-distribution-bars">
-          ${barsHtml}
-        </div>
-
-        <div class="genre-drawer">
-          <div class="genre-drawer-tabs">
+        <div class="genre-accordion-body">
+          <div class="genre-body-user-tabs">
             ${userTabsHtml}
           </div>
-          <div class="genre-drawer-body">
-            ${userAnimesGridsHtml}
-          </div>
+          ${userAnimesGridsHtml}
         </div>
       `;
 
-      // アコーディオン開閉
-      const header = card.querySelector('.genre-card-header');
-      const drawer = card.querySelector('.genre-drawer');
-      const icon = card.querySelector('.genre-toggle-icon');
+      // アコーディオン開閉イベント（ヘッダークリックでカードに .open をトグル）
+      const header = card.querySelector('.genre-accordion-header');
       header.addEventListener('click', () => {
-        const isOpen = drawer.classList.contains('open');
-        drawer.classList.toggle('open', !isOpen);
-        icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        card.classList.toggle('open');
       });
 
-      // ユーザー別タブ切り替え
-      const userTabs = card.querySelectorAll('.genre-tab-btn');
-      const userContents = card.querySelectorAll('.genre-user-animes-content');
-      userTabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
+      // ユーザータブ切替イベント
+      const tabBtns = card.querySelectorAll('.genre-tab-btn');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          const targetU = tab.getAttribute('data-scored-user');
-          userTabs.forEach(t => t.classList.remove('active'));
-          userContents.forEach(c => c.classList.remove('active'));
+          const targetUser = btn.getAttribute('data-user');
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
 
-          tab.classList.add('active');
-          const targetContent = card.querySelector(`.genre-user-animes-content[data-scored-content="${targetU}"]`);
-          if (targetContent) targetContent.classList.add('active');
+          const grids = card.querySelectorAll('.genre-animes-grid');
+          grids.forEach(grid => {
+            if (grid.classList.contains(`user-animes-${targetUser}`)) {
+              grid.style.display = 'grid';
+            } else {
+              grid.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // サムネイル画像クリックで高解像度画像モーダルを開く
+      card.querySelectorAll('.genre-anime-thumb').forEach(thumb => {
+        thumb.style.cursor = 'zoom-in';
+        thumb.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const animeCard = thumb.closest('.genre-anime-card');
+          if (animeCard && typeof window.openImageModal === 'function') {
+            const title = animeCard.getAttribute('data-anime-title') || '';
+            const image = animeCard.getAttribute('data-anime-image') || '';
+            const id = animeCard.getAttribute('data-anime-id') || '';
+            window.openImageModal(title, image, id);
+          }
         });
       });
 

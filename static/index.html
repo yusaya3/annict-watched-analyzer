@@ -430,6 +430,17 @@
             </div>
 
             <div class="genre-comparison-container mt-4">
+              <div class="genre-filter-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                <span class="text-muted" style="font-size: 0.85rem;"><i class="fa-solid fa-circle-info"></i> 各ジャンル枠をクリックすると作品リストが展開されます（「全員」タブで全体一覧、「@ユーザー」タブで個人別）</span>
+                <div class="genre-expand-actions" style="display: flex; gap: 0.5rem;">
+                  <button type="button" id="btn-lab-expand-all" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 0.3rem 0.7rem;">
+                    <i class="fa-solid fa-angles-down"></i> すべて展開
+                  </button>
+                  <button type="button" id="btn-lab-collapse-all" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 0.3rem 0.7rem;">
+                    <i class="fa-solid fa-angles-up"></i> すべて折りたたむ
+                  </button>
+                </div>
+              </div>
               <div id="lab-scored-breakdown-list" class="genre-breakdown-list">
                 <!-- JSで描画 -->
               </div>
