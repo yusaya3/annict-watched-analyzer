@@ -214,6 +214,65 @@ function loadUsersFromStorage() {
   return null;
 }
 
+// IndexedDB によるクライアント側大容量分析データ永続化（コールドスタート巻き戻り完全防止）
+const DB_NAME = 'AnnictAnalyzerDB';
+const DB_VERSION = 1;
+const STORE_NAME = 'reports';
+const REPORT_KEY = 'latest_report';
+
+function openIndexedDB() {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined' || !window.indexedDB) return resolve(null);
+    try {
+      const req = window.indexedDB.open(DB_NAME, DB_VERSION);
+      req.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          db.createObjectStore(STORE_NAME);
+        }
+      };
+      req.onsuccess = (e) => resolve(e.target.result);
+      req.onerror = () => resolve(null);
+    } catch (e) {
+      resolve(null);
+    }
+  });
+}
+
+async function saveReportToIndexedDB(report) {
+  if (!report || !report.generatedAt) return;
+  try {
+    const db = await openIndexedDB();
+    if (!db) return;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_NAME, 'readwrite');
+      const store = tx.objectStore(STORE_NAME);
+      store.put(report, REPORT_KEY);
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => resolve(false);
+    });
+  } catch (e) {
+    console.warn('IndexedDB save error:', e);
+  }
+}
+
+async function loadReportFromIndexedDB() {
+  try {
+    const db = await openIndexedDB();
+    if (!db) return null;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_NAME, 'readonly');
+      const store = tx.objectStore(STORE_NAME);
+      const req = store.get(REPORT_KEY);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => resolve(null);
+    });
+  } catch (e) {
+    console.warn('IndexedDB load error:', e);
+    return null;
+  }
+}
+
 // APIレスポンスの安全なJSONパース（Vercelタイムアウト時の非JSONエラー対策）
 async function parseApiResponse(res) {
   const text = await res.text();
@@ -340,6 +399,7 @@ async function executeAddUser(username, onProgress) {
   // 1回目の結果を画面とローカルに即時反映
   state.data = result.report;
   saveUsersToStorage(result.report.users);
+  await saveReportToIndexedDB(result.report);
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
     state.selectedVennUsers.push(username);
   }
@@ -363,6 +423,7 @@ async function executeAddUser(username, onProgress) {
 
     state.data = result.report;
     saveUsersToStorage(result.report.users);
+    await saveReportToIndexedDB(result.report);
     renderAllComponents();
     step++;
   }
@@ -384,6 +445,7 @@ async function executeDeleteUser(username) {
 
   state.data = result.report;
   saveUsersToStorage(result.report.users);
+  await saveReportToIndexedDB(result.report);
   renderAllComponents();
   renderModalUserList();
 }
@@ -457,6 +519,7 @@ async function refreshAllUsers(options = {}) {
 
       state.data = result.report;
       saveUsersToStorage(result.report.users);
+      await saveReportToIndexedDB(result.report);
       renderAllComponents();
       renderModalUserList();
 
@@ -475,6 +538,7 @@ async function refreshAllUsers(options = {}) {
         if (!res.ok) break;
         state.data = result.report;
         saveUsersToStorage(result.report.users);
+        await saveReportToIndexedDB(result.report);
         renderAllComponents();
         step++;
       }
@@ -597,10 +661,18 @@ function renderModalUserList() {
   });
 }
 
-// データ読み込み（ブラウザ再起動時も削除・追加状態を100%確実に復元）
+// データ読み込み（IndexedDBによるコールドスタート巻き戻り完全防御）
 async function loadData(force = false) {
   try {
     const savedUsers = loadUsersFromStorage();
+    const localReport = await loadReportFromIndexedDB();
+
+    // 1. ローカルに最新レポートがあれば即座に初期描画（超高速表示＆巻き戻り防止）
+    if (localReport && localReport.generatedAt && !force) {
+      state.data = localReport;
+      renderAllComponents();
+    }
+
     const usersParam = savedUsers ? `users=${encodeURIComponent(savedUsers.join(','))}&` : '';
 
     let res = await fetch(`/api/analysis?${usersParam}t=${Date.now()}`);
@@ -608,43 +680,63 @@ async function loadData(force = false) {
       res = await fetch(`./res/analysis.json?t=${Date.now()}`);
     }
     if (!res.ok) {
+      if (localReport) return;
       throw new Error(`HTTP error! status: ${res.status}`);
     }
-    const data = await res.json();
+    const serverData = await res.json();
+
+    // ★重要: コールドスタート巻き戻り検知と防御
+    // サーバーから返ってきたデータの更新日時がローカル保存のものより古い場合、
+    // サーバーが過去の固定ファイル（古いバンドル）を返していると判定し、ローカルの最新データを維持する！
+    if (localReport && localReport.generatedAt && serverData && serverData.generatedAt && !force) {
+      const localTime = new Date(localReport.generatedAt).getTime();
+      const serverTime = new Date(serverData.generatedAt).getTime();
+      if (localTime > serverTime) {
+        console.log('[Cache] サーバーデータが過去ビルドに戻っているため、ローカルの最新データを維持します');
+        state.data = localReport;
+        renderAllComponents();
+        return;
+      }
+    }
 
     // ★重要: クライアント側の二重防御
     // もしローカルストレージにユーザーリストが保存されており、サーバーからそれ以外の不要なユーザー（削除済みユーザー等）が返ってきた場合は
     // クライアント側でも即座にsavedUsersのみにトリミングして、絶対に元の状態に戻らないようにする！
-    if (savedUsers && savedUsers.length > 0 && Array.isArray(data.users)) {
+    if (savedUsers && savedUsers.length > 0 && Array.isArray(serverData.users)) {
       const lowerSaved = new Set(savedUsers.map(u => u.toLowerCase()));
-      const needsFilter = data.users.some(u => !lowerSaved.has(u.toLowerCase()));
+      const needsFilter = serverData.users.some(u => !lowerSaved.has(u.toLowerCase()));
       if (needsFilter) {
-        data.users = data.users.filter(u => lowerSaved.has(u.toLowerCase()));
-        if (data.userSummary) {
-          data.userSummary = data.userSummary.filter(s => lowerSaved.has(s.username.toLowerCase()));
+        serverData.users = serverData.users.filter(u => lowerSaved.has(u.toLowerCase()));
+        if (serverData.userSummary) {
+          serverData.userSummary = serverData.userSummary.filter(s => lowerSaved.has(s.username.toLowerCase()));
         }
       }
     }
 
-    state.data = data;
-    if (Array.isArray(data.users) && data.users.length > 0) {
-      saveUsersToStorage(data.users);
+    state.data = serverData;
+    await saveReportToIndexedDB(serverData);
+    if (Array.isArray(serverData.users) && serverData.users.length > 0) {
+      saveUsersToStorage(serverData.users);
     }
 
-    // ヘッダー情報
-    const date = new Date(data.generatedAt);
-    document.getElementById('meta-updated').textContent = `更新: ${date.toLocaleString('ja-JP')}`;
-
     // 初期のベン図対象ユーザー
-    state.selectedVennUsers = (data.users || []).slice(0, 3);
-    state.activeExclusiveUser = data.users[0] || null;
-    state.activeMissingUser = data.users[0] || null;
+    if (state.selectedVennUsers.length === 0) {
+      state.selectedVennUsers = (serverData.users || []).slice(0, 3);
+    }
+    if (!state.activeExclusiveUser) {
+      state.activeExclusiveUser = serverData.users?.[0] || null;
+    }
+    if (!state.activeMissingUser) {
+      state.activeMissingUser = serverData.users?.[0] || null;
+    }
 
     renderAllComponents();
 
   } catch (err) {
     console.error('データ読み込み失敗:', err);
-    document.getElementById('meta-updated').textContent = 'データ読込エラー (npm start を実行してください)';
+    if (!state.data) {
+      document.getElementById('meta-updated').textContent = 'データ読込エラー (npm start を実行してください)';
+    }
   }
 }
 

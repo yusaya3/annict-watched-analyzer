@@ -1,6 +1,6 @@
 {
   "username": "shimbaco",
-  "fetchedAt": "2026-09-29T07:12:52.070Z",
+  "fetchedAt": "2026-10-05T04:57:45.366Z",
   "count": 556,
   "animes": [
     {
@@ -2447,18 +2447,18 @@
       "url": "https://annict.com/works/2460"
     },
     {
-      "id": "1940",
-      "title": "Persona4 the ANIMATION",
-      "image": "https://image.annict.com/Kxu7o95AmaDq4CBZZkDH_yjhM1rJwT03HMSWkbHmrh8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/376/image/master-362ed9e171220c96ac0bb6b099fe8e9e.jpg@webp",
-      "season": "2012年春",
-      "url": "https://annict.com/works/1940"
-    },
-    {
       "id": "1953",
       "title": "ベン・トー",
       "image": "https://image.annict.com/d1m9IRL3xkrGFxm-Dbauk_7lS7uOVQFmuOXKsQvvMZc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/119/image/master-a18352fd72ba102b6ae0ae46d07e7d38.jpg@webp",
       "season": "2012年春",
       "url": "https://annict.com/works/1953"
+    },
+    {
+      "id": "1940",
+      "title": "Persona4 the ANIMATION",
+      "image": "https://image.annict.com/Kxu7o95AmaDq4CBZZkDH_yjhM1rJwT03HMSWkbHmrh8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/376/image/master-362ed9e171220c96ac0bb6b099fe8e9e.jpg@webp",
+      "season": "2012年春",
+      "url": "https://annict.com/works/1940"
     },
     {
       "id": "1651",

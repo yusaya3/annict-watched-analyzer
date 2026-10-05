@@ -1,7 +1,7 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-09-30T11:08:29.651Z",
-  "count": 797,
+  "fetchedAt": "2026-10-05T04:57:32.058Z",
+  "count": 798,
   "animes": [
     {
       "id": "13582",
@@ -32,18 +32,18 @@
       "url": "https://annict.com/works/16606"
     },
     {
-      "id": "16023",
-      "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
-      "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16023"
-    },
-    {
       "id": "10352",
       "title": "乙女ゲー世界はモブに厳しい世界です2",
       "image": "https://image.annict.com/AkHrcn_rNNvV-XPpFberoztB8Ileq2exk7wJzAZREOg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6950/image/master-cb56890d5db18c06bd9cd963129905ee.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/10352"
+    },
+    {
+      "id": "16023",
+      "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
+      "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16023"
     },
     {
       "id": "17353",
@@ -4573,6 +4573,13 @@
       "image": "https://image.annict.com/TvXDFErDgPdnFL6khlfibhz0aI-tKkfLaSWwIoe4KSo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1666/image/master-78204cab15572a201ba70ebb7dceee83.jpg@webp",
       "season": "2005年秋",
       "url": "https://annict.com/works/1321"
+    },
+    {
+      "id": "193",
+      "title": "うた∽かた",
+      "image": "https://image.annict.com/a2uwiS4mHihFrvm26aqUhYcDu8jLgo3ZF_IKYBuxY78/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1072/image/master-448712a6f3a07bb37f1dfe96da646d34.jpg@webp",
+      "season": "2005年秋",
+      "url": "https://annict.com/works/193"
     },
     {
       "id": "1931",

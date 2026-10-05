@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-09-30T11:08:33.505Z",
-  "count": 509,
+  "fetchedAt": "2026-10-05T04:57:37.994Z",
+  "count": 510,
   "animes": [
     {
       "id": "15881",
@@ -65,6 +65,13 @@
       "image": "https://image.annict.com/8uJO1dAmFNYYo_UEt58RNB_wBQYCcnOrC1fhDe_x8Ds/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13903/image/master-54cf20130831861aff9098944d8bcc38.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17190"
+    },
+    {
+      "id": "16299",
+      "title": "黄泉のツガイ",
+      "image": "https://image.annict.com/8Z4pzSNrd44PmQVvpJpQ4a-Qzdw87tiOnSpCRYqpxBo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12998/image/master-753e659e026ec112195cd01f46203f18.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16299"
     },
     {
       "id": "9521",
@@ -620,18 +627,18 @@
       "url": "https://annict.com/works/14965"
     },
     {
-      "id": "13744",
-      "title": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
-      "image": "https://image.annict.com/wHA6RLWHVhByJRNDkgb57VX4R9BBLV25DS-A9Fmgi74/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10550/image/master-dca2f40934eef842f2a535b726eae04d.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/13744"
-    },
-    {
       "id": "14001",
       "title": "薫る花は凛と咲く",
       "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/14001"
+    },
+    {
+      "id": "13744",
+      "title": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
+      "image": "https://image.annict.com/wHA6RLWHVhByJRNDkgb57VX4R9BBLV25DS-A9Fmgi74/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10550/image/master-dca2f40934eef842f2a535b726eae04d.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13744"
     },
     {
       "id": "14733",
@@ -1390,18 +1397,18 @@
       "url": "https://annict.com/works/11308"
     },
     {
-      "id": "11525",
-      "title": "菜なれ花なれ",
-      "image": "https://image.annict.com/BEOuiwFDzvD5covKINIF6f1SbVH8ASDitc5ukl0H_bw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7667/image/master-42dbb5216cc051b5cb420f4aea027983.jpg@webp",
-      "season": "2024年夏",
-      "url": "https://annict.com/works/11525"
-    },
-    {
       "id": "10687",
       "title": "疑似ハーレム",
       "image": "https://image.annict.com/jec30sN7TUqiz-Rwg7J8JDJ2vStvExr-BElmwmC4jlA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7206/image/master-0cbba83ecbf06a87870ee6b2a7384e7f.jpg@webp",
       "season": "2024年夏",
       "url": "https://annict.com/works/10687"
+    },
+    {
+      "id": "11525",
+      "title": "菜なれ花なれ",
+      "image": "https://image.annict.com/BEOuiwFDzvD5covKINIF6f1SbVH8ASDitc5ukl0H_bw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7667/image/master-42dbb5216cc051b5cb420f4aea027983.jpg@webp",
+      "season": "2024年夏",
+      "url": "https://annict.com/works/11525"
     },
     {
       "id": "12468",
@@ -1698,18 +1705,18 @@
       "url": "https://annict.com/works/12464"
     },
     {
-      "id": "11848",
-      "title": "ひみつのアイプリ",
-      "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
-      "season": "2024年夏",
-      "url": "https://annict.com/works/11848"
-    },
-    {
       "id": "12472",
       "title": "龍族 -The Blazing Dawn-",
       "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
       "season": "2024年夏",
       "url": "https://annict.com/works/12472"
+    },
+    {
+      "id": "11848",
+      "title": "ひみつのアイプリ",
+      "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
+      "season": "2024年夏",
+      "url": "https://annict.com/works/11848"
     },
     {
       "id": "12811",

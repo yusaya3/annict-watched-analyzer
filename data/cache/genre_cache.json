@@ -152007,5 +152007,614 @@
   "ビーストウォーズメタルス コンボイ大変身!": {
     "genres": [],
     "tags": []
+  },
+  "いびってこない義母と義姉": {
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Adoption",
+        "rank": 88
+      },
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 80
+      },
+      {
+        "name": "Family Life",
+        "rank": 80
+      },
+      {
+        "name": "Ojou-sama",
+        "rank": 79
+      },
+      {
+        "name": "Iyashikei",
+        "rank": 76
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 76
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 76
+      },
+      {
+        "name": "Episodic",
+        "rank": 70
+      },
+      {
+        "name": "Parody",
+        "rank": 68
+      },
+      {
+        "name": "Josei",
+        "rank": 66
+      },
+      {
+        "name": "Historical",
+        "rank": 53
+      },
+      {
+        "name": "Maids",
+        "rank": 50
+      },
+      {
+        "name": "Tragedy",
+        "rank": 46
+      },
+      {
+        "name": "Villainess",
+        "rank": 20
+      }
+    ]
+  },
+  "うしろの正面カムイさん": {
+    "genres": [
+      "Comedy",
+      "Ecchi",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Nudity",
+        "rank": 87
+      },
+      {
+        "name": "Youkai",
+        "rank": 84
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 79
+      },
+      {
+        "name": "Exorcism",
+        "rank": 78
+      },
+      {
+        "name": "Ghost",
+        "rank": 75
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 73
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 71
+      },
+      {
+        "name": "Public Sex",
+        "rank": 70
+      },
+      {
+        "name": "Succubus",
+        "rank": 60
+      },
+      {
+        "name": "Nekomimi",
+        "rank": 60
+      },
+      {
+        "name": "Gyaru",
+        "rank": 60
+      },
+      {
+        "name": "Ahegao",
+        "rank": 60
+      },
+      {
+        "name": "School",
+        "rank": 50
+      },
+      {
+        "name": "Yuri",
+        "rank": 36
+      },
+      {
+        "name": "LGBTQ+ Themes",
+        "rank": 30
+      },
+      {
+        "name": "Squirting",
+        "rank": 20
+      }
+    ]
+  },
+  "クレバテスⅡ-魔獣の王と偽りの勇者伝承-": {
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "tags": [
+      {
+        "name": "Medieval",
+        "rank": 94
+      },
+      {
+        "name": "Magic",
+        "rank": 90
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 80
+      },
+      {
+        "name": "School",
+        "rank": 77
+      },
+      {
+        "name": "Monster Boy",
+        "rank": 63
+      },
+      {
+        "name": "Politics",
+        "rank": 54
+      },
+      {
+        "name": "Tomboy",
+        "rank": 37
+      }
+    ]
+  },
+  "レッツゴー怪奇組": {
+    "genres": [
+      "Comedy",
+      "Horror",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Youkai",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Ghost",
+        "rank": 75
+      },
+      {
+        "name": "Surreal Comedy",
+        "rank": 66
+      },
+      {
+        "name": "Curses",
+        "rank": 60
+      },
+      {
+        "name": "School",
+        "rank": 40
+      },
+      {
+        "name": "Age Regression",
+        "rank": 20
+      },
+      {
+        "name": "Nudity",
+        "rank": 10
+      }
+    ]
+  },
+  "身代わり令嬢を救ったのは冷酷無慈悲な氷の王子の愛でした": {
+    "genres": [
+      "Fantasy",
+      "Romance"
+    ],
+    "tags": [
+      {
+        "name": "Heterosexual",
+        "rank": 20
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 20
+      },
+      {
+        "name": "Shoujo",
+        "rank": 20
+      },
+      {
+        "name": "Arranged Marriage",
+        "rank": 20
+      },
+      {
+        "name": "Royal Affairs",
+        "rank": 20
+      },
+      {
+        "name": "CGI",
+        "rank": 20
+      },
+      {
+        "name": "Flash",
+        "rank": 20
+      }
+    ]
+  },
+  "鎧真伝サムライトルーパー 第2クール": {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "tags": [
+      {
+        "name": "Tokusatsu",
+        "rank": 79
+      }
+    ]
+  },
+  "北斗の拳 拳王軍ザコたちの挽歌 第2クール": {
+    "genres": [
+      "Comedy"
+    ],
+    "tags": [
+      {
+        "name": "Flash",
+        "rank": 20
+      }
+    ]
+  },
+  "MAO": {
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Romance",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Historical",
+        "rank": 95
+      },
+      {
+        "name": "Demons",
+        "rank": 75
+      },
+      {
+        "name": "Time Manipulation",
+        "rank": 73
+      },
+      {
+        "name": "Youkai",
+        "rank": 70
+      },
+      {
+        "name": "Shounen",
+        "rank": 66
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 66
+      },
+      {
+        "name": "Isekai",
+        "rank": 66
+      },
+      {
+        "name": "Exorcism",
+        "rank": 65
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 52
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 50
+      },
+      {
+        "name": "School",
+        "rank": 40
+      },
+      {
+        "name": "Curses",
+        "rank": 20
+      }
+    ]
+  },
+  "スーパーの裏でヤニ吸うふたり": {
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Seinen",
+        "rank": 94
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 93
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 92
+      },
+      {
+        "name": "Work",
+        "rank": 89
+      },
+      {
+        "name": "Konbini",
+        "rank": 87
+      },
+      {
+        "name": "Age Gap",
+        "rank": 86
+      },
+      {
+        "name": "Drugs",
+        "rank": 81
+      },
+      {
+        "name": "Iyashikei",
+        "rank": 80
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 76
+      },
+      {
+        "name": "Episodic",
+        "rank": 74
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 73
+      },
+      {
+        "name": "Urban",
+        "rank": 70
+      },
+      {
+        "name": "Office",
+        "rank": 68
+      }
+    ]
+  },
+  "乙女怪獣キャラメリゼ": {
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Coming of Age",
+        "rank": 96
+      },
+      {
+        "name": "Shapeshifting",
+        "rank": 95
+      },
+      {
+        "name": "Kaiju",
+        "rank": 94
+      },
+      {
+        "name": "Monster Girl",
+        "rank": 94
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 93
+      },
+      {
+        "name": "Body Image",
+        "rank": 92
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 87
+      },
+      {
+        "name": "Henshin",
+        "rank": 84
+      },
+      {
+        "name": "Urban",
+        "rank": 83
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 80
+      },
+      {
+        "name": "Interspecies",
+        "rank": 79
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 77
+      },
+      {
+        "name": "Tokusatsu",
+        "rank": 74
+      },
+      {
+        "name": "Super Power",
+        "rank": 72
+      },
+      {
+        "name": "School",
+        "rank": 70
+      },
+      {
+        "name": "CGI",
+        "rank": 65
+      },
+      {
+        "name": "Bullying",
+        "rank": 65
+      },
+      {
+        "name": "Tsundere",
+        "rank": 64
+      },
+      {
+        "name": "Gyaru",
+        "rank": 60
+      },
+      {
+        "name": "Seinen",
+        "rank": 56
+      },
+      {
+        "name": "Love Triangle",
+        "rank": 35
+      }
+    ]
+  },
+  "うた∽かた": {
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Mahou Shoujo",
+      "Psychological"
+    ],
+    "tags": [
+      {
+        "name": "Magic",
+        "rank": 91
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 88
+      },
+      {
+        "name": "Henshin",
+        "rank": 83
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 79
+      },
+      {
+        "name": "Shrine Maiden",
+        "rank": 79
+      },
+      {
+        "name": "Urban",
+        "rank": 79
+      },
+      {
+        "name": "Episodic",
+        "rank": 79
+      },
+      {
+        "name": "School",
+        "rank": 75
+      },
+      {
+        "name": "Gods",
+        "rank": 72
+      },
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 62
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 60
+      },
+      {
+        "name": "Kuudere",
+        "rank": 60
+      },
+      {
+        "name": "Coastal",
+        "rank": 50
+      }
+    ]
+  },
+  "本好きの下剋上 司書になるためには手段を選んでいられません 領主の養女": {
+    "genres": [],
+    "tags": []
+  },
+  "うしろの正面カムイさん ミニアニメ劇場": {
+    "genres": [],
+    "tags": []
+  },
+  "プラノサウルス ガチコセイブツ部": {
+    "genres": [],
+    "tags": []
+  },
+  "LIAR GAME -ライアーゲーム-": {
+    "genres": [
+      "Drama",
+      "Psychological"
+    ],
+    "tags": [
+      {
+        "name": "Gambling",
+        "rank": 92
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 85
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 76
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 75
+      },
+      {
+        "name": "Seinen",
+        "rank": 70
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 66
+      },
+      {
+        "name": "Conspiracy",
+        "rank": 65
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 60
+      },
+      {
+        "name": "Death Game",
+        "rank": 55
+      }
+    ]
   }
 }
