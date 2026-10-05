@@ -372,13 +372,9 @@
             if (!existing.watchers.includes(u)) {
               existing.watchers.push(u);
             }
-            // 放送年度の正規化: より古い（初回放送・公開時期）シーズンがあれば更新
-            if (a.season && parseSeasonWeight(a.season) > 0) {
-              const curWeight = parseSeasonWeight(existing.season);
-              const newWeight = parseSeasonWeight(a.season);
-              if (curWeight === 0 || (newWeight > 0 && newWeight < curWeight)) {
-                existing.season = a.season;
-              }
+            // Annict記載のseasonを採用（空でなく有効なものを優先）
+            if (!existing.season && a.season) {
+              existing.season = a.season;
             }
           }
         });
