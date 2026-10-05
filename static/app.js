@@ -143,6 +143,13 @@ function initModals() {
     newUsernameInput.focus();
   });
 
+  const inputWrapper = document.querySelector('.input-box-wrapper');
+  if (inputWrapper) {
+    inputWrapper.addEventListener('click', () => {
+      newUsernameInput.focus();
+    });
+  }
+
   const closeUserModal = () => {
     userModal.style.display = 'none';
   };

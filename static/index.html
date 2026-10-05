@@ -303,8 +303,10 @@
         <div class="add-user-box">
           <label for="new-username-input" class="form-label">新しいAnnictユーザーIDを追加:</label>
           <div class="input-with-button">
-            <span class="input-prefix">@</span>
-            <input type="text" id="new-username-input" placeholder="ユーザーID (例: shimbaco)" class="input-text" />
+            <div class="input-box-wrapper">
+              <span class="input-prefix">@</span>
+              <input type="text" id="new-username-input" placeholder="ユーザーID (例: shimbaco)" class="input-inner" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
             <button id="btn-add-user" class="btn btn-primary">
               <i class="fa-solid fa-plus"></i> 追加して分析
             </button>
