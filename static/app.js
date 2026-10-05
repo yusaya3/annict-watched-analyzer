@@ -981,7 +981,7 @@ function renderAnimeListInPanel(animes) {
     a.rel = 'noopener noreferrer';
 
     const thumbHtml = anime.image
-      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="anime-thumb" loading="lazy" />`
+      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="anime-thumb" loading="lazy" decoding="async" />`
       : `<div class="anime-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     a.innerHTML = `
@@ -1135,7 +1135,7 @@ function renderAnimeGrid(container, animes) {
     a.rel = 'noopener noreferrer';
 
     const thumbHtml = anime.image
-      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="grid-card-thumb" loading="lazy" />`
+      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="grid-card-thumb" loading="lazy" decoding="async" />`
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     a.innerHTML = `
@@ -1215,7 +1215,7 @@ function handleGlobalSearch(keyword) {
     a.rel = 'noopener noreferrer';
 
     const thumbHtml = anime.image
-      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="grid-card-thumb" loading="lazy" />`
+      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="grid-card-thumb" loading="lazy" decoding="async" />`
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     const watchersHtml = watchers.map(w => `<span class="badge" style="margin-right:2px;">@${escapeHtml(w)}</span>`).join(' ');
@@ -1580,7 +1580,7 @@ function renderGroupWorksList() {
     const safeTitle = escapeHtml(work.title);
 
     const thumbHtml = work.image
-      ? `<img src="${work.image}" alt="${safeTitle}" data-title="${safeTitle}" class="grid-card-thumb" loading="lazy" />`
+      ? `<img src="${work.image}" alt="${safeTitle}" data-title="${safeTitle}" class="grid-card-thumb" loading="lazy" decoding="async" />`
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     if (isUnion) {

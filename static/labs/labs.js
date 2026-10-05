@@ -132,7 +132,7 @@ function renderStudios(studioReport) {
         // 作品グリッド生成
         const animesHtml = animes.map(a => {
           const thumbHtml = a.image
-            ? `<img src="${escapeHtml(a.image)}" class="studio-anime-mini-thumb" alt="${escapeHtml(a.title)}" loading="lazy" onerror="this.outerHTML='<div class=\\'studio-anime-mini-thumb-empty\\'><i class=\\'fa-solid fa-film\\'></i></div>'" />`
+            ? `<img src="${escapeHtml(a.image)}" class="studio-anime-mini-thumb" alt="${escapeHtml(a.title)}" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=\\'studio-anime-mini-thumb-empty\\'><i class=\\'fa-solid fa-film\\'></i></div>'" />`
             : `<div class="studio-anime-mini-thumb-empty"><i class="fa-solid fa-film"></i></div>`;
 
           return `
@@ -309,7 +309,7 @@ function renderGenres(genreReport) {
           const imgUrl = a.image || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" fill="%23334155"><rect width="60" height="80"/></svg>';
           animeCardsHtml += `
             <a href="${escapeHtml(a.url || '#')}" target="_blank" rel="noopener noreferrer" class="genre-anime-card">
-              <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(a.title)}" class="genre-anime-thumb" loading="lazy" />
+              <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(a.title)}" class="genre-anime-thumb" loading="lazy" decoding="async" />
               <div class="genre-anime-info">
                 <span class="genre-anime-title" title="${escapeHtml(a.title)}">${escapeHtml(a.title)}</span>
                 <span class="genre-anime-season">${escapeHtml(a.season || '')}</span>
