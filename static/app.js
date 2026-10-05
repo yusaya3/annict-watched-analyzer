@@ -1417,33 +1417,28 @@ function renderGroupUserCheckboxes() {
 
   container.innerHTML = '';
   allUsers.forEach(username => {
-    const isChecked = selectedSet.has(username);
+    const isSelected = selectedSet.has(username);
     const count = state.data.userWatchedLists?.[username]?.length || 0;
 
-    const label = document.createElement('label');
-    label.className = `chip-checkbox ${isChecked ? 'checked' : ''}`;
-    label.title = `@${username} (${count}作品)`;
+    const chip = document.createElement('div');
+    chip.className = `user-chip ${isSelected ? 'selected' : ''}`;
+    chip.title = `@${username} (${count}作品)`;
+    chip.innerHTML = `
+      <i class="fa-${isSelected ? 'solid fa-check' : 'regular fa-circle'}"></i>
+      <span>@${username} (${count})</span>
+    `;
 
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.checked = isChecked;
-    input.value = username;
-
-    input.addEventListener('change', () => {
-      if (input.checked) {
-        if (!state.groupSelectedUsers.includes(username)) {
-          state.groupSelectedUsers.push(username);
-        }
-      } else {
+    chip.addEventListener('click', () => {
+      if (isSelected) {
         state.groupSelectedUsers = state.groupSelectedUsers.filter(u => u !== username);
+      } else {
+        state.groupSelectedUsers.push(username);
       }
       renderGroupUserCheckboxes();
       renderGroupWorksList();
     });
 
-    label.appendChild(input);
-    label.appendChild(document.createTextNode(`@${username} (${count})`));
-    container.appendChild(label);
+    container.appendChild(chip);
   });
 }
 
