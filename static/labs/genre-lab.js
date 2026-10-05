@@ -9,6 +9,17 @@
   let currentDiffFilter = 'all';
   let currentDiffSearch = '';
 
+  // シーズン文字列の重み付けパース（例: "2024年夏" -> 20243）
+  function parseSeasonWeight(seasonStr) {
+    if (!seasonStr) return 0;
+    const m = seasonStr.match(/(\d{4})年?(冬|春|夏|秋)?/);
+    if (!m) return 0;
+    const year = parseInt(m[1], 10) || 0;
+    const sMap = { '冬': 1, '春': 2, '夏': 3, '秋': 4 };
+    const seasonWeight = sMap[m[2]] || 0;
+    return year * 10 + seasonWeight;
+  }
+
   window.renderGenreLabTab = function(labsData, fullData) {
     if (!labsData || !labsData.genreDiffReport) return;
 
@@ -361,17 +372,30 @@
             if (!existing.watchers.includes(u)) {
               existing.watchers.push(u);
             }
+            // 放送年度の正規化: より古い（初回放送・公開時期）シーズンがあれば更新
+            if (a.season && parseSeasonWeight(a.season) > 0) {
+              const curWeight = parseSeasonWeight(existing.season);
+              const newWeight = parseSeasonWeight(a.season);
+              if (curWeight === 0 || (newWeight > 0 && newWeight < curWeight)) {
+                existing.season = a.season;
+              }
+            }
           }
         });
       });
 
-      // 視聴人数降順 ➜ シーズン降順 ➜ タイトル昇順
-      const allUniqueAnimes = Array.from(allUniqueMap.values()).sort((a, b) => {
-        if (b.watchers.length !== a.watchers.length) {
-          return b.watchers.length - a.watchers.length;
-        }
-        return (b.season || '').localeCompare(a.season || '') || a.title.localeCompare(b.title);
-      });
+      // 最新順（放送年度・シーズンが新しい順 ➜ 同一シーズンなら視聴者数降順 ➜ タイトル昇順）
+      const compareSeasonDesc = (a, b) => {
+        const wA = parseSeasonWeight(a.season);
+        const wB = parseSeasonWeight(b.season);
+        if (wB !== wA) return wB - wA; // 新しい順（降順）
+        const countA = a.watchers ? a.watchers.length : 0;
+        const countB = b.watchers ? b.watchers.length : 0;
+        if (countB !== countA) return countB - countA;
+        return a.title.localeCompare(b.title, 'ja');
+      };
+
+      const allUniqueAnimes = Array.from(allUniqueMap.values()).sort(compareSeasonDesc);
 
       // タブ生成（先頭に「全員」、続いて各ユーザー）
       let userTabsHtml = `
@@ -416,7 +440,7 @@
         }).join('');
       }
 
-      // グリッドHTMLの組み立て（全員用＋各ユーザー用）
+      // グリッドHTMLの組み立て（全員用＋各ユーザー用、どちらも最新順にソート）
       let userAnimesGridsHtml = `
         <div class="genre-animes-grid user-animes-__all__" style="display: grid;">
           ${buildAnimeCardsHtml(allUniqueAnimes, true)}
@@ -424,10 +448,15 @@
       `;
 
       users.forEach(u => {
-        const animes = g.animesByUser?.[u] || [];
+        const userAnimes = [...(g.animesByUser?.[u] || [])].sort((a, b) => {
+          const wA = parseSeasonWeight(a.season);
+          const wB = parseSeasonWeight(b.season);
+          if (wB !== wA) return wB - wA;
+          return a.title.localeCompare(b.title, 'ja');
+        });
         userAnimesGridsHtml += `
           <div class="genre-animes-grid user-animes-${escapeHtml(u)}" style="display: none;">
-            ${buildAnimeCardsHtml(animes, false)}
+            ${buildAnimeCardsHtml(userAnimes, false)}
           </div>
         `;
       });
