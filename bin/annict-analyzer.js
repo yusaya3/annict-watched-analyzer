@@ -47,8 +47,10 @@ async function runAnalysis(userList, forceRefresh = false) {
   const client = new AnnictClient();
   const watchedLists = {};
 
+  const apiModeStr = client.apiToken ? '⚡ 公式 GraphQL API モード (高速取得)' : '🌐 Webスクレイピングモード (通常取得)';
   console.log('=====================================================');
   console.log(`  データ取得＆分析開始 (対象: ${userList.length}人)`);
+  console.log(`  取得方式: ${apiModeStr}`);
   console.log('=====================================================');
 
   for (const username of userList) {
@@ -381,11 +383,14 @@ function createApp() {
 
 function startServer(port) {
   const app = createApp();
+  const client = new AnnictClient();
+  const apiStatus = client.apiToken ? '有効 (公式 GraphQL API 接続)' : '無効 (Webスクレイピングに自動フォールバック)';
   const server = app.listen(port, '0.0.0.0', () => {
     console.log('\n=====================================================');
     console.log(`  Webダッシュボードが起動しました:`);
     console.log(`  👉 http://localhost:${port}`);
     console.log(`  👉 http://127.0.0.1:${port}`);
+    console.log(`  🔑 Annict API: ${apiStatus}`);
     console.log('=====================================================');
     console.log('ブラウザで開いてベン図やシンクロ率をご確認ください。');
     console.log('Ctrl + C で終了できます。\n');

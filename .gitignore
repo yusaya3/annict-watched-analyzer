@@ -11,6 +11,7 @@ Thumbs.db
 # Environment variables
 .env
 .env.local
+config/token.json
 
 # Logs
 npm-debug.log*

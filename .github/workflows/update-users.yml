@@ -46,6 +46,8 @@ jobs:
           fi
 
       - name: Annict データ取得 ＆ ジャンル照合 ＆ 分析実行
+        env:
+          ANNICT_TOKEN: ${{ secrets.ANNICT_TOKEN }}
         run: |
           if [ "${{ github.event.inputs.action }}" = "refresh" ]; then
             node bin/annict-analyzer.js --fetch-only --refresh

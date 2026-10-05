@@ -46,6 +46,29 @@ npm start
 
 ---
 
+## ⚡ Annict 公式 GraphQL API 連携（爆速化オプション）
+
+本アプリは、Annict の公式 GraphQL API に対応しています。
+トークンをサーバー環境変数（Vercel または `.env`）に設定しておくだけで、**アプリを利用する全ユーザーが一切トークンを入力することなく、公式APIの超高速・安定したデータ取得を利用できます**。
+（未設定の場合でも、自動的に通常のWebスクレイピングで取得されます）
+
+### トークンの発行と設定手順
+
+1. [Annict 設定 > アプリケーション](https://annict.com/settings/apps) を開きます。
+2. 「個人用アクセストークン」欄の「新規発行」をクリックします。
+3. 説明（例: `Annict Analyzer`）を入力し、スコープは **「読み取り専用 (read)」のみにチェック** を入れて発行します。
+4. 発行されたトークンをコピーします。
+5. **Vercel の場合**:
+   - Vercel のプロジェクト画面で「**Settings**」➡「**Environment Variables**」を開きます。
+   - Key に `ANNICT_TOKEN`、Value にコピーしたトークンを貼り付けて「Save」します。
+6. **GitHub Actions でも高速化したい場合**:
+   - リポジトリの「**Settings**」➡「**Secrets and variables**」➡「**Actions**」を開きます。
+   - 「**New repository secret**」から Name を `ANNICT_TOKEN`、Secret にトークンを設定します。
+7. **ローカル環境の場合**:
+   - リポジトリ直下に `.env` ファイルを作成し、`ANNICT_TOKEN=あなたのトークン` を記載します。
+
+---
+
 ## 📱 スマホ・Web公開版でのユーザー追加・更新方法
 
 Vercel 上で公開後、比較するユーザーを追加・変更したい場合は、**GitHub Actions** を利用してスマホからワンタップで更新できます：
