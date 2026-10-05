@@ -94,7 +94,7 @@
 .calorie-number {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--text-main);
   line-height: 1;
 }
 
@@ -561,7 +561,7 @@
   border-radius: 4px;
   height: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
 }
 
 .genre-bar-fill {
@@ -808,7 +808,7 @@
     justify-content: space-between;
     width: 100%;
     padding-top: 0.35rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
   }
 
   .genre-top-user-pill {

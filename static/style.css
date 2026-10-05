@@ -1,4 +1,5 @@
 :root {
+  /* デフォルト: ダークテーマ */
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-tertiary: #334155;
@@ -18,6 +19,47 @@
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
+
+  /* 背景グラデーション・モーダル・カード拡張変数 */
+  --venn-bg: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  --modal-overlay-bg: rgba(15, 23, 42, 0.75);
+  --modal-footer-bg: rgba(15, 23, 42, 0.4);
+  --modal-loading-bg: rgba(15, 23, 42, 0.6);
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --card-hover-shadow: 0 6px 16px rgba(244, 63, 94, 0.25);
+  --venn-circle-stroke: #ffffff33;
+  --venn-circle-text: #f8fafc;
+  --venn-circle-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ライトモード（ホワイト）定義 */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --border-color: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-pink: #e11d48;
+  --accent-purple: #9333ea;
+  --accent-blue: #0284c7;
+  --accent-gold: #d97706;
+  --accent-green: #059669;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  --venn-bg: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%);
+  --modal-overlay-bg: rgba(15, 23, 42, 0.45);
+  --modal-footer-bg: #f8fafc;
+  --modal-loading-bg: rgba(241, 245, 249, 0.85);
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --card-hover-shadow: 0 6px 16px rgba(225, 29, 72, 0.18);
+  --venn-circle-stroke: rgba(0, 0, 0, 0.18);
+  --venn-circle-text: #0f172a;
+  --venn-circle-text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
 }
 
 * {
@@ -32,6 +74,7 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .app-container {
@@ -102,6 +145,37 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+/* テーマ切り替えボタン */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--accent-gold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.btn-theme-toggle:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-gold);
+  transform: scale(1.06);
+}
+
+[data-theme="light"] .btn-theme-toggle {
+  color: var(--accent-purple);
+}
+
+[data-theme="light"] .btn-theme-toggle:hover {
+  border-color: var(--accent-purple);
 }
 
 .meta-tag {
@@ -323,7 +397,8 @@ body {
   align-items: center;
   position: relative;
   min-height: 550px;
-  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  background: var(--venn-bg);
+  transition: background 0.25s ease;
 }
 
 #venn-chart {
@@ -344,29 +419,42 @@ body {
 .venn-circle path {
   fill-opacity: 0.35 !important;
   stroke-width: 2px !important;
-  stroke: #ffffff33 !important;
+  stroke: var(--venn-circle-stroke) !important;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .venn-circle:hover path {
   fill-opacity: 0.65 !important;
-  stroke: #ffffff88 !important;
+  stroke: var(--accent-pink) !important;
 }
 
 .venn-circle.active path {
   fill-opacity: 0.75 !important;
-  stroke: #fff !important;
+  stroke: var(--accent-pink) !important;
   stroke-width: 3px !important;
   filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.6));
 }
 
 .venn-circle text {
-  fill: #f8fafc !important;
+  fill: var(--venn-circle-text) !important;
   font-weight: 700 !important;
   font-size: 15px !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  text-shadow: var(--venn-circle-text-shadow);
   pointer-events: none;
+  transition: fill 0.25s ease;
+}
+
+[data-theme="light"] .venn-circle path {
+  fill-opacity: 0.45 !important;
+}
+
+[data-theme="light"] .venn-circle:hover path {
+  fill-opacity: 0.75 !important;
+}
+
+[data-theme="light"] .venn-circle.active path {
+  filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
 }
 
 .empty-state {
@@ -772,13 +860,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.75);
+  background: var(--modal-overlay-bg);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   animation: fadeIn 0.2s ease;
+  transition: background 0.25s ease;
 }
 
 .modal-dialog {
@@ -792,6 +881,7 @@ body {
   flex-direction: column;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .modal-header {
@@ -829,7 +919,8 @@ body {
   align-items: center;
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--border-color);
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--modal-footer-bg);
+  transition: background 0.25s ease;
 }
 
 .form-label {
@@ -882,6 +973,7 @@ body {
   padding: 0.6rem 0.9rem;
   border-radius: var(--radius-sm);
   gap: 0.6rem;
+  transition: background-color 0.25s ease;
 }
 
 .modal-user-name {
@@ -913,9 +1005,11 @@ body {
   align-items: center;
   gap: 0.8rem;
   padding: 1.5rem;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--modal-loading-bg);
   border-radius: var(--radius-md);
   text-align: center;
+  border: 1px solid var(--border-color);
+  transition: background 0.25s ease;
 }
 
 .spinner {
@@ -933,7 +1027,8 @@ body {
 
 .image-modal-dialog {
   max-width: 480px;
-  background: #0b0f19;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .modal-large-img {
@@ -1003,6 +1098,13 @@ body {
     flex: 1;
     font-size: 0.84rem;
     padding: 0.5rem 0.75rem;
+  }
+
+  .header-actions .btn-theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    flex: 0 0 auto;
   }
 
   /* ナビゲーションタブ */

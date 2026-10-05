@@ -11,6 +11,7 @@ const state = {
 
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initTabs();
   initModals();
   loadData();
@@ -27,6 +28,48 @@ document.addEventListener('DOMContentLoaded', () => {
     handleGlobalSearch(e.target.value);
   });
 });
+
+// テーマ切り替え (ダーク / ライト)
+function initThemeToggle() {
+  const btn = document.getElementById('btn-theme-toggle');
+  if (!btn) return;
+
+  const updateIcon = (theme) => {
+    if (theme === 'light') {
+      btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      btn.title = 'ダークモードに切り替え';
+      btn.setAttribute('aria-label', 'ダークモードに切り替え');
+    } else {
+      btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      btn.title = 'ライトモード（ホワイト）に切り替え';
+      btn.setAttribute('aria-label', 'ライトモードに切り替え');
+    }
+  };
+
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  updateIcon(currentTheme);
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const nextTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    try {
+      localStorage.setItem('annict_theme', nextTheme);
+    } catch (e) {}
+    updateIcon(nextTheme);
+
+    // ベン図・シンクロ率・Labsの再描画
+    if (typeof renderVenn === 'function' && state.data) {
+      renderVenn();
+    }
+    if (typeof renderSimilarity === 'function' && state.data) {
+      renderSimilarity();
+    }
+    if (window.renderLabsTab && state.data) {
+      window.renderLabsTab(state.data.labs, state.data);
+    }
+  });
+}
 
 // タブ制御
 function initTabs() {
@@ -846,12 +889,14 @@ function renderSimilarity() {
       const pct = item ? item.percentage : 0;
       const common = item ? item.intersection : 0;
 
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
       const alpha = Math.min(1, Math.max(0.1, pct / 80));
       const bg = u1 === u2 ? 'var(--bg-tertiary)' : `rgba(244, 63, 94, ${alpha})`;
-      const text = u1 === u2 ? '100%' : `${pct}% <br><small style="font-size:0.75rem;opacity:0.8">(${common}作)</small>`;
+      const textColor = u1 === u2 ? 'inherit' : (isLight && alpha < 0.5 ? 'var(--text-main)' : '#ffffff');
+      const text = u1 === u2 ? '100%' : `${pct}% <br><small style="font-size:0.75rem;opacity:0.85">(${common}作)</small>`;
 
       row.innerHTML += `
-        <td class="heat-cell" style="background-color: ${bg};" title="@${escapeHtml(u1)} と @${escapeHtml(u2)}: 共通 ${common} 作品 / シンクロ率 ${pct}%">
+        <td class="heat-cell" style="background-color: ${bg}; color: ${textColor};" title="@${escapeHtml(u1)} と @${escapeHtml(u2)}: 共通 ${common} 作品 / シンクロ率 ${pct}%">
           ${text}
         </td>
       `;

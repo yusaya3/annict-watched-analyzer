@@ -15,6 +15,16 @@
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <!-- お試し機能 (Labs) 専用CSS (削除時はこの1行を消せばOK) -->
   <link rel="stylesheet" href="./labs/labs.css" />
+  <!-- テーマの初期判定・即時適用（チラつき防止） -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('annict_theme');
+        const theme = saved || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="app-container">
@@ -28,6 +38,9 @@
         </div>
       </div>
       <div class="header-actions">
+        <button id="btn-theme-toggle" class="btn-theme-toggle" title="テーマを切り替え (ダーク / ライト)" aria-label="テーマ切り替え">
+          <i class="fa-solid fa-sun"></i>
+        </button>
         <div id="data-meta" class="meta-tag">
           <i class="fa-solid fa-clock"></i> <span id="meta-updated">読込中...</span>
         </div>
