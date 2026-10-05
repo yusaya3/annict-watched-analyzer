@@ -62,20 +62,19 @@
         <i class="fa-solid fa-chart-pie"></i> ベン図比較
       </button>
       <button class="tab-btn" data-tab="tab-similarity">
-        <i class="fa-solid fa-handshake"></i> シンクロ率マトリクス
+        <i class="fa-solid fa-handshake"></i> シンクロ率
       </button>
       <button class="tab-btn" data-tab="tab-group">
-        <i class="fa-solid fa-users-viewfinder"></i> グループ分析
+        <i class="fa-solid fa-users"></i> グループ分析
       </button>
       <button class="tab-btn" data-tab="tab-insights">
-        <i class="fa-solid fa-lightbulb"></i> トークのネタ・インサイト
+        <i class="fa-solid fa-lightbulb"></i> インサイト
+      </button>
+      <button class="tab-btn" data-tab="tab-labs">
+        <i class="fa-solid fa-chart-line"></i> 視聴アナリティクス
       </button>
       <button class="tab-btn" data-tab="tab-search">
-        <i class="fa-solid fa-magnifying-glass"></i> 作品検索・逆引き
-      </button>
-      <!-- お試し機能タブ (削除時はこのボタンを消せばOK) -->
-      <button class="tab-btn" data-tab="tab-labs" style="color: var(--accent-purple);">
-        <i class="fa-solid fa-flask"></i> お試し実験室 (Labs)
+        <i class="fa-solid fa-magnifying-glass"></i> 作品検索
       </button>
     </nav>
 
@@ -286,32 +285,14 @@
         </div>
       </section>
 
-      <!-- 4. 作品検索タブ -->
-      <section id="tab-search" class="tab-pane">
-        <div class="card">
-          <div class="card-header">
-            <h3><i class="fa-solid fa-magnifying-glass"></i> 作品検索・逆引き</h3>
-            <p class="card-desc">気になるアニメタイトルを入力して、誰が見ているかチェックできます</p>
-          </div>
-          <div class="search-bar-wrap">
-            <input type="text" id="global-search-input" placeholder="作品名で検索（例: まどか、フリーレン、ガンダム...）" class="input-text input-large" />
-            <span id="search-count" class="badge">0 件ヒット</span>
-          </div>
-          <div id="global-search-results" class="anime-cards-grid mt-4">
-            <!-- JSで描画 -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. お試し実験室 (Labs) タブ (削除時は本sectionを丸ごと消せばOK) -->
+      <!-- 5. 視聴アナリティクス タブ -->
       <section id="tab-labs" class="tab-pane">
-        <div class="labs-banner">
-          <div class="labs-title">
-            <i class="fa-solid fa-flask text-purple"></i>
-            <span>お試し実験室 (Labs)</span>
-            <span class="badge-labs">Beta / 実験機能</span>
+        <div class="analytics-banner">
+          <div class="analytics-title">
+            <i class="fa-solid fa-chart-line text-blue"></i>
+            <span>視聴傾向アナリティクス</span>
           </div>
-          <small class="text-muted">「総視聴時間」「年代別タイムライン」「制作スタジオ別視聴傾向」「ジャンル別視聴傾向」のお試し分析です。</small>
+          <p class="analytics-subtitle text-muted">「総視聴時間」「年代別タイムライン」「制作スタジオ別視聴傾向」「14ジャンル別分類」の多角データ分析ダッシュボードです。</p>
         </div>
 
         <div id="labs-content-container" class="labs-grid">
@@ -371,6 +352,23 @@
                 <!-- JSで描画 -->
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 作品検索タブ -->
+      <section id="tab-search" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-magnifying-glass"></i> 作品検索・逆引き</h3>
+            <p class="card-desc">気になるアニメタイトルを入力して、誰が見ているかチェックできます</p>
+          </div>
+          <div class="search-bar-wrap">
+            <input type="text" id="global-search-input" placeholder="作品名で検索（例: まどか、フリーレン、ガンダム...）" class="input-text input-large" />
+            <span id="search-count" class="badge">0 件ヒット</span>
+          </div>
+          <div id="global-search-results" class="anime-cards-grid mt-4">
+            <!-- JSで描画 -->
           </div>
         </div>
       </section>

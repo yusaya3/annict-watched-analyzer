@@ -123,8 +123,12 @@ function initTabs() {
         targetPane.classList.add('active');
         if (targetId === 'tab-venn') {
           renderVenn();
+        } else if (targetId === 'tab-similarity') {
+          renderSimilarity();
         } else if (targetId === 'tab-group') {
           renderGroupAnalysis();
+        } else if (targetId === 'tab-insights') {
+          renderInsights();
         } else if (targetId === 'tab-labs') {
           if (window.renderLabsTab && state.data) {
             window.renderLabsTab(state.data.labs, state.data);
