@@ -659,7 +659,7 @@
           </div>
         </div>
 
-        <h4 class="mt-4 mb-2"><i class="fa-solid fa-chart-column text-purple"></i> 全14ジャンルの獲得スコア内訳:</h4>
+        <h4 class="mt-4 mb-2"><i class="fa-solid fa-chart-column text-purple"></i> 全15ジャンルの獲得スコア内訳:</h4>
         <div class="inspector-scores-list">
           ${barsHtml}
         </div>
@@ -675,6 +675,8 @@
       action:           { label: 'アクション / バトル',      icon: 'fa-solid fa-burst',               color: '#ef4444' },
       sports:           { label: 'スポーツ / 競技',          icon: 'fa-solid fa-futbol',              color: '#14b8a6' },
       comedy:           { label: 'コメディ / ギャグ',        icon: 'fa-solid fa-face-laugh-squint',   color: '#f59e0b' },
+      romance:          { label: '恋愛 / ラブコメ',          icon: 'fa-solid fa-heart',               color: '#ec4899' },
+      drama:            { label: 'ドラマ / 青春',            icon: 'fa-solid fa-masks-theater',       color: '#0284c7' },
       romance_drama:    { label: '恋愛 / ラブコメ / 青春ドラマ', icon: 'fa-solid fa-heart',           color: '#ec4899' },
       nichijou:         { label: '日常 / ほのぼの',          icon: 'fa-solid fa-mug-saucer',          color: '#10b981' },
       sf_fantasy:       { label: 'SF / ファンタジー',        icon: 'fa-solid fa-meteor',              color: '#6366f1' },
