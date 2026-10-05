@@ -414,6 +414,38 @@ function createApp() {
     }
   });
 
+  // 作品のジャンルスコア内訳・新旧比較取得API（ジャンル実験室用）
+  app.get('/api/genre-score', (req, res) => {
+    const title = (req.query.title || '').trim();
+    if (!title) {
+      return res.status(400).json({ error: 'タイトルを指定してください' });
+    }
+
+    try {
+      const { GenreClient, classifyAnime, GENRE_DEFINITIONS } = require('../lib/labs/genre-client.js');
+      const { scoreAnimeDetailed } = require('../lib/labs/genre-scorer.js');
+      const genreClient = new GenreClient();
+      const entry = genreClient.cache[title] || { genres: [], tags: [] };
+      const genres = entry.genres || [];
+      const tags = entry.tags || [];
+
+      const legacyCategory = classifyAnime(genres, tags, title);
+      const scoredDetail = scoreAnimeDetailed(genres, tags, title);
+
+      res.json({
+        title,
+        genres,
+        tags,
+        legacyCategory,
+        scored: scoredDetail,
+        definitions: GENRE_DEFINITIONS
+      });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+
   // 分析結果の取得API（Vercel環境用 + ローカル共通）
   app.get('/api/analysis', async (req, res) => {
     try {

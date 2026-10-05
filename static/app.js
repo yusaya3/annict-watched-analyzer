@@ -133,6 +133,10 @@ function initTabs() {
           if (window.renderLabsTab && state.data) {
             window.renderLabsTab(state.data.labs, state.data);
           }
+        } else if (targetId === 'tab-genre-lab') {
+          if (window.renderGenreLabTab && state.data) {
+            window.renderGenreLabTab(state.data.labs, state.data);
+          }
         }
       }
     });
@@ -783,6 +787,10 @@ function renderAllComponents() {
   // お試し機能 (Labs) の描画（存在する場合のみ安全に実行）
   if (window.renderLabsTab && state.data) {
     window.renderLabsTab(state.data.labs, state.data);
+  }
+  // ジャンル実験室 (Genre Lab) の描画
+  if (window.renderGenreLabTab && state.data) {
+    window.renderGenreLabTab(state.data.labs, state.data);
   }
 }
 

@@ -73,6 +73,9 @@
       <button class="tab-btn" data-tab="tab-labs">
         <i class="fa-solid fa-chart-line"></i> 視聴アナリティクス
       </button>
+      <button class="tab-btn" data-tab="tab-genre-lab">
+        <i class="fa-solid fa-flask-vial"></i> ジャンル実験室
+      </button>
       <button class="tab-btn" data-tab="tab-search">
         <i class="fa-solid fa-magnifying-glass"></i> 作品検索
       </button>
@@ -356,7 +359,121 @@
         </div>
       </section>
 
-      <!-- 6. 作品検索タブ -->
+      <!-- 6. ジャンル実験室 タブ -->
+      <section id="tab-genre-lab" class="tab-pane">
+        <div class="analytics-banner">
+          <div class="analytics-title">
+            <i class="fa-solid fa-flask-vial text-purple"></i>
+            <span>ジャンル分類 精度改善実験室（スコアリング方式）</span>
+          </div>
+          <p class="analytics-subtitle text-muted">従来の「if文優先度方式」から、AniList公式ジャンル＋タグランク値＋タイトルによる「重み付けスコアリング方式」へ刷新した新分類エンジンを検証・比較できます。現在の本番環境（視聴アナリティクス）はそのまま保持されています。</p>
+        </div>
+
+        <!-- 実験室サブナビゲーション -->
+        <div class="genre-lab-subnav">
+          <button class="genre-lab-subnav-btn active" data-lab-subtab="diff">
+            <i class="fa-solid fa-code-compare"></i> 新旧分類の変更差分 <span id="badge-diff-count" class="badge badge-purple">計算中...</span>
+          </button>
+          <button class="genre-lab-subnav-btn" data-lab-subtab="scored">
+            <i class="fa-solid fa-chart-pie"></i> 新スコアリング分類結果
+          </button>
+          <button class="genre-lab-subnav-btn" data-lab-subtab="inspector">
+            <i class="fa-solid fa-calculator"></i> 作品スコア内訳シミュレーター
+          </button>
+        </div>
+
+        <!-- サブタブ 1: 新旧比較・差分一覧 -->
+        <div id="genre-lab-subtab-diff" class="genre-lab-subpane active">
+          <div class="card">
+            <div class="card-header">
+              <div class="header-with-badge">
+                <h3><i class="fa-solid fa-wand-magic-sparkles text-gold"></i> 新方式での分類改善・変更差分</h3>
+                <span id="diff-summary-tag" class="meta-tag">読込中...</span>
+              </div>
+              <p class="card-desc">従来のルールで「魔法少女」「日常」「ミリタリー」等に誤判定されていた作品が、新スコアリング方式でどう改善されたかを一目で確認できます</p>
+            </div>
+
+            <!-- クイックフィルタ＆検索バー -->
+            <div class="diff-filter-bar">
+              <div class="diff-chips-filter">
+                <span class="diff-filter-label"><i class="fa-solid fa-filter"></i> 変更元ジャンル:</span>
+                <div id="diff-filter-chips" class="chip-selector">
+                  <!-- JSで動的生成 -->
+                </div>
+              </div>
+              <div class="diff-search-box">
+                <input type="text" id="diff-search-input" placeholder="差分作品をタイトルで絞り込み..." class="input-text input-sm" />
+                <span id="diff-filtered-count" class="badge">0 件</span>
+              </div>
+            </div>
+
+            <!-- 差分カードグリッド -->
+            <div id="diff-cards-grid" class="diff-cards-grid">
+              <!-- JSで描画 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- サブタブ 2: 新スコアリング結果ダッシュボード -->
+        <div id="genre-lab-subtab-scored" class="genre-lab-subpane" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <div class="header-with-badge">
+                <h3><i class="fa-solid fa-shapes text-purple"></i> 新スコアリング方式：ジャンル別視聴傾向（14カテゴリ）</h3>
+                <span class="badge badge-purple">新スコアリングエンジン</span>
+              </div>
+              <p class="card-desc">重み付けスコアにより各作品が最も相応しい1ジャンルに高精度に割り当てられた最新の視聴傾向です</p>
+            </div>
+            
+            <div id="lab-scored-user-summaries" class="genre-user-summary-grid">
+              <!-- JSで描画 -->
+            </div>
+
+            <div class="genre-comparison-container mt-4">
+              <div id="lab-scored-breakdown-list" class="genre-breakdown-list">
+                <!-- JSで描画 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- サブタブ 3: 作品スコア内訳シミュレーター -->
+        <div id="genre-lab-subtab-inspector" class="genre-lab-subpane" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-calculator text-blue"></i> 作品スコア内訳シミュレーター</h3>
+              <p class="card-desc">作品名を入力すると、AniListの全タグ・ジャンルと、14カテゴリそれぞれへの獲得スコア内訳をリアルタイムに視覚化します</p>
+            </div>
+
+            <div class="inspector-search-wrap">
+              <div class="input-box-wrapper" style="flex:1;">
+                <input type="text" id="inspector-title-input" placeholder="作品名を入力（例: チェンソーマン、進撃の巨人、葬送のフリーレン...）" class="input-inner" />
+              </div>
+              <button id="btn-inspect-score" class="btn btn-primary">
+                <i class="fa-solid fa-chart-simple"></i> スコアを診断
+              </button>
+            </div>
+
+            <!-- 代表例クイック選択ボタン -->
+            <div class="inspector-quick-presets">
+              <span class="text-muted" style="font-size:0.85rem;"><i class="fa-solid fa-lightbulb"></i> 診断おすすめ作品:</span>
+              <button class="btn-preset-title" data-title="チェンソーマン">チェンソーマン</button>
+              <button class="btn-preset-title" data-title="葬送のフリーレン">葬送のフリーレン</button>
+              <button class="btn-preset-title" data-title="進撃の巨人">進撃の巨人</button>
+              <button class="btn-preset-title" data-title="その着せ替え人形は恋をする">その着せ替え人形は恋をする</button>
+              <button class="btn-preset-title" data-title="リコリス・リコイル">リコリス・リコイル</button>
+              <button class="btn-preset-title" data-title="薬屋のひとりごと">薬屋のひとりごと</button>
+              <button class="btn-preset-title" data-title="Dr.STONE">Dr.STONE</button>
+            </div>
+
+            <div id="inspector-result-container" class="inspector-result-container mt-4" style="display: none;">
+              <!-- JSで診断結果を描画 -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. 作品検索タブ -->
       <section id="tab-search" class="tab-pane">
         <div class="card">
           <div class="card-header">
@@ -443,5 +560,6 @@
   <script src="./app.js"></script>
   <!-- お試し機能 (Labs) 専用スクリプト (削除時はこの1行を消せばOK) -->
   <script src="./labs/labs.js"></script>
+  <script src="./labs/genre-lab.js"></script>
 </body>
 </html>
