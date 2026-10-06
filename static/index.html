@@ -15,6 +15,7 @@
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <!-- お試し機能 (Labs) 専用CSS (削除時はこの1行を消せばOK) -->
   <link rel="stylesheet" href="./labs/labs.css" />
+  <link rel="stylesheet" href="./labs/party-lab.css" />
   <!-- テーマの初期判定・即時適用（チラつき防止） -->
   <script>
     (function() {
@@ -78,6 +79,9 @@
       </button>
       <button class="tab-btn" data-tab="tab-search">
         <i class="fa-solid fa-magnifying-glass"></i> 作品検索
+      </button>
+      <button class="tab-btn" data-tab="tab-party">
+        <i class="fa-solid fa-dice"></i> パーティーLab
       </button>
     </nav>
 
@@ -506,6 +510,144 @@
           </div>
         </div>
       </section>
+
+      <!-- 8. パーティーLab タブ -->
+      <section id="tab-party" class="tab-pane">
+        <div class="party-banner">
+          <div class="party-title">
+            <i class="fa-solid fa-dice text-pink"></i>
+            <span>パーティーLab（布教・上映会・偏愛レーダー）</span>
+          </div>
+          <p class="party-desc">友達との通話やオフ会で盛り上がる！あなたへのおすすめ作を算出する「布教マッチング」、今夜観る作品を決める「上映会ルーレット」、スタジオ愛を競う「偏愛レーダー」を実験実装しています。</p>
+        </div>
+
+        <!-- パーティーLab サブナビゲーション -->
+        <div class="party-subnav">
+          <button class="party-subnav-btn active" data-party-subtab="fukyo">
+            <i class="fa-solid fa-bullhorn"></i> 布教マッチング
+          </button>
+          <button class="party-subnav-btn" data-party-subtab="roulette">
+            <i class="fa-solid fa-dice"></i> 上映会ルーレット
+          </button>
+          <button class="party-subnav-btn" data-party-subtab="radar">
+            <i class="fa-solid fa-palette"></i> スタジオ偏愛レーダー
+          </button>
+        </div>
+
+        <!-- サブペイン 1: 布教マッチング -->
+        <div id="party-subtab-fukyo" class="party-subpane active">
+          <div class="fukyo-control-card">
+            <div class="fukyo-user-selector">
+              <div class="fukyo-user-box">
+                <label><i class="fa-solid fa-user-check text-pink"></i> 布教する人（推薦者）</label>
+                <select id="fukyo-from-user" class="fukyo-select"></select>
+              </div>
+              <button id="fukyo-swap-btn" class="fukyo-swap-btn" title="入れ替え">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              </button>
+              <div class="fukyo-user-box">
+                <label><i class="fa-solid fa-bullseye text-purple"></i> 布教される人（対象者）</label>
+                <select id="fukyo-to-user" class="fukyo-select"></select>
+              </div>
+            </div>
+            <div class="fukyo-summary-bar">
+              <span id="fukyo-summary-text">集計中...</span>
+              <small class="text-muted"><i class="fa-solid fa-circle-info"></i> 対象者の好み（スタジオ・年代・ジャンル）から相性を推測してランキング化しています</small>
+            </div>
+          </div>
+
+          <div id="fukyo-results-grid" class="fukyo-cards-grid">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+
+        <!-- サブペイン 2: 上映会ルーレット -->
+        <div id="party-subtab-roulette" class="party-subpane">
+          <div class="roulette-container">
+            <div class="roulette-config-card">
+              <div class="pane-controls" style="margin-bottom: 1rem;">
+                <div class="user-select-bar">
+                  <span class="control-label"><i class="fa-solid fa-users"></i> 参加者を選択:</span>
+                  <div id="roulette-user-chips" class="user-checkboxes"></div>
+                </div>
+                <div class="filter-actions" style="margin-top: 0.5rem;">
+                  <button id="btn-roulette-select-all" class="btn btn-sm btn-outline">全選択</button>
+                  <button id="btn-roulette-deselect-all" class="btn btn-sm btn-outline">全解除</button>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 0.8rem;">
+                <label class="control-label" style="display:block;margin-bottom:0.4rem;"><i class="fa-solid fa-sliders"></i> 抽選モード:</label>
+                <div class="roulette-mode-group">
+                  <button class="roulette-mode-btn active" data-mode="unwatched">
+                    <span>🌟 完全初見枠</span>
+                    <span class="mode-sub">参加者全員が誰も見ていない人気作</span>
+                  </button>
+                  <button class="roulette-mode-btn" data-mode="common">
+                    <span>💖 全員履修済み枠</span>
+                    <span class="mode-sub">参加者全員が見ている共通作（語り合い）</span>
+                  </button>
+                  <button class="roulette-mode-btn" data-mode="host">
+                    <span>🎁 布教プレゼン枠</span>
+                    <span class="mode-sub">誰か1人だけ見ていて他が未視聴の作</span>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label class="control-label" style="display:block;margin-bottom:0.4rem;"><i class="fa-regular fa-calendar"></i> 年代フィルター:</label>
+                <div id="roulette-era-chips" class="era-filter-group" style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+                  <button class="chip-btn active" data-era="all">すべて</button>
+                  <button class="chip-btn" data-era="2020s">2020年代</button>
+                  <button class="chip-btn" data-era="2010s">2010年代</button>
+                  <button class="chip-btn" data-era="2000s">2000年代</button>
+                  <button class="chip-btn" data-era="older">〜1990年代</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ルーレットステージ -->
+            <div class="roulette-stage-card">
+              <div id="roulette-reel-box" class="roulette-reel-box">
+                <div class="roulette-initial-msg">
+                  <i class="fa-solid fa-dice"></i>
+                  <p>「ルーレットを回す」を押すとスロットがスタートします！</p>
+                </div>
+              </div>
+              <button id="btn-spin-roulette" class="roulette-spin-btn">
+                <i class="fa-solid fa-shuffle"></i> 🎰 ルーレットを回す！
+              </button>
+
+              <div id="roulette-winner-container" style="display: none; margin-top: 1.75rem;">
+                <!-- JSで当選カードを挿入 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- サブペイン 3: スタジオ偏愛レーダー -->
+        <div id="party-subtab-radar" class="party-subpane">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-user-astronaut text-pink"></i> 各ユーザーのスタジオ偏愛ランキング</h3>
+              <p class="card-desc">京都アニメーション、動画工房、シャフト、ufotableなど、どの制作会社を多く履修しているかの偏りです</p>
+            </div>
+            <div id="radar-users-grid" class="radar-grid">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+
+          <div class="studio-battle-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-trophy text-gold"></i> スタジオ別・履修数バトル（誰が一番見てる？）</h3>
+              <p class="card-desc">スタジオごとに最も多くの作品を視聴しているユーザーに王冠マークが付きます</p>
+            </div>
+            <div id="radar-battle-table-container" class="studio-battle-table-wrap">
+              <!-- JSでテーブル生成 -->
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -579,5 +721,6 @@
   <!-- お試し機能 (Labs) 専用スクリプト (削除時はこの1行を消せばOK) -->
   <script src="./labs/labs.js"></script>
   <script src="./labs/genre-lab.js"></script>
+  <script src="./labs/party-lab.js"></script>
 </body>
 </html>

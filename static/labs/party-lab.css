@@ -1,0 +1,683 @@
+/* ==========================================================================
+   パーティーLab (Party Lab) スタイルシート
+   - 布教マッチング
+   - 上映会ルーレット
+   - スタジオ偏愛レーダー
+   ========================================================================== */
+
+/* ヘッダーバナー */
+.party-banner {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(168, 85, 247, 0.18) 50%, rgba(56, 189, 248, 0.15) 100%);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.party-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.party-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.5;
+}
+
+/* サブナビゲーション */
+.party-subnav {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.party-subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.party-subnav-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.party-subnav-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  border-color: var(--accent-pink);
+}
+
+.party-subnav-btn.active {
+  background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+  color: #fff !important;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.3);
+}
+
+.party-subpane {
+  display: none;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.party-subpane.active {
+  display: block;
+}
+
+/* ==========================================================================
+   1. 布教マッチング
+   ========================================================================== */
+.fukyo-control-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.fukyo-user-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.fukyo-user-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 220px;
+}
+
+.fukyo-user-box label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fukyo-select {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.fukyo-select:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+}
+
+.fukyo-swap-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--accent-pink);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1.2rem;
+  flex-shrink: 0;
+}
+
+.fukyo-swap-btn:hover {
+  background: var(--accent-pink);
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+.fukyo-summary-bar {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.fukyo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.25rem;
+}
+
+.fukyo-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 180px;
+}
+
+.fukyo-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink);
+  box-shadow: 0 8px 24px rgba(244, 63, 94, 0.2);
+}
+
+.fukyo-rank-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fukyo-rank-1 .fukyo-rank-badge {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+  border: none;
+}
+
+.fukyo-rank-2 .fukyo-rank-badge {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+  color: #fff;
+  border: none;
+}
+
+.fukyo-rank-3 .fukyo-rank-badge {
+  background: linear-gradient(135deg, #b45309 0%, #78350f 100%);
+  color: #fff;
+  border: none;
+}
+
+.fukyo-thumb-box {
+  width: 100px;
+  height: 135px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+.fukyo-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fukyo-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.fukyo-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.fukyo-card-title:hover {
+  color: var(--accent-pink);
+}
+
+.fukyo-match-meter {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.fukyo-match-bar-bg {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.fukyo-match-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f43f5e 0%, #a855f7 100%);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.fukyo-match-score {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--accent-pink);
+  white-space: nowrap;
+}
+
+.fukyo-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.fukyo-tag {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  color: var(--text-color);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fukyo-tag i {
+  color: var(--accent-pink);
+}
+
+.fukyo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.fukyo-copy-btn {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.fukyo-copy-btn:hover {
+  background: var(--accent-pink);
+  color: #fff;
+  border-color: var(--accent-pink);
+}
+
+/* ==========================================================================
+   2. 上映会ルーレット
+   ========================================================================== */
+.roulette-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roulette-config-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.roulette-mode-group {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.roulette-mode-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.65rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: all 0.2s ease;
+}
+
+.roulette-mode-btn span.mode-sub {
+  font-size: 0.72rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.roulette-mode-btn.active {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  border-color: var(--accent-pink);
+  color: var(--text-color);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
+}
+
+/* ルーレットステージ */
+.roulette-stage-card {
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 2px solid rgba(244, 63, 94, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(244, 63, 94, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.roulette-reel-box {
+  max-width: 440px;
+  margin: 0 auto 1.75rem auto;
+  height: 180px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.roulette-reel-box.spinning {
+  border-style: solid;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.5);
+}
+
+.roulette-initial-msg {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.roulette-initial-msg i {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  display: block;
+  color: var(--accent-pink);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.roulette-spin-btn {
+  padding: 0.9rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #be123c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(244, 63, 94, 0.45);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  touch-action: manipulation;
+}
+
+.roulette-spin-btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(244, 63, 94, 0.6);
+}
+
+.roulette-spin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ルーレット当選結果カード */
+.roulette-winner-card {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--accent-pink);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: left;
+  box-shadow: 0 8px 32px rgba(244, 63, 94, 0.3);
+  animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.roulette-winner-thumb {
+  width: 120px;
+  height: 165px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.roulette-winner-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.roulette-winner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #f43f5e 0%, #a855f7 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.roulette-winner-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.roulette-winner-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   3. スタジオ偏愛レーダー
+   ========================================================================== */
+.radar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.radar-user-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.radar-user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.radar-user-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.radar-user-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--accent-pink);
+  font-weight: 700;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.radar-studio-item {
+  margin-bottom: 0.85rem;
+}
+
+.radar-studio-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+.radar-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.radar-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* スタジオ比較表 */
+.studio-battle-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.studio-battle-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.studio-battle-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.studio-battle-table th,
+.studio-battle-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.studio-battle-table th:first-child,
+.studio-battle-table td:first-child {
+  text-align: left;
+  font-weight: 700;
+}
+
+.studio-battle-top {
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--accent-pink);
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .fukyo-user-selector {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .fukyo-swap-btn {
+    margin-top: 0;
+    align-self: center;
+  }
+  .fukyo-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .roulette-winner-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .roulette-winner-tag {
+    align-self: center;
+  }
+}

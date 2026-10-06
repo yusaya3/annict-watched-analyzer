@@ -767,6 +767,10 @@ function renderAllComponents() {
   if (window.renderGenreLabTab && state.data) {
     window.renderGenreLabTab(state.data.labs, state.data);
   }
+  // パーティーLab (Party Lab: 布教マッチング、ルーレット、スタジオ偏愛レーダー) の描画
+  if (window.renderPartyLabTab && state.data) {
+    window.renderPartyLabTab(state.data.labs, state.data);
+  }
 }
 
 // ユーザー選択チップの生成 (ベン図用)
