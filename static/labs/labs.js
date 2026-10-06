@@ -161,7 +161,33 @@ function renderTimeline(timelineReport, fullData) {
       // その年の各ユーザー作品カード
       let usersAnimesHtml = '';
       users.forEach((u, uIdx) => {
-        const animes = yearsByUser[u]?.animesByYear?.[year] || [];
+        let animes = yearsByUser[u]?.animesByYear?.[year];
+
+        // フォールバック: animesByYear が存在しないか空の場合、fullData や state からリアルタイム抽出
+        if (!animes || animes.length === 0) {
+          const userList = fullData?.userWatchedLists?.[u] ||
+                           window.state?.data?.userWatchedLists?.[u] ||
+                           [];
+          if (userList.length > 0) {
+            animes = userList.filter(a => {
+              let y = null;
+              if (a.season) {
+                const m = String(a.season).match(/(\d{4})年?/);
+                if (m) y = parseInt(m[1], 10);
+              }
+              if (!y && a.releasedOn) {
+                const m = String(a.releasedOn).match(/(\d{4})/);
+                if (m) y = parseInt(m[1], 10);
+              }
+              if (!y && a.year) {
+                y = parseInt(a.year, 10);
+              }
+              return y === year;
+            });
+          }
+        }
+
+        animes = animes || [];
         if (animes.length === 0) return;
 
         const cardsHtml = animes.map(a => {
@@ -194,6 +220,14 @@ function renderTimeline(timelineReport, fullData) {
         `;
       });
 
+      if (!usersAnimesHtml) {
+        usersAnimesHtml = `
+          <div style="padding:1rem;text-align:center;color:var(--text-muted);font-size:0.85rem;">
+            <i class="fa-solid fa-circle-info"></i> この年の作品一覧データがありません（ページ右上の「更新」ボタンで最新データを同期してください）
+          </div>
+        `;
+      }
+
       const topUserBadge = topUser && topUserCount > 0
         ? `<span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);font-size:0.75rem;">最多: @${escapeHtml(topUser)} (${topUserCount}作)</span>`
         : '';
@@ -206,22 +240,35 @@ function renderTimeline(timelineReport, fullData) {
             <span class="text-muted" style="font-size:0.8rem;">全員合計 ${yearTotal} 作品</span>
           </div>
           <div class="timeline-year-header-right">
-            <span class="text-muted" style="font-size:0.75rem;">作品を見る</span>
+            <span class="text-muted timeline-toggle-text" style="font-size:0.75rem;">作品を見る</span>
             <i class="fa-solid fa-chevron-down timeline-toggle-icon"></i>
           </div>
         </div>
         <div class="timeline-bars-box">
           ${barsHtml}
         </div>
-        <div class="timeline-year-drawer">
+        <div class="timeline-year-drawer" style="display:none;">
           ${usersAnimesHtml}
         </div>
       `;
 
-      // アコーディオン開閉
+      // アコーディオン開閉（CSSクラス + インラインスタイル両方で確実に動作）
       const header = row.querySelector('.timeline-year-header');
+      const drawer = row.querySelector('.timeline-year-drawer');
+      const toggleIcon = row.querySelector('.timeline-toggle-icon');
+      const toggleText = row.querySelector('.timeline-toggle-text');
+
       header.addEventListener('click', () => {
-        row.classList.toggle('open');
+        const isOpen = row.classList.toggle('open');
+        if (drawer) {
+          drawer.style.display = isOpen ? 'block' : 'none';
+        }
+        if (toggleIcon) {
+          toggleIcon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+        if (toggleText) {
+          toggleText.textContent = isOpen ? '閉じる' : '作品を見る';
+        }
       });
 
       // サムネイル画像クリックで画像モーダル

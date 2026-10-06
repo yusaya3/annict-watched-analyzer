@@ -847,6 +847,13 @@ async function loadData(force = false) {
       state.data = localReport;
       renderAllComponents();
       console.log('[Local-First] IndexedDBの最新レポートから即時描画完了');
+
+      // 旧キャッシュ互換性チェック: timelineReport に 1年ごとデータ(allYears)がない場合は自動で手元のデータから再集計
+      const hasTimelineAllYears = !!localReport.labs?.timelineReport?.allYears;
+      if (!hasTimelineAllYears && state.data.userWatchedLists) {
+        console.log('[Local-First] タイムライン新機能向けにローカルデータを自動アップグレード');
+        recalculateClientReport();
+      }
     }
 
     // 2. 手元IndexedDBにユーザーの視聴データ（user_watches）が保存されている場合
