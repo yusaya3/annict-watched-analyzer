@@ -1163,7 +1163,7 @@ function renderSimilarityCoverage() {
         const pctStr = item.pct.toFixed(1);
         row.innerHTML = `
           <div class="coverage-target-top">
-            <span class="coverage-target-name">@${escapeHtml(item.other)} も視聴</span>
+            <span class="coverage-target-name">@${escapeHtml(item.other)}</span>
             <div class="coverage-target-stat-wrap">
               <strong class="coverage-target-pct">${pctStr}%</strong>
               <span class="coverage-target-count">(${item.commonCount} / ${myTotal}作)</span>

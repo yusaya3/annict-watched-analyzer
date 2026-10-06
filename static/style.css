@@ -1122,6 +1122,28 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+  scrollbar-width: thin;
+}
+
+.ranking-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ranking-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+}
+
+.ranking-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.ranking-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-pink);
 }
 
 .ranking-item {
