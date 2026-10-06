@@ -46,7 +46,7 @@ npm start
 
 ---
 
-## ⚡ Annict 公式 GraphQL API 連携（爆速化オプション）
+## ⚡ Annict 公式 GraphQL API 連携
 
 本アプリは、Annict の公式 GraphQL API に対応しています。
 トークンをサーバー環境変数（Vercel または `.env`）に設定しておくだけで、**アプリを利用する全ユーザーが一切トークンを入力することなく、公式APIの超高速・安定したデータ取得を利用できます**。
