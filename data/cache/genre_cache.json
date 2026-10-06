@@ -154417,5 +154417,304 @@
         "rank": 55
       }
     ]
+  },
+  "逃げ上手の若君 第二期": {
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "tags": [
+      {
+        "name": "Samurai",
+        "rank": 100
+      },
+      {
+        "name": "War",
+        "rank": 96
+      },
+      {
+        "name": "Historical",
+        "rank": 84
+      },
+      {
+        "name": "Shounen",
+        "rank": 79
+      },
+      {
+        "name": "Gore",
+        "rank": 79
+      },
+      {
+        "name": "Politics",
+        "rank": 79
+      },
+      {
+        "name": "Mixed Media",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 66
+      },
+      {
+        "name": "Primarily Child Cast",
+        "rank": 60
+      },
+      {
+        "name": "Ninja",
+        "rank": 60
+      },
+      {
+        "name": "Gyaru",
+        "rank": 60
+      },
+      {
+        "name": "Surreal Comedy",
+        "rank": 60
+      },
+      {
+        "name": "Meta",
+        "rank": 60
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 60
+      },
+      {
+        "name": "Female Harem",
+        "rank": 56
+      },
+      {
+        "name": "Educational",
+        "rank": 40
+      }
+    ]
+  },
+  "これ描いて死ね": {
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Writing",
+        "rank": 95
+      },
+      {
+        "name": "Drawing",
+        "rank": 89
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 88
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 84
+      },
+      {
+        "name": "Teacher",
+        "rank": 84
+      },
+      {
+        "name": "Otaku Culture",
+        "rank": 83
+      },
+      {
+        "name": "School Club",
+        "rank": 80
+      },
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 72
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 72
+      },
+      {
+        "name": "Coastal",
+        "rank": 58
+      },
+      {
+        "name": "School",
+        "rank": 50
+      },
+      {
+        "name": "Rural",
+        "rank": 49
+      },
+      {
+        "name": "Shounen",
+        "rank": 48
+      }
+    ]
+  },
+  "盗掘王": {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tags": [
+      {
+        "name": "Anti-Hero",
+        "rank": 100
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Magic",
+        "rank": 79
+      },
+      {
+        "name": "Gods",
+        "rank": 79
+      },
+      {
+        "name": "Demons",
+        "rank": 79
+      },
+      {
+        "name": "Time Manipulation",
+        "rank": 79
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 79
+      },
+      {
+        "name": "Age Regression",
+        "rank": 79
+      },
+      {
+        "name": "Surreal Comedy",
+        "rank": 75
+      },
+      {
+        "name": "Dungeon",
+        "rank": 73
+      },
+      {
+        "name": "Travel",
+        "rank": 70
+      },
+      {
+        "name": "Urban",
+        "rank": 50
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 50
+      },
+      {
+        "name": "CGI",
+        "rank": 26
+      }
+    ]
+  },
+  "こちら葛飾区亀有公園前派出所": {
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Police",
+        "rank": 91
+      },
+      {
+        "name": "Work",
+        "rank": 79
+      },
+      {
+        "name": "Urban",
+        "rank": 79
+      },
+      {
+        "name": "Slapstick",
+        "rank": 79
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Motorcycles",
+        "rank": 79
+      },
+      {
+        "name": "Shounen",
+        "rank": 79
+      },
+      {
+        "name": "Episodic",
+        "rank": 66
+      },
+      {
+        "name": "Delinquents",
+        "rank": 60
+      }
+    ]
+  },
+  "ひぐらしのなく頃に拡 ～アウトブレイク～": {
+    "genres": [
+      "Action",
+      "Mystery",
+      "Psychological",
+      "Thriller"
+    ],
+    "tags": [
+      {
+        "name": "Denpa",
+        "rank": 90
+      },
+      {
+        "name": "Alternate Universe",
+        "rank": 79
+      },
+      {
+        "name": "Pandemic",
+        "rank": 79
+      },
+      {
+        "name": "Gore",
+        "rank": 65
+      },
+      {
+        "name": "Rural",
+        "rank": 65
+      },
+      {
+        "name": "Primarily Child Cast",
+        "rank": 64
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 50
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 44
+      }
+    ]
+  },
+  "Fate/strange Fake 第1話「英霊事件」": {
+    "genres": [],
+    "tags": []
+  },
+  "メイドインアビス 劇場版総集編 【前編】旅立ちの夜明け": {
+    "genres": [],
+    "tags": []
+  },
+  "魔法の姉妹ルルットリリィ 近くて遠いふたりの距離": {
+    "genres": [],
+    "tags": []
   }
 }

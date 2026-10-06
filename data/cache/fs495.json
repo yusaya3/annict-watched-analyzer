@@ -1,8 +1,15 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-05T16:34:37.485Z",
-  "count": 799,
+  "fetchedAt": "2026-10-06T22:52:00.642Z",
+  "count": 800,
   "animes": [
+    {
+      "id": "18233",
+      "title": "魔法の姉妹ルルットリリィ 近くて遠いふたりの距離",
+      "image": "https://image.annict.com/v96N3eC2hz_mzPXcrf9VY-jOD3mSLSHVGNu8EuzhdZY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/16697/image/master-003649d0d5f63e0b3ff85e63a80cc516.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/18233"
+    },
     {
       "id": "13582",
       "title": "無職転生Ⅲ ～異世界行ったら本気だす～",

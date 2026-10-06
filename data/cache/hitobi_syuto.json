@@ -1,6 +1,6 @@
 {
   "username": "hitobi_syuto",
-  "fetchedAt": "2026-10-05T16:34:53.309Z",
+  "fetchedAt": "2026-10-06T22:51:59.421Z",
   "count": 962,
   "animes": [
     {
@@ -74,6 +74,13 @@
       "url": "https://annict.com/works/16714"
     },
     {
+      "id": "16571",
+      "title": "ぐらんぶる Season 3",
+      "image": "https://image.annict.com/o_6QGjj1sNFec2e_T_ViXlm2uWUI9QkqpRXcYMFKzfM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13237/image/master-b1ac0954fec2ddaa0fdc8a2bae8960ed.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16571"
+    },
+    {
       "id": "16677",
       "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
       "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
@@ -86,13 +93,6 @@
       "image": "https://image.annict.com/1XzVoit3HhuSBy94KNJ8p3KNvvGYU6f-VIC11VlAoEk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5006/image/master-12a9006b3f219d72e3048a9f722fb49e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/7915"
-    },
-    {
-      "id": "16571",
-      "title": "ぐらんぶる Season 3",
-      "image": "https://image.annict.com/o_6QGjj1sNFec2e_T_ViXlm2uWUI9QkqpRXcYMFKzfM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13237/image/master-b1ac0954fec2ddaa0fdc8a2bae8960ed.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16571"
     },
     {
       "id": "17057",
@@ -193,18 +193,18 @@
       "url": "https://annict.com/works/17114"
     },
     {
-      "id": "16822",
-      "title": "令和のダラさん",
-      "image": "https://image.annict.com/GWLjsN5P1RiQK53WnuqBs0mLMANnZ8QaWNgO1HoZhJE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13460/image/master-1ce4d51f27effe31d7555958ed3afeb4.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16822"
-    },
-    {
       "id": "16468",
       "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
       "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16468"
+    },
+    {
+      "id": "16822",
+      "title": "令和のダラさん",
+      "image": "https://image.annict.com/GWLjsN5P1RiQK53WnuqBs0mLMANnZ8QaWNgO1HoZhJE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13460/image/master-1ce4d51f27effe31d7555958ed3afeb4.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16822"
     },
     {
       "id": "17354",
@@ -284,18 +284,18 @@
       "url": "https://annict.com/works/11119"
     },
     {
-      "id": "6528",
-      "title": "メビウス・ダスト",
-      "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/6528"
-    },
-    {
       "id": "17192",
       "title": "同じゼミの染谷さんがセクシー女優だった話。",
       "image": "https://image.annict.com/p2w4l5TliQfmXbGCfj1v_xwDOu6-GjSkZ8DMTMdbsdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13905/image/master-295820cb4e410755a831085b71326800.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17192"
+    },
+    {
+      "id": "6528",
+      "title": "メビウス・ダスト",
+      "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6528"
     },
     {
       "id": "17323",

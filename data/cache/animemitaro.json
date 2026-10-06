@@ -1,7 +1,7 @@
 {
   "username": "animemitaro",
-  "fetchedAt": "2026-10-06T09:00:31.488Z",
-  "count": 1099,
+  "fetchedAt": "2026-10-06T22:51:55.219Z",
+  "count": 1105,
   "animes": [
     {
       "id": "8632",
@@ -39,6 +39,27 @@
       "url": "https://annict.com/works/16391"
     },
     {
+      "id": "14132",
+      "title": "逃げ上手の若君 第二期",
+      "image": "https://image.annict.com/PHqtOFvCb74yRvr1tS8pfyksu3QWCjL-vu92UB4TOhw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10936/image/master-095e409dc271710ea69a5daeef87e1e4.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14132"
+    },
+    {
+      "id": "15751",
+      "title": "これ描いて死ね",
+      "image": "https://image.annict.com/2oa6V9InhquH4R4Gy7K3u1U3WVRnooxoRj_QLZGDf38/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12369/image/master-65fa9aa6c1db173807ce15603667a66f.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15751"
+    },
+    {
+      "id": "16339",
+      "title": "グロウアップショウ ～ひまわりのサーカス団～",
+      "image": "https://image.annict.com/QQ7aCPaZMjpPnu8I--mKo_f8L3Y716LCD6lJ59TK7_U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13037/image/master-8aa0b6ab7ef6a275910799b5c03f56df.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16339"
+    },
+    {
       "id": "13010",
       "title": "さよならララ",
       "image": "https://image.annict.com/gOOkVwPu2Z7_A9uFiIHev_Kuwbg-rJizf-MoG1mLKok/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9712/image/master-4576dceb2e4fe441fc3a6745edd45cb5.jpg@webp",
@@ -74,6 +95,13 @@
       "url": "https://annict.com/works/7915"
     },
     {
+      "id": "16910",
+      "title": "乙女怪獣キャラメリゼ",
+      "image": "https://image.annict.com/JQ50BpR0I5IPcCi0A_NjfCbslkSZn0xYUpE0j3p0Fhs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13561/image/master-ae45ecb0cbbe0d2a308734dfec8cbb05.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16910"
+    },
+    {
       "id": "11193",
       "title": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
       "image": "https://image.annict.com/zEQOZ1o5hwee-HNwTox_rDrmFKcYzEMkW6YJpgb0-bk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7557/image/master-5fc4fae4aea12c92792702557bdd7a65.jpg@webp",
@@ -95,11 +123,25 @@
       "url": "https://annict.com/works/16856"
     },
     {
+      "id": "10352",
+      "title": "乙女ゲー世界はモブに厳しい世界です2",
+      "image": "https://image.annict.com/AkHrcn_rNNvV-XPpFberoztB8Ileq2exk7wJzAZREOg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6950/image/master-cb56890d5db18c06bd9cd963129905ee.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/10352"
+    },
+    {
       "id": "16023",
       "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
       "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16023"
+    },
+    {
+      "id": "17353",
+      "title": "ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～ 2nd Season",
+      "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17353"
     },
     {
       "id": "17131",
@@ -494,18 +536,18 @@
       "url": "https://annict.com/works/14000"
     },
     {
-      "id": "16024",
-      "title": "自称悪役令嬢な婚約者の観察記録。",
-      "image": "https://image.annict.com/g3lt3WI3fVyiGD2rARPQtKwc-5DverponALuyWqjn_A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12609/image/master-9de3b2144bebea94e94927a59b06a9f0.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16024"
-    },
-    {
       "id": "14129",
       "title": "夜桜さんちの大作戦 第2期",
       "image": "https://image.annict.com/LtIKeM49B7D5UobIUjAzX26W0Li-IOFwfPWabVLe01s/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11638/image/master-23b615a1bf97f70a7cbd723c4e71ecc7.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/14129"
+    },
+    {
+      "id": "16024",
+      "title": "自称悪役令嬢な婚約者の観察記録。",
+      "image": "https://image.annict.com/g3lt3WI3fVyiGD2rARPQtKwc-5DverponALuyWqjn_A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12609/image/master-9de3b2144bebea94e94927a59b06a9f0.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16024"
     },
     {
       "id": "15393",
@@ -1600,18 +1642,18 @@
       "url": "https://annict.com/works/13234"
     },
     {
-      "id": "14930",
-      "title": "追放者食堂へようこそ！",
-      "image": "https://image.annict.com/TUHPD7KnrQYdwSGriRWJiozvpF4N00dMpyeqAjfkRcQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11564/image/master-46af1f113f7c317617cedb41994b02ce.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14930"
-    },
-    {
       "id": "13633",
       "title": "彼女、お借りします 第4期",
       "image": "https://image.annict.com/qClqqYFf7e704UesYGnpSc_IZrbzHglzSgO4x1ny9jU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10422/image/master-872bea377cb362356053c065dceaf457.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13633"
+    },
+    {
+      "id": "14930",
+      "title": "追放者食堂へようこそ！",
+      "image": "https://image.annict.com/TUHPD7KnrQYdwSGriRWJiozvpF4N00dMpyeqAjfkRcQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11564/image/master-46af1f113f7c317617cedb41994b02ce.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14930"
     },
     {
       "id": "15073",
@@ -1635,13 +1677,6 @@
       "url": "https://annict.com/works/11307"
     },
     {
-      "id": "13809",
-      "title": "雨と君と",
-      "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/13809"
-    },
-    {
       "id": "13046",
       "title": "ひゃくえむ。",
       "image": "https://image.annict.com/4owGUyn6_78wsoSOFrQTAO9npq7frK-OkfY9TZ1KuXY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9782/image/master-907344052cbfcf6375356a911ee5d2d5.jpg@webp",
@@ -1649,11 +1684,11 @@
       "url": "https://annict.com/works/13046"
     },
     {
-      "id": "10353",
-      "title": "Turkey!",
-      "image": "https://image.annict.com/ynLQvW0NM1VOwmWrRbYgBdAzsvBmegxplRvlyrzwt-U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6952/image/master-ee8d55f7379db0d38605d109d078f7cf.jpg@webp",
+      "id": "13809",
+      "title": "雨と君と",
+      "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
       "season": "2025年夏",
-      "url": "https://annict.com/works/10353"
+      "url": "https://annict.com/works/13809"
     },
     {
       "id": "13723",
@@ -1661,6 +1696,13 @@
       "image": "https://image.annict.com/HNMyrMR7uuLDAyW3MEeoLLu3ZxbGkvKwH77PtpyrxrU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10519/image/master-adad2c3f2b03f5f75321f1eb77ef8f1b.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13723"
+    },
+    {
+      "id": "10353",
+      "title": "Turkey!",
+      "image": "https://image.annict.com/ynLQvW0NM1VOwmWrRbYgBdAzsvBmegxplRvlyrzwt-U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6952/image/master-ee8d55f7379db0d38605d109d078f7cf.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/10353"
     },
     {
       "id": "13089",

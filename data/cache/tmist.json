@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-05T16:35:37.190Z",
-  "count": 511,
+  "fetchedAt": "2026-10-06T22:52:02.210Z",
+  "count": 513,
   "animes": [
     {
       "id": "15881",
@@ -18,11 +18,25 @@
       "url": "https://annict.com/works/13052"
     },
     {
+      "id": "13010",
+      "title": "さよならララ",
+      "image": "https://image.annict.com/gOOkVwPu2Z7_A9uFiIHev_Kuwbg-rJizf-MoG1mLKok/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9712/image/master-4576dceb2e4fe441fc3a6745edd45cb5.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13010"
+    },
+    {
       "id": "15724",
       "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
       "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15724"
+    },
+    {
+      "id": "16910",
+      "title": "乙女怪獣キャラメリゼ",
+      "image": "https://image.annict.com/JQ50BpR0I5IPcCi0A_NjfCbslkSZn0xYUpE0j3p0Fhs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13561/image/master-ae45ecb0cbbe0d2a308734dfec8cbb05.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16910"
     },
     {
       "id": "16734",
@@ -571,18 +585,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16654",
-      "title": "藤本タツキ 17-26 Part1",
-      "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16654"
-    },
-    {
       "id": "16655",
       "title": "藤本タツキ 17-26 Part2",
       "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16655"
+    },
+    {
+      "id": "16654",
+      "title": "藤本タツキ 17-26 Part1",
+      "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16654"
     },
     {
       "id": "13048",
@@ -725,18 +739,18 @@
       "url": "https://annict.com/works/11307"
     },
     {
-      "id": "13809",
-      "title": "雨と君と",
-      "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/13809"
-    },
-    {
       "id": "13046",
       "title": "ひゃくえむ。",
       "image": "https://image.annict.com/4owGUyn6_78wsoSOFrQTAO9npq7frK-OkfY9TZ1KuXY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9782/image/master-907344052cbfcf6375356a911ee5d2d5.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13046"
+    },
+    {
+      "id": "13809",
+      "title": "雨と君と",
+      "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/13809"
     },
     {
       "id": "10353",
@@ -823,18 +837,18 @@
       "url": "https://annict.com/works/14296"
     },
     {
-      "id": "15115",
-      "title": "不思議の国でアリスと -Dive in Wonderland-",
-      "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/15115"
-    },
-    {
       "id": "15395",
       "title": "人妻の唇は缶チューハイの味がして",
       "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/15395"
+    },
+    {
+      "id": "15115",
+      "title": "不思議の国でアリスと -Dive in Wonderland-",
+      "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/15115"
     },
     {
       "id": "15116",

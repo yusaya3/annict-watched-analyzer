@@ -1,6 +1,6 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-05T16:34:43.527Z",
+  "fetchedAt": "2026-10-06T22:51:57.215Z",
   "count": 558,
   "animes": [
     {
@@ -130,18 +130,18 @@
       "url": "https://annict.com/works/14929"
     },
     {
-      "id": "16822",
-      "title": "令和のダラさん",
-      "image": "https://image.annict.com/GWLjsN5P1RiQK53WnuqBs0mLMANnZ8QaWNgO1HoZhJE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13460/image/master-1ce4d51f27effe31d7555958ed3afeb4.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16822"
-    },
-    {
       "id": "16468",
       "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
       "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16468"
+    },
+    {
+      "id": "16822",
+      "title": "令和のダラさん",
+      "image": "https://image.annict.com/GWLjsN5P1RiQK53WnuqBs0mLMANnZ8QaWNgO1HoZhJE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13460/image/master-1ce4d51f27effe31d7555958ed3afeb4.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16822"
     },
     {
       "id": "17354",
@@ -221,18 +221,18 @@
       "url": "https://annict.com/works/16632"
     },
     {
-      "id": "6528",
-      "title": "メビウス・ダスト",
-      "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/6528"
-    },
-    {
       "id": "17192",
       "title": "同じゼミの染谷さんがセクシー女優だった話。",
       "image": "https://image.annict.com/p2w4l5TliQfmXbGCfj1v_xwDOu6-GjSkZ8DMTMdbsdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13905/image/master-295820cb4e410755a831085b71326800.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17192"
+    },
+    {
+      "id": "6528",
+      "title": "メビウス・ダスト",
+      "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6528"
     },
     {
       "id": "17323",
