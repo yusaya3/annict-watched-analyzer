@@ -789,10 +789,6 @@ function renderUserChips() {
     chip.addEventListener('click', () => {
       const idx = state.selectedVennUsers.indexOf(username);
       if (idx >= 0) {
-        if (state.selectedVennUsers.length <= 1) {
-          alert('最低1人のユーザーを選択してください');
-          return;
-        }
         state.selectedVennUsers.splice(idx, 1);
       } else {
         if (state.selectedVennUsers.length >= 3) {
@@ -816,11 +812,24 @@ function renderVenn() {
   chartContainer.innerHTML = '';
 
   const users = state.selectedVennUsers;
-  if (!users || users.length === 0) {
-    emptyMsg.style.display = 'block';
+  if (!users || users.length < 2) {
+    chartContainer.style.display = 'none';
+    if (emptyMsg) emptyMsg.style.display = 'flex';
+
+    // 詳細パネルの空状態表示
+    const detailTitle = document.getElementById('detail-title');
+    const detailBadge = document.getElementById('detail-badge');
+    const detailDesc = document.getElementById('detail-desc');
+    const detailList = document.getElementById('detail-list');
+    if (detailTitle) detailTitle.innerHTML = '<i class="fa-solid fa-list-check"></i> 作品リスト';
+    if (detailBadge) detailBadge.textContent = '0 作品';
+    if (detailDesc) detailDesc.textContent = '2人または3人のユーザーを選択すると、共通・固有の作品リストが表示されます。';
+    if (detailList) detailList.innerHTML = '<div class="empty-state" style="padding: 2.5rem 1rem;"><i class="fa-solid fa-users" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.4;"></i><p>ユーザーを選択してください</p></div>';
     return;
   }
-  emptyMsg.style.display = 'none';
+
+  chartContainer.style.display = 'flex';
+  if (emptyMsg) emptyMsg.style.display = 'none';
 
   const sets = generateSetsForUsers(users);
 

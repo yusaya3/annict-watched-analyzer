@@ -464,6 +464,62 @@ body {
   filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
 }
 
+/* Venn Empty State (完全中央配置) */
+#venn-empty-msg.venn-empty-state {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#venn-empty-msg .empty-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(244, 63, 94, 0.12);
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  box-shadow: 0 4px 16px rgba(244, 63, 94, 0.15);
+  transition: all 0.3s ease;
+}
+
+#venn-empty-msg .empty-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+#venn-empty-msg .empty-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  max-width: 360px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+[data-theme="light"] #venn-empty-msg .empty-icon {
+  background: rgba(225, 29, 72, 0.08);
+  border-color: rgba(225, 29, 72, 0.2);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.1);
+}
+
 .empty-state {
   text-align: center;
   color: var(--text-muted);
@@ -1240,6 +1296,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  #venn-empty-msg.venn-empty-state {
+    padding: 1rem 0.75rem;
+  }
+
+  #venn-empty-msg .empty-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  #venn-empty-msg .empty-title {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  #venn-empty-msg .empty-desc {
+    font-size: 0.8rem;
+    max-width: 280px;
   }
 
   #venn-chart svg {
