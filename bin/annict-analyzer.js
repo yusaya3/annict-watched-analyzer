@@ -217,6 +217,82 @@ function createApp() {
     res.status(404).json({ error: 'Popular works not found' });
   });
 
+  // Vercel 4.5MB レスポンスサイズ上限対策ヘルパー
+  function buildSafeReportPayload(report, users, extra = {}) {
+    if (!report) {
+      return { success: true, users, ...extra };
+    }
+    try {
+      const reportStr = JSON.stringify(report);
+      // 3.5MB未満であればそのまま返却
+      if (Buffer.byteLength(reportStr) < 3.5 * 1024 * 1024) {
+        return { success: true, users, report, ...extra };
+      }
+    } catch (e) {}
+
+    // 3.5MB超過時は巨大なlabsを除外したコアレポートを返却（4.5MB制限エラーを防止）
+    const slimReport = { ...report, labs: null, isSlim: true };
+    return {
+      success: true,
+      users,
+      report: slimReport,
+      isPayloadTruncated: true,
+      generatedAt: report.generatedAt,
+      ...extra
+    };
+  }
+
+  // GitHub Actions 自動更新トリガーAPI
+  app.post('/api/sync', async (req, res) => {
+    try {
+      const action = req.body.action || 'refresh'; // 'refresh', 'add', 'remove'
+      const username = (req.body.username || '').trim().replace(/^@/, '');
+      const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+      const repo = process.env.GITHUB_REPOSITORY || 'yusaya3/annict-watched-analyzer';
+
+      if (!githubToken) {
+        return res.json({
+          success: false,
+          mode: 'manual',
+          message: 'GitHub Actions 連携トークン (GITHUB_TOKEN) が未設定です。'
+        });
+      }
+
+      const dispatchUrl = `https://api.github.com/repos/${repo}/actions/workflows/update-users.yml/dispatches`;
+      const response = await fetch(dispatchUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${githubToken}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'annict-watched-analyzer'
+        },
+        body: JSON.stringify({
+          ref: 'main',
+          inputs: { action, username }
+        })
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        return res.status(response.status).json({
+          success: false,
+          error: `GitHub APIエラー (${response.status}): ${errorText}`
+        });
+      }
+
+      res.json({
+        success: true,
+        mode: 'github-actions',
+        action,
+        username,
+        message: 'GitHub Actions で最新データの同期を開始しました（約1〜2分で自動反映されます）'
+      });
+    } catch (err) {
+      console.error('GitHub Actions 起動エラー:', err);
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
   // ユーザー追加＆取得＆再集計API
   app.post('/api/users', async (req, res) => {
     try {
@@ -240,7 +316,7 @@ function createApp() {
       // 明示的に forceRefresh: false が渡された場合（ジャンル継続ステップ）以外は、対象ユーザーのAnnict最新データを必ず再取得する
       const refreshTarget = req.body.forceRefresh === false ? false : (req.body.forceRefresh === true ? true : username);
       const report = await enqueueAnalysis(users, refreshTarget);
-      res.json({ success: true, users, report });
+      res.json(buildSafeReportPayload(report, users, { updatedUser: username }));
     } catch (err) {
       console.error('ユーザー追加エラー:', err);
       res.status(500).json({ error: err.message });
@@ -329,11 +405,11 @@ function createApp() {
       const base = getBaseReport();
       if (base && base.userWatchedLists && users.every(u => Array.isArray(base.userWatchedLists[u]))) {
         const report = extractSubsetReport(base, users);
-        return res.json({ success: true, users, report });
+        return res.json(buildSafeReportPayload(report, users, { deletedUser: username }));
       }
 
       const report = await enqueueAnalysis(users, false);
-      res.json({ success: true, users, report });
+      res.json(buildSafeReportPayload(report, users, { deletedUser: username }));
     } catch (err) {
       console.error('ユーザー削除エラー:', err);
       res.status(500).json({ error: err.message });
@@ -349,7 +425,7 @@ function createApp() {
         saveUserList(users);
       }
       const report = await enqueueAnalysis(users, true);
-      res.json({ success: true, users, report });
+      res.json(buildSafeReportPayload(report, users));
     } catch (err) {
       console.error('全データ更新エラー:', err);
       res.status(500).json({ error: err.message });

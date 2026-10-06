@@ -405,6 +405,8 @@ const taskQueue = {
 async function executeAddUser(username, onProgress) {
   const currentUsers = state.data?.users || loadUsersFromStorage() || [];
 
+  if (onProgress) onProgress(`@${username} の最新データをAnnictから差分取得中...`);
+
   let res = await fetch('/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -416,10 +418,16 @@ async function executeAddUser(username, onProgress) {
     throw new Error(result.error || 'ユーザーの追加・更新に失敗しました');
   }
 
-  // 1回目の結果を画面とローカルに即時反映
-  state.data = result.report;
-  saveUsersToStorage(result.report.users);
-  await saveReportToIndexedDB(result.report);
+  // 取得結果を画面とローカルに即時反映
+  if (result.report) {
+    if (!result.report.labs && state.data?.labs) {
+      result.report.labs = state.data.labs;
+    }
+    state.data = result.report;
+    saveUsersToStorage(result.report.users);
+    await saveReportToIndexedDB(result.report);
+  }
+
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
     state.selectedVennUsers.push(username);
   }
@@ -429,27 +437,6 @@ async function executeAddUser(username, onProgress) {
 
   renderAllComponents();
   renderModalUserList();
-
-  // ジャンル照合の継続ステップ
-  let step = 1;
-  while (result.report && result.report.remainingGenres > 0 && step <= 5) {
-    if (onProgress) {
-      onProgress(`@${username} のジャンルデータを照合中... (残り ${result.report.remainingGenres} 作)`);
-    }
-    res = await fetch('/api/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, currentUsers: state.data?.users || [], forceRefresh: false })
-    });
-    result = await parseApiResponse(res);
-    if (!res.ok) break;
-
-    state.data = result.report;
-    saveUsersToStorage(result.report.users);
-    await saveReportToIndexedDB(result.report);
-    renderAllComponents();
-    step++;
-  }
 }
 
 // 実際のユーザー削除通信処理（キューから順番に呼ばれる）
@@ -511,22 +498,48 @@ async function refreshAllUsers(options = {}) {
   const metaUpdated = document.getElementById('meta-updated');
   const origBtnHtml = btnReload ? btnReload.innerHTML : '';
 
-  const users = state.data?.users || loadUsersFromStorage() || [];
-  if (users.length === 0) {
-    return loadData(true);
-  }
-
   try {
     loading.style.display = 'flex';
     if (btnReload) {
       btnReload.disabled = true;
-      btnReload.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> <span>Annict最新取得中...</span>';
+      btnReload.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> <span>同期中...</span>';
+    }
+
+    // 1. まず GitHub Actions 自動同期 (/api/sync) を試行
+    if (statusText) statusText.textContent = '同期モードを確認中...';
+    let triggeredGhActions = false;
+    try {
+      const syncRes = await fetch('/api/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'refresh' })
+      });
+      if (syncRes.ok) {
+        const syncData = await syncRes.json();
+        if (syncData.success && syncData.mode === 'github-actions') {
+          triggeredGhActions = true;
+          if (statusText) statusText.textContent = 'GitHub Actions で最新データの収集・分析を開始しました！';
+          if (metaUpdated) metaUpdated.textContent = 'GitHub Actions で同期実行中...';
+          alert('GitHub Actions で最新データの同期を開始しました！\n（約1〜2分後に最新データが自動反映されます）');
+          // 少し待ってから静的データを再読み込み
+          setTimeout(() => loadData(true), 25000);
+          return;
+        }
+      }
+    } catch (e) {
+      console.log('GitHub Actions 同期スキップ、アプリ内差分同期を実行:', e.message);
+    }
+
+    // 2. フォールバック: アプリ内での高速差分更新（Incremental Fetch）
+    const users = state.data?.users || loadUsersFromStorage() || [];
+    if (users.length === 0) {
+      return loadData(true);
     }
 
     for (let i = 0; i < users.length; i++) {
       const u = users[i];
-      const msg = `@${u} の最新データをAnnictから取得中 (${i + 1}/${users.length})...`;
-      statusText.textContent = msg;
+      const msg = `@${u} の最新データを差分取得中 (${i + 1}/${users.length})...`;
+      if (statusText) statusText.textContent = msg;
       if (metaUpdated) metaUpdated.textContent = msg;
 
       let res = await fetch('/api/users', {
@@ -540,35 +553,23 @@ async function refreshAllUsers(options = {}) {
         throw new Error(result.error || `@${u} の再取得に失敗しました`);
       }
 
-      state.data = result.report;
-      saveUsersToStorage(result.report.users);
-      await saveReportToIndexedDB(result.report);
-      renderAllComponents();
-      renderModalUserList();
-
-      let step = 1;
-      while (result.report && result.report.remainingGenres > 0 && step <= 5) {
-        const genreMsg = `@${u} のジャンルデータを追加照合中... (残り ${result.report.remainingGenres} 作品)`;
-        statusText.textContent = genreMsg;
-        if (metaUpdated) metaUpdated.textContent = genreMsg;
-
-        res = await fetch('/api/users', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username: u, currentUsers: users, forceRefresh: false })
-        });
-        result = await parseApiResponse(res);
-        if (!res.ok) break;
+      if (result.report) {
+        if (!result.report.labs && state.data?.labs) {
+          result.report.labs = state.data.labs;
+        }
         state.data = result.report;
         saveUsersToStorage(result.report.users);
         await saveReportToIndexedDB(result.report);
         renderAllComponents();
-        step++;
+        renderModalUserList();
       }
     }
 
+    // 全ユーザーの差分取得完了後、最新の静的データをロード
+    await loadData(true);
+
     if (!fromHeader) {
-      alert('全ユーザーのAnnict最新データの同期が完了しました！');
+      alert('全ユーザーのAnnict最新データの差分同期が完了しました！');
     }
 
   } catch (err) {

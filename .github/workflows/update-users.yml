@@ -1,21 +1,26 @@
 name: Update Annict Users & Analysis
 
 on:
+  schedule:
+    # 毎日 UTC 19:00 (JST 午前 4:00) に自動更新
+    - cron: '0 19 * * *'
   workflow_dispatch:
     inputs:
       action:
         description: '実行する操作 (add: 追加, remove: 削除, refresh: 全員再取得)'
         required: true
-        default: 'add'
+        default: 'refresh'
         type: choice
         options:
+          - refresh
           - add
           - remove
-          - refresh
       username:
         description: '対象のAnnictユーザーID (追加・削除時に入力)'
         required: false
         default: ''
+  repository_dispatch:
+    types: [update-analysis]
 
 permissions:
   contents: write
@@ -39,17 +44,20 @@ jobs:
 
       - name: ユーザーの追加 / 削除処理
         run: |
-          if [ "${{ github.event.inputs.action }}" = "add" ] && [ -n "${{ github.event.inputs.username }}" ]; then
-            node bin/manage-user-cli.js add "${{ github.event.inputs.username }}"
-          elif [ "${{ github.event.inputs.action }}" = "remove" ] && [ -n "${{ github.event.inputs.username }}" ]; then
-            node bin/manage-user-cli.js remove "${{ github.event.inputs.username }}"
+          ACTION="${{ github.event.inputs.action || github.event.client_payload.action || 'refresh' }}"
+          TARGET_USER="${{ github.event.inputs.username || github.event.client_payload.username || '' }}"
+          if [ "$ACTION" = "add" ] && [ -n "$TARGET_USER" ]; then
+            node bin/manage-user-cli.js add "$TARGET_USER"
+          elif [ "$ACTION" = "remove" ] && [ -n "$TARGET_USER" ]; then
+            node bin/manage-user-cli.js remove "$TARGET_USER"
           fi
 
       - name: Annict データ取得 ＆ ジャンル照合 ＆ 分析実行
         env:
           ANNICT_TOKEN: ${{ secrets.ANNICT_TOKEN }}
         run: |
-          if [ "${{ github.event.inputs.action }}" = "refresh" ]; then
+          ACTION="${{ github.event.inputs.action || github.event.client_payload.action || 'refresh' }}"
+          if [ "$ACTION" = "refresh" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             node bin/annict-analyzer.js --fetch-only --refresh
           else
             node bin/annict-analyzer.js --fetch-only
@@ -57,12 +65,14 @@ jobs:
 
       - name: 最新の分析データとキャッシュをコミット＆プッシュ
         run: |
+          ACTION="${{ github.event.inputs.action || github.event.client_payload.action || 'auto-refresh' }}"
+          TARGET_USER="${{ github.event.inputs.username || github.event.client_payload.username || '' }}"
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add config/users.json static/res/ data/cache/
           if git diff --staged --quiet; then
             echo "変更はありませんでした。"
           else
-            git commit -m "Auto-update analysis data [skip ci] (${{ github.event.inputs.action }} ${{ github.event.inputs.username }})"
+            git commit -m "Auto-update analysis data [skip ci] ($ACTION $TARGET_USER)"
             git push
           fi
