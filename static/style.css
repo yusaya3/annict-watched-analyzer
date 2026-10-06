@@ -2269,3 +2269,111 @@ body {
   }
 }
 
+/* =========================================================================
+   作品スコア内訳シミュレーター: サジェスト＆候補チップ (Light/Dark両対応)
+   ========================================================================= */
+.inspector-suggest-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 9999;
+  padding: 0.35rem 0;
+}
+
+[data-theme="light"] .inspector-suggest-dropdown {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.inspector-suggest-item {
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
+  color: var(--text-main);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.inspector-suggest-item:last-child {
+  border-bottom: none;
+}
+
+.inspector-suggest-item:hover,
+.inspector-suggest-item.active {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--accent-purple);
+}
+
+[data-theme="light"] .inspector-suggest-item:hover,
+[data-theme="light"] .inspector-suggest-item.active {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.inspector-suggest-item i {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.inspector-suggest-item:hover i {
+  color: var(--accent-purple);
+}
+
+[data-theme="light"] .inspector-suggest-item:hover i {
+  color: #7e22ce;
+}
+
+/* 候補作品チップ */
+.btn-match-chip {
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  transition: all 0.15s ease;
+}
+
+.btn-match-chip:hover {
+  border-color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--accent-purple);
+}
+
+.btn-match-chip.active {
+  border-color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.2);
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+[data-theme="light"] .btn-match-chip {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .btn-match-chip:hover {
+  background: #f3e8ff;
+  border-color: #9333ea;
+  color: #7e22ce;
+}
+
+[data-theme="light"] .btn-match-chip.active {
+  background: #ede9fe;
+  border-color: #7c3aed;
+  color: #6d28d9;
+}
+
+

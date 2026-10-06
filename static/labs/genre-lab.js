@@ -77,7 +77,7 @@
         suggestBox = document.createElement('div');
         suggestBox.id = 'inspector-suggest-dropdown';
         suggestBox.className = 'inspector-suggest-dropdown';
-        suggestBox.style.cssText = 'display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#161d2d;border:1px solid rgba(168, 85, 247, 0.5);border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,0.7);max-height:260px;overflow-y:auto;z-index:9999;';
+        suggestBox.style.display = 'none';
         inputInspect.parentElement.appendChild(suggestBox);
       }
 
@@ -122,20 +122,14 @@
         }
 
         suggestBox.innerHTML = topMatches.map(m => `
-          <div class="inspector-suggest-item" data-title="${escapeHtml(m.title)}" style="padding:0.6rem 0.8rem;cursor:pointer;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.85rem;color:var(--text-main);">
-            <i class="fa-solid fa-film text-muted"></i>
+          <div class="inspector-suggest-item" data-title="${escapeHtml(m.title)}">
+            <i class="fa-solid fa-film"></i>
             <span>${escapeHtml(m.title)}</span>
           </div>
         `).join('');
         suggestBox.style.display = 'block';
 
         suggestBox.querySelectorAll('.inspector-suggest-item').forEach(item => {
-          item.addEventListener('mouseenter', () => {
-            item.style.background = 'rgba(168, 85, 247, 0.15)';
-          });
-          item.addEventListener('mouseleave', () => {
-            item.style.background = 'transparent';
-          });
           item.addEventListener('click', () => {
             const selectedTitle = item.getAttribute('data-title');
             inputInspect.value = selectedTitle;
@@ -739,7 +733,7 @@
         </div>
         <div class="inspector-match-chips" style="display:flex;flex-wrap:wrap;gap:0.4rem;">
           ${data.matches.map(m => `
-            <button class="btn-match-chip ${m.title === data.title ? 'active' : ''}" data-title="${escapeHtml(m.title)}" style="padding:0.3rem 0.65rem;font-size:0.8rem;border-radius:6px;cursor:pointer;border:1px solid ${m.title === data.title ? 'var(--accent, #a855f7)' : 'var(--border-color)'};background:${m.title === data.title ? 'rgba(168, 85, 247, 0.25)' : 'var(--bg-card)'};color:var(--text-main);transition:all 0.15s ease;">
+            <button class="btn-match-chip ${m.title === data.title ? 'active' : ''}" data-title="${escapeHtml(m.title)}">
               ${escapeHtml(m.title)}
             </button>
           `).join('')}
