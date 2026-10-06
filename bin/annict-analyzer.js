@@ -238,16 +238,68 @@ function createApp() {
         saveUserList(users);
       }
 
+      // 新規作品のジャンル・タグをAniListから自動解決
+      const workGenres = {};
+      try {
+        const { GenreClient } = require('../lib/labs/genre-client.js');
+        const { classifyAnimeScored } = require('../lib/labs/genre-scorer.js');
+        const genreClient = new GenreClient();
+        const titles = animes.map(a => a.title).filter(Boolean);
+
+        // キャッシュにない新規作品があればAniListと自動照合（タイムバジェット15秒）
+        const resolvedMap = await genreClient.resolveGenres(titles, null, 15000);
+
+        // 新規ユーザーの全作品の分類結果マップを生成（超軽量）
+        titles.forEach(t => {
+          const entry = resolvedMap[t] || genreClient.cache[t] || { genres: [], tags: [] };
+          const genres = entry.genres || [];
+          const tags = entry.tags || [];
+          const category = classifyAnimeScored(genres, tags, t);
+          workGenres[t] = {
+            category,
+            genres,
+            tags: (tags || []).slice(0, 5) // 上位5タグのみ
+          };
+        });
+      } catch (genreErr) {
+        console.warn(`[API /user-watched] ジャンル自動解決エラー (スキップ): ${genreErr.message}`);
+      }
+
       res.json({
         success: true,
         username,
         count: animes.length,
         fetchedAt: new Date().toISOString(),
-        animes
+        animes,
+        workGenres
       });
     } catch (err) {
       console.error(`[API /user-watched Error @${req.params.username}]:`, err);
       res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
+  // 全作品の軽量ジャンル辞書取得API（ブラウザ側での完全リアルタイム分類用: 約200KB）
+  app.get('/api/work-genres', (req, res) => {
+    try {
+      const { GenreClient } = require('../lib/labs/genre-client.js');
+      const { classifyAnimeScored } = require('../lib/labs/genre-scorer.js');
+      const genreClient = new GenreClient();
+      const compactMap = {};
+
+      for (const [title, entry] of Object.entries(genreClient.cache || {})) {
+        const genres = entry.genres || [];
+        const tags = entry.tags || [];
+        compactMap[title] = {
+          c: classifyAnimeScored(genres, tags, title),
+          g: genres
+        };
+      }
+
+      res.json(compactMap);
+    } catch (err) {
+      console.error('[API /work-genres Error]:', err);
+      res.status(500).json({ error: err.message });
     }
   });
 

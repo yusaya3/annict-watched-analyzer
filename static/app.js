@@ -13,7 +13,8 @@ const state = {
   groupSearchQuery: '',
   groupEraFilter: 'all',
   groupSort: 'watchers',
-  popularWorks: []
+  popularWorks: [],
+  genreMap: {}
 };
 
 // 初期化
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initGroupAnalysis();
   loadPopularWorks();
+  loadWorkGenres();
 });
 
 // Annict API 接続状態の確認
@@ -404,16 +406,33 @@ const taskQueue = {
 // 【新方式】ブラウザ内リアルタイム集計エンジン連携
 // =========================================================================
 
-// ブラウザ内で0.05秒で全集計（ベン図、シンクロ率、インサイト、カロリー、年代）を実行し即時再描画
+// ブラウザ内で0.05秒で全集計（ベン図、シンクロ率、インサイト、カロリー、年代、ジャンル）を実行し即時再描画
 function recalculateClientReport() {
   if (!window.ClientAnalyzer || !state.data || !state.data.userWatchedLists) return;
   const analyzer = new window.ClientAnalyzer(state.data.userWatchedLists);
-  const newReport = analyzer.buildFullReport(state.data.labs);
+  const newReport = analyzer.buildFullReport(state.data.labs, state.genreMap);
   state.data = newReport;
   saveUsersToStorage(newReport.users);
   saveReportToIndexedDB(newReport);
   renderAllComponents();
   renderModalUserList();
+}
+
+// 全作品の軽量ジャンル辞書を非同期ロードしてリアルタイム集計を有効化
+async function loadWorkGenres() {
+  try {
+    const res = await fetch('/api/work-genres');
+    if (res.ok) {
+      const map = await res.json();
+      if (!state.genreMap) state.genreMap = {};
+      Object.assign(state.genreMap, map);
+      if (state.data && state.data.userWatchedLists) {
+        recalculateClientReport();
+      }
+    }
+  } catch (e) {
+    console.warn('[Genre] ジャンル辞書の事前取得をスキップ:', e.message);
+  }
 }
 
 // 1人の最新視聴データのみをAnnictから取得する超軽量通信関数（所要時間1〜2秒、数十KB）
@@ -432,15 +451,21 @@ async function fetchUserWatched(username) {
 
 // 実際のユーザー追加・個別更新通信処理（1人分だけ取得してブラウザで一瞬で再集計！）
 async function executeAddUser(username, onProgress) {
-  if (onProgress) onProgress(`@${username} の最新データをAnnictから取得中...`);
+  if (onProgress) onProgress(`@${username} の最新データをAnnict・AniListから取得中...`);
 
-  // 1人分の視聴データのみを超軽量APIで取得（1〜2秒で完了）
+  // 1人分の視聴データと新規作品のジャンル分類を取得
   const result = await fetchUserWatched(username);
 
   if (!state.data) state.data = { users: [], userWatchedLists: {} };
   if (!state.data.userWatchedLists) state.data.userWatchedLists = {};
 
   state.data.userWatchedLists[username] = result.animes || [];
+
+  // 新規作品のジャンル分類結果をstate.genreMapに即座にマージ！
+  if (result.workGenres && typeof result.workGenres === 'object') {
+    if (!state.genreMap) state.genreMap = {};
+    Object.assign(state.genreMap, result.workGenres);
+  }
 
   if (!Array.isArray(state.data.users)) state.data.users = [];
   if (!state.data.users.some(u => u.toLowerCase() === username.toLowerCase())) {
@@ -454,7 +479,7 @@ async function executeAddUser(username, onProgress) {
     state.groupSelectedUsers.push(username);
   }
 
-  // ブラウザ内で一瞬（0.05秒）で再集計＆IndexedDB保存＆画面再描画
+  // ブラウザ内で一瞬（0.05秒）で全ジャンル・全指標を再集計＆IndexedDB保存＆画面再描画！
   recalculateClientReport();
 }
 
@@ -712,6 +737,21 @@ async function loadData(force = false) {
     }
 
     state.data = serverData;
+
+    // 既存のLabsデータからジャンル辞書を初期シード
+    if (serverData.labs?.genreReportScored?.genres) {
+      if (!state.genreMap) state.genreMap = {};
+      serverData.labs.genreReportScored.genres.forEach(g => {
+        Object.values(g.animesByUser || {}).forEach(list => {
+          (list || []).forEach(a => {
+            if (a && a.title && !state.genreMap[a.title]) {
+              state.genreMap[a.title] = { category: g.id };
+            }
+          });
+        });
+      });
+    }
+
     await saveReportToIndexedDB(serverData);
     if (Array.isArray(serverData.users) && serverData.users.length > 0) {
       saveUsersToStorage(serverData.users);

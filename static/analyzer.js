@@ -362,9 +362,156 @@ class ClientAnalyzer {
   }
 
   /**
+   * 未知・未登録タイトルのスマート推論（セーフティネット）
+   */
+  inferCategoryFromTitle(title) {
+    if (!title) return 'other';
+    const t = title;
+    if (/(?:異世界|転生|転移|悪役令嬢|追放|スライム|魔王|勇者|チート|治癒|スキル|ステータス|レベル|ダンジョン|冒険者|聖女|公爵|辺境|ギルド|鑑定|テイマー|錬金術|魔術|魔導|セカンドライフ|無双|召喚|スローライフ)/i.test(t)) return 'isekai';
+    if (/(?:魔法少女|プリキュア|魔女|変身ヒロイン|マギカ|マジカル|ウィッチ|セーラー)/i.test(t)) return 'mahou_shoujo';
+    if (/(?:ガンダム|メカ|ロボ|ロボット|マクロス|エヴァ|パトレイバー|ダイナ|カイザー|トランスフォーマー|ギア|バルキリー|イデオン|マジンガー)/i.test(t)) return 'mecha';
+    if (/(?:サッカー|野球|バスケ|バレー|テニス|ゴルフ|競走|レース|水泳|ボクシング|格闘|相撲|将棋|囲碁|かるた|麻雀|ダンス|体操|自転車|ペダル|フットボール|陸上|卓球|ボウリング|競馬)/i.test(t)) return 'sports';
+    if (/(?:アイドル|バンド|ライブ|ソング|ミュージック|うた|歌|メロディ|オーケストラ|吹奏楽|ピアノ|ギター|合唱|ボーカル|シンガー)/i.test(t)) return 'idol_music';
+    if (/(?:恋|愛|彼女|彼氏|カノジョ|カレシ|ラブコメ|告白|好き|同棲|結婚|許嫁|ウェディング|キス|両想い|片想い|失恋|初恋|純情|初体験|カップル|お見合い|プロポーズ|ハレ婚)/i.test(t)) return 'romance';
+    if (/(?:日常|キャンプ|キャン△|ごちうさ|うさぎ|きんいろ|のんのん|ゆる|ぼっち|きらら|ほのぼの|カフェ|喫茶|暮らし|生活|女子会|散歩|家族|ごちそう|料理|ごはん|食堂|のんびり)/i.test(t)) return 'nichijou';
+    if (/(?:青春|ドラマ|絆|家族|友情|仕事|部活|お仕事|吹奏楽|クラシック|人生|再生|旅立ち|成長|君の嘘|聲の形|あの花|よりもい|いろは|ユーフォ)/i.test(t)) return 'drama';
+    if (/(?:殺人|探偵|推理|事件|サスペンス|ホラー|怪談|呪い|幽霊|サイコ|デス|死|密室|ミステリー|サイコパス|謎|陰謀|悪夢|ゴースト)/i.test(t)) return 'horror_suspense';
+    if (/(?:武将|戦国|幕末|歴史|三国志|大河|軍|兵|艦隊|戦艦|空母|ミリタリー|戦争|部隊|大戦|帝国|皇国|侍|新選組|維新)/i.test(t)) return 'history_military';
+    if (/(?:ギャグ|コメディ|コメディー|バカ|コント|パロディ|お笑い|珍道中|騒動|ハチャメチャ|漫才|おバカ)/i.test(t)) return 'comedy';
+    if (/(?:バトル|ファイト|バスター|ブレード|ソード|ストライク|ファイター|アサシン|ハンター|ウォリアー|リベンジ|復讐|激闘|討伐|拳|格闘|戦士|ウォーズ)/i.test(t)) return 'action';
+    if (/(?:SF|ファンタジー|エイリアン|アンドロイド|サイボーグ|宇宙|惑星|異星|次元|魔術|魔法|エルフ|ドラゴン|ダンジョン|タイムトラベル|冒険)/i.test(t)) return 'sf_fantasy';
+    return 'other';
+  }
+
+  /**
+   * 4. ジャンル別視聴傾向分析（ブラウザ内完全リアルタイム集計）
+   * @param {Object.<string, {c: string}|{category: string}>} genreMap
+   */
+  calculateGenres(genreMap = {}) {
+    const definitions = [
+      { id: 'isekai',           label: '異世界 / 転生',             icon: 'fa-solid fa-door-open',           color: '#8b5cf6' },
+      { id: 'mahou_shoujo',     label: '魔法少女 / バトルヒロイン',  icon: 'fa-solid fa-wand-magic-sparkles', color: '#fb7185' },
+      { id: 'mecha',            label: 'ロボット / メカ',          icon: 'fa-solid fa-robot',               color: '#6b7280' },
+      { id: 'action',           label: 'アクション / バトル',      icon: 'fa-solid fa-burst',               color: '#ef4444' },
+      { id: 'sports',           label: 'スポーツ / 競技',          icon: 'fa-solid fa-futbol',              color: '#14b8a6' },
+      { id: 'comedy',           label: 'コメディ / ギャグ',        icon: 'fa-solid fa-face-laugh-squint',   color: '#f59e0b' },
+      { id: 'romance',          label: '恋愛 / ラブコメ',          icon: 'fa-solid fa-heart',               color: '#ec4899' },
+      { id: 'drama',            label: 'ドラマ / 青春',            icon: 'fa-solid fa-masks-theater',       color: '#0284c7' },
+      { id: 'nichijou',         label: '日常 / ほのぼの',          icon: 'fa-solid fa-mug-saucer',          color: '#10b981' },
+      { id: 'sf_fantasy',       label: 'SF / ファンタジー',        icon: 'fa-solid fa-meteor',              color: '#6366f1' },
+      { id: 'horror_suspense',  label: 'ホラー / サスペンス / 推理', icon: 'fa-solid fa-skull',          color: '#475569' },
+      { id: 'history_military', label: '歴史 / 戦記 / ミリタリー', icon: 'fa-solid fa-shield-halved', color: '#64748b' },
+      { id: 'idol_music',       label: 'アイドル / 音楽',          icon: 'fa-solid fa-music',               color: '#eab308' },
+      { id: 'ecchi',            label: 'エッチ / お色気',          icon: 'fa-solid fa-fire',                color: '#f43f5e' },
+      { id: 'other',            label: 'その他',                   icon: 'fa-solid fa-ellipsis',            color: '#9ca3af' }
+    ];
+
+    const statsByUser = {};
+    const genreSummary = {};
+
+    for (const g of definitions) {
+      genreSummary[g.id] = {
+        ...g,
+        totalWorksAcrossUsers: 0,
+        userCounts: {},
+        userPercentages: {},
+        animesByUser: {}
+      };
+      for (const u of this.users) {
+        genreSummary[g.id].userCounts[u] = 0;
+        genreSummary[g.id].userPercentages[u] = 0;
+        genreSummary[g.id].animesByUser[u] = [];
+      }
+    }
+
+    for (const username of this.users) {
+      const list = this.userWatchedLists[username] || [];
+      const userGenreCounts = {};
+      const userGenreAnimes = {};
+
+      for (const g of definitions) {
+        userGenreCounts[g.id] = 0;
+        userGenreAnimes[g.id] = [];
+      }
+
+      for (const anime of list) {
+        const title = anime.title || '';
+        const entry = genreMap[title];
+        let categoryId = entry?.category || entry?.c;
+
+        // 未知作品はスマート推論で救済
+        if (!categoryId || categoryId === 'other') {
+          categoryId = this.inferCategoryFromTitle(title) || 'other';
+        }
+
+        if (genreSummary[categoryId]) {
+          userGenreCounts[categoryId]++;
+          userGenreAnimes[categoryId].push(anime);
+          genreSummary[categoryId].userCounts[username]++;
+          genreSummary[categoryId].animesByUser[username].push(anime);
+        }
+      }
+
+      const totalListCount = list.length || 1;
+      const genreList = definitions.map(g => {
+        const count = userGenreCounts[g.id];
+        const pct = Math.round((count / totalListCount) * 1000) / 10;
+        return {
+          id: g.id,
+          label: g.label,
+          icon: g.icon,
+          color: g.color,
+          count,
+          percentage: pct,
+          animes: userGenreAnimes[g.id]
+        };
+      }).sort((a, b) => b.count - a.count);
+
+      const topGenres = genreList.filter(g => g.count > 0).slice(0, 3);
+
+      statsByUser[username] = {
+        username,
+        totalWatched: list.length,
+        genres: genreList,
+        topGenres
+      };
+    }
+
+    for (const g of definitions) {
+      let maxUser = null;
+      let maxCount = -1;
+      let totalWorks = 0;
+
+      for (const u of this.users) {
+        const userTotal = (this.userWatchedLists[u] || []).length || 1;
+        const cnt = genreSummary[g.id].userCounts[u];
+        const pct = Math.round((cnt / userTotal) * 1000) / 10;
+        genreSummary[g.id].userPercentages[u] = pct;
+        totalWorks += cnt;
+
+        if (cnt > maxCount) {
+          maxCount = cnt;
+          maxUser = u;
+        }
+      }
+
+      genreSummary[g.id].totalWorksAcrossUsers = totalWorks;
+      genreSummary[g.id].topUser = maxCount > 0 ? { username: maxUser, count: maxCount } : null;
+    }
+
+    const sortedGenres = Object.values(genreSummary).sort((a, b) => b.totalWorksAcrossUsers - a.totalWorksAcrossUsers);
+
+    return {
+      definitions,
+      statsByUser,
+      genres: sortedGenres
+    };
+  }
+
+  /**
    * 完全な分析レポートオブジェクトを生成（所要時間: 0.05秒）
    */
-  buildFullReport(baseLabs = null) {
+  buildFullReport(baseLabs = null, genreMap = {}) {
     const defaultVennUsers = this.users.slice(0, 3);
     const vennSets = this.generateVennSets(defaultVennUsers);
     const { matrix, ranking } = this.calculateSimilarityMatrix();
@@ -377,10 +524,17 @@ class ClientAnalyzer {
       missingCount: insights.missingPerUser?.[u]?.length || 0
     }));
 
-    // Labsレポート（カロリー・年代はリアルタイム再計算、ジャンル・スタジオはbaseLabsから引き継ぎ/補完）
+    // Labsレポート（カロリー・年代・ジャンルは新ユーザー含めリアルタイム再計算！）
     const labs = baseLabs ? { ...baseLabs } : {};
     labs.calorieReport = this.calculateCalories();
     labs.timelineReport = this.calculateTimeline();
+
+    // ジャンルマップがある場合（または初期化時）はジャンルレポートを完全リアルタイム再計算
+    if (genreMap && Object.keys(genreMap).length > 0) {
+      const calculatedGenres = this.calculateGenres(genreMap);
+      labs.genreReportScored = calculatedGenres;
+      labs.genreReport = calculatedGenres;
+    }
 
     return {
       generatedAt: new Date().toISOString(),
