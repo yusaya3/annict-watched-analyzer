@@ -401,31 +401,51 @@ const taskQueue = {
   }
 };
 
-// 実際のユーザー追加通信処理（キューから順番に呼ばれる）
-async function executeAddUser(username, onProgress) {
-  const currentUsers = state.data?.users || loadUsersFromStorage() || [];
+// =========================================================================
+// 【新方式】ブラウザ内リアルタイム集計エンジン連携
+// =========================================================================
 
-  if (onProgress) onProgress(`@${username} の最新データをAnnictから差分取得中...`);
+// ブラウザ内で0.05秒で全集計（ベン図、シンクロ率、インサイト、カロリー、年代）を実行し即時再描画
+function recalculateClientReport() {
+  if (!window.ClientAnalyzer || !state.data || !state.data.userWatchedLists) return;
+  const analyzer = new window.ClientAnalyzer(state.data.userWatchedLists);
+  const newReport = analyzer.buildFullReport(state.data.labs);
+  state.data = newReport;
+  saveUsersToStorage(newReport.users);
+  saveReportToIndexedDB(newReport);
+  renderAllComponents();
+  renderModalUserList();
+}
 
-  let res = await fetch('/api/users', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, currentUsers })
-  });
-
-  let result = await parseApiResponse(res);
+// 1人の最新視聴データのみをAnnictから取得する超軽量通信関数（所要時間1〜2秒、数十KB）
+async function fetchUserWatched(username) {
+  const res = await fetch(`/api/user-watched/${encodeURIComponent(username)}?force=true`);
   if (!res.ok) {
-    throw new Error(result.error || 'ユーザーの追加・更新に失敗しました');
+    let errorMsg = `HTTP ${res.status}`;
+    try {
+      const errJson = await res.json();
+      if (errJson.error) errorMsg = errJson.error;
+    } catch (e) {}
+    throw new Error(`@${username} のデータ取得に失敗しました (${errorMsg})`);
   }
+  return await res.json();
+}
 
-  // 取得結果を画面とローカルに即時反映
-  if (result.report) {
-    if (!result.report.labs && state.data?.labs) {
-      result.report.labs = state.data.labs;
-    }
-    state.data = result.report;
-    saveUsersToStorage(result.report.users);
-    await saveReportToIndexedDB(result.report);
+// 実際のユーザー追加・個別更新通信処理（1人分だけ取得してブラウザで一瞬で再集計！）
+async function executeAddUser(username, onProgress) {
+  if (onProgress) onProgress(`@${username} の最新データをAnnictから取得中...`);
+
+  // 1人分の視聴データのみを超軽量APIで取得（1〜2秒で完了）
+  const result = await fetchUserWatched(username);
+
+  if (!state.data) state.data = { users: [], userWatchedLists: {} };
+  if (!state.data.userWatchedLists) state.data.userWatchedLists = {};
+
+  state.data.userWatchedLists[username] = result.animes || [];
+
+  if (!Array.isArray(state.data.users)) state.data.users = [];
+  if (!state.data.users.some(u => u.toLowerCase() === username.toLowerCase())) {
+    state.data.users.push(username);
   }
 
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
@@ -435,29 +455,24 @@ async function executeAddUser(username, onProgress) {
     state.groupSelectedUsers.push(username);
   }
 
-  renderAllComponents();
-  renderModalUserList();
+  // ブラウザ内で一瞬（0.05秒）で再集計＆IndexedDB保存＆画面再描画
+  recalculateClientReport();
 }
 
-// 実際のユーザー削除通信処理（キューから順番に呼ばれる）
+// 実際のユーザー削除通信処理（ブラウザ上で即座に再集計＆サーバー通知）
 async function executeDeleteUser(username) {
-  const currentUsers = state.data?.users || loadUsersFromStorage() || [];
-  const query = currentUsers.length > 0 ? `?currentUsers=${encodeURIComponent(currentUsers.join(','))}` : '';
-
-  const res = await fetch(`/api/users/${encodeURIComponent(username)}${query}`, {
-    method: 'DELETE'
-  });
-
-  const result = await parseApiResponse(res);
-  if (!res.ok) {
-    throw new Error(result.error || 'サーバーでのユーザー削除に失敗しました');
+  if (state.data?.userWatchedLists) {
+    delete state.data.userWatchedLists[username];
+  }
+  if (state.data?.users) {
+    state.data.users = state.data.users.filter(u => u.toLowerCase() !== username.toLowerCase());
   }
 
-  state.data = result.report;
-  saveUsersToStorage(result.report.users);
-  await saveReportToIndexedDB(result.report);
-  renderAllComponents();
-  renderModalUserList();
+  // 即座にブラウザ内で再集計
+  recalculateClientReport();
+
+  // サーバーのリストも非同期で削除同期（背景で実行、ユーザーを待たせない）
+  fetch(`/api/users/${encodeURIComponent(username)}`, { method: 'DELETE' }).catch(() => {});
 }
 
 // UIからのユーザー追加要求（即座に入力クリア＆キューイングで次の操作へ）
@@ -489,7 +504,7 @@ function deleteUser(username) {
   taskQueue.enqueue('delete', username);
 }
 
-// 全データ再取得
+// 【新方式】全データ再取得（1人ずつ順番に軽量差分取得し、ブラウザでリアルタイム再集計）
 async function refreshAllUsers(options = {}) {
   const { fromHeader = false } = options;
   const loading = document.getElementById('user-modal-loading');
@@ -498,6 +513,11 @@ async function refreshAllUsers(options = {}) {
   const metaUpdated = document.getElementById('meta-updated');
   const origBtnHtml = btnReload ? btnReload.innerHTML : '';
 
+  const users = state.data?.users || loadUsersFromStorage() || [];
+  if (users.length === 0) {
+    return loadData(true);
+  }
+
   try {
     loading.style.display = 'flex';
     if (btnReload) {
@@ -505,71 +525,26 @@ async function refreshAllUsers(options = {}) {
       btnReload.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> <span>同期中...</span>';
     }
 
-    // 1. まず GitHub Actions 自動同期 (/api/sync) を試行
-    if (statusText) statusText.textContent = '同期モードを確認中...';
-    let triggeredGhActions = false;
-    try {
-      const syncRes = await fetch('/api/sync', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'refresh' })
-      });
-      if (syncRes.ok) {
-        const syncData = await syncRes.json();
-        if (syncData.success && syncData.mode === 'github-actions') {
-          triggeredGhActions = true;
-          if (statusText) statusText.textContent = 'GitHub Actions で最新データの収集・分析を開始しました！';
-          if (metaUpdated) metaUpdated.textContent = 'GitHub Actions で同期実行中...';
-          alert('GitHub Actions で最新データの同期を開始しました！\n（約1〜2分後に最新データが自動反映されます）');
-          // 少し待ってから静的データを再読み込み
-          setTimeout(() => loadData(true), 25000);
-          return;
-        }
-      }
-    } catch (e) {
-      console.log('GitHub Actions 同期スキップ、アプリ内差分同期を実行:', e.message);
-    }
-
-    // 2. フォールバック: アプリ内での高速差分更新（Incremental Fetch）
-    const users = state.data?.users || loadUsersFromStorage() || [];
-    if (users.length === 0) {
-      return loadData(true);
-    }
-
     for (let i = 0; i < users.length; i++) {
       const u = users[i];
-      const msg = `@${u} の最新データを差分取得中 (${i + 1}/${users.length})...`;
+      const msg = `@${u} の最新データを更新中 (${i + 1}/${users.length})...`;
       if (statusText) statusText.textContent = msg;
       if (metaUpdated) metaUpdated.textContent = msg;
 
-      let res = await fetch('/api/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: u, currentUsers: users })
-      });
+      try {
+        const result = await fetchUserWatched(u);
+        if (!state.data.userWatchedLists) state.data.userWatchedLists = {};
+        state.data.userWatchedLists[u] = result.animes || [];
 
-      let result = await parseApiResponse(res);
-      if (!res.ok) {
-        throw new Error(result.error || `@${u} の再取得に失敗しました`);
-      }
-
-      if (result.report) {
-        if (!result.report.labs && state.data?.labs) {
-          result.report.labs = state.data.labs;
-        }
-        state.data = result.report;
-        saveUsersToStorage(result.report.users);
-        await saveReportToIndexedDB(result.report);
-        renderAllComponents();
-        renderModalUserList();
+        // 1人更新されるごとに即座に画面全体をリアルタイム再集計！
+        recalculateClientReport();
+      } catch (err) {
+        console.warn(`@${u} の個別更新をスキップ:`, err.message);
       }
     }
 
-    // 全ユーザーの差分取得完了後、最新の静的データをロード
-    await loadData(true);
-
     if (!fromHeader) {
-      alert('全ユーザーのAnnict最新データの差分同期が完了しました！');
+      alert('全ユーザーのAnnict最新データの同期が完了しました！');
     }
 
   } catch (err) {

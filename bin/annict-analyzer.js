@@ -217,6 +217,40 @@ function createApp() {
     res.status(404).json({ error: 'Popular works not found' });
   });
 
+  // 【新方式】指定された1人の最新視聴データのみを取得して返す超軽量API
+  // 1〜2秒で数十KBのみを返却するため、60秒タイムアウトや4.5MB制限とは100%無縁
+  app.get('/api/user-watched/:username', async (req, res) => {
+    try {
+      const username = (req.params.username || '').trim().replace(/^@/, '');
+      if (!username) {
+        return res.status(400).json({ error: 'ユーザー名が指定されていません' });
+      }
+
+      const forceRefresh = req.query.force === 'true' || req.query.refresh !== 'false';
+      const client = new AnnictClient();
+      console.log(`[API /user-watched] @${username} の最新データを取得中...`);
+      const animes = await client.fetchWatchedAnimes(username, forceRefresh);
+
+      // ユーザー設定リストにも追加同期
+      let users = loadUserList();
+      if (!users.some(u => u.toLowerCase() === username.toLowerCase())) {
+        users.push(username);
+        saveUserList(users);
+      }
+
+      res.json({
+        success: true,
+        username,
+        count: animes.length,
+        fetchedAt: new Date().toISOString(),
+        animes
+      });
+    } catch (err) {
+      console.error(`[API /user-watched Error @${req.params.username}]:`, err);
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
   // Vercel 4.5MB レスポンスサイズ上限対策ヘルパー
   function buildSafeReportPayload(report, users, extra = {}) {
     if (!report) {

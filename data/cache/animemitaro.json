@@ -1,6 +1,6 @@
 {
   "username": "animemitaro",
-  "fetchedAt": "2026-10-05T16:34:24.286Z",
+  "fetchedAt": "2026-10-06T09:00:31.488Z",
   "count": 1099,
   "animes": [
     {
@@ -60,18 +60,18 @@
       "url": "https://annict.com/works/16714"
     },
     {
-      "id": "7915",
-      "title": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
-      "image": "https://image.annict.com/1XzVoit3HhuSBy94KNJ8p3KNvvGYU6f-VIC11VlAoEk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5006/image/master-12a9006b3f219d72e3048a9f722fb49e.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/7915"
-    },
-    {
       "id": "16571",
       "title": "ぐらんぶる Season 3",
       "image": "https://image.annict.com/o_6QGjj1sNFec2e_T_ViXlm2uWUI9QkqpRXcYMFKzfM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13237/image/master-b1ac0954fec2ddaa0fdc8a2bae8960ed.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16571"
+    },
+    {
+      "id": "7915",
+      "title": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
+      "image": "https://image.annict.com/1XzVoit3HhuSBy94KNJ8p3KNvvGYU6f-VIC11VlAoEk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5006/image/master-12a9006b3f219d72e3048a9f722fb49e.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/7915"
     },
     {
       "id": "11193",
