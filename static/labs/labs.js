@@ -56,24 +56,205 @@ function renderCalories(calorieReport) {
   });
 }
 
-// 2. 年代別タイムラインの描画
+// 2. 年代別タイムラインの描画（1年ごと / 5年ごと 両対応）
+let currentTimelineMode = '1year'; // デフォルトは新機能「1年ごと」
+let timelineButtonsBound = false;
+
 function renderTimeline(timelineReport, fullData) {
   const barsContainer = document.getElementById('labs-timeline-bars');
   if (!barsContainer || !timelineReport) return;
 
-  // 年代別バー
+  // 切替ボタンのイベントバインド（初回のみ）
+  if (!timelineButtonsBound) {
+    document.querySelectorAll('.btn-timeline-mode').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-timeline-mode');
+        document.querySelectorAll('.btn-timeline-mode').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTimelineMode = mode;
+        renderTimeline(timelineReport, fullData);
+      });
+    });
+    timelineButtonsBound = true;
+  }
+
+  // ボタンのアクティブ状態を同期
+  document.querySelectorAll('.btn-timeline-mode').forEach(btn => {
+    if (btn.getAttribute('data-timeline-mode') === currentTimelineMode) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
   barsContainer.innerHTML = '';
-  const eraBuckets = timelineReport.eraBuckets || [];
   const yearsByUser = timelineReport.yearsByUser || {};
   const users = Object.keys(yearsByUser);
+  const colors = ['#f43f5e', '#38bdf8', '#a855f7', '#fbbf24', '#34d399', '#ec4899', '#06b6d4'];
 
-  const colors = ['#f43f5e', '#38bdf8', '#a855f7', '#fbbf24', '#34d399'];
+  // ==========================================
+  // 【新モード】1年ごとタイムライン
+  // ==========================================
+  if (currentTimelineMode === '1year') {
+    // 全年の一覧を収集（降順）
+    let allYears = timelineReport.allYears || [];
+    if (allYears.length === 0) {
+      const yearSet = new Set();
+      users.forEach(u => {
+        Object.keys(yearsByUser[u]?.yearCounts || {}).forEach(y => yearSet.add(parseInt(y, 10)));
+      });
+      allYears = Array.from(yearSet).sort((a, b) => b - a);
+    }
+
+    if (allYears.length === 0) {
+      barsContainer.innerHTML = '<div class="text-muted text-center" style="padding:2rem;">年代データがありません</div>';
+      return;
+    }
+
+    // 全年での1人あたり最大本数（バーのスケーリング基準）
+    let globalMaxCount = 1;
+    allYears.forEach(y => {
+      users.forEach(u => {
+        const c = yearsByUser[u]?.yearCounts?.[y] || 0;
+        if (c > globalMaxCount) globalMaxCount = c;
+      });
+    });
+
+    allYears.forEach(year => {
+      // その年の全ユーザー合計とトップユーザー
+      let yearTotal = 0;
+      let topUser = null;
+      let topUserCount = 0;
+
+      users.forEach(u => {
+        const c = yearsByUser[u]?.yearCounts?.[year] || 0;
+        yearTotal += c;
+        if (c > topUserCount) {
+          topUserCount = c;
+          topUser = u;
+        }
+      });
+
+      if (yearTotal === 0) return; // 誰も見ていない年はスキップ
+
+      const row = document.createElement('div');
+      row.className = 'timeline-year-row';
+
+      // ユーザー別バー
+      let barsHtml = '';
+      users.forEach((u, uIdx) => {
+        const count = yearsByUser[u]?.yearCounts?.[year] || 0;
+        const pct = Math.max(0, Math.min(100, (count / globalMaxCount) * 100));
+        const color = colors[uIdx % colors.length];
+
+        barsHtml += `
+          <div class="timeline-user-bar-item">
+            <span class="timeline-user-bar-name">@${escapeHtml(u)}</span>
+            <div class="timeline-user-bar-track">
+              <div class="timeline-user-bar-fill" style="width:${pct}%;background:${color};"></div>
+            </div>
+            <span class="timeline-user-bar-stat ${count > 0 ? 'active' : ''}">${count}作</span>
+          </div>
+        `;
+      });
+
+      // その年の各ユーザー作品カード
+      let usersAnimesHtml = '';
+      users.forEach((u, uIdx) => {
+        const animes = yearsByUser[u]?.animesByYear?.[year] || [];
+        if (animes.length === 0) return;
+
+        const cardsHtml = animes.map(a => {
+          const thumbHtml = a.image
+            ? `<img src="${escapeHtml(a.image)}" class="timeline-anime-thumb" alt="${escapeHtml(a.title)}" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=\\'timeline-anime-thumb-empty\\'><i class=\\'fa-solid fa-film\\'></i></div>'" />`
+            : `<div class="timeline-anime-thumb-empty"><i class="fa-solid fa-film"></i></div>`;
+
+          const workUrl = a.url || (a.id ? `https://annict.com/works/${a.id}` : '#');
+
+          return `
+            <a href="${escapeHtml(workUrl)}" target="_blank" rel="noopener noreferrer" class="timeline-anime-card" data-anime-title="${escapeHtml(a.title)}" data-anime-image="${escapeHtml(a.image || '')}" data-anime-id="${escapeHtml(String(a.id || ''))}">
+              <div class="timeline-thumb-box">${thumbHtml}</div>
+              <div class="timeline-card-info">
+                <span class="timeline-card-title" title="${escapeHtml(a.title)}">${escapeHtml(a.title)}</span>
+                <span class="timeline-card-season">${escapeHtml(a.season || `${year}年`)}</span>
+              </div>
+            </a>
+          `;
+        }).join('');
+
+        usersAnimesHtml += `
+          <div class="year-drawer-user-section">
+            <div class="year-drawer-user-header" style="color:${colors[uIdx % colors.length]};">
+              <i class="fa-solid fa-user"></i> @${escapeHtml(u)} (${animes.length}作品)
+            </div>
+            <div class="timeline-animes-grid">
+              ${cardsHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      const topUserBadge = topUser && topUserCount > 0
+        ? `<span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);font-size:0.75rem;">最多: @${escapeHtml(topUser)} (${topUserCount}作)</span>`
+        : '';
+
+      row.innerHTML = `
+        <div class="timeline-year-header">
+          <div class="timeline-year-header-left">
+            <span class="year-label-pill"><i class="fa-regular fa-calendar"></i> ${year}年</span>
+            ${topUserBadge}
+            <span class="text-muted" style="font-size:0.8rem;">全員合計 ${yearTotal} 作品</span>
+          </div>
+          <div class="timeline-year-header-right">
+            <span class="text-muted" style="font-size:0.75rem;">作品を見る</span>
+            <i class="fa-solid fa-chevron-down timeline-toggle-icon"></i>
+          </div>
+        </div>
+        <div class="timeline-bars-box">
+          ${barsHtml}
+        </div>
+        <div class="timeline-year-drawer">
+          ${usersAnimesHtml}
+        </div>
+      `;
+
+      // アコーディオン開閉
+      const header = row.querySelector('.timeline-year-header');
+      header.addEventListener('click', () => {
+        row.classList.toggle('open');
+      });
+
+      // サムネイル画像クリックで画像モーダル
+      row.querySelectorAll('.timeline-anime-thumb').forEach(thumb => {
+        thumb.style.cursor = 'zoom-in';
+        thumb.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const card = thumb.closest('.timeline-anime-card');
+          if (card && typeof window.openImageModal === 'function') {
+            const title = card.getAttribute('data-anime-title') || '';
+            const image = card.getAttribute('data-anime-image') || '';
+            const id = card.getAttribute('data-anime-id') || '';
+            window.openImageModal(title, image, id);
+          }
+        });
+      });
+
+      barsContainer.appendChild(row);
+    });
+
+    return;
+  }
+
+  // ==========================================
+  // 【従来モード】5年ごとタイムライン
+  // ==========================================
+  const eraBuckets = timelineReport.eraBuckets || [];
 
   eraBuckets.forEach(era => {
     const row = document.createElement('div');
     row.className = 'timeline-era-row';
 
-    // この年代の全ユーザー最大数を計算
     let maxInEra = 1;
     users.forEach(u => {
       const c = yearsByUser[u]?.bucketCounts?.[era.id] || 0;

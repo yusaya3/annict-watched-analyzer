@@ -272,9 +272,12 @@ class ClientAnalyzer {
       { id: '2021_present', label: '2021年〜現在', start: 2021, end: 2099 }
     ];
 
+    const allYearsSet = new Set();
+
     for (const username of this.users) {
       const list = this.userWatchedLists[username] || [];
       const yearCountMap = {};
+      const animesByYear = {};
       const bucketCounts = {};
       eraBuckets.forEach(b => { bucketCounts[b.id] = 0; });
 
@@ -286,7 +289,11 @@ class ClientAnalyzer {
         }
 
         if (year) {
+          allYearsSet.add(year);
           yearCountMap[year] = (yearCountMap[year] || 0) + 1;
+          if (!animesByYear[year]) animesByYear[year] = [];
+          animesByYear[year].push(anime);
+
           for (const b of eraBuckets) {
             if (year >= b.start && year <= b.end) {
               bucketCounts[b.id]++;
@@ -310,9 +317,32 @@ class ClientAnalyzer {
         peakYear,
         maxYearCount,
         yearCounts: yearCountMap,
+        animesByYear,
         bucketCounts
       };
     }
+
+    // 1年ごとの全年一覧（降順: 2026, 2025...）
+    const allYears = Array.from(allYearsSet).sort((a, b) => b - a);
+
+    // 1年ごとのサマリー統計
+    const yearStats = allYears.map(year => {
+      let totalCount = 0;
+      const countsByUser = {};
+      const animesByUser = {};
+      for (const u of this.users) {
+        const cnt = yearsByUser[u]?.yearCounts?.[year] || 0;
+        countsByUser[u] = cnt;
+        animesByUser[u] = yearsByUser[u]?.animesByYear?.[year] || [];
+        totalCount += cnt;
+      }
+      return {
+        year,
+        totalCount,
+        countsByUser,
+        animesByUser
+      };
+    });
 
     const goldenYears = [];
     for (let i = 0; i < this.users.length - 1; i++) {
@@ -356,6 +386,8 @@ class ClientAnalyzer {
 
     return {
       eraBuckets,
+      allYears,
+      yearStats,
       yearsByUser,
       goldenYears
     };

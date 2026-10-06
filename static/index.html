@@ -341,8 +341,18 @@
           <!-- ② 年代別タイムラインセクション -->
           <div class="card">
             <div class="card-header">
-              <h3><i class="fa-solid fa-timeline text-blue"></i> 年代別タイムライン</h3>
-              <p class="card-desc">各年代ごとの視聴本数分布</p>
+              <div class="header-with-badge">
+                <h3><i class="fa-solid fa-timeline text-blue"></i> 年代別タイムライン</h3>
+                <div class="timeline-mode-toggle">
+                  <button type="button" class="btn-timeline-mode active" data-timeline-mode="1year">
+                    <i class="fa-solid fa-calendar-days"></i> 1年ごと
+                  </button>
+                  <button type="button" class="btn-timeline-mode" data-timeline-mode="5years">
+                    <i class="fa-solid fa-layer-group"></i> 5年ごと
+                  </button>
+                </div>
+              </div>
+              <p class="card-desc">各年代・1年ごとの視聴本数分布と各年の視聴アニメ一覧</p>
             </div>
             <div id="labs-timeline-bars" class="timeline-bars-container">
               <!-- JSで描画 -->

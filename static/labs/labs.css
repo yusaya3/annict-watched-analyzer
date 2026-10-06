@@ -174,6 +174,271 @@
   padding: 0 4px;
 }
 
+/* タイムライン表示切替（1年ごと / 5年ごと） */
+.timeline-mode-toggle {
+  display: inline-flex;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  gap: 2px;
+}
+
+.btn-timeline-mode {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-timeline-mode:hover {
+  color: var(--text-main);
+}
+
+.btn-timeline-mode.active {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+/* 1年ごとタイムラインの行・ヘッダー・開閉 */
+.timeline-year-row {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-year-row:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.timeline-year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.timeline-year-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.timeline-year-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.year-label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: var(--bg-primary);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.timeline-toggle-icon {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.timeline-year-row.open .timeline-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* ユーザー別バーボックス */
+.timeline-bars-box {
+  background: var(--bg-primary);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin-top: 0.45rem;
+}
+
+.timeline-user-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-user-bar-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-user-bar-name {
+  font-size: 0.78rem;
+  width: 85px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-muted);
+}
+
+.timeline-user-bar-track {
+  flex: 1;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.timeline-user-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.timeline-user-bar-stat {
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 45px;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+.timeline-user-bar-stat.active {
+  color: var(--text-main);
+}
+
+/* 作品ドロワー & 作品カード */
+.timeline-year-drawer {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  background: var(--bg-primary);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.timeline-year-row.open .timeline-year-drawer {
+  display: block;
+}
+
+.year-drawer-user-section {
+  margin-bottom: 0.85rem;
+}
+
+.year-drawer-user-section:last-child {
+  margin-bottom: 0;
+}
+
+.year-drawer-user-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.timeline-animes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.timeline-anime-card {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.55rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.timeline-anime-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+}
+
+.timeline-thumb-box {
+  width: 38px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-anime-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: opacity 0.2s;
+}
+
+.timeline-anime-thumb:hover {
+  opacity: 0.85;
+}
+
+.timeline-anime-thumb-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.timeline-card-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+}
+
+.timeline-card-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-main);
+}
+
+.timeline-card-season {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
 /* 3. 制作スタジオセクション */
 .studio-users-grid {
   display: grid;
