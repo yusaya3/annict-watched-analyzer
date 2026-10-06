@@ -828,6 +828,7 @@ function renderVenn() {
     if (detailBadge) detailBadge.textContent = '0 作品';
     if (detailDesc) detailDesc.textContent = '2人または3人のユーザーを選択すると、共通・固有の作品リストが表示されます。';
     if (detailList) detailList.innerHTML = '<div class="empty-state" style="padding: 2.5rem 1rem;"><i class="fa-solid fa-users" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.4;"></i><p>ユーザーを選択してください</p></div>';
+    renderVennCoverage(null);
     return;
   }
 
@@ -838,6 +839,7 @@ function renderVenn() {
 
   if (typeof venn === 'undefined') {
     chartContainer.innerHTML = '<p class="text-muted">Venn.js ライブラリを読み込み中...</p>';
+    renderVennCoverage(users);
     return;
   }
 
@@ -890,6 +892,99 @@ function renderVenn() {
     const title = commonSet.sets.length > 1 ? `${areaLabel} の共通視聴作品` : `${areaLabel} の視聴作品`;
     updateDetailPanel(title, commonSet.animes || []);
   }
+
+  // 視点別・他ユーザーの履修割合（個別カバー率）を描画
+  renderVennCoverage(users);
+}
+
+// ベン図: 視点別・個別カバー率（他ユーザーの履修割合）の描画
+function renderVennCoverage(users) {
+  const coverageCard = document.getElementById('venn-coverage-card');
+  const coverageGrid = document.getElementById('venn-coverage-grid');
+  if (!coverageCard || !coverageGrid) return;
+
+  if (!users || users.length < 2 || !state.data?.userWatchedLists) {
+    coverageCard.style.display = 'none';
+    coverageGrid.innerHTML = '';
+    return;
+  }
+
+  coverageCard.style.display = 'flex';
+  coverageGrid.innerHTML = '';
+
+  const userLists = state.data.userWatchedLists;
+  const userMaps = {};
+  users.forEach(u => {
+    userMaps[u] = new Map((userLists[u] || []).map(a => [String(a.id), a]));
+  });
+
+  const colors = ['#f43f5e', '#38bdf8', '#a855f7'];
+
+  users.forEach((me, myIdx) => {
+    const myAnimes = userLists[me] || [];
+    const myTotal = myAnimes.length;
+    const myColor = colors[myIdx % colors.length];
+
+    const block = document.createElement('div');
+    block.className = 'coverage-user-block';
+
+    const header = document.createElement('div');
+    header.className = 'coverage-user-header';
+    header.innerHTML = `
+      <span class="coverage-user-badge" style="color: ${myColor};">
+        <i class="fa-solid fa-user"></i> @${escapeHtml(me)} 視点
+      </span>
+      <span class="coverage-user-total">全 ${myTotal} 作</span>
+    `;
+    block.appendChild(header);
+
+    const list = document.createElement('div');
+    list.className = 'coverage-target-list';
+
+    // 自分以外の選択中ユーザー
+    const others = users.filter(u => u !== me);
+    others.forEach(other => {
+      const otherIdx = users.indexOf(other);
+      const otherColor = colors[otherIdx % colors.length];
+      const otherMap = userMaps[other];
+
+      // 共通作品（自分の作品の中で相手も観ている作品）
+      const commonAnimes = myAnimes.filter(a => otherMap && otherMap.has(String(a.id)));
+      const commonCount = commonAnimes.length;
+      const pct = myTotal > 0 ? ((commonCount / myTotal) * 100).toFixed(1) : '0.0';
+
+      const item = document.createElement('div');
+      item.className = 'coverage-target-item';
+      item.title = `クリックして @${me} と @${other} の共通作品 (${commonCount}作) を表示`;
+
+      item.innerHTML = `
+        <div class="coverage-target-top">
+          <span class="coverage-target-name">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${otherColor};margin-right:4px;"></span>
+            @${escapeHtml(other)} も視聴
+          </span>
+          <span class="coverage-target-stat">
+            ${pct}% <span>(${commonCount} / ${myTotal}作)</span>
+          </span>
+        </div>
+        <div class="coverage-bar-track">
+          <div class="coverage-bar-fill" style="width: ${pct}%; background-color: ${otherColor};"></div>
+        </div>
+      `;
+
+      item.addEventListener('click', () => {
+        // ベン図のハイライト解除
+        d3.selectAll('#venn-chart g').classed('active', false);
+        // 詳細パネルを更新
+        updateDetailPanel(`@${me} と @${other} の共通視聴作品`, commonAnimes);
+      });
+
+      list.appendChild(item);
+    });
+
+    block.appendChild(list);
+    coverageGrid.appendChild(block);
+  });
 }
 
 // 選択ユーザーに応じた集合リストを計算

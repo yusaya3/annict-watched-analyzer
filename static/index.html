@@ -102,14 +102,30 @@
         </div>
 
         <div class="venn-layout">
-          <div class="venn-stage card">
-            <div id="venn-chart"></div>
-            <div id="venn-empty-msg" class="venn-empty-state" style="display: none;">
-              <div class="empty-icon">
-                <i class="fa-solid fa-users"></i>
+          <div class="venn-main-col">
+            <div class="venn-stage card">
+              <div id="venn-chart"></div>
+              <div id="venn-empty-msg" class="venn-empty-state" style="display: none;">
+                <div class="empty-icon">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <p class="empty-title">2人または3人のユーザーを選択してください</p>
+                <p class="empty-desc">上部のチップをクリックしてユーザーを選択すると、共通・固有の視聴作品ベン図が表示されます</p>
               </div>
-              <p class="empty-title">2人または3人のユーザーを選択してください</p>
-              <p class="empty-desc">上部のチップをクリックしてユーザーを選択すると、共通・固有の視聴作品ベン図が表示されます</p>
+            </div>
+
+            <!-- 視点別・他ユーザーの履修割合（個別カバー率）カード -->
+            <div id="venn-coverage-card" class="card venn-coverage-card" style="display: none;">
+              <div class="coverage-card-header">
+                <div class="coverage-header-title">
+                  <i class="fa-solid fa-chart-simple text-pink"></i>
+                  <span>視点別・他ユーザーの視聴カバー率</span>
+                </div>
+                <span class="coverage-header-hint">自分の視聴作品全体（100%）の中で、相手が何%観ているか</span>
+              </div>
+              <div id="venn-coverage-grid" class="venn-coverage-grid">
+                <!-- JSで動的描画 -->
+              </div>
             </div>
           </div>
 
