@@ -1162,9 +1162,12 @@ function renderSimilarityCoverage() {
         row.className = 'coverage-target-item';
         const pctStr = item.pct.toFixed(1);
         row.innerHTML = `
-          <div class="coverage-rank-top">
+          <div class="coverage-target-top">
             <span class="coverage-target-name">@${escapeHtml(item.other)} も視聴</span>
-            <span class="coverage-rank-stat">${pctStr}% <span style="font-size:0.75rem;color:var(--text-muted);">(${item.commonCount} / ${myTotal}作)</span></span>
+            <div class="coverage-target-stat-wrap">
+              <strong class="coverage-target-pct">${pctStr}%</strong>
+              <span class="coverage-target-count">(${item.commonCount} / ${myTotal}作)</span>
+            </div>
           </div>
           <div class="coverage-bar-track">
             <div class="coverage-bar-fill" style="width: ${pctStr}%;"></div>
@@ -1192,9 +1195,9 @@ function renderSimilarityCoverage() {
     meta.innerHTML = `
       <div class="coverage-single-user-info">
         <i class="fa-solid fa-user-check text-pink"></i>
-        <span><strong>@${escapeHtml(me)}</strong> が観ている全 <strong>${myTotal}</strong> 作品のうち、他の人が観ている割合</span>
+        <span><strong>@${escapeHtml(me)}</strong> が観ている全 <strong>${myTotal}</strong> 作品中</span>
       </div>
-      <span class="text-muted" style="font-size:0.85rem;">カバー率の高い順</span>
+      <span class="coverage-meta-hint"><i class="fa-solid fa-arrow-down-wide-short"></i> カバー率（高い順）</span>
     `;
     singleView.appendChild(meta);
 
@@ -1220,12 +1223,12 @@ function renderSimilarityCoverage() {
         <div class="coverage-rank-top">
           <div class="coverage-rank-user">
             <span class="coverage-rank-order" style="color:${rankColor};">#${idx + 1}</span>
-            <span>@${escapeHtml(item.other)}</span>
+            <span class="coverage-rank-name">@${escapeHtml(item.other)}</span>
             ${crown}
           </div>
           <div class="coverage-rank-stat">
-            ${pctStr}%
-            <span>(${item.commonCount} / ${myTotal} 作 履修済)</span>
+            <strong class="coverage-stat-pct">${pctStr}%</strong>
+            <span class="coverage-stat-count">(${item.commonCount} / ${myTotal}作)</span>
           </div>
         </div>
         <div class="coverage-bar-track">

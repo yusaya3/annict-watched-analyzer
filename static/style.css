@@ -577,7 +577,7 @@ body {
 .coverage-single-view {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .coverage-single-meta {
@@ -595,23 +595,30 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.coverage-meta-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .coverage-rank-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .coverage-rank-row {
   background: var(--bg-alt, rgba(255, 255, 255, 0.02));
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 0.85rem 1.1rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.4rem;
   transition: all 0.2s ease;
 }
 
@@ -624,46 +631,62 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .coverage-rank-user {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-weight: 600;
   font-size: 0.95rem;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .coverage-rank-order {
   font-weight: 800;
   font-size: 0.85rem;
-  min-width: 22px;
+  flex-shrink: 0;
+}
+
+.coverage-rank-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .coverage-rank-stat {
-  font-weight: 700;
-  font-size: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.coverage-stat-pct {
+  font-weight: 800;
+  font-size: 1.05rem;
   color: var(--accent-pink);
 }
 
-.coverage-rank-stat span {
+.coverage-stat-count {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: normal;
-  margin-left: 0.35rem;
 }
 
 .coverage-bar-track {
   width: 100%;
-  height: 7px;
+  height: 6px;
   background: var(--border-color);
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .coverage-bar-fill {
   height: 100%;
-  border-radius: 4px;
+  border-radius: 3px;
   background: var(--accent-pink);
   transition: width 0.3s ease;
 }
@@ -671,7 +694,7 @@ body {
 /* 全員並列表示グリッド */
 .coverage-multi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
@@ -718,6 +741,141 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.coverage-target-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.coverage-target-name {
+  font-weight: 600;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.coverage-target-stat-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.coverage-target-pct {
+  font-weight: 700;
+  color: var(--accent-pink);
+  font-size: 0.9rem;
+}
+
+.coverage-target-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* スマホ対応メディアクエリ (幅640px以下) */
+@media (max-width: 640px) {
+  .similarity-coverage-card {
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+
+  .coverage-header-wrap {
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .coverage-header-main h3 {
+    font-size: 1.05rem;
+  }
+
+  .coverage-user-filter-bar {
+    gap: 0.4rem;
+  }
+
+  .coverage-user-filter-bar .chip-btn {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  .coverage-single-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .coverage-single-user-info {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .coverage-meta-hint {
+    align-self: flex-end;
+    font-size: 0.72rem;
+  }
+
+  .coverage-rank-row {
+    padding: 0.65rem 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .coverage-rank-user {
+    font-size: 0.85rem;
+  }
+
+  .coverage-stat-pct {
+    font-size: 0.95rem;
+  }
+
+  .coverage-stat-count {
+    font-size: 0.72rem;
+  }
+
+  .coverage-multi-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .coverage-user-block {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .coverage-target-top {
+    font-size: 0.82rem;
+  }
+
+  .coverage-target-count {
+    font-size: 0.7rem;
+  }
+}
+
+/* 極小スマホ対応 (幅380px以下) */
+@media (max-width: 380px) {
+  .similarity-coverage-card {
+    padding: 0.85rem 0.6rem;
+  }
+
+  .coverage-rank-stat {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    line-height: 1.15;
+  }
+
+  .coverage-target-stat-wrap {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    line-height: 1.15;
+  }
 }
 
 .empty-state {
