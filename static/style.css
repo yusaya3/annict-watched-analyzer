@@ -74,13 +74,17 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .app-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -302,6 +306,9 @@ body {
 .tab-pane {
   display: none;
   animation: fadeIn 0.25s ease forwards;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .tab-pane.active {
@@ -621,6 +628,14 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.similarity-layout .card {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -629,8 +644,37 @@ body {
   }
 }
 
+.table-scroll-hint {
+  display: none;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .table-scroll-hint {
+    display: flex;
+  }
+}
+
 .table-responsive {
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
 }
 
 .data-table {
@@ -712,10 +756,15 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .insight-card {
   border-left: 4px solid var(--border-color);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .border-gold { border-left-color: var(--accent-gold); }
@@ -728,6 +777,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.6rem;
+  width: 100%;
 }
 
 .text-gold { color: var(--accent-gold); }
@@ -751,6 +801,7 @@ body {
 
 .chip-selector {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 
@@ -1207,14 +1258,123 @@ body {
     font-size: 0.78rem;
   }
 
-  /* シンクロ率マトリクス */
+  /* シンクロ率タブのスマホ最適化 */
+  .similarity-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .similarity-layout .card {
+    padding: 0.85rem 0.65rem;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .data-table th, .data-table td {
-    padding: 0.5rem 0.35rem;
-    font-size: 0.78rem;
+    padding: 0.42rem 0.28rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 
   .data-table th {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.35rem;
+  }
+
+  .data-table td small {
+    font-size: 0.65rem !important;
+  }
+
+  .ranking-container {
+    gap: 0.45rem;
+  }
+
+  .ranking-item {
+    padding: 0.55rem 0.65rem;
+    gap: 0.45rem;
+  }
+
+  .rank-badge {
+    width: 24px;
+    height: 24px;
     font-size: 0.76rem;
+    flex-shrink: 0;
+  }
+
+  .rank-pair {
+    margin: 0;
+    font-size: 0.8rem;
+    word-break: break-all;
+    line-height: 1.3;
+  }
+
+  .rank-score {
+    font-size: 0.88rem;
+    text-align: right;
+  }
+
+  .rank-score small {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+  }
+
+  /* インサイトタブのスマホ最適化 */
+  .insights-grid {
+    gap: 1rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .insight-card {
+    padding: 0.85rem 0.65rem;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .insight-card .header-with-badge {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .insight-card .header-with-badge h3 {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .chip-selector {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.35rem;
+    padding: 0.15rem 0 0.45rem 0;
+    scrollbar-width: thin;
+  }
+
+  .chip-selector::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .chip-selector::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+  }
+
+  .chip-btn {
+    flex-shrink: 0;
+    font-size: 0.76rem;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
   }
 
   /* モーダル */
@@ -1375,6 +1535,19 @@ body {
 
   .grid-card-thumb, .grid-card-no-thumb {
     height: 155px;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.35rem 0.2rem;
+    font-size: 0.66rem;
+  }
+
+  .rank-pair {
+    font-size: 0.76rem;
+  }
+
+  .rank-score {
+    font-size: 0.82rem;
   }
 }
 
