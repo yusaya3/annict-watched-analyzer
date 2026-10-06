@@ -113,32 +113,31 @@ function initTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      if (btn.classList.contains('active')) return;
 
+      // 1. タブボタンのアクティブ状態を即座に更新（即時フィードバック）
+      tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
       const targetId = btn.getAttribute('data-tab');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
+
+      // 2. ブラウザがタブボタンの赤色再描画を即座に完了できるよう、
+      // ペインの切り替えを requestAnimationFrame で次フレームに渡す
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+
+        // 3. Venn図のSVGがまだ未描画の場合（フォールバック）のみ描画
         if (targetId === 'tab-venn') {
-          renderVenn();
-        } else if (targetId === 'tab-similarity') {
-          renderSimilarity();
-        } else if (targetId === 'tab-group') {
-          renderGroupAnalysis();
-        } else if (targetId === 'tab-insights') {
-          renderInsights();
-        } else if (targetId === 'tab-labs') {
-          if (window.renderLabsTab && state.data) {
-            window.renderLabsTab(state.data.labs, state.data);
-          }
-        } else if (targetId === 'tab-genre-lab') {
-          if (window.renderGenreLabTab && state.data) {
-            window.renderGenreLabTab(state.data.labs, state.data);
+          const svg = document.querySelector('#venn-chart svg');
+          if (!svg && state.data && state.selectedVennUsers.length >= 2) {
+            renderVenn();
           }
         }
-      }
+      });
     });
   });
 }
@@ -1084,8 +1083,14 @@ function renderInsights() {
     btn.className = `chip-btn ${state.activeExclusiveUser === u ? 'active' : ''}`;
     btn.textContent = `@${u} (${count})`;
     btn.addEventListener('click', () => {
+      if (state.activeExclusiveUser === u) return;
       state.activeExclusiveUser = u;
-      renderInsights();
+      exclusiveSel.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      requestAnimationFrame(() => {
+        const exclusiveList = (state.activeExclusiveUser && insights.exclusivePerUser?.[state.activeExclusiveUser]) || [];
+        renderAnimeGrid(document.getElementById('list-exclusive'), exclusiveList);
+      });
     });
     exclusiveSel.appendChild(btn);
   });
@@ -1102,8 +1107,14 @@ function renderInsights() {
     btn.className = `chip-btn ${state.activeMissingUser === u ? 'active' : ''}`;
     btn.textContent = `@${u} (${count})`;
     btn.addEventListener('click', () => {
+      if (state.activeMissingUser === u) return;
       state.activeMissingUser = u;
-      renderInsights();
+      missingSel.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      requestAnimationFrame(() => {
+        const missingList = (state.activeMissingUser && insights.missingPerUser?.[state.activeMissingUser]) || [];
+        renderAnimeGrid(document.getElementById('list-missing'), missingList);
+      });
     });
     missingSel.appendChild(btn);
   });
@@ -1292,6 +1303,7 @@ function initGroupAnalysis() {
   const subtabBtns = document.querySelectorAll('.group-subtab-btn');
   subtabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (btn.classList.contains('active')) return;
       subtabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.groupActiveSubtab = btn.dataset.subtab;
@@ -1322,7 +1334,7 @@ function initGroupAnalysis() {
         }
       }
 
-      renderGroupWorksList();
+      requestAnimationFrame(() => renderGroupWorksList());
     });
   });
 
