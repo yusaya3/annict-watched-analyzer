@@ -17,6 +17,10 @@ const state = {
   genreMap: {}
 };
 
+if (typeof window !== 'undefined') {
+  window.state = state;
+}
+
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();

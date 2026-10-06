@@ -66,18 +66,112 @@
       });
     }
 
-    // スコア診断ボタン
+    // スコア診断ボタン & リアルタイム入力サジェスト
     const btnInspect = document.getElementById('btn-inspect-score');
     const inputInspect = document.getElementById('inspector-title-input');
     if (btnInspect && inputInspect) {
+      // サジェストドロップダウンの動的作成
+      let suggestBox = document.getElementById('inspector-suggest-dropdown');
+      if (!suggestBox && inputInspect.parentElement) {
+        inputInspect.parentElement.style.position = 'relative';
+        suggestBox = document.createElement('div');
+        suggestBox.id = 'inspector-suggest-dropdown';
+        suggestBox.className = 'inspector-suggest-dropdown';
+        suggestBox.style.cssText = 'display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#161d2d;border:1px solid rgba(168, 85, 247, 0.5);border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,0.7);max-height:260px;overflow-y:auto;z-index:9999;';
+        inputInspect.parentElement.appendChild(suggestBox);
+      }
+
+      // サジェスト候補の更新表示
+      const updateSuggestions = (query) => {
+        if (!suggestBox) return;
+        const q = (query || '').trim().toLowerCase();
+        if (!q) {
+          suggestBox.style.display = 'none';
+          return;
+        }
+
+        // 全作品リストから部分一致タイトルを収集
+        const allTitles = new Set();
+        if (window.state?.genreMap) {
+          Object.keys(window.state.genreMap).forEach(t => allTitles.add(t));
+        }
+        if (window.state?.data?.userWatchedLists) {
+          Object.values(window.state.data.userWatchedLists).forEach(list => {
+            (list || []).forEach(a => { if (a?.title) allTitles.add(a.title); });
+          });
+        }
+
+        const qClean = q.replace(/[\s\-_・:：!！?？]/g, '');
+        const matched = [];
+        for (const t of allTitles) {
+          const tLower = t.toLowerCase();
+          const tClean = tLower.replace(/[\s\-_・:：!！?？]/g, '');
+          if (tLower.startsWith(q) || tClean.startsWith(qClean)) {
+            matched.push({ title: t, score: 100 - (t.length - q.length) });
+          } else if (tLower.includes(q) || tClean.includes(qClean)) {
+            matched.push({ title: t, score: 50 - (t.length - q.length) });
+          }
+        }
+
+        matched.sort((a, b) => b.score - a.score);
+        const topMatches = matched.slice(0, 8);
+
+        if (topMatches.length === 0) {
+          suggestBox.style.display = 'none';
+          return;
+        }
+
+        suggestBox.innerHTML = topMatches.map(m => `
+          <div class="inspector-suggest-item" data-title="${escapeHtml(m.title)}" style="padding:0.6rem 0.8rem;cursor:pointer;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.85rem;color:var(--text-main);">
+            <i class="fa-solid fa-film text-muted"></i>
+            <span>${escapeHtml(m.title)}</span>
+          </div>
+        `).join('');
+        suggestBox.style.display = 'block';
+
+        suggestBox.querySelectorAll('.inspector-suggest-item').forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            item.style.background = 'rgba(168, 85, 247, 0.15)';
+          });
+          item.addEventListener('mouseleave', () => {
+            item.style.background = 'transparent';
+          });
+          item.addEventListener('click', () => {
+            const selectedTitle = item.getAttribute('data-title');
+            inputInspect.value = selectedTitle;
+            suggestBox.style.display = 'none';
+            executeInspection(selectedTitle);
+          });
+        });
+      };
+
+      inputInspect.addEventListener('input', (e) => {
+        updateSuggestions(e.target.value);
+      });
+
+      inputInspect.addEventListener('focus', (e) => {
+        if (e.target.value.trim()) updateSuggestions(e.target.value);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (suggestBox && !suggestBox.contains(e.target) && e.target !== inputInspect) {
+          suggestBox.style.display = 'none';
+        }
+      });
+
       btnInspect.addEventListener('click', () => {
+        if (suggestBox) suggestBox.style.display = 'none';
         const title = inputInspect.value.trim();
         if (title) executeInspection(title);
       });
+
       inputInspect.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
+          if (suggestBox) suggestBox.style.display = 'none';
           const title = inputInspect.value.trim();
           if (title) executeInspection(title);
+        } else if (e.key === 'Escape') {
+          if (suggestBox) suggestBox.style.display = 'none';
         }
       });
     }
@@ -87,6 +181,8 @@
       btn.addEventListener('click', () => {
         const title = btn.getAttribute('data-title');
         if (inputInspect) inputInspect.value = title;
+        const suggestBox = document.getElementById('inspector-suggest-dropdown');
+        if (suggestBox) suggestBox.style.display = 'none';
         executeInspection(title);
       });
     });
@@ -629,8 +725,31 @@
       <span class="inspector-genre-chip">${escapeHtml(g)}</span>
     `).join('');
 
+    const fuzzyBannerHtml = !data.isExactMatch && data.query ? `
+      <div class="inspector-fuzzy-banner mb-3" style="background:rgba(59, 130, 246, 0.12);border:1px solid rgba(59, 130, 246, 0.35);border-radius:8px;padding:0.6rem 0.9rem;display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:var(--text-main);">
+        <i class="fa-solid fa-circle-info text-blue"></i>
+        <span>「<strong>${escapeHtml(data.query)}</strong>」の部分一致候補として <strong>${escapeHtml(data.title)}</strong> の診断結果を表示しています</span>
+      </div>
+    ` : '';
+
+    const matchesHtml = (data.matches && data.matches.length > 0) ? `
+      <div class="inspector-matches-box mt-3" style="background:rgba(255, 255, 255, 0.03);border:1px solid var(--border-color);border-radius:8px;padding:0.8rem;">
+        <div class="text-muted" style="font-size:0.8rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem;">
+          <i class="fa-solid fa-list-ul"></i> 他の関連・候補作品（クリックで即座に診断切替）:
+        </div>
+        <div class="inspector-match-chips" style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+          ${data.matches.map(m => `
+            <button class="btn-match-chip ${m.title === data.title ? 'active' : ''}" data-title="${escapeHtml(m.title)}" style="padding:0.3rem 0.65rem;font-size:0.8rem;border-radius:6px;cursor:pointer;border:1px solid ${m.title === data.title ? 'var(--accent, #a855f7)' : 'var(--border-color)'};background:${m.title === data.title ? 'rgba(168, 85, 247, 0.25)' : 'var(--bg-card)'};color:var(--text-main);transition:all 0.15s ease;">
+              ${escapeHtml(m.title)}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    ` : '';
+
     container.innerHTML = `
       <div class="inspector-result-card">
+        ${fuzzyBannerHtml}
         <div class="inspector-summary-banner">
           <div>
             <h3 style="margin:0 0 0.4rem 0;">${escapeHtml(data.title)}</h3>
@@ -647,6 +766,8 @@
             </div>
           </div>
         </div>
+
+        ${matchesHtml}
 
         <div class="inspector-meta-row mt-3">
           <div class="inspector-meta-group">
@@ -665,6 +786,16 @@
         </div>
       </div>
     `;
+
+    // 候補チップのクリックイベント
+    container.querySelectorAll('.btn-match-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title');
+        const inputInspect = document.getElementById('inspector-title-input');
+        if (inputInspect) inputInspect.value = title;
+        executeInspection(title);
+      });
+    });
   }
 
   function getGenreDefMap() {

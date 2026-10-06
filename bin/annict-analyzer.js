@@ -583,10 +583,10 @@ function createApp() {
     }
   });
 
-  // 作品のジャンルスコア内訳・新旧比較取得API（ジャンル実験室用）
+  // 作品のジャンルスコア内訳・新旧比較取得API（ジャンル実験室用・あいまい検索対応）
   app.get('/api/genre-score', (req, res) => {
-    const title = (req.query.title || '').trim();
-    if (!title) {
+    const rawQuery = (req.query.title || '').trim();
+    if (!rawQuery) {
       return res.status(400).json({ error: 'タイトルを指定してください' });
     }
 
@@ -594,15 +594,98 @@ function createApp() {
       const { GenreClient, classifyAnime, GENRE_DEFINITIONS } = require('../lib/labs/genre-client.js');
       const { scoreAnimeDetailed } = require('../lib/labs/genre-scorer.js');
       const genreClient = new GenreClient();
-      const entry = genreClient.cache[title] || { genres: [], tags: [] };
-      const genres = entry.genres || [];
-      const tags = entry.tags || [];
+      const cache = genreClient.cache || {};
 
-      const legacyCategory = classifyAnime(genres, tags, title);
-      const scoredDetail = scoreAnimeDetailed(genres, tags, title);
+      // 一般的な略称・通称マッピング
+      const ALIASES = {
+        '着せ恋': 'その着せ替え人形は恋をする',
+        'このすば': 'この素晴らしい世界に祝福を！',
+        'ごちうさ': 'ご注文はうさぎですか？',
+        'リゼロ': 'Re:ゼロから始める異世界生活',
+        'まどマギ': '魔法少女まどか☆マギカ',
+        '俺ガイル': 'やはり俺の青春ラブコメはまちがっている。',
+        '青ブタ': '青春ブタ野郎はバニーガール先輩の夢を見ない',
+        'ダンまち': 'ダンジョンに出会いを求めるのは間違っているだろうか',
+        '防振り': '痛いのは嫌なので防御力に極振りしたいと思います。',
+        'わたてん': '私に天使が舞い降りた！',
+        'よりもい': '宇宙よりも遠い場所',
+        'ガルパン': 'ガールズ＆パンツァー',
+        'ハルヒ': '涼宮ハルヒの憂鬱',
+        'ヒロアカ': '僕のヒーローアカデミア',
+        '東リベ': '東京リベンジャーズ',
+        'マケイン': '負けヒロインが多すぎる！',
+        'ロシデレ': '時々ボソッとロシア語でデレる隣のアーリャさん',
+        'ガルクラ': 'ガールズバンドクライ',
+        'ぼざろ': 'ぼっち・ざ・ろっく！',
+        'シュタゲ': 'STEINS;GATE',
+        'エヴァ': '新世紀エヴァンゲリオン'
+      };
+
+      const queryForSearch = ALIASES[rawQuery] || rawQuery;
+      let targetTitle = queryForSearch;
+      let entry = cache[targetTitle];
+      const matches = [];
+
+      // 完全一致がない場合は部分一致・あいまい検索を実行
+      if (!entry) {
+        const qLower = queryForSearch.toLowerCase();
+        const qClean = qLower.replace(/[\s\-_・:：!！?？]/g, '');
+
+        const candidates = [];
+        for (const t of Object.keys(cache)) {
+          const tLower = t.toLowerCase();
+          const tClean = tLower.replace(/[\s\-_・:：!！?？]/g, '');
+
+          if (tLower === qLower || tClean === qClean) {
+            candidates.push({ title: t, score: 100 });
+          } else if (tLower.startsWith(qLower) || tClean.startsWith(qClean)) {
+            candidates.push({ title: t, score: 80 - Math.min(30, t.length - queryForSearch.length) });
+          } else if (tLower.includes(qLower) || tClean.includes(qClean)) {
+            candidates.push({ title: t, score: 60 - Math.min(30, t.length - queryForSearch.length) });
+          }
+        }
+
+        candidates.sort((a, b) => b.score - a.score);
+
+        if (candidates.length > 0) {
+          targetTitle = candidates[0].title;
+          entry = cache[targetTitle];
+
+          // 上位10件の候補（代表作以外も含む）
+          candidates.slice(0, 10).forEach(c => {
+            const e = cache[c.title] || {};
+            matches.push({
+              title: c.title,
+              category: classifyAnime(e.genres || [], e.tags || [], c.title)
+            });
+          });
+        }
+      } else {
+        // 完全一致した場合も、関連シリーズ作を候補に含める
+        const qLower = queryForSearch.toLowerCase();
+        for (const t of Object.keys(cache)) {
+          if (t !== targetTitle && t.toLowerCase().includes(qLower)) {
+            const e = cache[t] || {};
+            matches.push({
+              title: t,
+              category: classifyAnime(e.genres || [], e.tags || [], t)
+            });
+            if (matches.length >= 8) break;
+          }
+        }
+      }
+
+      const genres = entry ? (entry.genres || []) : [];
+      const tags = entry ? (entry.tags || []) : [];
+
+      const legacyCategory = classifyAnime(genres, tags, targetTitle);
+      const scoredDetail = scoreAnimeDetailed(genres, tags, targetTitle);
 
       res.json({
-        title,
+        query: rawQuery,
+        title: targetTitle,
+        isExactMatch: targetTitle.toLowerCase() === rawQuery.toLowerCase(),
+        matches,
         genres,
         tags,
         legacyCategory,
@@ -610,6 +693,7 @@ function createApp() {
         definitions: GENRE_DEFINITIONS
       });
     } catch (err) {
+      console.error('[API /genre-score Error]:', err);
       res.status(500).json({ error: err.message });
     }
   });
