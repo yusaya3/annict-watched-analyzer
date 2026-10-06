@@ -828,7 +828,6 @@ function renderVenn() {
     if (detailBadge) detailBadge.textContent = '0 作品';
     if (detailDesc) detailDesc.textContent = '2人または3人のユーザーを選択すると、共通・固有の作品リストが表示されます。';
     if (detailList) detailList.innerHTML = '<div class="empty-state" style="padding: 2.5rem 1rem;"><i class="fa-solid fa-users" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.4;"></i><p>ユーザーを選択してください</p></div>';
-    renderVennCoverage(null);
     return;
   }
 
@@ -839,7 +838,6 @@ function renderVenn() {
 
   if (typeof venn === 'undefined') {
     chartContainer.innerHTML = '<p class="text-muted">Venn.js ライブラリを読み込み中...</p>';
-    renderVennCoverage(users);
     return;
   }
 
@@ -892,99 +890,6 @@ function renderVenn() {
     const title = commonSet.sets.length > 1 ? `${areaLabel} の共通視聴作品` : `${areaLabel} の視聴作品`;
     updateDetailPanel(title, commonSet.animes || []);
   }
-
-  // 視点別・他ユーザーの履修割合（個別カバー率）を描画
-  renderVennCoverage(users);
-}
-
-// ベン図: 視点別・個別カバー率（他ユーザーの履修割合）の描画
-function renderVennCoverage(users) {
-  const coverageCard = document.getElementById('venn-coverage-card');
-  const coverageGrid = document.getElementById('venn-coverage-grid');
-  if (!coverageCard || !coverageGrid) return;
-
-  if (!users || users.length < 2 || !state.data?.userWatchedLists) {
-    coverageCard.style.display = 'none';
-    coverageGrid.innerHTML = '';
-    return;
-  }
-
-  coverageCard.style.display = 'flex';
-  coverageGrid.innerHTML = '';
-
-  const userLists = state.data.userWatchedLists;
-  const userMaps = {};
-  users.forEach(u => {
-    userMaps[u] = new Map((userLists[u] || []).map(a => [String(a.id), a]));
-  });
-
-  const colors = ['#f43f5e', '#38bdf8', '#a855f7'];
-
-  users.forEach((me, myIdx) => {
-    const myAnimes = userLists[me] || [];
-    const myTotal = myAnimes.length;
-    const myColor = colors[myIdx % colors.length];
-
-    const block = document.createElement('div');
-    block.className = 'coverage-user-block';
-
-    const header = document.createElement('div');
-    header.className = 'coverage-user-header';
-    header.innerHTML = `
-      <span class="coverage-user-badge" style="color: ${myColor};">
-        <i class="fa-solid fa-user"></i> @${escapeHtml(me)} 視点
-      </span>
-      <span class="coverage-user-total">全 ${myTotal} 作</span>
-    `;
-    block.appendChild(header);
-
-    const list = document.createElement('div');
-    list.className = 'coverage-target-list';
-
-    // 自分以外の選択中ユーザー
-    const others = users.filter(u => u !== me);
-    others.forEach(other => {
-      const otherIdx = users.indexOf(other);
-      const otherColor = colors[otherIdx % colors.length];
-      const otherMap = userMaps[other];
-
-      // 共通作品（自分の作品の中で相手も観ている作品）
-      const commonAnimes = myAnimes.filter(a => otherMap && otherMap.has(String(a.id)));
-      const commonCount = commonAnimes.length;
-      const pct = myTotal > 0 ? ((commonCount / myTotal) * 100).toFixed(1) : '0.0';
-
-      const item = document.createElement('div');
-      item.className = 'coverage-target-item';
-      item.title = `クリックして @${me} と @${other} の共通作品 (${commonCount}作) を表示`;
-
-      item.innerHTML = `
-        <div class="coverage-target-top">
-          <span class="coverage-target-name">
-            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${otherColor};margin-right:4px;"></span>
-            @${escapeHtml(other)} も視聴
-          </span>
-          <span class="coverage-target-stat">
-            ${pct}% <span>(${commonCount} / ${myTotal}作)</span>
-          </span>
-        </div>
-        <div class="coverage-bar-track">
-          <div class="coverage-bar-fill" style="width: ${pct}%; background-color: ${otherColor};"></div>
-        </div>
-      `;
-
-      item.addEventListener('click', () => {
-        // ベン図のハイライト解除
-        d3.selectAll('#venn-chart g').classed('active', false);
-        // 詳細パネルを更新
-        updateDetailPanel(`@${me} と @${other} の共通視聴作品`, commonAnimes);
-      });
-
-      list.appendChild(item);
-    });
-
-    block.appendChild(list);
-    coverageGrid.appendChild(block);
-  });
 }
 
 // 選択ユーザーに応じた集合リストを計算
@@ -1161,6 +1066,178 @@ function renderSimilarity() {
     `;
     rankContainer.appendChild(item);
   });
+
+  // 視点別・他ユーザーの視聴カバー率を描画
+  renderSimilarityCoverage();
+}
+
+// シンクロ率タブ: 視点別・他ユーザーの視聴カバー率の描画
+function renderSimilarityCoverage() {
+  const chipsContainer = document.getElementById('sim-coverage-user-chips');
+  const contentContainer = document.getElementById('sim-coverage-content');
+  if (!chipsContainer || !contentContainer || !state.data) return;
+
+  const users = state.data.users || [];
+  const userLists = state.data.userWatchedLists || {};
+  if (users.length < 2) {
+    chipsContainer.innerHTML = '';
+    contentContainer.innerHTML = '<p class="text-muted" style="padding:1rem;">比較対象ユーザーが2人未満です</p>';
+    return;
+  }
+
+  // デフォルト選択ユーザー（未設定なら1人目）
+  if (!state.simCoverageBaseUser || (!users.includes(state.simCoverageBaseUser) && state.simCoverageBaseUser !== '__all__')) {
+    state.simCoverageBaseUser = users[0];
+  }
+
+  // 1. ユーザー選択チップの生成
+  chipsContainer.innerHTML = '';
+
+  // 各ユーザーボタン
+  users.forEach(u => {
+    const total = (userLists[u] || []).length;
+    const btn = document.createElement('button');
+    btn.className = `chip-btn ${state.simCoverageBaseUser === u ? 'active' : ''}`;
+    btn.textContent = `@${u} (${total}作)`;
+    btn.onclick = () => {
+      state.simCoverageBaseUser = u;
+      renderSimilarityCoverage();
+    };
+    chipsContainer.appendChild(btn);
+  });
+
+  // 「全員並列表示」ボタン
+  const allBtn = document.createElement('button');
+  allBtn.className = `chip-btn ${state.simCoverageBaseUser === '__all__' ? 'active' : ''}`;
+  allBtn.innerHTML = '<i class="fa-solid fa-users-viewfinder"></i> 全員並列表示';
+  allBtn.onclick = () => {
+    state.simCoverageBaseUser = '__all__';
+    renderSimilarityCoverage();
+  };
+  chipsContainer.appendChild(allBtn);
+
+  // 高速検索用Map
+  const userMaps = {};
+  users.forEach(u => {
+    userMaps[u] = new Map((userLists[u] || []).map(a => [String(a.id), a]));
+  });
+
+  // 2. コンテンツ描画
+  contentContainer.innerHTML = '';
+
+  if (state.simCoverageBaseUser === '__all__') {
+    // 全員並列表示モード
+    const grid = document.createElement('div');
+    grid.className = 'coverage-multi-grid';
+
+    users.forEach(me => {
+      const myAnimes = userLists[me] || [];
+      const myTotal = myAnimes.length;
+
+      const block = document.createElement('div');
+      block.className = 'coverage-user-block';
+
+      const header = document.createElement('div');
+      header.className = 'coverage-user-header';
+      header.innerHTML = `
+        <span class="coverage-user-badge"><i class="fa-solid fa-user text-pink"></i> @${escapeHtml(me)} 視点</span>
+        <span class="coverage-user-total">全 ${myTotal} 作</span>
+      `;
+      block.appendChild(header);
+
+      const list = document.createElement('div');
+      list.className = 'coverage-target-list';
+
+      const others = users.filter(u => u !== me);
+      // カバー率の高い順にソート
+      const rankedOthers = others.map(other => {
+        const otherMap = userMaps[other];
+        const commonCount = myAnimes.filter(a => otherMap && otherMap.has(String(a.id))).length;
+        const pct = myTotal > 0 ? (commonCount / myTotal) * 100 : 0;
+        return { other, commonCount, pct };
+      }).sort((a, b) => b.pct - a.pct);
+
+      rankedOthers.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'coverage-target-item';
+        const pctStr = item.pct.toFixed(1);
+        row.innerHTML = `
+          <div class="coverage-rank-top">
+            <span class="coverage-target-name">@${escapeHtml(item.other)} も視聴</span>
+            <span class="coverage-rank-stat">${pctStr}% <span style="font-size:0.75rem;color:var(--text-muted);">(${item.commonCount} / ${myTotal}作)</span></span>
+          </div>
+          <div class="coverage-bar-track">
+            <div class="coverage-bar-fill" style="width: ${pctStr}%;"></div>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+
+      block.appendChild(list);
+      grid.appendChild(block);
+    });
+
+    contentContainer.appendChild(grid);
+  } else {
+    // 単一ユーザー視点モード（ランキングバー表示）
+    const me = state.simCoverageBaseUser;
+    const myAnimes = userLists[me] || [];
+    const myTotal = myAnimes.length;
+
+    const singleView = document.createElement('div');
+    singleView.className = 'coverage-single-view';
+
+    const meta = document.createElement('div');
+    meta.className = 'coverage-single-meta';
+    meta.innerHTML = `
+      <div class="coverage-single-user-info">
+        <i class="fa-solid fa-user-check text-pink"></i>
+        <span><strong>@${escapeHtml(me)}</strong> が観ている全 <strong>${myTotal}</strong> 作品のうち、他の人が観ている割合</span>
+      </div>
+      <span class="text-muted" style="font-size:0.85rem;">カバー率の高い順</span>
+    `;
+    singleView.appendChild(meta);
+
+    const rankList = document.createElement('div');
+    rankList.className = 'coverage-rank-list';
+
+    const others = users.filter(u => u !== me);
+    const rankedOthers = others.map(other => {
+      const otherMap = userMaps[other];
+      const commonCount = myAnimes.filter(a => otherMap && otherMap.has(String(a.id))).length;
+      const pct = myTotal > 0 ? (commonCount / myTotal) * 100 : 0;
+      return { other, commonCount, pct };
+    }).sort((a, b) => b.pct - a.pct);
+
+    rankedOthers.forEach((item, idx) => {
+      const row = document.createElement('div');
+      row.className = 'coverage-rank-row';
+      const pctStr = item.pct.toFixed(1);
+      const rankColor = idx === 0 ? 'var(--accent-gold, #f59e0b)' : (idx === 1 ? '#94a3b8' : (idx === 2 ? '#b45309' : 'var(--text-muted)'));
+      const crown = idx === 0 ? '<i class="fa-solid fa-crown text-gold" style="margin-left:4px;"></i>' : '';
+
+      row.innerHTML = `
+        <div class="coverage-rank-top">
+          <div class="coverage-rank-user">
+            <span class="coverage-rank-order" style="color:${rankColor};">#${idx + 1}</span>
+            <span>@${escapeHtml(item.other)}</span>
+            ${crown}
+          </div>
+          <div class="coverage-rank-stat">
+            ${pctStr}%
+            <span>(${item.commonCount} / ${myTotal} 作 履修済)</span>
+          </div>
+        </div>
+        <div class="coverage-bar-track">
+          <div class="coverage-bar-fill" style="width: ${pctStr}%;"></div>
+        </div>
+      `;
+      rankList.appendChild(row);
+    });
+
+    singleView.appendChild(rankList);
+    contentContainer.appendChild(singleView);
+  }
 }
 
 // インサイトタブ描画
