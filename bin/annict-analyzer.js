@@ -279,9 +279,16 @@ function createApp() {
     }
   });
 
-  // 全作品の軽量ジャンル辞書取得API（ブラウザ側での完全リアルタイム分類用: 約200KB）
+  // 全作品の軽量ジャンル辞書取得API（Local-First用: 約237KB）
   app.get('/api/work-genres', (req, res) => {
     try {
+      const staticJsonPath = path.resolve(__dirname, '../static/res/work-genres.json');
+      if (fs.existsSync(staticJsonPath)) {
+        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+        return res.sendFile(staticJsonPath);
+      }
+
       const { GenreClient } = require('../lib/labs/genre-client.js');
       const { classifyAnimeScored } = require('../lib/labs/genre-scorer.js');
       const genreClient = new GenreClient();

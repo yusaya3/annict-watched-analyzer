@@ -235,11 +235,16 @@ function loadUsersFromStorage() {
   return null;
 }
 
-// IndexedDB によるクライアント側大容量分析データ永続化（コールドスタート巻き戻り完全防止）
+// =========================================================================
+// 【提案2: Local-First】IndexedDB ブラウザ永続化データストア (v2)
+// =========================================================================
 const DB_NAME = 'AnnictAnalyzerDB';
-const DB_VERSION = 1;
-const STORE_NAME = 'reports';
+const DB_VERSION = 2; // v2: reports, work_genres, user_watches
+const STORE_REPORTS = 'reports';
+const STORE_GENRES = 'work_genres';
+const STORE_USER_WATCHES = 'user_watches';
 const REPORT_KEY = 'latest_report';
+const GENRES_KEY = 'all_work_genres';
 
 function openIndexedDB() {
   return new Promise((resolve) => {
@@ -248,8 +253,14 @@ function openIndexedDB() {
       const req = window.indexedDB.open(DB_NAME, DB_VERSION);
       req.onupgradeneeded = (e) => {
         const db = e.target.result;
-        if (!db.objectStoreNames.contains(STORE_NAME)) {
-          db.createObjectStore(STORE_NAME);
+        if (!db.objectStoreNames.contains(STORE_REPORTS)) {
+          db.createObjectStore(STORE_REPORTS);
+        }
+        if (!db.objectStoreNames.contains(STORE_GENRES)) {
+          db.createObjectStore(STORE_GENRES);
+        }
+        if (!db.objectStoreNames.contains(STORE_USER_WATCHES)) {
+          db.createObjectStore(STORE_USER_WATCHES);
         }
       };
       req.onsuccess = (e) => resolve(e.target.result);
@@ -260,20 +271,20 @@ function openIndexedDB() {
   });
 }
 
+// レポート全体の保存・取得
 async function saveReportToIndexedDB(report) {
   if (!report || !report.generatedAt) return;
   try {
     const db = await openIndexedDB();
     if (!db) return;
     return new Promise((resolve) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
-      store.put(report, REPORT_KEY);
+      const tx = db.transaction(STORE_REPORTS, 'readwrite');
+      tx.objectStore(STORE_REPORTS).put(report, REPORT_KEY);
       tx.oncomplete = () => resolve(true);
       tx.onerror = () => resolve(false);
     });
   } catch (e) {
-    console.warn('IndexedDB save error:', e);
+    console.warn('IndexedDB saveReport error:', e);
   }
 }
 
@@ -282,15 +293,108 @@ async function loadReportFromIndexedDB() {
     const db = await openIndexedDB();
     if (!db) return null;
     return new Promise((resolve) => {
-      const tx = db.transaction(STORE_NAME, 'readonly');
-      const store = tx.objectStore(STORE_NAME);
-      const req = store.get(REPORT_KEY);
+      const tx = db.transaction(STORE_REPORTS, 'readonly');
+      const req = tx.objectStore(STORE_REPORTS).get(REPORT_KEY);
       req.onsuccess = () => resolve(req.result || null);
       req.onerror = () => resolve(null);
     });
   } catch (e) {
-    console.warn('IndexedDB load error:', e);
+    console.warn('IndexedDB loadReport error:', e);
     return null;
+  }
+}
+
+// 作品ジャンル辞書（2,500作＋新規作）の保存・取得
+async function saveWorkGenresToIndexedDB(genreMap) {
+  if (!genreMap || typeof genreMap !== 'object') return;
+  try {
+    const db = await openIndexedDB();
+    if (!db) return;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_GENRES, 'readwrite');
+      tx.objectStore(STORE_GENRES).put(genreMap, GENRES_KEY);
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => resolve(false);
+    });
+  } catch (e) {
+    console.warn('IndexedDB saveGenres error:', e);
+  }
+}
+
+async function loadWorkGenresFromIndexedDB() {
+  try {
+    const db = await openIndexedDB();
+    if (!db) return null;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_GENRES, 'readonly');
+      const req = tx.objectStore(STORE_GENRES).get(GENRES_KEY);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => resolve(null);
+    });
+  } catch (e) {
+    console.warn('IndexedDB loadGenres error:', e);
+    return null;
+  }
+}
+
+// ユーザーごとの視聴作品リストの保存・取得・削除
+async function saveUserWatchedToIndexedDB(username, animes) {
+  if (!username || !Array.isArray(animes)) return;
+  try {
+    const db = await openIndexedDB();
+    if (!db) return;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_USER_WATCHES, 'readwrite');
+      tx.objectStore(STORE_USER_WATCHES).put(animes, username.toLowerCase());
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => resolve(false);
+    });
+  } catch (e) {
+    console.warn('IndexedDB saveUserWatched error:', e);
+  }
+}
+
+async function loadAllUserWatchesFromIndexedDB() {
+  try {
+    const db = await openIndexedDB();
+    if (!db) return null;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_USER_WATCHES, 'readonly');
+      const store = tx.objectStore(STORE_USER_WATCHES);
+      const req = store.openCursor();
+      const result = {};
+      let count = 0;
+      req.onsuccess = (e) => {
+        const cursor = e.target.result;
+        if (cursor) {
+          result[cursor.key] = cursor.value;
+          count++;
+          cursor.continue();
+        } else {
+          resolve(count > 0 ? result : null);
+        }
+      };
+      req.onerror = () => resolve(null);
+    });
+  } catch (e) {
+    console.warn('IndexedDB loadAllUserWatches error:', e);
+    return null;
+  }
+}
+
+async function deleteUserWatchedFromIndexedDB(username) {
+  if (!username) return;
+  try {
+    const db = await openIndexedDB();
+    if (!db) return;
+    return new Promise((resolve) => {
+      const tx = db.transaction(STORE_USER_WATCHES, 'readwrite');
+      tx.objectStore(STORE_USER_WATCHES).delete(username.toLowerCase());
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => resolve(false);
+    });
+  } catch (e) {
+    console.warn('IndexedDB deleteUserWatched error:', e);
   }
 }
 
@@ -418,20 +522,36 @@ function recalculateClientReport() {
   renderModalUserList();
 }
 
-// 全作品の軽量ジャンル辞書を非同期ロードしてリアルタイム集計を有効化
+// 全作品の軽量ジャンル辞書をロード（IndexedDB優先 → 静的JSON → API）
 async function loadWorkGenres() {
   try {
-    const res = await fetch('/api/work-genres');
+    // 1. まずIndexedDB（手元）から瞬時に取得
+    const cachedMap = await loadWorkGenresFromIndexedDB();
+    if (cachedMap && Object.keys(cachedMap).length > 0) {
+      if (!state.genreMap) state.genreMap = {};
+      Object.assign(state.genreMap, cachedMap);
+      console.log(`[Local-First] IndexedDBから作品辞書をロード (${Object.keys(cachedMap).length}作品)`);
+      return;
+    }
+
+    // 2. なければ静的ファイル (./res/work-genres.json) または API (/api/work-genres) から取得
+    let res = await fetch('./res/work-genres.json');
+    if (!res.ok) {
+      res = await fetch('/api/work-genres');
+    }
     if (res.ok) {
       const map = await res.json();
       if (!state.genreMap) state.genreMap = {};
       Object.assign(state.genreMap, map);
+      // 手元のIndexedDBにキャッシュ保存！
+      await saveWorkGenresToIndexedDB(state.genreMap);
+      console.log(`[Local-First] 作品辞書を初期取得＆IndexedDBへ保存 (${Object.keys(map).length}作品)`);
       if (state.data && state.data.userWatchedLists) {
         recalculateClientReport();
       }
     }
   } catch (e) {
-    console.warn('[Genre] ジャンル辞書の事前取得をスキップ:', e.message);
+    console.warn('[Genre] ジャンル辞書ロードエラー (スキップ):', e.message);
   }
 }
 
@@ -449,9 +569,9 @@ async function fetchUserWatched(username) {
   return await res.json();
 }
 
-// 実際のユーザー追加・個別更新通信処理（1人分だけ取得してブラウザで一瞬で再集計！）
+// 実際のユーザー追加・個別更新通信処理（手元のIndexedDBに保存＆ブラウザで一瞬で再集計！）
 async function executeAddUser(username, onProgress) {
-  if (onProgress) onProgress(`@${username} の最新データをAnnict・AniListから取得中...`);
+  if (onProgress) onProgress(`@${username} の最新データをAnnictから取得中...`);
 
   // 1人分の視聴データと新規作品のジャンル分類を取得
   const result = await fetchUserWatched(username);
@@ -459,12 +579,35 @@ async function executeAddUser(username, onProgress) {
   if (!state.data) state.data = { users: [], userWatchedLists: {} };
   if (!state.data.userWatchedLists) state.data.userWatchedLists = {};
 
-  state.data.userWatchedLists[username] = result.animes || [];
+  const animes = result.animes || [];
+  state.data.userWatchedLists[username] = animes;
 
-  // 新規作品のジャンル分類結果をstate.genreMapに即座にマージ！
+  // 手元のIndexedDBにこのユーザーの視聴データを永続保存！
+  await saveUserWatchedToIndexedDB(username, animes);
+
+  // 新規作品のジャンル分類結果を手元のstate.genreMapにマージし、IndexedDBにも追記保存！
   if (result.workGenres && typeof result.workGenres === 'object') {
     if (!state.genreMap) state.genreMap = {};
     Object.assign(state.genreMap, result.workGenres);
+    await saveWorkGenresToIndexedDB(state.genreMap);
+  }
+
+  // もし辞書にもAniList照合結果にも含まれなかった未登録作品があれば、ブラウザ直接照合フォールバックで救済
+  if (window.fetchAniListMediaInBrowser && window.classifyAnimeScored) {
+    const unmapped = animes.filter(a => a && a.title && !state.genreMap[a.title]);
+    if (unmapped.length > 0) {
+      if (onProgress) onProgress(`未登録作品(${unmapped.length}件)をAniListから直接照合中...`);
+      for (const a of unmapped.slice(0, 8)) {
+        try {
+          const media = await window.fetchAniListMediaInBrowser(a.title);
+          if (media) {
+            const cat = window.classifyAnimeScored(media.genres, media.tags, a.title);
+            state.genreMap[a.title] = { c: cat, g: media.genres };
+          }
+        } catch (e) {}
+      }
+      await saveWorkGenresToIndexedDB(state.genreMap);
+    }
   }
 
   if (!Array.isArray(state.data.users)) state.data.users = [];
@@ -483,7 +626,7 @@ async function executeAddUser(username, onProgress) {
   recalculateClientReport();
 }
 
-// 実際のユーザー削除通信処理（ブラウザ上で即座に再集計＆サーバー通知）
+// 実際のユーザー削除通信処理（ブラウザ手元のIndexedDBから削除＆即座に再集計＆サーバー通知）
 async function executeDeleteUser(username) {
   if (state.data?.userWatchedLists) {
     delete state.data.userWatchedLists[username];
@@ -492,7 +635,10 @@ async function executeDeleteUser(username) {
     state.data.users = state.data.users.filter(u => u.toLowerCase() !== username.toLowerCase());
   }
 
-  // 即座にブラウザ内で再集計
+  // 手元のIndexedDBからも削除！
+  await deleteUserWatchedFromIndexedDB(username);
+
+  // 即座にブラウザ内で再集計＆画面更新
   recalculateClientReport();
 
   // サーバーのリストも非同期で削除同期（背景で実行、ユーザーを待たせない）
@@ -684,18 +830,57 @@ function renderModalUserList() {
   });
 }
 
-// データ読み込み（IndexedDBによるコールドスタート巻き戻り完全防御）
+// データ読み込み（【提案2: Local-First】IndexedDB完全主権ロード）
 async function loadData(force = false) {
   try {
     const savedUsers = loadUsersFromStorage();
     const localReport = await loadReportFromIndexedDB();
+    const localWatches = await loadAllUserWatchesFromIndexedDB();
+    await loadWorkGenres(); // 作品辞書をIndexedDB/静的JSONからロード
 
-    // 1. ローカルに最新レポートがあれば即座に初期描画（超高速表示＆巻き戻り防止）
+    // 1. ローカルIndexedDBに最新レポートがあれば即座に初期描画（超高速0ms表示）
     if (localReport && localReport.generatedAt && !force) {
       state.data = localReport;
       renderAllComponents();
+      console.log('[Local-First] IndexedDBの最新レポートから即時描画完了');
     }
 
+    // 2. 手元IndexedDBにユーザーの視聴データ（user_watches）が保存されている場合
+    if (localWatches && Object.keys(localWatches).length > 0 && !force) {
+      const localUserKeys = Object.keys(localWatches);
+      const activeUsers = (savedUsers && savedUsers.length > 0)
+        ? savedUsers.filter(u => localWatches[u.toLowerCase()])
+        : localUserKeys;
+
+      if (activeUsers.length > 0) {
+        const userWatchedLists = {};
+        activeUsers.forEach(u => {
+          userWatchedLists[u] = localWatches[u.toLowerCase()];
+        });
+
+        if (!state.data) state.data = {};
+        state.data.users = activeUsers;
+        state.data.userWatchedLists = userWatchedLists;
+
+        if (state.selectedVennUsers.length === 0) {
+          state.selectedVennUsers = activeUsers.slice(0, 3);
+        }
+        if (!state.activeExclusiveUser) {
+          state.activeExclusiveUser = activeUsers[0] || null;
+        }
+        if (!state.activeMissingUser) {
+          state.activeMissingUser = activeUsers[0] || null;
+        }
+
+        // ブラウザ内リアルタイムエンジンで即時再集計＆再描画！（サーバー通信完全不要）
+        recalculateClientReport();
+        console.log(`[Local-First] 手元の視聴データ(${activeUsers.length}人)から完全ローカル再集計完了 (通信ゼロ・サーバーレス)`);
+        return;
+      }
+    }
+
+    // 3. 初回アクセス等で手元にデータがない場合のみ、サーバーから初期データを取得してシード保存
+    console.log('[Local-First] 初回セットアップ: サーバーから初期データをフェッチします...');
     const usersParam = savedUsers ? `users=${encodeURIComponent(savedUsers.join(','))}&` : '';
 
     let res = await fetch(`/api/analysis?${usersParam}t=${Date.now()}`);
@@ -708,37 +893,14 @@ async function loadData(force = false) {
     }
     const serverData = await res.json();
 
-    // ★重要: コールドスタート巻き戻り検知と防御
-    // サーバーから返ってきたデータの更新日時がローカル保存のものより古い場合、
-    // サーバーが過去の固定ファイル（古いバンドル）を返していると判定し、ローカルの最新データを維持する！
-    if (localReport && localReport.generatedAt && serverData && serverData.generatedAt && !force) {
-      const localTime = new Date(localReport.generatedAt).getTime();
-      const serverTime = new Date(serverData.generatedAt).getTime();
-      if (localTime > serverTime) {
-        console.log('[Cache] サーバーデータが過去ビルドに戻っているため、ローカルの最新データを維持します');
-        state.data = localReport;
-        renderAllComponents();
-        return;
+    // 手元のIndexedDBに各ユーザーの視聴データをシード保存！
+    if (serverData.userWatchedLists && typeof serverData.userWatchedLists === 'object') {
+      for (const [u, list] of Object.entries(serverData.userWatchedLists)) {
+        await saveUserWatchedToIndexedDB(u, list);
       }
     }
 
-    // ★重要: クライアント側の二重防御
-    // もしローカルストレージにユーザーリストが保存されており、サーバーからそれ以外の不要なユーザー（削除済みユーザー等）が返ってきた場合は
-    // クライアント側でも即座にsavedUsersのみにトリミングして、絶対に元の状態に戻らないようにする！
-    if (savedUsers && savedUsers.length > 0 && Array.isArray(serverData.users)) {
-      const lowerSaved = new Set(savedUsers.map(u => u.toLowerCase()));
-      const needsFilter = serverData.users.some(u => !lowerSaved.has(u.toLowerCase()));
-      if (needsFilter) {
-        serverData.users = serverData.users.filter(u => lowerSaved.has(u.toLowerCase()));
-        if (serverData.userSummary) {
-          serverData.userSummary = serverData.userSummary.filter(s => lowerSaved.has(s.username.toLowerCase()));
-        }
-      }
-    }
-
-    state.data = serverData;
-
-    // 既存のLabsデータからジャンル辞書を初期シード
+    // 既存のLabsデータからジャンル辞書をシード
     if (serverData.labs?.genreReportScored?.genres) {
       if (!state.genreMap) state.genreMap = {};
       serverData.labs.genreReportScored.genres.forEach(g => {
@@ -750,8 +912,10 @@ async function loadData(force = false) {
           });
         });
       });
+      await saveWorkGenresToIndexedDB(state.genreMap);
     }
 
+    state.data = serverData;
     await saveReportToIndexedDB(serverData);
     if (Array.isArray(serverData.users) && serverData.users.length > 0) {
       saveUsersToStorage(serverData.users);
@@ -768,7 +932,9 @@ async function loadData(force = false) {
       state.activeMissingUser = serverData.users?.[0] || null;
     }
 
-    renderAllComponents();
+    // ブラウザ内で再集計＆描画
+    recalculateClientReport();
+    console.log('[Local-First] 初回データの同期とIndexedDB永続化が完了しました');
 
   } catch (err) {
     console.error('データ読み込み失敗:', err);
@@ -1911,4 +2077,19 @@ function compareSeason(aStr, bStr) {
   };
   return getWeight(aStr) - getWeight(bStr);
 }
+
+// グローバルスコープへの明示的公開（Local-First連携・テスト用）
+if (typeof window !== 'undefined') {
+  window.executeAddUser = executeAddUser;
+  window.executeDeleteUser = executeDeleteUser;
+  window.recalculateClientReport = recalculateClientReport;
+  window.loadAllUserWatchesFromIndexedDB = loadAllUserWatchesFromIndexedDB;
+  window.loadWorkGenresFromIndexedDB = loadWorkGenresFromIndexedDB;
+  window.saveWorkGenresToIndexedDB = saveWorkGenresToIndexedDB;
+  window.saveUserWatchedToIndexedDB = saveUserWatchedToIndexedDB;
+  window.deleteUserWatchedFromIndexedDB = deleteUserWatchedFromIndexedDB;
+  window.loadReportFromIndexedDB = loadReportFromIndexedDB;
+  window.saveReportToIndexedDB = saveReportToIndexedDB;
+}
+
 

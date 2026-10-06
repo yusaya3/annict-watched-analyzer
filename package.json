@@ -5,7 +5,7 @@
   "main": "bin/annict-analyzer.js",
   "scripts": {
     "start": "node bin/annict-analyzer.js",
-    "build": "echo 'Build complete'",
+    "build": "node scripts/build-work-genres.js",
     "fetch": "node bin/annict-analyzer.js --fetch-only",
     "serve": "node bin/annict-analyzer.js --serve-only",
     "record-test": "node test/record_test.js"
