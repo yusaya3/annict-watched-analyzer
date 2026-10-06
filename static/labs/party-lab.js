@@ -494,40 +494,145 @@
   }
 
   // ==========================================================================
-  // 3. スタジオ・クリエイター偏愛レーダー (Studio & Creator Radar)
+  // 3. スタジオ・声優・クリエイター偏愛レーダー (Studio, VA & Creator Radar)
   // ==========================================================================
+  let currentRadarType = 'va'; // 'va' | 'creator' | 'studio'
+
+  const VOICE_ACTORS = [
+    { name: '花澤香菜', short: '花澤香菜', color: '#f43f5e', keywords: ['化物語', '物語シリーズ', 'Angel Beats', 'STEINS;GATE', 'シュタインズ', 'PSYCHO-PASS', 'サイコパス', 'ニセコイ', 'はたらく細胞', '五等分の花嫁', '鬼滅の刃', 'To LOVEる', 'IS', 'インフィニット', '俺の妹がこんなに可愛いわけがない', '青の祓魔師', 'マギ', '言の葉の庭', '結城友奈は勇者である', '久保さんは僕を許さない', '宇宙よりも遠い場所', 'よりmoi', '狂乱家族日記', 'セキレイ', '咲-Saki-', 'ぽてまよ', 'PandoraHearts', 'デュラララ', '会長はメイド様', '神のみぞ知るセカイ', 'モーレツ宇宙海賊', '貧乏神が!', 'ささみさん@がんばらない', '東京喰種', 'トーキョーグール', '寄生獣', '監獄学園', 'orange', 'ハッピーシュガーライフ', '消滅都市', '魔女の旅々', 'ゾンビランドサガ', 'うる星やつら'] },
+    { name: '早見沙織', short: '早見沙織', color: '#38bdf8', keywords: ['俺の青春ラブコメはまちがっている', '俺ガイル', '魔法科高校の劣等生', '鬼滅の刃', 'SPY×FAMILY', 'スパイファミリー', '聲の形', '賭ケグルイ', 'あの日見た花の名前を僕達はまだ知らない', 'あの花', 'そらのおとしもの', 'バクマン', '赤髪の白雪姫', '山田くんと7人の魔女', 'ダンジョンに出会いを求めるのは間違っているだろうか', 'ダンまち', '響け！ユーフォニアム', 'ユーフォ', '神のみぞ知るセカイ', 'RDG', 'マンガ家さんとアシスタントさんと', '異能バトルは日常系のなかで', 'SHOW BY ROCK!!', '終わりのセラフ', '無彩限のファントム・ワールド', '覆面系ノイズ', '十二大戦', '宇宙よりも遠い場所', '痛いのは嫌なので防御力に極振りしたいと思います', '防振り', '平家物語'] },
+    { name: '水瀬いのり', short: '水瀬いのり', color: '#06b6d4', keywords: ['Re:ゼロから始める異世界生活', 'リゼロ', 'ご注文はうさぎですか', 'ごちうさ', 'ダンジョンに出会いを求めるのは間違っているだろうか', 'ダンまち', '宇宙よりも遠い場所', 'よりもい', '青春ブタ野郎', '青ブタ', '五等分の花嫁', '心が叫びたがってるんだ', 'ここさけ', '政宗くんのリベンジ', '魔王城でおやすみ', '天体のメソッド', 'がっこうぐらし！', '戦姫絶唱シンフォギア', 'ネトゲの嫁は女の子じゃないと思った？', '信長の忍び', '徒然チルドレン', '少女終末旅行', '刀使ノ巫女', 'ロード・エルメロイ', 'ソマリと森の神様', '現実主義勇者の王国再建記', '阿波連さんははかれない', '山田くんとLv999の恋をする'] },
+    { name: '悠木碧', short: '悠木碧', color: '#a855f7', keywords: ['魔法少女まどか☆マギカ', 'まどか', 'マドカ', '幼女戦記', 'シンフォギア', 'やはり俺の青春ラブコメはまちがっている', '俺ガイル', 'ワンパンマン', '僕のヒーローアカデミア', 'ヒロアカ', '七つの大罪', '平家物語', '薬屋のひとりごと', '紅', '夢色パティシエール', 'ダンス イン ザ ヴァンパイアバンド', '百花繚乱', 'GOSICK', 'Aチャンネル', 'べるぜバブ', '咲-Saki-', '氷菓', 'ソードアート・オンライン', 'SAO', '六花の勇者', '僕だけがいない街', 'アホガール', 'キノの旅', 'スパイ教室', 'アンデッドアンラック'] },
+    { name: '松岡禎丞', short: '松岡禎丞', color: '#ef4444', keywords: ['ソードアート・オンライン', 'SAO', 'ノーゲーム・ノーライフ', 'ノゲノラ', 'ダンジョンに出会いを求めるのは間違っているだろうか', 'ダンまち', '食戟のソーマ', '五等分の花嫁', '冴えない彼女の育てかた', '冴えカノ', '鬼滅の刃', 'リコリス・リコイル', '神様のメモ帳', 'さくら荘のペットな彼女', 'トリニティセブン', 'アブソリュート・デュオ', '落第騎士の英雄譚', 'エロマンガ先生', 'ひとりぼっちの○○生活', 'ドッグ・アンド・シザーズ', '魔王城でおやすみ', '探偵はもう、死んでいる。', '佐々木と宮野'] },
+    { name: '神谷浩史', short: '神谷浩史', color: '#8b5cf6', keywords: ['化物語', '物語シリーズ', 'デュラララ!!', '進撃の巨人', '夏目友人帳', '黒子のバスケ', 'ノラガミ', 'おそ松さん', '斉木楠雄のΨ難', 'Angel Beats!', '青の祓魔師', 'さよなら絶望先生', '荒川アンダー ザ ブリッジ', 'WORKING!!', 'しろくまカフェ', 'ハマトラ', 'キャプテン・アース', 'ハイキュー!!', '監獄学園', '文豪ストレイドッグス', 'ブルーロック'] },
+    { name: '中村悠一', short: '中村悠一', color: '#14b8a6', keywords: ['CLANNAD', 'クラナド', 'マクロスF', '俺の妹がこんなに可愛いわけがない', '俺の妹', '氷菓', '魔法科高校の劣等生', '呪術廻戦', 'おそ松さん', 'Dr.STONE', 'ドクターストーン', '月刊少女野崎くん', 'おおきく振りかぶって', '機動戦士ガンダム00', 'FAIRY TAIL', 'うどんの国の金色毛鞠', 'ゴブリンスレイヤー', 'フルーツバスケット', '無能なナナ'] },
+    { name: '佐倉綾音', short: '佐倉綾音', color: '#ec4899', keywords: ['ご注文はうさぎですか', 'ごちうさ', 'やはり俺の青春ラブコメはまちがっている', '俺ガイル', '僕のヒーローアカデミア', 'ヒロアカ', '五等分の花嫁', 'のんのんびより', '四月は君の嘘', '君嘘', 'Charlotte', 'シャーロット', 'トリニティセブン', '夢喰いメリー', 'プリティーリズム', 'じょしらく', 'ビビッドレッド・オペレーション', '有頂天家族', '東京レイヴンズ', 'selector', 'レーカン！', 'りゅうおうのおしごと！', 'スパイ教室', 'カノジョも彼女'] },
+    { name: '高橋李依', short: '高橋李依', color: '#10b981', keywords: ['Re:ゼロから始める異世界生活', 'リゼロ', 'この素晴らしい世界に祝福を！', 'このすば', 'からかい上手の高木さん', '高木さん', '【推しの子】', '推しの子', 'ゆるキャン△', '彼女、お借りします', 'かのかり', 'Fate/Grand Order', 'FGO', 'それが声優！', '魔法つかいプリキュア！', 'ナイツ＆マジック', 'コミックガールズ', 'はたらく細胞', 'かくしごと', 'トモちゃんは女の子！', 'ティアムーン帝国物語'] },
+    { name: '雨宮天', short: '雨宮天', color: '#2563eb', keywords: ['この素晴らしい世界に祝福を！', 'このすば', 'アカメが斬る！', '一週間フレンズ。', '七つの大罪', '東京喰種', 'トーキョーグール', 'プラスティック・メモリーズ', '彼女、お借りします', 'かのかり', '見える子ちゃん', 'アルドノア・ゼロ', 'パンチライン', 'モンスター娘のいる日常', 'クオリディア・コード', 'ポッピンQ', '理系が恋に落ちたので証明してみた。', 'キミと僕の最後の戦場、あるいは世界が始まる聖戦'] },
+    { name: '杉田智和', short: '杉田智和', color: '#64748b', keywords: ['涼宮ハルヒ', '銀魂', 'ジョジョの奇妙な冒険', '無職転生', '暗殺教室', '荒川アンダー ザ ブリッジ', '男子高校生の日常', 'SKET DANCE', 'K', '翠星のガルガンティア', 'ヲタクに恋は難しい', 'ちょびっツ', 'ハニカム', 'マギ', 'ペルソナ5'] },
+    { name: '釘宮理恵', short: '釘宮理恵', color: '#f59e0b', keywords: ['灼眼のシャナ', 'シャナ', 'ゼロの使い魔', 'とらドラ！', '銀魂', '鋼の錬金術師', 'ハヤテのごとく！', '緋弾のアリア', 'アイドルマスター', 'アイマス', 'FAIRY TAIL', '境界のRINNE', '楽園追放', '十二国記', '金色のガッシュベル!!', 'BLEACH', '咲-Saki-', 'ペルソナ4', '東京喰種', '血界戦線', '呪術廻戦'] },
+    { name: '内田真礼', short: '内田真礼', color: '#eab308', keywords: ['中二病でも恋がしたい！', 'ノラガミ', 'アオハライド', 'ご注文はうさぎですか', 'ごちうさ', 'アイドルマスター シンデレラガールズ', 'ダンまち', '乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…', 'はめふら', '約束のネバーランド', '約ネバ', '青春ブタ野郎', '青ブタ', 'ドメスティックな彼女', 'さんかれあ'] },
+    { name: '東山奈央', short: '東山奈央', color: '#fb923c', keywords: ['やはり俺の青春ラブコメはまちがっている', '俺ガイル', '神のみぞ知るセカイ', 'きんいろモザイク', 'きんモザ', 'はたらく魔王さま！', 'ニセコイ', 'ゆるキャン△', 'マクロスΔ', '青春ブタ野郎', '青ブタ', '彼女、お借りします', 'かのかり', '咲-Saki-'] },
+    { name: '茅野愛衣', short: '茅野愛衣', color: '#f472b6', keywords: ['あの日見た花の名前を僕達はまだ知らない', 'あの花', 'ギルティクラウン', '氷菓', 'さくら荘のペットな彼女', 'ノーゲーム・ノーライフ', 'ノゲノラ', '四月は君の嘘', '冴えない彼女の育てかた', '冴えカノ', 'この素晴らしい世界に祝福を！', 'このすば', '3月のライオン', 'ソードアート・オンライン', 'SAO', '無職転生'] },
+    { name: '鬼頭明里', short: '鬼頭明里', color: '#e11d48', keywords: ['鬼滅の刃', 'ようこそ実力至上主義の教室へ', 'よう実', '私に天使が舞い降りた！', 'わたてん', 'まちカドまぞく', '地縛少年花子くん', 'トニカクカワイイ', 'ラブライブ！虹ヶ咲学園スクールアイドル同好会', 'ニジガク', 'ウマ娘 プリティーダービー', 'シャドーハウス', '明日ちゃんのセーラー服', 'カッコウの許嫁'] }
+  ];
+
+  const DIRECTORS_AND_WRITERS = [
+    { name: '新房昭之 (監督)', short: '新房昭之', type: '監督', color: '#a855f7', keywords: ['化物語', '物語シリーズ', '魔法少女まどか☆マギカ', 'まどか', 'マドカ', 'さよなら絶望先生', '荒川アンダー ザ ブリッジ', 'ニセコイ', '3月のライオン', 'ひだまりスケッチ', '電波女と青春男', 'メカクシティアクターズ', '美少年探偵団'] },
+    { name: '水島努 (監督)', short: '水島努', type: '監督', color: '#10b981', keywords: ['ガールズ＆パンツァー', 'ガルパン', 'SHIROBAKO', '侵略!イカ娘', '監獄学園', 'Another', 'よんでますよ、アザゼルさん', '荒野のコトブキ飛行隊', '終末トレインどこへいく？', 'おおきく振りかぶって'] },
+    { name: '長井龍雪 (監督)', short: '長井龍雪', type: '監督', color: '#3b82f6', keywords: ['とある科学の超電磁砲', 'レールガン', 'とらドラ！', 'あの日見た花の名前を僕達はまだ知らない', 'あの花', '心が叫びたがってるんだ', 'ここさけ', '機動戦士ガンダム 鉄血のオルフェンズ', '空の青さを知る人よ', 'ふれる。'] },
+    { name: '山田尚子 (監督)', short: '山田尚子', type: '監督', color: '#38bdf8', keywords: ['けいおん！', '聲の形', 'たまこまーけっと', 'リズと青い鳥', '平家物語', 'きみの色'] },
+    { name: '石原立也 (監督)', short: '石原立也', type: '監督', color: '#06b6d4', keywords: ['涼宮ハルヒの憂鬱', 'CLANNAD', 'クラナド', 'AIR', 'Kanon', '日常', '中二病でも恋がしたい！', '響け！ユーフォニアム', 'ユーフォ', '無彩限のファントム・ワールド'] },
+    { name: '荒木哲郎 (監督)', short: '荒木哲郎', type: '監督', color: '#ef4444', keywords: ['進撃の巨人', 'DEATH NOTE', 'デスノート', 'ギルティクラウン', '甲鉄城のカバネリ', 'バブル', '学園黙示録'] },
+    { name: '今石洋之 (監督)', short: '今石洋之', type: '監督', color: '#f59e0b', keywords: ['天元突破グレンラガン', 'グレンラガン', 'キルラキル', 'プロメア', 'サイバーパンク エッジランナーズ', 'パンティ&ストッキング'] },
+    { name: '岸誠二 (監督)', short: '岸誠二', type: '監督', color: '#14b8a6', keywords: ['Angel Beats!', 'AngelBeats', 'Persona4', 'ペルソナ4', 'ダンガンロンパ', '暗殺教室', '月がきれい', '結城友奈は勇者である', 'ゆゆゆ', 'あそびあそばせ', 'ようこそ実力至上主義の教室へ'] },
+    { name: '花田十輝 (脚本)', short: '花田十輝', type: '脚本', color: '#f43f5e', keywords: ['ラブライブ！', '響け！ユーフォニアム', 'ユーフォ', '宇宙よりも遠い場所', 'よりもい', 'STEINS;GATE', 'シュタインズ', '中二病でも恋がしたい！', '境界の彼方', '日常', 'ノーゲーム・ノーライフ', '僕の心のヤバイやつ', '僕ヤバ', 'ガールズバンドクライ', '艦隊これくしょん'] },
+    { name: '岡田麿里 (脚本)', short: '岡田麿里', type: '脚本', color: '#ec4899', keywords: ['あの日見た花の名前を僕達はまだ知らない', 'あの花', '心が叫びたがってるんだ', 'ここさけ', 'さよならの朝に約束の花をかざろう', 'とらドラ！', '花咲くいろは', '機動戦士ガンダム 鉄血のオルフェンズ', '凪のあすから', '荒ぶる季節の乙女どもよ。', 'アリスとテレスのまぼろし工場'] },
+    { name: '虚淵玄 (脚本)', short: '虚淵玄', type: '脚本', color: '#8b5cf6', keywords: ['魔法少女まどか☆マギカ', 'まどか', 'マドカ', 'Fate/Zero', 'PSYCHO-PASS', 'サイコパス', '翠星のガルガンティア', '楽園追放', 'アルドノア・ゼロ', 'Thunderbolt Fantasy'] },
+    { name: '吉田玲子 (脚本)', short: '吉田玲子', type: '脚本', color: '#eab308', keywords: ['けいおん！', 'ガールズ＆パンツァー', 'ガルパン', 'ヴァイオレット・エヴァーガーデン', 'たまこまーけっと', 'リズと青い鳥', 'のんのんびより', 'ARIA', '平家物語', '若おかみは小学生！', 'きみの色'] },
+    { name: '横手美智子 (脚本)', short: '横手美智子', type: '脚本', color: '#22c55e', keywords: ['SHIROBAKO', '侵略!イカ娘', 'からかい上手の高木さん', '高木さん', '監獄学園', '政宗くんのリベンジ', 'ジャヒー様はくじけない！', '荒川アンダー ザ ブリッジ'] },
+    { name: '大河内一楼 (脚本)', short: '大河内一楼', type: '脚本', color: '#d946ef', keywords: ['コードギアス', '機動戦士ガンダム 水星の魔女', '水星の魔女', '甲鉄城のカバネリ', 'プリンセス・プリンシパル', 'スパイ教室', '革命機ヴァルヴレイヴ', 'プラネテス'] }
+  ];
+
   function renderStudioRadar() {
     const radarGrid = document.getElementById('radar-users-grid');
     const tableContainer = document.getElementById('radar-battle-table-container');
+    const sectionTitle = document.getElementById('radar-section-title');
+    const sectionDesc = document.getElementById('radar-section-desc');
+    const battleTitle = document.getElementById('radar-battle-title');
+    const battleDesc = document.getElementById('radar-battle-desc');
+    const toggleBtns = document.querySelectorAll('.radar-type-toggle-bar .chip-btn');
     if (!radarGrid || !cachedData) return;
 
-    const sr = cachedData.labs?.studioReport;
-    if (!sr || !sr.allStudios || !sr.studioStatsByUser) {
-      radarGrid.innerHTML = '<p class="text-muted" style="padding:1rem;">スタジオ集計データがありません</p>';
-      return;
-    }
+    // トグルボタンイベント登録
+    toggleBtns.forEach(btn => {
+      btn.onclick = () => {
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentRadarType = btn.getAttribute('data-radar-type');
+        renderStudioRadar();
+      };
+    });
 
     const users = cachedData.users || [];
-    const allStudios = sr.allStudios;
+    const userWatchedLists = cachedData.userWatchedLists || {};
 
-    // 1) ユーザー別スタジオ偏愛カード
+    let entityList = [];
+    let getTitle = () => '';
+    let topN = 5;
+
+    if (currentRadarType === 'va') {
+      entityList = VOICE_ACTORS;
+      topN = 10;
+      if (sectionTitle) sectionTitle.innerHTML = '<i class="fa-solid fa-microphone-lines text-pink"></i> 各ユーザーの「よく見ている声優」TOP10';
+      if (sectionDesc) sectionDesc.textContent = '各ユーザーが最も多く出演作を視聴している人気声優ランキングと作品数です';
+      if (battleTitle) battleTitle.innerHTML = '<i class="fa-solid fa-trophy text-gold"></i> 声優別・履修数バトル（誰が一番見てる？）';
+      if (battleDesc) battleDesc.textContent = '声優ごとに出演作を最も多く視聴しているユーザーに王冠マークが付きます';
+    } else if (currentRadarType === 'creator') {
+      entityList = DIRECTORS_AND_WRITERS;
+      topN = 8;
+      if (sectionTitle) sectionTitle.innerHTML = '<i class="fa-solid fa-clapperboard text-purple"></i> 各ユーザーの「監督・脚本家」偏愛ランキング';
+      if (sectionDesc) sectionDesc.textContent = '新房昭之、水島努、長井龍雪、花田十輝、岡田麿里など、名クリエイターの作品視聴傾向です';
+      if (battleTitle) battleTitle.innerHTML = '<i class="fa-solid fa-trophy text-gold"></i> 監督・脚本家別・履修数バトル（誰が一番見てる？）';
+      if (battleDesc) battleDesc.textContent = 'クリエイターごとに担当作を最も多く視聴しているユーザーに王冠マークが付きます';
+    } else {
+      // studio
+      const sr = cachedData.labs?.studioReport;
+      entityList = (sr?.allStudios || []).map(s => ({
+        name: s.name,
+        short: s.short || s.name,
+        color: s.color,
+        keywords: s.keywords || []
+      }));
+      topN = 5;
+      if (sectionTitle) sectionTitle.innerHTML = '<i class="fa-solid fa-building text-pink"></i> 各ユーザーのスタジオ偏愛ランキング';
+      if (sectionDesc) sectionDesc.textContent = '京都アニメーション、動画工房、シャフト、ufotableなど、どの制作会社を多く履修しているかの偏りです';
+      if (battleTitle) battleTitle.innerHTML = '<i class="fa-solid fa-trophy text-gold"></i> スタジオ別・履修数バトル（誰が一番見てる？）';
+      if (battleDesc) battleDesc.textContent = 'スタジオごとに最も多くの作品を視聴しているユーザーに王冠マークが付きます';
+    }
+
+    // 各ユーザーの集計計算
+    const statsByUser = {};
+    users.forEach(u => {
+      const animes = userWatchedLists[u] || [];
+      const ranked = entityList.map(item => {
+        let count = 0;
+        animes.forEach(a => {
+          if (item.keywords && item.keywords.some(kw => a.title.includes(kw))) {
+            count++;
+          }
+        });
+        return {
+          name: item.name,
+          short: item.short || item.name,
+          color: item.color,
+          count
+        };
+      }).filter(r => r.count > 0);
+
+      ranked.sort((a, b) => b.count - a.count);
+      statsByUser[u] = ranked;
+    });
+
+    // 1) ユーザー別カード描画
     radarGrid.innerHTML = users.map(u => {
-      const stat = sr.studioStatsByUser[u];
-      if (!stat || !stat.rankings) return '';
+      const ranked = statsByUser[u] || [];
+      const topItems = ranked.slice(0, topN);
+      const maxCount = topItems[0]?.count || 1;
+      const topOne = topItems[0];
+      const badgeText = topOne ? `${topOne.short} 最多 (${topOne.count}作)` : '視聴データなし';
 
-      const top5 = stat.rankings.slice(0, 5).filter(s => s.count > 0);
-      const maxCount = top5[0]?.count || 1;
-
-      const itemsHtml = top5.map(s => {
-        const pct = Math.round((s.count / maxCount) * 100);
+      const itemsHtml = topItems.map((item, idx) => {
+        const pct = Math.round((item.count / maxCount) * 100);
+        const rankLabel = idx < 3 ? `<span style="font-weight:800;color:var(--accent-pink);margin-right:0.3rem;">#${idx + 1}</span>` : `<span style="color:var(--text-muted);margin-right:0.3rem;">#${idx + 1}</span>`;
         return `
           <div class="radar-studio-item">
             <div class="radar-studio-top">
-              <span>${escapeHtml(s.short || s.name)}</span>
-              <span><strong>${s.count}</strong> 作</span>
+              <span>${rankLabel}${escapeHtml(item.name)}</span>
+              <span><strong>${item.count}</strong> 作</span>
             </div>
             <div class="radar-bar-track">
-              <div class="radar-bar-fill" style="width: ${pct}%; background-color: ${s.color || 'var(--accent-pink)'};"></div>
+              <div class="radar-bar-fill" style="width: ${pct}%; background-color: ${item.color || 'var(--accent-pink)'};"></div>
             </div>
           </div>
         `;
@@ -537,32 +642,34 @@
         <div class="radar-user-card">
           <div class="radar-user-header">
             <span class="radar-user-name"><i class="fa-solid fa-user text-pink"></i> @${escapeHtml(u)}</span>
-            <span class="radar-user-badge">${escapeHtml(stat.studioTitle || 'アニメ愛好家')}</span>
+            <span class="radar-user-badge">${escapeHtml(badgeText)}</span>
           </div>
           <div class="radar-studio-list">
-            ${itemsHtml || '<p class="text-muted">該当作品なし</p>'}
+            ${itemsHtml || '<p class="text-muted" style="padding:1rem;text-align:center;">該当する作品がありません</p>'}
           </div>
         </div>
       `;
     }).join('');
 
-    // 2) 主要スタジオ比較表（誰が一番見てる？）
+    // 2) バトル比較表
     if (tableContainer) {
-      const topStudios = allStudios.slice(0, 10);
-      let headThs = '<th>スタジオ</th>' + users.map(u => `<th>@${escapeHtml(u)}</th>`).join('');
+      const battleEntities = entityList.slice(0, currentRadarType === 'va' ? 12 : 10);
+      const colTitle = currentRadarType === 'va' ? '声優' : (currentRadarType === 'creator' ? 'クリエイター' : 'スタジオ');
+      let headThs = `<th>${colTitle}</th>` + users.map(u => `<th>@${escapeHtml(u)}</th>`).join('');
 
-      let rowsHtml = topStudios.map(st => {
+      let rowsHtml = battleEntities.map(ent => {
         let maxWatched = 0;
         let countsByUser = {};
+
         users.forEach(u => {
-          const uStats = sr.studioStatsByUser[u]?.rankings || [];
-          const found = uStats.find(x => x.name === st.name);
+          const uRanked = statsByUser[u] || [];
+          const found = uRanked.find(x => x.name === ent.name);
           const c = found ? found.count : 0;
           countsByUser[u] = c;
           if (c > maxWatched) maxWatched = c;
         });
 
-        let tds = `<td><strong style="color:${st.color || 'inherit'}">${escapeHtml(st.short || st.name)}</strong></td>`;
+        let tds = `<td><strong style="color:${ent.color || 'inherit'}">${escapeHtml(ent.short || ent.name)}</strong></td>`;
         users.forEach(u => {
           const c = countsByUser[u];
           const isTop = c > 0 && c === maxWatched;

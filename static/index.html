@@ -530,7 +530,7 @@
             <i class="fa-solid fa-dice"></i> 上映会ルーレット
           </button>
           <button class="party-subnav-btn" data-party-subtab="radar">
-            <i class="fa-solid fa-palette"></i> スタジオ偏愛レーダー
+            <i class="fa-solid fa-palette"></i> クリエイター・声優レーダー
           </button>
         </div>
 
@@ -625,12 +625,25 @@
           </div>
         </div>
 
-        <!-- サブペイン 3: スタジオ偏愛レーダー -->
+        <!-- サブペイン 3: クリエイター・声優・スタジオ偏愛レーダー -->
         <div id="party-subtab-radar" class="party-subpane">
+          <!-- カテゴリ切替チップ -->
+          <div class="radar-type-toggle-bar" style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+            <button class="chip-btn active" data-radar-type="va">
+              <i class="fa-solid fa-microphone-lines"></i> よく見ている声優 TOP10
+            </button>
+            <button class="chip-btn" data-radar-type="creator">
+              <i class="fa-solid fa-clapperboard"></i> 監督・脚本家
+            </button>
+            <button class="chip-btn" data-radar-type="studio">
+              <i class="fa-solid fa-building"></i> 制作会社 (スタジオ)
+            </button>
+          </div>
+
           <div class="card mb-4">
             <div class="card-header">
-              <h3><i class="fa-solid fa-user-astronaut text-pink"></i> 各ユーザーのスタジオ偏愛ランキング</h3>
-              <p class="card-desc">京都アニメーション、動画工房、シャフト、ufotableなど、どの制作会社を多く履修しているかの偏りです</p>
+              <h3 id="radar-section-title"><i class="fa-solid fa-microphone-lines text-pink"></i> 各ユーザーの「よく見ている声優」TOP10</h3>
+              <p id="radar-section-desc" class="card-desc">各ユーザーが最も多く出演作を視聴している人気声優ランキングと作品数です</p>
             </div>
             <div id="radar-users-grid" class="radar-grid">
               <!-- JSで動的生成 -->
@@ -639,8 +652,8 @@
 
           <div class="studio-battle-card">
             <div class="card-header">
-              <h3><i class="fa-solid fa-trophy text-gold"></i> スタジオ別・履修数バトル（誰が一番見てる？）</h3>
-              <p class="card-desc">スタジオごとに最も多くの作品を視聴しているユーザーに王冠マークが付きます</p>
+              <h3 id="radar-battle-title"><i class="fa-solid fa-trophy text-gold"></i> 声優別・履修数バトル（誰が一番見てる？）</h3>
+              <p id="radar-battle-desc" class="card-desc">声優ごとに出演作を最も多く視聴しているユーザーに王冠マークが付きます</p>
             </div>
             <div id="radar-battle-table-container" class="studio-battle-table-wrap">
               <!-- JSでテーブル生成 -->
