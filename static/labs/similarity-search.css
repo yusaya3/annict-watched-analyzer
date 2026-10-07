@@ -361,7 +361,7 @@
 }
 
 .sim-poster-wrap {
-  width: 160px;
+  width: 170px;
   flex-shrink: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -371,13 +371,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
 }
 
 .sim-poster-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 
@@ -649,10 +650,10 @@
   gap: 0.3rem;
 }
 
-/* カードポスター画像エリア */
+/* カードポスター画像エリア (縦長キービジュアル 2:3 比率統一) */
 .sim-card-image-box {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   position: relative;
   background: var(--bg-secondary);
   overflow: hidden;
@@ -662,6 +663,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 
