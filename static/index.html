@@ -16,6 +16,7 @@
   <!-- お試し機能 (Labs) 専用CSS (削除時はこの1行を消せばOK) -->
   <link rel="stylesheet" href="./labs/labs.css?v=2.1" />
   <link rel="stylesheet" href="./labs/party-lab.css?v=2.1" />
+  <link rel="stylesheet" href="./labs/similarity-search.css?v=1.0" />
   <!-- テーマの初期判定・即時適用（チラつき防止） -->
   <script>
     (function() {
@@ -82,6 +83,9 @@
       </button>
       <button class="tab-btn" data-tab="tab-party">
         <i class="fa-solid fa-dice"></i> パーティーLab
+      </button>
+      <button class="tab-btn" data-tab="tab-similarity-search">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> 類似アニメ検索
       </button>
     </nav>
 
@@ -690,6 +694,11 @@
           </div>
         </div>
       </section>
+
+      <!-- 9. 類似アニメ検索タブ (試験的独立モジュール) -->
+      <section id="tab-similarity-search" class="tab-pane">
+        <!-- JS (similarity-search.js) で動的描画 -->
+      </section>
     </main>
   </div>
 
@@ -764,5 +773,6 @@
   <script src="./labs/labs.js?v=2.1"></script>
   <script src="./labs/genre-lab.js?v=2.1"></script>
   <script src="./labs/party-lab.js?v=2.1"></script>
+  <script src="./labs/similarity-search.js?v=1.0"></script>
 </body>
 </html>

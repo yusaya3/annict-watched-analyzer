@@ -143,6 +143,12 @@ function initTabs() {
             renderVenn();
           }
         }
+
+        if (targetId === 'tab-similarity-search') {
+          if (typeof window.initSimilaritySearchTab === 'function') {
+            window.initSimilaritySearchTab();
+          }
+        }
       });
     });
   });

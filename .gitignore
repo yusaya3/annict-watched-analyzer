@@ -17,3 +17,7 @@ config/token.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Large ML/Vector Dataset (raw files > 100MB)
+類似度データ/
+*.npz
