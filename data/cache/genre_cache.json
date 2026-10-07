@@ -154716,5 +154716,72 @@
   "魔法の姉妹ルルットリリィ 近くて遠いふたりの距離": {
     "genres": [],
     "tags": []
+  },
+  "正反対な君と僕 第2期": {
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Heterosexual",
+        "rank": 98
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 95
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 88
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 85
+      },
+      {
+        "name": "Iyashikei",
+        "rank": 84
+      },
+      {
+        "name": "School",
+        "rank": 78
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 68
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 66
+      },
+      {
+        "name": "Shounen",
+        "rank": 53
+      }
+    ]
+  },
+  "#神奈川に住んでるエルフ": {
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Elf",
+        "rank": 60
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 60
+      },
+      {
+        "name": "Flash",
+        "rank": 60
+      }
+    ]
   }
 }

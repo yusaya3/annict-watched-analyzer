@@ -1,7 +1,7 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-06T22:52:00.642Z",
-  "count": 800,
+  "fetchedAt": "2026-10-07T23:25:51.307Z",
+  "count": 801,
   "animes": [
     {
       "id": "18233",
@@ -16,6 +16,13 @@
       "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/13582"
+    },
+    {
+      "id": "17197",
+      "title": "Re:ゼロから始める異世界生活 4th season 奪還編",
+      "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17197"
     },
     {
       "id": "15557",
