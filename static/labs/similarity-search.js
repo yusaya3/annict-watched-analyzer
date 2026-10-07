@@ -386,8 +386,8 @@ class SimilaritySearchLab {
     if (!currentSection) return;
 
     const posterHtml = work.img
-      ? `<img src="${this.escapeHtml(work.img)}" alt="${this.escapeHtml(work.t)}" class="sim-poster-img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'sim-poster-placeholder\\'><i class=\\'fa-solid fa-film\\'></i><span>画像なし</span></div>'"/>`
-      : `<div class="sim-poster-placeholder"><i class="fa-solid fa-film"></i><span>キービジュアル準備中</span></div>`;
+      ? `<img id="sim-current-poster-img" src="${this.escapeHtml(work.img)}" alt="${this.escapeHtml(work.t)}" class="sim-poster-img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'sim-poster-placeholder\\'><i class=\\'fa-solid fa-film\\'></i><span>画像なし</span></div>'"/>`
+      : `<div id="sim-current-poster-placeholder" class="sim-poster-placeholder"><i class="fa-solid fa-film"></i><span>キービジュアル準備中</span></div>`;
 
     const annictLink = work.aid
       ? `<a href="https://annict.com/works/${work.aid}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-annict" title="Annictで作品ページを見る"><i class="fa-solid fa-circle-check"></i> Annict</a>`
@@ -396,6 +396,8 @@ class SimilaritySearchLab {
     const danimeLink = work.url
       ? `<a href="${this.escapeHtml(work.url)}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-danime" title="dアニメストアで視聴する"><i class="fa-solid fa-play"></i> dアニメストア</a>`
       : '';
+
+    const isHires = work.img && (work.img.includes('/s:640:853/') || work.img.includes('cs1.animestore.docomo.ne.jp'));
 
     currentSection.innerHTML = `
       <div class="sim-current-card">
@@ -407,7 +409,7 @@ class SimilaritySearchLab {
           <div class="sim-badge-row">
             ${work.y ? `<span class="sim-badge sim-badge-year"><i class="fa-regular fa-calendar"></i> ${work.y}年</span>` : ''}
             ${work.g ? `<span class="sim-badge sim-badge-genre"><i class="fa-solid fa-tag"></i> ${this.escapeHtml(work.g)}</span>` : ''}
-            ${work.img ? `<span class="sim-badge sim-badge-annict"><i class="fa-solid fa-image"></i> Annict公式画像</span>` : ''}
+            ${work.img ? `<span class="sim-badge sim-badge-annict"><i class="fa-solid fa-image"></i> ${isHires ? '高画質キービジュアル' : '公式キービジュアル'}</span>` : ''}
           </div>
           <div class="sim-synopsis-box">
             ${this.escapeHtml(work.s || 'あらすじ情報がありません。')}
@@ -415,10 +417,128 @@ class SimilaritySearchLab {
           <div class="sim-actions-row">
             ${danimeLink}
             ${annictLink}
+            <button id="sim-btn-fetch-hires" class="sim-link-btn sim-link-refresh" title="Annictから高解像度キービジュアルを取得・設定">
+              <i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得
+            </button>
+            <button id="sim-btn-manual-annict" class="sim-link-btn sim-link-manual" title="AnnictのURLまたは作品IDを手動指定">
+              <i class="fa-solid fa-pen-to-square"></i> 手動紐付け
+            </button>
           </div>
         </div>
       </div>
     `;
+
+    // ボタンのイベントリスナー
+    const btnFetch = document.getElementById('sim-btn-fetch-hires');
+    if (btnFetch) {
+      btnFetch.addEventListener('click', () => {
+        this.fetchHiresImage(work.id, work.t, work.aid, true);
+      });
+    }
+
+    const btnManual = document.getElementById('sim-btn-manual-annict');
+    if (btnManual) {
+      btnManual.addEventListener('click', () => {
+        this.promptManualAnnict(work.id);
+      });
+    }
+
+    // 画像が未設定、または低解像度サムネイルの場合はバックグラウンドで自動高画質化
+    if (!work.img || !isHires) {
+      this.fetchHiresImage(work.id, work.t, work.aid, false);
+    }
+  }
+
+  /**
+   * Annict高解像度キービジュアル（s:640:853）の取得・更新
+   */
+  async fetchHiresImage(workId, title, annictId, showFeedback = false) {
+    const btn = document.getElementById('sim-btn-fetch-hires');
+    if (btn && showFeedback) {
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 取得中...';
+      btn.disabled = true;
+    }
+
+    try {
+      const params = new URLSearchParams({ workId, title, annictId: annictId || '' });
+      const res = await fetch(`/api/similarity-image?${params.toString()}`);
+      if (!res.ok) throw new Error('API request failed');
+      const data = await res.json();
+
+      if (data && data.url) {
+        // 作品データの更新
+        if (this.works[workId]) {
+          this.works[workId].img = data.url;
+          if (data.annictId) this.works[workId].aid = data.annictId;
+        }
+
+        // 現在選択中の作品ならポスターDOMを更新
+        if (this.currentWorkId === workId) {
+          const wrap = document.querySelector('.sim-poster-wrap');
+          if (wrap) {
+            wrap.innerHTML = `<img id="sim-current-poster-img" src="${this.escapeHtml(data.url)}" alt="${this.escapeHtml(title)}" class="sim-poster-img" style="opacity: 0; transition: opacity 0.3s;" />`;
+            const imgEl = document.getElementById('sim-current-poster-img');
+            if (imgEl) {
+              imgEl.onload = () => { imgEl.style.opacity = '1'; };
+            }
+          }
+        }
+
+        // Top10カード内の該当画像も更新
+        document.querySelectorAll(`.sim-card[data-work-id="${workId}"] .sim-card-image-box`).forEach(box => {
+          box.innerHTML = `<img src="${this.escapeHtml(data.url)}" alt="${this.escapeHtml(title)}" class="sim-card-img" />`;
+        });
+
+        if (btn && showFeedback) {
+          btn.innerHTML = '<i class="fa-solid fa-check text-green"></i> 高画質化完了';
+          setTimeout(() => {
+            btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+            btn.disabled = false;
+          }, 2000);
+        }
+      } else if (btn && showFeedback) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> 見つかりませんでした';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+          btn.disabled = false;
+        }, 2500);
+      }
+    } catch (err) {
+      console.warn('[SimilaritySearch] 高画質画像取得エラー:', err);
+      if (btn && showFeedback) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> 取得失敗';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+          btn.disabled = false;
+        }, 2000);
+      }
+    }
+  }
+
+  /**
+   * 手動でAnnict作品URLまたはIDを指定してキービジュアルを紐付け
+   */
+  async promptManualAnnict(workId) {
+    const work = this.works[workId];
+    if (!work) return;
+
+    const input = prompt(
+      `『${work.t}』に紐付けるAnnictの作品URLまたは作品IDを入力してください。\n例: https://annict.com/works/5056 または 5056`,
+      work.aid ? `https://annict.com/works/${work.aid}` : ''
+    );
+
+    if (!input) return;
+
+    let targetId = input.trim();
+    const match = targetId.match(/works\/(\d+)/);
+    if (match) targetId = match[1];
+
+    if (!/^\d+$/.test(targetId)) {
+      alert('有効なAnnict作品ID（数字）または作品URLを入力してください。');
+      return;
+    }
+
+    await this.fetchHiresImage(workId, work.t, targetId, true);
   }
 
   /**
@@ -531,6 +651,14 @@ class SimilaritySearchLab {
         const wid = btn.getAttribute('data-work-id');
         if (wid) this.selectWork(wid, true);
       });
+    });
+
+    // Top10の中で画像が未設定の作品があればバックグラウンドで自動解決
+    topList.forEach(([simId]) => {
+      const sim = this.works[simId];
+      if (sim && !sim.img) {
+        this.fetchHiresImage(simId, sim.t, sim.aid, false);
+      }
     });
   }
 

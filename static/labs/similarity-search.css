@@ -510,6 +510,30 @@
   color: #fff;
 }
 
+.sim-link-refresh {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-blue);
+  border-color: rgba(56, 189, 248, 0.3);
+  cursor: pointer;
+}
+
+.sim-link-refresh:hover {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+.sim-link-manual {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--accent-purple);
+  border-color: rgba(168, 85, 247, 0.3);
+  cursor: pointer;
+}
+
+.sim-link-manual:hover {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
 /* ==========================================================================
    類似度Top10 セクション & リッチカードグリッド
    ========================================================================== */

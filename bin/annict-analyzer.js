@@ -583,6 +583,138 @@ function createApp() {
     }
   });
 
+  // 類似アニメ検索用: Annict公式高解像度キービジュアル（s:640:853）自動解決・検索・キャッシュAPI
+  const simHiresCacheFile = isVercel
+    ? '/tmp/similarity_hires_cache.json'
+    : path.resolve(__dirname, '../data/cache/similarity_hires_cache.json');
+  let simHiresCache = {};
+  try {
+    if (fs.existsSync(simHiresCacheFile)) {
+      simHiresCache = JSON.parse(fs.readFileSync(simHiresCacheFile, 'utf8'));
+    }
+  } catch (e) {}
+
+  function cleanSimSearchTitle(t) {
+    if (!t) return '';
+    return t
+      .replace(/「|」|『|』|【|】|\(|\)|（|）/g, ' ')
+      .replace(/第[0-9０-９一二三四五六七八九十]+期/g, ' ')
+      .replace(/Season\s*[0-9]+/gi, ' ')
+      .replace(/TV版|配信限定.*|OAD|OVA/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  app.get('/api/similarity-image', async (req, res) => {
+    const workId = String(req.query.workId || '').trim();
+    const title = String(req.query.title || '').trim();
+    let annictId = String(req.query.annictId || '').trim();
+
+    if (!workId && !title) {
+      return res.status(400).json({ error: 'workId または title が必要です' });
+    }
+
+    const cacheKey = workId || title;
+    if (simHiresCache[cacheKey] && simHiresCache[cacheKey].url) {
+      return res.json(simHiresCache[cacheKey]);
+    }
+
+    try {
+      const cheerio = require('cheerio');
+
+      // 1. Annict IDが指定されている場合 (s:640:853 高解像度)
+      if (annictId && /^\d+$/.test(annictId)) {
+        const fetchRes = await fetch(`https://annict.com/works/${annictId}`, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+        });
+        if (fetchRes.ok) {
+          const html = await fetchRes.text();
+          const $ = cheerio.load(html);
+          let ogImage = $('meta[property="og:image"]').attr('content') || $('meta[name="twitter:image"]').attr('content') || '';
+          if (ogImage && !ogImage.includes('color-white-') && !ogImage.includes('no-image')) {
+            const result = { workId, title, annictId, url: ogImage, source: 'annict_hires' };
+            simHiresCache[cacheKey] = result;
+            try { fs.writeFileSync(simHiresCacheFile, JSON.stringify(simHiresCache, null, 2), 'utf8'); } catch (e) {}
+            return res.json(result);
+          }
+        }
+      }
+
+      // 2. Annict検索
+      if (title) {
+        const queries = [title, cleanSimSearchTitle(title)].filter(Boolean);
+        for (const q of queries) {
+          const searchRes = await fetch(`https://annict.com/search?q=${encodeURIComponent(q)}`, {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+          });
+          if (searchRes.ok) {
+            const html = await searchRes.text();
+            const $ = cheerio.load(html);
+            let foundWorkId = null;
+            let foundImg = null;
+
+            $('a').each((i, el) => {
+              const href = $(el).attr('href') || '';
+              const match = href.match(/\/works\/(\d+)$/);
+              if (match && !foundWorkId) {
+                foundWorkId = match[1];
+                foundImg = $(el).find('img').attr('src');
+              }
+            });
+
+            if (foundWorkId) {
+              const workRes = await fetch(`https://annict.com/works/${foundWorkId}`, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+              });
+              if (workRes.ok) {
+                const workHtml = await workRes.text();
+                const $w = cheerio.load(workHtml);
+                const ogImage = $w('meta[property="og:image"]').attr('content') || $w('meta[name="twitter:image"]').attr('content') || '';
+                if (ogImage && !ogImage.includes('color-white-') && !ogImage.includes('no-image')) {
+                  const result = { workId, title, annictId: foundWorkId, url: ogImage, source: 'annict_search_hires' };
+                  simHiresCache[cacheKey] = result;
+                  try { fs.writeFileSync(simHiresCacheFile, JSON.stringify(simHiresCache, null, 2), 'utf8'); } catch (e) {}
+                  return res.json(result);
+                }
+              }
+              if (foundImg) {
+                const result = { workId, title, annictId: foundWorkId, url: foundImg, source: 'annict_search_thumb' };
+                simHiresCache[cacheKey] = result;
+                try { fs.writeFileSync(simHiresCacheFile, JSON.stringify(simHiresCache, null, 2), 'utf8'); } catch (e) {}
+                return res.json(result);
+              }
+            }
+          }
+        }
+      }
+
+      // 3. dアニメストア公式画像フォールバック
+      if (workId) {
+        const danimeRes = await fetch(`https://animestore.docomo.ne.jp/animestore/ci_pc?workId=${workId}`, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+        });
+        if (danimeRes.ok) {
+          const html = await danimeRes.text();
+          const $ = cheerio.load(html);
+          const ogImage = $('meta[property="og:image"]').attr('content') || '';
+          if (ogImage && ogImage.startsWith('http')) {
+            const result = { workId, title, annictId: null, url: ogImage, source: 'danime_store' };
+            simHiresCache[cacheKey] = result;
+            try { fs.writeFileSync(simHiresCacheFile, JSON.stringify(simHiresCache, null, 2), 'utf8'); } catch (e) {}
+            return res.json(result);
+          }
+        }
+      }
+
+      const emptyResult = { workId, title, annictId: null, url: '', source: 'none' };
+      simHiresCache[cacheKey] = emptyResult;
+      res.json(emptyResult);
+    } catch (err) {
+      console.warn(`[SimilarityImage] 画像取得エラー (${title}):`, err.message);
+      res.json({ workId, title, annictId: null, url: '', source: 'error' });
+    }
+  });
+
   // 作品のジャンルスコア内訳・新旧比較取得API（ジャンル実験室用・あいまい検索対応）
   app.get('/api/genre-score', (req, res) => {
     const rawQuery = (req.query.title || '').trim();
