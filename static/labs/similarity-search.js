@@ -128,7 +128,7 @@ class SimilaritySearchLab {
         <div class="sim-hero-banner">
           <div class="sim-hero-text">
             <h2><i class="fa-solid fa-wand-magic-sparkles"></i> あらすじベクトル類似アニメ探索</h2>
-            <p>dアニメストア配信（1990〜2026）元データ全 6,350 件から、あらすじが存在しない作品（83件）を除外した実際に類似度計算の対象となった<strong>全 6,267 作品</strong>を収録。AIベクトルにより内容の近いTop10をAnnictキービジュアルと共に表示します。</p>
+            <p>dアニメストア配信（1990〜2026）元データ全 6,350 件から、あらすじが存在しない作品（83件）を除外した実際に類似度計算の対象となった<strong>全 6,267 作品</strong>を収録。AIベクトルにより内容の近いTop30をAnnictキービジュアルと共に表示します。</p>
           </div>
           <div class="sim-hero-actions">
             <button id="sim-btn-random" class="sim-btn-random" title="ランダムな作品から探す">
@@ -624,7 +624,7 @@ class SimilaritySearchLab {
     topSection.innerHTML = `
       <div class="sim-section-header">
         <h3 class="sim-section-title">
-          <i class="fa-solid fa-trophy"></i> 『${this.escapeHtml(work.t)}』とあらすじが似ているアニメ Top10
+          <i class="fa-solid fa-trophy"></i> 『${this.escapeHtml(work.t)}』とあらすじが似ているアニメ Top30
         </h3>
         <span class="sim-section-hint">
           <i class="fa-solid fa-circle-info"></i> カードをクリックすると、その作品を起点にして数珠つなぎで探索できます

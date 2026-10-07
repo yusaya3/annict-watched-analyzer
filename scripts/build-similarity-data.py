@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-dアニメストア作品の類似度Top10データとAnnictキービジュアルを統合し、
+dアニメストア作品の類似度Top30データとAnnictキービジュアルを統合し、
 フロントエンド表示用の軽量・高速JSON (static/res/similarity-data.json) を生成するスクリプト。
 """
 
@@ -10,13 +10,15 @@ import os
 import re
 import json
 import glob
+import numpy as np
 import pandas as pd
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TOP_SIM_CSV = os.path.join(ROOT_DIR, "類似度データ", "anime_top_similarities.csv")
+SIM_NPZ = os.path.join(ROOT_DIR, "類似度データ", "anime_similarity_matrix.npz")
 METADATA_CSV = os.path.join(ROOT_DIR, "類似度データ", "anime_metadata.csv")
 DANIME_JSON = "C:/App/アニメ類似度/danime_synopses_1990_2026_animeonly.json"
 OUTPUT_JSON = os.path.join(ROOT_DIR, "static", "res", "similarity-data.json")
+CACHE_HIRES = os.path.join(ROOT_DIR, "data", "cache", "similarity_hires_cache.json")
 
 # クイック選択用の代表的な注目アニメタイトル
 FEATURED_TITLE_KEYWORDS = [
@@ -47,7 +49,7 @@ def clean_title(t: str) -> str:
         return ""
     t = re.sub(r'「|」|『|』|【|】|\(|\)|（|）', ' ', t)
     t = re.sub(r'第[0-9０-９一二三四五六七八九十]+期', ' ', t)
-    t = re.sub(r'Season\s*[0-9]+', ' ', t, flags=re.I)
+    t = re.sub(r'Season\s*[0-9]+/gi', ' ', t)
     t = re.sub(r'TV版|配信限定.*|OAD|OVA', ' ', t)
     t = re.sub(r'[\s\u3000!！?？:：・\-\～〜~]+', '', t)
     return t.lower()
@@ -56,6 +58,40 @@ def collect_annict_cache():
     exact_map = {}
     clean_map = {}
     
+    # 既存の similarity-data.json や similarity_hires_cache.json を最優先で引き継ぐ
+    if os.path.exists(CACHE_HIRES):
+        try:
+            with open(CACHE_HIRES, "r", encoding="utf-8") as f:
+                cdata = json.load(f)
+                for k, v in cdata.items():
+                    u = v.get("url")
+                    aid = v.get("annictId")
+                    title = v.get("title")
+                    if u and "image.annict.com" in u:
+                        if title:
+                            exact_map[title] = {"image": u, "annict_id": str(aid) if aid else None}
+                            ct = clean_title(title)
+                            if ct:
+                                clean_map[ct] = {"image": u, "annict_id": str(aid) if aid else None}
+        except Exception:
+            pass
+
+    if os.path.exists(OUTPUT_JSON):
+        try:
+            with open(OUTPUT_JSON, "r", encoding="utf-8") as f:
+                odata = json.load(f)
+                for wid, w in odata.get("works", {}).items():
+                    u = w.get("img")
+                    aid = w.get("aid")
+                    title = w.get("t")
+                    if u and "image.annict.com" in u and title:
+                        exact_map[title] = {"image": u, "annict_id": str(aid) if aid else None}
+                        ct = clean_title(title)
+                        if ct:
+                            clean_map[ct] = {"image": u, "annict_id": str(aid) if aid else None}
+        except Exception:
+            pass
+
     files = glob.glob(os.path.join(ROOT_DIR, "data", "cache", "*.json")) + \
             glob.glob(os.path.join(ROOT_DIR, "static", "res", "*.json"))
             
@@ -70,11 +106,12 @@ def collect_annict_cache():
                     title = item.get("title")
                     img = item.get("image")
                     annict_id = item.get("id")
-                    if title and img:
-                        exact_map[title] = {
-                            "image": img,
-                            "annict_id": str(annict_id) if annict_id else None
-                        }
+                    if title and img and "image.annict.com" in img:
+                        if title not in exact_map:
+                            exact_map[title] = {
+                                "image": img,
+                                "annict_id": str(annict_id) if annict_id else None
+                            }
                         ct = clean_title(title)
                         if ct and ct not in clean_map:
                             clean_map[ct] = {
@@ -88,7 +125,7 @@ def collect_annict_cache():
     return exact_map, clean_map
 
 def main():
-    print("=== 類似度Top10 統合データビルド開始 ===")
+    print("=== 類似度Top30 統合データビルド開始 ===")
     
     exact_annict, clean_annict = collect_annict_cache()
     
@@ -131,7 +168,7 @@ def main():
                 if g_str:
                     genres_set.add(g_str)
         
-        # Annict画像突合
+        # Annict縦長画像突合
         img = None
         annict_id = None
         if title in exact_annict:
@@ -160,24 +197,34 @@ def main():
         
     print(f"✔ 作品数: {len(works_dict)} 件 (うちAnnict画像マッチ: {matched_image_count} 件, {matched_image_count/len(works_dict)*100:.1f}%)")
     
-    print(f"▶ 類似度Top10 CSV読み込み: {TOP_SIM_CSV}")
-    df_top = pd.read_csv(TOP_SIM_CSV)
+    # 類似度Top30を行列から直接計算
+    print(f"▶ 全ペア類似度行列からTop30を高速算出中: {SIM_NPZ}")
+    npz_data = np.load(SIM_NPZ)
+    sim_mat = npz_data["similarity_matrix"]
+    matrix_wids = [str(x) for x in npz_data["work_ids"]]
     
-    grouped = df_top.groupby("work_id")
-    for wid, group in grouped:
-        wid_str = str(wid)
-        if wid_str not in works_dict:
+    top_k = 30
+    n = len(matrix_wids)
+    
+    for i in range(n):
+        wid = matrix_wids[i]
+        if wid not in works_dict:
             continue
             
-        top_list = []
-        for _, row in group.sort_values("rank").iterrows():
-            sim_wid = str(row["similar_work_id"])
-            score = float(row["similarity_score"])
-            rank = int(row["rank"])
-            top_list.append([sim_wid, round(score, 4), rank])
-            
-        works_dict[wid_str]["top"] = top_list
+        scores = sim_mat[i].copy()
+        scores[i] = -1.0  # 自身を除外
         
+        top_indices = np.argsort(scores)[::-1][:top_k]
+        top_list = []
+        for rank, idx in enumerate(top_indices, 1):
+            sim_wid = matrix_wids[idx]
+            score = round(float(scores[idx]), 4)
+            top_list.append([sim_wid, score, rank])
+            
+        works_dict[wid]["top"] = top_list
+        
+    print(f"✔ 全 {n} 作品のTop30算出完了！")
+    
     # おすすめ・注目作品のIDリスト選定（キーワード順に代表作を抽出）
     featured_ids = []
     for kw in FEATURED_TITLE_KEYWORDS:
@@ -197,6 +244,7 @@ def main():
         "rawTotal": len(danime_list),
         "excludedNoSynopsis": len(danime_list) - len(works_dict),
         "total": len(works_dict),
+        "topK": top_k,
         "genres": sorted(list(genres_set)),
         "years": sorted(list(years_set), reverse=True),
         "featured": featured_ids,

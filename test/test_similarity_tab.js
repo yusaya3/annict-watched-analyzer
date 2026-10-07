@@ -36,9 +36,9 @@ async function testSimilarityTab() {
     console.log(`[Test] 初期表示された起点アニメ: ${currentTitle}`);
 
     const cardCount = await page.locator('.sim-card').count();
-    console.log(`[Test] 類似度Top10カード枚数: ${cardCount} 枚`);
-    if (cardCount !== 10) {
-      throw new Error(`Top10カード枚数が10枚ではありません: ${cardCount}`);
+    console.log(`[Test] 類似度Top30カード枚数: ${cardCount} 枚`);
+    if (cardCount !== 30) {
+      throw new Error(`Top30カード枚数が30枚ではありません: ${cardCount}`);
     }
 
     // 3. スクリーンショット保存（初期表示）
