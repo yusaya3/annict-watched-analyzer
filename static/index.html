@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <!-- お試し機能 (Labs) 専用CSS (削除時はこの1行を消せばOK) -->
   <link rel="stylesheet" href="./labs/labs.css?v=2.1" />
-  <link rel="stylesheet" href="./labs/party-lab.css?v=2.1" />
+  <link rel="stylesheet" href="./labs/party-lab.css?v=2.2" />
   <link rel="stylesheet" href="./labs/similarity-search.css?v=1.0" />
   <!-- テーマの初期判定・即時適用（チラつき防止） -->
   <script>
@@ -764,6 +764,22 @@
     </div>
   </div>
 
+  <!-- パーティーLab 声優・クリエイター作品一覧モーダル -->
+  <div id="radar-works-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-dialog radar-modal-dialog">
+      <div class="modal-header">
+        <h3 id="radar-modal-title"><i class="fa-solid fa-film text-pink"></i> 視聴作品一覧</h3>
+        <button id="btn-close-radar-modal" class="btn-icon">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="radar-modal-content" class="radar-modal-works-grid"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-done-radar-modal" class="btn btn-secondary">閉じる</button>
+      </div>
+    </div>
+  </div>
+
   <!-- D3.js, Venn.js CDN & fallback -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/venn.js@0.2.20/build/venn.min.js"></script>
@@ -772,7 +788,7 @@
   <!-- お試し機能 (Labs) 専用スクリプト (削除時はこの1行を消せばOK) -->
   <script src="./labs/labs.js?v=2.1"></script>
   <script src="./labs/genre-lab.js?v=2.1"></script>
-  <script src="./labs/party-lab.js?v=2.1"></script>
+  <script src="./labs/party-lab.js?v=2.2"></script>
   <script src="./labs/similarity-search.js?v=1.0"></script>
 </body>
 </html>
