@@ -87,6 +87,9 @@
       <button class="tab-btn" data-tab="tab-similarity-search">
         <i class="fa-solid fa-wand-magic-sparkles"></i> 類似アニメ検索
       </button>
+      <button class="tab-btn" data-tab="tab-episode-similarity">
+        <i class="fa-solid fa-list-ol"></i> エピソード類似検索
+      </button>
     </nav>
 
     <!-- Main Content Area -->
@@ -695,9 +698,14 @@
         </div>
       </section>
 
-      <!-- 9. 類似アニメ検索タブ (試験的独立モジュール) -->
+      <!-- 9. 類似アニメ検索タブ (作品あらすじ版) -->
       <section id="tab-similarity-search" class="tab-pane">
         <!-- JS (similarity-search.js) で動的描画 -->
+      </section>
+
+      <!-- 10. エピソード類似アニメ検索タブ (全話あらすじ版) -->
+      <section id="tab-episode-similarity" class="tab-pane">
+        <!-- JS (episode-similarity.js) で動的描画 -->
       </section>
     </main>
   </div>
@@ -790,5 +798,6 @@
   <script src="./labs/genre-lab.js?v=2.1"></script>
   <script src="./labs/party-lab.js?v=2.2"></script>
   <script src="./labs/similarity-search.js?v=1.0"></script>
+  <script src="./labs/episode-similarity.js?v=1.0"></script>
 </body>
 </html>

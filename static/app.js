@@ -149,6 +149,12 @@ function initTabs() {
             window.initSimilaritySearchTab();
           }
         }
+
+        if (targetId === 'tab-episode-similarity') {
+          if (typeof window.initEpisodeSimilarityTab === 'function') {
+            window.initEpisodeSimilarityTab();
+          }
+        }
       });
     });
   });
