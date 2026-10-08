@@ -1,7 +1,8 @@
 /**
  * ==========================================================================
- * エピソード類似アニメ検索 (Episode Sequence Similarity Search Lab) フロントエンド
+ * エピソード類似アニメ検索 (Episode Similarity Search Lab) フロントエンド
  * - dアニメストア配信作品 (1990〜2026) の各エピソード全あらすじベクトル類似度Top30探索
+ * - アニメ類似度 (similarity-search.js) と100%同一のUIデザイン・操作性
  * - Annictキービジュアル画像連携 ＆ 数珠つなぎ探索
  * ==========================================================================
  */
@@ -99,6 +100,7 @@ class EpisodeSimilarityLab {
 
   /**
    * ベースUI（コントロール、起点エリア、Top30エリア）の構築
+   * アニメ類似度 (similarity-search.js) と100%同一のクラス・レイアウト構造
    */
   renderBaseUI() {
     // 年代グループ（90年代、2000年代、2010年代、2020年代）
@@ -125,10 +127,10 @@ class EpisodeSimilarityLab {
     this.container.innerHTML = `
       <div class="sim-container">
         <!-- ヒーロー紹介バナー -->
-        <div class="sim-hero-banner" style="border-left: 4px solid #38bdf8;">
+        <div class="sim-hero-banner">
           <div class="sim-hero-text">
-            <h2><i class="fa-solid fa-list-ol" style="color: #38bdf8;"></i> 全話エピソードあらすじ・類似アニメ探索</h2>
-            <p>dアニメストア配信（1990〜2026）全作品の【各エピソード全あらすじ（時系列ストーリー展開）】をもとにAIベクトル化。作品全体のストーリー構成や展開が近い<strong>Top30作品</strong>をAnnict公式キービジュアルと共に表示します。（全 <strong>${this.data.total.toLocaleString()}</strong> 作品収録）</p>
+            <h2><i class="fa-solid fa-list-ol"></i> エピソード全あらすじ類似アニメ探索</h2>
+            <p>dアニメストア配信（1990〜2026）全作品の【各エピソード全あらすじ（時系列ストーリー展開）】をもとにAIベクトル化。作品全体のストーリー構成や展開が近い<strong>Top30作品</strong>をAnnictキービジュアルと共に表示します。（全 <strong>${this.data.total.toLocaleString()}</strong> 作品収録）</p>
           </div>
           <div class="sim-hero-actions">
             <button id="ep-sim-btn-random" class="sim-btn-random" title="ランダムな作品から探す">
@@ -251,82 +253,108 @@ class EpisodeSimilarityLab {
     if (filterEra) {
       filterEra.addEventListener('change', (e) => {
         this.filterEra = e.target.value;
-        this.renderSimilarGrid();
+        const work = this.works[this.currentWorkId];
+        if (work) this.renderTop30(work);
       });
     }
 
     if (filterGenre) {
       filterGenre.addEventListener('change', (e) => {
         this.filterGenre = e.target.value;
-        this.renderSimilarGrid();
+        const work = this.works[this.currentWorkId];
+        if (work) this.renderTop30(work);
       });
     }
 
-    // 注目アニメチップクリック
+    // 注目タグのクリック
     if (chipsContainer) {
       chipsContainer.addEventListener('click', (e) => {
         const btn = e.target.closest('.sim-chip');
         if (btn) {
           const wid = btn.getAttribute('data-work-id');
-          if (wid) {
-            this.selectWork(wid, true);
-          }
+          if (wid) this.selectWork(wid, true);
         }
       });
     }
   }
 
   /**
-   * ランダムな作品を選択
+   * 作品の選択と画面更新
    */
-  selectRandomWork() {
-    const allIds = Object.keys(this.works);
-    if (allIds.length === 0) return;
-    const randomId = allIds[Math.floor(Math.random() * allIds.length)];
-    this.selectWork(randomId, true);
-  }
-
-  /**
-   * 作品を選択して表示を更新
-   */
-  selectWork(workId, addToHistory = true) {
-    if (!this.works || !this.works[workId]) return;
-
-    if (this.currentWorkId === workId) return;
+  selectWork(workId, pushHistory = true) {
+    const work = this.works[workId];
+    if (!work) return;
 
     this.currentWorkId = workId;
 
-    if (addToHistory) {
-      if (!this.history.includes(workId)) {
+    if (pushHistory) {
+      // 履歴に追加（直近と同じでなければ）
+      if (this.history.length === 0 || this.history[this.history.length - 1] !== workId) {
         this.history.push(workId);
-        if (this.history.length > 8) {
-          this.history.shift();
-        }
+        // 最大10件まで
+        if (this.history.length > 10) this.history.shift();
       }
-    } else {
-      if (this.history.length === 0) {
-        this.history.push(workId);
-      }
+    } else if (this.history.length === 0) {
+      this.history.push(workId);
     }
 
-    this.updateHistoryBar();
-    this.renderCurrentWork();
-    this.renderSimilarGrid();
+    // ドロップダウンを閉じる
+    const dropdown = document.getElementById('ep-sim-dropdown-results');
+    if (dropdown) dropdown.classList.remove('active');
 
-    // 選択された起点アニメカードへスムーズスクロール（検索から選んだ場合など）
+    // 注目チップのアクティブ状態更新
+    const container = document.getElementById('tab-episode-similarity');
+    if (container) {
+      container.querySelectorAll('.sim-chip').forEach(chip => {
+        if (chip.getAttribute('data-work-id') === workId) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+    }
+
+    // 探索ルートパンくずの更新
+    this.renderHistory();
+
+    // 起点作品の描画
+    this.renderCurrentWork(work);
+
+    // Top30カードの描画
+    this.renderTop30(work);
+
+    // スムーズスクロール
     const currentSection = document.getElementById('ep-sim-current-section');
-    if (currentSection && addToHistory) {
+    if (currentSection) {
       currentSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
 
   /**
-   * 履歴パンくずの更新
+   * ランダム作品選出
    */
-  updateHistoryBar() {
+  selectRandomWork() {
+    const keys = Object.keys(this.works);
+    if (keys.length === 0) return;
+
+    // 可能ならAnnict画像がある作品を優先して選ぶ（70%の確率）
+    let candidateKeys = keys;
+    if (Math.random() < 0.7) {
+      const withImg = keys.filter(k => this.works[k].img);
+      if (withImg.length > 0) candidateKeys = withImg;
+    }
+
+    const randomId = candidateKeys[Math.floor(Math.random() * candidateKeys.length)];
+    this.selectWork(randomId, true);
+  }
+
+  /**
+   * 履歴パンくずの描画
+   */
+  renderHistory() {
     const bar = document.getElementById('ep-sim-history-bar');
-    const crumbs = document.getElementById('ep-sim-history-crumbs');
-    if (!bar || !crumbs) return;
+    const container = document.getElementById('ep-sim-history-crumbs');
+    if (!bar || !container) return;
 
     if (this.history.length <= 1) {
       bar.style.display = 'none';
@@ -334,20 +362,22 @@ class EpisodeSimilarityLab {
     }
 
     bar.style.display = 'flex';
-    crumbs.innerHTML = this.history.map((id, idx) => {
+    container.innerHTML = this.history.map((id, index) => {
       const w = this.works[id];
       if (!w) return '';
       const isCurrent = id === this.currentWorkId;
-      const titleShort = w.t.length > 10 ? w.t.substring(0, 10) + '…' : w.t;
-      return `
-        <button class="sim-crumb-btn ${isCurrent ? 'active' : ''}" data-work-id="${id}" title="${this.escapeHtml(w.t)}">
-          ${idx > 0 ? '<span class="sim-crumb-sep">→</span>' : ''}
-          ${this.escapeHtml(titleShort)}
+      const isLast = index === this.history.length - 1;
+      const crumbHtml = `
+        <button class="sim-history-crumb ${isCurrent ? 'current' : ''}" data-work-id="${id}">
+          ${this.escapeHtml(w.t)}
         </button>
       `;
+      const arrow = !isLast ? `<i class="fa-solid fa-chevron-right sim-history-arrow"></i>` : '';
+      return `${crumbHtml}${arrow}`;
     }).join('');
 
-    crumbs.querySelectorAll('.sim-crumb-btn').forEach(btn => {
+    // パンくずクリックイベント
+    container.querySelectorAll('.sim-history-crumb').forEach(btn => {
       btn.addEventListener('click', () => {
         const wid = btn.getAttribute('data-work-id');
         if (wid && wid !== this.currentWorkId) {
@@ -358,301 +388,382 @@ class EpisodeSimilarityLab {
   }
 
   /**
-   * 起点アニメのメインカード描画
+   * 起点アニメの描画
+   * アニメ類似度 (similarity-search.js) と100%同一の構造
    */
-  renderCurrentWork() {
-    const currentContainer = document.getElementById('ep-sim-current-section');
-    if (!currentContainer || !this.currentWorkId) return;
+  renderCurrentWork(work) {
+    const currentSection = document.getElementById('ep-sim-current-section');
+    if (!currentSection) return;
 
-    const work = this.works[this.currentWorkId];
-    if (!work) return;
-
-    const safeTitle = this.escapeHtml(work.t);
-    const safeSynopsis = work.s ? this.escapeHtml(work.s) : '（あらすじ情報なし）';
-    const yearStr = work.y ? `${work.y}年` : '年代不明';
-    const genreStr = work.g || '未分類';
-    const epStr = (work.ep_total !== undefined && work.ep_total > 0) ? `全${work.ep_total}話` : '';
+    const posterHtml = work.img
+      ? `<img id="ep-sim-current-poster-img" src="${this.escapeHtml(work.img)}" alt="${this.escapeHtml(work.t)}" class="sim-poster-img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'sim-poster-placeholder\\'><i class=\\'fa-solid fa-film\\'></i><span>画像なし</span></div>'"/>`
+      : `<div id="ep-sim-current-poster-placeholder" class="sim-poster-placeholder"><i class="fa-solid fa-film"></i><span>キービジュアル準備中</span></div>`;
 
     const annictLink = work.aid
-      ? `<a href="https://annict.com/works/${work.aid}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Annictで作品詳細を見る"><i class="fa-solid fa-arrow-up-right-from-square"></i> Annict</a>`
-      : '';
+      ? `<a href="https://annict.com/works/${work.aid}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-annict" title="Annictで作品ページを見る"><i class="fa-solid fa-circle-check"></i> Annict</a>`
+      : `<a href="https://annict.com/search?q=${encodeURIComponent(work.t)}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-annict" title="Annictで検索"><i class="fa-solid fa-magnifying-glass"></i> Annict検索</a>`;
 
     const danimeLink = work.url
-      ? `<a href="${work.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="dアニメストアで視聴する"><i class="fa-solid fa-play"></i> dアニメストア</a>`
+      ? `<a href="${this.escapeHtml(work.url)}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-danime" title="dアニメストアで視聴する"><i class="fa-solid fa-play"></i> dアニメストア</a>`
       : '';
 
-    currentContainer.innerHTML = `
+    const isHires = work.img && (work.img.includes('/s:640:853/') || work.img.includes('cs1.animestore.docomo.ne.jp'));
+    const epStr = (work.ep_total !== undefined && work.ep_total > 0) ? `全${work.ep_total}話` : '';
+
+    currentSection.innerHTML = `
       <div class="sim-current-card">
-        <div class="sim-current-badge">
-          <i class="fa-solid fa-location-dot"></i> 現在の起点アニメ (探索中)
+        <div class="sim-poster-wrap">
+          ${posterHtml}
         </div>
-        <div class="sim-current-layout">
-          <!-- ポスター枠（Annict縦長） -->
-          <div class="sim-current-poster-box">
-            ${this.renderPosterImg(work, safeTitle, 'sim-current-poster')}
+        <div class="sim-current-details">
+          <h3 class="sim-current-title">${this.escapeHtml(work.t)}</h3>
+          <div class="sim-badge-row">
+            ${work.y ? `<span class="sim-badge sim-badge-year"><i class="fa-regular fa-calendar"></i> ${work.y}年</span>` : ''}
+            ${work.g ? `<span class="sim-badge sim-badge-genre"><i class="fa-solid fa-tag"></i> ${this.escapeHtml(work.g)}</span>` : ''}
+            ${epStr ? `<span class="sim-badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);"><i class="fa-solid fa-list-ol"></i> ${epStr}</span>` : ''}
+            ${work.img ? `<span class="sim-badge sim-badge-annict"><i class="fa-solid fa-image"></i> ${isHires ? '高画質キービジュアル' : '公式キービジュアル'}</span>` : ''}
           </div>
-          <!-- メタ情報＆あらすじ -->
-          <div class="sim-current-info">
-            <h3 class="sim-current-title">${safeTitle}</h3>
-            <div class="sim-meta-tags">
-              <span class="sim-badge sim-badge-year"><i class="fa-regular fa-calendar"></i> ${yearStr}</span>
-              <span class="sim-badge sim-badge-genre"><i class="fa-solid fa-tag"></i> ${this.escapeHtml(genreStr)}</span>
-              ${epStr ? `<span class="sim-badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);"><i class="fa-solid fa-list-ol"></i> ${epStr}</span>` : ''}
-              ${work.img ? '<span class="sim-badge sim-badge-verified"><i class="fa-solid fa-circle-check"></i> Annict公式ポスター</span>' : ''}
-            </div>
-            <div class="sim-synopsis-box">
-              <p class="sim-synopsis-text">${safeSynopsis}</p>
-            </div>
-            <div class="sim-action-links">
-              ${danimeLink}
-              ${annictLink}
-            </div>
+          <div class="sim-synopsis-box">
+            ${this.escapeHtml(work.s || 'あらすじ情報がありません。')}
+          </div>
+          <div class="sim-actions-row">
+            ${danimeLink}
+            ${annictLink}
+            <button id="ep-sim-btn-fetch-hires" class="sim-link-btn sim-link-refresh" title="Annictから高解像度キービジュアルを取得・設定">
+              <i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得
+            </button>
+            <button id="ep-sim-btn-manual-annict" class="sim-link-btn sim-link-manual" title="AnnictのURLまたは作品IDを手動指定">
+              <i class="fa-solid fa-pen-to-square"></i> 手動紐付け
+            </button>
           </div>
         </div>
       </div>
     `;
+
+    // ボタンのイベントリスナー
+    const btnFetch = document.getElementById('ep-sim-btn-fetch-hires');
+    if (btnFetch) {
+      btnFetch.addEventListener('click', () => {
+        this.fetchHiresImage(work.id, work.t, work.aid, true);
+      });
+    }
+
+    const btnManual = document.getElementById('ep-sim-btn-manual-annict');
+    if (btnManual) {
+      btnManual.addEventListener('click', () => {
+        this.promptManualAnnict(work.id);
+      });
+    }
+
+    // 画像が未設定、または低解像度サムネイルの場合はバックグラウンドで自動高画質化
+    if (!work.img || !isHires) {
+      this.fetchHiresImage(work.id, work.t, work.aid, false);
+    }
   }
 
   /**
-   * 類似度Top30 グリッド描画
+   * Annict高解像度キービジュアル（s:640:853）の取得・更新
    */
-  renderSimilarGrid() {
-    const gridContainer = document.getElementById('ep-sim-top30-section');
-    if (!gridContainer || !this.currentWorkId) return;
+  async fetchHiresImage(workId, title, annictId, showFeedback = false) {
+    const btn = document.getElementById('ep-sim-btn-fetch-hires');
+    if (btn && showFeedback) {
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 取得中...';
+      btn.disabled = true;
+    }
 
-    const work = this.works[this.currentWorkId];
-    if (!work || !work.top || work.top.length === 0) {
-      gridContainer.innerHTML = `
+    try {
+      const params = new URLSearchParams({ workId, title, annictId: annictId || '' });
+      const res = await fetch(`/api/similarity-image?${params.toString()}`);
+      if (!res.ok) throw new Error('API request failed');
+      const data = await res.json();
+
+      if (data && data.url) {
+        // 作品データの更新
+        if (this.works[workId]) {
+          this.works[workId].img = data.url;
+          if (data.annictId) this.works[workId].aid = data.annictId;
+        }
+
+        // 現在選択中の作品ならポスターDOMを更新
+        if (this.currentWorkId === workId) {
+          const wrap = document.querySelector('#tab-episode-similarity .sim-poster-wrap');
+          if (wrap) {
+            wrap.innerHTML = `<img id="ep-sim-current-poster-img" src="${this.escapeHtml(data.url)}" alt="${this.escapeHtml(title)}" class="sim-poster-img" style="opacity: 0; transition: opacity 0.3s;" />`;
+            const imgEl = document.getElementById('ep-sim-current-poster-img');
+            if (imgEl) {
+              imgEl.onload = () => { imgEl.style.opacity = '1'; };
+            }
+          }
+        }
+
+        // Top30カード内の該当画像も更新
+        document.querySelectorAll(`#tab-episode-similarity .sim-card[data-work-id="${workId}"] .sim-card-image-box`).forEach(box => {
+          box.innerHTML = `<img src="${this.escapeHtml(data.url)}" alt="${this.escapeHtml(title)}" class="sim-card-img" />`;
+        });
+
+        if (btn && showFeedback) {
+          btn.innerHTML = '<i class="fa-solid fa-check text-green"></i> 高画質化完了';
+          setTimeout(() => {
+            btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+            btn.disabled = false;
+          }, 2000);
+        }
+      } else if (btn && showFeedback) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> 見つかりませんでした';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+          btn.disabled = false;
+        }, 2500);
+      }
+    } catch (err) {
+      console.warn('[EpisodeSimilarity] 高画質画像取得エラー:', err);
+      if (btn && showFeedback) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> 取得失敗';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Annict高画質化/取得';
+          btn.disabled = false;
+        }, 2000);
+      }
+    }
+  }
+
+  /**
+   * 手動でAnnict作品URLまたはIDを指定してキービジュアルを紐付け
+   */
+  async promptManualAnnict(workId) {
+    const work = this.works[workId];
+    if (!work) return;
+
+    const input = prompt(
+      `『${work.t}』に紐付けるAnnictの作品URLまたは作品IDを入力してください。\n例: https://annict.com/works/5056 または 5056`,
+      work.aid ? `https://annict.com/works/${work.aid}` : ''
+    );
+
+    if (!input) return;
+
+    let targetId = input.trim();
+    const match = targetId.match(/works\/(\d+)/);
+    if (match) targetId = match[1];
+
+    if (!/^\d+$/.test(targetId)) {
+      alert('有効なAnnict作品ID（数字）または作品URLを入力してください。');
+      return;
+    }
+
+    await this.fetchHiresImage(workId, work.t, targetId, true);
+  }
+
+  /**
+   * 類似度Top30カードグリッドの描画
+   * アニメ類似度 (similarity-search.js) と100%同一の構造
+   */
+  renderTop30(work) {
+    const topSection = document.getElementById('ep-sim-top30-section');
+    if (!topSection) return;
+
+    let topList = work.top || [];
+    if (topList.length === 0) {
+      topSection.innerHTML = `
         <div class="sim-empty-state">
-          <i class="fa-solid fa-circle-info"></i>
-          <p>この作品の類似データが見つかりませんでした。</p>
+          <p>この作品の類似度データが見つかりませんでした。</p>
         </div>
       `;
       return;
     }
 
-    // フィルタリング適用
-    const filteredTop = work.top.filter(([simWid]) => {
-      const targetWork = this.works[simWid];
-      if (!targetWork) return false;
+    // フィルター適用
+    if (this.filterEra !== 'ALL' || this.filterGenre !== 'ALL') {
+      topList = topList.filter(([simId]) => {
+        const sim = this.works[simId];
+        if (!sim) return false;
 
-      // 年代フィルター
-      if (this.filterEra !== 'ALL') {
-        const y = targetWork.y;
-        if (!y) return false;
-        if (this.filterEra === '2020s' && (y < 2020 || y > 2026)) return false;
-        if (this.filterEra === '2010s' && (y < 2010 || y > 2019)) return false;
-        if (this.filterEra === '2000s' && (y < 2000 || y > 2009)) return false;
-        if (this.filterEra === '1990s' && (y < 1990 || y > 1999)) return false;
-      }
+        // 年代フィルター
+        if (this.filterEra !== 'ALL' && sim.y) {
+          if (this.filterEra === '2020s' && (sim.y < 2020 || sim.y > 2029)) return false;
+          if (this.filterEra === '2010s' && (sim.y < 2010 || sim.y > 2019)) return false;
+          if (this.filterEra === '2000s' && (sim.y < 2000 || sim.y > 2009)) return false;
+          if (this.filterEra === '1990s' && (sim.y < 1990 || sim.y > 1999)) return false;
+        }
 
-      // ジャンルフィルター
-      if (this.filterGenre !== 'ALL') {
-        if (!targetWork.g || !targetWork.g.includes(this.filterGenre)) return false;
-      }
+        // ジャンルフィルター
+        if (this.filterGenre !== 'ALL' && sim.g) {
+          if (!sim.g.includes(this.filterGenre)) return false;
+        }
 
-      return true;
-    });
-
-    const totalCount = work.top.length;
-    const currentCount = filteredTop.length;
-    const filterNotice = currentCount < totalCount
-      ? `<span class="sim-filter-notice">（フィルター適用中: ${totalCount}件中 ${currentCount}件表示）</span>`
-      : '';
-
-    if (filteredTop.length === 0) {
-      gridContainer.innerHTML = `
-        <div class="sim-section-header">
-          <div class="sim-section-title">
-            <i class="fa-solid fa-list-ol" style="color: #38bdf8;"></i>
-            <span>全話エピソードあらすじ 類似アニメ Top30</span>
-            ${filterNotice}
-          </div>
-        </div>
-        <div class="sim-empty-state">
-          <i class="fa-solid fa-filter"></i>
-          <p>選択したフィルター（年代 / ジャンル）に一致する類似アニメがありませんでした。</p>
-          <button class="btn btn-outline btn-sm" style="margin-top: 0.5rem;" onclick="episodeSimilarityLab.resetFilters()">
-            フィルターをリセット
-          </button>
-        </div>
-      `;
-      return;
+        return true;
+      });
     }
 
-    const cardsHtml = filteredTop.map(([simWid, score, originalRank]) => {
-      const tw = this.works[simWid];
-      if (!tw) return '';
+    const cardsHtml = topList.map(([simId, score, rank]) => {
+      const sim = this.works[simId];
+      if (!sim) return '';
 
-      const safeTitle = this.escapeHtml(tw.t);
-      const yearStr = tw.y ? `${tw.y}年` : '年代不明';
-      const genreStr = tw.g ? tw.g.split(',').slice(0, 2).join('・') : '未分類';
-      const pct = Math.round(score * 100);
-      const epStr = (tw.ep_total !== undefined && tw.ep_total > 0) ? `全${tw.ep_total}話` : '';
+      // 順位クラス
+      let rankClass = 'sim-rank-other';
+      if (rank === 1) rankClass = 'sim-rank-1';
+      else if (rank === 2) rankClass = 'sim-rank-2';
+      else if (rank === 3) rankClass = 'sim-rank-3';
 
-      // 類似度スコアに応じたバッジ色クラス
-      let scoreBadgeClass = 'sim-score-medium';
-      if (pct >= 80) scoreBadgeClass = 'sim-score-high';
-      else if (pct < 70) scoreBadgeClass = 'sim-score-low';
+      const scorePercent = (score * 100).toFixed(1);
 
-      // 順位メダル
-      let rankBadgeHtml = `<span class="sim-card-rank">#${originalRank}</span>`;
-      if (originalRank === 1) {
-        rankBadgeHtml = `<span class="sim-card-rank rank-gold"><i class="fa-solid fa-crown"></i> 1位</span>`;
-      } else if (originalRank === 2) {
-        rankBadgeHtml = `<span class="sim-card-rank rank-silver">2位</span>`;
-      } else if (originalRank === 3) {
-        rankBadgeHtml = `<span class="sim-card-rank rank-bronze">3位</span>`;
-      }
+      const posterHtml = sim.img
+        ? `<img src="${this.escapeHtml(sim.img)}" alt="${this.escapeHtml(sim.t)}" class="sim-card-img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'sim-card-placeholder\\'><i class=\\'fa-solid fa-film\\'></i><span>画像なし</span></div>'"/>`
+        : `<div class="sim-card-placeholder"><i class="fa-solid fa-film"></i><span>${this.escapeHtml(sim.t)}</span></div>`;
+
+      const danimeLink = sim.url
+        ? `<a href="${this.escapeHtml(sim.url)}" target="_blank" rel="noopener noreferrer" class="sim-icon-link danime" title="dアニメストアで見る" onclick="event.stopPropagation();"><i class="fa-solid fa-play"></i></a>`
+        : '';
+
+      const annictLink = sim.aid
+        ? `<a href="https://annict.com/works/${sim.aid}" target="_blank" rel="noopener noreferrer" class="sim-icon-link annict" title="Annictで見る" onclick="event.stopPropagation();"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
+        : `<a href="https://annict.com/search?q=${encodeURIComponent(sim.t)}" target="_blank" rel="noopener noreferrer" class="sim-icon-link annict" title="Annictで検索" onclick="event.stopPropagation();"><i class="fa-solid fa-magnifying-glass"></i></a>`;
 
       return `
-        <div class="sim-work-card" data-work-id="${simWid}" title="${safeTitle} の類似アニメへジャンプ">
-          <!-- 上部ポスターエリア -->
-          <div class="sim-card-poster-box">
-            ${this.renderPosterImg(tw, safeTitle, 'sim-card-poster')}
-            ${rankBadgeHtml}
-            <div class="sim-card-score-badge ${scoreBadgeClass}">
-              <i class="fa-solid fa-chart-simple"></i> ${pct}%
-            </div>
-            <!-- ホバー時の数珠つなぎアクションオーバーレイ -->
-            <div class="sim-card-overlay">
-              <span class="sim-jump-btn"><i class="fa-solid fa-magnifying-glass"></i> この作品から探す</span>
-            </div>
+        <div class="sim-card" data-work-id="${simId}" title="クリックして『${this.escapeHtml(sim.t)}』を起点に類似作品を探索">
+          <!-- 順位バッジ -->
+          <div class="sim-card-rank ${rankClass}">#${rank}</div>
+          
+          <!-- 類似度スコア -->
+          <div class="sim-card-score">
+            <i class="fa-solid fa-chart-simple text-blue"></i> ${scorePercent}%
           </div>
 
-          <!-- 下部テキストメタ情報 -->
+          <!-- キービジュアル -->
+          <div class="sim-card-image-box">
+            ${posterHtml}
+          </div>
+
+          <!-- カード詳細 -->
           <div class="sim-card-body">
-            <h4 class="sim-card-title">${safeTitle}</h4>
+            <h4 class="sim-card-title">${this.escapeHtml(sim.t)}</h4>
             <div class="sim-card-meta">
-              <span><i class="fa-regular fa-calendar"></i> ${yearStr}</span>
-              <span><i class="fa-solid fa-tag"></i> ${this.escapeHtml(genreStr)}</span>
-              ${epStr ? `<span><i class="fa-solid fa-list-ol"></i> ${epStr}</span>` : ''}
+              <span><i class="fa-regular fa-calendar"></i> ${sim.y || '不明'}年</span>
+              <span class="sim-card-genre" title="${this.escapeHtml(sim.g)}">${this.escapeHtml(sim.g || '')}</span>
+              ${sim.ep_total ? `<span><i class="fa-solid fa-list-ol"></i> 全${sim.ep_total}話</span>` : ''}
             </div>
-            <!-- 類似度プログレスバー -->
-            <div class="sim-card-meter-track">
-              <div class="sim-card-meter-fill ${scoreBadgeClass}" style="width: ${Math.min(100, Math.max(10, pct))}%;"></div>
+            ${sim.s ? `<div class="sim-card-synopsis">${this.escapeHtml(sim.s)}</div>` : ''}
+
+            <!-- カードフッター -->
+            <div class="sim-card-footer">
+              <button class="sim-jump-btn" data-work-id="${simId}">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i> これを起点にする
+              </button>
+              <div class="sim-external-links">
+                ${danimeLink}
+                ${annictLink}
+              </div>
             </div>
           </div>
         </div>
       `;
     }).join('');
 
-    gridContainer.innerHTML = `
+    topSection.innerHTML = `
       <div class="sim-section-header">
-        <div class="sim-section-title">
-          <i class="fa-solid fa-list-ol" style="color: #38bdf8;"></i>
-          <span>全話エピソードあらすじ 類似アニメ Top30</span>
-          ${filterNotice}
-        </div>
-        <p class="sim-section-desc">
-          各カードをクリックすると、その作品を起点にした<strong>数珠つなぎ探索</strong>ができます。
-        </p>
+        <h3 class="sim-section-title">
+          <i class="fa-solid fa-trophy"></i> 『${this.escapeHtml(work.t)}』と全話エピソードあらすじが似ているアニメ Top30
+        </h3>
+        <span class="sim-section-hint">
+          <i class="fa-solid fa-circle-info"></i> カードをクリックすると、その作品を起点にして数珠つなぎで探索できます
+        </span>
       </div>
-      <div class="sim-cards-grid">
+      <div class="sim-grid">
         ${cardsHtml}
       </div>
     `;
 
-    // カードクリックイベント（数珠つなぎ遷移）
-    gridContainer.querySelectorAll('.sim-work-card').forEach(card => {
-      card.addEventListener('click', () => {
+    // カードクリックイベント（カード全体および起点化ボタン）
+    topSection.querySelectorAll('.sim-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // 外部リンクのクリック時はイベントバブリングしない
+        if (e.target.closest('.sim-external-links')) return;
         const wid = card.getAttribute('data-work-id');
-        if (wid) {
-          this.selectWork(wid, true);
-        }
+        if (wid) this.selectWork(wid, true);
       });
+    });
+
+    topSection.querySelectorAll('.sim-jump-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wid = btn.getAttribute('data-work-id');
+        if (wid) this.selectWork(wid, true);
+      });
+    });
+
+    // Top30の中で画像が未設定の作品があればバックグラウンドで自動解決
+    topList.forEach(([simId]) => {
+      const sim = this.works[simId];
+      if (sim && !sim.img) {
+        this.fetchHiresImage(simId, sim.t, sim.aid, false);
+      }
     });
   }
 
   /**
-   * ポスター画像タグの生成（Annict縦長優先・フォールバック対応）
-   */
-  renderPosterImg(work, safeTitle, className) {
-    if (work.img && work.img.startsWith('http')) {
-      return `
-        <img 
-          src="${work.img}" 
-          alt="${safeTitle}" 
-          class="${className}" 
-          loading="lazy" 
-          decoding="async"
-          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'sim-poster-fallback\\'><i class=\\'fa-solid fa-film\\'></i><span>${safeTitle}</span></div>';"
-        />
-      `;
-    }
-    return `
-      <div class="sim-poster-fallback">
-        <i class="fa-solid fa-film"></i>
-        <span>${safeTitle}</span>
-      </div>
-    `;
-  }
-
-  /**
-   * フィルターのリセット
-   */
-  resetFilters() {
-    this.filterEra = 'ALL';
-    this.filterGenre = 'ALL';
-    const selEra = document.getElementById('ep-sim-filter-era');
-    const selGenre = document.getElementById('ep-sim-filter-genre');
-    if (selEra) selEra.value = 'ALL';
-    if (selGenre) selGenre.value = 'ALL';
-    this.renderSimilarGrid();
-  }
-
-  /**
-   * インクリメンタル作品検索の実行
+   * インクリメンタル検索処理
+   * アニメ類似度 (similarity-search.js) と100%同一の処理
    */
   handleSearch(query) {
     const dropdown = document.getElementById('ep-sim-dropdown-results');
     if (!dropdown) return;
 
-    if (!query || query.length < 1) {
+    if (!query) {
       dropdown.classList.remove('active');
       dropdown.innerHTML = '';
       return;
     }
 
-    const qLower = query.toLowerCase().replace(/[\s\u3000]+/g, '');
-    const matchedWorks = [];
+    const q = query.toLowerCase();
+    const results = [];
+    const maxResults = 10;
 
-    // 高速スキャン（最大15件まで）
-    for (const [wid, work] of Object.entries(this.works)) {
-      const tClean = work.t.toLowerCase().replace(/[\s\u3000]+/g, '');
-      if (tClean.includes(qLower)) {
-        matchedWorks.push({
-          id: wid,
-          work,
-          exact: tClean.startsWith(qLower)
-        });
-        if (matchedWorks.length >= 25) break;
+    for (const [wid, w] of Object.entries(this.works)) {
+      // フィルターチェック
+      if (this.filterEra !== 'ALL' && w.y) {
+        if (this.filterEra === '2020s' && (w.y < 2020 || w.y > 2029)) continue;
+        if (this.filterEra === '2010s' && (w.y < 2010 || w.y > 2019)) continue;
+        if (this.filterEra === '2000s' && (w.y < 2000 || w.y > 2009)) continue;
+        if (this.filterEra === '1990s' && (w.y < 1990 || w.y > 1999)) continue;
+      }
+      if (this.filterGenre !== 'ALL' && w.g) {
+        if (!w.g.includes(this.filterGenre)) continue;
+      }
+
+      // タイトル一致判定
+      const t = w.t.toLowerCase();
+      if (t.includes(q)) {
+        // 先頭一致を優先スコアにする
+        const score = t.startsWith(q) ? 2 : 1;
+        results.push({ id: wid, work: w, score });
       }
     }
 
-    if (matchedWorks.length === 0) {
+    // スコア順・年代降順ソート
+    results.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return (b.work.y || 0) - (a.work.y || 0);
+    });
+
+    const displayResults = results.slice(0, maxResults);
+
+    if (displayResults.length === 0) {
       dropdown.innerHTML = `
-        <div class="sim-dropdown-empty">
-          <i class="fa-solid fa-circle-xmark text-muted"></i>
-          <span>「${this.escapeHtml(query)}」に一致するアニメが見つかりません</span>
+        <div style="padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+          一致するアニメが見つかりませんでした
         </div>
       `;
       dropdown.classList.add('active');
       return;
     }
 
-    // 先頭一致を優先ソート
-    matchedWorks.sort((a, b) => (b.exact ? 1 : 0) - (a.exact ? 1 : 0));
-    const showList = matchedWorks.slice(0, 10);
-
-    dropdown.innerHTML = showList.map(({ id, work }) => {
-      const thumb = work.img
-        ? `<img src="${work.img}" alt="" class="sim-dropdown-thumb" loading="lazy" />`
-        : '<div class="sim-dropdown-thumb-fallback"><i class="fa-solid fa-film"></i></div>';
+    dropdown.innerHTML = displayResults.map(({ id, work }) => {
+      const thumbHtml = work.img
+        ? `<img src="${this.escapeHtml(work.img)}" alt="" class="sim-dropdown-thumb" loading="lazy" onerror="this.style.display='none'"/>`
+        : `<div class="sim-dropdown-thumb" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.8rem;"><i class="fa-solid fa-film"></i></div>`;
 
       return `
         <div class="sim-dropdown-item" data-work-id="${id}">
-          ${thumb}
+          ${thumbHtml}
           <div class="sim-dropdown-info">
             <div class="sim-dropdown-title">${this.escapeHtml(work.t)}</div>
             <div class="sim-dropdown-meta">

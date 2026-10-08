@@ -34,7 +34,7 @@ async function testEpisodeSimilarityTab() {
   console.log('Current work title:', currentTitle);
 
   // 5. Verify Top30 cards grid
-  const cards = await page.$$('#ep-sim-top30-section .sim-work-card');
+  const cards = await page.$$('#ep-sim-top30-section .sim-card');
   console.log(`Rendered Top cards count: ${cards.length}`);
   if (cards.length !== 30) {
     throw new Error(`Expected 30 cards, but got ${cards.length}!`);
@@ -54,7 +54,7 @@ async function testEpisodeSimilarityTab() {
   }
 
   // 7. Verify Top30 cards after chaining
-  const updatedCards = await page.$$('#ep-sim-top30-section .sim-work-card');
+  const updatedCards = await page.$$('#ep-sim-top30-section .sim-card');
   console.log(`Updated Top cards count: ${updatedCards.length}`);
   if (updatedCards.length !== 30) {
     throw new Error(`Expected 30 cards after chaining, got ${updatedCards.length}!`);
