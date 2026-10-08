@@ -334,18 +334,18 @@
         "url": "https://annict.com/works/15168"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14075",
@@ -5605,6 +5605,20 @@
         "url": "https://annict.com/works/16658"
       },
       {
+        "id": "15724",
+        "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
+        "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15724"
+      },
+      {
+        "id": "16248",
+        "title": "片田舎のおっさん、剣聖になるⅡ",
+        "image": "https://image.annict.com/ASB-OR5IKx19Ji4ODjeJZNSio1I_4_2LitWrnAqJu5A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13515/image/master-18c80d1abb037a881fa6cffe69f32def.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16248"
+      },
+      {
         "id": "16714",
         "title": "透明な夜に駆ける君と、目に見えない恋をした。",
         "image": "https://image.annict.com/iIyJyoUC_Sd0rOMzwyu5Y3nW-e3qW_XhlE1FWAzXmBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13365/image/master-017e6ac7967bb9d006452c1b5392e58f.jpg@webp",
@@ -5682,6 +5696,13 @@
         "url": "https://annict.com/works/17131"
       },
       {
+        "id": "14969",
+        "title": "株式会社マジルミエ 第2期",
+        "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/14969"
+      },
+      {
         "id": "17353",
         "title": "ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～ 2nd Season",
         "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
@@ -5701,6 +5722,13 @@
         "image": "https://image.annict.com/Jp4QMLYPC8eqy5_cbV_xOIwujSGClJstSCtkn9Lg838/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13197/image/master-a03297c312c70198eb6c5702b4f9e8f3.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/16538"
+      },
+      {
+        "id": "16405",
+        "title": "いびってこない義母と義姉",
+        "image": "https://image.annict.com/Dx6E139C_jZImKheOJlnMIseEoS9P-e3-OWS2rVL78g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13057/image/master-68f8958db02c56130ea41e69b8df4076.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16405"
       },
       {
         "id": "17114",
@@ -5750,6 +5778,13 @@
         "image": "https://image.annict.com/NMr0gYl0FZPUWpF0YN9UjvKxaD8mhO_hVEHmymDmkqU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13234/image/master-aafbe14029e3bbc1c62427402b38d66f.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/16569"
+      },
+      {
+        "id": "16555",
+        "title": "クレバテスⅡ-魔獣の王と偽りの勇者伝承-",
+        "image": "https://image.annict.com/mwzDqfvFNXONYOrJtjs5JZlapewlqZkrQAI3piBDmHk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13221/image/master-e7e715fc17dd13a9255f575ab7a08234.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16555"
       },
       {
         "id": "11195",
@@ -5822,18 +5857,18 @@
         "url": "https://annict.com/works/16632"
       },
       {
-        "id": "6528",
-        "title": "メビウス・ダスト",
-        "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/6528"
-      },
-      {
         "id": "17323",
         "title": "花ざかりの君たちへ 第2期",
         "image": "https://image.annict.com/wIGx0Je9w6RbPXboVn2FifOfAFOO7VrKGMQPeKSEqIE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14050/image/master-bd22a7f8e0ebf7e19ec4c51a6ae8ebf7.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17323"
+      },
+      {
+        "id": "6528",
+        "title": "メビウス・ダスト",
+        "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/6528"
       },
       {
         "id": "17043",
@@ -5855,6 +5890,13 @@
         "image": "https://image.annict.com/2OvAptUBjevxTx5lMBPwiq_kKP1gWGhRFq5qny0LrZU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13822/image/master-e2bb08977c751dd36a51892653ec6718.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17134"
+      },
+      {
+        "id": "17820",
+        "title": "不死身な僕の日常 シーズン4",
+        "image": "https://image.annict.com/wlYmLYva-EntSRj-R8BG-eUUA3Hd4jSWtIh5LjqlSUQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14557/image/master-ce35d226c69186ff0df9f43350b0dbd3.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/17820"
       },
       {
         "id": "15787",
@@ -6284,6 +6326,13 @@
         "url": "https://annict.com/works/17523"
       },
       {
+        "id": "17372",
+        "title": "おねがい！ポコタ村長",
+        "image": "https://image.annict.com/gR20lK6ozde_b1J6JZiSMYTPSTR7ycdLtHjRQ4toYYg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14103/image/master-acd898ee8c5a2cb4a7b881bd125570fa.jpg@webp",
+        "season": "2026年春",
+        "url": "https://annict.com/works/17372"
+      },
+      {
         "id": "14068",
         "title": "葬送のフリーレン 第2期",
         "image": "https://image.annict.com/jwa0Go8DRf-3PBS1310d4e7FyqGC1YmBF91-2AyW9vc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10883/image/master-98786d89ec6444270ef90fd52604b178.jpg@webp",
@@ -6410,18 +6459,18 @@
         "url": "https://annict.com/works/17148"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",
@@ -7320,18 +7369,18 @@
         "url": "https://annict.com/works/14295"
       },
       {
-        "id": "14726",
-        "title": "出禁のモグラ",
-        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14726"
-      },
-      {
         "id": "13428",
         "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
         "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/13428"
+      },
+      {
+        "id": "14726",
+        "title": "出禁のモグラ",
+        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14726"
       },
       {
         "id": "14727",
@@ -13340,6 +13389,13 @@
         "url": "https://annict.com/works/17361"
       },
       {
+        "id": "16658",
+        "title": "君のことが大大大大大好きな100人の彼女 第3期",
+        "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16658"
+      },
+      {
         "id": "15724",
         "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
         "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
@@ -13949,18 +14005,18 @@
         "url": "https://annict.com/works/16887"
       },
       {
-        "id": "17033",
-        "title": "魔物喰らいの冒険者～俺だけ魔物を喰らって強くなる～",
-        "image": "https://image.annict.com/vuxnRZJ51B1cLu6PsANgNaTkZA5UMF0eKLiqytxTde8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13725/image/master-69b2b5b757d60a6e8ab07a0e5fa28927.jpg@webp",
-        "season": "2026年春",
-        "url": "https://annict.com/works/17033"
-      },
-      {
         "id": "16583",
         "title": "こめかみっ！ Girls",
         "image": "https://image.annict.com/BStqClVmJobMa_zT4m6I7st-4UPYwcZg8ottPVkWmj4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13247/image/master-3c98955a6dd28181e7905caba95d45c4.jpg@webp",
         "season": "2026年春",
         "url": "https://annict.com/works/16583"
+      },
+      {
+        "id": "17033",
+        "title": "魔物喰らいの冒険者～俺だけ魔物を喰らって強くなる～",
+        "image": "https://image.annict.com/vuxnRZJ51B1cLu6PsANgNaTkZA5UMF0eKLiqytxTde8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13725/image/master-69b2b5b757d60a6e8ab07a0e5fa28927.jpg@webp",
+        "season": "2026年春",
+        "url": "https://annict.com/works/17033"
       },
       {
         "id": "13722",
@@ -14166,18 +14222,18 @@
         "url": "https://annict.com/works/12836"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",
@@ -14950,18 +15006,18 @@
         "url": "https://annict.com/works/14295"
       },
       {
-        "id": "14726",
-        "title": "出禁のモグラ",
-        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14726"
-      },
-      {
         "id": "13428",
         "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
         "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/13428"
+      },
+      {
+        "id": "14726",
+        "title": "出禁のモグラ",
+        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14726"
       },
       {
         "id": "14727",
@@ -15326,6 +15382,13 @@
         "image": "https://image.annict.com/nM1aCS0fjg6GO6sJwdSTMuyxCDNMQattczG3zuOabZo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7453/image/master-479f97131c9139e55d224af74fae3d6c.jpg@webp",
         "season": "2025年春",
         "url": "https://annict.com/works/11029"
+      },
+      {
+        "id": "14002",
+        "title": "ヴァージン・パンク Clockwork Girl",
+        "image": "https://image.annict.com/TgAATxAd38W_vRTEjsWE-k9aA2sqp6Ckpk-m6C8XUhc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10832/image/master-ce6b1be841f38169dc94b6cef54af705.jpg@webp",
+        "season": "2025年春",
+        "url": "https://annict.com/works/14002"
       },
       {
         "id": "12947",
@@ -17527,18 +17590,18 @@
         "url": "https://annict.com/works/15168"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",
@@ -20524,18 +20587,18 @@
         "url": "https://annict.com/works/15168"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",
@@ -20795,6 +20858,13 @@
         "image": "https://image.annict.com/EcCEBrLUEmN_tyVzaRe-Ac90H3H1Dm69iheEDnxqrPY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11070/image/master-c78026d733c98e19d83ba4046fadb7ca.jpg@webp",
         "season": "2025年春",
         "url": "https://annict.com/works/14307"
+      },
+      {
+        "id": "14002",
+        "title": "ヴァージン・パンク Clockwork Girl",
+        "image": "https://image.annict.com/TgAATxAd38W_vRTEjsWE-k9aA2sqp6Ckpk-m6C8XUhc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10832/image/master-ce6b1be841f38169dc94b6cef54af705.jpg@webp",
+        "season": "2025年春",
+        "url": "https://annict.com/works/14002"
       },
       {
         "id": "10641",
@@ -21498,6 +21568,20 @@
         "url": "https://annict.com/works/17361"
       },
       {
+        "id": "16658",
+        "title": "君のことが大大大大大好きな100人の彼女 第3期",
+        "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16658"
+      },
+      {
+        "id": "15724",
+        "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
+        "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15724"
+      },
+      {
         "id": "16677",
         "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
         "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
@@ -21575,6 +21659,13 @@
         "url": "https://annict.com/works/16538"
       },
       {
+        "id": "16405",
+        "title": "いびってこない義母と義姉",
+        "image": "https://image.annict.com/Dx6E139C_jZImKheOJlnMIseEoS9P-e3-OWS2rVL78g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13057/image/master-68f8958db02c56130ea41e69b8df4076.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16405"
+      },
+      {
         "id": "17114",
         "title": "うしろの正面カムイさん",
         "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
@@ -21608,6 +21699,13 @@
         "image": "https://image.annict.com/NMr0gYl0FZPUWpF0YN9UjvKxaD8mhO_hVEHmymDmkqU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13234/image/master-aafbe14029e3bbc1c62427402b38d66f.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/16569"
+      },
+      {
+        "id": "16555",
+        "title": "クレバテスⅡ-魔獣の王と偽りの勇者伝承-",
+        "image": "https://image.annict.com/mwzDqfvFNXONYOrJtjs5JZlapewlqZkrQAI3piBDmHk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13221/image/master-e7e715fc17dd13a9255f575ab7a08234.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16555"
       },
       {
         "id": "11195",
@@ -21673,18 +21771,18 @@
         "url": "https://annict.com/works/16632"
       },
       {
-        "id": "6528",
-        "title": "メビウス・ダスト",
-        "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/6528"
-      },
-      {
         "id": "17323",
         "title": "花ざかりの君たちへ 第2期",
         "image": "https://image.annict.com/wIGx0Je9w6RbPXboVn2FifOfAFOO7VrKGMQPeKSEqIE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14050/image/master-bd22a7f8e0ebf7e19ec4c51a6ae8ebf7.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17323"
+      },
+      {
+        "id": "6528",
+        "title": "メビウス・ダスト",
+        "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/6528"
       },
       {
         "id": "17043",
@@ -21706,6 +21804,13 @@
         "image": "https://image.annict.com/2OvAptUBjevxTx5lMBPwiq_kKP1gWGhRFq5qny0LrZU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13822/image/master-e2bb08977c751dd36a51892653ec6718.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17134"
+      },
+      {
+        "id": "17820",
+        "title": "不死身な僕の日常 シーズン4",
+        "image": "https://image.annict.com/wlYmLYva-EntSRj-R8BG-eUUA3Hd4jSWtIh5LjqlSUQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14557/image/master-ce35d226c69186ff0df9f43350b0dbd3.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/17820"
       },
       {
         "id": "16299",
@@ -22058,6 +22163,13 @@
         "url": "https://annict.com/works/17523"
       },
       {
+        "id": "17372",
+        "title": "おねがい！ポコタ村長",
+        "image": "https://image.annict.com/gR20lK6ozde_b1J6JZiSMYTPSTR7ycdLtHjRQ4toYYg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14103/image/master-acd898ee8c5a2cb4a7b881bd125570fa.jpg@webp",
+        "season": "2026年春",
+        "url": "https://annict.com/works/17372"
+      },
+      {
         "id": "14068",
         "title": "葬送のフリーレン 第2期",
         "image": "https://image.annict.com/jwa0Go8DRf-3PBS1310d4e7FyqGC1YmBF91-2AyW9vc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10883/image/master-98786d89ec6444270ef90fd52604b178.jpg@webp",
@@ -22163,18 +22275,18 @@
         "url": "https://annict.com/works/12836"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",
@@ -22849,18 +22961,18 @@
         "url": "https://annict.com/works/14295"
       },
       {
-        "id": "14726",
-        "title": "出禁のモグラ",
-        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14726"
-      },
-      {
         "id": "13428",
         "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
         "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/13428"
+      },
+      {
+        "id": "14726",
+        "title": "出禁のモグラ",
+        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14726"
       },
       {
         "id": "14727",
@@ -24489,18 +24601,18 @@
         "url": "https://annict.com/works/15168"
       },
       {
-        "id": "14309",
-        "title": "エリスの聖杯",
-        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/14309"
-      },
-      {
         "id": "15912",
         "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
         "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/15912"
+      },
+      {
+        "id": "14309",
+        "title": "エリスの聖杯",
+        "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/14309"
       },
       {
         "id": "14863",

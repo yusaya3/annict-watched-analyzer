@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-07T23:25:48.804Z",
-  "count": 562,
+  "fetchedAt": "2026-10-08T23:37:15.855Z",
+  "count": 564,
   "animes": [
     {
       "id": "13582",
@@ -37,6 +37,13 @@
       "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17361"
+    },
+    {
+      "id": "16658",
+      "title": "君のことが大大大大大好きな100人の彼女 第3期",
+      "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16658"
     },
     {
       "id": "15724",
@@ -648,18 +655,18 @@
       "url": "https://annict.com/works/16887"
     },
     {
-      "id": "17033",
-      "title": "魔物喰らいの冒険者～俺だけ魔物を喰らって強くなる～",
-      "image": "https://image.annict.com/vuxnRZJ51B1cLu6PsANgNaTkZA5UMF0eKLiqytxTde8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13725/image/master-69b2b5b757d60a6e8ab07a0e5fa28927.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/17033"
-    },
-    {
       "id": "16583",
       "title": "こめかみっ！ Girls",
       "image": "https://image.annict.com/BStqClVmJobMa_zT4m6I7st-4UPYwcZg8ottPVkWmj4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13247/image/master-3c98955a6dd28181e7905caba95d45c4.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16583"
+    },
+    {
+      "id": "17033",
+      "title": "魔物喰らいの冒険者～俺だけ魔物を喰らって強くなる～",
+      "image": "https://image.annict.com/vuxnRZJ51B1cLu6PsANgNaTkZA5UMF0eKLiqytxTde8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13725/image/master-69b2b5b757d60a6e8ab07a0e5fa28927.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/17033"
     },
     {
       "id": "13722",
@@ -865,18 +872,18 @@
       "url": "https://annict.com/works/12836"
     },
     {
-      "id": "14309",
-      "title": "エリスの聖杯",
-      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/14309"
-    },
-    {
       "id": "15912",
       "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
       "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/15912"
+    },
+    {
+      "id": "14309",
+      "title": "エリスの聖杯",
+      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/14309"
     },
     {
       "id": "14863",
@@ -1649,18 +1656,18 @@
       "url": "https://annict.com/works/14295"
     },
     {
-      "id": "14726",
-      "title": "出禁のモグラ",
-      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14726"
-    },
-    {
       "id": "13428",
       "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
       "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13428"
+    },
+    {
+      "id": "14726",
+      "title": "出禁のモグラ",
+      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14726"
     },
     {
       "id": "14727",
@@ -2025,6 +2032,13 @@
       "image": "https://image.annict.com/nM1aCS0fjg6GO6sJwdSTMuyxCDNMQattczG3zuOabZo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7453/image/master-479f97131c9139e55d224af74fae3d6c.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/11029"
+    },
+    {
+      "id": "14002",
+      "title": "ヴァージン・パンク Clockwork Girl",
+      "image": "https://image.annict.com/TgAATxAd38W_vRTEjsWE-k9aA2sqp6Ckpk-m6C8XUhc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10832/image/master-ce6b1be841f38169dc94b6cef54af705.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/14002"
     },
     {
       "id": "12947",

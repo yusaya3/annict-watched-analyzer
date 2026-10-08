@@ -1,8 +1,15 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-07T23:25:52.563Z",
-  "count": 514,
+  "fetchedAt": "2026-10-08T23:37:20.082Z",
+  "count": 516,
   "animes": [
+    {
+      "id": "17088",
+      "title": "ヤニねこ",
+      "image": "https://image.annict.com/1ZeAYmbG6YCprr_SolG5XELsjcVqMz5ACeqsBf_cGWs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13777/image/master-6e1caecf58f095b59022a54849b62bd2.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17088"
+    },
     {
       "id": "15881",
       "title": "天幕のジャードゥーガル",
@@ -65,6 +72,13 @@
       "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17379"
+    },
+    {
+      "id": "6528",
+      "title": "メビウス・ダスト",
+      "image": "https://image.annict.com/6k25VD5nXa0u3funuM1zzJ2yeQMosmnpCz7dxvcElRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14071/image/master-2a6abd482a6d8641b78a3a9144d89b66.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6528"
     },
     {
       "id": "17069",
@@ -592,18 +606,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16655",
-      "title": "藤本タツキ 17-26 Part2",
-      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16655"
-    },
-    {
       "id": "16654",
       "title": "藤本タツキ 17-26 Part1",
       "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16654"
+    },
+    {
+      "id": "16655",
+      "title": "藤本タツキ 17-26 Part2",
+      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16655"
     },
     {
       "id": "13048",

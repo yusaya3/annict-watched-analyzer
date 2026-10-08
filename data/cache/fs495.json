@@ -1,7 +1,7 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-07T23:25:51.307Z",
-  "count": 801,
+  "fetchedAt": "2026-10-08T23:37:18.765Z",
+  "count": 802,
   "animes": [
     {
       "id": "18233",
@@ -37,6 +37,13 @@
       "image": "https://image.annict.com/ASB-OR5IKx19Ji4ODjeJZNSio1I_4_2LitWrnAqJu5A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13515/image/master-18c80d1abb037a881fa6cffe69f32def.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16248"
+    },
+    {
+      "id": "11193",
+      "title": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
+      "image": "https://image.annict.com/zEQOZ1o5hwee-HNwTox_rDrmFKcYzEMkW6YJpgb0-bk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7557/image/master-5fc4fae4aea12c92792702557bdd7a65.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/11193"
     },
     {
       "id": "16606",
@@ -270,18 +277,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "14309",
-      "title": "エリスの聖杯",
-      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/14309"
-    },
-    {
       "id": "15912",
       "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
       "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/15912"
+    },
+    {
+      "id": "14309",
+      "title": "エリスの聖杯",
+      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/14309"
     },
     {
       "id": "14863",

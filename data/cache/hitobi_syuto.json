@@ -1,6 +1,6 @@
 {
   "username": "hitobi_syuto",
-  "fetchedAt": "2026-10-07T23:25:50.538Z",
+  "fetchedAt": "2026-10-08T23:37:17.627Z",
   "count": 963,
   "animes": [
     {
@@ -151,18 +151,18 @@
       "url": "https://annict.com/works/16023"
     },
     {
-      "id": "14969",
-      "title": "株式会社マジルミエ 第2期",
-      "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/14969"
-    },
-    {
       "id": "17131",
       "title": "落第賢者の学院無双 ～二度目の転生、Sランクチート魔術師冒険録～",
       "image": "https://image.annict.com/rNh9rO3zyGf9TEHT3e_UdEba3uwUgX8PBObIfzna6fc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13819/image/master-144b3bb55ac940b6aff40be5f4351498.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17131"
+    },
+    {
+      "id": "14969",
+      "title": "株式会社マジルミエ 第2期",
+      "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14969"
     },
     {
       "id": "17353",
@@ -830,18 +830,18 @@
       "url": "https://annict.com/works/13829"
     },
     {
-      "id": "12617",
-      "title": "転生悪女の黒歴史",
-      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/12617"
-    },
-    {
       "id": "14987",
       "title": "らんま1/2 第2期",
       "image": "https://image.annict.com/0oDhFBHahdm_mRThLEAFu9SJFgn4WhahB_QhrRURWps/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11627/image/master-3dd584974ec25d90c72797940a8c64e1.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/14987"
+    },
+    {
+      "id": "12617",
+      "title": "転生悪女の黒歴史",
+      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/12617"
     },
     {
       "id": "15643",

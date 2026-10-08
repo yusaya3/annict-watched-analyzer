@@ -1,6 +1,6 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-07T23:25:44.853Z",
+  "fetchedAt": "2026-10-08T23:37:11.934Z",
   "count": 788,
   "animes": [
     {
@@ -333,18 +333,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "14309",
-      "title": "エリスの聖杯",
-      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/14309"
-    },
-    {
       "id": "15912",
       "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
       "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/15912"
+    },
+    {
+      "id": "14309",
+      "title": "エリスの聖杯",
+      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/14309"
     },
     {
       "id": "14075",
