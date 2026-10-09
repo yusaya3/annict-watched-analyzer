@@ -626,7 +626,9 @@ function recalculateClientReport() {
   newReport.userWatchedLists = state.data.userWatchedLists;
   state.data = newReport;
 
-  saveUsersToStorage(effectiveUsers);
+  // ★重要: STORAGE_KEY_USERS には「全登録ユーザー」を保存する！（effectiveUsersだけを保存すると一時除外した人がブラウザ再起動で消えてしまう）
+  const allRegistered = getAllRegisteredUsers();
+  saveUsersToStorage(allRegistered);
   saveReportToIndexedDB(newReport);
 
   // ベン図の選択ユーザーも有効ユーザーで整合性を取る
@@ -736,6 +738,21 @@ async function executeAddUser(username, onProgress) {
     state.data.users.push(username);
   }
 
+  // ★重要: 全登録ユーザーリストを更新してローカルストレージに永続保存
+  const allUsers = getAllRegisteredUsers();
+  if (!allUsers.some(u => u.toLowerCase() === username.toLowerCase())) {
+    allUsers.push(username);
+  }
+  saveUsersToStorage(allUsers);
+
+  // ★重要: 新規追加されたユーザーは必ず「分析対象中（有効）」として追加・保存
+  let enabled = getEffectiveUsers();
+  if (!enabled.some(u => u.toLowerCase() === username.toLowerCase())) {
+    enabled.push(username);
+  }
+  state.enabledUsers = enabled;
+  saveEnabledUsersToStorage(enabled);
+
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
     state.selectedVennUsers.push(username);
   }
@@ -749,15 +766,18 @@ async function executeAddUser(username, onProgress) {
 
 // 実際のユーザー削除通信処理（ブラウザ手元のIndexedDBから削除＆即座に再集計＆サーバー通知）
 async function executeDeleteUser(username) {
+  const lower = username.toLowerCase();
   if (state.data?.userWatchedLists) {
     delete state.data.userWatchedLists[username];
+    delete state.data.userWatchedLists[lower];
   }
   if (state.data?.users) {
-    state.data.users = state.data.users.filter(u => u.toLowerCase() !== username.toLowerCase());
+    state.data.users = state.data.users.filter(u => u.toLowerCase() !== lower);
   }
 
   // 手元のIndexedDBからも削除！
   await deleteUserWatchedFromIndexedDB(username);
+  await deleteUserWatchedFromIndexedDB(lower);
 
   // 即座にブラウザ内で再集計＆画面更新
   recalculateClientReport();
@@ -779,17 +799,35 @@ function addUser(username) {
 function deleteUser(username) {
   if (!confirm(`@${username} を比較対象から削除しますか？`)) return;
 
+  const lower = username.toLowerCase();
+
   // 1. 楽観的UI更新：UI上からその場ですぐに消す（待たせない！）
   if (state.data && Array.isArray(state.data.users)) {
-    state.data.users = state.data.users.filter(u => u.toLowerCase() !== username.toLowerCase());
-    saveUsersToStorage(state.data.users);
-    state.selectedVennUsers = state.selectedVennUsers.filter(u => u.toLowerCase() !== username.toLowerCase());
-    if (state.selectedVennUsers.length === 0 && state.data.users.length > 0) {
-      state.selectedVennUsers = state.data.users.slice(0, 3);
-    }
-    renderAllComponents();
-    renderModalUserList();
+    state.data.users = state.data.users.filter(u => u.toLowerCase() !== lower);
   }
+  if (state.data?.userWatchedLists) {
+    delete state.data.userWatchedLists[username];
+    delete state.data.userWatchedLists[lower];
+  }
+
+  // 全登録ストレージからも削除
+  const savedUsers = loadUsersFromStorage() || [];
+  const updatedSaved = savedUsers.filter(u => u.toLowerCase() !== lower);
+  saveUsersToStorage(updatedSaved);
+
+  // 有効ユーザーストレージからも削除
+  if (state.enabledUsers) {
+    state.enabledUsers = state.enabledUsers.filter(u => u.toLowerCase() !== lower);
+    saveEnabledUsersToStorage(state.enabledUsers);
+  }
+
+  state.selectedVennUsers = state.selectedVennUsers.filter(u => u.toLowerCase() !== lower);
+  if (state.selectedVennUsers.length === 0 && state.data?.users?.length > 0) {
+    state.selectedVennUsers = state.data.users.slice(0, 3);
+  }
+
+  recalculateClientReport();
+  renderModalUserList();
 
   // 2. バックグラウンドキューでサーバーに非同期送信
   taskQueue.enqueue('delete', username);
@@ -947,8 +985,8 @@ function renderModalUserList() {
 
   // 2. キュー内の追加タスクカード（取得中・待機中・エラー）
   queuedAddTasks.forEach(task => {
-    // すでにusersに含まれている場合は表示不要
-    if (users.some(u => u.toLowerCase() === task.username.toLowerCase()) && task.status === 'done') return;
+    // すでに登録済みユーザーに含まれている場合は表示不要
+    if (allUsers.some(u => u.toLowerCase() === task.username.toLowerCase()) && task.status === 'done') return;
 
     const item = document.createElement('div');
     item.className = 'modal-user-item';
@@ -1005,45 +1043,45 @@ async function loadData(force = false) {
       state.data = localReport;
       renderAllComponents();
       console.log('[Local-First] IndexedDBの最新レポートから即時描画完了');
-
-      // 旧キャッシュ互換性チェック: timelineReport に 1年ごとデータ(allYears)がない場合は自動で手元のデータから再集計
-      const hasTimelineAllYears = !!localReport.labs?.timelineReport?.allYears;
-      if (!hasTimelineAllYears && state.data.userWatchedLists) {
-        console.log('[Local-First] タイムライン新機能向けにローカルデータを自動アップグレード');
-        recalculateClientReport();
-      }
     }
 
     // 2. 手元IndexedDBにユーザーの視聴データ（user_watches）が保存されている場合
     if (localWatches && Object.keys(localWatches).length > 0 && !force) {
       const localUserKeys = Object.keys(localWatches);
-      const activeUsers = (savedUsers && savedUsers.length > 0)
-        ? savedUsers.filter(u => localWatches[u.toLowerCase()])
-        : localUserKeys;
+      // savedUsers と IndexedDB 内の全ユーザーを統合して、除外されたユーザーも含めて全登録ユーザーを100%復元
+      const registeredUserSet = new Set();
+      if (savedUsers && Array.isArray(savedUsers)) {
+        savedUsers.forEach(u => registeredUserSet.add(u));
+      }
+      localUserKeys.forEach(u => registeredUserSet.add(u));
+      const allRegisteredUsers = Array.from(registeredUserSet).filter(u => localWatches[u.toLowerCase()] || localWatches[u]);
 
-      if (activeUsers.length > 0) {
+      if (allRegisteredUsers.length > 0) {
         const userWatchedLists = {};
-        activeUsers.forEach(u => {
-          userWatchedLists[u] = localWatches[u.toLowerCase()];
+        allRegisteredUsers.forEach(u => {
+          userWatchedLists[u] = localWatches[u.toLowerCase()] || localWatches[u] || [];
         });
 
         if (!state.data) state.data = {};
-        state.data.users = activeUsers;
+        state.data.users = allRegisteredUsers;
         state.data.userWatchedLists = userWatchedLists;
 
+        // 全登録ユーザーリストを最新としてストレージに保存
+        saveUsersToStorage(allRegisteredUsers);
+
         if (state.selectedVennUsers.length === 0) {
-          state.selectedVennUsers = activeUsers.slice(0, 3);
+          state.selectedVennUsers = allRegisteredUsers.slice(0, 3);
         }
         if (!state.activeExclusiveUser) {
-          state.activeExclusiveUser = activeUsers[0] || null;
+          state.activeExclusiveUser = allRegisteredUsers[0] || null;
         }
         if (!state.activeMissingUser) {
-          state.activeMissingUser = activeUsers[0] || null;
+          state.activeMissingUser = allRegisteredUsers[0] || null;
         }
 
         // ブラウザ内リアルタイムエンジンで即時再集計＆再描画！（サーバー通信完全不要）
         recalculateClientReport();
-        console.log(`[Local-First] 手元の視聴データ(${activeUsers.length}人)から完全ローカル再集計完了 (通信ゼロ・サーバーレス)`);
+        console.log(`[Local-First] 手元の視聴データ(${allRegisteredUsers.length}人)から完全ローカル再集計完了 (通信ゼロ・サーバーレス)`);
         return;
       }
     }
