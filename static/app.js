@@ -277,20 +277,44 @@ function loadEnabledUsersFromStorage() {
   return null;
 }
 
-// 登録されている全ユーザーリストを取得
+// 大文字小文字を無視してユーザーリストを正規化（同一IDの大文字小文字重複を完全に排除し、大文字含む正規表記を優先）
+function normalizeUserList(users) {
+  if (!Array.isArray(users)) return [];
+  const map = new Map(); // lowerCase -> canonicalName
+  users.forEach(u => {
+    if (!u || typeof u !== 'string') return;
+    const clean = u.trim().replace(/^@/, '');
+    if (!clean) return;
+    const lower = clean.toLowerCase();
+    if (!map.has(lower)) {
+      map.set(lower, clean);
+    } else {
+      const existing = map.get(lower);
+      // 大文字を含んでいる表記を優先して採用（例: "shimbaco" より "Shimbaco" を優先）
+      const existingHasUpper = /[A-Z]/.test(existing);
+      const cleanHasUpper = /[A-Z]/.test(clean);
+      if (!existingHasUpper && cleanHasUpper) {
+        map.set(lower, clean);
+      }
+    }
+  });
+  return Array.from(map.values());
+}
+
+// 登録されている全ユーザーリストを取得（大文字小文字の重複を完全に排除した正規リスト）
 function getAllRegisteredUsers() {
-  const usersSet = new Set();
-  if (state.data && Array.isArray(state.data.users)) {
-    state.data.users.forEach(u => usersSet.add(u));
-  }
-  if (state.data && state.data.userWatchedLists) {
-    Object.keys(state.data.userWatchedLists).forEach(u => usersSet.add(u));
-  }
+  const list = [];
   const saved = loadUsersFromStorage();
   if (saved && Array.isArray(saved)) {
-    saved.forEach(u => usersSet.add(u));
+    list.push(...saved);
   }
-  return Array.from(usersSet);
+  if (state.data && Array.isArray(state.data.users)) {
+    list.push(...state.data.users);
+  }
+  if (state.data && state.data.userWatchedLists) {
+    list.push(...Object.keys(state.data.userWatchedLists));
+  }
+  return normalizeUserList(list);
 }
 
 // 分析対象として現在有効なユーザーリストを取得
@@ -309,27 +333,31 @@ function getEffectiveUsers() {
   return effective.length > 0 ? effective : all;
 }
 
-// 特定ユーザーが有効かチェック
+// 特定ユーザーが有効かチェック（大文字小文字不問）
 function isUserEnabled(username) {
   const effective = getEffectiveUsers();
-  return effective.includes(username);
+  const lower = (username || '').toLowerCase();
+  return effective.some(u => u.toLowerCase() === lower);
 }
 
-// 特定ユーザーの有効/無効を切り替え
+// 特定ユーザーの有効/無効を切り替え（大文字小文字不問）
 function toggleUserEnabled(username, isEnabled) {
   const all = getAllRegisteredUsers();
+  const lower = (username || '').toLowerCase();
   let current = getEffectiveUsers();
   if (isEnabled) {
-    if (!current.includes(username)) {
-      current.push(username);
+    if (!current.some(u => u.toLowerCase() === lower)) {
+      const canonical = all.find(u => u.toLowerCase() === lower) || username;
+      current.push(canonical);
     }
   } else {
-    current = current.filter(u => u !== username);
+    current = current.filter(u => u.toLowerCase() !== lower);
     if (current.length === 0) {
       alert('少なくとも1人のユーザーを対象にする必要があります');
       return false;
     }
   }
+  current = normalizeUserList(current);
   state.enabledUsers = current;
   saveEnabledUsersToStorage(current);
   return true;
@@ -733,25 +761,32 @@ async function executeAddUser(username, onProgress) {
     }
   }
 
+  const cleanUser = username.trim().replace(/^@/, '');
+  const lowerUser = cleanUser.toLowerCase();
+
   if (!Array.isArray(state.data.users)) state.data.users = [];
-  if (!state.data.users.some(u => u.toLowerCase() === username.toLowerCase())) {
-    state.data.users.push(username);
+  const existingIdx = state.data.users.findIndex(u => u.toLowerCase() === lowerUser);
+  if (existingIdx !== -1) {
+    state.data.users[existingIdx] = cleanUser;
+  } else {
+    state.data.users.push(cleanUser);
   }
+  state.data.users = normalizeUserList(state.data.users);
 
   // ★重要: 全登録ユーザーリストを更新してローカルストレージに永続保存
-  const allUsers = getAllRegisteredUsers();
-  if (!allUsers.some(u => u.toLowerCase() === username.toLowerCase())) {
-    allUsers.push(username);
-  }
+  const allUsers = normalizeUserList([...getAllRegisteredUsers(), cleanUser]);
   saveUsersToStorage(allUsers);
 
-  // ★重要: 新規追加されたユーザーは必ず「分析対象中（有効）」として追加・保存
+  // ★重要: 新規追加・更新されたユーザーは必ず「分析対象中（有効）」として追加・保存
   let enabled = getEffectiveUsers();
-  if (!enabled.some(u => u.toLowerCase() === username.toLowerCase())) {
-    enabled.push(username);
+  const enabledIdx = enabled.findIndex(u => u.toLowerCase() === lowerUser);
+  if (enabledIdx !== -1) {
+    enabled[enabledIdx] = cleanUser;
+  } else {
+    enabled.push(cleanUser);
   }
-  state.enabledUsers = enabled;
-  saveEnabledUsersToStorage(enabled);
+  state.enabledUsers = normalizeUserList(enabled);
+  saveEnabledUsersToStorage(state.enabledUsers);
 
   if (!state.selectedVennUsers.includes(username) && state.selectedVennUsers.length < 3) {
     state.selectedVennUsers.push(username);
@@ -842,28 +877,32 @@ async function refreshAllUsers(options = {}) {
   const metaUpdated = document.getElementById('meta-updated');
   const origBtnHtml = btnReload ? btnReload.innerHTML : '';
 
-  const users = state.data?.users || loadUsersFromStorage() || [];
+  const allUsers = getAllRegisteredUsers();
+  const effectiveUsers = getEffectiveUsers();
+  const users = effectiveUsers.length > 0 ? effectiveUsers : allUsers;
   if (users.length === 0) {
     return loadData(true);
   }
 
   try {
-    loading.style.display = 'flex';
+    if (!fromHeader && loading) loading.style.display = 'flex';
     if (btnReload) {
       btnReload.disabled = true;
-      btnReload.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> <span>同期中...</span>';
+      // ボタンの文字幅を変えずにアイコンのみスピン（ヘッダーUIのガタつきを完全防止）
+      btnReload.innerHTML = '<i class="fa-solid fa-rotate-right fa-spin"></i> <span>更新</span>';
     }
 
     for (let i = 0; i < users.length; i++) {
       const u = users[i];
-      const msg = `@${u} の最新データを更新中 (${i + 1}/${users.length})...`;
-      if (statusText) statusText.textContent = msg;
-      if (metaUpdated) metaUpdated.textContent = msg;
+      if (statusText && !fromHeader) {
+        statusText.textContent = `@${u} の最新データを更新中 (${i + 1}/${users.length})...`;
+      }
 
       try {
         const result = await fetchUserWatched(u);
         if (!state.data.userWatchedLists) state.data.userWatchedLists = {};
         state.data.userWatchedLists[u] = result.animes || [];
+        await saveUserWatchedToIndexedDB(u, result.animes || []);
 
         // 1人更新されるごとに即座に画面全体をリアルタイム再集計！
         recalculateClientReport();
@@ -879,7 +918,7 @@ async function refreshAllUsers(options = {}) {
   } catch (err) {
     alert(`エラー: ${err.message}`);
   } finally {
-    loading.style.display = 'none';
+    if (loading) loading.style.display = 'none';
     if (btnReload) {
       btnReload.disabled = false;
       btnReload.innerHTML = origBtnHtml;
@@ -972,8 +1011,24 @@ function renderModalUserList() {
       recalculateClientReport();
     });
 
-    item.querySelector('.btn-refresh-user').addEventListener('click', () => {
-      taskQueue.enqueue('add', u);
+    const refreshBtn = item.querySelector('.btn-refresh-user');
+    refreshBtn.addEventListener('click', async () => {
+      if (refreshBtn.disabled) return;
+      const origHtml = refreshBtn.innerHTML;
+      try {
+        refreshBtn.disabled = true;
+        refreshBtn.innerHTML = '<i class="fa-solid fa-rotate fa-spin"></i> 更新中...';
+        await executeAddUser(u);
+        refreshBtn.innerHTML = '<i class="fa-solid fa-check" style="color:#10b981;"></i> 完了';
+        setTimeout(() => {
+          refreshBtn.disabled = false;
+          refreshBtn.innerHTML = origHtml;
+        }, 1200);
+      } catch (err) {
+        alert(`@${u} の最新データ取得に失敗しました: ${err.message}`);
+        refreshBtn.disabled = false;
+        refreshBtn.innerHTML = origHtml;
+      }
     });
 
     item.querySelector('.btn-delete-user').addEventListener('click', () => {
@@ -983,10 +1038,10 @@ function renderModalUserList() {
     list.appendChild(item);
   });
 
-  // 2. キュー内の追加タスクカード（取得中・待機中・エラー）
+  // 2. キュー内の追加タスクカード（新規追加中のユーザーのみ表示、既存ユーザー更新カードの乱立・UIガタつきを完全防止）
   queuedAddTasks.forEach(task => {
     // すでに登録済みユーザーに含まれている場合は表示不要
-    if (allUsers.some(u => u.toLowerCase() === task.username.toLowerCase()) && task.status === 'done') return;
+    if (allUsers.some(u => u.toLowerCase() === task.username.toLowerCase())) return;
 
     const item = document.createElement('div');
     item.className = 'modal-user-item';
@@ -1048,13 +1103,15 @@ async function loadData(force = false) {
     // 2. 手元IndexedDBにユーザーの視聴データ（user_watches）が保存されている場合
     if (localWatches && Object.keys(localWatches).length > 0 && !force) {
       const localUserKeys = Object.keys(localWatches);
-      // savedUsers と IndexedDB 内の全ユーザーを統合して、除外されたユーザーも含めて全登録ユーザーを100%復元
-      const registeredUserSet = new Set();
-      if (savedUsers && Array.isArray(savedUsers)) {
-        savedUsers.forEach(u => registeredUserSet.add(u));
-      }
-      localUserKeys.forEach(u => registeredUserSet.add(u));
-      const allRegisteredUsers = Array.from(registeredUserSet).filter(u => localWatches[u.toLowerCase()] || localWatches[u]);
+      // savedUsers の表記を最優先にしつつ、localWatches のキーでまだ登録されていないものだけを追加
+      const candidateList = [...(savedUsers || [])];
+      localUserKeys.forEach(k => {
+        if (!candidateList.some(u => u.toLowerCase() === k.toLowerCase())) {
+          candidateList.push(k);
+        }
+      });
+      // 大文字小文字の重複を完全に排除し、ユーザー本来の表記（キャピタライゼーション）に名寄せ
+      const allRegisteredUsers = normalizeUserList(candidateList).filter(u => localWatches[u.toLowerCase()] || localWatches[u]);
 
       if (allRegisteredUsers.length > 0) {
         const userWatchedLists = {};
