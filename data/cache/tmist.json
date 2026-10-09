@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-08T23:37:20.082Z",
-  "count": 516,
+  "fetchedAt": "2026-10-09T23:00:05.178Z",
+  "count": 518,
   "animes": [
     {
       "id": "17088",
@@ -37,6 +37,13 @@
       "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15724"
+    },
+    {
+      "id": "16677",
+      "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
+      "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16677"
     },
     {
       "id": "17057",
@@ -100,6 +107,13 @@
       "image": "https://image.annict.com/yiTCjsBFy-bi95YGgsqiXw-Bt6PHZOQ4B1rErvw1SfE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10583/image/master-14a8b84fbf88a345a7518cdd47d0d29e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/13779"
+    },
+    {
+      "id": "16726",
+      "title": "我々は宇宙人",
+      "image": "https://image.annict.com/IECxxqJa6K7_dyg2tGHYpxTldGfL8R1ZpXdUKafcHJE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13381/image/master-e35379fd18ef0ebc038a6e1f9b21f4dd.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16726"
     },
     {
       "id": "17190",
@@ -606,18 +620,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16654",
-      "title": "藤本タツキ 17-26 Part1",
-      "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16654"
-    },
-    {
       "id": "16655",
       "title": "藤本タツキ 17-26 Part2",
       "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16655"
+    },
+    {
+      "id": "16654",
+      "title": "藤本タツキ 17-26 Part1",
+      "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16654"
     },
     {
       "id": "13048",

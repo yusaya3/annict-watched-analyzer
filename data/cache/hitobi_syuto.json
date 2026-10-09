@@ -1,6 +1,6 @@
 {
   "username": "hitobi_syuto",
-  "fetchedAt": "2026-10-08T23:37:17.627Z",
+  "fetchedAt": "2026-10-09T23:00:00.847Z",
   "count": 963,
   "animes": [
     {
@@ -81,18 +81,18 @@
       "url": "https://annict.com/works/16714"
     },
     {
-      "id": "16571",
-      "title": "ぐらんぶる Season 3",
-      "image": "https://image.annict.com/o_6QGjj1sNFec2e_T_ViXlm2uWUI9QkqpRXcYMFKzfM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13237/image/master-b1ac0954fec2ddaa0fdc8a2bae8960ed.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16571"
-    },
-    {
       "id": "16677",
       "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
       "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16677"
+    },
+    {
+      "id": "16571",
+      "title": "ぐらんぶる Season 3",
+      "image": "https://image.annict.com/o_6QGjj1sNFec2e_T_ViXlm2uWUI9QkqpRXcYMFKzfM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13237/image/master-b1ac0954fec2ddaa0fdc8a2bae8960ed.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16571"
     },
     {
       "id": "7915",

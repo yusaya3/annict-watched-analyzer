@@ -154783,5 +154783,20 @@
         "rank": 60
       }
     ]
+  },
+  "我々は宇宙人": {
+    "genres": [
+      "Drama"
+    ],
+    "tags": [
+      {
+        "name": "Coming of Age",
+        "rank": 60
+      },
+      {
+        "name": "Rotoscoping",
+        "rank": 20
+      }
+    ]
   }
 }
