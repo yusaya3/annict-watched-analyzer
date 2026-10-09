@@ -884,18 +884,24 @@ async function refreshAllUsers(options = {}) {
     return loadData(true);
   }
 
+  state.isRefreshingAll = true; // 更新中フラグON（途中のrenderAllComponentsで日時上書きされるのを防止）
+
   try {
     if (!fromHeader && loading) loading.style.display = 'flex';
     if (btnReload) {
       btnReload.disabled = true;
-      // ボタンの文字幅を変えずにアイコンのみスピン（ヘッダーUIのガタつきを完全防止）
       btnReload.innerHTML = '<i class="fa-solid fa-rotate-right fa-spin"></i> <span>更新</span>';
     }
 
     for (let i = 0; i < users.length; i++) {
       const u = users[i];
+      const progressMsg = `@${u} の最新データを更新中 (${i + 1}/${users.length})...`;
+
+      if (metaUpdated) {
+        metaUpdated.textContent = progressMsg;
+      }
       if (statusText && !fromHeader) {
-        statusText.textContent = `@${u} の最新データを更新中 (${i + 1}/${users.length})...`;
+        statusText.textContent = progressMsg;
       }
 
       try {
@@ -918,11 +924,13 @@ async function refreshAllUsers(options = {}) {
   } catch (err) {
     alert(`エラー: ${err.message}`);
   } finally {
+    state.isRefreshingAll = false; // 更新中フラグOFF
     if (loading) loading.style.display = 'none';
     if (btnReload) {
       btnReload.disabled = false;
       btnReload.innerHTML = origBtnHtml;
     }
+    // 更新終了後に更新時刻に戻す
     if (state.data && metaUpdated) {
       const date = new Date(state.data.generatedAt);
       metaUpdated.textContent = `更新: ${date.toLocaleString('ja-JP')}`;
@@ -1212,8 +1220,13 @@ async function loadData(force = false) {
 function renderAllComponents() {
   if (!state.data) return;
 
-  const date = new Date(state.data.generatedAt);
-  document.getElementById('meta-updated').textContent = `更新: ${date.toLocaleString('ja-JP')}`;
+  if (!state.isRefreshingAll) {
+    const date = new Date(state.data.generatedAt);
+    const metaUpdated = document.getElementById('meta-updated');
+    if (metaUpdated) {
+      metaUpdated.textContent = `更新: ${date.toLocaleString('ja-JP')}`;
+    }
+  }
 
   if (!state.activeExclusiveUser || !state.data.users.includes(state.activeExclusiveUser)) {
     state.activeExclusiveUser = state.data.users[0] || null;
