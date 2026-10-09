@@ -980,16 +980,39 @@ body {
   font-size: 1rem;
 }
 
-/* 作品カードグリッド (横幅を活かした複数列並び) */
+/* 作品カードグリッド (グループ分析・インサイト同様の横7作品並びポスターグリッド) */
+#detail-anime-list.anime-cards-grid,
 .anime-list-scroll {
   flex: 1;
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.85rem;
-  max-height: 650px;
+  max-height: 620px;
   padding-right: 0.4rem;
   align-content: start;
+}
+
+@media (max-width: 1240px) {
+  #detail-anime-list.anime-cards-grid,
+  .anime-list-scroll {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  #detail-anime-list.anime-cards-grid,
+  .anime-list-scroll {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  #detail-anime-list.anime-cards-grid,
+  .anime-list-scroll {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
 }
 
 .empty-list-placeholder {

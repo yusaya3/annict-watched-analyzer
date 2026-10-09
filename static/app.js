@@ -1362,7 +1362,7 @@ function updateDetailPanel(title, animes) {
   renderAnimeListInPanel(animes);
 }
 
-// 詳細パネル内アニメカード描画 (カードグリッド & 拡大モーダル連動)
+// 詳細パネル内アニメカード描画 (グループ分析・インサイト同様の横7作品並びポスターグリッド)
 function renderAnimeListInPanel(animes) {
   const container = document.getElementById('detail-anime-list');
   if (!container) return;
@@ -1380,35 +1380,42 @@ function renderAnimeListInPanel(animes) {
 
   animes.forEach(anime => {
     const a = document.createElement('a');
-    a.className = 'anime-item-card';
+    a.className = 'anime-grid-card';
     a.href = anime.url || (anime.id ? `https://annict.com/works/${anime.id}` : '#');
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
 
+    const safeTitle = escapeHtml(anime.title || '無題');
     const thumbHtml = anime.image
-      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="anime-thumb" loading="lazy" decoding="async" title="クリックで画像を拡大" />`
-      : `<div class="anime-no-thumb"><i class="fa-solid fa-film"></i></div>`;
+      ? `<img src="${anime.image}" alt="${safeTitle}" class="grid-card-thumb" loading="lazy" decoding="async" title="クリックで画像を拡大" />`
+      : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
+
+    const seasonHtml = anime.season
+      ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(anime.season)}</span>`
+      : `<span class="text-muted small">シーズン未設定</span>`;
 
     a.innerHTML = `
       ${thumbHtml}
-      <div class="anime-info">
-        <div class="anime-title" title="${escapeHtml(anime.title)}">${escapeHtml(anime.title)}</div>
-        <div class="anime-season">
-          ${anime.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(anime.season)}</span>` : '<span class="text-muted">放送期情報なし</span>'}
+      <div class="grid-card-body">
+        <div class="grid-card-title" title="${safeTitle}">${safeTitle}</div>
+        <div class="grid-card-meta">
+          ${seasonHtml}
         </div>
       </div>
     `;
 
     // サムネイル画像クリックで画像拡大モーダルを開く
-    const thumbImg = a.querySelector('.anime-thumb');
-    if (thumbImg) {
-      thumbImg.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (typeof window.openImageModal === 'function') {
-          window.openImageModal(anime.title, anime.image, anime.id);
-        }
-      });
+    if (anime.image) {
+      const thumbImg = a.querySelector('.grid-card-thumb');
+      if (thumbImg) {
+        thumbImg.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (typeof openImageModal === 'function') {
+            openImageModal(anime.title, anime.image, anime.id);
+          }
+        });
+      }
     }
 
     container.appendChild(a);
