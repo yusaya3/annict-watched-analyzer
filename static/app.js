@@ -3,6 +3,7 @@
 // 状態管理
 const state = {
   data: null,
+  enabledUsers: null, // 分析対象として有効なユーザー配列（一時除外対応）
   selectedVennUsers: [],
   currentPanelAnimes: [],
   activeExclusiveUser: null,
@@ -155,6 +156,12 @@ function initTabs() {
             window.initEpisodeSimilarityTab();
           }
         }
+
+        if (targetId === 'tab-story-similarity') {
+          if (typeof window.initStorySimilarityTab === 'function') {
+            window.initStorySimilarityTab();
+          }
+        }
       });
     });
   });
@@ -240,7 +247,6 @@ function saveUsersToStorage(users) {
     } catch (e) {}
   }
 }
-
 function loadUsersFromStorage() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY_USERS);
@@ -249,6 +255,84 @@ function loadUsersFromStorage() {
     if (Array.isArray(parsed) && parsed.length > 0) return parsed;
   } catch (e) {}
   return null;
+}
+
+const STORAGE_KEY_ENABLED_USERS = 'annict_enabled_users_v1';
+
+function saveEnabledUsersToStorage(users) {
+  if (Array.isArray(users)) {
+    try {
+      localStorage.setItem(STORAGE_KEY_ENABLED_USERS, JSON.stringify(users));
+    } catch (e) {}
+  }
+}
+
+function loadEnabledUsersFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_ENABLED_USERS);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) return parsed;
+  } catch (e) {}
+  return null;
+}
+
+// 登録されている全ユーザーリストを取得
+function getAllRegisteredUsers() {
+  const usersSet = new Set();
+  if (state.data && Array.isArray(state.data.users)) {
+    state.data.users.forEach(u => usersSet.add(u));
+  }
+  if (state.data && state.data.userWatchedLists) {
+    Object.keys(state.data.userWatchedLists).forEach(u => usersSet.add(u));
+  }
+  const saved = loadUsersFromStorage();
+  if (saved && Array.isArray(saved)) {
+    saved.forEach(u => usersSet.add(u));
+  }
+  return Array.from(usersSet);
+}
+
+// 分析対象として現在有効なユーザーリストを取得
+function getEffectiveUsers() {
+  const all = getAllRegisteredUsers();
+  if (!state.enabledUsers) {
+    const saved = loadEnabledUsersFromStorage();
+    if (saved && Array.isArray(saved) && saved.length > 0) {
+      state.enabledUsers = saved.filter(u => all.includes(u));
+    } else {
+      state.enabledUsers = [...all];
+    }
+  }
+  // 全ユーザーの中で有効なものを抽出
+  const effective = state.enabledUsers.filter(u => all.includes(u));
+  return effective.length > 0 ? effective : all;
+}
+
+// 特定ユーザーが有効かチェック
+function isUserEnabled(username) {
+  const effective = getEffectiveUsers();
+  return effective.includes(username);
+}
+
+// 特定ユーザーの有効/無効を切り替え
+function toggleUserEnabled(username, isEnabled) {
+  const all = getAllRegisteredUsers();
+  let current = getEffectiveUsers();
+  if (isEnabled) {
+    if (!current.includes(username)) {
+      current.push(username);
+    }
+  } else {
+    current = current.filter(u => u !== username);
+    if (current.length === 0) {
+      alert('少なくとも1人のユーザーを対象にする必要があります');
+      return false;
+    }
+  }
+  state.enabledUsers = current;
+  saveEnabledUsersToStorage(current);
+  return true;
 }
 
 // =========================================================================
@@ -529,11 +613,32 @@ const taskQueue = {
 // ブラウザ内で0.05秒で全集計（ベン図、シンクロ率、インサイト、カロリー、年代、ジャンル）を実行し即時再描画
 function recalculateClientReport() {
   if (!window.ClientAnalyzer || !state.data || !state.data.userWatchedLists) return;
-  const analyzer = new window.ClientAnalyzer(state.data.userWatchedLists);
+  const effectiveUsers = getEffectiveUsers();
+  const targetWatchedLists = {};
+  effectiveUsers.forEach(u => {
+    targetWatchedLists[u] = state.data.userWatchedLists[u] || [];
+  });
+
+  const analyzer = new window.ClientAnalyzer(targetWatchedLists);
   const newReport = analyzer.buildFullReport(state.data.labs, state.genreMap);
+
+  // 全ユーザーの視聴生データは手元に保持（一時除外されたユーザーのデータもIndexedDB/stateに残す）
+  newReport.userWatchedLists = state.data.userWatchedLists;
   state.data = newReport;
-  saveUsersToStorage(newReport.users);
+
+  saveUsersToStorage(effectiveUsers);
   saveReportToIndexedDB(newReport);
+
+  // ベン図の選択ユーザーも有効ユーザーで整合性を取る
+  if (state.selectedVennUsers.length === 0 && effectiveUsers.length > 0) {
+    state.selectedVennUsers = effectiveUsers.slice(0, Math.min(3, effectiveUsers.length));
+  } else {
+    state.selectedVennUsers = state.selectedVennUsers.filter(u => effectiveUsers.includes(u));
+    if (state.selectedVennUsers.length === 0 && effectiveUsers.length > 0) {
+      state.selectedVennUsers = [effectiveUsers[0]];
+    }
+  }
+
   renderAllComponents();
   renderModalUserList();
 }
@@ -748,34 +853,64 @@ async function refreshAllUsers(options = {}) {
   }
 }
 
-// モーダル内のユーザーリスト描画（待機中・取得中タスクも即座に表示）
+// モーダル内のユーザーリスト描画（対象選択トグル付き・待機中タスクも即座に表示）
 function renderModalUserList() {
   const list = document.getElementById('modal-user-list');
   if (!list) return;
   list.innerHTML = '';
 
-  const users = state.data?.users || [];
+  const allUsers = getAllRegisteredUsers();
   const queuedAddTasks = taskQueue.tasks.filter(t => t.type === 'add');
 
-  if (users.length === 0 && queuedAddTasks.length === 0) {
+  if (allUsers.length === 0 && queuedAddTasks.length === 0) {
     list.innerHTML = '<p class="text-muted">ユーザーが登録されていません</p>';
     return;
   }
 
-  // 1. 登録済みユーザーのカード
-  users.forEach(u => {
-    const count = state.data.userWatchedLists?.[u]?.length || 0;
+  // 全選択・全解除ボタンのイベントリスナー（初回バインド）
+  const btnSelectAll = document.getElementById('btn-modal-select-all');
+  const btnDeselectAll = document.getElementById('btn-modal-deselect-all');
+  if (btnSelectAll && !btnSelectAll.dataset.bound) {
+    btnSelectAll.dataset.bound = 'true';
+    btnSelectAll.addEventListener('click', () => {
+      const all = getAllRegisteredUsers();
+      state.enabledUsers = [...all];
+      saveEnabledUsersToStorage(state.enabledUsers);
+      recalculateClientReport();
+    });
+  }
+  if (btnDeselectAll && !btnDeselectAll.dataset.bound) {
+    btnDeselectAll.dataset.bound = 'true';
+    btnDeselectAll.addEventListener('click', () => {
+      const all = getAllRegisteredUsers();
+      if (all.length > 0) {
+        // 最低1人は残す（先頭ユーザー）
+        state.enabledUsers = [all[0]];
+        saveEnabledUsersToStorage(state.enabledUsers);
+        recalculateClientReport();
+      }
+    });
+  }
+
+  // 1. 登録済みユーザーのカード（対象チェックボックス付き）
+  allUsers.forEach(u => {
+    const count = state.data?.userWatchedLists?.[u]?.length || 0;
     const isDeleting = taskQueue.tasks.some(t => t.type === 'delete' && t.username.toLowerCase() === u.toLowerCase());
+    const isEnabled = isUserEnabled(u);
 
     const item = document.createElement('div');
-    item.className = 'modal-user-item';
+    item.className = `modal-user-item ${isEnabled ? '' : 'disabled-user'}`;
     if (isDeleting) {
       item.style.opacity = '0.5';
     }
 
     item.innerHTML = `
-      <div class="modal-user-name">
-        <i class="fa-solid fa-user"></i> @${escapeHtml(u)}
+      <div class="modal-user-left">
+        <input type="checkbox" class="user-toggle-checkbox" id="user-toggle-${escapeHtml(u)}" data-user="${escapeHtml(u)}" ${isEnabled ? 'checked' : ''} title="分析対象にする/外す" />
+        <label for="user-toggle-${escapeHtml(u)}" class="modal-user-name" style="cursor:pointer;margin:0;">
+          <i class="fa-solid fa-user"></i> @${escapeHtml(u)}
+        </label>
+        <span class="${isEnabled ? 'badge-status-on' : 'badge-status-off'}">${isEnabled ? '対象中' : '一時除外'}</span>
       </div>
       <div class="modal-user-meta">
         <span class="badge">${count}&nbsp;作品</span>
@@ -787,6 +922,17 @@ function renderModalUserList() {
         </button>
       </div>
     `;
+
+    // 対象トグル切り替えイベント
+    const checkbox = item.querySelector('.user-toggle-checkbox');
+    checkbox.addEventListener('change', (e) => {
+      const ok = toggleUserEnabled(u, e.target.checked);
+      if (!ok) {
+        e.target.checked = true;
+        return;
+      }
+      recalculateClientReport();
+    });
 
     item.querySelector('.btn-refresh-user').addEventListener('click', () => {
       taskQueue.enqueue('add', u);
@@ -1002,13 +1148,16 @@ function renderAllComponents() {
   }
 }
 
-// ユーザー選択チップの生成 (ベン図用)
+// ユーザー選択チップの生成 (ベン図用: 1〜3人選択)
 function renderUserChips() {
   const container = document.getElementById('venn-user-checkboxes');
+  if (!container) return;
   container.innerHTML = '';
 
-  (state.data.users || []).forEach(username => {
-    const count = state.data.userWatchedLists[username]?.length || 0;
+  const activeUsers = state.data?.users || getEffectiveUsers();
+
+  activeUsers.forEach(username => {
+    const count = state.data?.userWatchedLists?.[username]?.length || 0;
     const chip = document.createElement('div');
     const isSelected = state.selectedVennUsers.includes(username);
 
@@ -1021,6 +1170,11 @@ function renderUserChips() {
     chip.addEventListener('click', () => {
       const idx = state.selectedVennUsers.indexOf(username);
       if (idx >= 0) {
+        // 1人選択中にその人を外そうとした場合は警告（最低1人選択維持）
+        if (state.selectedVennUsers.length <= 1) {
+          alert('ベン図の表示には少なくとも1人のユーザーを選択してください');
+          return;
+        }
         state.selectedVennUsers.splice(idx, 1);
       } else {
         if (state.selectedVennUsers.length >= 3) {
@@ -1037,14 +1191,15 @@ function renderUserChips() {
   });
 }
 
-// ベン図の描画 (Venn.js + D3.js)
+// ベン図の描画 (Venn.js + D3.js: 1人〜3人対応 & 重なり赤枠ハイライト)
 function renderVenn() {
   const chartContainer = document.getElementById('venn-chart');
   const emptyMsg = document.getElementById('venn-empty-msg');
+  if (!chartContainer) return;
   chartContainer.innerHTML = '';
 
-  const users = state.selectedVennUsers;
-  if (!users || users.length < 2) {
+  const users = state.selectedVennUsers || [];
+  if (users.length < 1) {
     chartContainer.style.display = 'none';
     if (emptyMsg) emptyMsg.style.display = 'flex';
 
@@ -1052,11 +1207,11 @@ function renderVenn() {
     const detailTitle = document.getElementById('detail-title');
     const detailBadge = document.getElementById('detail-badge');
     const detailDesc = document.getElementById('detail-desc');
-    const detailList = document.getElementById('detail-list');
+    const detailList = document.getElementById('detail-anime-list');
     if (detailTitle) detailTitle.innerHTML = '<i class="fa-solid fa-list-check"></i> 作品リスト';
     if (detailBadge) detailBadge.textContent = '0 作品';
-    if (detailDesc) detailDesc.textContent = '2人または3人のユーザーを選択すると、共通・固有の作品リストが表示されます。';
-    if (detailList) detailList.innerHTML = '<div class="empty-state" style="padding: 2.5rem 1rem;"><i class="fa-solid fa-users" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.4;"></i><p>ユーザーを選択してください</p></div>';
+    if (detailDesc) detailDesc.textContent = 'ユーザーを選択すると、共通・固有の作品リストが表示されます。';
+    if (detailList) detailList.innerHTML = '<div class="empty-list-placeholder"><i class="fa-solid fa-users"></i><p>ユーザーを選択してください</p></div>';
     return;
   }
 
@@ -1070,10 +1225,10 @@ function renderVenn() {
     return;
   }
 
-  // 画面幅に応じたレスポンシブサイズ
+  // 上下配置に合わせた最適サイズ
   const isMobile = window.innerWidth <= 768;
-  const chartWidth = isMobile ? Math.min(360, Math.max(280, window.innerWidth - 48)) : 550;
-  const chartHeight = isMobile ? Math.round(chartWidth * 0.88) : 480;
+  const chartWidth = isMobile ? Math.min(360, Math.max(280, window.innerWidth - 48)) : Math.min(650, window.innerWidth - 64);
+  const chartHeight = isMobile ? Math.round(chartWidth * 0.88) : 440;
 
   const chart = venn.VennDiagram()
     .width(chartWidth)
@@ -1081,18 +1236,19 @@ function renderVenn() {
 
   const div = d3.select('#venn-chart').datum(sets).call(chart);
 
-  // SVGの完全レスポンシブ化（アスペクト比維持とスケーリング）
+  // SVGの完全レスポンシブ化
   d3.select('#venn-chart svg')
     .attr('viewBox', `0 0 ${chartWidth} ${chartHeight}`)
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .style('width', '100%')
     .style('height', 'auto')
-    .style('max-height', isMobile ? '350px' : '480px');
+    .style('max-height', isMobile ? '340px' : '450px');
 
   const colors = ['#f43f5e', '#38bdf8', '#a855f7'];
 
+  // 全ノード（単一円および交差領域）のスタイル・クリックイベント
   div.selectAll('g')
-    .each(function(d, i) {
+    .each(function(d) {
       const node = d3.select(this);
       const isSingle = d.sets.length === 1;
 
@@ -1103,8 +1259,17 @@ function renderVenn() {
       }
 
       node.on('click', () => {
-        div.selectAll('g').classed('active', false);
+        div.selectAll('g').classed('active', false).classed('active-parent', false);
         node.classed('active', true);
+
+        // 2人または3人の重なり交差領域の場合、構成する親ユーザーの円も視覚的に認識できるように補助クラスを付与
+        if (d.sets && d.sets.length > 1) {
+          div.selectAll('g.venn-circle').each(function(circleD) {
+            if (circleD && circleD.sets && circleD.sets.length === 1 && d.sets.includes(circleD.sets[0])) {
+              d3.select(this).classed('active-parent', true);
+            }
+          });
+        }
 
         const areaLabel = d.sets.map(u => `@${u}`).join(' & ');
         const isSingleUser = d.sets.length === 1;
@@ -1113,17 +1278,31 @@ function renderVenn() {
       });
     });
 
-  const commonSet = sets.find(s => s.sets.length === users.length) || sets[0];
-  if (commonSet) {
-    const areaLabel = commonSet.sets.map(u => `@${u}`).join(' & ');
-    const title = commonSet.sets.length > 1 ? `${areaLabel} の共通視聴作品` : `${areaLabel} の視聴作品`;
-    updateDetailPanel(title, commonSet.animes || []);
+  // 初回表示時: 最も共通度の高い集合（3人共通、2人共通、または1人）を自動選択
+  const defaultSet = sets.find(s => s.sets.length === users.length) || sets[0];
+  if (defaultSet) {
+    div.selectAll('g').each(function(d) {
+      if (d && d.sets && d.sets.length === defaultSet.sets.length && d.sets.every(u => defaultSet.sets.includes(u))) {
+        d3.select(this).classed('active', true);
+        if (d.sets.length > 1) {
+          div.selectAll('g.venn-circle').each(function(circleD) {
+            if (circleD && circleD.sets && circleD.sets.length === 1 && d.sets.includes(circleD.sets[0])) {
+              d3.select(this).classed('active-parent', true);
+            }
+          });
+        }
+      }
+    });
+
+    const areaLabel = defaultSet.sets.map(u => `@${u}`).join(' & ');
+    const title = defaultSet.sets.length > 1 ? `${areaLabel} の共通視聴作品` : `${areaLabel} の視聴作品`;
+    updateDetailPanel(title, defaultSet.animes || []);
   }
 }
 
-// 選択ユーザーに応じた集合リストを計算
+// 選択ユーザーに応じた集合リストを計算（1人〜3人対応）
 function generateSetsForUsers(users) {
-  const userLists = state.data.userWatchedLists;
+  const userLists = state.data?.userWatchedLists || {};
   const userMaps = {};
   users.forEach(u => {
     userMaps[u] = new Map((userLists[u] || []).map(a => [String(a.id), a]));
@@ -1132,7 +1311,7 @@ function generateSetsForUsers(users) {
   const sets = [];
   const n = users.length;
 
-  // 1人
+  // 1人ごとの集合
   users.forEach(u => {
     sets.push({
       sets: [u],
@@ -1142,12 +1321,12 @@ function generateSetsForUsers(users) {
     });
   });
 
-  // 2人
+  // 2人の場合の共通集合
   for (let i = 0; i < n - 1; i++) {
     for (let j = i + 1; j < n; j++) {
       const u1 = users[i];
       const u2 = users[j];
-      const animes = (userLists[u1] || []).filter(a => userMaps[u2].has(String(a.id)));
+      const animes = (userLists[u1] || []).filter(a => userMaps[u2]?.has(String(a.id)));
       sets.push({
         sets: [u1, u2],
         size: animes.length,
@@ -1156,12 +1335,12 @@ function generateSetsForUsers(users) {
     }
   }
 
-  // 3人
+  // 3人の場合の3重共通集合
   if (n === 3) {
     const u1 = users[0];
     const u2 = users[1];
     const u3 = users[2];
-    const animes = (userLists[u1] || []).filter(a => userMaps[u2].has(String(a.id)) && userMaps[u3].has(String(a.id)));
+    const animes = (userLists[u1] || []).filter(a => userMaps[u2]?.has(String(a.id)) && userMaps[u3]?.has(String(a.id)));
     sets.push({
       sets: [u1, u2, u3],
       size: animes.length,
@@ -1183,9 +1362,10 @@ function updateDetailPanel(title, animes) {
   renderAnimeListInPanel(animes);
 }
 
-// 詳細パネル内アニメカード描画
+// 詳細パネル内アニメカード描画 (カードグリッド & 拡大モーダル連動)
 function renderAnimeListInPanel(animes) {
   const container = document.getElementById('detail-anime-list');
+  if (!container) return;
   container.innerHTML = '';
 
   if (!animes || animes.length === 0) {
@@ -1201,24 +1381,36 @@ function renderAnimeListInPanel(animes) {
   animes.forEach(anime => {
     const a = document.createElement('a');
     a.className = 'anime-item-card';
-    a.href = anime.url || `https://annict.com/works/${anime.id}`;
+    a.href = anime.url || (anime.id ? `https://annict.com/works/${anime.id}` : '#');
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
 
     const thumbHtml = anime.image
-      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="anime-thumb" loading="lazy" decoding="async" />`
+      ? `<img src="${anime.image}" alt="${escapeHtml(anime.title)}" class="anime-thumb" loading="lazy" decoding="async" title="クリックで画像を拡大" />`
       : `<div class="anime-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     a.innerHTML = `
       ${thumbHtml}
       <div class="anime-info">
         <div class="anime-title" title="${escapeHtml(anime.title)}">${escapeHtml(anime.title)}</div>
-        <div class="anime-meta">
-          <span><i class="fa-solid fa-hashtag"></i> ID: ${anime.id}</span>
-          ${anime.season ? `<span> • <i class="fa-regular fa-calendar"></i> ${escapeHtml(anime.season)}</span>` : ''}
+        <div class="anime-season">
+          ${anime.season ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(anime.season)}</span>` : '<span class="text-muted">放送期情報なし</span>'}
         </div>
       </div>
     `;
+
+    // サムネイル画像クリックで画像拡大モーダルを開く
+    const thumbImg = a.querySelector('.anime-thumb');
+    if (thumbImg) {
+      thumbImg.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window.openImageModal === 'function') {
+          window.openImageModal(anime.title, anime.image, anime.id);
+        }
+      });
+    }
+
     container.appendChild(a);
   });
 }

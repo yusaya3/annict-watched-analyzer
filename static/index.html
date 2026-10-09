@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style.css?v=2.3" />
   <!-- アプリアイコン (Option 2) -->
   <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -90,6 +90,9 @@
       <button class="tab-btn" data-tab="tab-episode-similarity">
         <i class="fa-solid fa-list-ol"></i> エピソード類似検索
       </button>
+      <button class="tab-btn" data-tab="tab-story-similarity">
+        <i class="fa-solid fa-brain"></i> ストーリー構造類似検索
+      </button>
     </nav>
 
     <!-- Main Content Area -->
@@ -98,13 +101,13 @@
       <section id="tab-venn" class="tab-pane active">
         <div class="pane-controls">
           <div class="user-select-bar">
-            <span class="control-label"><i class="fa-solid fa-users"></i> ベン図で比較するユーザー (最大3人):</span>
+            <span class="control-label"><i class="fa-solid fa-users"></i> ベン図で比較・確認するユーザー (1〜3人):</span>
             <div id="venn-user-checkboxes" class="user-chips">
               <!-- JSで動的生成 -->
             </div>
           </div>
           <div class="control-hints">
-            <small class="text-muted"><i class="fa-solid fa-circle-info"></i> 円や重なり領域をクリックすると、該当するアニメ一覧が表示されます（スマホは下部、PCは右側）</small>
+            <small class="text-muted"><i class="fa-solid fa-circle-info"></i> 円や重なり領域をクリックすると、該当するアニメ一覧が下部に大きく表示されます（1人〜3人対応）</small>
           </div>
         </div>
 
@@ -115,8 +118,8 @@
               <div class="empty-icon">
                 <i class="fa-solid fa-users"></i>
               </div>
-              <p class="empty-title">2人または3人のユーザーを選択してください</p>
-              <p class="empty-desc">上部のチップをクリックしてユーザーを選択すると、共通・固有の視聴作品ベン図が表示されます</p>
+              <p class="empty-title">ユーザーを1人〜3人選択してください</p>
+              <p class="empty-desc">上部のチップをクリックしてユーザーを選択すると、共通・固有の視聴作品ベン図と作品一覧が表示されます</p>
             </div>
           </div>
 
@@ -131,8 +134,8 @@
             </div>
             <div id="detail-anime-list" class="anime-list-scroll">
               <div class="empty-list-placeholder">
-                <i class="fa-solid fa-arrow-left"></i>
-                <p>左のベン図の各サークルまたは交差領域をクリックすると作品が表示されます</p>
+                <i class="fa-solid fa-arrow-up"></i>
+                <p>上のベン図の各サークルまたは交差領域をクリックすると作品が表示されます</p>
               </div>
             </div>
           </aside>
@@ -707,6 +710,11 @@
       <section id="tab-episode-similarity" class="tab-pane">
         <!-- JS (episode-similarity.js) で動的描画 -->
       </section>
+
+      <!-- 11. ストーリー構造類似アニメ検索タブ (LLM構造化要約×デュアルベクトル版) -->
+      <section id="tab-story-similarity" class="tab-pane">
+        <!-- JS (story-similarity.js) で動的描画 -->
+      </section>
     </main>
   </div>
 
@@ -738,7 +746,13 @@
 
         <!-- 登録済みユーザーリスト -->
         <div class="current-users-box">
-          <h4>登録中のユーザー一覧:</h4>
+          <div class="modal-actions-bar">
+            <h4>登録ユーザー一覧（チェックで分析対象を選択）:</h4>
+            <div class="user-select-actions">
+              <button type="button" id="btn-modal-select-all" class="btn btn-xs btn-outline">全選択</button>
+              <button type="button" id="btn-modal-deselect-all" class="btn btn-xs btn-outline">全解除</button>
+            </div>
+          </div>
           <div id="modal-user-list" class="modal-user-list">
             <!-- JSで動的生成 -->
           </div>
@@ -792,12 +806,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/venn.js@0.2.20/build/venn.min.js"></script>
   <script src="./analyzer.js?v=2.1"></script>
-  <script src="./app.js?v=2.1"></script>
+  <script src="./app.js?v=2.3"></script>
   <!-- お試し機能 (Labs) 専用スクリプト (削除時はこの1行を消せばOK) -->
   <script src="./labs/labs.js?v=2.1"></script>
   <script src="./labs/genre-lab.js?v=2.1"></script>
   <script src="./labs/party-lab.js?v=2.2"></script>
   <script src="./labs/similarity-search.js?v=1.0"></script>
   <script src="./labs/episode-similarity.js?v=1.0"></script>
+  <script src="./labs/story-similarity.js?v=1.0"></script>
 </body>
 </html>
