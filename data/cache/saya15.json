@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-09T22:59:53.732Z",
-  "count": 788,
+  "fetchedAt": "2026-10-10T11:53:20.253Z",
+  "count": 789,
   "animes": [
     {
       "id": "13582",
@@ -1572,6 +1572,13 @@
       "url": "https://annict.com/works/9204"
     },
     {
+      "id": "9606",
+      "title": "冰剣の魔術師が世界を統べる",
+      "image": "https://image.annict.com/bIIGvoSrVP0wsoK0bHrowZpnT92Rif9ck7ZzvLRAPNo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6810/image/master-7e2fb73a69a52db1295211316d7e43f3.jpg@webp",
+      "season": "2023年冬",
+      "url": "https://annict.com/works/9606"
+    },
+    {
       "id": "9077",
       "title": "文豪ストレイドッグス (第4期)",
       "image": "https://image.annict.com/0fxxFA3T6eLoXlrsR5h9dTpcOTK9whep6BQ1Hm6dEGc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6012/image/master-de71e28f1b3997a3d502ad24f7dbc612.jpg@webp",
@@ -2174,18 +2181,18 @@
       "url": "https://annict.com/works/6022"
     },
     {
-      "id": "7191",
-      "title": "IDOLY PRIDE",
-      "image": "https://image.annict.com/dj918AxIBofJwFYNrba4HyscWfv-6MKDuOpdibakM3g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4233/image/master-fa3d53d30593cb26613453d767c2f37d.jpg@webp",
-      "season": "2021年冬",
-      "url": "https://annict.com/works/7191"
-    },
-    {
       "id": "7681",
       "title": "ガールズ&パンツァー 最終章 第3話",
       "image": "https://image.annict.com/sfhYY1b2b_WtAye2KG0kLP8a6zJ7TAqAhgjSH_pXDzY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4798/image/master-7630b1fd1e7d35158fc172c8b779395c.jpg@webp",
       "season": "2021年冬",
       "url": "https://annict.com/works/7681"
+    },
+    {
+      "id": "7191",
+      "title": "IDOLY PRIDE",
+      "image": "https://image.annict.com/dj918AxIBofJwFYNrba4HyscWfv-6MKDuOpdibakM3g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4233/image/master-fa3d53d30593cb26613453d767c2f37d.jpg@webp",
+      "season": "2021年冬",
+      "url": "https://annict.com/works/7191"
     },
     {
       "id": "7680",
@@ -2713,18 +2720,18 @@
       "url": "https://annict.com/works/6390"
     },
     {
-      "id": "6182",
-      "title": "文豪ストレイドッグス (第3期)",
-      "image": "https://image.annict.com/csKgZRmy4kR0lXOcYdT9dcdZP3uSPCXAi3YgnSeO3Rc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3261/image/master-562c05595e39179bc0dabac082ec0b86.jpg@webp",
-      "season": "2019年春",
-      "url": "https://annict.com/works/6182"
-    },
-    {
       "id": "6185",
       "title": "ガールズ&パンツァー 最終章 第2話",
       "image": "https://image.annict.com/m6HFnWSxn2-INPZT9T-413Ko-q_0v-3uGrPIRbjUFNg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3009/image/master-816084e810fd4231cdea4b4f7949c8d0.jpg@webp",
       "season": "2019年春",
       "url": "https://annict.com/works/6185"
+    },
+    {
+      "id": "6182",
+      "title": "文豪ストレイドッグス (第3期)",
+      "image": "https://image.annict.com/csKgZRmy4kR0lXOcYdT9dcdZP3uSPCXAi3YgnSeO3Rc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3261/image/master-562c05595e39179bc0dabac082ec0b86.jpg@webp",
+      "season": "2019年春",
+      "url": "https://annict.com/works/6182"
     },
     {
       "id": "6284",

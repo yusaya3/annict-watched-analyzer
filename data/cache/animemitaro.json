@@ -1,8 +1,15 @@
 {
   "username": "animemitaro",
-  "fetchedAt": "2026-10-09T22:59:56.874Z",
-  "count": 1117,
+  "fetchedAt": "2026-10-10T11:55:39.106Z",
+  "count": 1124,
   "animes": [
+    {
+      "id": "13582",
+      "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
+      "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/13582"
+    },
     {
       "id": "8632",
       "title": "幼女戦記Ⅱ",
@@ -121,6 +128,13 @@
       "image": "https://image.annict.com/1XzVoit3HhuSBy94KNJ8p3KNvvGYU6f-VIC11VlAoEk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5006/image/master-12a9006b3f219d72e3048a9f722fb49e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/7915"
+    },
+    {
+      "id": "17057",
+      "title": "ワールド イズ ダンシング",
+      "image": "https://image.annict.com/Gnm-a0VUcPM80wMiYD7uwIVq9TuoKF88WPwEjTi4118/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13749/image/master-e7fbce99be950b53cb9f4e1313ea5bf1.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17057"
     },
     {
       "id": "16910",
@@ -354,6 +368,13 @@
       "url": "https://annict.com/works/17043"
     },
     {
+      "id": "17371",
+      "title": "身代わり令嬢を救ったのは冷酷無慈悲な氷の王子の愛でした",
+      "image": "https://image.annict.com/eCMULtRX6-b9rQJH_FqTnymkRb8f82_v9Aaemeqt1-Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14096/image/master-101351f58bb6aac72cd4c8cbdd34f6ac.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17371"
+    },
+    {
       "id": "16792",
       "title": "鎧真伝サムライトルーパー 第2クール",
       "image": "https://image.annict.com/mppxN3aIid_gf7h_OQnyfC_GE7hmguhR5aEWUO0fwnU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14329/image/master-740ff57eb8677cf6b724c40668897c7d.jpg@webp",
@@ -373,6 +394,13 @@
       "image": "https://image.annict.com/wlYmLYva-EntSRj-R8BG-eUUA3Hd4jSWtIh5LjqlSUQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14557/image/master-ce35d226c69186ff0df9f43350b0dbd3.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17820"
+    },
+    {
+      "id": "17196",
+      "title": "プラノサウルス ガチコセイブツ部",
+      "image": "https://image.annict.com/jztmm9We22e37nY2H7PdUkXlWgp5CZbk0kigbxKCHuo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14302/image/master-74ba03b0f1f5700dcf5815f5e561822e.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17196"
     },
     {
       "id": "15787",
@@ -401,6 +429,13 @@
       "image": "https://image.annict.com/xKyYjLz6178gzKXrGM0F4Swhvl7GfrT4JnTkQDlvxFY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6426/image/master-074d17a12347144b37abcafa65475543.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/9521"
+    },
+    {
+      "id": "14066",
+      "title": "転生したらスライムだった件 第4期",
+      "image": "https://image.annict.com/rydEKApTSiBxnvARwNvoJSUJkQ75RGz5aM8fPG9zn9U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10881/image/master-23a4556020234e7e3d5514d96bab1b51.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/14066"
     },
     {
       "id": "15658",
@@ -921,18 +956,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "17148",
-      "title": "超かぐや姫！(劇場版)",
-      "image": "https://image.annict.com/svbUWwbvrsEA2fKBmomI5zMoKARDCqlLVIYzYkN5L4M/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13835/image/master-c9d02306d1fa5c5f27822201e96c8a09.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/17148"
-    },
-    {
       "id": "12836",
       "title": "魔都精兵のスレイブ2",
       "image": "https://image.annict.com/TIDeky-oHHh_6MORBSi7yv7xet9uzjCt7fP02_w7smY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9445/image/master-793847b156111811765c97827e1100ed.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/12836"
+    },
+    {
+      "id": "17148",
+      "title": "超かぐや姫！(劇場版)",
+      "image": "https://image.annict.com/svbUWwbvrsEA2fKBmomI5zMoKARDCqlLVIYzYkN5L4M/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13835/image/master-c9d02306d1fa5c5f27822201e96c8a09.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/17148"
     },
     {
       "id": "15912",
@@ -3651,18 +3686,18 @@
       "url": "https://annict.com/works/10923"
     },
     {
-      "id": "10580",
-      "title": "暴食のベルセルク",
-      "image": "https://image.annict.com/4LlPldSEfzpXhMcdwwGDO1e4dJ__BxBSZJqIW5-UjTw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7116/image/master-259ea7cdd5dd17d258ab218d7b5591de.jpg@webp",
-      "season": "2023年秋",
-      "url": "https://annict.com/works/10580"
-    },
-    {
       "id": "10629",
       "title": "帰還者の魔法は特別です",
       "image": "https://image.annict.com/w8LhOaRJvJ4OGTcqq1l0g0dmO_pLuXiFV8KpaotsS1I/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7160/image/master-cf96524deed3734dd3392070592806b4.jpg@webp",
       "season": "2023年秋",
       "url": "https://annict.com/works/10629"
+    },
+    {
+      "id": "10580",
+      "title": "暴食のベルセルク",
+      "image": "https://image.annict.com/4LlPldSEfzpXhMcdwwGDO1e4dJ__BxBSZJqIW5-UjTw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7116/image/master-259ea7cdd5dd17d258ab218d7b5591de.jpg@webp",
+      "season": "2023年秋",
+      "url": "https://annict.com/works/10580"
     },
     {
       "id": "10462",
@@ -3889,18 +3924,18 @@
       "url": "https://annict.com/works/10196"
     },
     {
-      "id": "9201",
-      "title": "七つの魔剣が支配する",
-      "image": "https://image.annict.com/wmCoXo3AeKoYyde1jiLm721NSNmyZHxCTzEzcoPCcZc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6141/image/master-7f514018dc9d0b8d47238bedd11415ad.jpg@webp",
-      "season": "2023年夏",
-      "url": "https://annict.com/works/9201"
-    },
-    {
       "id": "9702",
       "title": "白聖女と黒牧師",
       "image": "https://image.annict.com/cmNSzvQQHxXdK889thZXioIgji8b9AEXgX21rwDvtLE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6606/image/master-04f0d0da80d38df9649b8e757926212b.jpg@webp",
       "season": "2023年夏",
       "url": "https://annict.com/works/9702"
+    },
+    {
+      "id": "9201",
+      "title": "七つの魔剣が支配する",
+      "image": "https://image.annict.com/wmCoXo3AeKoYyde1jiLm721NSNmyZHxCTzEzcoPCcZc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6141/image/master-7f514018dc9d0b8d47238bedd11415ad.jpg@webp",
+      "season": "2023年夏",
+      "url": "https://annict.com/works/9201"
     },
     {
       "id": "10583",
@@ -4043,18 +4078,18 @@
       "url": "https://annict.com/works/7901"
     },
     {
-      "id": "9729",
-      "title": "マッシュル-MASHLE-",
-      "image": "https://image.annict.com/DXPj850QyogKpJRbMejxiUW8aFR2t0Plzbqw36lotwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6650/image/master-043b9437411c2e4a969a0a4699b7a717.jpg@webp",
-      "season": "2023年春",
-      "url": "https://annict.com/works/9729"
-    },
-    {
       "id": "8177",
       "title": "Dr.STONE NEW WORLD",
       "image": "https://image.annict.com/A6j4Sr5K0x18hqWo3SQ-okmjpze6Tk1o9S0LS5eJhp0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5277/image/master-756db579f9442827b8426cf30502c444.jpg@webp",
       "season": "2023年春",
       "url": "https://annict.com/works/8177"
+    },
+    {
+      "id": "9729",
+      "title": "マッシュル-MASHLE-",
+      "image": "https://image.annict.com/DXPj850QyogKpJRbMejxiUW8aFR2t0Plzbqw36lotwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6650/image/master-043b9437411c2e4a969a0a4699b7a717.jpg@webp",
+      "season": "2023年春",
+      "url": "https://annict.com/works/9729"
     },
     {
       "id": "10098",
@@ -6381,18 +6416,18 @@
       "url": "https://annict.com/works/5137"
     },
     {
-      "id": "4981",
-      "title": "ひなこのーと",
-      "image": "https://image.annict.com/rxVbwUpNOuMboEnAvaqtDVHci4O-l_MJQrgY6NmBx5A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1863/image/master-33dbf42e94e56ad328ee23c762797997.jpg@webp",
-      "season": "2017年春",
-      "url": "https://annict.com/works/4981"
-    },
-    {
       "id": "5138",
       "title": "月がきれい",
       "image": "https://image.annict.com/nzCzngcWf9Jxe7fM7WJUXP-coIwlqCPS3CP-NgEHqA0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1879/image/master-84e31a8c8805a8223033b1b4926db3bd.jpg@webp",
       "season": "2017年春",
       "url": "https://annict.com/works/5138"
+    },
+    {
+      "id": "4981",
+      "title": "ひなこのーと",
+      "image": "https://image.annict.com/rxVbwUpNOuMboEnAvaqtDVHci4O-l_MJQrgY6NmBx5A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1863/image/master-33dbf42e94e56ad328ee23c762797997.jpg@webp",
+      "season": "2017年春",
+      "url": "https://annict.com/works/4981"
     },
     {
       "id": "4715",
@@ -7137,6 +7172,13 @@
       "url": "https://annict.com/works/1561"
     },
     {
+      "id": "848",
+      "title": "桜Trick",
+      "image": "https://image.annict.com/0DyIEaER-jkgb2koklsU3R5joYAbglrnqbQ2PvdKEMs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/20/image/master-a2596a67d3839dc08bc76064b553eca1.jpg@webp",
+      "season": "2014年冬",
+      "url": "https://annict.com/works/848"
+    },
+    {
       "id": "1350",
       "title": "ディーふらぐ！",
       "image": "https://image.annict.com/IUPYoGuw1TykdqXGDLCITv6qCTBkIARhZKKzelQw9-g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/28/image/master-9488b5cd8aca667b662d3439f48a85fa.jpg@webp",
@@ -7205,6 +7247,13 @@
       "image": "https://image.annict.com/Jq82EQY1Pjb5QEDNhr63138yAbVZwvk_iXxG-TrQkV8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/345/image/master-b83f0d61d3f9e8ef0bf7632f1cc7de67.jpg@webp",
       "season": "2013年秋",
       "url": "https://annict.com/works/56"
+    },
+    {
+      "id": "762",
+      "title": "ゴールデンタイム",
+      "image": "https://image.annict.com/FxWkxFg7pb5kA_vvgaFUdsmLHvHUWZNTJnpxp63bu2I/s:220:293/plain/s3://annict-user-contents/shrine/workimage/56/image/master-eb244b72486565f18cd371716060f536.jpg@webp",
+      "season": "2013年秋",
+      "url": "https://annict.com/works/762"
     },
     {
       "id": "2469",

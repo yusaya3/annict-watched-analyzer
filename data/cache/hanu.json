@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-09T22:59:58.637Z",
-  "count": 564,
+  "fetchedAt": "2026-10-10T11:55:41.907Z",
+  "count": 568,
   "animes": [
     {
       "id": "13582",
@@ -233,6 +233,13 @@
       "image": "https://image.annict.com/hBJUMrWVCqRaqJzWIS-rIE4pwnEudVm8H3fVS9TpNYg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12239/image/master-ba4b80982eb78fbe1fbb7dd04d616729.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15623"
+    },
+    {
+      "id": "16328",
+      "title": "炎の闘球女 ドッジ弾子",
+      "image": "https://image.annict.com/pJnJmKR9Sxf_qDZ_HcEAoOnDf3VUEFQsolQDqk9U6qY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13027/image/master-6ccf6eb1d88b0640387e6d1953218627.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16328"
     },
     {
       "id": "17042",
@@ -2783,6 +2790,13 @@
       "url": "https://annict.com/works/9410"
     },
     {
+      "id": "10097",
+      "title": "Fate/strange Fake -Whispers of Dawn-",
+      "image": "https://image.annict.com/1Th2--YOCQG8gszF5WhdGRJWE7niqI6Ct1m1vOzi_6c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6915/image/master-4b584be025a1bbde52f610d3005d43d1.jpg@webp",
+      "season": "2023年夏",
+      "url": "https://annict.com/works/10097"
+    },
+    {
       "id": "10604",
       "title": "アンデッドガール・マーダーファルス",
       "image": "https://image.annict.com/OWtz2ZsULvcfCyipP_1OEUuoqSdObIfE1IJOPbU2F8A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7135/image/master-b637547ec0bb4688d4a859d9a352489a.jpg@webp",
@@ -3791,6 +3805,13 @@
       "url": "https://annict.com/works/4425"
     },
     {
+      "id": "4361",
+      "title": "Fate/stay night [Unlimited Blade Works] 2ndシーズン",
+      "image": "https://image.annict.com/6d81l0ps9mL8kxG7XnpUVqOKElvc-pY81O_B7TROCc4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/826/image/master-fa68184baf7030839678f2d6efb980f8.jpg@webp",
+      "season": "2015年春",
+      "url": "https://annict.com/works/4361"
+    },
+    {
       "id": "4173",
       "title": "新妹魔王の契約者",
       "image": "https://image.annict.com/8e7hJ_9aisecnFL7Mlm2CwoerSo5cxEgAkOBUDVi5W0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/636/image/master-58a1b849bf493b64f4a6dae2dbc4583c.jpg@webp",
@@ -3922,6 +3943,13 @@
       "image": "https://image.annict.com/nqU5wrAZ3sQO9T-CBjZHWFOg2XkMMBf-sGlVn4qB9-4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/88/image/master-2baf496766c3a55a2ecc8ed669a508ee.jpg@webp",
       "season": "2011年冬",
       "url": "https://annict.com/works/2108"
+    },
+    {
+      "id": "204",
+      "title": "うみねこのなく頃に",
+      "image": "https://image.annict.com/LG6sRPTBvI4E9U8Uf4c90nvIe0ZB2yArWjT6AqNbGQU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/247/image/master-63a829d580058e6e78ae30710058bebd.jpg@webp",
+      "season": "2009年夏",
+      "url": "https://annict.com/works/204"
     },
     {
       "id": "2954",
