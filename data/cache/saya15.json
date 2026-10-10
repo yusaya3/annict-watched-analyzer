@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-10T11:53:20.253Z",
-  "count": 789,
+  "fetchedAt": "2026-10-10T22:09:50.753Z",
+  "count": 790,
   "animes": [
     {
       "id": "13582",
@@ -65,6 +65,13 @@
       "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17353"
+    },
+    {
+      "id": "16519",
+      "title": "バンドリ！ ゆめ∞みた",
+      "image": "https://image.annict.com/thJaclYwn3IjoQ0Usokhgf1uYpoYyqJCxt1fSCaz0fE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13168/image/master-ec86ba63ad50ef76ba20a96c7f6026ba.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16519"
     },
     {
       "id": "15036",

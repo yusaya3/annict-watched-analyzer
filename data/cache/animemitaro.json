@@ -1,7 +1,7 @@
 {
   "username": "animemitaro",
-  "fetchedAt": "2026-10-10T11:55:39.106Z",
-  "count": 1124,
+  "fetchedAt": "2026-10-10T22:09:59.143Z",
+  "count": 1125,
   "animes": [
     {
       "id": "13582",
@@ -226,6 +226,13 @@
       "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17114"
+    },
+    {
+      "id": "14929",
+      "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+      "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14929"
     },
     {
       "id": "16468",
@@ -725,18 +732,18 @@
       "url": "https://annict.com/works/16344"
     },
     {
-      "id": "16340",
-      "title": "神の庭付き楠木邸",
-      "image": "https://image.annict.com/bMQMQBKDNCTGyLj7FOPZo4PIGqarcz0O4ba1ivi9HPo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13038/image/master-de38c6c4eec9e0d9dbe3e170918329cd.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16340"
-    },
-    {
       "id": "16730",
       "title": "茉莉花ちゃんの好感度はぶっ壊れている",
       "image": "https://image.annict.com/52mLtQtVN0Mo8XZBZ8Lkdkh0D6Z8BfWvObxR3oK3aqA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13384/image/master-0a028a505ef190573d2e32a6534f7d68.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16730"
+    },
+    {
+      "id": "16340",
+      "title": "神の庭付き楠木邸",
+      "image": "https://image.annict.com/bMQMQBKDNCTGyLj7FOPZo4PIGqarcz0O4ba1ivi9HPo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13038/image/master-de38c6c4eec9e0d9dbe3e170918329cd.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16340"
     },
     {
       "id": "17075",
@@ -956,18 +963,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "12836",
-      "title": "魔都精兵のスレイブ2",
-      "image": "https://image.annict.com/TIDeky-oHHh_6MORBSi7yv7xet9uzjCt7fP02_w7smY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9445/image/master-793847b156111811765c97827e1100ed.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/12836"
-    },
-    {
       "id": "17148",
       "title": "超かぐや姫！(劇場版)",
       "image": "https://image.annict.com/svbUWwbvrsEA2fKBmomI5zMoKARDCqlLVIYzYkN5L4M/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13835/image/master-c9d02306d1fa5c5f27822201e96c8a09.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/17148"
+    },
+    {
+      "id": "12836",
+      "title": "魔都精兵のスレイブ2",
+      "image": "https://image.annict.com/TIDeky-oHHh_6MORBSi7yv7xet9uzjCt7fP02_w7smY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9445/image/master-793847b156111811765c97827e1100ed.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/12836"
     },
     {
       "id": "15912",
@@ -1880,18 +1887,18 @@
       "url": "https://annict.com/works/14295"
     },
     {
-      "id": "13428",
-      "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
-      "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/13428"
-    },
-    {
       "id": "14726",
       "title": "出禁のモグラ",
       "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/14726"
+    },
+    {
+      "id": "13428",
+      "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
+      "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/13428"
     },
     {
       "id": "14727",
@@ -4316,18 +4323,18 @@
       "url": "https://annict.com/works/9314"
     },
     {
-      "id": "9756",
-      "title": "老後に備えて異世界で8万枚の金貨を貯めます",
-      "image": "https://image.annict.com/to9qg_wvbesL6q1EVC4MB2JgANBRJBZOEnpiH-U2XhU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6673/image/master-0bee2448a48d61923e0626e2d3d3a1e6.jpg@webp",
-      "season": "2023年冬",
-      "url": "https://annict.com/works/9756"
-    },
-    {
       "id": "9606",
       "title": "冰剣の魔術師が世界を統べる",
       "image": "https://image.annict.com/bIIGvoSrVP0wsoK0bHrowZpnT92Rif9ck7ZzvLRAPNo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6810/image/master-7e2fb73a69a52db1295211316d7e43f3.jpg@webp",
       "season": "2023年冬",
       "url": "https://annict.com/works/9606"
+    },
+    {
+      "id": "9756",
+      "title": "老後に備えて異世界で8万枚の金貨を貯めます",
+      "image": "https://image.annict.com/to9qg_wvbesL6q1EVC4MB2JgANBRJBZOEnpiH-U2XhU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6673/image/master-0bee2448a48d61923e0626e2d3d3a1e6.jpg@webp",
+      "season": "2023年冬",
+      "url": "https://annict.com/works/9756"
     },
     {
       "id": "9176",
