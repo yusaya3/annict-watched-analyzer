@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-09T13:30:27.828Z",
-  "count": 518,
+  "fetchedAt": "2026-10-11T22:38:55.608Z",
+  "count": 519,
   "animes": [
     {
       "id": "17088",
@@ -58,6 +58,13 @@
       "image": "https://image.annict.com/JQ50BpR0I5IPcCi0A_NjfCbslkSZn0xYUpE0j3p0Fhs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13561/image/master-ae45ecb0cbbe0d2a308734dfec8cbb05.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16910"
+    },
+    {
+      "id": "16856",
+      "title": "鉄鍋のジャン！",
+      "image": "https://image.annict.com/UMUnup4Q4uc_0JJGRaaKZuDBgDrPUrpmLKCgFH7qs84/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13504/image/master-38a1bb436c9e9ac578b7196bbcde7a5c.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16856"
     },
     {
       "id": "16734",
@@ -1761,18 +1768,18 @@
       "url": "https://annict.com/works/12464"
     },
     {
-      "id": "11848",
-      "title": "ひみつのアイプリ",
-      "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
-      "season": "2024年春",
-      "url": "https://annict.com/works/11848"
-    },
-    {
       "id": "12472",
       "title": "龍族 -The Blazing Dawn-",
       "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
       "season": "2024年春",
       "url": "https://annict.com/works/12472"
+    },
+    {
+      "id": "11848",
+      "title": "ひみつのアイプリ",
+      "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
+      "season": "2024年春",
+      "url": "https://annict.com/works/11848"
     },
     {
       "id": "12811",

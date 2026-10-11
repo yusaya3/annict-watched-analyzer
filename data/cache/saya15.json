@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-10T22:09:50.753Z",
-  "count": 790,
+  "fetchedAt": "2026-10-11T22:38:34.364Z",
+  "count": 791,
   "animes": [
     {
       "id": "13582",
@@ -436,6 +436,13 @@
       "image": "https://image.annict.com/rqZAyi6WKvfcgtNBegzWT8rMu7V6wTYCVGKX8um7rZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12954/image/master-def3c9606281e89b8587c52037556e58.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16250"
+    },
+    {
+      "id": "13763",
+      "title": "千歳くんはラムネ瓶のなか",
+      "image": "https://image.annict.com/a3KAwUju0K3TrzwlPohbn6hWTw7dUBaVC6h7A7-Oqck/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10569/image/master-a946c67c610a5ca756c3f78bdb9f8d94.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/13763"
     },
     {
       "id": "15006",
@@ -3427,18 +3434,18 @@
       "url": "https://annict.com/works/4893"
     },
     {
-      "id": "4614",
-      "title": "ガーリッシュ ナンバー",
-      "image": "https://image.annict.com/08ufGXXhBumOvGiGystuJOIBZAmPU0QzV2fhSbmD-1A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1463/image/master-c3602352f189e68510464aa8b7f5bde8.jpg@webp",
-      "season": "2016年秋",
-      "url": "https://annict.com/works/4614"
-    },
-    {
       "id": "4774",
       "title": "文豪ストレイドッグス (第2期)",
       "image": "https://image.annict.com/1SDm1fNM-x1yCOLzAVgaCLJPMrFyJlBQTu0tDO7z024/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1487/image/master-b0e96e6609ae38e54d4156933fc46a1f.jpg@webp",
       "season": "2016年秋",
       "url": "https://annict.com/works/4774"
+    },
+    {
+      "id": "4614",
+      "title": "ガーリッシュ ナンバー",
+      "image": "https://image.annict.com/08ufGXXhBumOvGiGystuJOIBZAmPU0QzV2fhSbmD-1A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1463/image/master-c3602352f189e68510464aa8b7f5bde8.jpg@webp",
+      "season": "2016年秋",
+      "url": "https://annict.com/works/4614"
     },
     {
       "id": "4875",

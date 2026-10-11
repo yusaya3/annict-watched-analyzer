@@ -154798,5 +154798,343 @@
         "rank": 20
       }
     ]
+  },
+  "二十世紀電氣目録-ユーレカ・エヴリカ-": {
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Romance"
+    ],
+    "tags": [
+      {
+        "name": "Steampunk",
+        "rank": 91
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 76
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 72
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 60
+      },
+      {
+        "name": "Environmental",
+        "rank": 60
+      },
+      {
+        "name": "Arranged Marriage",
+        "rank": 55
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 50
+      },
+      {
+        "name": "Educational",
+        "rank": 48
+      },
+      {
+        "name": "Crossdressing",
+        "rank": 46
+      },
+      {
+        "name": "Urban",
+        "rank": 44
+      },
+      {
+        "name": "Philosophy",
+        "rank": 42
+      },
+      {
+        "name": "Slapstick",
+        "rank": 40
+      },
+      {
+        "name": "Animals",
+        "rank": 20
+      }
+    ]
+  },
+  "元祖！バンドリちゃん": {
+    "genres": [
+      "Comedy",
+      "Music"
+    ],
+    "tags": [
+      {
+        "name": "Chibi",
+        "rank": 100
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 100
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 97
+      },
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 96
+      },
+      {
+        "name": "Episodic",
+        "rank": 84
+      },
+      {
+        "name": "Surreal Comedy",
+        "rank": 84
+      },
+      {
+        "name": "Band",
+        "rank": 83
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 79
+      },
+      {
+        "name": "Ships",
+        "rank": 79
+      },
+      {
+        "name": "Parody",
+        "rank": 76
+      },
+      {
+        "name": "School",
+        "rank": 73
+      },
+      {
+        "name": "Urban",
+        "rank": 70
+      },
+      {
+        "name": "Yuri",
+        "rank": 62
+      },
+      {
+        "name": "Gambling",
+        "rank": 60
+      },
+      {
+        "name": "Space",
+        "rank": 60
+      },
+      {
+        "name": "Artificial Intelligence",
+        "rank": 60
+      },
+      {
+        "name": "Super Robot",
+        "rank": 60
+      },
+      {
+        "name": "Swordplay",
+        "rank": 60
+      },
+      {
+        "name": "Guns",
+        "rank": 60
+      },
+      {
+        "name": "Kaiju",
+        "rank": 60
+      },
+      {
+        "name": "Restaurant",
+        "rank": 60
+      },
+      {
+        "name": "Idol",
+        "rank": 60
+      },
+      {
+        "name": "Aliens",
+        "rank": 60
+      },
+      {
+        "name": "Camping",
+        "rank": 60
+      },
+      {
+        "name": "Animals",
+        "rank": 46
+      },
+      {
+        "name": "LGBTQ+ Themes",
+        "rank": 45
+      }
+    ]
+  },
+  "バーテックスフォース": {
+    "genres": [
+      "Action",
+      "Mecha"
+    ],
+    "tags": [
+      {
+        "name": "Aliens",
+        "rank": 79
+      },
+      {
+        "name": "Robots",
+        "rank": 79
+      },
+      {
+        "name": "Super Robot",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 73
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 68
+      },
+      {
+        "name": "Full CGI",
+        "rank": 60
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 60
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 60
+      },
+      {
+        "name": "Tokusatsu",
+        "rank": 40
+      },
+      {
+        "name": "Coastal",
+        "rank": 40
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 20
+      },
+      {
+        "name": "Restaurant",
+        "rank": 20
+      }
+    ]
+  },
+  "弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった": {
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "tags": [
+      {
+        "name": "Female Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Isekai",
+        "rank": 79
+      },
+      {
+        "name": "Reincarnation",
+        "rank": 79
+      },
+      {
+        "name": "Villainess",
+        "rank": 79
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 60
+      },
+      {
+        "name": "Shoujo",
+        "rank": 60
+      }
+    ]
+  },
+  "領民０人スタートの辺境領主様": {
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Fantasy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Kingdom Management",
+        "rank": 85
+      },
+      {
+        "name": "Cohabitation",
+        "rank": 80
+      },
+      {
+        "name": "Found Family",
+        "rank": 80
+      },
+      {
+        "name": "Age Gap",
+        "rank": 69
+      },
+      {
+        "name": "LGBTQ+ Themes",
+        "rank": 60
+      },
+      {
+        "name": "Agriculture",
+        "rank": 57
+      },
+      {
+        "name": "Rural",
+        "rank": 56
+      },
+      {
+        "name": "Family Life",
+        "rank": 52
+      },
+      {
+        "name": "Anthropomorphism",
+        "rank": 51
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 50
+      },
+      {
+        "name": "Wilderness",
+        "rank": 50
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 40
+      },
+      {
+        "name": "Gender Bending",
+        "rank": 33
+      },
+      {
+        "name": "Parenthood",
+        "rank": 20
+      }
+    ]
+  },
+  "転生したら剣でしたII": {
+    "genres": [],
+    "tags": []
   }
 }

@@ -1,8 +1,29 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-09T13:30:43.264Z",
-  "count": 802,
+  "fetchedAt": "2026-10-11T22:38:51.959Z",
+  "count": 805,
   "animes": [
+    {
+      "id": "10258",
+      "title": "転生したら剣でしたII",
+      "image": "https://image.annict.com/GGGmMQ6oxhX62X1RrjfB3gLTy7gQHcKhm9e0J8C53hk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6942/image/master-38efcbf4be29dfcaf738abf0496c3281.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/10258"
+    },
+    {
+      "id": "17314",
+      "title": "バーテックスフォース",
+      "image": "https://image.annict.com/sSN2nocqJB7lVWR5pq5trAejFlU7daEYbMOWik1MJqU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14042/image/master-f866b879a32d4a767475ccd8bc608169.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/17314"
+    },
+    {
+      "id": "16646",
+      "title": "弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった",
+      "image": "https://image.annict.com/T44K5p4fcptSAkbm8auspNY9HLbnpvVkzxODFTIIgYU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13292/image/master-a4948b281f034719604661302cd09a51.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/16646"
+    },
     {
       "id": "18233",
       "title": "魔法の姉妹ルルットリリィ 近くて遠いふたりの距離",
@@ -3357,18 +3378,18 @@
       "url": "https://annict.com/works/4417"
     },
     {
-      "id": "4425",
-      "title": "ワカコ酒",
-      "image": "https://image.annict.com/YH48xilYLwcdKxr1NFeKSRBRK9GBWmUg59z_6bufXAg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/937/image/master-00690b91392db96c18be02c0ccef90b6.jpg@webp",
-      "season": "2015年夏",
-      "url": "https://annict.com/works/4425"
-    },
-    {
       "id": "4431",
       "title": "ドラゴンボール超",
       "image": "https://image.annict.com/8MCSlt6_EXCwT5JIBMSLEq7UfdA43YuRpUN4l0yFoVQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/967/image/master-b9941f31f0dea5c74c6ace028c5fa170.jpg@webp",
       "season": "2015年夏",
       "url": "https://annict.com/works/4431"
+    },
+    {
+      "id": "4425",
+      "title": "ワカコ酒",
+      "image": "https://image.annict.com/YH48xilYLwcdKxr1NFeKSRBRK9GBWmUg59z_6bufXAg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/937/image/master-00690b91392db96c18be02c0ccef90b6.jpg@webp",
+      "season": "2015年夏",
+      "url": "https://annict.com/works/4425"
     },
     {
       "id": "4379",
