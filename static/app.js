@@ -917,6 +917,20 @@ async function refreshAllUsers(options = {}) {
       }
     }
 
+    // Annictの新着登録アニメも自動で同期
+    try {
+      fetch('/api/sync-new-works')
+        .then(r => r.json())
+        .then(res => {
+          if (res && res.added > 0) {
+            console.log(`[SyncWorks] 更新時に新着アニメを自動検出 (${res.added}件)。マスターを再読込します`);
+            state.popularWorks = null;
+            loadPopularWorks();
+          }
+        })
+        .catch(() => {});
+    } catch (e) {}
+
     if (!fromHeader) {
       alert('全ユーザーのAnnict最新データの同期が完了しました！');
     }
@@ -1993,29 +2007,33 @@ function escapeHtml(str) {
 // グループ分析（和集合 & 誰も見ていない人気作品300選）機能
 // ==========================================================================
 
-async function loadPopularWorks() {
-  if (state.popularWorks && state.popularWorks.length > 0) return;
+async function loadPopularWorks(forceSync = false) {
+  if (!forceSync && state.popularWorks && state.popularWorks.length > 0) return;
   try {
-    let res = await fetch(`./res/annict_all_works.json?t=${Date.now()}`);
+    let res = await fetch(`./res/popular_works.json?t=${Date.now()}`);
     if (!res.ok) {
-      res = await fetch(`./res/popular_works.json?t=${Date.now()}`);
-    }
-    if (!res.ok) {
-      res = await fetch(`/api/all_works`);
-    }
-    if (!res.ok) {
-      res = await fetch(`/api/popular_works`);
+      res = await fetch(`/res/popular_works.json`);
     }
     if (res.ok) {
       const json = await res.json();
       state.popularWorks = json.works || [];
-      console.log(`[Group] Annict全作品リストを読み込みました (${state.popularWorks.length.toLocaleString()}作品)`);
+      console.log(`[Group] Annict全作品リストを読み込みました (${state.popularWorks.length}作品)`);
       if (state.data) {
         renderGroupWorksList();
       }
     }
+    // バックグラウンドでAnnictの新着登録アニメをチェック・同期
+    fetch('/api/sync-new-works')
+      .then(r => r.json())
+      .then(res => {
+        if (res && res.added > 0) {
+          console.log(`[SyncWorks] 新着アニメを自動検出 (${res.added}件)。マスターを更新します`);
+          loadPopularWorks(true);
+        }
+      })
+      .catch(() => {});
   } catch (e) {
-    console.warn('[Group] 作品リストの取得エラー:', e.message);
+    console.warn('[Group] popular_works.json の取得エラー:', e.message);
   }
 }
 
@@ -2028,6 +2046,7 @@ function initGroupAnalysis() {
       subtabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.groupActiveSubtab = btn.dataset.subtab;
+      state.groupDisplayLimit = 140; // 表示件数リセット
 
       const descEl = document.getElementById('group-subtab-desc');
       const sortSelect = document.getElementById('group-sort-select');
@@ -2043,11 +2062,10 @@ function initGroupAnalysis() {
           sortSelect.value = state.groupSort = 'watchers';
         }
       } else {
-        descEl.textContent = 'Annictの全登録作品をもとに、選択したユーザー全員が「誰も見ていない」作品の全一覧です。';
+        descEl.textContent = 'Annictの全作品データをもとに、選択したユーザーが「誰も見ていない」全作品一覧です。';
         if (sortSelect) {
           sortSelect.innerHTML = `
-            <option value="watchers">Annict人気順（おすすめ順）</option>
-            <option value="newest">新着・追加順（新しい順）</option>
+            <option value="watchers">Annict人気ランキング順</option>
             <option value="season-desc">公開年が新しい順</option>
             <option value="season-asc">公開年が古い順</option>
             <option value="title">タイトル順</option>
@@ -2086,6 +2104,7 @@ function initGroupAnalysis() {
     let debounceTimer;
     searchInput.addEventListener('input', (e) => {
       state.groupSearchQuery = e.target.value.trim().toLowerCase();
+      state.groupDisplayLimit = 140; // 検索時リセット
       if (clearBtn) {
         clearBtn.style.display = state.groupSearchQuery ? 'block' : 'none';
       }
@@ -2100,6 +2119,7 @@ function initGroupAnalysis() {
       if (searchInput) {
         searchInput.value = '';
         state.groupSearchQuery = '';
+        state.groupDisplayLimit = 140;
         clearBtn.style.display = 'none';
         renderGroupWorksList();
         searchInput.focus();
@@ -2116,6 +2136,7 @@ function initGroupAnalysis() {
       eraFilterContainer.querySelectorAll('.chip-btn').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       state.groupEraFilter = chip.dataset.era || 'all';
+      state.groupDisplayLimit = 140; // フィルター時リセット
       renderGroupWorksList();
     });
   }
@@ -2125,6 +2146,7 @@ function initGroupAnalysis() {
   if (sortSelect) {
     sortSelect.addEventListener('change', (e) => {
       state.groupSort = e.target.value;
+      state.groupDisplayLimit = 140; // ソート時リセット
       renderGroupWorksList();
     });
   }
@@ -2221,18 +2243,18 @@ function renderGroupWorksList() {
   const unionTotalCount = unionMap.size;
   if (unionBadge) unionBadge.textContent = `${unionTotalCount.toLocaleString()} 作品`;
 
-  // 2. 誰も見ていない作品（Annict全作品）の抽出
+  // 2. 誰も見ていない作品（Annict全作品マスターから抽出）
   // 選択されたユーザー全員の全視聴作品ID Set
   const unionWatchedIdSet = new Set(unionMap.keys());
-  const unwatchedAllList = [];
-  const allWorksList = state.popularWorks || [];
+  const unwatchedList = [];
+  const popularList = state.popularWorks || [];
 
-  if (allWorksList.length > 0) {
-    for (let i = 0; i < allWorksList.length; i++) {
-      const pw = allWorksList[i];
+  if (popularList.length > 0) {
+    for (let i = 0; i < popularList.length; i++) {
+      const pw = popularList[i];
       const id = String(pw.id);
       if (!unionWatchedIdSet.has(id)) {
-        unwatchedAllList.push({
+        unwatchedList.push({
           work: pw,
           popularRank: i + 1
         });
@@ -2240,7 +2262,7 @@ function renderGroupWorksList() {
     }
   }
 
-  const unwatchedTotalCount = unwatchedAllList.length;
+  const unwatchedTotalCount = unwatchedList.length;
   if (unwatchedBadge) unwatchedBadge.textContent = `${unwatchedTotalCount.toLocaleString()} 作品`;
 
   // 3. 現在アクティブなサブタブに応じて表示対象を決定
@@ -2256,7 +2278,7 @@ function renderGroupWorksList() {
   if (isUnion) {
     targetItems = Array.from(unionMap.values());
   } else {
-    targetItems = unwatchedAllList;
+    targetItems = unwatchedList;
   }
 
   // 4. 絞り込み（検索キーワード & 年代フィルター）
@@ -2287,11 +2309,9 @@ function renderGroupWorksList() {
         if (diff !== 0) return diff;
       }
     } else {
+      // 未視聴作品の初期ソートはAnnict人気順
       if (sortMode === 'watchers') {
         return a.popularRank - b.popularRank;
-      }
-      if (sortMode === 'newest') {
-        return (parseInt(b.work.id, 10) || 0) - (parseInt(a.work.id, 10) || 0);
       }
     }
 
@@ -2305,29 +2325,28 @@ function renderGroupWorksList() {
     return 0;
   });
 
-  // 6. プログレッシブレンダリング（全数千〜万件でもブラウザが固まらない高速分割表示）
-  const CHUNK_SIZE = 80;
-  if (!state.groupRenderLimit || state._groupLastFiltered !== filtered) {
-    state.groupRenderLimit = CHUNK_SIZE;
-    state._groupLastFiltered = filtered;
-  }
-
-  const visibleCount = Math.min(filtered.length, state.groupRenderLimit);
+  // 6. 表示件数の制御（大量データ時の高速・軽量レンダリング）
+  const displayLimit = state.groupDisplayLimit || 140;
+  const visibleItems = filtered.slice(0, displayLimit);
+  const hasMore = filtered.length > displayLimit;
 
   // メタ情報テキストの更新
   if (resultsMetaText) {
-    resultsMetaText.textContent = `表示中: ${visibleCount.toLocaleString()} 件 / 該当 ${filtered.length.toLocaleString()} 件 (全 ${targetItems.length.toLocaleString()} 作品中)`;
+    if (hasMore) {
+      resultsMetaText.textContent = `表示中: ${visibleItems.length.toLocaleString()} 件 / 該当 ${filtered.length.toLocaleString()} 件 (全体: ${targetItems.length.toLocaleString()} 作品)`;
+    } else {
+      resultsMetaText.textContent = `表示中: ${filtered.length.toLocaleString()} 件 / 全 ${targetItems.length.toLocaleString()} 件`;
+    }
   }
 
+  // 7. カードグリッドの描画
   if (filtered.length === 0) {
     gridContainer.innerHTML = '<div style="padding:2.5rem 1rem;color:var(--text-muted);grid-column:1/-1;text-align:center;"><i class="fa-solid fa-film" style="font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i>条件に一致する作品はありません</div>';
     return;
   }
 
-  const itemsToRender = filtered.slice(0, visibleCount);
-
-  // 単一カードHTML生成ヘルパー
-  function createCardHtml(item) {
+  // 表示対象アイテムのカードHTML生成
+  const cardsHtml = visibleItems.map(item => {
     const work = item.work;
     const url = work.url || `https://annict.com/works/${work.id}`;
     const safeTitle = escapeHtml(work.title);
@@ -2337,6 +2356,7 @@ function renderGroupWorksList() {
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     if (isUnion) {
+      // 和集合: 視聴者バッジと視聴者数タグ
       const watchers = item.watchers || [];
       const userBadgesHtml = watchers.map(u => `<span class="watched-user-badge">@${escapeHtml(u)}</span>`).join('');
       const seasonHtml = work.season
@@ -2359,6 +2379,7 @@ function renderGroupWorksList() {
         </a>
       `;
     } else {
+      // 未視聴作品: シンプルに作品情報のみ（タイトル・画像・シーズン）
       const seasonHtml = work.season
         ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>`
         : `<span class="text-muted small">シーズン未設定</span>`;
@@ -2375,43 +2396,57 @@ function renderGroupWorksList() {
         </a>
       `;
     }
-  }
+  }).join('');
 
-  let cardsHtml = itemsToRender.map(createCardHtml).join('');
-
-  // さらに表示ボタンまたは無限スクロール用トリガー
-  if (visibleCount < filtered.length) {
-    const remainingCount = filtered.length - visibleCount;
-    cardsHtml += `
-      <div id="group-load-more-container" style="grid-column: 1 / -1; display: flex; justify-content: center; padding: 2rem 1rem;">
-        <button type="button" id="btn-group-load-more" class="btn btn-outline" style="min-width: 240px; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 9999px;">
-          <i class="fa-solid fa-circle-chevron-down"></i> さらに表示（残り ${remainingCount.toLocaleString()} 作品）
+  // もっと見る（追加読み込み）UI
+  let loadMoreHtml = '';
+  if (hasMore) {
+    const remaining = filtered.length - displayLimit;
+    const nextBatch = Math.min(140, remaining);
+    loadMoreHtml = `
+      <div id="group-load-more-wrap" style="grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; gap: 0.8rem; padding: 2rem 1rem;">
+        <button type="button" id="btn-group-load-more" class="btn btn-primary" style="padding: 0.65rem 1.8rem; font-size: 0.92rem;">
+          <i class="fa-solid fa-angles-down"></i> さらに ${nextBatch.toLocaleString()} 件を表示 (残り ${remaining.toLocaleString()} 件)
         </button>
+        ${remaining > 140 ? `
+          <button type="button" id="btn-group-load-all" class="btn btn-outline" style="padding: 0.65rem 1.2rem; font-size: 0.88rem;">
+            全件表示 (${filtered.length.toLocaleString()} 件)
+          </button>
+        ` : ''}
       </div>
     `;
   }
 
-  gridContainer.innerHTML = cardsHtml;
+  gridContainer.innerHTML = cardsHtml + loadMoreHtml;
 
-  // 「さらに表示」ボタンおよび無限スクロールのバインド
-  const loadMoreBtn = document.getElementById('btn-group-load-more');
-  if (loadMoreBtn) {
-    const loadNextChunk = () => {
-      state.groupRenderLimit += CHUNK_SIZE;
+  // ボタンイベント設定
+  const btnLoadMore = document.getElementById('btn-group-load-more');
+  if (btnLoadMore) {
+    btnLoadMore.addEventListener('click', () => {
+      state.groupDisplayLimit = (state.groupDisplayLimit || 140) + 140;
       renderGroupWorksList();
-    };
+    });
+  }
+  const btnLoadAll = document.getElementById('btn-group-load-all');
+  if (btnLoadAll) {
+    btnLoadAll.addEventListener('click', () => {
+      state.groupDisplayLimit = filtered.length;
+      renderGroupWorksList();
+    });
+  }
 
-    loadMoreBtn.addEventListener('click', loadNextChunk);
-
-    // IntersectionObserver によるスクロール連動自動読み込み
-    if (typeof IntersectionObserver !== 'undefined') {
+  // スクロール時の自動追加読み込み (IntersectionObserver)
+  if (hasMore && window.IntersectionObserver) {
+    const loadMoreWrap = document.getElementById('group-load-more-wrap');
+    if (loadMoreWrap) {
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           observer.disconnect();
-          loadNextChunk();
+          state.groupDisplayLimit = (state.groupDisplayLimit || 140) + 140;
+          renderGroupWorksList();
         }
       }, { rootMargin: '300px' });
-      observer.observe(loadMoreBtn);
+      observer.observe(loadMoreWrap);
     }
   }
 
