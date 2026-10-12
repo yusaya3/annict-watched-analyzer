@@ -153,6 +153,16 @@ async function main() {
   // 1. データ取得フェーズ
   if (!isServeOnly) {
     await runAnalysis(users, forceRefresh);
+
+    // Annict新着作品の自動差分同期
+    try {
+      const { syncNewestWorks } = require('./sync-annict-works.js');
+      console.log('\n--- Annict新着作品の差分自動同期中 ---');
+      await syncNewestWorks(5);
+    } catch (syncErr) {
+      console.warn('[AnnictSync] 新着作品同期スキップ:', syncErr.message);
+    }
+
     if (isFetchOnly) {
       console.log('\n--fetch-only が指定されたため終了します。');
       return;
@@ -203,18 +213,68 @@ function createApp() {
     res.json(loadUserList());
   });
 
-  // Annict人気作品リストの取得API
-  app.get('/api/popular_works', (req, res) => {
+  // 最後にAnnict新着作品をチェックした時刻
+  let lastWorksSyncTime = 0;
+  const WORKS_SYNC_INTERVAL_MS = 30 * 60 * 1000; // 30分
+
+  function triggerBackgroundWorksSync() {
+    const now = Date.now();
+    if (now - lastWorksSyncTime < WORKS_SYNC_INTERVAL_MS) return;
+    lastWorksSyncTime = now;
+    // 非同期バックグラウンドで新着作品の差分同期
+    try {
+      const { syncNewestWorks } = require('./sync-annict-works.js');
+      syncNewestWorks(3).catch(err => {
+        console.warn('[AnnictSync] バックグラウンド新着同期エラー:', err.message);
+      });
+    } catch (e) {}
+  }
+
+  // Annict全作品・人気作品リストの取得API (300件制限を撤廃した全登録作品対応)
+  app.get(['/api/popular_works', '/api/all_works'], (req, res) => {
+    // 定期バックグラウンド新着差分チェックをトリガー
+    triggerBackgroundWorksSync();
+
+    const allWorksTmp = path.join(RES_DIR, 'annict_all_works.json');
+    const allWorksBundled = path.join(BUNDLED_RES_DIR, 'annict_all_works.json');
     const tmpFile = path.join(RES_DIR, 'popular_works.json');
     const bundledFile = path.join(BUNDLED_RES_DIR, 'popular_works.json');
-    const targetFile = fs.existsSync(tmpFile) ? tmpFile : (fs.existsSync(bundledFile) ? bundledFile : null);
+
+    const targetFile = fs.existsSync(allWorksTmp)
+      ? allWorksTmp
+      : fs.existsSync(allWorksBundled)
+      ? allWorksBundled
+      : fs.existsSync(tmpFile)
+      ? tmpFile
+      : fs.existsSync(bundledFile)
+      ? bundledFile
+      : null;
+
     if (targetFile) {
       try {
         const data = JSON.parse(fs.readFileSync(targetFile, 'utf8'));
         return res.json(data);
       } catch (e) {}
     }
-    res.status(404).json({ error: 'Popular works not found' });
+    res.status(404).json({ error: 'Works data not found' });
+  });
+
+  // Annict新着作品の手動・即時同期API
+  app.post('/api/sync-works', async (req, res) => {
+    try {
+      const { syncNewestWorks } = require('./sync-annict-works.js');
+      const pages = parseInt(req.body?.pages || '3', 10);
+      const result = await syncNewestWorks(pages);
+      lastWorksSyncTime = Date.now();
+      res.json({
+        success: true,
+        count: result.count,
+        message: `Annict新着作品の同期が完了しました (全${result.count}作品)`
+      });
+    } catch (err) {
+      console.error('[API /sync-works] 同期エラー:', err);
+      res.status(500).json({ error: err.message || '作品同期中にエラーが発生しました' });
+    }
   });
 
   // 【新方式】指定された1人の最新視聴データのみを取得して返す超軽量API

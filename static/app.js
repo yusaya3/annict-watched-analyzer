@@ -1996,20 +1996,26 @@ function escapeHtml(str) {
 async function loadPopularWorks() {
   if (state.popularWorks && state.popularWorks.length > 0) return;
   try {
-    let res = await fetch(`./res/popular_works.json?t=${Date.now()}`);
+    let res = await fetch(`./res/annict_all_works.json?t=${Date.now()}`);
     if (!res.ok) {
-      res = await fetch(`/res/popular_works.json`);
+      res = await fetch(`./res/popular_works.json?t=${Date.now()}`);
+    }
+    if (!res.ok) {
+      res = await fetch(`/api/all_works`);
+    }
+    if (!res.ok) {
+      res = await fetch(`/api/popular_works`);
     }
     if (res.ok) {
       const json = await res.json();
       state.popularWorks = json.works || [];
-      console.log(`[Group] Annict人気作品リストを読み込みました (${state.popularWorks.length}作品)`);
+      console.log(`[Group] Annict全作品リストを読み込みました (${state.popularWorks.length.toLocaleString()}作品)`);
       if (state.data) {
         renderGroupWorksList();
       }
     }
   } catch (e) {
-    console.warn('[Group] popular_works.json の取得エラー:', e.message);
+    console.warn('[Group] 作品リストの取得エラー:', e.message);
   }
 }
 
@@ -2037,10 +2043,11 @@ function initGroupAnalysis() {
           sortSelect.value = state.groupSort = 'watchers';
         }
       } else {
-        descEl.textContent = 'Annictの人気ランキング順をもとに、選択したユーザーが「誰も見ていない」人気作品TOP300です。';
+        descEl.textContent = 'Annictの全登録作品をもとに、選択したユーザー全員が「誰も見ていない」作品の全一覧です。';
         if (sortSelect) {
           sortSelect.innerHTML = `
-            <option value="watchers">Annict人気ランキング順</option>
+            <option value="watchers">Annict人気順（おすすめ順）</option>
+            <option value="newest">新着・追加順（新しい順）</option>
             <option value="season-desc">公開年が新しい順</option>
             <option value="season-asc">公開年が古い順</option>
             <option value="title">タイトル順</option>
@@ -2214,29 +2221,26 @@ function renderGroupWorksList() {
   const unionTotalCount = unionMap.size;
   if (unionBadge) unionBadge.textContent = `${unionTotalCount.toLocaleString()} 作品`;
 
-  // 2. 誰も見ていない人気作品（300選）の抽出
+  // 2. 誰も見ていない作品（Annict全作品）の抽出
   // 選択されたユーザー全員の全視聴作品ID Set
   const unionWatchedIdSet = new Set(unionMap.keys());
-  const unwatched300List = [];
-  const popularList = state.popularWorks || [];
+  const unwatchedAllList = [];
+  const allWorksList = state.popularWorks || [];
 
-  if (popularList.length > 0) {
-    for (let i = 0; i < popularList.length; i++) {
-      const pw = popularList[i];
+  if (allWorksList.length > 0) {
+    for (let i = 0; i < allWorksList.length; i++) {
+      const pw = allWorksList[i];
       const id = String(pw.id);
       if (!unionWatchedIdSet.has(id)) {
-        unwatched300List.push({
+        unwatchedAllList.push({
           work: pw,
           popularRank: i + 1
         });
-        if (unwatched300List.length >= 300) {
-          break;
-        }
       }
     }
   }
 
-  const unwatchedTotalCount = unwatched300List.length;
+  const unwatchedTotalCount = unwatchedAllList.length;
   if (unwatchedBadge) unwatchedBadge.textContent = `${unwatchedTotalCount.toLocaleString()} 作品`;
 
   // 3. 現在アクティブなサブタブに応じて表示対象を決定
@@ -2252,7 +2256,7 @@ function renderGroupWorksList() {
   if (isUnion) {
     targetItems = Array.from(unionMap.values());
   } else {
-    targetItems = unwatched300List;
+    targetItems = unwatchedAllList;
   }
 
   // 4. 絞り込み（検索キーワード & 年代フィルター）
@@ -2283,9 +2287,11 @@ function renderGroupWorksList() {
         if (diff !== 0) return diff;
       }
     } else {
-      // 未視聴作品の初期ソートはAnnict人気順
       if (sortMode === 'watchers') {
         return a.popularRank - b.popularRank;
+      }
+      if (sortMode === 'newest') {
+        return (parseInt(b.work.id, 10) || 0) - (parseInt(a.work.id, 10) || 0);
       }
     }
 
@@ -2299,19 +2305,29 @@ function renderGroupWorksList() {
     return 0;
   });
 
-  // 6. メタ情報テキストの更新
-  if (resultsMetaText) {
-    resultsMetaText.textContent = `表示中: ${filtered.length.toLocaleString()} 件 / 全 ${targetItems.length.toLocaleString()} 件`;
+  // 6. プログレッシブレンダリング（全数千〜万件でもブラウザが固まらない高速分割表示）
+  const CHUNK_SIZE = 80;
+  if (!state.groupRenderLimit || state._groupLastFiltered !== filtered) {
+    state.groupRenderLimit = CHUNK_SIZE;
+    state._groupLastFiltered = filtered;
   }
 
-  // 7. カードグリッドの描画（全件一括高速レンダリング）
+  const visibleCount = Math.min(filtered.length, state.groupRenderLimit);
+
+  // メタ情報テキストの更新
+  if (resultsMetaText) {
+    resultsMetaText.textContent = `表示中: ${visibleCount.toLocaleString()} 件 / 該当 ${filtered.length.toLocaleString()} 件 (全 ${targetItems.length.toLocaleString()} 作品中)`;
+  }
+
   if (filtered.length === 0) {
     gridContainer.innerHTML = '<div style="padding:2.5rem 1rem;color:var(--text-muted);grid-column:1/-1;text-align:center;"><i class="fa-solid fa-film" style="font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i>条件に一致する作品はありません</div>';
     return;
   }
 
-  // 和集合・未視聴ともに制限なく全作品を描画
-  const cardsHtml = filtered.map(item => {
+  const itemsToRender = filtered.slice(0, visibleCount);
+
+  // 単一カードHTML生成ヘルパー
+  function createCardHtml(item) {
     const work = item.work;
     const url = work.url || `https://annict.com/works/${work.id}`;
     const safeTitle = escapeHtml(work.title);
@@ -2321,7 +2337,6 @@ function renderGroupWorksList() {
       : `<div class="grid-card-no-thumb"><i class="fa-solid fa-film"></i></div>`;
 
     if (isUnion) {
-      // 和集合: 視聴者バッジと視聴者数タグ
       const watchers = item.watchers || [];
       const userBadgesHtml = watchers.map(u => `<span class="watched-user-badge">@${escapeHtml(u)}</span>`).join('');
       const seasonHtml = work.season
@@ -2344,7 +2359,6 @@ function renderGroupWorksList() {
         </a>
       `;
     } else {
-      // 未視聴作品: シンプルに作品情報のみ（タイトル・画像・シーズン）
       const seasonHtml = work.season
         ? `<span><i class="fa-regular fa-calendar"></i> ${escapeHtml(work.season)}</span>`
         : `<span class="text-muted small">シーズン未設定</span>`;
@@ -2361,9 +2375,45 @@ function renderGroupWorksList() {
         </a>
       `;
     }
-  }).join('');
+  }
+
+  let cardsHtml = itemsToRender.map(createCardHtml).join('');
+
+  // さらに表示ボタンまたは無限スクロール用トリガー
+  if (visibleCount < filtered.length) {
+    const remainingCount = filtered.length - visibleCount;
+    cardsHtml += `
+      <div id="group-load-more-container" style="grid-column: 1 / -1; display: flex; justify-content: center; padding: 2rem 1rem;">
+        <button type="button" id="btn-group-load-more" class="btn btn-outline" style="min-width: 240px; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 9999px;">
+          <i class="fa-solid fa-circle-chevron-down"></i> さらに表示（残り ${remainingCount.toLocaleString()} 作品）
+        </button>
+      </div>
+    `;
+  }
 
   gridContainer.innerHTML = cardsHtml;
+
+  // 「さらに表示」ボタンおよび無限スクロールのバインド
+  const loadMoreBtn = document.getElementById('btn-group-load-more');
+  if (loadMoreBtn) {
+    const loadNextChunk = () => {
+      state.groupRenderLimit += CHUNK_SIZE;
+      renderGroupWorksList();
+    };
+
+    loadMoreBtn.addEventListener('click', loadNextChunk);
+
+    // IntersectionObserver によるスクロール連動自動読み込み
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          loadNextChunk();
+        }
+      }, { rootMargin: '300px' });
+      observer.observe(loadMoreBtn);
+    }
+  }
 
   // 親コンテナへのイベント委譲で画像プレビューモーダルを開く（高速・省メモリ）
   gridContainer.onclick = (e) => {
