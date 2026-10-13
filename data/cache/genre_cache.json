@@ -155136,5 +155136,17 @@
   "転生したら剣でしたII": {
     "genres": [],
     "tags": []
+  },
+  "闇芝居 十七期": {
+    "genres": [
+      "Horror",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Episodic",
+        "rank": 20
+      }
+    ]
   }
 }

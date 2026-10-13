@@ -1,7 +1,14 @@
 {
-  "generatedAt": "2026-10-12T07:23:48.640Z",
-  "count": 17338,
+  "generatedAt": "2026-10-13T01:04:34.735Z",
+  "count": 17339,
   "works": [
+    {
+      "id": "18306",
+      "title": "鵺の陰陽師",
+      "image": "https://image.annict.com/XlN1P8zyjHN0Nu3DhQMJ-KQXjOlsA-8MPtgEp1zHtkM/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16827/image/master-ffab23b2a3dfe550b05157378ba2727e.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18306"
+    },
     {
       "id": "18305",
       "title": "ポケモン動画図鑑(第5シーズン)",

@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-11T22:38:34.364Z",
-  "count": 791,
+  "fetchedAt": "2026-10-13T01:04:41.524Z",
+  "count": 793,
   "animes": [
     {
       "id": "13582",
@@ -51,6 +51,13 @@
       "image": "https://image.annict.com/1XzVoit3HhuSBy94KNJ8p3KNvvGYU6f-VIC11VlAoEk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5006/image/master-12a9006b3f219d72e3048a9f722fb49e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/7915"
+    },
+    {
+      "id": "11193",
+      "title": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
+      "image": "https://image.annict.com/zEQOZ1o5hwee-HNwTox_rDrmFKcYzEMkW6YJpgb0-bk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7557/image/master-5fc4fae4aea12c92792702557bdd7a65.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/11193"
     },
     {
       "id": "16023",
@@ -1649,6 +1656,13 @@
       "url": "https://annict.com/works/8175"
     },
     {
+      "id": "8946",
+      "title": "転生したら剣でした",
+      "image": "https://image.annict.com/xN3PZUEvGMhLeKL9ZtZ3wwrh5oo2LqGDYQmVfiftPnU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6402/image/master-76459edc9aa76ee21a38c1d18bfa277c.jpg@webp",
+      "season": "2022年秋",
+      "url": "https://annict.com/works/8946"
+    },
+    {
       "id": "9250",
       "title": "リコリス・リコイル",
       "image": "https://image.annict.com/fleMWFipNvEFmEkEZ2ABVzKoOxDLzZqZf93YjmfyVzc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6183/image/master-bc58ab4034911f2145d6336e3a6edb8d.jpg@webp",
@@ -2734,18 +2748,18 @@
       "url": "https://annict.com/works/6390"
     },
     {
-      "id": "6185",
-      "title": "ガールズ&パンツァー 最終章 第2話",
-      "image": "https://image.annict.com/m6HFnWSxn2-INPZT9T-413Ko-q_0v-3uGrPIRbjUFNg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3009/image/master-816084e810fd4231cdea4b4f7949c8d0.jpg@webp",
-      "season": "2019年春",
-      "url": "https://annict.com/works/6185"
-    },
-    {
       "id": "6182",
       "title": "文豪ストレイドッグス (第3期)",
       "image": "https://image.annict.com/csKgZRmy4kR0lXOcYdT9dcdZP3uSPCXAi3YgnSeO3Rc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3261/image/master-562c05595e39179bc0dabac082ec0b86.jpg@webp",
       "season": "2019年春",
       "url": "https://annict.com/works/6182"
+    },
+    {
+      "id": "6185",
+      "title": "ガールズ&パンツァー 最終章 第2話",
+      "image": "https://image.annict.com/m6HFnWSxn2-INPZT9T-413Ko-q_0v-3uGrPIRbjUFNg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3009/image/master-816084e810fd4231cdea4b4f7949c8d0.jpg@webp",
+      "season": "2019年春",
+      "url": "https://annict.com/works/6185"
     },
     {
       "id": "6284",

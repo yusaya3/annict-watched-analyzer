@@ -1,29 +1,8 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-11T22:38:51.959Z",
-  "count": 805,
+  "fetchedAt": "2026-10-13T01:04:59.938Z",
+  "count": 803,
   "animes": [
-    {
-      "id": "10258",
-      "title": "転生したら剣でしたII",
-      "image": "https://image.annict.com/GGGmMQ6oxhX62X1RrjfB3gLTy7gQHcKhm9e0J8C53hk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6942/image/master-38efcbf4be29dfcaf738abf0496c3281.jpg@webp",
-      "season": "2026年秋",
-      "url": "https://annict.com/works/10258"
-    },
-    {
-      "id": "17314",
-      "title": "バーテックスフォース",
-      "image": "https://image.annict.com/sSN2nocqJB7lVWR5pq5trAejFlU7daEYbMOWik1MJqU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14042/image/master-f866b879a32d4a767475ccd8bc608169.jpg@webp",
-      "season": "2026年秋",
-      "url": "https://annict.com/works/17314"
-    },
-    {
-      "id": "16646",
-      "title": "弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった",
-      "image": "https://image.annict.com/T44K5p4fcptSAkbm8auspNY9HLbnpvVkzxODFTIIgYU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13292/image/master-a4948b281f034719604661302cd09a51.jpg@webp",
-      "season": "2026年秋",
-      "url": "https://annict.com/works/16646"
-    },
     {
       "id": "18233",
       "title": "魔法の姉妹ルルットリリィ 近くて遠いふたりの距離",
@@ -37,6 +16,13 @@
       "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/13582"
+    },
+    {
+      "id": "8632",
+      "title": "幼女戦記Ⅱ",
+      "image": "https://image.annict.com/Z8uEiMsmiE2R7kxMkBj-J4q6eouoWT5S1rpD4ah8QaM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5634/image/master-6287769377ed987f1b4f9a50592462b4.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/8632"
     },
     {
       "id": "17197",
