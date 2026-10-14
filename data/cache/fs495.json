@@ -1,7 +1,7 @@
 {
   "username": "fs495",
-  "fetchedAt": "2026-10-13T01:04:59.938Z",
-  "count": 803,
+  "fetchedAt": "2026-10-14T22:00:56.088Z",
+  "count": 804,
   "animes": [
     {
       "id": "18233",
@@ -72,6 +72,13 @@
       "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16023"
+    },
+    {
+      "id": "17131",
+      "title": "落第賢者の学院無双 ～二度目の転生、Sランクチート魔術師冒険録～",
+      "image": "https://image.annict.com/rNh9rO3zyGf9TEHT3e_UdEba3uwUgX8PBObIfzna6fc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13819/image/master-144b3bb55ac940b6aff40be5f4351498.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17131"
     },
     {
       "id": "17353",

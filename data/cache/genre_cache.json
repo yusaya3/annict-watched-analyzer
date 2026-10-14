@@ -155148,5 +155148,25 @@
         "rank": 20
       }
     ]
+  },
+  "どこよりも遠い場所にいる君へ": {
+    "genres": [
+      "Mystery",
+      "Romance"
+    ],
+    "tags": [
+      {
+        "name": "Classical Music",
+        "rank": 60
+      },
+      {
+        "name": "Coastal",
+        "rank": 53
+      },
+      {
+        "name": "Rural",
+        "rank": 40
+      }
+    ]
   }
 }

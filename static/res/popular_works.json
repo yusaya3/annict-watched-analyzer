@@ -1,7 +1,63 @@
 {
-  "generatedAt": "2026-10-13T01:04:34.735Z",
-  "count": 17339,
+  "generatedAt": "2026-10-14T22:00:28.660Z",
+  "count": 17347,
   "works": [
+    {
+      "id": "18314",
+      "title": "シンカリオン トレッズ",
+      "image": "https://image.annict.com/YqKpcwhZykOSlJ7J0cbDCokbBmjxnaKu8rKSYuV1dWs/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16836/image/master-b7ed4f2ebe07268f60de757ac0980e7c.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18314"
+    },
+    {
+      "id": "18313",
+      "title": "ゆめねこねくと",
+      "image": "https://image.annict.com/-DIuZzez8wR2cuSTaKbi_kzAljDI7D1Gk6NuDxu9J9E/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16835/image/master-88e02fe29a133d0256ef239c214b5fe4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18313"
+    },
+    {
+      "id": "18312",
+      "title": "GENJI FANTASY ネコが光源氏に恋をした",
+      "image": "https://image.annict.com/9yPduoA0V-jMfi0YWi44eu2SEbaLJBAucZCD1-ERt-A/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16834/image/master-affb918adba302974e1fae2ac5797566.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18312"
+    },
+    {
+      "id": "18311",
+      "title": "あはれ！名作くん (完全新作アニメ 2)",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18311"
+    },
+    {
+      "id": "18310",
+      "title": "きび男子",
+      "image": "https://image.annict.com/PO1rNYVWJ0gIEfYdzNt9wfN7m0TRubbWiAtOpWq7X4Y/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16833/image/master-e41bf3286a71d63f0c8c2ff999bb4413.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18310"
+    },
+    {
+      "id": "18309",
+      "title": "あの年のクリスマス",
+      "image": "https://image.annict.com/uBInG_TMuEKsoWeDGrD57AF1QLpXUHFk-94ttoocOVU/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16831/image/master-b0a4da6bb9e187b4dfd0462dd78b8b2a.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18309"
+    },
+    {
+      "id": "18308",
+      "title": "アングリーバード／大奮闘！ファミリー・ミッション",
+      "image": "https://image.annict.com/vzuobjZnhuzWAbcKvu_hGS54H_neDo84mMXJmYhWpRg/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16830/image/master-f7ae7e6648673f66b12004795af1a919.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18308"
+    },
+    {
+      "id": "18307",
+      "title": "ホタルの嫁入り ちょいたし",
+      "image": "https://image.annict.com/gIq58v70hpJ1kLWvAPLrOdXztGLpo64UQMx11P26iTg/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16829/image/master-2f22f593a9a8ec07e69012706072a168.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18307"
+    },
     {
       "id": "18306",
       "title": "鵺の陰陽師",
