@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-14T22:01:03.279Z",
-  "count": 525,
+  "fetchedAt": "2026-10-15T21:55:04.501Z",
+  "count": 528,
   "animes": [
     {
       "id": "17108",
@@ -18,6 +18,13 @@
       "url": "https://annict.com/works/17088"
     },
     {
+      "id": "16391",
+      "title": "スーパーの裏でヤニ吸うふたり",
+      "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16391"
+    },
+    {
       "id": "15881",
       "title": "天幕のジャードゥーガル",
       "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
@@ -30,6 +37,13 @@
       "image": "https://image.annict.com/2oa6V9InhquH4R4Gy7K3u1U3WVRnooxoRj_QLZGDf38/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12369/image/master-65fa9aa6c1db173807ce15603667a66f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15751"
+    },
+    {
+      "id": "16339",
+      "title": "グロウアップショウ ～ひまわりのサーカス団～",
+      "image": "https://image.annict.com/QQ7aCPaZMjpPnu8I--mKo_f8L3Y716LCD6lJ59TK7_U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13037/image/master-8aa0b6ab7ef6a275910799b5c03f56df.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16339"
     },
     {
       "id": "13052",
@@ -114,6 +128,13 @@
       "image": "https://image.annict.com/mwzDqfvFNXONYOrJtjs5JZlapewlqZkrQAI3piBDmHk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13221/image/master-e7e715fc17dd13a9255f575ab7a08234.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16555"
+    },
+    {
+      "id": "16632",
+      "title": "レッツゴー怪奇組",
+      "image": "https://image.annict.com/MB7ofh9YlDJAv9iE9M_nG6JYkHcM93W5fSIl0Gcyms4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13280/image/master-51e717fb33e68418646af08dec794ebb.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16632"
     },
     {
       "id": "17514",
@@ -669,18 +690,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16655",
-      "title": "藤本タツキ 17-26 Part2",
-      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16655"
-    },
-    {
       "id": "16654",
       "title": "藤本タツキ 17-26 Part1",
       "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16654"
+    },
+    {
+      "id": "16655",
+      "title": "藤本タツキ 17-26 Part2",
+      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16655"
     },
     {
       "id": "13048",
@@ -1726,18 +1747,18 @@
       "url": "https://annict.com/works/10259"
     },
     {
-      "id": "10403",
-      "title": "ささやくように恋を唄う",
-      "image": "https://image.annict.com/Kt5ezIsNrHxf_lcwTtp-wvTg8DrPwPfceuNfskoB3yc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6972/image/master-3684a3ca96a8be02b9cc3ac35e5414f8.jpg@webp",
-      "season": "2024年春",
-      "url": "https://annict.com/works/10403"
-    },
-    {
       "id": "12298",
       "title": "劇場版 ウマ娘 プリティーダービー 新時代の扉",
       "image": "https://image.annict.com/JcsrlUuQEzwf-svsvw0bsIHYA6gtCg81_vI_9fT-kH0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8845/image/master-88246dab2143355f22571cd80184eb7a.jpg@webp",
       "season": "2024年春",
       "url": "https://annict.com/works/12298"
+    },
+    {
+      "id": "10403",
+      "title": "ささやくように恋を唄う",
+      "image": "https://image.annict.com/Kt5ezIsNrHxf_lcwTtp-wvTg8DrPwPfceuNfskoB3yc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6972/image/master-3684a3ca96a8be02b9cc3ac35e5414f8.jpg@webp",
+      "season": "2024年春",
+      "url": "https://annict.com/works/10403"
     },
     {
       "id": "10865",
