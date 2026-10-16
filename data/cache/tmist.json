@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-15T21:55:04.501Z",
-  "count": 528,
+  "fetchedAt": "2026-10-16T21:53:21.530Z",
+  "count": 529,
   "animes": [
     {
       "id": "17108",
@@ -16,6 +16,13 @@
       "image": "https://image.annict.com/1ZeAYmbG6YCprr_SolG5XELsjcVqMz5ACeqsBf_cGWs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13777/image/master-6e1caecf58f095b59022a54849b62bd2.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17088"
+    },
+    {
+      "id": "15557",
+      "title": "きみが死ぬまで恋をしたい",
+      "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15557"
     },
     {
       "id": "16391",
@@ -60,18 +67,18 @@
       "url": "https://annict.com/works/13010"
     },
     {
-      "id": "6187",
-      "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
-      "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/6187"
-    },
-    {
       "id": "15724",
       "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
       "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15724"
+    },
+    {
+      "id": "6187",
+      "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+      "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6187"
     },
     {
       "id": "16677",
@@ -1831,18 +1838,18 @@
       "url": "https://annict.com/works/12464"
     },
     {
-      "id": "12472",
-      "title": "龍族 -The Blazing Dawn-",
-      "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
-      "season": "2024年春",
-      "url": "https://annict.com/works/12472"
-    },
-    {
       "id": "11848",
       "title": "ひみつのアイプリ",
       "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
       "season": "2024年春",
       "url": "https://annict.com/works/11848"
+    },
+    {
+      "id": "12472",
+      "title": "龍族 -The Blazing Dawn-",
+      "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
+      "season": "2024年春",
+      "url": "https://annict.com/works/12472"
     },
     {
       "id": "12811",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T21:55:06.318Z",
+  "generatedAt": "2026-10-16T21:53:27.403Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -14,8 +14,8 @@
   "userSummary": [
     {
       "username": "saya15",
-      "count": 796,
-      "exclusiveCount": 186,
+      "count": 798,
+      "exclusiveCount": 187,
       "missingCount": 0
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "username": "hitobi_syuto",
-      "count": 964,
+      "count": 965,
       "exclusiveCount": 170,
       "missingCount": 0
     },
@@ -44,8 +44,8 @@
     },
     {
       "username": "tmist",
-      "count": 528,
-      "exclusiveCount": 115,
+      "count": 529,
+      "exclusiveCount": 114,
       "missingCount": 0
     },
     {
@@ -77,8 +77,15 @@
       "sets": [
         "saya15"
       ],
-      "size": 796,
+      "size": 798,
       "animes": [
+        {
+          "id": "16716",
+          "title": "ガールズ&パンツァー 最終章 第5話",
+          "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+          "season": "2026年秋",
+          "url": "https://annict.com/works/16716"
+        },
         {
           "id": "13582",
           "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
@@ -106,6 +113,13 @@
           "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17197"
+        },
+        {
+          "id": "15557",
+          "title": "きみが死ぬまで恋をしたい",
+          "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/15557"
         },
         {
           "id": "16339",
@@ -2089,18 +2103,18 @@
           "url": "https://annict.com/works/7828"
         },
         {
-          "id": "7275",
-          "title": "ラブライブ！スーパースター!!",
-          "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-          "season": "2021年夏",
-          "url": "https://annict.com/works/7275"
-        },
-        {
           "id": "7747",
           "title": "かげきしょうじょ!!",
           "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
           "season": "2021年夏",
           "url": "https://annict.com/works/7747"
+        },
+        {
+          "id": "7275",
+          "title": "ラブライブ！スーパースター!!",
+          "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+          "season": "2021年夏",
+          "url": "https://annict.com/works/7275"
         },
         {
           "id": "7214",
@@ -17553,7 +17567,7 @@
         "saya15",
         "animemitaro"
       ],
-      "size": 442,
+      "size": 443,
       "animes": [
         {
           "id": "13582",
@@ -17575,6 +17589,13 @@
           "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17197"
+        },
+        {
+          "id": "15557",
+          "title": "きみが死ぬまで恋をしたい",
+          "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/15557"
         },
         {
           "id": "16339",
@@ -19201,18 +19222,18 @@
           "url": "https://annict.com/works/7828"
         },
         {
-          "id": "7275",
-          "title": "ラブライブ！スーパースター!!",
-          "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-          "season": "2021年夏",
-          "url": "https://annict.com/works/7275"
-        },
-        {
           "id": "7747",
           "title": "かげきしょうじょ!!",
           "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
           "season": "2021年夏",
           "url": "https://annict.com/works/7747"
+        },
+        {
+          "id": "7275",
+          "title": "ラブライブ！スーパースター!!",
+          "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+          "season": "2021年夏",
+          "url": "https://annict.com/works/7275"
         },
         {
           "id": "7214",
@@ -25893,82 +25914,82 @@
       {
         "user1": "saya15",
         "user2": "saya15",
-        "intersection": 796,
-        "union": 796,
+        "intersection": 798,
+        "union": 798,
         "similarity": 1,
         "percentage": 100
       },
       {
         "user1": "saya15",
         "user2": "animemitaro",
-        "intersection": 442,
-        "union": 1482,
-        "similarity": 0.2982456140350877,
-        "percentage": 29.8
+        "intersection": 443,
+        "union": 1483,
+        "similarity": 0.29871881321645316,
+        "percentage": 29.9
       },
       {
         "user1": "saya15",
         "user2": "hanu",
         "intersection": 182,
-        "union": 1183,
-        "similarity": 0.15384615384615385,
+        "union": 1185,
+        "similarity": 0.15358649789029535,
         "percentage": 15.4
       },
       {
         "user1": "saya15",
         "user2": "hitobi_syuto",
-        "intersection": 296,
-        "union": 1464,
-        "similarity": 0.20218579234972678,
-        "percentage": 20.2
+        "intersection": 297,
+        "union": 1466,
+        "similarity": 0.20259208731241474,
+        "percentage": 20.3
       },
       {
         "user1": "saya15",
         "user2": "fs495",
-        "intersection": 206,
-        "union": 1394,
-        "similarity": 0.14777618364418937,
+        "intersection": 207,
+        "union": 1395,
+        "similarity": 0.14838709677419354,
         "percentage": 14.8
       },
       {
         "user1": "saya15",
         "user2": "tmist",
-        "intersection": 166,
-        "union": 1158,
-        "similarity": 0.14335060449050085,
-        "percentage": 14.3
+        "intersection": 167,
+        "union": 1160,
+        "similarity": 0.14396551724137932,
+        "percentage": 14.4
       },
       {
         "user1": "saya15",
         "user2": "shimbaco",
         "intersection": 133,
-        "union": 1219,
-        "similarity": 0.10910582444626743,
+        "union": 1221,
+        "similarity": 0.10892710892710893,
         "percentage": 10.9
       },
       {
         "user1": "saya15",
         "user2": "white_tiny_cat",
         "intersection": 30,
-        "union": 891,
-        "similarity": 0.03367003367003367,
+        "union": 893,
+        "similarity": 0.0335946248600224,
         "percentage": 3.4
       },
       {
         "user1": "saya15",
         "user2": "pomeranian_dev",
         "intersection": 22,
-        "union": 811,
-        "similarity": 0.027127003699136867,
+        "union": 813,
+        "similarity": 0.02706027060270603,
         "percentage": 2.7
       },
       {
         "user1": "animemitaro",
         "user2": "saya15",
-        "intersection": 442,
-        "union": 1482,
-        "similarity": 0.2982456140350877,
-        "percentage": 29.8
+        "intersection": 443,
+        "union": 1483,
+        "similarity": 0.29871881321645316,
+        "percentage": 29.9
       },
       {
         "user1": "animemitaro",
@@ -25990,9 +26011,9 @@
         "user1": "animemitaro",
         "user2": "hitobi_syuto",
         "intersection": 570,
-        "union": 1522,
-        "similarity": 0.3745072273324573,
-        "percentage": 37.5
+        "union": 1523,
+        "similarity": 0.3742613263296126,
+        "percentage": 37.4
       },
       {
         "user1": "animemitaro",
@@ -26005,9 +26026,9 @@
       {
         "user1": "animemitaro",
         "user2": "tmist",
-        "intersection": 320,
+        "intersection": 321,
         "union": 1336,
-        "similarity": 0.23952095808383234,
+        "similarity": 0.2402694610778443,
         "percentage": 24
       },
       {
@@ -26038,8 +26059,8 @@
         "user1": "hanu",
         "user2": "saya15",
         "intersection": 182,
-        "union": 1183,
-        "similarity": 0.15384615384615385,
+        "union": 1185,
+        "similarity": 0.15358649789029535,
         "percentage": 15.4
       },
       {
@@ -26062,8 +26083,8 @@
         "user1": "hanu",
         "user2": "hitobi_syuto",
         "intersection": 296,
-        "union": 1237,
-        "similarity": 0.2392886014551334,
+        "union": 1238,
+        "similarity": 0.23909531502423265,
         "percentage": 23.9
       },
       {
@@ -26078,9 +26099,9 @@
         "user1": "hanu",
         "user2": "tmist",
         "intersection": 184,
-        "union": 913,
-        "similarity": 0.20153340635268346,
-        "percentage": 20.2
+        "union": 914,
+        "similarity": 0.2013129102844639,
+        "percentage": 20.1
       },
       {
         "user1": "hanu",
@@ -26109,32 +26130,32 @@
       {
         "user1": "hitobi_syuto",
         "user2": "saya15",
-        "intersection": 296,
-        "union": 1464,
-        "similarity": 0.20218579234972678,
-        "percentage": 20.2
+        "intersection": 297,
+        "union": 1466,
+        "similarity": 0.20259208731241474,
+        "percentage": 20.3
       },
       {
         "user1": "hitobi_syuto",
         "user2": "animemitaro",
         "intersection": 570,
-        "union": 1522,
-        "similarity": 0.3745072273324573,
-        "percentage": 37.5
+        "union": 1523,
+        "similarity": 0.3742613263296126,
+        "percentage": 37.4
       },
       {
         "user1": "hitobi_syuto",
         "user2": "hanu",
         "intersection": 296,
-        "union": 1237,
-        "similarity": 0.2392886014551334,
+        "union": 1238,
+        "similarity": 0.23909531502423265,
         "percentage": 23.9
       },
       {
         "user1": "hitobi_syuto",
         "user2": "hitobi_syuto",
-        "intersection": 964,
-        "union": 964,
+        "intersection": 965,
+        "union": 965,
         "similarity": 1,
         "percentage": 100
       },
@@ -26142,48 +26163,48 @@
         "user1": "hitobi_syuto",
         "user2": "fs495",
         "intersection": 290,
-        "union": 1478,
-        "similarity": 0.19621109607577808,
+        "union": 1479,
+        "similarity": 0.19607843137254902,
         "percentage": 19.6
       },
       {
         "user1": "hitobi_syuto",
         "user2": "tmist",
-        "intersection": 252,
+        "intersection": 254,
         "union": 1240,
-        "similarity": 0.2032258064516129,
-        "percentage": 20.3
+        "similarity": 0.20483870967741935,
+        "percentage": 20.5
       },
       {
         "user1": "hitobi_syuto",
         "user2": "shimbaco",
         "intersection": 200,
-        "union": 1320,
-        "similarity": 0.15151515151515152,
-        "percentage": 15.2
+        "union": 1321,
+        "similarity": 0.1514004542013626,
+        "percentage": 15.1
       },
       {
         "user1": "hitobi_syuto",
         "user2": "white_tiny_cat",
         "intersection": 29,
-        "union": 1060,
-        "similarity": 0.027358490566037737,
+        "union": 1061,
+        "similarity": 0.027332704995287466,
         "percentage": 2.7
       },
       {
         "user1": "hitobi_syuto",
         "user2": "pomeranian_dev",
         "intersection": 24,
-        "union": 977,
-        "similarity": 0.02456499488229273,
+        "union": 978,
+        "similarity": 0.024539877300613498,
         "percentage": 2.5
       },
       {
         "user1": "fs495",
         "user2": "saya15",
-        "intersection": 206,
-        "union": 1394,
-        "similarity": 0.14777618364418937,
+        "intersection": 207,
+        "union": 1395,
+        "similarity": 0.14838709677419354,
         "percentage": 14.8
       },
       {
@@ -26206,8 +26227,8 @@
         "user1": "fs495",
         "user2": "hitobi_syuto",
         "intersection": 290,
-        "union": 1478,
-        "similarity": 0.19621109607577808,
+        "union": 1479,
+        "similarity": 0.19607843137254902,
         "percentage": 19.6
       },
       {
@@ -26221,9 +26242,9 @@
       {
         "user1": "fs495",
         "user2": "tmist",
-        "intersection": 97,
+        "intersection": 98,
         "union": 1235,
-        "similarity": 0.07854251012145749,
+        "similarity": 0.07935222672064778,
         "percentage": 7.9
       },
       {
@@ -26253,48 +26274,48 @@
       {
         "user1": "tmist",
         "user2": "saya15",
-        "intersection": 166,
-        "union": 1158,
-        "similarity": 0.14335060449050085,
-        "percentage": 14.3
+        "intersection": 167,
+        "union": 1160,
+        "similarity": 0.14396551724137932,
+        "percentage": 14.4
       },
       {
         "user1": "tmist",
         "user2": "animemitaro",
-        "intersection": 320,
+        "intersection": 321,
         "union": 1336,
-        "similarity": 0.23952095808383234,
+        "similarity": 0.2402694610778443,
         "percentage": 24
       },
       {
         "user1": "tmist",
         "user2": "hanu",
         "intersection": 184,
-        "union": 913,
-        "similarity": 0.20153340635268346,
-        "percentage": 20.2
+        "union": 914,
+        "similarity": 0.2013129102844639,
+        "percentage": 20.1
       },
       {
         "user1": "tmist",
         "user2": "hitobi_syuto",
-        "intersection": 252,
+        "intersection": 254,
         "union": 1240,
-        "similarity": 0.2032258064516129,
-        "percentage": 20.3
+        "similarity": 0.20483870967741935,
+        "percentage": 20.5
       },
       {
         "user1": "tmist",
         "user2": "fs495",
-        "intersection": 97,
+        "intersection": 98,
         "union": 1235,
-        "similarity": 0.07854251012145749,
+        "similarity": 0.07935222672064778,
         "percentage": 7.9
       },
       {
         "user1": "tmist",
         "user2": "tmist",
-        "intersection": 528,
-        "union": 528,
+        "intersection": 529,
+        "union": 529,
         "similarity": 1,
         "percentage": 100
       },
@@ -26302,32 +26323,32 @@
         "user1": "tmist",
         "user2": "shimbaco",
         "intersection": 74,
-        "union": 1010,
-        "similarity": 0.07326732673267326,
+        "union": 1011,
+        "similarity": 0.07319485657764589,
         "percentage": 7.3
       },
       {
         "user1": "tmist",
         "user2": "white_tiny_cat",
         "intersection": 11,
-        "union": 642,
-        "similarity": 0.017133956386292833,
+        "union": 643,
+        "similarity": 0.017107309486780714,
         "percentage": 1.7
       },
       {
         "user1": "tmist",
         "user2": "pomeranian_dev",
         "intersection": 12,
-        "union": 553,
-        "similarity": 0.0216998191681736,
+        "union": 554,
+        "similarity": 0.021660649819494584,
         "percentage": 2.2
       },
       {
         "user1": "shimbaco",
         "user2": "saya15",
         "intersection": 133,
-        "union": 1219,
-        "similarity": 0.10910582444626743,
+        "union": 1221,
+        "similarity": 0.10892710892710893,
         "percentage": 10.9
       },
       {
@@ -26350,9 +26371,9 @@
         "user1": "shimbaco",
         "user2": "hitobi_syuto",
         "intersection": 200,
-        "union": 1320,
-        "similarity": 0.15151515151515152,
-        "percentage": 15.2
+        "union": 1321,
+        "similarity": 0.1514004542013626,
+        "percentage": 15.1
       },
       {
         "user1": "shimbaco",
@@ -26366,8 +26387,8 @@
         "user1": "shimbaco",
         "user2": "tmist",
         "intersection": 74,
-        "union": 1010,
-        "similarity": 0.07326732673267326,
+        "union": 1011,
+        "similarity": 0.07319485657764589,
         "percentage": 7.3
       },
       {
@@ -26398,8 +26419,8 @@
         "user1": "white_tiny_cat",
         "user2": "saya15",
         "intersection": 30,
-        "union": 891,
-        "similarity": 0.03367003367003367,
+        "union": 893,
+        "similarity": 0.0335946248600224,
         "percentage": 3.4
       },
       {
@@ -26422,8 +26443,8 @@
         "user1": "white_tiny_cat",
         "user2": "hitobi_syuto",
         "intersection": 29,
-        "union": 1060,
-        "similarity": 0.027358490566037737,
+        "union": 1061,
+        "similarity": 0.027332704995287466,
         "percentage": 2.7
       },
       {
@@ -26438,8 +26459,8 @@
         "user1": "white_tiny_cat",
         "user2": "tmist",
         "intersection": 11,
-        "union": 642,
-        "similarity": 0.017133956386292833,
+        "union": 643,
+        "similarity": 0.017107309486780714,
         "percentage": 1.7
       },
       {
@@ -26470,8 +26491,8 @@
         "user1": "pomeranian_dev",
         "user2": "saya15",
         "intersection": 22,
-        "union": 811,
-        "similarity": 0.027127003699136867,
+        "union": 813,
+        "similarity": 0.02706027060270603,
         "percentage": 2.7
       },
       {
@@ -26494,8 +26515,8 @@
         "user1": "pomeranian_dev",
         "user2": "hitobi_syuto",
         "intersection": 24,
-        "union": 977,
-        "similarity": 0.02456499488229273,
+        "union": 978,
+        "similarity": 0.024539877300613498,
         "percentage": 2.5
       },
       {
@@ -26510,8 +26531,8 @@
         "user1": "pomeranian_dev",
         "user2": "tmist",
         "intersection": 12,
-        "union": 553,
-        "similarity": 0.0216998191681736,
+        "union": 554,
+        "similarity": 0.021660649819494584,
         "percentage": 2.2
       },
       {
@@ -26546,9 +26567,9 @@
           "hitobi_syuto"
         ],
         "intersection": 570,
-        "union": 1522,
-        "similarity": 0.3745072273324573,
-        "percentage": 37.5
+        "union": 1523,
+        "similarity": 0.3742613263296126,
+        "percentage": 37.4
       },
       {
         "pair": [
@@ -26565,19 +26586,19 @@
           "saya15",
           "animemitaro"
         ],
-        "intersection": 442,
-        "union": 1482,
-        "similarity": 0.2982456140350877,
-        "percentage": 29.8
+        "intersection": 443,
+        "union": 1483,
+        "similarity": 0.29871881321645316,
+        "percentage": 29.9
       },
       {
         "pair": [
           "animemitaro",
           "tmist"
         ],
-        "intersection": 320,
+        "intersection": 321,
         "union": 1336,
-        "similarity": 0.23952095808383234,
+        "similarity": 0.2402694610778443,
         "percentage": 24
       },
       {
@@ -26586,8 +26607,8 @@
           "hitobi_syuto"
         ],
         "intersection": 296,
-        "union": 1237,
-        "similarity": 0.2392886014551334,
+        "union": 1238,
+        "similarity": 0.23909531502423265,
         "percentage": 23.9
       },
       {
@@ -26605,20 +26626,20 @@
           "hitobi_syuto",
           "tmist"
         ],
-        "intersection": 252,
+        "intersection": 254,
         "union": 1240,
-        "similarity": 0.2032258064516129,
-        "percentage": 20.3
+        "similarity": 0.20483870967741935,
+        "percentage": 20.5
       },
       {
         "pair": [
           "saya15",
           "hitobi_syuto"
         ],
-        "intersection": 296,
-        "union": 1464,
-        "similarity": 0.20218579234972678,
-        "percentage": 20.2
+        "intersection": 297,
+        "union": 1466,
+        "similarity": 0.20259208731241474,
+        "percentage": 20.3
       },
       {
         "pair": [
@@ -26626,9 +26647,9 @@
           "tmist"
         ],
         "intersection": 184,
-        "union": 913,
-        "similarity": 0.20153340635268346,
-        "percentage": 20.2
+        "union": 914,
+        "similarity": 0.2013129102844639,
+        "percentage": 20.1
       },
       {
         "pair": [
@@ -26636,8 +26657,8 @@
           "fs495"
         ],
         "intersection": 290,
-        "union": 1478,
-        "similarity": 0.19621109607577808,
+        "union": 1479,
+        "similarity": 0.19607843137254902,
         "percentage": 19.6
       },
       {
@@ -26656,8 +26677,8 @@
           "hanu"
         ],
         "intersection": 182,
-        "union": 1183,
-        "similarity": 0.15384615384615385,
+        "union": 1185,
+        "similarity": 0.15358649789029535,
         "percentage": 15.4
       },
       {
@@ -26666,18 +26687,18 @@
           "shimbaco"
         ],
         "intersection": 200,
-        "union": 1320,
-        "similarity": 0.15151515151515152,
-        "percentage": 15.2
+        "union": 1321,
+        "similarity": 0.1514004542013626,
+        "percentage": 15.1
       },
       {
         "pair": [
           "saya15",
           "fs495"
         ],
-        "intersection": 206,
-        "union": 1394,
-        "similarity": 0.14777618364418937,
+        "intersection": 207,
+        "union": 1395,
+        "similarity": 0.14838709677419354,
         "percentage": 14.8
       },
       {
@@ -26685,10 +26706,10 @@
           "saya15",
           "tmist"
         ],
-        "intersection": 166,
-        "union": 1158,
-        "similarity": 0.14335060449050085,
-        "percentage": 14.3
+        "intersection": 167,
+        "union": 1160,
+        "similarity": 0.14396551724137932,
+        "percentage": 14.4
       },
       {
         "pair": [
@@ -26716,8 +26737,8 @@
           "shimbaco"
         ],
         "intersection": 133,
-        "union": 1219,
-        "similarity": 0.10910582444626743,
+        "union": 1221,
+        "similarity": 0.10892710892710893,
         "percentage": 10.9
       },
       {
@@ -26725,9 +26746,9 @@
           "fs495",
           "tmist"
         ],
-        "intersection": 97,
+        "intersection": 98,
         "union": 1235,
-        "similarity": 0.07854251012145749,
+        "similarity": 0.07935222672064778,
         "percentage": 7.9
       },
       {
@@ -26736,8 +26757,8 @@
           "shimbaco"
         ],
         "intersection": 74,
-        "union": 1010,
-        "similarity": 0.07326732673267326,
+        "union": 1011,
+        "similarity": 0.07319485657764589,
         "percentage": 7.3
       },
       {
@@ -26766,8 +26787,8 @@
           "white_tiny_cat"
         ],
         "intersection": 30,
-        "union": 891,
-        "similarity": 0.03367003367003367,
+        "union": 893,
+        "similarity": 0.0335946248600224,
         "percentage": 3.4
       },
       {
@@ -26776,8 +26797,8 @@
           "white_tiny_cat"
         ],
         "intersection": 29,
-        "union": 1060,
-        "similarity": 0.027358490566037737,
+        "union": 1061,
+        "similarity": 0.027332704995287466,
         "percentage": 2.7
       },
       {
@@ -26786,8 +26807,8 @@
           "pomeranian_dev"
         ],
         "intersection": 22,
-        "union": 811,
-        "similarity": 0.027127003699136867,
+        "union": 813,
+        "similarity": 0.02706027060270603,
         "percentage": 2.7
       },
       {
@@ -26806,8 +26827,8 @@
           "pomeranian_dev"
         ],
         "intersection": 24,
-        "union": 977,
-        "similarity": 0.02456499488229273,
+        "union": 978,
+        "similarity": 0.024539877300613498,
         "percentage": 2.5
       },
       {
@@ -26816,8 +26837,8 @@
           "pomeranian_dev"
         ],
         "intersection": 12,
-        "union": 553,
-        "similarity": 0.0216998191681736,
+        "union": 554,
+        "similarity": 0.021660649819494584,
         "percentage": 2.2
       },
       {
@@ -26856,8 +26877,8 @@
           "white_tiny_cat"
         ],
         "intersection": 11,
-        "union": 642,
-        "similarity": 0.017133956386292833,
+        "union": 643,
+        "similarity": 0.017107309486780714,
         "percentage": 1.7
       },
       {
@@ -26906,6 +26927,13 @@
     "watchedByAll": [],
     "exclusivePerUser": {
       "saya15": [
+        {
+          "id": "16716",
+          "title": "ガールズ&パンツァー 最終章 第5話",
+          "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+          "season": "2026年秋",
+          "url": "https://annict.com/works/16716"
+        },
         {
           "id": "16129",
           "title": "映画 ラブライブ！蓮ノ空女学院スクールアイドルクラブ Bloom Garden Party ",
@@ -32692,13 +32720,6 @@
       ],
       "tmist": [
         {
-          "id": "17108",
-          "title": "どこよりも遠い場所にいる君へ",
-          "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
-          "season": "2026年秋",
-          "url": "https://annict.com/works/17108"
-        },
-        {
           "id": "15881",
           "title": "天幕のジャードゥーガル",
           "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
@@ -35230,10 +35251,17 @@
       "white_tiny_cat": [],
       "pomeranian_dev": []
     },
-    "totalUniqueAnimes": 2606
+    "totalUniqueAnimes": 2607
   },
   "userWatchedLists": {
     "saya15": [
+      {
+        "id": "16716",
+        "title": "ガールズ&パンツァー 最終章 第5話",
+        "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+        "season": "2026年秋",
+        "url": "https://annict.com/works/16716"
+      },
       {
         "id": "13582",
         "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
@@ -35261,6 +35289,13 @@
         "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17197"
+      },
+      {
+        "id": "15557",
+        "title": "きみが死ぬまで恋をしたい",
+        "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15557"
       },
       {
         "id": "16339",
@@ -37244,18 +37279,18 @@
         "url": "https://annict.com/works/7828"
       },
       {
-        "id": "7275",
-        "title": "ラブライブ！スーパースター!!",
-        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-        "season": "2021年夏",
-        "url": "https://annict.com/works/7275"
-      },
-      {
         "id": "7747",
         "title": "かげきしょうじょ!!",
         "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
         "season": "2021年夏",
         "url": "https://annict.com/works/7747"
+      },
+      {
+        "id": "7275",
+        "title": "ラブライブ！スーパースター!!",
+        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+        "season": "2021年夏",
+        "url": "https://annict.com/works/7275"
       },
       {
         "id": "7214",
@@ -52692,6 +52727,13 @@
     ],
     "hitobi_syuto": [
       {
+        "id": "17108",
+        "title": "どこよりも遠い場所にいる君へ",
+        "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+        "season": "2026年秋",
+        "url": "https://annict.com/works/17108"
+      },
+      {
         "id": "8410",
         "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
         "image": "https://image.annict.com/jyIh3WyOnp-f8BBVLPfDb4sJBr6l836pQJvKOzDlcm4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5388/image/master-37a7276803f950d50a12057433afc6f7.jpg@webp",
@@ -55653,18 +55695,18 @@
         "url": "https://annict.com/works/9604"
       },
       {
-        "id": "10210",
-        "title": "ワールドダイスター",
-        "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
-        "season": "2023年春",
-        "url": "https://annict.com/works/10210"
-      },
-      {
         "id": "10252",
         "title": "カワイスギクライシス",
         "image": "https://image.annict.com/75YkM-59OxpVupzwf1ix3L1Mq3WNyCNwB6YPKPVPJqo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6937/image/master-9ad26e277289108e83a4b0d690daf5ab.jpg@webp",
         "season": "2023年春",
         "url": "https://annict.com/works/10252"
+      },
+      {
+        "id": "10210",
+        "title": "ワールドダイスター",
+        "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
+        "season": "2023年春",
+        "url": "https://annict.com/works/10210"
       },
       {
         "id": "10191",
@@ -56220,18 +56262,18 @@
         "url": "https://annict.com/works/8024"
       },
       {
-        "id": "7275",
-        "title": "ラブライブ！スーパースター!!",
-        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-        "season": "2021年夏",
-        "url": "https://annict.com/works/7275"
-      },
-      {
         "id": "7747",
         "title": "かげきしょうじょ!!",
         "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
         "season": "2021年夏",
         "url": "https://annict.com/works/7747"
+      },
+      {
+        "id": "7275",
+        "title": "ラブライブ！スーパースター!!",
+        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+        "season": "2021年夏",
+        "url": "https://annict.com/works/7275"
       },
       {
         "id": "7855",
@@ -65086,6 +65128,13 @@
         "url": "https://annict.com/works/17088"
       },
       {
+        "id": "15557",
+        "title": "きみが死ぬまで恋をしたい",
+        "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15557"
+      },
+      {
         "id": "16391",
         "title": "スーパーの裏でヤニ吸うふたり",
         "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
@@ -65128,18 +65177,18 @@
         "url": "https://annict.com/works/13010"
       },
       {
-        "id": "6187",
-        "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
-        "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/6187"
-      },
-      {
         "id": "15724",
         "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
         "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/15724"
+      },
+      {
+        "id": "6187",
+        "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+        "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/6187"
       },
       {
         "id": "16677",
@@ -66899,18 +66948,18 @@
         "url": "https://annict.com/works/12464"
       },
       {
-        "id": "12472",
-        "title": "龍族 -The Blazing Dawn-",
-        "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
-        "season": "2024年春",
-        "url": "https://annict.com/works/12472"
-      },
-      {
         "id": "11848",
         "title": "ひみつのアイプリ",
         "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
         "season": "2024年春",
         "url": "https://annict.com/works/11848"
+      },
+      {
+        "id": "12472",
+        "title": "龍族 -The Blazing Dawn-",
+        "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
+        "season": "2024年春",
+        "url": "https://annict.com/works/12472"
       },
       {
         "id": "12811",
@@ -73805,14 +73854,14 @@
     "calorieReport": {
       "saya15": {
         "username": "saya15",
-        "workCount": 796,
-        "totalHours": 3690.6,
-        "totalDays": 153.8,
-        "wakingDays": 230.7,
+        "workCount": 798,
+        "totalHours": 3700.2,
+        "totalDays": 154.2,
+        "wakingDays": 231.3,
         "lifePercentage": 6.3,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 703,
+          "tvCount": 705,
           "movieCount": 68,
           "ovaCount": 25
         }
@@ -73847,14 +73896,14 @@
       },
       "hitobi_syuto": {
         "username": "hitobi_syuto",
-        "workCount": 964,
-        "totalHours": 4680.5,
-        "totalDays": 195,
-        "wakingDays": 292.5,
+        "workCount": 965,
+        "totalHours": 4685.3,
+        "totalDays": 195.2,
+        "wakingDays": 292.8,
         "lifePercentage": 8,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 939,
+          "tvCount": 940,
           "movieCount": 23,
           "ovaCount": 2
         }
@@ -73875,14 +73924,14 @@
       },
       "tmist": {
         "username": "tmist",
-        "workCount": 528,
-        "totalHours": 2543.4,
-        "totalDays": 106,
-        "wakingDays": 159,
+        "workCount": 529,
+        "totalHours": 2548.2,
+        "totalDays": 106.2,
+        "wakingDays": 159.3,
         "lifePercentage": 4.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 503,
+          "tvCount": 504,
           "movieCount": 22,
           "ovaCount": 3
         }
@@ -74015,20 +74064,27 @@
       "yearStats": [
         {
           "year": 2026,
-          "totalCount": 632,
+          "totalCount": 636,
           "countsByUser": {
-            "saya15": 61,
+            "saya15": 63,
             "animemitaro": 181,
             "hanu": 165,
-            "hitobi_syuto": 93,
+            "hitobi_syuto": 94,
             "fs495": 55,
-            "tmist": 75,
+            "tmist": 76,
             "shimbaco": 2,
             "white_tiny_cat": 0,
             "pomeranian_dev": 0
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "16716",
+                "title": "ガールズ&パンツァー 最終章 第5話",
+                "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/16716"
+              },
               {
                 "id": "13582",
                 "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
@@ -74056,6 +74112,13 @@
                 "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17197"
+              },
+              {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
               },
               {
                 "id": "16339",
@@ -76885,6 +76948,13 @@
             ],
             "hitobi_syuto": [
               {
+                "id": "17108",
+                "title": "どこよりも遠い場所にいる君へ",
+                "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/17108"
+              },
+              {
                 "id": "8410",
                 "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
                 "image": "https://image.annict.com/jyIh3WyOnp-f8BBVLPfDb4sJBr6l836pQJvKOzDlcm4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5388/image/master-37a7276803f950d50a12057433afc6f7.jpg@webp",
@@ -77939,6 +78009,13 @@
                 "url": "https://annict.com/works/17088"
               },
               {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
+              {
                 "id": "16391",
                 "title": "スーパーの裏でヤニ吸うふたり",
                 "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
@@ -77981,18 +78058,18 @@
                 "url": "https://annict.com/works/13010"
               },
               {
-                "id": "6187",
-                "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
-                "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/6187"
-              },
-              {
                 "id": "15724",
                 "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
                 "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/15724"
+              },
+              {
+                "id": "6187",
+                "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+                "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/6187"
               },
               {
                 "id": "16677",
@@ -87210,18 +87287,18 @@
                 "url": "https://annict.com/works/12464"
               },
               {
-                "id": "12472",
-                "title": "龍族 -The Blazing Dawn-",
-                "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
-                "season": "2024年春",
-                "url": "https://annict.com/works/12472"
-              },
-              {
                 "id": "11848",
                 "title": "ひみつのアイプリ",
                 "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
                 "season": "2024年春",
                 "url": "https://annict.com/works/11848"
+              },
+              {
+                "id": "12472",
+                "title": "龍族 -The Blazing Dawn-",
+                "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
+                "season": "2024年春",
+                "url": "https://annict.com/works/12472"
               },
               {
                 "id": "12811",
@@ -89297,18 +89374,18 @@
                 "url": "https://annict.com/works/9604"
               },
               {
-                "id": "10210",
-                "title": "ワールドダイスター",
-                "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
-                "season": "2023年春",
-                "url": "https://annict.com/works/10210"
-              },
-              {
                 "id": "10252",
                 "title": "カワイスギクライシス",
                 "image": "https://image.annict.com/75YkM-59OxpVupzwf1ix3L1Mq3WNyCNwB6YPKPVPJqo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6937/image/master-9ad26e277289108e83a4b0d690daf5ab.jpg@webp",
                 "season": "2023年春",
                 "url": "https://annict.com/works/10252"
+              },
+              {
+                "id": "10210",
+                "title": "ワールドダイスター",
+                "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
+                "season": "2023年春",
+                "url": "https://annict.com/works/10210"
               },
               {
                 "id": "10191",
@@ -92444,18 +92521,18 @@
                 "url": "https://annict.com/works/7828"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "7214",
@@ -93409,18 +93486,18 @@
                 "url": "https://annict.com/works/8024"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "7855",
@@ -114060,7 +114137,7 @@
             "2023": 51,
             "2024": 55,
             "2025": 66,
-            "2026": 61
+            "2026": 63
           },
           "animesByYear": {
             "1978": [
@@ -117572,18 +117649,18 @@
                 "url": "https://annict.com/works/7828"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "7214",
@@ -119276,6 +119353,13 @@
             ],
             "2026": [
               {
+                "id": "16716",
+                "title": "ガールズ&パンツァー 最終章 第5話",
+                "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/16716"
+              },
+              {
                 "id": "13582",
                 "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
                 "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
@@ -119302,6 +119386,13 @@
                 "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17197"
+              },
+              {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
               },
               {
                 "id": "16339",
@@ -119709,7 +119800,7 @@
             "2006_2010": 53,
             "2011_2015": 185,
             "2016_2020": 214,
-            "2021_present": 322
+            "2021_present": 324
           }
         },
         "animemitaro": {
@@ -131777,7 +131868,7 @@
             "2023": 72,
             "2024": 114,
             "2025": 164,
-            "2026": 93
+            "2026": 94
           },
           "animesByYear": {
             "2006": [
@@ -134997,18 +135088,18 @@
                 "url": "https://annict.com/works/8024"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "7855",
@@ -135827,18 +135918,18 @@
                 "url": "https://annict.com/works/9604"
               },
               {
-                "id": "10210",
-                "title": "ワールドダイスター",
-                "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
-                "season": "2023年春",
-                "url": "https://annict.com/works/10210"
-              },
-              {
                 "id": "10252",
                 "title": "カワイスギクライシス",
                 "image": "https://image.annict.com/75YkM-59OxpVupzwf1ix3L1Mq3WNyCNwB6YPKPVPJqo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6937/image/master-9ad26e277289108e83a4b0d690daf5ab.jpg@webp",
                 "season": "2023年春",
                 "url": "https://annict.com/works/10252"
+              },
+              {
+                "id": "10210",
+                "title": "ワールドダイスター",
+                "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
+                "season": "2023年春",
+                "url": "https://annict.com/works/10210"
               },
               {
                 "id": "10191",
@@ -137919,6 +138010,13 @@
             ],
             "2026": [
               {
+                "id": "17108",
+                "title": "どこよりも遠い場所にいる君へ",
+                "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/17108"
+              },
+              {
                 "id": "8410",
                 "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
                 "image": "https://image.annict.com/jyIh3WyOnp-f8BBVLPfDb4sJBr6l836pQJvKOzDlcm4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5388/image/master-37a7276803f950d50a12057433afc6f7.jpg@webp",
@@ -138576,7 +138674,7 @@
             "2006_2010": 78,
             "2011_2015": 223,
             "2016_2020": 136,
-            "2021_present": 527
+            "2021_present": 528
           }
         },
         "fs495": {
@@ -144392,7 +144490,7 @@
             "2023": 52,
             "2024": 101,
             "2025": 108,
-            "2026": 75
+            "2026": 76
           },
           "animesByYear": {
             "1993": [
@@ -146699,18 +146797,18 @@
                 "url": "https://annict.com/works/12464"
               },
               {
-                "id": "12472",
-                "title": "龍族 -The Blazing Dawn-",
-                "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
-                "season": "2024年春",
-                "url": "https://annict.com/works/12472"
-              },
-              {
                 "id": "11848",
                 "title": "ひみつのアイプリ",
                 "image": "https://image.annict.com/KThO673pKAP92H9w3Tq2N7wV3qiwCvKZMmzQg8JG30A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8962/image/master-63bc587302e177a5b84dd861f7344d53.jpg@webp",
                 "season": "2024年春",
                 "url": "https://annict.com/works/11848"
+              },
+              {
+                "id": "12472",
+                "title": "龍族 -The Blazing Dawn-",
+                "image": "https://image.annict.com/f5ZzRB3mX8EKjMvl1tfN435EmUaEpMNipxv36xk-Bb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8968/image/master-d54e4524e770f5a9048ec74e35cb037d.jpg@webp",
+                "season": "2024年春",
+                "url": "https://annict.com/works/12472"
               },
               {
                 "id": "12811",
@@ -147634,6 +147732,13 @@
                 "url": "https://annict.com/works/17088"
               },
               {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
+              {
                 "id": "16391",
                 "title": "スーパーの裏でヤニ吸うふたり",
                 "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
@@ -147676,18 +147781,18 @@
                 "url": "https://annict.com/works/13010"
               },
               {
-                "id": "6187",
-                "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
-                "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/6187"
-              },
-              {
                 "id": "15724",
                 "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
                 "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/15724"
+              },
+              {
+                "id": "6187",
+                "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+                "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/6187"
               },
               {
                 "id": "16677",
@@ -148151,7 +148256,7 @@
             "2006_2010": 9,
             "2011_2015": 45,
             "2016_2020": 79,
-            "2021_present": 389
+            "2021_present": 390
           }
         },
         "shimbaco": {
@@ -153432,7 +153537,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 60,
-          "totalCommon": 442
+          "totalCommon": 443
         },
         {
           "pair": [
@@ -153450,7 +153555,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 48,
-          "totalCommon": 296
+          "totalCommon": 297
         },
         {
           "pair": [
@@ -153458,8 +153563,8 @@
             "fs495"
           ],
           "year": 2026,
-          "commonInYearCount": 27,
-          "totalCommon": 206
+          "commonInYearCount": 28,
+          "totalCommon": 207
         },
         {
           "pair": [
@@ -153468,7 +153573,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 33,
-          "totalCommon": 166
+          "totalCommon": 167
         },
         {
           "pair": [
@@ -153531,7 +153636,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 80,
-          "totalCommon": 320
+          "totalCommon": 321
         },
         {
           "pair": [
@@ -153630,7 +153735,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 68,
-          "totalCommon": 252
+          "totalCommon": 254
         },
         {
           "pair": [
@@ -153666,7 +153771,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 20,
-          "totalCommon": 97
+          "totalCommon": 98
         },
         {
           "pair": [
@@ -161827,7 +161932,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 796,
+          "totalWatched": 798,
           "genres": [
             {
               "id": "isekai",
@@ -163566,18 +163671,18 @@
                   "url": "https://annict.com/works/7973"
                 },
                 {
-                  "id": "7275",
-                  "title": "ラブライブ！スーパースター!!",
-                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                  "season": "2021年夏",
-                  "url": "https://annict.com/works/7275"
-                },
-                {
                   "id": "7747",
                   "title": "かげきしょうじょ!!",
                   "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                   "season": "2021年夏",
                   "url": "https://annict.com/works/7747"
+                },
+                {
+                  "id": "7275",
+                  "title": "ラブライブ！スーパースター!!",
+                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                  "season": "2021年夏",
+                  "url": "https://annict.com/works/7275"
                 },
                 {
                   "id": "6817",
@@ -164534,9 +164639,16 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 84,
-              "percentage": 10.6,
+              "count": 85,
+              "percentage": 10.7,
               "animes": [
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
+                },
                 {
                   "id": "16581",
                   "title": "Dr.STONE SCIENCE FUTURE 第3クール",
@@ -165133,7 +165245,7 @@
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
               "count": 65,
-              "percentage": 8.2,
+              "percentage": 8.1,
               "animes": [
                 {
                   "id": "14074",
@@ -165598,7 +165710,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 61,
-              "percentage": 7.7,
+              "percentage": 7.6,
               "animes": [
                 {
                   "id": "11528",
@@ -166394,9 +166506,16 @@
               "label": "スポーツ / 競技",
               "icon": "fa-solid fa-futbol",
               "color": "#14b8a6",
-              "count": 41,
-              "percentage": 5.2,
+              "count": 42,
+              "percentage": 5.3,
               "animes": [
+                {
+                  "id": "16716",
+                  "title": "ガールズ&パンツァー 最終章 第5話",
+                  "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/16716"
+                },
                 {
                   "id": "16339",
                   "title": "グロウアップショウ ～ひまわりのサーカス団～",
@@ -169290,18 +169409,18 @@
                   "url": "https://annict.com/works/7973"
                 },
                 {
-                  "id": "7275",
-                  "title": "ラブライブ！スーパースター!!",
-                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                  "season": "2021年夏",
-                  "url": "https://annict.com/works/7275"
-                },
-                {
                   "id": "7747",
                   "title": "かげきしょうじょ!!",
                   "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                   "season": "2021年夏",
                   "url": "https://annict.com/works/7747"
+                },
+                {
+                  "id": "7275",
+                  "title": "ラブライブ！スーパースター!!",
+                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                  "season": "2021年夏",
+                  "url": "https://annict.com/works/7275"
                 },
                 {
                   "id": "6817",
@@ -187395,16 +187514,23 @@
         },
         "hitobi_syuto": {
           "username": "hitobi_syuto",
-          "totalWatched": 964,
+          "totalWatched": 965,
           "genres": [
             {
               "id": "romance",
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 166,
-              "percentage": 17.2,
+              "count": 167,
+              "percentage": 17.3,
               "animes": [
+                {
+                  "id": "17108",
+                  "title": "どこよりも遠い場所にいる君へ",
+                  "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/17108"
+                },
                 {
                   "id": "16677",
                   "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -189572,7 +189698,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 122,
-              "percentage": 12.7,
+              "percentage": 12.6,
               "animes": [
                 {
                   "id": "16391",
@@ -190436,7 +190562,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 96,
-              "percentage": 10,
+              "percentage": 9.9,
               "animes": [
                 {
                   "id": "16658",
@@ -190698,18 +190824,18 @@
                   "url": "https://annict.com/works/7836"
                 },
                 {
-                  "id": "7275",
-                  "title": "ラブライブ！スーパースター!!",
-                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                  "season": "2021年夏",
-                  "url": "https://annict.com/works/7275"
-                },
-                {
                   "id": "7747",
                   "title": "かげきしょうじょ!!",
                   "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                   "season": "2021年夏",
                   "url": "https://annict.com/works/7747"
+                },
+                {
+                  "id": "7275",
+                  "title": "ラブライブ！スーパースター!!",
+                  "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                  "season": "2021年夏",
+                  "url": "https://annict.com/works/7275"
                 },
                 {
                   "id": "7855",
@@ -194302,9 +194428,16 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 166,
-              "percentage": 17.2,
+              "count": 167,
+              "percentage": 17.3,
               "animes": [
+                {
+                  "id": "17108",
+                  "title": "どこよりも遠い場所にいる君へ",
+                  "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/17108"
+                },
                 {
                   "id": "16677",
                   "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -196472,7 +196605,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 122,
-              "percentage": 12.7,
+              "percentage": 12.6,
               "animes": [
                 {
                   "id": "16391",
@@ -205837,7 +205970,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 528,
+          "totalWatched": 529,
           "genres": [
             {
               "id": "nichijou",
@@ -207823,9 +207956,16 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 48,
-              "percentage": 9.1,
+              "count": 49,
+              "percentage": 9.3,
               "animes": [
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
+                },
                 {
                   "id": "15881",
                   "title": "天幕のジャードゥーガル",
@@ -208453,7 +208593,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 33,
-              "percentage": 6.3,
+              "percentage": 6.2,
               "animes": [
                 {
                   "id": "15724",
@@ -208694,7 +208834,7 @@
               "icon": "fa-solid fa-face-laugh-squint",
               "color": "#f59e0b",
               "count": 33,
-              "percentage": 6.3,
+              "percentage": 6.2,
               "animes": [
                 {
                   "id": "17088",
@@ -218979,7 +219119,7 @@
             "hanu": 25,
             "hitobi_syuto": 14.6,
             "fs495": 23,
-            "tmist": 6.3,
+            "tmist": 6.2,
             "shimbaco": 9,
             "white_tiny_cat": 4,
             "pomeranian_dev": 18.9
@@ -225490,12 +225630,12 @@
           "labelEn": "Romance / Rom-Com",
           "icon": "fa-solid fa-heart",
           "color": "#ec4899",
-          "totalWorksAcrossUsers": 705,
+          "totalWorksAcrossUsers": 706,
           "userCounts": {
             "saya15": 93,
             "animemitaro": 145,
             "hanu": 58,
-            "hitobi_syuto": 166,
+            "hitobi_syuto": 167,
             "fs495": 91,
             "tmist": 66,
             "shimbaco": 71,
@@ -225506,7 +225646,7 @@
             "saya15": 11.7,
             "animemitaro": 12.9,
             "hanu": 10.2,
-            "hitobi_syuto": 17.2,
+            "hitobi_syuto": 17.3,
             "fs495": 11.3,
             "tmist": 12.5,
             "shimbaco": 12.8,
@@ -227593,6 +227733,13 @@
               }
             ],
             "hitobi_syuto": [
+              {
+                "id": "17108",
+                "title": "どこよりも遠い場所にいる君へ",
+                "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/17108"
+              },
               {
                 "id": "16677",
                 "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -230470,7 +230617,7 @@
           },
           "topUser": {
             "username": "hitobi_syuto",
-            "count": 166
+            "count": 167
           }
         },
         {
@@ -230495,7 +230642,7 @@
             "saya15": 3.6,
             "animemitaro": 11.3,
             "hanu": 10.4,
-            "hitobi_syuto": 12.7,
+            "hitobi_syuto": 12.6,
             "fs495": 8.5,
             "tmist": 17.4,
             "shimbaco": 16.7,
@@ -234742,7 +234889,7 @@
             "saya15": 11.7,
             "animemitaro": 8.9,
             "hanu": 6.2,
-            "hitobi_syuto": 10,
+            "hitobi_syuto": 9.9,
             "fs495": 3.9,
             "tmist": 12.5,
             "shimbaco": 6.7,
@@ -235046,18 +235193,18 @@
                 "url": "https://annict.com/works/7973"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "6817",
@@ -236613,18 +236760,18 @@
                 "url": "https://annict.com/works/7836"
               },
               {
-                "id": "7275",
-                "title": "ラブライブ！スーパースター!!",
-                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-                "season": "2021年夏",
-                "url": "https://annict.com/works/7275"
-              },
-              {
                 "id": "7747",
                 "title": "かげきしょうじょ!!",
                 "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
                 "season": "2021年夏",
                 "url": "https://annict.com/works/7747"
+              },
+              {
+                "id": "7275",
+                "title": "ラブライブ！スーパースター!!",
+                "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+                "season": "2021年夏",
+                "url": "https://annict.com/works/7275"
               },
               {
                 "id": "7855",
@@ -238055,7 +238202,7 @@
             "pomeranian_dev": 4
           },
           "userPercentages": {
-            "saya15": 8.2,
+            "saya15": 8.1,
             "animemitaro": 7.4,
             "hanu": 7.6,
             "hitobi_syuto": 6.3,
@@ -244408,31 +244555,38 @@
           "labelEn": "Historical & Military",
           "icon": "fa-solid fa-shield-halved",
           "color": "#64748b",
-          "totalWorksAcrossUsers": 435,
+          "totalWorksAcrossUsers": 437,
           "userCounts": {
-            "saya15": 84,
+            "saya15": 85,
             "animemitaro": 79,
             "hanu": 35,
             "hitobi_syuto": 59,
             "fs495": 75,
-            "tmist": 48,
+            "tmist": 49,
             "shimbaco": 37,
             "white_tiny_cat": 15,
             "pomeranian_dev": 3
           },
           "userPercentages": {
-            "saya15": 10.6,
+            "saya15": 10.7,
             "animemitaro": 7,
             "hanu": 6.2,
             "hitobi_syuto": 6.1,
             "fs495": 9.3,
-            "tmist": 9.1,
+            "tmist": 9.3,
             "shimbaco": 6.7,
             "white_tiny_cat": 12,
             "pomeranian_dev": 8.1
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
               {
                 "id": "16581",
                 "title": "Dr.STONE SCIENCE FUTURE 第3クール",
@@ -246768,6 +246922,13 @@
             ],
             "tmist": [
               {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
+              {
                 "id": "15881",
                 "title": "天幕のジャードゥーガル",
                 "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
@@ -247498,7 +247659,7 @@
           },
           "topUser": {
             "username": "saya15",
-            "count": 84
+            "count": 85
           }
         },
         {
@@ -247525,7 +247686,7 @@
             "hanu": 8.6,
             "hitobi_syuto": 7.9,
             "fs495": 6,
-            "tmist": 6.3,
+            "tmist": 6.2,
             "shimbaco": 11.2,
             "white_tiny_cat": 14.4,
             "pomeranian_dev": 10.8
@@ -250417,9 +250578,9 @@
           "labelEn": "Sports",
           "icon": "fa-solid fa-futbol",
           "color": "#14b8a6",
-          "totalWorksAcrossUsers": 210,
+          "totalWorksAcrossUsers": 211,
           "userCounts": {
-            "saya15": 41,
+            "saya15": 42,
             "animemitaro": 43,
             "hanu": 15,
             "hitobi_syuto": 50,
@@ -250430,7 +250591,7 @@
             "pomeranian_dev": 0
           },
           "userPercentages": {
-            "saya15": 5.2,
+            "saya15": 5.3,
             "animemitaro": 3.8,
             "hanu": 2.6,
             "hitobi_syuto": 5.2,
@@ -250442,6 +250603,13 @@
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "16716",
+                "title": "ガールズ&パンツァー 最終章 第5話",
+                "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/16716"
+              },
               {
                 "id": "16339",
                 "title": "グロウアップショウ ～ひまわりのサーカス団～",
@@ -253476,7 +253644,7 @@
             "pomeranian_dev": 1
           },
           "userPercentages": {
-            "saya15": 7.7,
+            "saya15": 7.6,
             "animemitaro": 3.2,
             "hanu": 3,
             "hitobi_syuto": 2.8,
@@ -258423,7 +258591,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 796,
+          "totalWatched": 798,
           "genres": [
             {
               "id": "action",
@@ -258431,7 +258599,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 131,
-              "percentage": 16.5,
+              "percentage": 16.4,
               "animes": [
                 {
                   "id": "15873",
@@ -260249,9 +260417,16 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 123,
+              "count": 124,
               "percentage": 15.5,
               "animes": [
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
+                },
                 {
                   "id": "16677",
                   "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -262212,7 +262387,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 61,
-              "percentage": 7.7,
+              "percentage": 7.6,
               "animes": [
                 {
                   "id": "16519",
@@ -263689,9 +263864,16 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 20,
-              "percentage": 2.5,
+              "count": 21,
+              "percentage": 2.6,
               "animes": [
+                {
+                  "id": "16716",
+                  "title": "ガールズ&パンツァー 最終章 第5話",
+                  "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/16716"
+                },
                 {
                   "id": "8632",
                   "title": "幼女戦記Ⅱ",
@@ -264155,7 +264337,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 131,
-              "percentage": 16.5,
+              "percentage": 16.4,
               "animes": [
                 {
                   "id": "15873",
@@ -265973,9 +266155,16 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 123,
+              "count": 124,
               "percentage": 15.5,
               "animes": [
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
+                },
                 {
                   "id": "16677",
                   "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -284789,16 +284978,23 @@
         },
         "hitobi_syuto": {
           "username": "hitobi_syuto",
-          "totalWatched": 964,
+          "totalWatched": 965,
           "genres": [
             {
               "id": "romance",
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 212,
-              "percentage": 22,
+              "count": 213,
+              "percentage": 22.1,
               "animes": [
+                {
+                  "id": "17108",
+                  "title": "どこよりも遠い場所にいる君へ",
+                  "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/17108"
+                },
                 {
                   "id": "15557",
                   "title": "きみが死ぬまで恋をしたい",
@@ -291695,9 +291891,16 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 212,
-              "percentage": 22,
+              "count": 213,
+              "percentage": 22.1,
               "animes": [
+                {
+                  "id": "17108",
+                  "title": "どこよりも遠い場所にいる君へ",
+                  "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/17108"
+                },
                 {
                   "id": "15557",
                   "title": "きみが死ぬまで恋をしたい",
@@ -303286,7 +303489,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 528,
+          "totalWatched": 529,
           "genres": [
             {
               "id": "sf_fantasy",
@@ -303294,7 +303497,7 @@
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
               "count": 79,
-              "percentage": 15,
+              "percentage": 14.9,
               "animes": [
                 {
                   "id": "13052",
@@ -304405,8 +304608,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 75,
-              "percentage": 14.2,
+              "count": 76,
+              "percentage": 14.4,
               "animes": [
                 {
                   "id": "17108",
@@ -304414,6 +304617,13 @@
                   "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
                   "season": "2026年秋",
                   "url": "https://annict.com/works/17108"
+                },
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
                 },
                 {
                   "id": "6187",
@@ -307142,7 +307352,7 @@
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
               "count": 79,
-              "percentage": 15,
+              "percentage": 14.9,
               "animes": [
                 {
                   "id": "13052",
@@ -308253,8 +308463,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 75,
-              "percentage": 14.2,
+              "count": 76,
+              "percentage": 14.4,
               "animes": [
                 {
                   "id": "17108",
@@ -308262,6 +308472,13 @@
                   "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
                   "season": "2026年秋",
                   "url": "https://annict.com/works/17108"
+                },
+                {
+                  "id": "15557",
+                  "title": "きみが死ぬまで恋をしたい",
+                  "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/15557"
                 },
                 {
                   "id": "6187",
@@ -316528,14 +316745,14 @@
           "labelEn": "Romance / Rom-Com",
           "icon": "fa-solid fa-heart",
           "color": "#ec4899",
-          "totalWorksAcrossUsers": 887,
+          "totalWorksAcrossUsers": 890,
           "userCounts": {
-            "saya15": 123,
+            "saya15": 124,
             "animemitaro": 201,
             "hanu": 82,
-            "hitobi_syuto": 212,
+            "hitobi_syuto": 213,
             "fs495": 109,
-            "tmist": 75,
+            "tmist": 76,
             "shimbaco": 71,
             "white_tiny_cat": 11,
             "pomeranian_dev": 3
@@ -316544,15 +316761,22 @@
             "saya15": 15.5,
             "animemitaro": 17.8,
             "hanu": 14.4,
-            "hitobi_syuto": 22,
+            "hitobi_syuto": 22.1,
             "fs495": 13.6,
-            "tmist": 14.2,
+            "tmist": 14.4,
             "shimbaco": 12.8,
             "white_tiny_cat": 8.8,
             "pomeranian_dev": 8.1
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
               {
                 "id": "16677",
                 "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
@@ -319402,6 +319626,13 @@
             ],
             "hitobi_syuto": [
               {
+                "id": "17108",
+                "title": "どこよりも遠い場所にいる君へ",
+                "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/17108"
+              },
+              {
                 "id": "15557",
                 "title": "きみが死ぬまで恋をしたい",
                 "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
@@ -321660,6 +321891,13 @@
                 "url": "https://annict.com/works/17108"
               },
               {
+                "id": "15557",
+                "title": "きみが死ぬまで恋をしたい",
+                "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/15557"
+              },
+              {
                 "id": "6187",
                 "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
                 "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
@@ -322782,7 +323020,7 @@
           },
           "topUser": {
             "username": "hitobi_syuto",
-            "count": 212
+            "count": 213
           }
         },
         {
@@ -322809,7 +323047,7 @@
             "hanu": 13.7,
             "hitobi_syuto": 11.4,
             "fs495": 18.9,
-            "tmist": 15,
+            "tmist": 14.9,
             "shimbaco": 12.1,
             "white_tiny_cat": 16.8,
             "pomeranian_dev": 24.3
@@ -328542,7 +328780,7 @@
             "pomeranian_dev": 5
           },
           "userPercentages": {
-            "saya15": 16.5,
+            "saya15": 16.4,
             "animemitaro": 11.3,
             "hanu": 14.1,
             "hitobi_syuto": 9.3,
@@ -349054,7 +349292,7 @@
             "pomeranian_dev": 2
           },
           "userPercentages": {
-            "saya15": 7.7,
+            "saya15": 7.6,
             "animemitaro": 5,
             "hanu": 2.8,
             "hitobi_syuto": 6.4,
@@ -354993,9 +355231,9 @@
           "labelEn": "Historical & Military",
           "icon": "fa-solid fa-shield-halved",
           "color": "#64748b",
-          "totalWorksAcrossUsers": 96,
+          "totalWorksAcrossUsers": 97,
           "userCounts": {
-            "saya15": 20,
+            "saya15": 21,
             "animemitaro": 17,
             "hanu": 6,
             "hitobi_syuto": 13,
@@ -355006,7 +355244,7 @@
             "pomeranian_dev": 1
           },
           "userPercentages": {
-            "saya15": 2.5,
+            "saya15": 2.6,
             "animemitaro": 1.5,
             "hanu": 1.1,
             "hitobi_syuto": 1.3,
@@ -355018,6 +355256,13 @@
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "16716",
+                "title": "ガールズ&パンツァー 最終章 第5話",
+                "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/16716"
+              },
               {
                 "id": "8632",
                 "title": "幼女戦記Ⅱ",
@@ -355710,7 +355955,7 @@
           },
           "topUser": {
             "username": "saya15",
-            "count": 20
+            "count": 21
           }
         },
         {
@@ -355878,9 +356123,9 @@
       ]
     },
     "genreDiffReport": {
-      "totalWorks": 2606,
+      "totalWorks": 2607,
       "sameCount": 1520,
-      "diffCount": 1086,
+      "diffCount": 1087,
       "diffPercentage": 42,
       "diffs": [
         {
@@ -357325,6 +357570,27 @@
             "公式ジャンル: Romance (+130)",
             "タグ: Tsundere (+42)",
             "タグ: 同棲 (+48)"
+          ]
+        },
+        {
+          "id": "15557",
+          "title": "きみが死ぬまで恋をしたい",
+          "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/15557",
+          "watchedBy": [
+            "saya15",
+            "animemitaro",
+            "hitobi_syuto",
+            "fs495",
+            "tmist"
+          ],
+          "legacyCategory": "history_military",
+          "scoredCategory": "romance",
+          "score": 216,
+          "topReasons": [
+            "公式ジャンル: Romance (+130)",
+            "タグ: Yuri (+86)"
           ]
         },
         {
@@ -362832,25 +363098,6 @@
             "公式ジャンル: Adventure (+30)",
             "タグ: Super Power (+55)",
             "タグ: Swordplay (+20)"
-          ]
-        },
-        {
-          "id": "15557",
-          "title": "きみが死ぬまで恋をしたい",
-          "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/15557",
-          "watchedBy": [
-            "animemitaro",
-            "hitobi_syuto",
-            "fs495"
-          ],
-          "legacyCategory": "history_military",
-          "scoredCategory": "romance",
-          "score": 216,
-          "topReasons": [
-            "公式ジャンル: Romance (+130)",
-            "タグ: Yuri (+86)"
           ]
         },
         {
@@ -371181,6 +371428,23 @@
             "公式ジャンル: Sci-Fi (+90)",
             "タグ: Post-Apocalyptic (+71)",
             "代表SF/ファンタジータイトル (+140)"
+          ]
+        },
+        {
+          "id": "16716",
+          "title": "ガールズ&パンツァー 最終章 第5話",
+          "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+          "season": "2026年秋",
+          "url": "https://annict.com/works/16716",
+          "watchedBy": [
+            "saya15"
+          ],
+          "legacyCategory": "sports",
+          "scoredCategory": "history_military",
+          "score": 300,
+          "topReasons": [
+            "タグ: Tanks(戦車) (+160)",
+            "代表歴史・ミリタリータイトル (+140)"
           ]
         },
         {

@@ -5,6 +5,13 @@
     ],
     "animes": [
       {
+        "id": "16716",
+        "title": "ガールズ&パンツァー 最終章 第5話",
+        "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+        "season": "2026年秋",
+        "url": "https://annict.com/works/16716"
+      },
+      {
         "id": "13582",
         "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
         "image": "https://image.annict.com/_wmyUY8iU27iwe0ESw6hRqMaoUaGDe5i8pPyT_MyAV4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10363/image/master-1d90afada1e41b8b52c61f88ac0da4a2.jpg@webp",
@@ -31,6 +38,13 @@
         "image": "https://image.annict.com/Rc34z4t0-X1Si1Hi3JKdzKrMn6kzs6mLkx7M3QQKD1U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14491/image/master-a3c844864e8226ba6d53dc4f296e082b.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17197"
+      },
+      {
+        "id": "15557",
+        "title": "きみが死ぬまで恋をしたい",
+        "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15557"
       },
       {
         "id": "16339",
@@ -2014,18 +2028,18 @@
         "url": "https://annict.com/works/7828"
       },
       {
-        "id": "7275",
-        "title": "ラブライブ！スーパースター!!",
-        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-        "season": "2021年夏",
-        "url": "https://annict.com/works/7275"
-      },
-      {
         "id": "7747",
         "title": "かげきしょうじょ!!",
         "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
         "season": "2021年夏",
         "url": "https://annict.com/works/7747"
+      },
+      {
+        "id": "7275",
+        "title": "ラブライブ！スーパースター!!",
+        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+        "season": "2021年夏",
+        "url": "https://annict.com/works/7275"
       },
       {
         "id": "7214",
@@ -17499,6 +17513,13 @@
         "url": "https://annict.com/works/17197"
       },
       {
+        "id": "15557",
+        "title": "きみが死ぬまで恋をしたい",
+        "image": "https://image.annict.com/1wkhFihwDxMb-dOCaqT9ubOO52Op3rpu-L9-NgZsCn0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12169/image/master-467df2f6132e57db61d511afc6702cdf.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/15557"
+      },
+      {
         "id": "16339",
         "title": "グロウアップショウ ～ひまわりのサーカス団～",
         "image": "https://image.annict.com/QQ7aCPaZMjpPnu8I--mKo_f8L3Y716LCD6lJ59TK7_U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13037/image/master-8aa0b6ab7ef6a275910799b5c03f56df.jpg@webp",
@@ -19123,18 +19144,18 @@
         "url": "https://annict.com/works/7828"
       },
       {
-        "id": "7275",
-        "title": "ラブライブ！スーパースター!!",
-        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-        "season": "2021年夏",
-        "url": "https://annict.com/works/7275"
-      },
-      {
         "id": "7747",
         "title": "かげきしょうじょ!!",
         "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
         "season": "2021年夏",
         "url": "https://annict.com/works/7747"
+      },
+      {
+        "id": "7275",
+        "title": "ラブライブ！スーパースター!!",
+        "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+        "season": "2021年夏",
+        "url": "https://annict.com/works/7275"
       },
       {
         "id": "7214",

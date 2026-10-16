@@ -1,8 +1,15 @@
 {
   "username": "hitobi_syuto",
-  "fetchedAt": "2026-10-14T22:00:45.649Z",
-  "count": 964,
+  "fetchedAt": "2026-10-16T21:53:11.766Z",
+  "count": 965,
   "animes": [
+    {
+      "id": "17108",
+      "title": "どこよりも遠い場所にいる君へ",
+      "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/17108"
+    },
     {
       "id": "8410",
       "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
@@ -2965,18 +2972,18 @@
       "url": "https://annict.com/works/9604"
     },
     {
-      "id": "10210",
-      "title": "ワールドダイスター",
-      "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
-      "season": "2023年春",
-      "url": "https://annict.com/works/10210"
-    },
-    {
       "id": "10252",
       "title": "カワイスギクライシス",
       "image": "https://image.annict.com/75YkM-59OxpVupzwf1ix3L1Mq3WNyCNwB6YPKPVPJqo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6937/image/master-9ad26e277289108e83a4b0d690daf5ab.jpg@webp",
       "season": "2023年春",
       "url": "https://annict.com/works/10252"
+    },
+    {
+      "id": "10210",
+      "title": "ワールドダイスター",
+      "image": "https://image.annict.com/ISlbiwfu4ATkgyh2eG9VtWN3XqkjtBoGurCcUgyMyzQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6909/image/master-8a6a4f90eb6d4b9132fe972c20fa0ecb.jpg@webp",
+      "season": "2023年春",
+      "url": "https://annict.com/works/10210"
     },
     {
       "id": "10191",
@@ -3532,18 +3539,18 @@
       "url": "https://annict.com/works/8024"
     },
     {
-      "id": "7275",
-      "title": "ラブライブ！スーパースター!!",
-      "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
-      "season": "2021年夏",
-      "url": "https://annict.com/works/7275"
-    },
-    {
       "id": "7747",
       "title": "かげきしょうじょ!!",
       "image": "https://image.annict.com/-VlZz4Z2Y8pEzd_VvGEj7MpUAdICULhvGCacS4mn1bA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4858/image/master-9864a63abf8f53d539c3a39a27221edc.jpg@webp",
       "season": "2021年夏",
       "url": "https://annict.com/works/7747"
+    },
+    {
+      "id": "7275",
+      "title": "ラブライブ！スーパースター!!",
+      "image": "https://image.annict.com/yFrogIiCEOfkAgenb6sX7Z7HtwiDJ_PeG5J5AnHFkK0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/4318/image/master-3ce9d27133ca046333ce51bffed4e061.jpg@webp",
+      "season": "2021年夏",
+      "url": "https://annict.com/works/7275"
     },
     {
       "id": "7855",

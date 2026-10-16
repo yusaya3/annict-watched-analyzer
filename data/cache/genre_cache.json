@@ -155168,5 +155168,21 @@
         "rank": 40
       }
     ]
+  },
+  "ガールズ&パンツァー 最終章 第5話": {
+    "genres": [
+      "Action",
+      "Sports"
+    ],
+    "tags": [
+      {
+        "name": "Tanks",
+        "rank": 88
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 66
+      }
+    ]
   }
 }
