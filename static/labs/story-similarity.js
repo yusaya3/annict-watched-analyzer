@@ -471,15 +471,13 @@ class StorySimilarityLab {
             <i class="fa-solid fa-magnifying-glass-plus"></i>
           </button>
         </div>
-        <div class="sim-current-info">
-          <div class="sim-current-header-row">
-            <div class="sim-badge-row">
-              <span class="sim-badge era"><i class="fa-solid fa-calendar"></i> ${this.escapeHtml(yearText)}</span>
-              <span class="sim-badge genre"><i class="fa-solid fa-tag"></i> ${this.escapeHtml(genreText)}</span>
-              <span class="sim-badge current-target"><i class="fa-solid fa-crosshairs"></i> 起点アニメ</span>
-            </div>
-          </div>
+        <div class="sim-current-details">
           <h3 class="sim-current-title">${this.escapeHtml(w.t)}</h3>
+          <div class="sim-badge-row">
+            <span class="sim-badge sim-badge-year"><i class="fa-regular fa-calendar"></i> ${this.escapeHtml(yearText)}</span>
+            <span class="sim-badge sim-badge-genre"><i class="fa-solid fa-tag"></i> ${this.escapeHtml(genreText)}</span>
+            <span class="sim-badge" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);"><i class="fa-solid fa-crosshairs"></i> 現在の起点</span>
+          </div>
 
           <!-- あらすじ / プロット要約の切り替えタブ -->
           <div class="sim-synopsis-tabs">
@@ -496,8 +494,8 @@ class StorySimilarityLab {
           </div>
 
           <div class="sim-actions-row">
-            ${w.url ? `<a href="${this.escapeHtml(w.url)}" target="_blank" rel="noopener noreferrer" class="sim-external-link danime"><i class="fa-solid fa-play"></i> dアニメストアで観る</a>` : ''}
-            ${w.aid ? `<a href="https://annict.com/works/${w.aid}" target="_blank" rel="noopener noreferrer" class="sim-external-link annict"><i class="fa-solid fa-arrow-up-right-from-square"></i> Annict作品ページ</a>` : ''}
+            ${w.url ? `<a href="${this.escapeHtml(w.url)}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-danime" title="dアニメストアで視聴する"><i class="fa-solid fa-play"></i> dアニメストア</a>` : ''}
+            ${w.aid ? `<a href="https://annict.com/works/${w.aid}" target="_blank" rel="noopener noreferrer" class="sim-link-btn sim-link-annict" title="Annict作品ページを見る"><i class="fa-solid fa-circle-check"></i> Annict</a>` : ''}
           </div>
         </div>
       </div>
@@ -526,9 +524,10 @@ class StorySimilarityLab {
 
   renderSynopsisContent(mode, synopsis, plotSummary) {
     if (mode === 'summary') {
-      return `<p class="sim-current-synopsis" style="white-space: pre-wrap; line-height: 1.6;">${this.escapeHtml(plotSummary)}</p>`;
+      const formatted = this.escapeHtml(plotSummary).replace(/(【[^】\n]+】)/g, '<strong style="color: var(--accent-purple); display: inline-block; margin-top: 0.5rem; margin-bottom: 0.2rem; font-weight: 700;">$1</strong>');
+      return `<p class="sim-current-synopsis" style="white-space: pre-wrap; line-height: 1.65;">${formatted}</p>`;
     } else {
-      return `<p class="sim-current-synopsis" style="line-height: 1.6;">${this.escapeHtml(synopsis)}</p>`;
+      return `<p class="sim-current-synopsis" style="line-height: 1.65;">${this.escapeHtml(synopsis)}</p>`;
     }
   }
 
@@ -615,31 +614,48 @@ class StorySimilarityLab {
       const plotPct = Math.max(0, Math.min(100, Math.round(item.plotScore * 1000) / 10));
       const setPct = Math.max(0, Math.min(100, Math.round(item.settingScore * 1000) / 10));
 
-      const rankBadgeClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+      let rankClass = 'sim-rank-other';
+      if (rank === 1) rankClass = 'sim-rank-1';
+      else if (rank === 2) rankClass = 'sim-rank-2';
+      else if (rank === 3) rankClass = 'sim-rank-3';
+
       const imgSrc = tw.img || './icon.png';
       const yearText = tw.y ? `${tw.y}年` : '年代不明';
       const genreText = tw.g || 'その他';
       const synopsis = tw.s || '';
 
+      const danimeLink = tw.url
+        ? `<a href="${this.escapeHtml(tw.url)}" target="_blank" rel="noopener noreferrer" class="sim-icon-link danime" title="dアニメストアで視聴" onclick="event.stopPropagation();"><i class="fa-solid fa-play"></i></a>`
+        : '';
+      const annictLink = tw.aid
+        ? `<a href="https://annict.com/works/${tw.aid}" target="_blank" rel="noopener noreferrer" class="sim-icon-link annict" title="Annictページへ" onclick="event.stopPropagation();"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
+        : '';
+
       return `
         <div class="sim-card" data-work-id="${item.wid}">
-          <div class="sim-card-rank-badge ${rankBadgeClass}">#${rank}</div>
-          <div class="sim-card-poster-wrap">
-            <img id="story-sim-img-${item.wid}" src="${this.escapeHtml(imgSrc)}" alt="${this.escapeHtml(tw.t)}" class="sim-card-poster" loading="lazy" onerror="this.onerror=null; this.src='./icon.png';" />
+          <!-- 順位バッジ -->
+          <div class="sim-card-rank ${rankClass}">#${rank}</div>
+
+          <!-- 類似度スコアバッジ -->
+          <div class="sim-card-score" style="color: #c084fc;">
+            <i class="fa-solid fa-chart-simple"></i> ${pct}%
+          </div>
+
+          <!-- キービジュアル -->
+          <div class="sim-card-image-box">
+            <img id="story-sim-img-${item.wid}" src="${this.escapeHtml(imgSrc)}" alt="${this.escapeHtml(tw.t)}" class="sim-card-img" loading="lazy" onerror="this.onerror=null; this.src='./icon.png';" />
             <button class="sim-card-zoom-btn" title="画像を拡大" onclick="event.stopPropagation(); openImageModal('${this.escapeHtml(imgSrc)}', '${this.escapeHtml(tw.t)}')">
               <i class="fa-solid fa-magnifying-glass-plus"></i>
             </button>
-            <div class="sim-card-score-bar-wrap">
-              <div class="sim-card-score-bar" style="width: ${pct}%;"></div>
-              <span class="sim-card-score-text">${pct}% 一致</span>
-            </div>
           </div>
+
+          <!-- カード詳細 -->
           <div class="sim-card-body">
-            <div class="sim-card-meta-row">
-              <span class="sim-card-meta era">${this.escapeHtml(yearText)}</span>
-              <span class="sim-card-meta genre">${this.escapeHtml(genreText)}</span>
-            </div>
             <h4 class="sim-card-title" title="${this.escapeHtml(tw.t)}">${this.escapeHtml(tw.t)}</h4>
+            <div class="sim-card-meta">
+              <span><i class="fa-regular fa-calendar"></i> ${this.escapeHtml(yearText)}</span>
+              <span class="sim-card-genre" title="${this.escapeHtml(genreText)}">${this.escapeHtml(genreText)}</span>
+            </div>
 
             <!-- スコア内訳バッジ -->
             <div class="sim-score-breakdown-row">
@@ -647,14 +663,16 @@ class StorySimilarityLab {
               <span class="sim-badge-setting" title="世界観・設定類似度"><i class="fa-solid fa-earth-americas"></i> 世界観: ${setPct}%</span>
             </div>
 
-            <p class="sim-card-synopsis" title="${this.escapeHtml(synopsis)}">${this.escapeHtml(synopsis)}</p>
+            ${synopsis ? `<p class="sim-card-synopsis" title="${this.escapeHtml(synopsis)}">${this.escapeHtml(synopsis)}</p>` : ''}
+
+            <!-- カードフッター -->
             <div class="sim-card-footer">
-              <button class="sim-card-btn-explore" title="このアニメを起点にして再探索" onclick="event.stopPropagation(); storySimilarityLab.selectWork('${item.wid}', true);">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> この作品から探す
+              <button class="sim-jump-btn" data-work-id="${item.wid}" onclick="event.stopPropagation(); storySimilarityLab.selectWork('${item.wid}', true);">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> これを起点にする
               </button>
-              <div class="sim-card-external-links">
-                ${tw.url ? `<a href="${this.escapeHtml(tw.url)}" target="_blank" rel="noopener noreferrer" class="sim-icon-link danime" title="dアニメストアで視聴" onclick="event.stopPropagation();"><i class="fa-solid fa-play"></i></a>` : ''}
-                ${tw.aid ? `<a href="https://annict.com/works/${tw.aid}" target="_blank" rel="noopener noreferrer" class="sim-icon-link annict" title="Annictページへ" onclick="event.stopPropagation();"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ''}
+              <div class="sim-external-links">
+                ${danimeLink}
+                ${annictLink}
               </div>
             </div>
           </div>
