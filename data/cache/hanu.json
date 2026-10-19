@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-13T01:04:49.357Z",
-  "count": 569,
+  "fetchedAt": "2026-10-19T22:45:33.479Z",
+  "count": 571,
   "animes": [
     {
       "id": "13582",
@@ -32,6 +32,13 @@
       "url": "https://annict.com/works/17088"
     },
     {
+      "id": "16391",
+      "title": "スーパーの裏でヤニ吸うふたり",
+      "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16391"
+    },
+    {
       "id": "17361",
       "title": "正反対な君と僕 第2期",
       "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
@@ -39,18 +46,18 @@
       "url": "https://annict.com/works/17361"
     },
     {
-      "id": "16658",
-      "title": "君のことが大大大大大好きな100人の彼女 第3期",
-      "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16658"
-    },
-    {
       "id": "15724",
       "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
       "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/15724"
+    },
+    {
+      "id": "16658",
+      "title": "君のことが大大大大大好きな100人の彼女 第3期",
+      "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16658"
     },
     {
       "id": "16677",
@@ -114,6 +121,13 @@
       "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17353"
+    },
+    {
+      "id": "14969",
+      "title": "株式会社マジルミエ 第2期",
+      "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14969"
     },
     {
       "id": "16519",
@@ -809,18 +823,18 @@
       "url": "https://annict.com/works/14769"
     },
     {
-      "id": "13850",
-      "title": "死亡遊戯で飯を食う。",
-      "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/13850"
-    },
-    {
       "id": "10985",
       "title": "Fate/strange Fake",
       "image": "https://image.annict.com/p361UKi0TuQX6dYAHAwpa0KUoevo0J0p-0f8TDdhRQw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7421/image/master-846f80e0ca7f09efe1bbdd622b0ad22f.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/10985"
+    },
+    {
+      "id": "13850",
+      "title": "死亡遊戯で飯を食う。",
+      "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/13850"
     },
     {
       "id": "11036",
@@ -963,18 +977,18 @@
       "url": "https://annict.com/works/14901"
     },
     {
-      "id": "16007",
-      "title": "29歳独身中堅冒険者の日常",
-      "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/16007"
-    },
-    {
       "id": "14511",
       "title": "カヤちゃんはコワくない",
       "image": "https://image.annict.com/VAu5D-hQIJTdLnoBADf6LfGH80vjFH-Etg6mF-uZd5Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11190/image/master-0a30837627b8bb346ed20411b76938b8.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/14511"
+    },
+    {
+      "id": "16007",
+      "title": "29歳独身中堅冒険者の日常",
+      "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/16007"
     },
     {
       "id": "15002",
@@ -998,18 +1012,18 @@
       "url": "https://annict.com/works/16022"
     },
     {
-      "id": "16239",
-      "title": "魔王の娘は優しすぎる!!",
-      "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/16239"
-    },
-    {
       "id": "16561",
       "title": "銀河特急 ミルキー☆サブウェイ 各駅停車劇場行き",
       "image": "https://image.annict.com/WvPD-zKWAWEuPsgQDnrv-i1ocr9_9tl1YSilmyHawTc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13512/image/master-fb9409db19f6510c6f79a6759fbb585d.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/16561"
+    },
+    {
+      "id": "16239",
+      "title": "魔王の娘は優しすぎる!!",
+      "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/16239"
     },
     {
       "id": "14562",
@@ -1481,18 +1495,18 @@
       "url": "https://annict.com/works/10087"
     },
     {
-      "id": "14965",
-      "title": "ダンダダン 第2期",
-      "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14965"
-    },
-    {
       "id": "14001",
       "title": "薫る花は凛と咲く",
       "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/14001"
+    },
+    {
+      "id": "14965",
+      "title": "ダンダダン 第2期",
+      "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14965"
     },
     {
       "id": "13744",
@@ -1670,18 +1684,18 @@
       "url": "https://annict.com/works/14295"
     },
     {
-      "id": "14726",
-      "title": "出禁のモグラ",
-      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14726"
-    },
-    {
       "id": "13428",
       "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
       "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13428"
+    },
+    {
+      "id": "14726",
+      "title": "出禁のモグラ",
+      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14726"
     },
     {
       "id": "14727",

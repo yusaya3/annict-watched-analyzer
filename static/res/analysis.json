@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T21:13:48.956Z",
+  "generatedAt": "2026-10-19T22:45:44.432Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -26,7 +26,7 @@
     },
     {
       "username": "hanu",
-      "count": 569,
+      "count": 571,
       "exclusiveCount": 73,
       "missingCount": 0
     },
@@ -44,7 +44,7 @@
     },
     {
       "username": "tmist",
-      "count": 530,
+      "count": 531,
       "exclusiveCount": 114,
       "missingCount": 0
     },
@@ -13575,7 +13575,7 @@
       "sets": [
         "hanu"
       ],
-      "size": 569,
+      "size": 571,
       "animes": [
         {
           "id": "13582",
@@ -13606,6 +13606,13 @@
           "url": "https://annict.com/works/17088"
         },
         {
+          "id": "16391",
+          "title": "スーパーの裏でヤニ吸うふたり",
+          "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/16391"
+        },
+        {
           "id": "17361",
           "title": "正反対な君と僕 第2期",
           "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
@@ -13613,18 +13620,18 @@
           "url": "https://annict.com/works/17361"
         },
         {
-          "id": "16658",
-          "title": "君のことが大大大大大好きな100人の彼女 第3期",
-          "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/16658"
-        },
-        {
           "id": "15724",
           "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
           "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/15724"
+        },
+        {
+          "id": "16658",
+          "title": "君のことが大大大大大好きな100人の彼女 第3期",
+          "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/16658"
         },
         {
           "id": "16677",
@@ -13688,6 +13695,13 @@
           "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17353"
+        },
+        {
+          "id": "14969",
+          "title": "株式会社マジルミエ 第2期",
+          "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/14969"
         },
         {
           "id": "16519",
@@ -14383,18 +14397,18 @@
           "url": "https://annict.com/works/14769"
         },
         {
-          "id": "13850",
-          "title": "死亡遊戯で飯を食う。",
-          "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
-          "season": "2026年冬",
-          "url": "https://annict.com/works/13850"
-        },
-        {
           "id": "10985",
           "title": "Fate/strange Fake",
           "image": "https://image.annict.com/p361UKi0TuQX6dYAHAwpa0KUoevo0J0p-0f8TDdhRQw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7421/image/master-846f80e0ca7f09efe1bbdd622b0ad22f.jpg@webp",
           "season": "2026年冬",
           "url": "https://annict.com/works/10985"
+        },
+        {
+          "id": "13850",
+          "title": "死亡遊戯で飯を食う。",
+          "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
+          "season": "2026年冬",
+          "url": "https://annict.com/works/13850"
         },
         {
           "id": "11036",
@@ -14537,18 +14551,18 @@
           "url": "https://annict.com/works/14901"
         },
         {
-          "id": "16007",
-          "title": "29歳独身中堅冒険者の日常",
-          "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-          "season": "2026年冬",
-          "url": "https://annict.com/works/16007"
-        },
-        {
           "id": "14511",
           "title": "カヤちゃんはコワくない",
           "image": "https://image.annict.com/VAu5D-hQIJTdLnoBADf6LfGH80vjFH-Etg6mF-uZd5Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11190/image/master-0a30837627b8bb346ed20411b76938b8.jpg@webp",
           "season": "2026年冬",
           "url": "https://annict.com/works/14511"
+        },
+        {
+          "id": "16007",
+          "title": "29歳独身中堅冒険者の日常",
+          "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
+          "season": "2026年冬",
+          "url": "https://annict.com/works/16007"
         },
         {
           "id": "15002",
@@ -14572,18 +14586,18 @@
           "url": "https://annict.com/works/16022"
         },
         {
-          "id": "16239",
-          "title": "魔王の娘は優しすぎる!!",
-          "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
-          "season": "2026年冬",
-          "url": "https://annict.com/works/16239"
-        },
-        {
           "id": "16561",
           "title": "銀河特急 ミルキー☆サブウェイ 各駅停車劇場行き",
           "image": "https://image.annict.com/WvPD-zKWAWEuPsgQDnrv-i1ocr9_9tl1YSilmyHawTc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13512/image/master-fb9409db19f6510c6f79a6759fbb585d.jpg@webp",
           "season": "2026年冬",
           "url": "https://annict.com/works/16561"
+        },
+        {
+          "id": "16239",
+          "title": "魔王の娘は優しすぎる!!",
+          "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
+          "season": "2026年冬",
+          "url": "https://annict.com/works/16239"
         },
         {
           "id": "14562",
@@ -15055,18 +15069,18 @@
           "url": "https://annict.com/works/10087"
         },
         {
-          "id": "14965",
-          "title": "ダンダダン 第2期",
-          "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-          "season": "2025年夏",
-          "url": "https://annict.com/works/14965"
-        },
-        {
           "id": "14001",
           "title": "薫る花は凛と咲く",
           "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
           "season": "2025年夏",
           "url": "https://annict.com/works/14001"
+        },
+        {
+          "id": "14965",
+          "title": "ダンダダン 第2期",
+          "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+          "season": "2025年夏",
+          "url": "https://annict.com/works/14965"
         },
         {
           "id": "13744",
@@ -15244,18 +15258,18 @@
           "url": "https://annict.com/works/14295"
         },
         {
-          "id": "14726",
-          "title": "出禁のモグラ",
-          "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-          "season": "2025年夏",
-          "url": "https://annict.com/works/14726"
-        },
-        {
           "id": "13428",
           "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
           "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
           "season": "2025年夏",
           "url": "https://annict.com/works/13428"
+        },
+        {
+          "id": "14726",
+          "title": "出禁のモグラ",
+          "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+          "season": "2025年夏",
+          "url": "https://annict.com/works/14726"
         },
         {
           "id": "14727",
@@ -21960,7 +21974,7 @@
         "animemitaro",
         "hanu"
       ],
-      "size": 411,
+      "size": 413,
       "animes": [
         {
           "id": "13582",
@@ -21982,6 +21996,13 @@
           "image": "https://image.annict.com/1ZeAYmbG6YCprr_SolG5XELsjcVqMz5ACeqsBf_cGWs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13777/image/master-6e1caecf58f095b59022a54849b62bd2.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17088"
+        },
+        {
+          "id": "16391",
+          "title": "スーパーの裏でヤニ吸うふたり",
+          "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/16391"
         },
         {
           "id": "17361",
@@ -22066,6 +22087,13 @@
           "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17353"
+        },
+        {
+          "id": "14969",
+          "title": "株式会社マジルミエ 第2期",
+          "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/14969"
         },
         {
           "id": "16519",
@@ -25931,9 +25959,9 @@
         "user1": "saya15",
         "user2": "hanu",
         "intersection": 182,
-        "union": 1185,
-        "similarity": 0.15358649789029535,
-        "percentage": 15.4
+        "union": 1187,
+        "similarity": 0.15332771693344566,
+        "percentage": 15.3
       },
       {
         "user1": "saya15",
@@ -25955,8 +25983,8 @@
         "user1": "saya15",
         "user2": "tmist",
         "intersection": 167,
-        "union": 1161,
-        "similarity": 0.1438415159345392,
+        "union": 1162,
+        "similarity": 0.14371772805507746,
         "percentage": 14.4
       },
       {
@@ -26002,10 +26030,10 @@
       {
         "user1": "animemitaro",
         "user2": "hanu",
-        "intersection": 411,
+        "intersection": 413,
         "union": 1286,
-        "similarity": 0.31959564541213065,
-        "percentage": 32
+        "similarity": 0.32115085536547433,
+        "percentage": 32.1
       },
       {
         "user1": "animemitaro",
@@ -26026,10 +26054,10 @@
       {
         "user1": "animemitaro",
         "user2": "tmist",
-        "intersection": 322,
+        "intersection": 323,
         "union": 1336,
-        "similarity": 0.2410179640718563,
-        "percentage": 24.1
+        "similarity": 0.24176646706586827,
+        "percentage": 24.2
       },
       {
         "user1": "animemitaro",
@@ -26059,72 +26087,72 @@
         "user1": "hanu",
         "user2": "saya15",
         "intersection": 182,
-        "union": 1185,
-        "similarity": 0.15358649789029535,
-        "percentage": 15.4
+        "union": 1187,
+        "similarity": 0.15332771693344566,
+        "percentage": 15.3
       },
       {
         "user1": "hanu",
         "user2": "animemitaro",
-        "intersection": 411,
+        "intersection": 413,
         "union": 1286,
-        "similarity": 0.31959564541213065,
-        "percentage": 32
+        "similarity": 0.32115085536547433,
+        "percentage": 32.1
       },
       {
         "user1": "hanu",
         "user2": "hanu",
-        "intersection": 569,
-        "union": 569,
+        "intersection": 571,
+        "union": 571,
         "similarity": 1,
         "percentage": 100
       },
       {
         "user1": "hanu",
         "user2": "hitobi_syuto",
-        "intersection": 296,
+        "intersection": 298,
         "union": 1238,
-        "similarity": 0.23909531502423265,
-        "percentage": 23.9
+        "similarity": 0.2407108239095315,
+        "percentage": 24.1
       },
       {
         "user1": "hanu",
         "user2": "fs495",
         "intersection": 193,
-        "union": 1180,
-        "similarity": 0.1635593220338983,
-        "percentage": 16.4
+        "union": 1182,
+        "similarity": 0.16328257191201354,
+        "percentage": 16.3
       },
       {
         "user1": "hanu",
         "user2": "tmist",
-        "intersection": 184,
-        "union": 915,
-        "similarity": 0.2010928961748634,
-        "percentage": 20.1
+        "intersection": 186,
+        "union": 916,
+        "similarity": 0.20305676855895197,
+        "percentage": 20.3
       },
       {
         "user1": "hanu",
         "user2": "shimbaco",
         "intersection": 27,
-        "union": 1098,
-        "similarity": 0.02459016393442623,
+        "union": 1100,
+        "similarity": 0.024545454545454544,
         "percentage": 2.5
       },
       {
         "user1": "hanu",
         "user2": "white_tiny_cat",
         "intersection": 4,
-        "union": 690,
-        "similarity": 0.005797101449275362,
+        "union": 692,
+        "similarity": 0.005780346820809248,
         "percentage": 0.6
       },
       {
         "user1": "hanu",
         "user2": "pomeranian_dev",
         "intersection": 3,
-        "union": 603,
-        "similarity": 0.004975124378109453,
+        "union": 605,
+        "similarity": 0.0049586776859504135,
         "percentage": 0.5
       },
       {
@@ -26146,10 +26174,10 @@
       {
         "user1": "hitobi_syuto",
         "user2": "hanu",
-        "intersection": 296,
+        "intersection": 298,
         "union": 1238,
-        "similarity": 0.23909531502423265,
-        "percentage": 23.9
+        "similarity": 0.2407108239095315,
+        "percentage": 24.1
       },
       {
         "user1": "hitobi_syuto",
@@ -26170,9 +26198,9 @@
       {
         "user1": "hitobi_syuto",
         "user2": "tmist",
-        "intersection": 254,
+        "intersection": 255,
         "union": 1241,
-        "similarity": 0.20467365028203063,
+        "similarity": 0.2054794520547945,
         "percentage": 20.5
       },
       {
@@ -26219,9 +26247,9 @@
         "user1": "fs495",
         "user2": "hanu",
         "intersection": 193,
-        "union": 1180,
-        "similarity": 0.1635593220338983,
-        "percentage": 16.4
+        "union": 1182,
+        "similarity": 0.16328257191201354,
+        "percentage": 16.3
       },
       {
         "user1": "fs495",
@@ -26243,8 +26271,8 @@
         "user1": "fs495",
         "user2": "tmist",
         "intersection": 98,
-        "union": 1236,
-        "similarity": 0.07928802588996764,
+        "union": 1237,
+        "similarity": 0.07922392886014551,
         "percentage": 7.9
       },
       {
@@ -26275,47 +26303,47 @@
         "user1": "tmist",
         "user2": "saya15",
         "intersection": 167,
-        "union": 1161,
-        "similarity": 0.1438415159345392,
+        "union": 1162,
+        "similarity": 0.14371772805507746,
         "percentage": 14.4
       },
       {
         "user1": "tmist",
         "user2": "animemitaro",
-        "intersection": 322,
+        "intersection": 323,
         "union": 1336,
-        "similarity": 0.2410179640718563,
-        "percentage": 24.1
+        "similarity": 0.24176646706586827,
+        "percentage": 24.2
       },
       {
         "user1": "tmist",
         "user2": "hanu",
-        "intersection": 184,
-        "union": 915,
-        "similarity": 0.2010928961748634,
-        "percentage": 20.1
+        "intersection": 186,
+        "union": 916,
+        "similarity": 0.20305676855895197,
+        "percentage": 20.3
       },
       {
         "user1": "tmist",
         "user2": "hitobi_syuto",
-        "intersection": 254,
+        "intersection": 255,
         "union": 1241,
-        "similarity": 0.20467365028203063,
+        "similarity": 0.2054794520547945,
         "percentage": 20.5
       },
       {
         "user1": "tmist",
         "user2": "fs495",
         "intersection": 98,
-        "union": 1236,
-        "similarity": 0.07928802588996764,
+        "union": 1237,
+        "similarity": 0.07922392886014551,
         "percentage": 7.9
       },
       {
         "user1": "tmist",
         "user2": "tmist",
-        "intersection": 530,
-        "union": 530,
+        "intersection": 531,
+        "union": 531,
         "similarity": 1,
         "percentage": 100
       },
@@ -26323,24 +26351,24 @@
         "user1": "tmist",
         "user2": "shimbaco",
         "intersection": 74,
-        "union": 1012,
-        "similarity": 0.07312252964426877,
+        "union": 1013,
+        "similarity": 0.07305034550839092,
         "percentage": 7.3
       },
       {
         "user1": "tmist",
         "user2": "white_tiny_cat",
         "intersection": 11,
-        "union": 644,
-        "similarity": 0.017080745341614908,
+        "union": 645,
+        "similarity": 0.017054263565891473,
         "percentage": 1.7
       },
       {
         "user1": "tmist",
         "user2": "pomeranian_dev",
         "intersection": 12,
-        "union": 555,
-        "similarity": 0.021621621621621623,
+        "union": 556,
+        "similarity": 0.02158273381294964,
         "percentage": 2.2
       },
       {
@@ -26363,8 +26391,8 @@
         "user1": "shimbaco",
         "user2": "hanu",
         "intersection": 27,
-        "union": 1098,
-        "similarity": 0.02459016393442623,
+        "union": 1100,
+        "similarity": 0.024545454545454544,
         "percentage": 2.5
       },
       {
@@ -26387,8 +26415,8 @@
         "user1": "shimbaco",
         "user2": "tmist",
         "intersection": 74,
-        "union": 1012,
-        "similarity": 0.07312252964426877,
+        "union": 1013,
+        "similarity": 0.07305034550839092,
         "percentage": 7.3
       },
       {
@@ -26435,8 +26463,8 @@
         "user1": "white_tiny_cat",
         "user2": "hanu",
         "intersection": 4,
-        "union": 690,
-        "similarity": 0.005797101449275362,
+        "union": 692,
+        "similarity": 0.005780346820809248,
         "percentage": 0.6
       },
       {
@@ -26459,8 +26487,8 @@
         "user1": "white_tiny_cat",
         "user2": "tmist",
         "intersection": 11,
-        "union": 644,
-        "similarity": 0.017080745341614908,
+        "union": 645,
+        "similarity": 0.017054263565891473,
         "percentage": 1.7
       },
       {
@@ -26507,8 +26535,8 @@
         "user1": "pomeranian_dev",
         "user2": "hanu",
         "intersection": 3,
-        "union": 603,
-        "similarity": 0.004975124378109453,
+        "union": 605,
+        "similarity": 0.0049586776859504135,
         "percentage": 0.5
       },
       {
@@ -26531,8 +26559,8 @@
         "user1": "pomeranian_dev",
         "user2": "tmist",
         "intersection": 12,
-        "union": 555,
-        "similarity": 0.021621621621621623,
+        "union": 556,
+        "similarity": 0.02158273381294964,
         "percentage": 2.2
       },
       {
@@ -26576,10 +26604,10 @@
           "animemitaro",
           "hanu"
         ],
-        "intersection": 411,
+        "intersection": 413,
         "union": 1286,
-        "similarity": 0.31959564541213065,
-        "percentage": 32
+        "similarity": 0.32115085536547433,
+        "percentage": 32.1
       },
       {
         "pair": [
@@ -26596,20 +26624,20 @@
           "animemitaro",
           "tmist"
         ],
-        "intersection": 322,
+        "intersection": 323,
         "union": 1336,
-        "similarity": 0.2410179640718563,
-        "percentage": 24.1
+        "similarity": 0.24176646706586827,
+        "percentage": 24.2
       },
       {
         "pair": [
           "hanu",
           "hitobi_syuto"
         ],
-        "intersection": 296,
+        "intersection": 298,
         "union": 1238,
-        "similarity": 0.23909531502423265,
-        "percentage": 23.9
+        "similarity": 0.2407108239095315,
+        "percentage": 24.1
       },
       {
         "pair": [
@@ -26626,10 +26654,20 @@
           "hitobi_syuto",
           "tmist"
         ],
-        "intersection": 254,
+        "intersection": 255,
         "union": 1241,
-        "similarity": 0.20467365028203063,
+        "similarity": 0.2054794520547945,
         "percentage": 20.5
+      },
+      {
+        "pair": [
+          "hanu",
+          "tmist"
+        ],
+        "intersection": 186,
+        "union": 916,
+        "similarity": 0.20305676855895197,
+        "percentage": 20.3
       },
       {
         "pair": [
@@ -26640,16 +26678,6 @@
         "union": 1466,
         "similarity": 0.20259208731241474,
         "percentage": 20.3
-      },
-      {
-        "pair": [
-          "hanu",
-          "tmist"
-        ],
-        "intersection": 184,
-        "union": 915,
-        "similarity": 0.2010928961748634,
-        "percentage": 20.1
       },
       {
         "pair": [
@@ -26667,9 +26695,9 @@
           "fs495"
         ],
         "intersection": 193,
-        "union": 1180,
-        "similarity": 0.1635593220338983,
-        "percentage": 16.4
+        "union": 1182,
+        "similarity": 0.16328257191201354,
+        "percentage": 16.3
       },
       {
         "pair": [
@@ -26677,9 +26705,9 @@
           "hanu"
         ],
         "intersection": 182,
-        "union": 1185,
-        "similarity": 0.15358649789029535,
-        "percentage": 15.4
+        "union": 1187,
+        "similarity": 0.15332771693344566,
+        "percentage": 15.3
       },
       {
         "pair": [
@@ -26707,8 +26735,8 @@
           "tmist"
         ],
         "intersection": 167,
-        "union": 1161,
-        "similarity": 0.1438415159345392,
+        "union": 1162,
+        "similarity": 0.14371772805507746,
         "percentage": 14.4
       },
       {
@@ -26747,8 +26775,8 @@
           "tmist"
         ],
         "intersection": 98,
-        "union": 1236,
-        "similarity": 0.07928802588996764,
+        "union": 1237,
+        "similarity": 0.07922392886014551,
         "percentage": 7.9
       },
       {
@@ -26757,8 +26785,8 @@
           "shimbaco"
         ],
         "intersection": 74,
-        "union": 1012,
-        "similarity": 0.07312252964426877,
+        "union": 1013,
+        "similarity": 0.07305034550839092,
         "percentage": 7.3
       },
       {
@@ -26817,8 +26845,8 @@
           "shimbaco"
         ],
         "intersection": 27,
-        "union": 1098,
-        "similarity": 0.02459016393442623,
+        "union": 1100,
+        "similarity": 0.024545454545454544,
         "percentage": 2.5
       },
       {
@@ -26837,8 +26865,8 @@
           "pomeranian_dev"
         ],
         "intersection": 12,
-        "union": 555,
-        "similarity": 0.021621621621621623,
+        "union": 556,
+        "similarity": 0.02158273381294964,
         "percentage": 2.2
       },
       {
@@ -26877,8 +26905,8 @@
           "white_tiny_cat"
         ],
         "intersection": 11,
-        "union": 644,
-        "similarity": 0.017080745341614908,
+        "union": 645,
+        "similarity": 0.017054263565891473,
         "percentage": 1.7
       },
       {
@@ -26907,8 +26935,8 @@
           "white_tiny_cat"
         ],
         "intersection": 4,
-        "union": 690,
-        "similarity": 0.005797101449275362,
+        "union": 692,
+        "similarity": 0.005780346820809248,
         "percentage": 0.6
       },
       {
@@ -26917,8 +26945,8 @@
           "pomeranian_dev"
         ],
         "intersection": 3,
-        "union": 603,
-        "similarity": 0.004975124378109453,
+        "union": 605,
+        "similarity": 0.0049586776859504135,
         "percentage": 0.5
       }
     ]
@@ -32839,18 +32867,18 @@
           "url": "https://annict.com/works/16111"
         },
         {
-          "id": "16655",
-          "title": "藤本タツキ 17-26 Part2",
-          "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-          "season": "2025年秋",
-          "url": "https://annict.com/works/16655"
-        },
-        {
           "id": "16654",
           "title": "藤本タツキ 17-26 Part1",
           "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/16654"
+        },
+        {
+          "id": "16655",
+          "title": "藤本タツキ 17-26 Part2",
+          "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/16655"
         },
         {
           "id": "13048",
@@ -48763,6 +48791,13 @@
         "url": "https://annict.com/works/17088"
       },
       {
+        "id": "16391",
+        "title": "スーパーの裏でヤニ吸うふたり",
+        "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16391"
+      },
+      {
         "id": "17361",
         "title": "正反対な君と僕 第2期",
         "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
@@ -48770,18 +48805,18 @@
         "url": "https://annict.com/works/17361"
       },
       {
-        "id": "16658",
-        "title": "君のことが大大大大大好きな100人の彼女 第3期",
-        "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/16658"
-      },
-      {
         "id": "15724",
         "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
         "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/15724"
+      },
+      {
+        "id": "16658",
+        "title": "君のことが大大大大大好きな100人の彼女 第3期",
+        "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/16658"
       },
       {
         "id": "16677",
@@ -48845,6 +48880,13 @@
         "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17353"
+      },
+      {
+        "id": "14969",
+        "title": "株式会社マジルミエ 第2期",
+        "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/14969"
       },
       {
         "id": "16519",
@@ -49540,18 +49582,18 @@
         "url": "https://annict.com/works/14769"
       },
       {
-        "id": "13850",
-        "title": "死亡遊戯で飯を食う。",
-        "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/13850"
-      },
-      {
         "id": "10985",
         "title": "Fate/strange Fake",
         "image": "https://image.annict.com/p361UKi0TuQX6dYAHAwpa0KUoevo0J0p-0f8TDdhRQw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7421/image/master-846f80e0ca7f09efe1bbdd622b0ad22f.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/10985"
+      },
+      {
+        "id": "13850",
+        "title": "死亡遊戯で飯を食う。",
+        "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/13850"
       },
       {
         "id": "11036",
@@ -49694,18 +49736,18 @@
         "url": "https://annict.com/works/14901"
       },
       {
-        "id": "16007",
-        "title": "29歳独身中堅冒険者の日常",
-        "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/16007"
-      },
-      {
         "id": "14511",
         "title": "カヤちゃんはコワくない",
         "image": "https://image.annict.com/VAu5D-hQIJTdLnoBADf6LfGH80vjFH-Etg6mF-uZd5Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11190/image/master-0a30837627b8bb346ed20411b76938b8.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/14511"
+      },
+      {
+        "id": "16007",
+        "title": "29歳独身中堅冒険者の日常",
+        "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/16007"
       },
       {
         "id": "15002",
@@ -49729,18 +49771,18 @@
         "url": "https://annict.com/works/16022"
       },
       {
-        "id": "16239",
-        "title": "魔王の娘は優しすぎる!!",
-        "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
-        "season": "2026年冬",
-        "url": "https://annict.com/works/16239"
-      },
-      {
         "id": "16561",
         "title": "銀河特急 ミルキー☆サブウェイ 各駅停車劇場行き",
         "image": "https://image.annict.com/WvPD-zKWAWEuPsgQDnrv-i1ocr9_9tl1YSilmyHawTc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13512/image/master-fb9409db19f6510c6f79a6759fbb585d.jpg@webp",
         "season": "2026年冬",
         "url": "https://annict.com/works/16561"
+      },
+      {
+        "id": "16239",
+        "title": "魔王の娘は優しすぎる!!",
+        "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
+        "season": "2026年冬",
+        "url": "https://annict.com/works/16239"
       },
       {
         "id": "14562",
@@ -50212,18 +50254,18 @@
         "url": "https://annict.com/works/10087"
       },
       {
-        "id": "14965",
-        "title": "ダンダダン 第2期",
-        "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14965"
-      },
-      {
         "id": "14001",
         "title": "薫る花は凛と咲く",
         "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/14001"
+      },
+      {
+        "id": "14965",
+        "title": "ダンダダン 第2期",
+        "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14965"
       },
       {
         "id": "13744",
@@ -50401,18 +50443,18 @@
         "url": "https://annict.com/works/14295"
       },
       {
-        "id": "14726",
-        "title": "出禁のモグラ",
-        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14726"
-      },
-      {
         "id": "13428",
         "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
         "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/13428"
+      },
+      {
+        "id": "14726",
+        "title": "出禁のモグラ",
+        "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14726"
       },
       {
         "id": "14727",
@@ -65142,6 +65184,13 @@
         "url": "https://annict.com/works/14132"
       },
       {
+        "id": "17361",
+        "title": "正反対な君と僕 第2期",
+        "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/17361"
+      },
+      {
         "id": "15881",
         "title": "天幕のジャードゥーガル",
         "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
@@ -65751,18 +65800,18 @@
         "url": "https://annict.com/works/13630"
       },
       {
-        "id": "16509",
-        "title": "藤本タツキ 17-26",
-        "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/16509"
-      },
-      {
         "id": "16511",
         "title": "ある日、お姫様になってしまった件について",
         "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16511"
+      },
+      {
+        "id": "16509",
+        "title": "藤本タツキ 17-26",
+        "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/16509"
       },
       {
         "id": "15109",
@@ -65807,18 +65856,18 @@
         "url": "https://annict.com/works/16111"
       },
       {
-        "id": "16655",
-        "title": "藤本タツキ 17-26 Part2",
-        "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/16655"
-      },
-      {
         "id": "16654",
         "title": "藤本タツキ 17-26 Part1",
         "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16654"
+      },
+      {
+        "id": "16655",
+        "title": "藤本タツキ 17-26 Part2",
+        "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/16655"
       },
       {
         "id": "13048",
@@ -73882,14 +73931,14 @@
       },
       "hanu": {
         "username": "hanu",
-        "workCount": 569,
-        "totalHours": 2807.1,
-        "totalDays": 117,
-        "wakingDays": 175.4,
+        "workCount": 571,
+        "totalHours": 2821.5,
+        "totalDays": 117.6,
+        "wakingDays": 176.3,
         "lifePercentage": 4.8,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 559,
+          "tvCount": 561,
           "movieCount": 10,
           "ovaCount": 0
         }
@@ -73924,14 +73973,14 @@
       },
       "tmist": {
         "username": "tmist",
-        "workCount": 530,
-        "totalHours": 2553,
-        "totalDays": 106.4,
-        "wakingDays": 159.6,
+        "workCount": 531,
+        "totalHours": 2562.6,
+        "totalDays": 106.8,
+        "wakingDays": 160.2,
         "lifePercentage": 4.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 505,
+          "tvCount": 506,
           "movieCount": 22,
           "ovaCount": 3
         }
@@ -74064,14 +74113,14 @@
       "yearStats": [
         {
           "year": 2026,
-          "totalCount": 637,
+          "totalCount": 640,
           "countsByUser": {
             "saya15": 63,
             "animemitaro": 181,
-            "hanu": 165,
+            "hanu": 167,
             "hitobi_syuto": 94,
             "fs495": 55,
-            "tmist": 77,
+            "tmist": 78,
             "shimbaco": 2,
             "white_tiny_cat": 0,
             "pomeranian_dev": 0
@@ -75819,6 +75868,13 @@
                 "url": "https://annict.com/works/17088"
               },
               {
+                "id": "16391",
+                "title": "スーパーの裏でヤニ吸うふたり",
+                "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16391"
+              },
+              {
                 "id": "17361",
                 "title": "正反対な君と僕 第2期",
                 "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
@@ -75826,18 +75882,18 @@
                 "url": "https://annict.com/works/17361"
               },
               {
-                "id": "16658",
-                "title": "君のことが大大大大大好きな100人の彼女 第3期",
-                "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/16658"
-              },
-              {
                 "id": "15724",
                 "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
                 "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/15724"
+              },
+              {
+                "id": "16658",
+                "title": "君のことが大大大大大好きな100人の彼女 第3期",
+                "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16658"
               },
               {
                 "id": "16677",
@@ -75901,6 +75957,13 @@
                 "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17353"
+              },
+              {
+                "id": "14969",
+                "title": "株式会社マジルミエ 第2期",
+                "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14969"
               },
               {
                 "id": "16519",
@@ -76596,18 +76659,18 @@
                 "url": "https://annict.com/works/14769"
               },
               {
-                "id": "13850",
-                "title": "死亡遊戯で飯を食う。",
-                "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/13850"
-              },
-              {
                 "id": "10985",
                 "title": "Fate/strange Fake",
                 "image": "https://image.annict.com/p361UKi0TuQX6dYAHAwpa0KUoevo0J0p-0f8TDdhRQw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7421/image/master-846f80e0ca7f09efe1bbdd622b0ad22f.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/10985"
+              },
+              {
+                "id": "13850",
+                "title": "死亡遊戯で飯を食う。",
+                "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/13850"
               },
               {
                 "id": "11036",
@@ -76750,18 +76813,18 @@
                 "url": "https://annict.com/works/14901"
               },
               {
-                "id": "16007",
-                "title": "29歳独身中堅冒険者の日常",
-                "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/16007"
-              },
-              {
                 "id": "14511",
                 "title": "カヤちゃんはコワくない",
                 "image": "https://image.annict.com/VAu5D-hQIJTdLnoBADf6LfGH80vjFH-Etg6mF-uZd5Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11190/image/master-0a30837627b8bb346ed20411b76938b8.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/14511"
+              },
+              {
+                "id": "16007",
+                "title": "29歳独身中堅冒険者の日常",
+                "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/16007"
               },
               {
                 "id": "15002",
@@ -76785,18 +76848,18 @@
                 "url": "https://annict.com/works/16022"
               },
               {
-                "id": "16239",
-                "title": "魔王の娘は優しすぎる!!",
-                "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/16239"
-              },
-              {
                 "id": "16561",
                 "title": "銀河特急 ミルキー☆サブウェイ 各駅停車劇場行き",
                 "image": "https://image.annict.com/WvPD-zKWAWEuPsgQDnrv-i1ocr9_9tl1YSilmyHawTc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13512/image/master-fb9409db19f6510c6f79a6759fbb585d.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/16561"
+              },
+              {
+                "id": "16239",
+                "title": "魔王の娘は優しすぎる!!",
+                "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/16239"
               },
               {
                 "id": "14562",
@@ -78028,6 +78091,13 @@
                 "image": "https://image.annict.com/PHqtOFvCb74yRvr1tS8pfyksu3QWCjL-vu92UB4TOhw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10936/image/master-095e409dc271710ea69a5daeef87e1e4.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/14132"
+              },
+              {
+                "id": "17361",
+                "title": "正反対な君と僕 第2期",
+                "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17361"
               },
               {
                 "id": "15881",
@@ -80689,18 +80759,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14965",
-                "title": "ダンダダン 第2期",
-                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14965"
-              },
-              {
                 "id": "14001",
                 "title": "薫る花は凛と咲く",
                 "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14001"
+              },
+              {
+                "id": "14965",
+                "title": "ダンダダン 第2期",
+                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14965"
               },
               {
                 "id": "13744",
@@ -80878,18 +80948,18 @@
                 "url": "https://annict.com/works/14295"
               },
               {
-                "id": "14726",
-                "title": "出禁のモグラ",
-                "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14726"
-              },
-              {
                 "id": "13428",
                 "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
                 "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/13428"
+              },
+              {
+                "id": "14726",
+                "title": "出禁のモグラ",
+                "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14726"
               },
               {
                 "id": "14727",
@@ -83201,18 +83271,18 @@
                 "url": "https://annict.com/works/13630"
               },
               {
-                "id": "16509",
-                "title": "藤本タツキ 17-26",
-                "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/16509"
-              },
-              {
                 "id": "16511",
                 "title": "ある日、お姫様になってしまった件について",
                 "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16511"
+              },
+              {
+                "id": "16509",
+                "title": "藤本タツキ 17-26",
+                "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/16509"
               },
               {
                 "id": "15109",
@@ -83257,18 +83327,18 @@
                 "url": "https://annict.com/works/16111"
               },
               {
-                "id": "16655",
-                "title": "藤本タツキ 17-26 Part2",
-                "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/16655"
-              },
-              {
                 "id": "16654",
                 "title": "藤本タツキ 17-26 Part1",
                 "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16654"
+              },
+              {
+                "id": "16655",
+                "title": "藤本タツキ 17-26 Part2",
+                "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/16655"
               },
               {
                 "id": "13048",
@@ -127794,7 +127864,7 @@
         "hanu": {
           "username": "hanu",
           "peakYear": 2026,
-          "maxYearCount": 165,
+          "maxYearCount": 167,
           "yearCounts": {
             "2001": 1,
             "2006": 1,
@@ -127815,7 +127885,7 @@
             "2023": 37,
             "2024": 59,
             "2025": 162,
-            "2026": 165
+            "2026": 167
           },
           "animesByYear": {
             "2001": [
@@ -129872,18 +129942,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14965",
-                "title": "ダンダダン 第2期",
-                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14965"
-              },
-              {
                 "id": "14001",
                 "title": "薫る花は凛と咲く",
                 "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14001"
+              },
+              {
+                "id": "14965",
+                "title": "ダンダダン 第2期",
+                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14965"
               },
               {
                 "id": "13744",
@@ -130061,18 +130131,18 @@
                 "url": "https://annict.com/works/14295"
               },
               {
-                "id": "14726",
-                "title": "出禁のモグラ",
-                "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14726"
-              },
-              {
                 "id": "13428",
                 "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
                 "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/13428"
+              },
+              {
+                "id": "14726",
+                "title": "出禁のモグラ",
+                "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14726"
               },
               {
                 "id": "14727",
@@ -130714,6 +130784,13 @@
                 "url": "https://annict.com/works/17088"
               },
               {
+                "id": "16391",
+                "title": "スーパーの裏でヤニ吸うふたり",
+                "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16391"
+              },
+              {
                 "id": "17361",
                 "title": "正反対な君と僕 第2期",
                 "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
@@ -130721,18 +130798,18 @@
                 "url": "https://annict.com/works/17361"
               },
               {
-                "id": "16658",
-                "title": "君のことが大大大大大好きな100人の彼女 第3期",
-                "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/16658"
-              },
-              {
                 "id": "15724",
                 "title": "ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～",
                 "image": "https://image.annict.com/TPZbFFy5-srgSSv63uiUnBPA8Szunvdw9d1LlH7IspY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/15724"
+              },
+              {
+                "id": "16658",
+                "title": "君のことが大大大大大好きな100人の彼女 第3期",
+                "image": "https://image.annict.com/PqyM5IkpYczSqsUxlZQO1I5gCTjU3Ed1AK1fqLTKN_E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13305/image/master-cb1a9e417df5b915fdaadada0f404589.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16658"
               },
               {
                 "id": "16677",
@@ -130796,6 +130873,13 @@
                 "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17353"
+              },
+              {
+                "id": "14969",
+                "title": "株式会社マジルミエ 第2期",
+                "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14969"
               },
               {
                 "id": "16519",
@@ -131491,18 +131575,18 @@
                 "url": "https://annict.com/works/14769"
               },
               {
-                "id": "13850",
-                "title": "死亡遊戯で飯を食う。",
-                "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/13850"
-              },
-              {
                 "id": "10985",
                 "title": "Fate/strange Fake",
                 "image": "https://image.annict.com/p361UKi0TuQX6dYAHAwpa0KUoevo0J0p-0f8TDdhRQw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7421/image/master-846f80e0ca7f09efe1bbdd622b0ad22f.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/10985"
+              },
+              {
+                "id": "13850",
+                "title": "死亡遊戯で飯を食う。",
+                "image": "https://image.annict.com/zPggt4zC0Kt8QFYhgeKJ99GSauOXPrWijpBio154HoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11997/image/master-d2b45625d2d786d5d6790b217a7d63ab.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/13850"
               },
               {
                 "id": "11036",
@@ -131645,18 +131729,18 @@
                 "url": "https://annict.com/works/14901"
               },
               {
-                "id": "16007",
-                "title": "29歳独身中堅冒険者の日常",
-                "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/16007"
-              },
-              {
                 "id": "14511",
                 "title": "カヤちゃんはコワくない",
                 "image": "https://image.annict.com/VAu5D-hQIJTdLnoBADf6LfGH80vjFH-Etg6mF-uZd5Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11190/image/master-0a30837627b8bb346ed20411b76938b8.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/14511"
+              },
+              {
+                "id": "16007",
+                "title": "29歳独身中堅冒険者の日常",
+                "image": "https://image.annict.com/rg3JsoeHtA2bpuic1Q41aFnAuKsLykvDdlwC1oV3jIA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12593/image/master-1ce5a9bae205cba59abd3d32cd6721c6.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/16007"
               },
               {
                 "id": "15002",
@@ -131680,18 +131764,18 @@
                 "url": "https://annict.com/works/16022"
               },
               {
-                "id": "16239",
-                "title": "魔王の娘は優しすぎる!!",
-                "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
-                "season": "2026年冬",
-                "url": "https://annict.com/works/16239"
-              },
-              {
                 "id": "16561",
                 "title": "銀河特急 ミルキー☆サブウェイ 各駅停車劇場行き",
                 "image": "https://image.annict.com/WvPD-zKWAWEuPsgQDnrv-i1ocr9_9tl1YSilmyHawTc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13512/image/master-fb9409db19f6510c6f79a6759fbb585d.jpg@webp",
                 "season": "2026年冬",
                 "url": "https://annict.com/works/16561"
+              },
+              {
+                "id": "16239",
+                "title": "魔王の娘は優しすぎる!!",
+                "image": "https://image.annict.com/KsA6fzp04xFF5yIgK6kfHlQjsa3qOBIydnmcQTK6FIo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12947/image/master-fff17c267ae3e754f137ce92a20f57e7.jpg@webp",
+                "season": "2026年冬",
+                "url": "https://annict.com/works/16239"
               },
               {
                 "id": "14562",
@@ -131847,7 +131931,7 @@
             "2006_2010": 4,
             "2011_2015": 23,
             "2016_2020": 45,
-            "2021_present": 496
+            "2021_present": 498
           }
         },
         "hitobi_syuto": {
@@ -144497,7 +144581,7 @@
             "2023": 52,
             "2024": 101,
             "2025": 108,
-            "2026": 77
+            "2026": 78
           },
           "animesByYear": {
             "1993": [
@@ -147072,18 +147156,18 @@
                 "url": "https://annict.com/works/13630"
               },
               {
-                "id": "16509",
-                "title": "藤本タツキ 17-26",
-                "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/16509"
-              },
-              {
                 "id": "16511",
                 "title": "ある日、お姫様になってしまった件について",
                 "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16511"
+              },
+              {
+                "id": "16509",
+                "title": "藤本タツキ 17-26",
+                "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/16509"
               },
               {
                 "id": "15109",
@@ -147128,18 +147212,18 @@
                 "url": "https://annict.com/works/16111"
               },
               {
-                "id": "16655",
-                "title": "藤本タツキ 17-26 Part2",
-                "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/16655"
-              },
-              {
                 "id": "16654",
                 "title": "藤本タツキ 17-26 Part1",
                 "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16654"
+              },
+              {
+                "id": "16655",
+                "title": "藤本タツキ 17-26 Part2",
+                "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/16655"
               },
               {
                 "id": "13048",
@@ -147760,6 +147844,13 @@
                 "url": "https://annict.com/works/14132"
               },
               {
+                "id": "17361",
+                "title": "正反対な君と僕 第2期",
+                "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17361"
+              },
+              {
                 "id": "15881",
                 "title": "天幕のジャードゥーガル",
                 "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
@@ -148270,7 +148361,7 @@
             "2006_2010": 9,
             "2011_2015": 45,
             "2016_2020": 79,
-            "2021_present": 391
+            "2021_present": 392
           }
         },
         "shimbaco": {
@@ -153622,8 +153713,8 @@
             "hanu"
           ],
           "year": 2026,
-          "commonInYearCount": 144,
-          "totalCommon": 411
+          "commonInYearCount": 146,
+          "totalCommon": 413
         },
         {
           "pair": [
@@ -153650,7 +153741,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 80,
-          "totalCommon": 322
+          "totalCommon": 323
         },
         {
           "pair": [
@@ -153686,7 +153777,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 122,
-          "totalCommon": 296
+          "totalCommon": 298
         },
         {
           "pair": [
@@ -153704,7 +153795,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 72,
-          "totalCommon": 184
+          "totalCommon": 186
         },
         {
           "pair": [
@@ -153749,7 +153840,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 68,
-          "totalCommon": 254
+          "totalCommon": 255
         },
         {
           "pair": [
@@ -181551,7 +181642,7 @@
         },
         "hanu": {
           "username": "hanu",
-          "totalWatched": 569,
+          "totalWatched": 571,
           "genres": [
             {
               "id": "isekai",
@@ -181559,7 +181650,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 142,
-              "percentage": 25,
+              "percentage": 24.9,
               "animes": [
                 {
                   "id": "13582",
@@ -182562,9 +182653,16 @@
               "label": "日常 / ほのぼの",
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
-              "count": 59,
-              "percentage": 10.4,
+              "count": 60,
+              "percentage": 10.5,
               "animes": [
+                {
+                  "id": "16391",
+                  "title": "スーパーの裏でヤニ吸うふたり",
+                  "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/16391"
+                },
                 {
                   "id": "17361",
                   "title": "正反対な君と僕 第2期",
@@ -183401,8 +183499,8 @@
               "label": "魔法少女 / バトルヒロイン",
               "icon": "fa-solid fa-wand-magic-sparkles",
               "color": "#fb7185",
-              "count": 49,
-              "percentage": 8.6,
+              "count": 50,
+              "percentage": 8.8,
               "animes": [
                 {
                   "id": "8410",
@@ -183410,6 +183508,13 @@
                   "image": "https://image.annict.com/jyIh3WyOnp-f8BBVLPfDb4sJBr6l836pQJvKOzDlcm4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5388/image/master-37a7276803f950d50a12057433afc6f7.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/8410"
+                },
+                {
+                  "id": "14969",
+                  "title": "株式会社マジルミエ 第2期",
+                  "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/14969"
                 },
                 {
                   "id": "9521",
@@ -184108,7 +184213,7 @@
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
               "count": 43,
-              "percentage": 7.6,
+              "percentage": 7.5,
               "animes": [
                 {
                   "id": "16822",
@@ -184419,7 +184524,7 @@
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
               "count": 35,
-              "percentage": 6.2,
+              "percentage": 6.1,
               "animes": [
                 {
                   "id": "17043",
@@ -184674,7 +184779,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 35,
-              "percentage": 6.2,
+              "percentage": 6.1,
               "animes": [
                 {
                   "id": "16658",
@@ -185694,7 +185799,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 142,
-              "percentage": 25,
+              "percentage": 24.9,
               "animes": [
                 {
                   "id": "13582",
@@ -186697,9 +186802,16 @@
               "label": "日常 / ほのぼの",
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
-              "count": 59,
-              "percentage": 10.4,
+              "count": 60,
+              "percentage": 10.5,
               "animes": [
+                {
+                  "id": "16391",
+                  "title": "スーパーの裏でヤニ吸うふたり",
+                  "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/16391"
+                },
                 {
                   "id": "17361",
                   "title": "正反対な君と僕 第2期",
@@ -205991,15 +206103,15 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 530,
+          "totalWatched": 531,
           "genres": [
             {
               "id": "nichijou",
               "label": "日常 / ほのぼの",
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
-              "count": 92,
-              "percentage": 17.4,
+              "count": 93,
+              "percentage": 17.5,
               "animes": [
                 {
                   "id": "16391",
@@ -206007,6 +206119,13 @@
                   "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/16391"
+                },
+                {
+                  "id": "17361",
+                  "title": "正反対な君と僕 第2期",
+                  "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/17361"
                 },
                 {
                   "id": "15751",
@@ -206653,7 +206772,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 66,
-              "percentage": 12.5,
+              "percentage": 12.4,
               "animes": [
                 {
                   "id": "17108",
@@ -207125,7 +207244,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 66,
-              "percentage": 12.5,
+              "percentage": 12.4,
               "animes": [
                 {
                   "id": "12933",
@@ -208338,7 +208457,7 @@
               "icon": "fa-solid fa-wand-magic-sparkles",
               "color": "#fb7185",
               "count": 39,
-              "percentage": 7.4,
+              "percentage": 7.3,
               "animes": [
                 {
                   "id": "17379",
@@ -209654,7 +209773,7 @@
               "icon": "fa-solid fa-skull",
               "color": "#475569",
               "count": 13,
-              "percentage": 2.5,
+              "percentage": 2.4,
               "animes": [
                 {
                   "id": "16856",
@@ -209860,8 +209979,8 @@
               "label": "日常 / ほのぼの",
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
-              "count": 92,
-              "percentage": 17.4,
+              "count": 93,
+              "percentage": 17.5,
               "animes": [
                 {
                   "id": "16391",
@@ -209869,6 +209988,13 @@
                   "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/16391"
+                },
+                {
+                  "id": "17361",
+                  "title": "正反対な君と僕 第2期",
+                  "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/17361"
                 },
                 {
                   "id": "15751",
@@ -210515,7 +210641,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 66,
-              "percentage": 12.5,
+              "percentage": 12.4,
               "animes": [
                 {
                   "id": "17108",
@@ -210987,7 +211113,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 66,
-              "percentage": 12.5,
+              "percentage": 12.4,
               "animes": [
                 {
                   "id": "12933",
@@ -219144,7 +219270,7 @@
           "userPercentages": {
             "saya15": 13.7,
             "animemitaro": 22.4,
-            "hanu": 25,
+            "hanu": 24.9,
             "hitobi_syuto": 14.6,
             "fs495": 23,
             "tmist": 6.2,
@@ -225676,7 +225802,7 @@
             "hanu": 10.2,
             "hitobi_syuto": 17.3,
             "fs495": 11.3,
-            "tmist": 12.5,
+            "tmist": 12.4,
             "shimbaco": 12.8,
             "white_tiny_cat": 8,
             "pomeranian_dev": 13.5
@@ -230654,14 +230780,14 @@
           "labelEn": "Slice of Life",
           "icon": "fa-solid fa-mug-saucer",
           "color": "#10b981",
-          "totalWorksAcrossUsers": 599,
+          "totalWorksAcrossUsers": 601,
           "userCounts": {
             "saya15": 29,
             "animemitaro": 127,
-            "hanu": 59,
+            "hanu": 60,
             "hitobi_syuto": 122,
             "fs495": 68,
-            "tmist": 92,
+            "tmist": 93,
             "shimbaco": 93,
             "white_tiny_cat": 5,
             "pomeranian_dev": 4
@@ -230669,10 +230795,10 @@
           "userPercentages": {
             "saya15": 3.6,
             "animemitaro": 11.3,
-            "hanu": 10.4,
+            "hanu": 10.5,
             "hitobi_syuto": 12.6,
             "fs495": 8.5,
-            "tmist": 17.4,
+            "tmist": 17.5,
             "shimbaco": 16.7,
             "white_tiny_cat": 4,
             "pomeranian_dev": 10.8
@@ -231775,6 +231901,13 @@
               }
             ],
             "hanu": [
+              {
+                "id": "16391",
+                "title": "スーパーの裏でヤニ吸うふたり",
+                "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16391"
+              },
               {
                 "id": "17361",
                 "title": "正反対な君と僕 第2期",
@@ -233532,6 +233665,13 @@
                 "url": "https://annict.com/works/16391"
               },
               {
+                "id": "17361",
+                "title": "正反対な君と僕 第2期",
+                "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17361"
+              },
+              {
                 "id": "15751",
                 "title": "これ描いて死ね",
                 "image": "https://image.annict.com/2oa6V9InhquH4R4Gy7K3u1U3WVRnooxoRj_QLZGDf38/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12369/image/master-65fa9aa6c1db173807ce15603667a66f.jpg@webp",
@@ -234916,10 +235056,10 @@
           "userPercentages": {
             "saya15": 11.7,
             "animemitaro": 8.9,
-            "hanu": 6.2,
+            "hanu": 6.1,
             "hitobi_syuto": 9.9,
             "fs495": 3.9,
-            "tmist": 12.5,
+            "tmist": 12.4,
             "shimbaco": 6.7,
             "white_tiny_cat": 4,
             "pomeranian_dev": 8.1
@@ -238232,7 +238372,7 @@
           "userPercentages": {
             "saya15": 8.1,
             "animemitaro": 7.4,
-            "hanu": 7.6,
+            "hanu": 7.5,
             "hitobi_syuto": 6.3,
             "fs495": 10.3,
             "tmist": 10,
@@ -241421,11 +241561,11 @@
           "labelEn": "Magical Girl / Battle Heroine",
           "icon": "fa-solid fa-wand-magic-sparkles",
           "color": "#fb7185",
-          "totalWorksAcrossUsers": 444,
+          "totalWorksAcrossUsers": 445,
           "userCounts": {
             "saya15": 85,
             "animemitaro": 74,
-            "hanu": 49,
+            "hanu": 50,
             "hitobi_syuto": 58,
             "fs495": 108,
             "tmist": 39,
@@ -241436,10 +241576,10 @@
           "userPercentages": {
             "saya15": 10.7,
             "animemitaro": 6.6,
-            "hanu": 8.6,
+            "hanu": 8.8,
             "hitobi_syuto": 6,
             "fs495": 13.4,
-            "tmist": 7.4,
+            "tmist": 7.3,
             "shimbaco": 4.5,
             "white_tiny_cat": 4,
             "pomeranian_dev": 2.7
@@ -242569,6 +242709,13 @@
                 "image": "https://image.annict.com/jyIh3WyOnp-f8BBVLPfDb4sJBr6l836pQJvKOzDlcm4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5388/image/master-37a7276803f950d50a12057433afc6f7.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/8410"
+              },
+              {
+                "id": "14969",
+                "title": "株式会社マジルミエ 第2期",
+                "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14969"
               },
               {
                 "id": "9521",
@@ -244598,7 +244745,7 @@
           "userPercentages": {
             "saya15": 10.7,
             "animemitaro": 7,
-            "hanu": 6.2,
+            "hanu": 6.1,
             "hitobi_syuto": 6.1,
             "fs495": 9.3,
             "tmist": 9.4,
@@ -252160,7 +252307,7 @@
             "hanu": 5.1,
             "hitobi_syuto": 3.3,
             "fs495": 3.4,
-            "tmist": 2.5,
+            "tmist": 2.4,
             "shimbaco": 4.9,
             "white_tiny_cat": 4.8,
             "pomeranian_dev": 8.1
@@ -279029,7 +279176,7 @@
         },
         "hanu": {
           "username": "hanu",
-          "totalWatched": 569,
+          "totalWatched": 571,
           "genres": [
             {
               "id": "isekai",
@@ -280309,8 +280456,8 @@
               "label": "アクション / バトル",
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
-              "count": 80,
-              "percentage": 14.1,
+              "count": 81,
+              "percentage": 14.2,
               "animes": [
                 {
                   "id": "16856",
@@ -280325,6 +280472,13 @@
                   "image": "https://image.annict.com/QHkUjsvvh3YNIm5BfkCmsyGS9O_NCL_8GQcg_cqk9eY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13261/image/master-1ac47c141a5c2f34019c8b0813a85e9d.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/16606"
+                },
+                {
+                  "id": "14969",
+                  "title": "株式会社マジルミエ 第2期",
+                  "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/14969"
                 },
                 {
                   "id": "15623",
@@ -282071,9 +282225,16 @@
               "label": "日常 / ほのぼの",
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
-              "count": 36,
-              "percentage": 6.3,
+              "count": 37,
+              "percentage": 6.5,
               "animes": [
+                {
+                  "id": "16391",
+                  "title": "スーパーの裏でヤニ吸うふたり",
+                  "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/16391"
+                },
                 {
                   "id": "16405",
                   "title": "いびってこない義母と義姉",
@@ -284444,8 +284605,8 @@
               "label": "アクション / バトル",
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
-              "count": 80,
-              "percentage": 14.1,
+              "count": 81,
+              "percentage": 14.2,
               "animes": [
                 {
                   "id": "16856",
@@ -284460,6 +284621,13 @@
                   "image": "https://image.annict.com/QHkUjsvvh3YNIm5BfkCmsyGS9O_NCL_8GQcg_cqk9eY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13261/image/master-1ac47c141a5c2f34019c8b0813a85e9d.jpg@webp",
                   "season": "2026年夏",
                   "url": "https://annict.com/works/16606"
+                },
+                {
+                  "id": "14969",
+                  "title": "株式会社マジルミエ 第2期",
+                  "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/14969"
                 },
                 {
                   "id": "15623",
@@ -303524,7 +303692,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 530,
+          "totalWatched": 531,
           "genres": [
             {
               "id": "sf_fantasy",
@@ -304094,9 +304262,16 @@
               "label": "ドラマ / 青春",
               "icon": "fa-solid fa-masks-theater",
               "color": "#0284c7",
-              "count": 77,
-              "percentage": 14.5,
+              "count": 78,
+              "percentage": 14.7,
               "animes": [
+                {
+                  "id": "17361",
+                  "title": "正反対な君と僕 第2期",
+                  "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/17361"
+                },
                 {
                   "id": "15881",
                   "title": "天幕のジャードゥーガル",
@@ -306881,7 +307056,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 13,
-              "percentage": 2.5,
+              "percentage": 2.4,
               "animes": [
                 {
                   "id": "16555",
@@ -306982,7 +307157,7 @@
               "icon": "fa-solid fa-robot",
               "color": "#6b7280",
               "count": 13,
-              "percentage": 2.5,
+              "percentage": 2.4,
               "animes": [
                 {
                   "id": "14853",
@@ -307956,9 +308131,16 @@
               "label": "ドラマ / 青春",
               "icon": "fa-solid fa-masks-theater",
               "color": "#0284c7",
-              "count": 77,
-              "percentage": 14.5,
+              "count": 78,
+              "percentage": 14.7,
               "animes": [
+                {
+                  "id": "17361",
+                  "title": "正反対な君と僕 第2期",
+                  "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                  "season": "2026年夏",
+                  "url": "https://annict.com/works/17361"
+                },
                 {
                   "id": "15881",
                   "title": "天幕のジャードゥーガル",
@@ -328809,11 +328991,11 @@
           "labelEn": "Action / Battle",
           "icon": "fa-solid fa-burst",
           "color": "#ef4444",
-          "totalWorksAcrossUsers": 649,
+          "totalWorksAcrossUsers": 650,
           "userCounts": {
             "saya15": 131,
             "animemitaro": 128,
-            "hanu": 80,
+            "hanu": 81,
             "hitobi_syuto": 90,
             "fs495": 82,
             "tmist": 68,
@@ -328824,7 +329006,7 @@
           "userPercentages": {
             "saya15": 16.4,
             "animemitaro": 11.3,
-            "hanu": 14.1,
+            "hanu": 14.2,
             "hitobi_syuto": 9.3,
             "fs495": 10.2,
             "tmist": 12.8,
@@ -330664,6 +330846,13 @@
                 "image": "https://image.annict.com/QHkUjsvvh3YNIm5BfkCmsyGS9O_NCL_8GQcg_cqk9eY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13261/image/master-1ac47c141a5c2f34019c8b0813a85e9d.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/16606"
+              },
+              {
+                "id": "14969",
+                "title": "株式会社マジルミエ 第2期",
+                "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14969"
               },
               {
                 "id": "15623",
@@ -333424,7 +333613,7 @@
             "hanu": 17,
             "hitobi_syuto": 10.1,
             "fs495": 16.5,
-            "tmist": 2.5,
+            "tmist": 2.4,
             "shimbaco": 5.2,
             "white_tiny_cat": 1.6,
             "pomeranian_dev": 5.4
@@ -337870,11 +338059,11 @@
           "labelEn": "Slice of Life",
           "icon": "fa-solid fa-mug-saucer",
           "color": "#10b981",
-          "totalWorksAcrossUsers": 506,
+          "totalWorksAcrossUsers": 507,
           "userCounts": {
             "saya15": 18,
             "animemitaro": 117,
-            "hanu": 36,
+            "hanu": 37,
             "hitobi_syuto": 104,
             "fs495": 62,
             "tmist": 71,
@@ -337885,7 +338074,7 @@
           "userPercentages": {
             "saya15": 2.3,
             "animemitaro": 10.4,
-            "hanu": 6.3,
+            "hanu": 6.5,
             "hitobi_syuto": 10.8,
             "fs495": 7.7,
             "tmist": 13.4,
@@ -338844,6 +339033,13 @@
               }
             ],
             "hanu": [
+              {
+                "id": "16391",
+                "title": "スーパーの裏でヤニ吸うふたり",
+                "image": "https://image.annict.com/qiuV__5URLtfbwYAmeTyFf2leYcKmtFa34iqk0UOlKA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13044/image/master-cb77fe9c08066d010b1a40adb93489e8.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/16391"
+              },
               {
                 "id": "16405",
                 "title": "いびってこない義母と義姉",
@@ -341466,14 +341662,14 @@
           "labelEn": "Drama / Youth",
           "icon": "fa-solid fa-masks-theater",
           "color": "#0284c7",
-          "totalWorksAcrossUsers": 465,
+          "totalWorksAcrossUsers": 466,
           "userCounts": {
             "saya15": 51,
             "animemitaro": 89,
             "hanu": 26,
             "hitobi_syuto": 105,
             "fs495": 42,
-            "tmist": 77,
+            "tmist": 78,
             "shimbaco": 64,
             "white_tiny_cat": 5,
             "pomeranian_dev": 6
@@ -341484,7 +341680,7 @@
             "hanu": 4.6,
             "hitobi_syuto": 10.9,
             "fs495": 5.2,
-            "tmist": 14.5,
+            "tmist": 14.7,
             "shimbaco": 11.5,
             "white_tiny_cat": 4,
             "pomeranian_dev": 16.2
@@ -343692,6 +343888,13 @@
               }
             ],
             "tmist": [
+              {
+                "id": "17361",
+                "title": "正反対な君と僕 第2期",
+                "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17361"
+              },
               {
                 "id": "15881",
                 "title": "天幕のジャードゥーガル",
@@ -351416,7 +351619,7 @@
             "hanu": 1.1,
             "hitobi_syuto": 0.7,
             "fs495": 3.2,
-            "tmist": 2.5,
+            "tmist": 2.4,
             "shimbaco": 4.7,
             "white_tiny_cat": 13.6,
             "pomeranian_dev": 2.7
@@ -359755,6 +359958,27 @@
           ]
         },
         {
+          "id": "17361",
+          "title": "正反対な君と僕 第2期",
+          "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/17361",
+          "watchedBy": [
+            "animemitaro",
+            "hanu",
+            "hitobi_syuto",
+            "tmist"
+          ],
+          "legacyCategory": "nichijou",
+          "scoredCategory": "drama",
+          "score": 241,
+          "topReasons": [
+            "公式ジャンル: Drama (+60)",
+            "タグ: Coming of Age (青春・成長) (+111)",
+            "タグ: Ensemble Cast (群像劇) (+70)"
+          ]
+        },
+        {
           "id": "14309",
           "title": "エリスの聖杯",
           "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
@@ -362729,6 +362953,26 @@
           ]
         },
         {
+          "id": "14969",
+          "title": "株式会社マジルミエ 第2期",
+          "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/14969",
+          "watchedBy": [
+            "animemitaro",
+            "hanu",
+            "hitobi_syuto"
+          ],
+          "legacyCategory": "mahou_shoujo",
+          "scoredCategory": "action",
+          "score": 250,
+          "topReasons": [
+            "公式ジャンル: Action (+90)",
+            "タグ: Swordplay (+70)",
+            "タグ: Shounen (+90)"
+          ]
+        },
+        {
           "id": "6399",
           "title": "痛いのは嫌なので防御力に極振りしたいと思います。",
           "image": "https://image.annict.com/9zhX47AodScri8gBlQs1uDXTRvtAmMQsuuglVTBKbyA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3879/image/master-508f34b17c0731ef17078c65ddaf6d06.jpg@webp",
@@ -362867,26 +363111,6 @@
             "公式ジャンル: Action (+90)",
             "タグ: Swordplay (+75)",
             "タグ: Shounen (+76)"
-          ]
-        },
-        {
-          "id": "17361",
-          "title": "正反対な君と僕 第2期",
-          "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/17361",
-          "watchedBy": [
-            "animemitaro",
-            "hanu",
-            "hitobi_syuto"
-          ],
-          "legacyCategory": "nichijou",
-          "scoredCategory": "drama",
-          "score": 241,
-          "topReasons": [
-            "公式ジャンル: Drama (+60)",
-            "タグ: Coming of Age (青春・成長) (+111)",
-            "タグ: Ensemble Cast (群像劇) (+70)"
           ]
         },
         {
@@ -367187,25 +367411,6 @@
             "公式ジャンル: Romance (+130)",
             "タグ: Female Harem (+87)",
             "タグ: Tsundere (+33)"
-          ]
-        },
-        {
-          "id": "14969",
-          "title": "株式会社マジルミエ 第2期",
-          "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/14969",
-          "watchedBy": [
-            "animemitaro",
-            "hitobi_syuto"
-          ],
-          "legacyCategory": "mahou_shoujo",
-          "scoredCategory": "action",
-          "score": 250,
-          "topReasons": [
-            "公式ジャンル: Action (+90)",
-            "タグ: Swordplay (+70)",
-            "タグ: Shounen (+90)"
           ]
         },
         {

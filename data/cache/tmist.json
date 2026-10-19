@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-18T21:13:47.178Z",
-  "count": 530,
+  "fetchedAt": "2026-10-19T22:45:42.441Z",
+  "count": 531,
   "animes": [
     {
       "id": "17108",
@@ -37,6 +37,13 @@
       "image": "https://image.annict.com/PHqtOFvCb74yRvr1tS8pfyksu3QWCjL-vu92UB4TOhw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10936/image/master-095e409dc271710ea69a5daeef87e1e4.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/14132"
+    },
+    {
+      "id": "17361",
+      "title": "正反対な君と僕 第2期",
+      "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17361"
     },
     {
       "id": "15881",
@@ -648,18 +655,18 @@
       "url": "https://annict.com/works/13630"
     },
     {
-      "id": "16509",
-      "title": "藤本タツキ 17-26",
-      "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16509"
-    },
-    {
       "id": "16511",
       "title": "ある日、お姫様になってしまった件について",
       "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16511"
+    },
+    {
+      "id": "16509",
+      "title": "藤本タツキ 17-26",
+      "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16509"
     },
     {
       "id": "15109",
@@ -704,18 +711,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16655",
-      "title": "藤本タツキ 17-26 Part2",
-      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16655"
-    },
-    {
       "id": "16654",
       "title": "藤本タツキ 17-26 Part1",
       "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16654"
+    },
+    {
+      "id": "16655",
+      "title": "藤本タツキ 17-26 Part2",
+      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16655"
     },
     {
       "id": "13048",
