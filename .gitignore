@@ -3,6 +3,11 @@ node_modules/
 
 # Scratch & Temporary test scripts
 scratch/
+test/
+
+# Python cache
+__pycache__/
+*.pyc
 
 # OS metadata
 .DS_Store
@@ -21,3 +26,13 @@ yarn-error.log*
 # Large ML/Vector Dataset (raw files > 100MB)
 類似度データ/
 *.npz
+
+# 類似度一時データ・大容量成果物 (Web配信JSON static/res/ は除外しない)
+類似度/*.zip
+類似度/*.json
+類似度/*.csv
+類似度/**/output/
+類似度/**/__pycache__/
+類似度/**/*.csv
+類似度/**/*.npy
+
