@@ -155184,5 +155184,41 @@
         "rank": 66
       }
     ]
+  },
+  "パンでPeace!": {
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 100
+      },
+      {
+        "name": "Food",
+        "rank": 86
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 80
+      },
+      {
+        "name": "School",
+        "rank": 79
+      },
+      {
+        "name": "Seinen",
+        "rank": 79
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 73
+      },
+      {
+        "name": "Chuunibyou",
+        "rank": 36
+      }
+    ]
   }
 }

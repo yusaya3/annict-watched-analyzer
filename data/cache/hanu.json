@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-19T22:45:33.479Z",
-  "count": 571,
+  "fetchedAt": "2026-10-20T22:01:50.212Z",
+  "count": 572,
   "animes": [
     {
       "id": "13582",
@@ -326,18 +326,18 @@
       "url": "https://annict.com/works/17134"
     },
     {
-      "id": "17729",
-      "title": "うしろの正面カムイさん ミニアニメ劇場",
-      "image": "https://image.annict.com/UdBOIq7m9WVrURD35H0UDtJGJ6Z_-DPAG2e3-BgIm1E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14704/image/master-ffd092cf5199d92df168fd56f29d7d0d.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17729"
-    },
-    {
       "id": "17333",
       "title": "北斗の拳 拳王軍ザコたちの挽歌 第2クール",
       "image": "https://image.annict.com/hWPOJpEryMpcnymqtWr8QA74ULfliZjv_78hnREsvXM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14410/image/master-0b364eca4ca5f28797c57cb071d782e7.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17333"
+    },
+    {
+      "id": "17729",
+      "title": "うしろの正面カムイさん ミニアニメ劇場",
+      "image": "https://image.annict.com/UdBOIq7m9WVrURD35H0UDtJGJ6Z_-DPAG2e3-BgIm1E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14704/image/master-ffd092cf5199d92df168fd56f29d7d0d.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17729"
     },
     {
       "id": "17820",
@@ -620,18 +620,18 @@
       "url": "https://annict.com/works/13537"
     },
     {
-      "id": "16340",
-      "title": "神の庭付き楠木邸",
-      "image": "https://image.annict.com/bMQMQBKDNCTGyLj7FOPZo4PIGqarcz0O4ba1ivi9HPo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13038/image/master-de38c6c4eec9e0d9dbe3e170918329cd.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16340"
-    },
-    {
       "id": "16730",
       "title": "茉莉花ちゃんの好感度はぶっ壊れている",
       "image": "https://image.annict.com/52mLtQtVN0Mo8XZBZ8Lkdkh0D6Z8BfWvObxR3oK3aqA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13384/image/master-0a028a505ef190573d2e32a6534f7d68.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16730"
+    },
+    {
+      "id": "16340",
+      "title": "神の庭付き楠木邸",
+      "image": "https://image.annict.com/bMQMQBKDNCTGyLj7FOPZo4PIGqarcz0O4ba1ivi9HPo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13038/image/master-de38c6c4eec9e0d9dbe3e170918329cd.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16340"
     },
     {
       "id": "17075",
@@ -3789,6 +3789,13 @@
       "image": "https://image.annict.com/DCGzB68xEk9KIheEylR9d_dQ5r0o2mvkGFSHHCs4h7o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1383/image/master-689d5f85b2666423de2c8f4ab2e23313.jpg@webp",
       "season": "2016年夏",
       "url": "https://annict.com/works/4831"
+    },
+    {
+      "id": "4663",
+      "title": "パンでPeace!",
+      "image": "https://image.annict.com/Uotx7dVOFTDsBJrdHhftV3GI6hkfL8lhWcDSpcv0AOU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1268/image/master-fd98f053039520b8896c8c3208b4bd7b.jpg@webp",
+      "season": "2016年春",
+      "url": "https://annict.com/works/4663"
     },
     {
       "id": "4329",
