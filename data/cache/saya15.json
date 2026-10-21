@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-16T21:52:50.907Z",
-  "count": 798,
+  "fetchedAt": "2026-10-21T22:03:44.495Z",
+  "count": 801,
   "animes": [
     {
       "id": "16716",
@@ -9,6 +9,13 @@
       "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/16716"
+    },
+    {
+      "id": "16454",
+      "title": "BanG Dream! Ave Mujica prima aurora",
+      "image": "https://image.annict.com/IudwqrGdfla4bnVGWqoCcReS8E5IB1-zNW-ZJCy2J-g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13721/image/master-2ae2a3f711ed059b9b5fda2e5637c700.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/16454"
     },
     {
       "id": "13582",
@@ -60,6 +67,13 @@
       "url": "https://annict.com/works/15724"
     },
     {
+      "id": "6187",
+      "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+      "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6187"
+    },
+    {
       "id": "16677",
       "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
       "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
@@ -102,18 +116,18 @@
       "url": "https://annict.com/works/16519"
     },
     {
-      "id": "15036",
-      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
-      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/15036"
-    },
-    {
       "id": "16468",
       "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
       "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16468"
+    },
+    {
+      "id": "15036",
+      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
+      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15036"
     },
     {
       "id": "17354",
@@ -149,6 +163,13 @@
       "image": "https://image.annict.com/rydEKApTSiBxnvARwNvoJSUJkQ75RGz5aM8fPG9zn9U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10881/image/master-23a4556020234e7e3d5514d96bab1b51.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/14066"
+    },
+    {
+      "id": "15658",
+      "title": "上伊那ぼたん、酔へる姿は百合の花",
+      "image": "https://image.annict.com/gBt2NREqOE19OoLR40oUufsX_2nlQctqHfnOtYgpuvE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12279/image/master-65d9315d52e2f4394e589447f3562d07.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/15658"
     },
     {
       "id": "16424",
@@ -459,18 +480,18 @@
       "url": "https://annict.com/works/16253"
     },
     {
-      "id": "14006",
-      "title": "最後にひとつだけお願いしてもよろしいでしょうか",
-      "image": "https://image.annict.com/jbD56FSQoxrhlC7Oih1DFS5U9eA3qsqllYsoy-4Cjyc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10833/image/master-836fa8d5e5fa590832594158d9951c46.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/14006"
-    },
-    {
       "id": "16250",
       "title": "かぐや様は告らせたい 大人への階段",
       "image": "https://image.annict.com/rqZAyi6WKvfcgtNBegzWT8rMu7V6wTYCVGKX8um7rZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12954/image/master-def3c9606281e89b8587c52037556e58.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16250"
+    },
+    {
+      "id": "14006",
+      "title": "最後にひとつだけお願いしてもよろしいでしょうか",
+      "image": "https://image.annict.com/jbD56FSQoxrhlC7Oih1DFS5U9eA3qsqllYsoy-4Cjyc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10833/image/master-836fa8d5e5fa590832594158d9951c46.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/14006"
     },
     {
       "id": "13763",
