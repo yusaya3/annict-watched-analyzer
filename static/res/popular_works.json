@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-10-20T22:01:30.101Z",
-  "count": 17354,
+  "generatedAt": "2026-10-22T22:02:49.257Z",
+  "count": 17357,
   "works": [
+    {
+      "id": "18324",
+      "title": "薬屋のひとりごと 金曜ロードショー スペシャルエディション",
+      "image": "https://image.annict.com/Ev7wvYqzpbtpFvRjFQGnH4xxSNBP6eWtpnG40542s18/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16843/image/master-899c67bcf8001a757047ee893ab40829.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18324"
+    },
+    {
+      "id": "18323",
+      "title": "薬屋のひとりごと シリーズ総集編",
+      "image": "https://image.annict.com/dc-R0gsP8LcZkIKmSOqbGLbAiPvst73mUtYiJDQceUE/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16842/image/master-7430923d4ee2ac88641c5d9f05731e2e.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18323"
+    },
+    {
+      "id": "18322",
+      "title": "東都観光バス　卓球サークル篇",
+      "image": "https://image.annict.com/RdLXtYFo9YYCSD-j24xziX3WrX--42MvRn3icM4is4A/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16841/image/master-6c2e80be348c17a63885ca7a0cdb4630.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18322"
+    },
     {
       "id": "18321",
       "title": "打つ娘サユリ",
