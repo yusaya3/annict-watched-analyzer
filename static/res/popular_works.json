@@ -1,7 +1,35 @@
 {
-  "generatedAt": "2026-10-23T21:47:58.130Z",
-  "count": 17358,
+  "generatedAt": "2026-10-24T21:23:08.092Z",
+  "count": 17362,
   "works": [
+    {
+      "id": "18329",
+      "title": "攻殻機動隊 新作アニメーション",
+      "image": "https://image.annict.com/Rs3PJ3i2DAKPhjBh-_UapA4sgdp-p3OJkoR3S-dZKsM/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16847/image/master-94deaed3aab976dd0a5803d989892646.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18329"
+    },
+    {
+      "id": "18328",
+      "title": "メイドインアビス 烈日の黄金郷【後編】",
+      "image": "https://image.annict.com/dQjqb8gfJTUONjiiU98lYCnq7_QtSZfBE0qKANhcU0c/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16846/image/master-2a99b4cc9922050420d5a9fad0b33bec.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18328"
+    },
+    {
+      "id": "18327",
+      "title": "メイドインアビス 烈日の黄金郷【前編】",
+      "image": "https://image.annict.com/_0-N5kVk6QXZoxy6ybQyi4vg_IQNONlhLIQwjpLcNdE/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16845/image/master-5b39d7b706a765e36096d170c10a68f0.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18327"
+    },
+    {
+      "id": "18326",
+      "title": "メイドインアビス 劇場シリーズ【第二部】",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18326"
+    },
     {
       "id": "18325",
       "title": "古墳ドクター コフィーER",

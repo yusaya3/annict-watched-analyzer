@@ -5,16 +5,23 @@
     ],
     "animes": [
       {
+        "id": "17108",
+        "title": "どこよりも遠い場所にいる君へ",
+        "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+        "season": "2026年秋",
+        "url": "https://annict.com/works/17108"
+      },
+      {
         "id": "16716",
         "title": "ガールズ&パンツァー 最終章 第5話",
-        "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+        "image": "https://image.annict.com/TZQubNnYRtKOu-zLxYr4sfKI990CvdcierdtKHUIO18/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-dc1cab13332c0f3aefc7c476daa61613.jpg@webp",
         "season": "2026年秋",
         "url": "https://annict.com/works/16716"
       },
       {
         "id": "16454",
         "title": "BanG Dream! Ave Mujica prima aurora",
-        "image": "https://image.annict.com/IudwqrGdfla4bnVGWqoCcReS8E5IB1-zNW-ZJCy2J-g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13721/image/master-2ae2a3f711ed059b9b5fda2e5637c700.jpg@webp",
+        "image": "https://image.annict.com/HRL2v_aBUq1_ncMccZy7cMu4PG89wlU7Oh5JTqqmoy8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13721/image/master-732a8b5a667c048bb3e3a7f7e8fa8949.jpg@webp",
         "season": "2026年秋",
         "url": "https://annict.com/works/16454"
       },
@@ -558,18 +565,18 @@
         "url": "https://annict.com/works/13829"
       },
       {
-        "id": "12617",
-        "title": "転生悪女の黒歴史",
-        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/12617"
-      },
-      {
         "id": "16511",
         "title": "ある日、お姫様になってしまった件について",
         "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16511"
+      },
+      {
+        "id": "12617",
+        "title": "転生悪女の黒歴史",
+        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/12617"
       },
       {
         "id": "15744",
@@ -3297,7 +3304,7 @@
       {
         "id": "5121",
         "title": "メイドインアビス",
-        "image": "https://image.annict.com/iqhb70quZr0XXw8V4LdAYr1XJTyL_nyu3I1oWL0w8q8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-7b78b78cd777a2f15f2d9d80c9e29258.jpg@webp",
+        "image": "https://image.annict.com/1p4ELBtnpohSNp6tTew4GX041Ahj4QLVFYeiA1QZaBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-788df4f73959e2afd118a0336b4b2036.jpg@webp",
         "season": "2017年夏",
         "url": "https://annict.com/works/5121"
       },
@@ -18038,18 +18045,18 @@
         "url": "https://annict.com/works/13829"
       },
       {
-        "id": "12617",
-        "title": "転生悪女の黒歴史",
-        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/12617"
-      },
-      {
         "id": "16511",
         "title": "ある日、お姫様になってしまった件について",
         "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16511"
+      },
+      {
+        "id": "12617",
+        "title": "転生悪女の黒歴史",
+        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/12617"
       },
       {
         "id": "15744",
@@ -21091,18 +21098,18 @@
         "url": "https://annict.com/works/13829"
       },
       {
-        "id": "12617",
-        "title": "転生悪女の黒歴史",
-        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/12617"
-      },
-      {
         "id": "16511",
         "title": "ある日、お姫様になってしまった件について",
         "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16511"
+      },
+      {
+        "id": "12617",
+        "title": "転生悪女の黒歴史",
+        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/12617"
       },
       {
         "id": "15744",
@@ -21814,7 +21821,7 @@
       {
         "id": "5121",
         "title": "メイドインアビス",
-        "image": "https://image.annict.com/iqhb70quZr0XXw8V4LdAYr1XJTyL_nyu3I1oWL0w8q8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-7b78b78cd777a2f15f2d9d80c9e29258.jpg@webp",
+        "image": "https://image.annict.com/1p4ELBtnpohSNp6tTew4GX041Ahj4QLVFYeiA1QZaBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-788df4f73959e2afd118a0336b4b2036.jpg@webp",
         "season": "2017年夏",
         "url": "https://annict.com/works/5121"
       },
@@ -25266,18 +25273,18 @@
         "url": "https://annict.com/works/13829"
       },
       {
-        "id": "12617",
-        "title": "転生悪女の黒歴史",
-        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/12617"
-      },
-      {
         "id": "16511",
         "title": "ある日、お姫様になってしまった件について",
         "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16511"
+      },
+      {
+        "id": "12617",
+        "title": "転生悪女の黒歴史",
+        "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/12617"
       },
       {
         "id": "15744",
