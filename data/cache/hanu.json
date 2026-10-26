@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-10-20T22:01:50.212Z",
-  "count": 572,
+  "fetchedAt": "2026-10-26T22:59:47.784Z",
+  "count": 574,
   "animes": [
     {
       "id": "13582",
@@ -109,18 +109,18 @@
       "url": "https://annict.com/works/16023"
     },
     {
-      "id": "17131",
-      "title": "落第賢者の学院無双 ～二度目の転生、Sランクチート魔術師冒険録～",
-      "image": "https://image.annict.com/rNh9rO3zyGf9TEHT3e_UdEba3uwUgX8PBObIfzna6fc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13819/image/master-144b3bb55ac940b6aff40be5f4351498.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17131"
-    },
-    {
       "id": "17353",
       "title": "ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～ 2nd Season",
       "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17353"
+    },
+    {
+      "id": "17131",
+      "title": "落第賢者の学院無双 ～二度目の転生、Sランクチート魔術師冒険録～",
+      "image": "https://image.annict.com/rNh9rO3zyGf9TEHT3e_UdEba3uwUgX8PBObIfzna6fc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13819/image/master-144b3bb55ac940b6aff40be5f4351498.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17131"
     },
     {
       "id": "14969",
@@ -151,6 +151,13 @@
       "url": "https://annict.com/works/16405"
     },
     {
+      "id": "16468",
+      "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
+      "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16468"
+    },
+    {
       "id": "17114",
       "title": "うしろの正面カムイさん",
       "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
@@ -165,11 +172,11 @@
       "url": "https://annict.com/works/14929"
     },
     {
-      "id": "16468",
-      "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
-      "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
+      "id": "16478",
+      "title": "LV999の村人",
+      "image": "https://image.annict.com/36ahNwQXuDuKTSBvL1lRdZ90iRgUlzMNL5M-IN9_qfs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13130/image/master-0c2bf0562dc490ef69394bb9671064c2.jpg@webp",
       "season": "2026年夏",
-      "url": "https://annict.com/works/16468"
+      "url": "https://annict.com/works/16478"
     },
     {
       "id": "16822",
@@ -249,18 +256,18 @@
       "url": "https://annict.com/works/15623"
     },
     {
-      "id": "16328",
-      "title": "炎の闘球女 ドッジ弾子",
-      "image": "https://image.annict.com/pJnJmKR9Sxf_qDZ_HcEAoOnDf3VUEFQsolQDqk9U6qY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13027/image/master-6ccf6eb1d88b0640387e6d1953218627.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16328"
-    },
-    {
       "id": "17042",
       "title": "盗掘王",
       "image": "https://image.annict.com/CH4hWb3yZvmwrd2Hm1rOmgbUPWNlQTFGoLh7U4N8yAE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13733/image/master-dc33bb5aadbc037a9cfc87a888d02ff4.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17042"
+    },
+    {
+      "id": "16328",
+      "title": "炎の闘球女 ドッジ弾子",
+      "image": "https://image.annict.com/pJnJmKR9Sxf_qDZ_HcEAoOnDf3VUEFQsolQDqk9U6qY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13027/image/master-6ccf6eb1d88b0640387e6d1953218627.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16328"
     },
     {
       "id": "16632",
@@ -326,18 +333,18 @@
       "url": "https://annict.com/works/17134"
     },
     {
-      "id": "17333",
-      "title": "北斗の拳 拳王軍ザコたちの挽歌 第2クール",
-      "image": "https://image.annict.com/hWPOJpEryMpcnymqtWr8QA74ULfliZjv_78hnREsvXM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14410/image/master-0b364eca4ca5f28797c57cb071d782e7.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17333"
-    },
-    {
       "id": "17729",
       "title": "うしろの正面カムイさん ミニアニメ劇場",
       "image": "https://image.annict.com/UdBOIq7m9WVrURD35H0UDtJGJ6Z_-DPAG2e3-BgIm1E/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14704/image/master-ffd092cf5199d92df168fd56f29d7d0d.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17729"
+    },
+    {
+      "id": "17333",
+      "title": "北斗の拳 拳王軍ザコたちの挽歌 第2クール",
+      "image": "https://image.annict.com/hWPOJpEryMpcnymqtWr8QA74ULfliZjv_78hnREsvXM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14410/image/master-0b364eca4ca5f28797c57cb071d782e7.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17333"
     },
     {
       "id": "17820",
@@ -452,18 +459,18 @@
       "url": "https://annict.com/works/16487"
     },
     {
-      "id": "15885",
-      "title": "カナン様はあくまでチョロい",
-      "image": "https://image.annict.com/XWHZimKuCj-vcLLQwC1X15Bgjb3n14nZRWJ56CHZVNM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12483/image/master-42cac70a14628a1d821bc4cb39825b16.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/15885"
-    },
-    {
       "id": "16485",
       "title": "LIAR GAME -ライアーゲーム-",
       "image": "https://image.annict.com/rS5mhR1V8RjuDajhhRln3gv3Je5a9oc6GUpsIYPY9uQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13137/image/master-8adaa6e9720ca77f76a44c962864b801.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16485"
+    },
+    {
+      "id": "15885",
+      "title": "カナン様はあくまでチョロい",
+      "image": "https://image.annict.com/XWHZimKuCj-vcLLQwC1X15Bgjb3n14nZRWJ56CHZVNM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12483/image/master-42cac70a14628a1d821bc4cb39825b16.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/15885"
     },
     {
       "id": "16160",
@@ -515,18 +522,18 @@
       "url": "https://annict.com/works/16682"
     },
     {
-      "id": "12933",
-      "title": "淡島百景",
-      "image": "https://image.annict.com/dOqumD-pSxOJUZxflq73CvN3oZ9ot32rFk2GsSFkrZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9611/image/master-bd18143786a1ffa657fbae0bcd57bcf7.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/12933"
-    },
-    {
       "id": "16507",
       "title": "キルアオ",
       "image": "https://image.annict.com/PvY59I_WEqdspg5HeAUomoG0uM_OIjF_Tk8CP6Iw0CA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13161/image/master-5743073e795d23e9e509102e3f6049af.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16507"
+    },
+    {
+      "id": "12933",
+      "title": "淡島百景",
+      "image": "https://image.annict.com/dOqumD-pSxOJUZxflq73CvN3oZ9ot32rFk2GsSFkrZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9611/image/master-bd18143786a1ffa657fbae0bcd57bcf7.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/12933"
     },
     {
       "id": "16725",
@@ -620,18 +627,18 @@
       "url": "https://annict.com/works/13537"
     },
     {
-      "id": "16730",
-      "title": "茉莉花ちゃんの好感度はぶっ壊れている",
-      "image": "https://image.annict.com/52mLtQtVN0Mo8XZBZ8Lkdkh0D6Z8BfWvObxR3oK3aqA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13384/image/master-0a028a505ef190573d2e32a6534f7d68.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16730"
-    },
-    {
       "id": "16340",
       "title": "神の庭付き楠木邸",
       "image": "https://image.annict.com/bMQMQBKDNCTGyLj7FOPZo4PIGqarcz0O4ba1ivi9HPo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13038/image/master-de38c6c4eec9e0d9dbe3e170918329cd.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16340"
+    },
+    {
+      "id": "16730",
+      "title": "茉莉花ちゃんの好感度はぶっ壊れている",
+      "image": "https://image.annict.com/52mLtQtVN0Mo8XZBZ8Lkdkh0D6Z8BfWvObxR3oK3aqA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13384/image/master-0a028a505ef190573d2e32a6534f7d68.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16730"
     },
     {
       "id": "17075",
@@ -683,13 +690,6 @@
       "url": "https://annict.com/works/16887"
     },
     {
-      "id": "16583",
-      "title": "こめかみっ！ Girls",
-      "image": "https://image.annict.com/BStqClVmJobMa_zT4m6I7st-4UPYwcZg8ottPVkWmj4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13247/image/master-3c98955a6dd28181e7905caba95d45c4.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16583"
-    },
-    {
       "id": "17033",
       "title": "魔物喰らいの冒険者～俺だけ魔物を喰らって強くなる～",
       "image": "https://image.annict.com/vuxnRZJ51B1cLu6PsANgNaTkZA5UMF0eKLiqytxTde8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13725/image/master-69b2b5b757d60a6e8ab07a0e5fa28927.jpg@webp",
@@ -697,11 +697,25 @@
       "url": "https://annict.com/works/17033"
     },
     {
+      "id": "16583",
+      "title": "こめかみっ！ Girls",
+      "image": "https://image.annict.com/BStqClVmJobMa_zT4m6I7st-4UPYwcZg8ottPVkWmj4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13247/image/master-3c98955a6dd28181e7905caba95d45c4.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16583"
+    },
+    {
       "id": "13722",
       "title": "ニワトリ・ファイター",
       "image": "https://image.annict.com/1kHDvtY_oE_-FjDUiAZkSBQyZ4MC0vFHjHwiOHKAGXs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10517/image/master-7990057e66a3c186c1a1e985d90888b4.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/13722"
+    },
+    {
+      "id": "16729",
+      "title": "神の雫",
+      "image": "https://image.annict.com/Jo165rZ6ofLvPu5pLbdsqXzprvOYXonEzs_qteFqX4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13383/image/master-bc91ed9bd6998baee1c8937581775235.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16729"
     },
     {
       "id": "16737",
@@ -1159,18 +1173,18 @@
       "url": "https://annict.com/works/16835"
     },
     {
-      "id": "17319",
-      "title": "心臓に復讐を誓って",
-      "image": "https://image.annict.com/CZiew1Cy24jtMcKPFdW0_6VIatQgwYjD-sBP4vTBZxI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14045/image/master-fa6f8c0c35b4289593eaf201034ab915.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/17319"
-    },
-    {
       "id": "17318",
       "title": "Mr.War -最強の元軍人-",
       "image": "https://image.annict.com/iayrQst9nMv_cxlLR791knfSzD0GHyXNztrk6Y3c6fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14044/image/master-defe7c5f0378970a14d6921254f05774.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/17318"
+    },
+    {
+      "id": "17319",
+      "title": "心臓に復讐を誓って",
+      "image": "https://image.annict.com/CZiew1Cy24jtMcKPFdW0_6VIatQgwYjD-sBP4vTBZxI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14045/image/master-fa6f8c0c35b4289593eaf201034ab915.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/17319"
     },
     {
       "id": "14333",
@@ -1285,18 +1299,18 @@
       "url": "https://annict.com/works/15117"
     },
     {
-      "id": "15252",
-      "title": "ちゃんと吸えない吸血鬼ちゃん",
-      "image": "https://image.annict.com/u5_89gTAZjkoxngmRyfar_xIR9iw1LNJ1GXnd1b7pLk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11881/image/master-c419268d1d1678672483ac610a094573.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/15252"
-    },
-    {
       "id": "15601",
       "title": "東島丹三郎は仮面ライダーになりたい",
       "image": "https://image.annict.com/A86NgYZFcYz_gxh5q7eTv64UgKRo3WaGgYo6XR5JCDw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12215/image/master-262c4b42cbb9cbbb7e25be53eb42d6d8.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/15601"
+    },
+    {
+      "id": "15252",
+      "title": "ちゃんと吸えない吸血鬼ちゃん",
+      "image": "https://image.annict.com/u5_89gTAZjkoxngmRyfar_xIR9iw1LNJ1GXnd1b7pLk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11881/image/master-c419268d1d1678672483ac610a094573.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/15252"
     },
     {
       "id": "12461",
@@ -1348,18 +1362,18 @@
       "url": "https://annict.com/works/13808"
     },
     {
-      "id": "12617",
-      "title": "転生悪女の黒歴史",
-      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/12617"
-    },
-    {
       "id": "16511",
       "title": "ある日、お姫様になってしまった件について",
       "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16511"
+    },
+    {
+      "id": "12617",
+      "title": "転生悪女の黒歴史",
+      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/12617"
     },
     {
       "id": "15643",
@@ -1495,18 +1509,18 @@
       "url": "https://annict.com/works/10087"
     },
     {
-      "id": "14001",
-      "title": "薫る花は凛と咲く",
-      "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14001"
-    },
-    {
       "id": "14965",
       "title": "ダンダダン 第2期",
       "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/14965"
+    },
+    {
+      "id": "14001",
+      "title": "薫る花は凛と咲く",
+      "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14001"
     },
     {
       "id": "13744",
@@ -1985,18 +1999,18 @@
       "url": "https://annict.com/works/13534"
     },
     {
-      "id": "14139",
-      "title": "九龍ジェネリックロマンス",
-      "image": "https://image.annict.com/eRkF4MybQL-rygS95dQeUZGZERN8pqUUcrOOPwgznwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10950/image/master-16bd019afd4c389f742296ba95ae0c9b.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/14139"
-    },
-    {
       "id": "13746",
       "title": "阿波連さんははかれない season2",
       "image": "https://image.annict.com/3BLDFX9TLFsUAnabA3TnR-D3Q4ZuHJUt_5Q6_BAZqLQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10553/image/master-4dcc093774b9463edc085ea3acfe1785.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/13746"
+    },
+    {
+      "id": "14139",
+      "title": "九龍ジェネリックロマンス",
+      "image": "https://image.annict.com/eRkF4MybQL-rygS95dQeUZGZERN8pqUUcrOOPwgznwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10950/image/master-16bd019afd4c389f742296ba95ae0c9b.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/14139"
     },
     {
       "id": "13891",
@@ -2076,18 +2090,18 @@
       "url": "https://annict.com/works/12947"
     },
     {
-      "id": "14089",
-      "title": "中禅寺先生物怪講義録 先生が謎を解いてしまうから。",
-      "image": "https://image.annict.com/QIJEqyc2pJf-UzgN9sVvTo3KZ6kC4Azf0zouwSFllJU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10904/image/master-28014ae6e041f445842b2614873118a8.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/14089"
-    },
-    {
       "id": "10641",
       "title": "TO BE HERO X",
       "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/10641"
+    },
+    {
+      "id": "14089",
+      "title": "中禅寺先生物怪講義録 先生が謎を解いてしまうから。",
+      "image": "https://image.annict.com/QIJEqyc2pJf-UzgN9sVvTo3KZ6kC4Azf0zouwSFllJU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10904/image/master-28014ae6e041f445842b2614873118a8.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/14089"
     },
     {
       "id": "13907",
@@ -3175,18 +3189,18 @@
       "url": "https://annict.com/works/7907"
     },
     {
-      "id": "9012",
-      "title": "勇者、辞めます",
-      "image": "https://image.annict.com/0aGvbFgWBybIUyKNHDn7E_zXut4FumblrX901WDgcBU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5949/image/master-24629a58bfd2ff28f5e72439dbbd2749.jpg@webp",
-      "season": "2022年春",
-      "url": "https://annict.com/works/9012"
-    },
-    {
       "id": "8464",
       "title": "骸骨騎士様、只今異世界へお出掛け中",
       "image": "https://image.annict.com/FK8aU7PeOKVG_Hbr8h0N1H4VqZJzcccxRmjsbEaq9LE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5456/image/master-6cda5802dd4ec2dcb480041b450a2702.jpg@webp",
       "season": "2022年春",
       "url": "https://annict.com/works/8464"
+    },
+    {
+      "id": "9012",
+      "title": "勇者、辞めます",
+      "image": "https://image.annict.com/0aGvbFgWBybIUyKNHDn7E_zXut4FumblrX901WDgcBU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5949/image/master-24629a58bfd2ff28f5e72439dbbd2749.jpg@webp",
+      "season": "2022年春",
+      "url": "https://annict.com/works/9012"
     },
     {
       "id": "8163",
@@ -3709,7 +3723,7 @@
     {
       "id": "5121",
       "title": "メイドインアビス",
-      "image": "https://image.annict.com/iqhb70quZr0XXw8V4LdAYr1XJTyL_nyu3I1oWL0w8q8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-7b78b78cd777a2f15f2d9d80c9e29258.jpg@webp",
+      "image": "https://image.annict.com/1p4ELBtnpohSNp6tTew4GX041Ahj4QLVFYeiA1QZaBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-788df4f73959e2afd118a0336b4b2036.jpg@webp",
       "season": "2017年夏",
       "url": "https://annict.com/works/5121"
     },
