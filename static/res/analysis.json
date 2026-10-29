@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T22:56:52.010Z",
+  "generatedAt": "2026-10-29T23:04:46.121Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -26,8 +26,8 @@
     },
     {
       "username": "hanu",
-      "count": 575,
-      "exclusiveCount": 74,
+      "count": 576,
+      "exclusiveCount": 75,
       "missingCount": 0
     },
     {
@@ -13617,7 +13617,7 @@
       "sets": [
         "hanu"
       ],
-      "size": 575,
+      "size": 576,
       "animes": [
         {
           "id": "13582",
@@ -13781,18 +13781,18 @@
           "url": "https://annict.com/works/16468"
         },
         {
-          "id": "14929",
-          "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-          "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/14929"
-        },
-        {
           "id": "17114",
           "title": "うしろの正面カムイさん",
           "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17114"
+        },
+        {
+          "id": "14929",
+          "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+          "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/14929"
         },
         {
           "id": "16478",
@@ -14117,18 +14117,18 @@
           "url": "https://annict.com/works/16710"
         },
         {
-          "id": "16706",
-          "title": "NEEDY GIRL OVERDOSE",
-          "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
-          "season": "2026年春",
-          "url": "https://annict.com/works/16706"
-        },
-        {
           "id": "16598",
           "title": "オタクに優しいギャルはいない!?",
           "image": "https://image.annict.com/lUGBdvc8u--EYRhqYccGxpNUUbaVaI1oj9L7HGKQcfo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13257/image/master-958cbff6454ef45aafc7a2311ff2f922.jpg@webp",
           "season": "2026年春",
           "url": "https://annict.com/works/16598"
+        },
+        {
+          "id": "16706",
+          "title": "NEEDY GIRL OVERDOSE",
+          "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
+          "season": "2026年春",
+          "url": "https://annict.com/works/16706"
         },
         {
           "id": "16426",
@@ -14901,18 +14901,18 @@
           "url": "https://annict.com/works/15405"
         },
         {
-          "id": "15708",
-          "title": "顔に出ない柏田さんと顔に出る太田君",
-          "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
-          "season": "2025年秋",
-          "url": "https://annict.com/works/15708"
-        },
-        {
           "id": "11528",
           "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
           "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/11528"
+        },
+        {
+          "id": "15708",
+          "title": "顔に出ない柏田さんと顔に出る太田君",
+          "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/15708"
         },
         {
           "id": "15117",
@@ -15076,6 +15076,13 @@
           "url": "https://annict.com/works/16503"
         },
         {
+          "id": "15740",
+          "title": "DIGIMON BEATBREAK",
+          "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/15740"
+        },
+        {
           "id": "16483",
           "title": "破産富豪 The Richest Man in GAME",
           "image": "https://image.annict.com/ojOYZF9tQjMxaof7eusHUp4w3pPh7X1E922GIKbqTNk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13135/image/master-53d22af627fcbf4c5c0b5340ad1006ad.jpg@webp",
@@ -15132,18 +15139,18 @@
           "url": "https://annict.com/works/10087"
         },
         {
-          "id": "14001",
-          "title": "薫る花は凛と咲く",
-          "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
-          "season": "2025年夏",
-          "url": "https://annict.com/works/14001"
-        },
-        {
           "id": "14965",
           "title": "ダンダダン 第2期",
           "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
           "season": "2025年夏",
           "url": "https://annict.com/works/14965"
+        },
+        {
+          "id": "14001",
+          "title": "薫る花は凛と咲く",
+          "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
+          "season": "2025年夏",
+          "url": "https://annict.com/works/14001"
         },
         {
           "id": "13744",
@@ -15440,18 +15447,18 @@
           "url": "https://annict.com/works/14063"
         },
         {
-          "id": "15115",
-          "title": "不思議の国でアリスと -Dive in Wonderland-",
-          "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-          "season": "2025年夏",
-          "url": "https://annict.com/works/15115"
-        },
-        {
           "id": "15395",
           "title": "人妻の唇は缶チューハイの味がして",
           "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
           "season": "2025年夏",
           "url": "https://annict.com/works/15395"
+        },
+        {
+          "id": "15115",
+          "title": "不思議の国でアリスと -Dive in Wonderland-",
+          "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+          "season": "2025年夏",
+          "url": "https://annict.com/works/15115"
         },
         {
           "id": "16164",
@@ -26099,8 +26106,8 @@
         "user1": "saya15",
         "user2": "hanu",
         "intersection": 184,
-        "union": 1194,
-        "similarity": 0.1541038525963149,
+        "union": 1195,
+        "similarity": 0.15397489539748954,
         "percentage": 15.4
       },
       {
@@ -26171,8 +26178,8 @@
         "user1": "animemitaro",
         "user2": "hanu",
         "intersection": 416,
-        "union": 1288,
-        "similarity": 0.32298136645962733,
+        "union": 1289,
+        "similarity": 0.3227307990690458,
         "percentage": 32.3
       },
       {
@@ -26227,23 +26234,23 @@
         "user1": "hanu",
         "user2": "saya15",
         "intersection": 184,
-        "union": 1194,
-        "similarity": 0.1541038525963149,
+        "union": 1195,
+        "similarity": 0.15397489539748954,
         "percentage": 15.4
       },
       {
         "user1": "hanu",
         "user2": "animemitaro",
         "intersection": 416,
-        "union": 1288,
-        "similarity": 0.32298136645962733,
+        "union": 1289,
+        "similarity": 0.3227307990690458,
         "percentage": 32.3
       },
       {
         "user1": "hanu",
         "user2": "hanu",
-        "intersection": 575,
-        "union": 575,
+        "intersection": 576,
+        "union": 576,
         "similarity": 1,
         "percentage": 100
       },
@@ -26251,48 +26258,48 @@
         "user1": "hanu",
         "user2": "hitobi_syuto",
         "intersection": 299,
-        "union": 1241,
-        "similarity": 0.24093473005640612,
+        "union": 1242,
+        "similarity": 0.24074074074074073,
         "percentage": 24.1
       },
       {
         "user1": "hanu",
         "user2": "fs495",
         "intersection": 193,
-        "union": 1186,
-        "similarity": 0.1627318718381113,
+        "union": 1187,
+        "similarity": 0.16259477674810446,
         "percentage": 16.3
       },
       {
         "user1": "hanu",
         "user2": "tmist",
         "intersection": 186,
-        "union": 920,
-        "similarity": 0.20217391304347826,
+        "union": 921,
+        "similarity": 0.20195439739413681,
         "percentage": 20.2
       },
       {
         "user1": "hanu",
         "user2": "shimbaco",
         "intersection": 27,
-        "union": 1104,
-        "similarity": 0.024456521739130436,
+        "union": 1105,
+        "similarity": 0.024434389140271493,
         "percentage": 2.4
       },
       {
         "user1": "hanu",
         "user2": "white_tiny_cat",
         "intersection": 4,
-        "union": 696,
-        "similarity": 0.005747126436781609,
+        "union": 697,
+        "similarity": 0.005738880918220947,
         "percentage": 0.6
       },
       {
         "user1": "hanu",
         "user2": "pomeranian_dev",
         "intersection": 3,
-        "union": 609,
-        "similarity": 0.0049261083743842365,
+        "union": 610,
+        "similarity": 0.004918032786885246,
         "percentage": 0.5
       },
       {
@@ -26315,8 +26322,8 @@
         "user1": "hitobi_syuto",
         "user2": "hanu",
         "intersection": 299,
-        "union": 1241,
-        "similarity": 0.24093473005640612,
+        "union": 1242,
+        "similarity": 0.24074074074074073,
         "percentage": 24.1
       },
       {
@@ -26387,8 +26394,8 @@
         "user1": "fs495",
         "user2": "hanu",
         "intersection": 193,
-        "union": 1186,
-        "similarity": 0.1627318718381113,
+        "union": 1187,
+        "similarity": 0.16259477674810446,
         "percentage": 16.3
       },
       {
@@ -26459,8 +26466,8 @@
         "user1": "tmist",
         "user2": "hanu",
         "intersection": 186,
-        "union": 920,
-        "similarity": 0.20217391304347826,
+        "union": 921,
+        "similarity": 0.20195439739413681,
         "percentage": 20.2
       },
       {
@@ -26531,8 +26538,8 @@
         "user1": "shimbaco",
         "user2": "hanu",
         "intersection": 27,
-        "union": 1104,
-        "similarity": 0.024456521739130436,
+        "union": 1105,
+        "similarity": 0.024434389140271493,
         "percentage": 2.4
       },
       {
@@ -26603,8 +26610,8 @@
         "user1": "white_tiny_cat",
         "user2": "hanu",
         "intersection": 4,
-        "union": 696,
-        "similarity": 0.005747126436781609,
+        "union": 697,
+        "similarity": 0.005738880918220947,
         "percentage": 0.6
       },
       {
@@ -26675,8 +26682,8 @@
         "user1": "pomeranian_dev",
         "user2": "hanu",
         "intersection": 3,
-        "union": 609,
-        "similarity": 0.0049261083743842365,
+        "union": 610,
+        "similarity": 0.004918032786885246,
         "percentage": 0.5
       },
       {
@@ -26745,8 +26752,8 @@
           "hanu"
         ],
         "intersection": 416,
-        "union": 1288,
-        "similarity": 0.32298136645962733,
+        "union": 1289,
+        "similarity": 0.3227307990690458,
         "percentage": 32.3
       },
       {
@@ -26775,8 +26782,8 @@
           "hitobi_syuto"
         ],
         "intersection": 299,
-        "union": 1241,
-        "similarity": 0.24093473005640612,
+        "union": 1242,
+        "similarity": 0.24074074074074073,
         "percentage": 24.1
       },
       {
@@ -26815,8 +26822,8 @@
           "tmist"
         ],
         "intersection": 186,
-        "union": 920,
-        "similarity": 0.20217391304347826,
+        "union": 921,
+        "similarity": 0.20195439739413681,
         "percentage": 20.2
       },
       {
@@ -26835,8 +26842,8 @@
           "fs495"
         ],
         "intersection": 193,
-        "union": 1186,
-        "similarity": 0.1627318718381113,
+        "union": 1187,
+        "similarity": 0.16259477674810446,
         "percentage": 16.3
       },
       {
@@ -26845,8 +26852,8 @@
           "hanu"
         ],
         "intersection": 184,
-        "union": 1194,
-        "similarity": 0.1541038525963149,
+        "union": 1195,
+        "similarity": 0.15397489539748954,
         "percentage": 15.4
       },
       {
@@ -26995,8 +27002,8 @@
           "shimbaco"
         ],
         "intersection": 27,
-        "union": 1104,
-        "similarity": 0.024456521739130436,
+        "union": 1105,
+        "similarity": 0.024434389140271493,
         "percentage": 2.4
       },
       {
@@ -27075,8 +27082,8 @@
           "white_tiny_cat"
         ],
         "intersection": 4,
-        "union": 696,
-        "similarity": 0.005747126436781609,
+        "union": 697,
+        "similarity": 0.005738880918220947,
         "percentage": 0.6
       },
       {
@@ -27085,8 +27092,8 @@
           "pomeranian_dev"
         ],
         "intersection": 3,
-        "union": 609,
-        "similarity": 0.0049261083743842365,
+        "union": 610,
+        "similarity": 0.004918032786885246,
         "percentage": 0.5
       }
     ]
@@ -29366,6 +29373,13 @@
           "image": "https://image.annict.com/Tuon3xWRdGwvdq-HjiTM2bSwLUqBaxvRjs6gllwdajY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12384/image/master-27b86089cf01d790c0e63beaaa0f0979.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/15769"
+        },
+        {
+          "id": "15740",
+          "title": "DIGIMON BEATBREAK",
+          "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/15740"
         },
         {
           "id": "16496",
@@ -35405,7 +35419,7 @@
       "white_tiny_cat": [],
       "pomeranian_dev": []
     },
-    "totalUniqueAnimes": 2609
+    "totalUniqueAnimes": 2610
   },
   "userWatchedLists": {
     "saya15": [
@@ -49099,18 +49113,18 @@
         "url": "https://annict.com/works/16468"
       },
       {
-        "id": "14929",
-        "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-        "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/14929"
-      },
-      {
         "id": "17114",
         "title": "うしろの正面カムイさん",
         "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17114"
+      },
+      {
+        "id": "14929",
+        "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+        "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/14929"
       },
       {
         "id": "16478",
@@ -49435,18 +49449,18 @@
         "url": "https://annict.com/works/16710"
       },
       {
-        "id": "16706",
-        "title": "NEEDY GIRL OVERDOSE",
-        "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
-        "season": "2026年春",
-        "url": "https://annict.com/works/16706"
-      },
-      {
         "id": "16598",
         "title": "オタクに優しいギャルはいない!?",
         "image": "https://image.annict.com/lUGBdvc8u--EYRhqYccGxpNUUbaVaI1oj9L7HGKQcfo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13257/image/master-958cbff6454ef45aafc7a2311ff2f922.jpg@webp",
         "season": "2026年春",
         "url": "https://annict.com/works/16598"
+      },
+      {
+        "id": "16706",
+        "title": "NEEDY GIRL OVERDOSE",
+        "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
+        "season": "2026年春",
+        "url": "https://annict.com/works/16706"
       },
       {
         "id": "16426",
@@ -50219,18 +50233,18 @@
         "url": "https://annict.com/works/15405"
       },
       {
-        "id": "15708",
-        "title": "顔に出ない柏田さんと顔に出る太田君",
-        "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
-        "season": "2025年秋",
-        "url": "https://annict.com/works/15708"
-      },
-      {
         "id": "11528",
         "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
         "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/11528"
+      },
+      {
+        "id": "15708",
+        "title": "顔に出ない柏田さんと顔に出る太田君",
+        "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/15708"
       },
       {
         "id": "15117",
@@ -50394,6 +50408,13 @@
         "url": "https://annict.com/works/16503"
       },
       {
+        "id": "15740",
+        "title": "DIGIMON BEATBREAK",
+        "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/15740"
+      },
+      {
         "id": "16483",
         "title": "破産富豪 The Richest Man in GAME",
         "image": "https://image.annict.com/ojOYZF9tQjMxaof7eusHUp4w3pPh7X1E922GIKbqTNk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13135/image/master-53d22af627fcbf4c5c0b5340ad1006ad.jpg@webp",
@@ -50450,18 +50471,18 @@
         "url": "https://annict.com/works/10087"
       },
       {
-        "id": "14001",
-        "title": "薫る花は凛と咲く",
-        "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14001"
-      },
-      {
         "id": "14965",
         "title": "ダンダダン 第2期",
         "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/14965"
+      },
+      {
+        "id": "14001",
+        "title": "薫る花は凛と咲く",
+        "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14001"
       },
       {
         "id": "13744",
@@ -50758,18 +50779,18 @@
         "url": "https://annict.com/works/14063"
       },
       {
-        "id": "15115",
-        "title": "不思議の国でアリスと -Dive in Wonderland-",
-        "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/15115"
-      },
-      {
         "id": "15395",
         "title": "人妻の唇は缶チューハイの味がして",
         "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/15395"
+      },
+      {
+        "id": "15115",
+        "title": "不思議の国でアリスと -Dive in Wonderland-",
+        "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/15115"
       },
       {
         "id": "16164",
@@ -74134,14 +74155,14 @@
       },
       "hanu": {
         "username": "hanu",
-        "workCount": 575,
-        "totalHours": 2840.7,
-        "totalDays": 118.4,
-        "wakingDays": 177.5,
+        "workCount": 576,
+        "totalHours": 2845.5,
+        "totalDays": 118.6,
+        "wakingDays": 177.8,
         "lifePercentage": 4.9,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 565,
+          "tvCount": 566,
           "movieCount": 10,
           "ovaCount": 0
         }
@@ -76246,18 +76267,18 @@
                 "url": "https://annict.com/works/16468"
               },
               {
-                "id": "14929",
-                "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-                "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/14929"
-              },
-              {
                 "id": "17114",
                 "title": "うしろの正面カムイさん",
                 "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17114"
+              },
+              {
+                "id": "14929",
+                "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+                "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14929"
               },
               {
                 "id": "16478",
@@ -76582,18 +76603,18 @@
                 "url": "https://annict.com/works/16710"
               },
               {
-                "id": "16706",
-                "title": "NEEDY GIRL OVERDOSE",
-                "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
-                "season": "2026年春",
-                "url": "https://annict.com/works/16706"
-              },
-              {
                 "id": "16598",
                 "title": "オタクに優しいギャルはいない!?",
                 "image": "https://image.annict.com/lUGBdvc8u--EYRhqYccGxpNUUbaVaI1oj9L7HGKQcfo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13257/image/master-958cbff6454ef45aafc7a2311ff2f922.jpg@webp",
                 "season": "2026年春",
                 "url": "https://annict.com/works/16598"
+              },
+              {
+                "id": "16706",
+                "title": "NEEDY GIRL OVERDOSE",
+                "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
+                "season": "2026年春",
+                "url": "https://annict.com/works/16706"
               },
               {
                 "id": "16426",
@@ -78892,11 +78913,11 @@
         },
         {
           "year": 2025,
-          "totalCount": 754,
+          "totalCount": 755,
           "countsByUser": {
             "saya15": 66,
             "animemitaro": 190,
-            "hanu": 162,
+            "hanu": 163,
             "hitobi_syuto": 164,
             "fs495": 63,
             "tmist": 108,
@@ -80794,18 +80815,18 @@
                 "url": "https://annict.com/works/15405"
               },
               {
-                "id": "15708",
-                "title": "顔に出ない柏田さんと顔に出る太田君",
-                "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/15708"
-              },
-              {
                 "id": "11528",
                 "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
                 "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/11528"
+              },
+              {
+                "id": "15708",
+                "title": "顔に出ない柏田さんと顔に出る太田君",
+                "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15708"
               },
               {
                 "id": "15117",
@@ -80969,6 +80990,13 @@
                 "url": "https://annict.com/works/16503"
               },
               {
+                "id": "15740",
+                "title": "DIGIMON BEATBREAK",
+                "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15740"
+              },
+              {
                 "id": "16483",
                 "title": "破産富豪 The Richest Man in GAME",
                 "image": "https://image.annict.com/ojOYZF9tQjMxaof7eusHUp4w3pPh7X1E922GIKbqTNk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13135/image/master-53d22af627fcbf4c5c0b5340ad1006ad.jpg@webp",
@@ -81025,18 +81053,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14001",
-                "title": "薫る花は凛と咲く",
-                "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14001"
-              },
-              {
                 "id": "14965",
                 "title": "ダンダダン 第2期",
                 "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14965"
+              },
+              {
+                "id": "14001",
+                "title": "薫る花は凛と咲く",
+                "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14001"
               },
               {
                 "id": "13744",
@@ -81333,18 +81361,18 @@
                 "url": "https://annict.com/works/14063"
               },
               {
-                "id": "15115",
-                "title": "不思議の国でアリスと -Dive in Wonderland-",
-                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15115"
-              },
-              {
                 "id": "15395",
                 "title": "人妻の唇は缶チューハイの味がして",
                 "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15395"
+              },
+              {
+                "id": "15115",
+                "title": "不思議の国でアリスと -Dive in Wonderland-",
+                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15115"
               },
               {
                 "id": "16164",
@@ -128199,7 +128227,7 @@
             "2022": 45,
             "2023": 37,
             "2024": 59,
-            "2025": 162,
+            "2025": 163,
             "2026": 170
           },
           "animesByYear": {
@@ -130033,18 +130061,18 @@
                 "url": "https://annict.com/works/15405"
               },
               {
-                "id": "15708",
-                "title": "顔に出ない柏田さんと顔に出る太田君",
-                "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
-                "season": "2025年秋",
-                "url": "https://annict.com/works/15708"
-              },
-              {
                 "id": "11528",
                 "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
                 "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/11528"
+              },
+              {
+                "id": "15708",
+                "title": "顔に出ない柏田さんと顔に出る太田君",
+                "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15708"
               },
               {
                 "id": "15117",
@@ -130208,6 +130236,13 @@
                 "url": "https://annict.com/works/16503"
               },
               {
+                "id": "15740",
+                "title": "DIGIMON BEATBREAK",
+                "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15740"
+              },
+              {
                 "id": "16483",
                 "title": "破産富豪 The Richest Man in GAME",
                 "image": "https://image.annict.com/ojOYZF9tQjMxaof7eusHUp4w3pPh7X1E922GIKbqTNk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13135/image/master-53d22af627fcbf4c5c0b5340ad1006ad.jpg@webp",
@@ -130264,18 +130299,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14001",
-                "title": "薫る花は凛と咲く",
-                "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14001"
-              },
-              {
                 "id": "14965",
                 "title": "ダンダダン 第2期",
                 "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14965"
+              },
+              {
+                "id": "14001",
+                "title": "薫る花は凛と咲く",
+                "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14001"
               },
               {
                 "id": "13744",
@@ -130572,18 +130607,18 @@
                 "url": "https://annict.com/works/14063"
               },
               {
-                "id": "15115",
-                "title": "不思議の国でアリスと -Dive in Wonderland-",
-                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15115"
-              },
-              {
                 "id": "15395",
                 "title": "人妻の唇は缶チューハイの味がして",
                 "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15395"
+              },
+              {
+                "id": "15115",
+                "title": "不思議の国でアリスと -Dive in Wonderland-",
+                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15115"
               },
               {
                 "id": "16164",
@@ -131239,18 +131274,18 @@
                 "url": "https://annict.com/works/16468"
               },
               {
-                "id": "14929",
-                "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-                "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/14929"
-              },
-              {
                 "id": "17114",
                 "title": "うしろの正面カムイさん",
                 "image": "https://image.annict.com/Qat73JjbZg8tZAD0sPtaVz9JFTbUO10JYZBhZktaFU0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13804/image/master-f1f8e2a945716baff499d58c9aa34c95.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17114"
+              },
+              {
+                "id": "14929",
+                "title": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+                "image": "https://image.annict.com/VVWIr_PXF6BhE0Y2wEsVea_kjQV8nR2uahmyQkmlz60/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11563/image/master-b97c6f4b0c0b92cafcbad20d8c2eb04f.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/14929"
               },
               {
                 "id": "16478",
@@ -131575,18 +131610,18 @@
                 "url": "https://annict.com/works/16710"
               },
               {
-                "id": "16706",
-                "title": "NEEDY GIRL OVERDOSE",
-                "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
-                "season": "2026年春",
-                "url": "https://annict.com/works/16706"
-              },
-              {
                 "id": "16598",
                 "title": "オタクに優しいギャルはいない!?",
                 "image": "https://image.annict.com/lUGBdvc8u--EYRhqYccGxpNUUbaVaI1oj9L7HGKQcfo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13257/image/master-958cbff6454ef45aafc7a2311ff2f922.jpg@webp",
                 "season": "2026年春",
                 "url": "https://annict.com/works/16598"
+              },
+              {
+                "id": "16706",
+                "title": "NEEDY GIRL OVERDOSE",
+                "image": "https://image.annict.com/WSBbwg-ECM7agFvoIlbvkd8PZSIacoN3O8r_YnAB7gI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13356/image/master-f413eb0046de7a1bab27e4e9369e8a56.jpg@webp",
+                "season": "2026年春",
+                "url": "https://annict.com/works/16706"
               },
               {
                 "id": "16426",
@@ -132274,7 +132309,7 @@
             "2006_2010": 4,
             "2011_2015": 23,
             "2016_2020": 46,
-            "2021_present": 501
+            "2021_present": 502
           }
         },
         "hitobi_syuto": {
@@ -182048,7 +182083,7 @@
         },
         "hanu": {
           "username": "hanu",
-          "totalWatched": 575,
+          "totalWatched": 576,
           "genres": [
             {
               "id": "isekai",
@@ -184632,8 +184667,8 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 43,
-              "percentage": 7.5,
+              "count": 44,
+              "percentage": 7.6,
               "animes": [
                 {
                   "id": "16822",
@@ -184746,6 +184781,13 @@
                   "image": "https://image.annict.com/Tuon3xWRdGwvdq-HjiTM2bSwLUqBaxvRjs6gllwdajY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12384/image/master-27b86089cf01d790c0e63beaaa0f0979.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/15769"
+                },
+                {
+                  "id": "15740",
+                  "title": "DIGIMON BEATBREAK",
+                  "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                  "season": "2025年秋",
+                  "url": "https://annict.com/works/15740"
                 },
                 {
                   "id": "16496",
@@ -238854,11 +238896,11 @@
           "labelEn": "Sci-Fi / Fantasy",
           "icon": "fa-solid fa-meteor",
           "color": "#6366f1",
-          "totalWorksAcrossUsers": 450,
+          "totalWorksAcrossUsers": 451,
           "userCounts": {
             "saya15": 65,
             "animemitaro": 84,
-            "hanu": 43,
+            "hanu": 44,
             "hitobi_syuto": 61,
             "fs495": 83,
             "tmist": 53,
@@ -238869,7 +238911,7 @@
           "userPercentages": {
             "saya15": 8.1,
             "animemitaro": 7.4,
-            "hanu": 7.5,
+            "hanu": 7.6,
             "hitobi_syuto": 6.3,
             "fs495": 10.3,
             "tmist": 10,
@@ -240037,6 +240079,13 @@
                 "image": "https://image.annict.com/Tuon3xWRdGwvdq-HjiTM2bSwLUqBaxvRjs6gllwdajY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12384/image/master-27b86089cf01d790c0e63beaaa0f0979.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/15769"
+              },
+              {
+                "id": "15740",
+                "title": "DIGIMON BEATBREAK",
+                "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15740"
               },
               {
                 "id": "16496",
@@ -279750,7 +279799,7 @@
         },
         "hanu": {
           "username": "hanu",
-          "totalWatched": 575,
+          "totalWatched": 576,
           "genres": [
             {
               "id": "isekai",
@@ -279758,7 +279807,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 97,
-              "percentage": 16.9,
+              "percentage": 16.8,
               "animes": [
                 {
                   "id": "13582",
@@ -280447,7 +280496,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 82,
-              "percentage": 14.3,
+              "percentage": 14.2,
               "animes": [
                 {
                   "id": "16677",
@@ -281607,8 +281656,8 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 78,
-              "percentage": 13.6,
+              "count": 79,
+              "percentage": 13.7,
               "animes": [
                 {
                   "id": "16468",
@@ -281777,6 +281826,13 @@
                   "image": "https://image.annict.com/Tuon3xWRdGwvdq-HjiTM2bSwLUqBaxvRjs6gllwdajY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12384/image/master-27b86089cf01d790c0e63beaaa0f0979.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/15769"
+                },
+                {
+                  "id": "15740",
+                  "title": "DIGIMON BEATBREAK",
+                  "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                  "season": "2025年秋",
+                  "url": "https://annict.com/works/15740"
                 },
                 {
                   "id": "16496",
@@ -283935,7 +283991,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 97,
-              "percentage": 16.9,
+              "percentage": 16.8,
               "animes": [
                 {
                   "id": "13582",
@@ -284624,7 +284680,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 82,
-              "percentage": 14.3,
+              "percentage": 14.2,
               "animes": [
                 {
                   "id": "16677",
@@ -317586,7 +317642,7 @@
           "userPercentages": {
             "saya15": 15.7,
             "animemitaro": 17.8,
-            "hanu": 14.3,
+            "hanu": 14.2,
             "hitobi_syuto": 22.1,
             "fs495": 13.6,
             "tmist": 14.3,
@@ -323869,11 +323925,11 @@
           "labelEn": "Sci-Fi / Fantasy",
           "icon": "fa-solid fa-meteor",
           "color": "#6366f1",
-          "totalWorksAcrossUsers": 812,
+          "totalWorksAcrossUsers": 813,
           "userCounts": {
             "saya15": 126,
             "animemitaro": 170,
-            "hanu": 78,
+            "hanu": 79,
             "hitobi_syuto": 110,
             "fs495": 152,
             "tmist": 79,
@@ -323884,7 +323940,7 @@
           "userPercentages": {
             "saya15": 15.7,
             "animemitaro": 15.1,
-            "hanu": 13.6,
+            "hanu": 13.7,
             "hitobi_syuto": 11.4,
             "fs495": 18.9,
             "tmist": 14.9,
@@ -326137,6 +326193,13 @@
                 "image": "https://image.annict.com/Tuon3xWRdGwvdq-HjiTM2bSwLUqBaxvRjs6gllwdajY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12384/image/master-27b86089cf01d790c0e63beaaa0f0979.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/15769"
+              },
+              {
+                "id": "15740",
+                "title": "DIGIMON BEATBREAK",
+                "image": "https://image.annict.com/GGSq9zPjZEAskb0ba5br8LmfCQjdJww3i1DsCfEhmJA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12356/image/master-f363e94c9926f72c6d3d34a5eb8584dd.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/15740"
               },
               {
                 "id": "16496",
@@ -334226,7 +334289,7 @@
           "userPercentages": {
             "saya15": 9.2,
             "animemitaro": 16.2,
-            "hanu": 16.9,
+            "hanu": 16.8,
             "hitobi_syuto": 10.1,
             "fs495": 16.5,
             "tmist": 2.4,
@@ -357047,8 +357110,8 @@
       ]
     },
     "genreDiffReport": {
-      "totalWorks": 2609,
-      "sameCount": 1522,
+      "totalWorks": 2610,
+      "sameCount": 1523,
       "diffCount": 1087,
       "diffPercentage": 42,
       "diffs": [
