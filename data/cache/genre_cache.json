@@ -155326,5 +155326,43 @@
         "rank": 20
       }
     ]
+  },
+  "劇場版 前橋ウィッチーズ ～魔女見習いのエモエモリーズ～": {
+    "genres": [
+      "Drama",
+      "Mahou Shoujo",
+      "Music",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Female Protagonist",
+        "rank": 75
+      },
+      {
+        "name": "Idol",
+        "rank": 73
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 70
+      },
+      {
+        "name": "Witch",
+        "rank": 66
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 60
+      },
+      {
+        "name": "Urban",
+        "rank": 60
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 60
+      }
+    ]
   }
 }
