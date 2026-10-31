@@ -1,7 +1,35 @@
 {
-  "generatedAt": "2026-10-29T23:04:27.321Z",
-  "count": 17371,
+  "generatedAt": "2026-10-31T22:08:24.642Z",
+  "count": 17375,
   "works": [
+    {
+      "id": "18342",
+      "title": "Hello! Pikmin",
+      "image": "https://image.annict.com/Rwc3IvEI2R_1SEsQGIRzxlIQRDgiu3TfHYSDZ_pYN2U/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16859/image/master-1f542378b5ae79f202983f064bcaebaf.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18342"
+    },
+    {
+      "id": "18341",
+      "title": "ロメリア戦記 第IIクール",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18341"
+    },
+    {
+      "id": "18340",
+      "title": "柊さんちの吸血事情",
+      "image": "https://image.annict.com/CYlk1p6y2KlzYAmjshn4ixu64BoUDmuqr5lQN_OLpII/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16858/image/master-1df5f0ca003ce85fd03f6c43ace137df.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18340"
+    },
+    {
+      "id": "18339",
+      "title": "おじゃる丸 ダーウィンが来た!コラボスペシャル 「ダーウィンが来たでおじゃる」",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18339"
+    },
     {
       "id": "18338",
       "title": "転生したらスライムだった件 魔王と竜の建国譚 5周年記念新アニメPV",
