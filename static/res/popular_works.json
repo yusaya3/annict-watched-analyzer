@@ -1,7 +1,42 @@
 {
-  "generatedAt": "2026-10-31T22:08:24.642Z",
-  "count": 17375,
+  "generatedAt": "2026-11-01T22:33:49.026Z",
+  "count": 17380,
   "works": [
+    {
+      "id": "18347",
+      "title": "ショートアニメ カリスマ",
+      "image": "https://image.annict.com/4BypjoqALvIUPozr3KKJJU0_woBRUQqDGKd78ePLqA8/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16866/image/master-dbe0e94ddbf3b1852b0a94edd5bef6f4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18347"
+    },
+    {
+      "id": "18346",
+      "title": "映画ぼっち・ざ・ろっく！ 星のあしあと",
+      "image": "https://image.annict.com/bQZz7uiCh05qADAmsuVAzLbABpfqfFypP3xdZYIbQtc/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16865/image/master-500b0ba414854105720155b7b51b2118.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18346"
+    },
+    {
+      "id": "18345",
+      "title": "メカザムライ",
+      "image": "https://image.annict.com/pRqL3z4rK81niwERv8wW7HYdtm72_jIFzakkWpFLcMc/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16864/image/master-d74587e6a4e504aea417a99d92a652a4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18345"
+    },
+    {
+      "id": "18344",
+      "title": "クロミ",
+      "image": "https://image.annict.com/ytQoFgcSAieenxVvFgwJWotgB4SVoHV3cWc_7j62kvQ/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16863/image/master-e2ea2232747e78d4bf70d0aa83874842.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18344"
+    },
+    {
+      "id": "18343",
+      "title": "シバつき物件",
+      "image": "https://image.annict.com/9lXuyY0eCYvSWtAE5h09oFFN3HTGJQevsOZ4IUZY51I/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16861/image/master-bc764d149ec63e424e81b541fb8c9897.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18343"
+    },
     {
       "id": "18342",
       "title": "Hello! Pikmin",

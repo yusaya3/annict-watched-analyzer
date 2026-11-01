@@ -1,7 +1,7 @@
 {
   "username": "hitobi_syuto",
-  "fetchedAt": "2026-10-30T22:45:15.290Z",
-  "count": 966,
+  "fetchedAt": "2026-11-01T22:34:02.546Z",
+  "count": 968,
   "animes": [
     {
       "id": "17108",
@@ -53,11 +53,25 @@
       "url": "https://annict.com/works/16391"
     },
     {
+      "id": "14132",
+      "title": "逃げ上手の若君 第二期",
+      "image": "https://image.annict.com/PHqtOFvCb74yRvr1tS8pfyksu3QWCjL-vu92UB4TOhw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10936/image/master-095e409dc271710ea69a5daeef87e1e4.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14132"
+    },
+    {
       "id": "17361",
       "title": "正反対な君と僕 第2期",
       "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17361"
+    },
+    {
+      "id": "15881",
+      "title": "天幕のジャードゥーガル",
+      "image": "https://image.annict.com/_G_KppGutk5anPsRIqqR8JK0ME0bcR8P2WYOCsAmXb4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12959/image/master-dcb9e54b6fb107cda42a89357d21e847.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15881"
     },
     {
       "id": "15751",
@@ -263,18 +277,18 @@
       "url": "https://annict.com/works/16132"
     },
     {
-      "id": "16396",
-      "title": "無自覚聖女は今日も無意識に力を垂れ流す",
-      "image": "https://image.annict.com/y2w8qpDjUOcHDnTZOQ7svNIJHYW179U-G9ite0d9Cuo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13048/image/master-0098f9415b662d29c9c8397784fcc341.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16396"
-    },
-    {
       "id": "17296",
       "title": "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました",
       "image": "https://image.annict.com/MULV7iwLVwHuM4N4VqF4NCz165KxFwR1b6M6nOii728/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14026/image/master-13cd2778795fa376c4082cac781d98fe.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17296"
+    },
+    {
+      "id": "16396",
+      "title": "無自覚聖女は今日も無意識に力を垂れ流す",
+      "image": "https://image.annict.com/y2w8qpDjUOcHDnTZOQ7svNIJHYW179U-G9ite0d9Cuo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13048/image/master-0098f9415b662d29c9c8397784fcc341.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16396"
     },
     {
       "id": "16524",
@@ -333,18 +347,18 @@
       "url": "https://annict.com/works/6528"
     },
     {
-      "id": "17043",
-      "title": "岩元先輩ノ推薦",
-      "image": "https://image.annict.com/LY0ThuY2M768g_-HRIPGnRdAWhnqjbLinuVAyy7O14c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13734/image/master-f104241ece8f994c2ff208655144a7a2.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17043"
-    },
-    {
       "id": "13779",
       "title": "トイ・ストーリー5",
       "image": "https://image.annict.com/yiTCjsBFy-bi95YGgsqiXw-Bt6PHZOQ4B1rErvw1SfE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10583/image/master-14a8b84fbf88a345a7518cdd47d0d29e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/13779"
+    },
+    {
+      "id": "17043",
+      "title": "岩元先輩ノ推薦",
+      "image": "https://image.annict.com/LY0ThuY2M768g_-HRIPGnRdAWhnqjbLinuVAyy7O14c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13734/image/master-f104241ece8f994c2ff208655144a7a2.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17043"
     },
     {
       "id": "15787",
@@ -767,18 +781,18 @@
       "url": "https://annict.com/works/15405"
     },
     {
-      "id": "11528",
-      "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
-      "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/11528"
-    },
-    {
       "id": "15708",
       "title": "顔に出ない柏田さんと顔に出る太田君",
       "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/15708"
+    },
+    {
+      "id": "11528",
+      "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
+      "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/11528"
     },
     {
       "id": "15117",
