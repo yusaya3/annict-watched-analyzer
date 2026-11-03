@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-30T22:45:00.300Z",
-  "count": 804,
+  "fetchedAt": "2026-11-03T01:26:06.459Z",
+  "count": 805,
   "animes": [
     {
       "id": "17108",
@@ -1108,6 +1108,13 @@
       "image": "https://image.annict.com/7-zi2H8yHsvkqUYZphrAe78GquEFCNrQe02p0ouZGgE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8896/image/master-72b939f88edca3807305a7636f45f3e4.jpg@webp",
       "season": "2024年夏",
       "url": "https://annict.com/works/12363"
+    },
+    {
+      "id": "9283",
+      "title": "ヤマトよ永遠に REBEL3199 第一章 黒の侵略",
+      "image": "https://image.annict.com/tpja6tRM9p8gC1uREf0WtKRjkb7jY7il3BaSjw8yJag/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6208/image/master-00df35369774a6ca533c6806cbcfe85f.jpg@webp",
+      "season": "2024年夏",
+      "url": "https://annict.com/works/9283"
     },
     {
       "id": "11002",
@@ -3413,18 +3420,18 @@
       "url": "https://annict.com/works/5137"
     },
     {
-      "id": "4715",
-      "title": "劇場版 魔法科高校の劣等生 星を呼ぶ少女",
-      "image": "https://image.annict.com/YBcF_2dAuCogAB33_0RRwEnGEJA-7cy3sbHW-SzB0Aw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1896/image/master-3e36242d81372834b142c8fd01dda756.jpg@webp",
-      "season": "2017年春",
-      "url": "https://annict.com/works/4715"
-    },
-    {
       "id": "5067",
       "title": "名探偵コナン から紅の恋歌",
       "image": "https://image.annict.com/MW_wiFcVSF-Gn4xyBj2s8OZC6qZEvFEhLRIJgvP0pT4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1860/image/master-1b878d06a757bbbb551d1567632b264c.jpg@webp",
       "season": "2017年春",
       "url": "https://annict.com/works/5067"
+    },
+    {
+      "id": "4715",
+      "title": "劇場版 魔法科高校の劣等生 星を呼ぶ少女",
+      "image": "https://image.annict.com/YBcF_2dAuCogAB33_0RRwEnGEJA-7cy3sbHW-SzB0Aw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1896/image/master-3e36242d81372834b142c8fd01dda756.jpg@webp",
+      "season": "2017年春",
+      "url": "https://annict.com/works/4715"
     },
     {
       "id": "5210",

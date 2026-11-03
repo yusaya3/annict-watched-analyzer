@@ -1,7 +1,21 @@
 {
-  "generatedAt": "2026-11-01T22:33:49.026Z",
-  "count": 17380,
+  "generatedAt": "2026-11-03T01:25:58.696Z",
+  "count": 17382,
   "works": [
+    {
+      "id": "18349",
+      "title": "バブル バス ベイ",
+      "image": "https://image.annict.com/WYYA5spbH4pLzvyaq_bNkvpBTQkI0myAwAdOg-TqoeQ/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16868/image/master-bf3149667cc65a87ba4e87dfb6a76372.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18349"
+    },
+    {
+      "id": "18348",
+      "title": "アストロロロジー ～おかしな12星座うらない～",
+      "image": "https://image.annict.com/wCBj6Z_E1tJQKhru3SuCot5WB5G-egOT8R6yR3IBino/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16867/image/master-ae517daa7ba8bc9689c08032c0968e95.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18348"
+    },
     {
       "id": "18347",
       "title": "ショートアニメ カリスマ",
