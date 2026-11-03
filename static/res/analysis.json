@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T01:26:22.525Z",
+  "generatedAt": "2026-11-03T23:50:45.514Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -14,8 +14,8 @@
   "userSummary": [
     {
       "username": "saya15",
-      "count": 805,
-      "exclusiveCount": 189,
+      "count": 807,
+      "exclusiveCount": 191,
       "missingCount": 0
     },
     {
@@ -77,7 +77,7 @@
       "sets": [
         "saya15"
       ],
-      "size": 805,
+      "size": 807,
       "animes": [
         {
           "id": "17108",
@@ -836,18 +836,18 @@
           "url": "https://annict.com/works/14300"
         },
         {
-          "id": "12588",
-          "title": "紫雲寺家の子供たち",
-          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-          "season": "2025年春",
-          "url": "https://annict.com/works/12588"
-        },
-        {
           "id": "11028",
           "title": "男女の友情は成立する？（いや、しないっ!!）",
           "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
           "season": "2025年春",
           "url": "https://annict.com/works/11028"
+        },
+        {
+          "id": "12588",
+          "title": "紫雲寺家の子供たち",
+          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12588"
         },
         {
           "id": "13891",
@@ -890,6 +890,13 @@
           "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
           "season": "2025年春",
           "url": "https://annict.com/works/10641"
+        },
+        {
+          "id": "12429",
+          "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+          "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12429"
         },
         {
           "id": "12840",
@@ -1079,6 +1086,13 @@
           "image": "https://image.annict.com/EG4WZdiaE8K7Pz4KObz6dhXhRqHbsCP1849-jx300N8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9435/image/master-7924a9c47092652e56ff2e2f87e8750f.jpg@webp",
           "season": "2024年秋",
           "url": "https://annict.com/works/12826"
+        },
+        {
+          "id": "12428",
+          "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+          "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+          "season": "2024年秋",
+          "url": "https://annict.com/works/12428"
         },
         {
           "id": "10976",
@@ -18361,18 +18375,18 @@
           "url": "https://annict.com/works/14300"
         },
         {
-          "id": "12588",
-          "title": "紫雲寺家の子供たち",
-          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-          "season": "2025年春",
-          "url": "https://annict.com/works/12588"
-        },
-        {
           "id": "11028",
           "title": "男女の友情は成立する？（いや、しないっ!!）",
           "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
           "season": "2025年春",
           "url": "https://annict.com/works/11028"
+        },
+        {
+          "id": "12588",
+          "title": "紫雲寺家の子供たち",
+          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12588"
         },
         {
           "id": "13891",
@@ -21366,18 +21380,18 @@
           "url": "https://annict.com/works/14300"
         },
         {
-          "id": "12588",
-          "title": "紫雲寺家の子供たち",
-          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-          "season": "2025年春",
-          "url": "https://annict.com/works/12588"
-        },
-        {
           "id": "11028",
           "title": "男女の友情は成立する？（いや、しないっ!!）",
           "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
           "season": "2025年春",
           "url": "https://annict.com/works/11028"
+        },
+        {
+          "id": "12588",
+          "title": "紫雲寺家の子供たち",
+          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12588"
         },
         {
           "id": "13891",
@@ -25571,18 +25585,18 @@
           "url": "https://annict.com/works/14300"
         },
         {
-          "id": "12588",
-          "title": "紫雲寺家の子供たち",
-          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-          "season": "2025年春",
-          "url": "https://annict.com/works/12588"
-        },
-        {
           "id": "11028",
           "title": "男女の友情は成立する？（いや、しないっ!!）",
           "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
           "season": "2025年春",
           "url": "https://annict.com/works/11028"
+        },
+        {
+          "id": "12588",
+          "title": "紫雲寺家の子供たち",
+          "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12588"
         },
         {
           "id": "13891",
@@ -26103,8 +26117,8 @@
       {
         "user1": "saya15",
         "user2": "saya15",
-        "intersection": 805,
-        "union": 805,
+        "intersection": 807,
+        "union": 807,
         "similarity": 1,
         "percentage": 100
       },
@@ -26112,73 +26126,73 @@
         "user1": "saya15",
         "user2": "animemitaro",
         "intersection": 446,
-        "union": 1488,
-        "similarity": 0.29973118279569894,
-        "percentage": 30
+        "union": 1490,
+        "similarity": 0.2993288590604027,
+        "percentage": 29.9
       },
       {
         "user1": "saya15",
         "user2": "hanu",
         "intersection": 184,
-        "union": 1197,
-        "similarity": 0.15371762740183792,
-        "percentage": 15.4
+        "union": 1199,
+        "similarity": 0.15346121768140117,
+        "percentage": 15.3
       },
       {
         "user1": "saya15",
         "user2": "hitobi_syuto",
         "intersection": 301,
-        "union": 1472,
-        "similarity": 0.20448369565217392,
+        "union": 1474,
+        "similarity": 0.20420624151967434,
         "percentage": 20.4
       },
       {
         "user1": "saya15",
         "user2": "fs495",
         "intersection": 207,
-        "union": 1402,
-        "similarity": 0.14764621968616262,
-        "percentage": 14.8
+        "union": 1404,
+        "similarity": 0.14743589743589744,
+        "percentage": 14.7
       },
       {
         "user1": "saya15",
         "user2": "tmist",
         "intersection": 171,
-        "union": 1166,
-        "similarity": 0.14665523156089194,
-        "percentage": 14.7
+        "union": 1168,
+        "similarity": 0.1464041095890411,
+        "percentage": 14.6
       },
       {
         "user1": "saya15",
         "user2": "shimbaco",
         "intersection": 134,
-        "union": 1227,
-        "similarity": 0.10920945395273024,
+        "union": 1229,
+        "similarity": 0.10903173311635476,
         "percentage": 10.9
       },
       {
         "user1": "saya15",
         "user2": "white_tiny_cat",
         "intersection": 30,
-        "union": 900,
-        "similarity": 0.03333333333333333,
+        "union": 902,
+        "similarity": 0.03325942350332594,
         "percentage": 3.3
       },
       {
         "user1": "saya15",
         "user2": "pomeranian_dev",
         "intersection": 22,
-        "union": 820,
-        "similarity": 0.026829268292682926,
+        "union": 822,
+        "similarity": 0.0267639902676399,
         "percentage": 2.7
       },
       {
         "user1": "animemitaro",
         "user2": "saya15",
         "intersection": 446,
-        "union": 1488,
-        "similarity": 0.29973118279569894,
-        "percentage": 30
+        "union": 1490,
+        "similarity": 0.2993288590604027,
+        "percentage": 29.9
       },
       {
         "user1": "animemitaro",
@@ -26248,9 +26262,9 @@
         "user1": "hanu",
         "user2": "saya15",
         "intersection": 184,
-        "union": 1197,
-        "similarity": 0.15371762740183792,
-        "percentage": 15.4
+        "union": 1199,
+        "similarity": 0.15346121768140117,
+        "percentage": 15.3
       },
       {
         "user1": "hanu",
@@ -26320,8 +26334,8 @@
         "user1": "hitobi_syuto",
         "user2": "saya15",
         "intersection": 301,
-        "union": 1472,
-        "similarity": 0.20448369565217392,
+        "union": 1474,
+        "similarity": 0.20420624151967434,
         "percentage": 20.4
       },
       {
@@ -26392,9 +26406,9 @@
         "user1": "fs495",
         "user2": "saya15",
         "intersection": 207,
-        "union": 1402,
-        "similarity": 0.14764621968616262,
-        "percentage": 14.8
+        "union": 1404,
+        "similarity": 0.14743589743589744,
+        "percentage": 14.7
       },
       {
         "user1": "fs495",
@@ -26464,9 +26478,9 @@
         "user1": "tmist",
         "user2": "saya15",
         "intersection": 171,
-        "union": 1166,
-        "similarity": 0.14665523156089194,
-        "percentage": 14.7
+        "union": 1168,
+        "similarity": 0.1464041095890411,
+        "percentage": 14.6
       },
       {
         "user1": "tmist",
@@ -26536,8 +26550,8 @@
         "user1": "shimbaco",
         "user2": "saya15",
         "intersection": 134,
-        "union": 1227,
-        "similarity": 0.10920945395273024,
+        "union": 1229,
+        "similarity": 0.10903173311635476,
         "percentage": 10.9
       },
       {
@@ -26608,8 +26622,8 @@
         "user1": "white_tiny_cat",
         "user2": "saya15",
         "intersection": 30,
-        "union": 900,
-        "similarity": 0.03333333333333333,
+        "union": 902,
+        "similarity": 0.03325942350332594,
         "percentage": 3.3
       },
       {
@@ -26680,8 +26694,8 @@
         "user1": "pomeranian_dev",
         "user2": "saya15",
         "intersection": 22,
-        "union": 820,
-        "similarity": 0.026829268292682926,
+        "union": 822,
+        "similarity": 0.0267639902676399,
         "percentage": 2.7
       },
       {
@@ -26776,9 +26790,9 @@
           "animemitaro"
         ],
         "intersection": 446,
-        "union": 1488,
-        "similarity": 0.29973118279569894,
-        "percentage": 30
+        "union": 1490,
+        "similarity": 0.2993288590604027,
+        "percentage": 29.9
       },
       {
         "pair": [
@@ -26826,8 +26840,8 @@
           "hitobi_syuto"
         ],
         "intersection": 301,
-        "union": 1472,
-        "similarity": 0.20448369565217392,
+        "union": 1474,
+        "similarity": 0.20420624151967434,
         "percentage": 20.4
       },
       {
@@ -26866,9 +26880,9 @@
           "hanu"
         ],
         "intersection": 184,
-        "union": 1197,
-        "similarity": 0.15371762740183792,
-        "percentage": 15.4
+        "union": 1199,
+        "similarity": 0.15346121768140117,
+        "percentage": 15.3
       },
       {
         "pair": [
@@ -26886,9 +26900,9 @@
           "fs495"
         ],
         "intersection": 207,
-        "union": 1402,
-        "similarity": 0.14764621968616262,
-        "percentage": 14.8
+        "union": 1404,
+        "similarity": 0.14743589743589744,
+        "percentage": 14.7
       },
       {
         "pair": [
@@ -26896,9 +26910,9 @@
           "tmist"
         ],
         "intersection": 171,
-        "union": 1166,
-        "similarity": 0.14665523156089194,
-        "percentage": 14.7
+        "union": 1168,
+        "similarity": 0.1464041095890411,
+        "percentage": 14.6
       },
       {
         "pair": [
@@ -26926,8 +26940,8 @@
           "shimbaco"
         ],
         "intersection": 134,
-        "union": 1227,
-        "similarity": 0.10920945395273024,
+        "union": 1229,
+        "similarity": 0.10903173311635476,
         "percentage": 10.9
       },
       {
@@ -26976,8 +26990,8 @@
           "white_tiny_cat"
         ],
         "intersection": 30,
-        "union": 900,
-        "similarity": 0.03333333333333333,
+        "union": 902,
+        "similarity": 0.03325942350332594,
         "percentage": 3.3
       },
       {
@@ -26996,8 +27010,8 @@
           "pomeranian_dev"
         ],
         "intersection": 22,
-        "union": 820,
-        "similarity": 0.026829268292682926,
+        "union": 822,
+        "similarity": 0.0267639902676399,
         "percentage": 2.7
       },
       {
@@ -27159,6 +27173,13 @@
           "url": "https://annict.com/works/11852"
         },
         {
+          "id": "12429",
+          "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+          "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12429"
+        },
+        {
           "id": "9396",
           "title": "グリザイア：ファントムトリガー",
           "image": "https://image.annict.com/ZK6JQzkzruAIxfZD9obbmG_whsHLFvK2w6wLO0Ledp0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6320/image/master-ade439961682cf0a08bd4d7e0bff79b9.jpg@webp",
@@ -27171,6 +27192,13 @@
           "image": "https://image.annict.com/92w6gvRYdVzrspi33-xpp_sxiV0LZe73CjwoV_f9xIg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7653/image/master-707e9fc354b8bbdbf9dfec14d397e028.jpg@webp",
           "season": "2024年秋",
           "url": "https://annict.com/works/11504"
+        },
+        {
+          "id": "12428",
+          "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+          "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+          "season": "2024年秋",
+          "url": "https://annict.com/works/12428"
         },
         {
           "id": "13150",
@@ -35447,7 +35475,7 @@
       "white_tiny_cat": [],
       "pomeranian_dev": []
     },
-    "totalUniqueAnimes": 2612
+    "totalUniqueAnimes": 2614
   },
   "userWatchedLists": {
     "saya15": [
@@ -36208,18 +36236,18 @@
         "url": "https://annict.com/works/14300"
       },
       {
-        "id": "12588",
-        "title": "紫雲寺家の子供たち",
-        "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-        "season": "2025年春",
-        "url": "https://annict.com/works/12588"
-      },
-      {
         "id": "11028",
         "title": "男女の友情は成立する？（いや、しないっ!!）",
         "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
         "season": "2025年春",
         "url": "https://annict.com/works/11028"
+      },
+      {
+        "id": "12588",
+        "title": "紫雲寺家の子供たち",
+        "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+        "season": "2025年春",
+        "url": "https://annict.com/works/12588"
       },
       {
         "id": "13891",
@@ -36262,6 +36290,13 @@
         "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
         "season": "2025年春",
         "url": "https://annict.com/works/10641"
+      },
+      {
+        "id": "12429",
+        "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+        "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+        "season": "2025年春",
+        "url": "https://annict.com/works/12429"
       },
       {
         "id": "12840",
@@ -36451,6 +36486,13 @@
         "image": "https://image.annict.com/EG4WZdiaE8K7Pz4KObz6dhXhRqHbsCP1849-jx300N8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9435/image/master-7924a9c47092652e56ff2e2f87e8750f.jpg@webp",
         "season": "2024年秋",
         "url": "https://annict.com/works/12826"
+      },
+      {
+        "id": "12428",
+        "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+        "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+        "season": "2024年秋",
+        "url": "https://annict.com/works/12428"
       },
       {
         "id": "10976",
@@ -74197,14 +74239,14 @@
     "calorieReport": {
       "saya15": {
         "username": "saya15",
-        "workCount": 805,
-        "totalHours": 3733.8,
-        "totalDays": 155.6,
-        "wakingDays": 233.4,
+        "workCount": 807,
+        "totalHours": 3743.4,
+        "totalDays": 156,
+        "wakingDays": 234,
         "lifePercentage": 6.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 712,
+          "tvCount": 714,
           "movieCount": 68,
           "ovaCount": 25
         }
@@ -79004,9 +79046,9 @@
         },
         {
           "year": 2025,
-          "totalCount": 755,
+          "totalCount": 756,
           "countsByUser": {
-            "saya15": 66,
+            "saya15": 67,
             "animemitaro": 190,
             "hanu": 163,
             "hitobi_syuto": 164,
@@ -79299,18 +79341,18 @@
                 "url": "https://annict.com/works/14300"
               },
               {
-                "id": "12588",
-                "title": "紫雲寺家の子供たち",
-                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                "season": "2025年春",
-                "url": "https://annict.com/works/12588"
-              },
-              {
                 "id": "11028",
                 "title": "男女の友情は成立する？（いや、しないっ!!）",
                 "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/11028"
+              },
+              {
+                "id": "12588",
+                "title": "紫雲寺家の子供たち",
+                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12588"
               },
               {
                 "id": "13891",
@@ -79353,6 +79395,13 @@
                 "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/10641"
+              },
+              {
+                "id": "12429",
+                "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12429"
               },
               {
                 "id": "12840",
@@ -84322,9 +84371,9 @@
         },
         {
           "year": 2024,
-          "totalCount": 512,
+          "totalCount": 513,
           "countsByUser": {
-            "saya15": 56,
+            "saya15": 57,
             "animemitaro": 132,
             "hanu": 59,
             "hitobi_syuto": 114,
@@ -84398,6 +84447,13 @@
                 "image": "https://image.annict.com/EG4WZdiaE8K7Pz4KObz6dhXhRqHbsCP1849-jx300N8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9435/image/master-7924a9c47092652e56ff2e2f87e8750f.jpg@webp",
                 "season": "2024年秋",
                 "url": "https://annict.com/works/12826"
+              },
+              {
+                "id": "12428",
+                "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                "season": "2024年秋",
+                "url": "https://annict.com/works/12428"
               },
               {
                 "id": "10976",
@@ -114625,8 +114681,8 @@
             "2021": 54,
             "2022": 35,
             "2023": 51,
-            "2024": 56,
-            "2025": 66,
+            "2024": 57,
+            "2025": 67,
             "2026": 68
           },
           "animesByYear": {
@@ -119062,6 +119118,13 @@
                 "url": "https://annict.com/works/12826"
               },
               {
+                "id": "12428",
+                "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                "season": "2024年秋",
+                "url": "https://annict.com/works/12428"
+              },
+              {
                 "id": "10976",
                 "title": "【推しの子】第2期",
                 "image": "https://image.annict.com/GsbZV7TlyBqDrwjFgBxsG3uctlcB_AUqrD2endxxHN0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7410/image/master-d1c5cc8f35168ddaa9b9b0b6d5c62f63.jpg@webp",
@@ -119673,18 +119736,18 @@
                 "url": "https://annict.com/works/14300"
               },
               {
-                "id": "12588",
-                "title": "紫雲寺家の子供たち",
-                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                "season": "2025年春",
-                "url": "https://annict.com/works/12588"
-              },
-              {
                 "id": "11028",
                 "title": "男女の友情は成立する？（いや、しないっ!!）",
                 "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/11028"
+              },
+              {
+                "id": "12588",
+                "title": "紫雲寺家の子供たち",
+                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12588"
               },
               {
                 "id": "13891",
@@ -119727,6 +119790,13 @@
                 "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/10641"
+              },
+              {
+                "id": "12429",
+                "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12429"
               },
               {
                 "id": "12840",
@@ -120339,7 +120409,7 @@
             "2006_2010": 53,
             "2011_2015": 185,
             "2016_2020": 215,
-            "2021_present": 330
+            "2021_present": 332
           }
         },
         "animemitaro": {
@@ -162590,7 +162660,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 805,
+          "totalWatched": 807,
           "genres": [
             {
               "id": "isekai",
@@ -163521,18 +163591,18 @@
                   "url": "https://annict.com/works/9244"
                 },
                 {
-                  "id": "12588",
-                  "title": "紫雲寺家の子供たち",
-                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                  "season": "2025年春",
-                  "url": "https://annict.com/works/12588"
-                },
-                {
                   "id": "11028",
                   "title": "男女の友情は成立する？（いや、しないっ!!）",
                   "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                   "season": "2025年春",
                   "url": "https://annict.com/works/11028"
+                },
+                {
+                  "id": "12588",
+                  "title": "紫雲寺家の子供たち",
+                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12588"
                 },
                 {
                   "id": "13218",
@@ -164046,7 +164116,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 94,
-              "percentage": 11.7,
+              "percentage": 11.6,
               "animes": [
                 {
                   "id": "16454",
@@ -164713,8 +164783,8 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 86,
-              "percentage": 10.7,
+              "count": 88,
+              "percentage": 10.9,
               "animes": [
                 {
                   "id": "15557",
@@ -164752,6 +164822,13 @@
                   "url": "https://annict.com/works/15792"
                 },
                 {
+                  "id": "12429",
+                  "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                  "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12429"
+                },
+                {
                   "id": "12840",
                   "title": "薬屋のひとりごと 第2期",
                   "image": "https://image.annict.com/wrJriRXbECSG5FfKeiLqPCo3kxZHSKm7GSMRBG9Pel8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9451/image/master-cddda6c76f2d122c4838eb5045bba9c4.jpg@webp",
@@ -164785,6 +164862,13 @@
                   "image": "https://image.annict.com/92w6gvRYdVzrspi33-xpp_sxiV0LZe73CjwoV_f9xIg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7653/image/master-707e9fc354b8bbdbf9dfec14d397e028.jpg@webp",
                   "season": "2024年秋",
                   "url": "https://annict.com/works/11504"
+                },
+                {
+                  "id": "12428",
+                  "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                  "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                  "season": "2024年秋",
+                  "url": "https://annict.com/works/12428"
                 },
                 {
                   "id": "10591",
@@ -165326,7 +165410,7 @@
               "icon": "fa-solid fa-wand-magic-sparkles",
               "color": "#fb7185",
               "count": 85,
-              "percentage": 10.6,
+              "percentage": 10.5,
               "animes": [
                 {
                   "id": "8410",
@@ -167745,7 +167829,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 31,
-              "percentage": 3.9,
+              "percentage": 3.8,
               "animes": [
                 {
                   "id": "16714",
@@ -169308,18 +169392,18 @@
                   "url": "https://annict.com/works/9244"
                 },
                 {
-                  "id": "12588",
-                  "title": "紫雲寺家の子供たち",
-                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                  "season": "2025年春",
-                  "url": "https://annict.com/works/12588"
-                },
-                {
                   "id": "11028",
                   "title": "男女の友情は成立する？（いや、しないっ!!）",
                   "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                   "season": "2025年春",
                   "url": "https://annict.com/works/11028"
+                },
+                {
+                  "id": "12588",
+                  "title": "紫雲寺家の子供たち",
+                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12588"
                 },
                 {
                   "id": "13218",
@@ -169833,7 +169917,7 @@
               "icon": "fa-solid fa-music",
               "color": "#eab308",
               "count": 94,
-              "percentage": 11.7,
+              "percentage": 11.6,
               "animes": [
                 {
                   "id": "16454",
@@ -226657,18 +226741,18 @@
                 "url": "https://annict.com/works/9244"
               },
               {
-                "id": "12588",
-                "title": "紫雲寺家の子供たち",
-                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                "season": "2025年春",
-                "url": "https://annict.com/works/12588"
-              },
-              {
                 "id": "11028",
                 "title": "男女の友情は成立する？（いや、しないっ!!）",
                 "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/11028"
+              },
+              {
+                "id": "12588",
+                "title": "紫雲寺家の子供たち",
+                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12588"
               },
               {
                 "id": "13218",
@@ -231507,7 +231591,7 @@
             "pomeranian_dev": 4
           },
           "userPercentages": {
-            "saya15": 3.9,
+            "saya15": 3.8,
             "animemitaro": 11.2,
             "hanu": 10.8,
             "hitobi_syuto": 12.6,
@@ -235796,7 +235880,7 @@
             "pomeranian_dev": 3
           },
           "userPercentages": {
-            "saya15": 11.7,
+            "saya15": 11.6,
             "animemitaro": 8.9,
             "hanu": 6.1,
             "hitobi_syuto": 9.9,
@@ -242337,7 +242421,7 @@
             "pomeranian_dev": 1
           },
           "userPercentages": {
-            "saya15": 10.6,
+            "saya15": 10.5,
             "animemitaro": 6.6,
             "hanu": 8.7,
             "hitobi_syuto": 6.1,
@@ -245500,9 +245584,9 @@
           "labelEn": "Historical & Military",
           "icon": "fa-solid fa-shield-halved",
           "color": "#64748b",
-          "totalWorksAcrossUsers": 443,
+          "totalWorksAcrossUsers": 445,
           "userCounts": {
-            "saya15": 86,
+            "saya15": 88,
             "animemitaro": 80,
             "hanu": 36,
             "hitobi_syuto": 61,
@@ -245513,7 +245597,7 @@
             "pomeranian_dev": 3
           },
           "userPercentages": {
-            "saya15": 10.7,
+            "saya15": 10.9,
             "animemitaro": 7.1,
             "hanu": 6.3,
             "hitobi_syuto": 6.3,
@@ -245561,6 +245645,13 @@
                 "url": "https://annict.com/works/15792"
               },
               {
+                "id": "12429",
+                "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12429"
+              },
+              {
                 "id": "12840",
                 "title": "薬屋のひとりごと 第2期",
                 "image": "https://image.annict.com/wrJriRXbECSG5FfKeiLqPCo3kxZHSKm7GSMRBG9Pel8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9451/image/master-cddda6c76f2d122c4838eb5045bba9c4.jpg@webp",
@@ -245594,6 +245685,13 @@
                 "image": "https://image.annict.com/92w6gvRYdVzrspi33-xpp_sxiV0LZe73CjwoV_f9xIg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7653/image/master-707e9fc354b8bbdbf9dfec14d397e028.jpg@webp",
                 "season": "2024年秋",
                 "url": "https://annict.com/works/11504"
+              },
+              {
+                "id": "12428",
+                "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                "season": "2024年秋",
+                "url": "https://annict.com/works/12428"
               },
               {
                 "id": "10591",
@@ -248646,7 +248744,7 @@
           },
           "topUser": {
             "username": "saya15",
-            "count": 86
+            "count": 88
           }
         },
         {
@@ -259592,7 +259690,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 805,
+          "totalWatched": 807,
           "genres": [
             {
               "id": "action",
@@ -259600,7 +259698,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 131,
-              "percentage": 16.3,
+              "percentage": 16.2,
               "animes": [
                 {
                   "id": "15873",
@@ -260526,8 +260624,8 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 127,
-              "percentage": 15.8,
+              "count": 129,
+              "percentage": 16,
               "animes": [
                 {
                   "id": "17197",
@@ -260691,6 +260789,13 @@
                   "url": "https://annict.com/works/14002"
                 },
                 {
+                  "id": "12429",
+                  "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                  "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12429"
+                },
+                {
                   "id": "13894",
                   "title": "Re:ゼロから始める異世界生活 3rd season 反撃編",
                   "image": "https://image.annict.com/kcOPl7cTypvsYlb6YCnqPHx1AHl0ICn0U3h1vHzOb78/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11318/image/master-ef0b4160414935d7350b08e5bd14c55b.jpg@webp",
@@ -260745,6 +260850,13 @@
                   "image": "https://image.annict.com/5TKHXVGs6-S0EhZZ_7-EazwMo8rH-uHyoJCg28i1INw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7162/image/master-c42b4fc77f2e433989a3a38ca09c60db.jpg@webp",
                   "season": "2024年秋",
                   "url": "https://annict.com/works/10631"
+                },
+                {
+                  "id": "12428",
+                  "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                  "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                  "season": "2024年秋",
+                  "url": "https://annict.com/works/12428"
                 },
                 {
                   "id": "12565",
@@ -261426,7 +261538,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 126,
-              "percentage": 15.7,
+              "percentage": 15.6,
               "animes": [
                 {
                   "id": "17108",
@@ -261590,18 +261702,18 @@
                   "url": "https://annict.com/works/9244"
                 },
                 {
-                  "id": "12588",
-                  "title": "紫雲寺家の子供たち",
-                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                  "season": "2025年春",
-                  "url": "https://annict.com/works/12588"
-                },
-                {
                   "id": "11028",
                   "title": "男女の友情は成立する？（いや、しないっ!!）",
                   "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                   "season": "2025年春",
                   "url": "https://annict.com/works/11028"
+                },
+                {
+                  "id": "12588",
+                  "title": "紫雲寺家の子供たち",
+                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12588"
                 },
                 {
                   "id": "10989",
@@ -265387,7 +265499,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 131,
-              "percentage": 16.3,
+              "percentage": 16.2,
               "animes": [
                 {
                   "id": "15873",
@@ -266313,8 +266425,8 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 127,
-              "percentage": 15.8,
+              "count": 129,
+              "percentage": 16,
               "animes": [
                 {
                   "id": "17197",
@@ -266478,6 +266590,13 @@
                   "url": "https://annict.com/works/14002"
                 },
                 {
+                  "id": "12429",
+                  "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                  "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12429"
+                },
+                {
                   "id": "13894",
                   "title": "Re:ゼロから始める異世界生活 3rd season 反撃編",
                   "image": "https://image.annict.com/kcOPl7cTypvsYlb6YCnqPHx1AHl0ICn0U3h1vHzOb78/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11318/image/master-ef0b4160414935d7350b08e5bd14c55b.jpg@webp",
@@ -266532,6 +266651,13 @@
                   "image": "https://image.annict.com/5TKHXVGs6-S0EhZZ_7-EazwMo8rH-uHyoJCg28i1INw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7162/image/master-c42b4fc77f2e433989a3a38ca09c60db.jpg@webp",
                   "season": "2024年秋",
                   "url": "https://annict.com/works/10631"
+                },
+                {
+                  "id": "12428",
+                  "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                  "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                  "season": "2024年秋",
+                  "url": "https://annict.com/works/12428"
                 },
                 {
                   "id": "12565",
@@ -267213,7 +267339,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 126,
-              "percentage": 15.7,
+              "percentage": 15.6,
               "animes": [
                 {
                   "id": "17108",
@@ -267377,18 +267503,18 @@
                   "url": "https://annict.com/works/9244"
                 },
                 {
-                  "id": "12588",
-                  "title": "紫雲寺家の子供たち",
-                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                  "season": "2025年春",
-                  "url": "https://annict.com/works/12588"
-                },
-                {
                   "id": "11028",
                   "title": "男女の友情は成立する？（いや、しないっ!!）",
                   "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                   "season": "2025年春",
                   "url": "https://annict.com/works/11028"
+                },
+                {
+                  "id": "12588",
+                  "title": "紫雲寺家の子供たち",
+                  "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                  "season": "2025年春",
+                  "url": "https://annict.com/works/12588"
                 },
                 {
                   "id": "10989",
@@ -317955,7 +318081,7 @@
             "pomeranian_dev": 3
           },
           "userPercentages": {
-            "saya15": 15.7,
+            "saya15": 15.6,
             "animemitaro": 17.8,
             "hanu": 14.2,
             "hitobi_syuto": 22,
@@ -318129,18 +318255,18 @@
                 "url": "https://annict.com/works/9244"
               },
               {
-                "id": "12588",
-                "title": "紫雲寺家の子供たち",
-                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-                "season": "2025年春",
-                "url": "https://annict.com/works/12588"
-              },
-              {
                 "id": "11028",
                 "title": "男女の友情は成立する？（いや、しないっ!!）",
                 "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
                 "season": "2025年春",
                 "url": "https://annict.com/works/11028"
+              },
+              {
+                "id": "12588",
+                "title": "紫雲寺家の子供たち",
+                "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12588"
               },
               {
                 "id": "10989",
@@ -324240,9 +324366,9 @@
           "labelEn": "Sci-Fi / Fantasy",
           "icon": "fa-solid fa-meteor",
           "color": "#6366f1",
-          "totalWorksAcrossUsers": 814,
+          "totalWorksAcrossUsers": 816,
           "userCounts": {
-            "saya15": 127,
+            "saya15": 129,
             "animemitaro": 170,
             "hanu": 79,
             "hitobi_syuto": 110,
@@ -324253,7 +324379,7 @@
             "pomeranian_dev": 9
           },
           "userPercentages": {
-            "saya15": 15.8,
+            "saya15": 16,
             "animemitaro": 15.1,
             "hanu": 13.7,
             "hitobi_syuto": 11.4,
@@ -324427,6 +324553,13 @@
                 "url": "https://annict.com/works/14002"
               },
               {
+                "id": "12429",
+                "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+                "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+                "season": "2025年春",
+                "url": "https://annict.com/works/12429"
+              },
+              {
                 "id": "13894",
                 "title": "Re:ゼロから始める異世界生活 3rd season 反撃編",
                 "image": "https://image.annict.com/kcOPl7cTypvsYlb6YCnqPHx1AHl0ICn0U3h1vHzOb78/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11318/image/master-ef0b4160414935d7350b08e5bd14c55b.jpg@webp",
@@ -324481,6 +324614,13 @@
                 "image": "https://image.annict.com/5TKHXVGs6-S0EhZZ_7-EazwMo8rH-uHyoJCg28i1INw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7162/image/master-c42b4fc77f2e433989a3a38ca09c60db.jpg@webp",
                 "season": "2024年秋",
                 "url": "https://annict.com/works/10631"
+              },
+              {
+                "id": "12428",
+                "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+                "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+                "season": "2024年秋",
+                "url": "https://annict.com/works/12428"
               },
               {
                 "id": "12565",
@@ -330005,7 +330145,7 @@
             "pomeranian_dev": 5
           },
           "userPercentages": {
-            "saya15": 16.3,
+            "saya15": 16.2,
             "animemitaro": 11.3,
             "hanu": 14.1,
             "hitobi_syuto": 9.3,
@@ -357467,9 +357607,9 @@
       ]
     },
     "genreDiffReport": {
-      "totalWorks": 2612,
+      "totalWorks": 2614,
       "sameCount": 1523,
-      "diffCount": 1089,
+      "diffCount": 1091,
       "diffPercentage": 42,
       "diffs": [
         {
@@ -376896,6 +377036,40 @@
           "topReasons": [
             "公式ジャンル: Romance (+130)",
             "タグ: Love Triangle (+41)"
+          ]
+        },
+        {
+          "id": "12429",
+          "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+          "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+          "season": "2025年春",
+          "url": "https://annict.com/works/12429",
+          "watchedBy": [
+            "saya15"
+          ],
+          "legacyCategory": "history_military",
+          "scoredCategory": "sf_fantasy",
+          "score": 170,
+          "topReasons": [
+            "公式ジャンル: Sci-Fi (+90)",
+            "タグ: Space (+80)"
+          ]
+        },
+        {
+          "id": "12428",
+          "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+          "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+          "season": "2024年秋",
+          "url": "https://annict.com/works/12428",
+          "watchedBy": [
+            "saya15"
+          ],
+          "legacyCategory": "history_military",
+          "scoredCategory": "sf_fantasy",
+          "score": 170,
+          "topReasons": [
+            "公式ジャンル: Sci-Fi (+90)",
+            "タグ: Space (+80)"
           ]
         },
         {

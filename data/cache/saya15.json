@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-11-03T01:26:06.459Z",
-  "count": 805,
+  "fetchedAt": "2026-11-03T23:50:31.620Z",
+  "count": 807,
   "animes": [
     {
       "id": "17108",
@@ -760,18 +760,18 @@
       "url": "https://annict.com/works/14300"
     },
     {
-      "id": "12588",
-      "title": "紫雲寺家の子供たち",
-      "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/12588"
-    },
-    {
       "id": "11028",
       "title": "男女の友情は成立する？（いや、しないっ!!）",
       "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/11028"
+    },
+    {
+      "id": "12588",
+      "title": "紫雲寺家の子供たち",
+      "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/12588"
     },
     {
       "id": "13891",
@@ -814,6 +814,13 @@
       "image": "https://image.annict.com/O8b-lLepZvmTx1tmi5sVNd-Wo5L2fr8U9fmhJedRuVw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7174/image/master-b799d70690624da09a9ba2c0a498fe74.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/10641"
+    },
+    {
+      "id": "12429",
+      "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+      "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/12429"
     },
     {
       "id": "12840",
@@ -1003,6 +1010,13 @@
       "image": "https://image.annict.com/EG4WZdiaE8K7Pz4KObz6dhXhRqHbsCP1849-jx300N8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9435/image/master-7924a9c47092652e56ff2e2f87e8750f.jpg@webp",
       "season": "2024年秋",
       "url": "https://annict.com/works/12826"
+    },
+    {
+      "id": "12428",
+      "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+      "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+      "season": "2024年秋",
+      "url": "https://annict.com/works/12428"
     },
     {
       "id": "10976",
