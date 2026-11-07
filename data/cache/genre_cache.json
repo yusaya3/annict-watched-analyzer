@@ -155544,5 +155544,117 @@
         "rank": 73
       }
     ]
+  },
+  "メイドインアビス 目覚める神秘": {
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "tags": [
+      {
+        "name": "Travel",
+        "rank": 92
+      },
+      {
+        "name": "Survival",
+        "rank": 90
+      },
+      {
+        "name": "Chibi",
+        "rank": 83
+      },
+      {
+        "name": "Curses",
+        "rank": 79
+      },
+      {
+        "name": "Seinen",
+        "rank": 74
+      },
+      {
+        "name": "Primarily Child Cast",
+        "rank": 73
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 73
+      },
+      {
+        "name": "Gore",
+        "rank": 72
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 70
+      },
+      {
+        "name": "Monster Girl",
+        "rank": 63
+      }
+    ]
+  },
+  "ヤマトよ永遠に REBEL3199 第四章 水色の乙女": {
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "tags": [
+      {
+        "name": "Ships",
+        "rank": 79
+      },
+      {
+        "name": "CGI",
+        "rank": 79
+      },
+      {
+        "name": "Robots",
+        "rank": 79
+      },
+      {
+        "name": "Aliens",
+        "rank": 79
+      },
+      {
+        "name": "War",
+        "rank": 79
+      },
+      {
+        "name": "Military",
+        "rank": 79
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 79
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Politics",
+        "rank": 79
+      },
+      {
+        "name": "Space",
+        "rank": 73
+      },
+      {
+        "name": "Space Opera",
+        "rank": 73
+      }
+    ]
   }
 }

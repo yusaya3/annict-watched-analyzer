@@ -1,8 +1,15 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-11-03T23:50:31.620Z",
-  "count": 807,
+  "fetchedAt": "2026-11-07T22:28:12.025Z",
+  "count": 809,
   "animes": [
+    {
+      "id": "10404",
+      "title": "メイドインアビス 目覚める神秘",
+      "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/10404"
+    },
     {
       "id": "17108",
       "title": "どこよりも遠い場所にいる君へ",
@@ -611,6 +618,13 @@
       "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16537"
+    },
+    {
+      "id": "12430",
+      "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+      "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/12430"
     },
     {
       "id": "10087",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T23:36:49.475Z",
+  "generatedAt": "2026-11-07T22:28:26.421Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -14,8 +14,8 @@
   "userSummary": [
     {
       "username": "saya15",
-      "count": 807,
-      "exclusiveCount": 191,
+      "count": 809,
+      "exclusiveCount": 193,
       "missingCount": 0
     },
     {
@@ -77,8 +77,15 @@
       "sets": [
         "saya15"
       ],
-      "size": 807,
+      "size": 809,
       "animes": [
+        {
+          "id": "10404",
+          "title": "メイドインアビス 目覚める神秘",
+          "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+          "season": "2026年秋",
+          "url": "https://annict.com/works/10404"
+        },
         {
           "id": "17108",
           "title": "どこよりも遠い場所にいる君へ",
@@ -687,6 +694,13 @@
           "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/16537"
+        },
+        {
+          "id": "12430",
+          "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+          "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/12430"
         },
         {
           "id": "10087",
@@ -26117,8 +26131,8 @@
       {
         "user1": "saya15",
         "user2": "saya15",
-        "intersection": 807,
-        "union": 807,
+        "intersection": 809,
+        "union": 809,
         "similarity": 1,
         "percentage": 100
       },
@@ -26126,72 +26140,72 @@
         "user1": "saya15",
         "user2": "animemitaro",
         "intersection": 446,
-        "union": 1490,
-        "similarity": 0.2993288590604027,
+        "union": 1492,
+        "similarity": 0.29892761394101874,
         "percentage": 29.9
       },
       {
         "user1": "saya15",
         "user2": "hanu",
         "intersection": 184,
-        "union": 1199,
-        "similarity": 0.15346121768140117,
+        "union": 1201,
+        "similarity": 0.15320566194837634,
         "percentage": 15.3
       },
       {
         "user1": "saya15",
         "user2": "hitobi_syuto",
         "intersection": 301,
-        "union": 1474,
-        "similarity": 0.20420624151967434,
+        "union": 1476,
+        "similarity": 0.20392953929539295,
         "percentage": 20.4
       },
       {
         "user1": "saya15",
         "user2": "fs495",
         "intersection": 207,
-        "union": 1404,
-        "similarity": 0.14743589743589744,
+        "union": 1406,
+        "similarity": 0.14722617354196302,
         "percentage": 14.7
       },
       {
         "user1": "saya15",
         "user2": "tmist",
         "intersection": 171,
-        "union": 1168,
-        "similarity": 0.1464041095890411,
+        "union": 1170,
+        "similarity": 0.14615384615384616,
         "percentage": 14.6
       },
       {
         "user1": "saya15",
         "user2": "shimbaco",
         "intersection": 134,
-        "union": 1229,
-        "similarity": 0.10903173311635476,
+        "union": 1231,
+        "similarity": 0.10885458976441917,
         "percentage": 10.9
       },
       {
         "user1": "saya15",
         "user2": "white_tiny_cat",
         "intersection": 30,
-        "union": 902,
-        "similarity": 0.03325942350332594,
+        "union": 904,
+        "similarity": 0.033185840707964605,
         "percentage": 3.3
       },
       {
         "user1": "saya15",
         "user2": "pomeranian_dev",
         "intersection": 22,
-        "union": 822,
-        "similarity": 0.0267639902676399,
+        "union": 824,
+        "similarity": 0.02669902912621359,
         "percentage": 2.7
       },
       {
         "user1": "animemitaro",
         "user2": "saya15",
         "intersection": 446,
-        "union": 1490,
-        "similarity": 0.2993288590604027,
+        "union": 1492,
+        "similarity": 0.29892761394101874,
         "percentage": 29.9
       },
       {
@@ -26262,8 +26276,8 @@
         "user1": "hanu",
         "user2": "saya15",
         "intersection": 184,
-        "union": 1199,
-        "similarity": 0.15346121768140117,
+        "union": 1201,
+        "similarity": 0.15320566194837634,
         "percentage": 15.3
       },
       {
@@ -26334,8 +26348,8 @@
         "user1": "hitobi_syuto",
         "user2": "saya15",
         "intersection": 301,
-        "union": 1474,
-        "similarity": 0.20420624151967434,
+        "union": 1476,
+        "similarity": 0.20392953929539295,
         "percentage": 20.4
       },
       {
@@ -26406,8 +26420,8 @@
         "user1": "fs495",
         "user2": "saya15",
         "intersection": 207,
-        "union": 1404,
-        "similarity": 0.14743589743589744,
+        "union": 1406,
+        "similarity": 0.14722617354196302,
         "percentage": 14.7
       },
       {
@@ -26478,8 +26492,8 @@
         "user1": "tmist",
         "user2": "saya15",
         "intersection": 171,
-        "union": 1168,
-        "similarity": 0.1464041095890411,
+        "union": 1170,
+        "similarity": 0.14615384615384616,
         "percentage": 14.6
       },
       {
@@ -26550,8 +26564,8 @@
         "user1": "shimbaco",
         "user2": "saya15",
         "intersection": 134,
-        "union": 1229,
-        "similarity": 0.10903173311635476,
+        "union": 1231,
+        "similarity": 0.10885458976441917,
         "percentage": 10.9
       },
       {
@@ -26622,8 +26636,8 @@
         "user1": "white_tiny_cat",
         "user2": "saya15",
         "intersection": 30,
-        "union": 902,
-        "similarity": 0.03325942350332594,
+        "union": 904,
+        "similarity": 0.033185840707964605,
         "percentage": 3.3
       },
       {
@@ -26694,8 +26708,8 @@
         "user1": "pomeranian_dev",
         "user2": "saya15",
         "intersection": 22,
-        "union": 822,
-        "similarity": 0.0267639902676399,
+        "union": 824,
+        "similarity": 0.02669902912621359,
         "percentage": 2.7
       },
       {
@@ -26790,8 +26804,8 @@
           "animemitaro"
         ],
         "intersection": 446,
-        "union": 1490,
-        "similarity": 0.2993288590604027,
+        "union": 1492,
+        "similarity": 0.29892761394101874,
         "percentage": 29.9
       },
       {
@@ -26840,8 +26854,8 @@
           "hitobi_syuto"
         ],
         "intersection": 301,
-        "union": 1474,
-        "similarity": 0.20420624151967434,
+        "union": 1476,
+        "similarity": 0.20392953929539295,
         "percentage": 20.4
       },
       {
@@ -26880,8 +26894,8 @@
           "hanu"
         ],
         "intersection": 184,
-        "union": 1199,
-        "similarity": 0.15346121768140117,
+        "union": 1201,
+        "similarity": 0.15320566194837634,
         "percentage": 15.3
       },
       {
@@ -26900,8 +26914,8 @@
           "fs495"
         ],
         "intersection": 207,
-        "union": 1404,
-        "similarity": 0.14743589743589744,
+        "union": 1406,
+        "similarity": 0.14722617354196302,
         "percentage": 14.7
       },
       {
@@ -26910,8 +26924,8 @@
           "tmist"
         ],
         "intersection": 171,
-        "union": 1168,
-        "similarity": 0.1464041095890411,
+        "union": 1170,
+        "similarity": 0.14615384615384616,
         "percentage": 14.6
       },
       {
@@ -26940,8 +26954,8 @@
           "shimbaco"
         ],
         "intersection": 134,
-        "union": 1229,
-        "similarity": 0.10903173311635476,
+        "union": 1231,
+        "similarity": 0.10885458976441917,
         "percentage": 10.9
       },
       {
@@ -26990,8 +27004,8 @@
           "white_tiny_cat"
         ],
         "intersection": 30,
-        "union": 902,
-        "similarity": 0.03325942350332594,
+        "union": 904,
+        "similarity": 0.033185840707964605,
         "percentage": 3.3
       },
       {
@@ -27010,8 +27024,8 @@
           "pomeranian_dev"
         ],
         "intersection": 22,
-        "union": 822,
-        "similarity": 0.0267639902676399,
+        "union": 824,
+        "similarity": 0.02669902912621359,
         "percentage": 2.7
       },
       {
@@ -27131,6 +27145,13 @@
     "exclusivePerUser": {
       "saya15": [
         {
+          "id": "10404",
+          "title": "メイドインアビス 目覚める神秘",
+          "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+          "season": "2026年秋",
+          "url": "https://annict.com/works/10404"
+        },
+        {
           "id": "16716",
           "title": "ガールズ&パンツァー 最終章 第5話",
           "image": "https://image.annict.com/TZQubNnYRtKOu-zLxYr4sfKI990CvdcierdtKHUIO18/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-dc1cab13332c0f3aefc7c476daa61613.jpg@webp",
@@ -27164,6 +27185,13 @@
           "image": "https://image.annict.com/rqZAyi6WKvfcgtNBegzWT8rMu7V6wTYCVGKX8um7rZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12954/image/master-def3c9606281e89b8587c52037556e58.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/16250"
+        },
+        {
+          "id": "12430",
+          "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+          "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/12430"
         },
         {
           "id": "11852",
@@ -35475,10 +35503,17 @@
       "white_tiny_cat": [],
       "pomeranian_dev": []
     },
-    "totalUniqueAnimes": 2614
+    "totalUniqueAnimes": 2616
   },
   "userWatchedLists": {
     "saya15": [
+      {
+        "id": "10404",
+        "title": "メイドインアビス 目覚める神秘",
+        "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+        "season": "2026年秋",
+        "url": "https://annict.com/works/10404"
+      },
       {
         "id": "17108",
         "title": "どこよりも遠い場所にいる君へ",
@@ -36087,6 +36122,13 @@
         "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16537"
+      },
+      {
+        "id": "12430",
+        "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+        "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+        "season": "2025年秋",
+        "url": "https://annict.com/works/12430"
       },
       {
         "id": "10087",
@@ -74239,14 +74281,14 @@
     "calorieReport": {
       "saya15": {
         "username": "saya15",
-        "workCount": 807,
-        "totalHours": 3743.4,
-        "totalDays": 156,
-        "wakingDays": 234,
+        "workCount": 809,
+        "totalHours": 3753,
+        "totalDays": 156.4,
+        "wakingDays": 234.6,
         "lifePercentage": 6.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 714,
+          "tvCount": 716,
           "movieCount": 68,
           "ovaCount": 25
         }
@@ -74449,9 +74491,9 @@
       "yearStats": [
         {
           "year": 2026,
-          "totalCount": 652,
+          "totalCount": 653,
           "countsByUser": {
-            "saya15": 68,
+            "saya15": 69,
             "animemitaro": 182,
             "hanu": 170,
             "hitobi_syuto": 97,
@@ -74463,6 +74505,13 @@
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "10404",
+                "title": "メイドインアビス 目覚める神秘",
+                "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/10404"
+              },
               {
                 "id": "17108",
                 "title": "どこよりも遠い場所にいる君へ",
@@ -79046,9 +79095,9 @@
         },
         {
           "year": 2025,
-          "totalCount": 756,
+          "totalCount": 757,
           "countsByUser": {
-            "saya15": 67,
+            "saya15": 68,
             "animemitaro": 190,
             "hanu": 163,
             "hitobi_syuto": 164,
@@ -79192,6 +79241,13 @@
                 "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16537"
+              },
+              {
+                "id": "12430",
+                "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/12430"
               },
               {
                 "id": "10087",
@@ -114648,7 +114704,7 @@
         "saya15": {
           "username": "saya15",
           "peakYear": 2026,
-          "maxYearCount": 68,
+          "maxYearCount": 69,
           "yearCounts": {
             "1978": 1,
             "1984": 2,
@@ -114682,8 +114738,8 @@
             "2022": 35,
             "2023": 51,
             "2024": 57,
-            "2025": 67,
-            "2026": 68
+            "2025": 68,
+            "2026": 69
           },
           "animesByYear": {
             "1978": [
@@ -119589,6 +119645,13 @@
                 "url": "https://annict.com/works/16537"
               },
               {
+                "id": "12430",
+                "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/12430"
+              },
+              {
                 "id": "10087",
                 "title": "その着せ替え人形は恋をする Season 2",
                 "image": "https://image.annict.com/Ie4ktpRxpCpPwxSr-jdUehuD41mmDc6Cm_u8CMHphKY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6804/image/master-36f2ae937d32a03864c1ebdf98ad64b5.jpg@webp",
@@ -119926,6 +119989,13 @@
               }
             ],
             "2026": [
+              {
+                "id": "10404",
+                "title": "メイドインアビス 目覚める神秘",
+                "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/10404"
+              },
               {
                 "id": "17108",
                 "title": "どこよりも遠い場所にいる君へ",
@@ -120409,7 +120479,7 @@
             "2006_2010": 53,
             "2011_2015": 185,
             "2016_2020": 215,
-            "2021_present": 332
+            "2021_present": 334
           }
         },
         "animemitaro": {
@@ -162660,7 +162730,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 807,
+          "totalWatched": 809,
           "genres": [
             {
               "id": "isekai",
@@ -163441,7 +163511,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 95,
-              "percentage": 11.8,
+              "percentage": 11.7,
               "animes": [
                 {
                   "id": "17108",
@@ -164783,8 +164853,8 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 88,
-              "percentage": 10.9,
+              "count": 89,
+              "percentage": 11,
               "animes": [
                 {
                   "id": "15557",
@@ -164813,6 +164883,13 @@
                   "image": "https://image.annict.com/13ldE18OXHBvhxLx3axqVNMbaEcupkumo9o8-SrLDac/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13315/image/master-7e53d829bdbf3e2dad9c9f88da5fd7b4.jpg@webp",
                   "season": "2026年春",
                   "url": "https://annict.com/works/16666"
+                },
+                {
+                  "id": "12430",
+                  "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                  "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                  "season": "2025年秋",
+                  "url": "https://annict.com/works/12430"
                 },
                 {
                   "id": "15792",
@@ -166014,9 +166091,16 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 65,
-              "percentage": 8.1,
+              "count": 66,
+              "percentage": 8.2,
               "animes": [
+                {
+                  "id": "10404",
+                  "title": "メイドインアビス 目覚める神秘",
+                  "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/10404"
+                },
                 {
                   "id": "14074",
                   "title": "杖と剣のウィストリア Season2",
@@ -166480,7 +166564,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 61,
-              "percentage": 7.6,
+              "percentage": 7.5,
               "animes": [
                 {
                   "id": "11528",
@@ -169242,7 +169326,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 95,
-              "percentage": 11.8,
+              "percentage": 11.7,
               "animes": [
                 {
                   "id": "17108",
@@ -226581,7 +226665,7 @@
             "pomeranian_dev": 5
           },
           "userPercentages": {
-            "saya15": 11.8,
+            "saya15": 11.7,
             "animemitaro": 12.8,
             "hanu": 10.1,
             "hitobi_syuto": 17.3,
@@ -239190,9 +239274,9 @@
           "labelEn": "Sci-Fi / Fantasy",
           "icon": "fa-solid fa-meteor",
           "color": "#6366f1",
-          "totalWorksAcrossUsers": 452,
+          "totalWorksAcrossUsers": 453,
           "userCounts": {
-            "saya15": 65,
+            "saya15": 66,
             "animemitaro": 84,
             "hanu": 44,
             "hitobi_syuto": 61,
@@ -239203,7 +239287,7 @@
             "pomeranian_dev": 4
           },
           "userPercentages": {
-            "saya15": 8.1,
+            "saya15": 8.2,
             "animemitaro": 7.4,
             "hanu": 7.6,
             "hitobi_syuto": 6.3,
@@ -239215,6 +239299,13 @@
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "10404",
+                "title": "メイドインアビス 目覚める神秘",
+                "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/10404"
+              },
               {
                 "id": "14074",
                 "title": "杖と剣のウィストリア Season2",
@@ -245584,9 +245675,9 @@
           "labelEn": "Historical & Military",
           "icon": "fa-solid fa-shield-halved",
           "color": "#64748b",
-          "totalWorksAcrossUsers": 445,
+          "totalWorksAcrossUsers": 446,
           "userCounts": {
-            "saya15": 88,
+            "saya15": 89,
             "animemitaro": 80,
             "hanu": 36,
             "hitobi_syuto": 61,
@@ -245597,7 +245688,7 @@
             "pomeranian_dev": 3
           },
           "userPercentages": {
-            "saya15": 10.9,
+            "saya15": 11,
             "animemitaro": 7.1,
             "hanu": 6.3,
             "hitobi_syuto": 6.3,
@@ -245636,6 +245727,13 @@
                 "image": "https://image.annict.com/13ldE18OXHBvhxLx3axqVNMbaEcupkumo9o8-SrLDac/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13315/image/master-7e53d829bdbf3e2dad9c9f88da5fd7b4.jpg@webp",
                 "season": "2026年春",
                 "url": "https://annict.com/works/16666"
+              },
+              {
+                "id": "12430",
+                "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/12430"
               },
               {
                 "id": "15792",
@@ -248744,7 +248842,7 @@
           },
           "topUser": {
             "username": "saya15",
-            "count": 88
+            "count": 89
           }
         },
         {
@@ -254736,7 +254834,7 @@
             "pomeranian_dev": 1
           },
           "userPercentages": {
-            "saya15": 7.6,
+            "saya15": 7.5,
             "animemitaro": 3.2,
             "hanu": 3,
             "hitobi_syuto": 2.8,
@@ -259690,7 +259788,7 @@
       "statsByUser": {
         "saya15": {
           "username": "saya15",
-          "totalWatched": 807,
+          "totalWatched": 809,
           "genres": [
             {
               "id": "action",
@@ -260624,9 +260722,16 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 129,
-              "percentage": 16,
+              "count": 131,
+              "percentage": 16.2,
               "animes": [
+                {
+                  "id": "10404",
+                  "title": "メイドインアビス 目覚める神秘",
+                  "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/10404"
+                },
                 {
                   "id": "17197",
                   "title": "Re:ゼロから始める異世界生活 4th season 奪還編",
@@ -260752,6 +260857,13 @@
                   "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16537"
+                },
+                {
+                  "id": "12430",
+                  "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                  "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                  "season": "2025年秋",
+                  "url": "https://annict.com/works/12430"
                 },
                 {
                   "id": "13744",
@@ -262993,7 +263105,7 @@
               "icon": "fa-solid fa-door-open",
               "color": "#8b5cf6",
               "count": 74,
-              "percentage": 9.2,
+              "percentage": 9.1,
               "animes": [
                 {
                   "id": "13582",
@@ -265177,7 +265289,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 19,
-              "percentage": 2.4,
+              "percentage": 2.3,
               "animes": [
                 {
                   "id": "16339",
@@ -266425,9 +266537,16 @@
               "label": "SF / ファンタジー",
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
-              "count": 129,
-              "percentage": 16,
+              "count": 131,
+              "percentage": 16.2,
               "animes": [
+                {
+                  "id": "10404",
+                  "title": "メイドインアビス 目覚める神秘",
+                  "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                  "season": "2026年秋",
+                  "url": "https://annict.com/works/10404"
+                },
                 {
                   "id": "17197",
                   "title": "Re:ゼロから始める異世界生活 4th season 奪還編",
@@ -266553,6 +266672,13 @@
                   "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16537"
+                },
+                {
+                  "id": "12430",
+                  "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                  "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                  "season": "2025年秋",
+                  "url": "https://annict.com/works/12430"
                 },
                 {
                   "id": "13744",
@@ -324366,9 +324492,9 @@
           "labelEn": "Sci-Fi / Fantasy",
           "icon": "fa-solid fa-meteor",
           "color": "#6366f1",
-          "totalWorksAcrossUsers": 816,
+          "totalWorksAcrossUsers": 818,
           "userCounts": {
-            "saya15": 129,
+            "saya15": 131,
             "animemitaro": 170,
             "hanu": 79,
             "hitobi_syuto": 110,
@@ -324379,7 +324505,7 @@
             "pomeranian_dev": 9
           },
           "userPercentages": {
-            "saya15": 16,
+            "saya15": 16.2,
             "animemitaro": 15.1,
             "hanu": 13.7,
             "hitobi_syuto": 11.4,
@@ -324391,6 +324517,13 @@
           },
           "animesByUser": {
             "saya15": [
+              {
+                "id": "10404",
+                "title": "メイドインアビス 目覚める神秘",
+                "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+                "season": "2026年秋",
+                "url": "https://annict.com/works/10404"
+              },
               {
                 "id": "17197",
                 "title": "Re:ゼロから始める異世界生活 4th season 奪還編",
@@ -324516,6 +324649,13 @@
                 "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16537"
+              },
+              {
+                "id": "12430",
+                "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+                "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+                "season": "2025年秋",
+                "url": "https://annict.com/works/12430"
               },
               {
                 "id": "13744",
@@ -334749,7 +334889,7 @@
             "pomeranian_dev": 2
           },
           "userPercentages": {
-            "saya15": 9.2,
+            "saya15": 9.1,
             "animemitaro": 16.2,
             "hanu": 16.8,
             "hitobi_syuto": 10,
@@ -339213,7 +339353,7 @@
             "pomeranian_dev": 1
           },
           "userPercentages": {
-            "saya15": 2.4,
+            "saya15": 2.3,
             "animemitaro": 10.4,
             "hanu": 6.6,
             "hitobi_syuto": 10.7,
@@ -357607,9 +357747,9 @@
       ]
     },
     "genreDiffReport": {
-      "totalWorks": 2614,
-      "sameCount": 1523,
-      "diffCount": 1091,
+      "totalWorks": 2616,
+      "sameCount": 1524,
+      "diffCount": 1092,
       "diffPercentage": 42,
       "diffs": [
         {
@@ -377036,6 +377176,23 @@
           "topReasons": [
             "公式ジャンル: Romance (+130)",
             "タグ: Love Triangle (+41)"
+          ]
+        },
+        {
+          "id": "12430",
+          "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+          "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+          "season": "2025年秋",
+          "url": "https://annict.com/works/12430",
+          "watchedBy": [
+            "saya15"
+          ],
+          "legacyCategory": "history_military",
+          "scoredCategory": "sf_fantasy",
+          "score": 170,
+          "topReasons": [
+            "公式ジャンル: Sci-Fi (+90)",
+            "タグ: Space (+80)"
           ]
         },
         {
