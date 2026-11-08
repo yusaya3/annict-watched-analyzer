@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-11-07T22:28:04.866Z",
-  "count": 17399,
+  "generatedAt": "2026-11-08T22:37:51.779Z",
+  "count": 17402,
   "works": [
+    {
+      "id": "18369",
+      "title": "SPY×FAMILY 劇場版第2弾",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18369"
+    },
+    {
+      "id": "18368",
+      "title": "SPY×FAMILY Season 4",
+      "image": "https://image.annict.com/nBABHrPe061XqnOeh5ptY2hlgDJs_hG5Uqi-oQDIDbs/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16887/image/master-521b605aceff794c39ef872b40b47200.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18368"
+    },
+    {
+      "id": "18367",
+      "title": "原宿ヒメゴトハウス",
+      "image": "https://image.annict.com/zFcL-YeP5WZIXIUD9d6U73ys-doxGsOij-Z7u2Ta2vo/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16886/image/master-1a1b3fd3de41e6c216daf5072df4bff1.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18367"
+    },
     {
       "id": "18366",
       "title": "勇者パーティーにかわいい子がいたので、告白してみた。 第2期",

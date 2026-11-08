@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-11-07T22:28:12.025Z",
-  "count": 809,
+  "fetchedAt": "2026-11-08T22:37:57.793Z",
+  "count": 812,
   "animes": [
     {
       "id": "10404",
@@ -30,6 +30,13 @@
       "image": "https://image.annict.com/HRL2v_aBUq1_ncMccZy7cMu4PG89wlU7Oh5JTqqmoy8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13721/image/master-732a8b5a667c048bb3e3a7f7e8fa8949.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/16454"
+    },
+    {
+      "id": "12433",
+      "title": "ヤマトよ永遠に REBEL3199 第七章",
+      "image": "https://image.annict.com/uEBn6dgys8AXTFkfY-S4sORhldgvcBEQ9ihl-o5nqzI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8938/image/master-7243c2926c6c0808f0c2eca7d50e3cf9.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/12433"
     },
     {
       "id": "13582",
@@ -340,6 +347,13 @@
       "url": "https://annict.com/works/16129"
     },
     {
+      "id": "12432",
+      "title": "ヤマトよ永遠に REBEL3199 第六章 碧い迷宮",
+      "image": "https://image.annict.com/wFM1akswSarR0-GvVOByGC3_TVn9Cm7-Jkry4_fyVjQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8937/image/master-70480fcdb3760f490873c082b0d51e4c.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/12432"
+    },
+    {
       "id": "14068",
       "title": "葬送のフリーレン 第2期",
       "image": "https://image.annict.com/jwa0Go8DRf-3PBS1310d4e7FyqGC1YmBF91-2AyW9vc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10883/image/master-98786d89ec6444270ef90fd52604b178.jpg@webp",
@@ -485,6 +499,13 @@
       "image": "https://image.annict.com/BXgIYFGqyAWLVfJsalqdxP8AcYpPS47b2h2mucT3qS0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13074/image/master-56a1203894039972061bc49f5f127fff.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/16427"
+    },
+    {
+      "id": "12431",
+      "title": "ヤマトよ永遠に REBEL3199 第五章 白熱の銀河大戦",
+      "image": "https://image.annict.com/OQqydmsVyoZSoMb4h72VdEeNHA4bHd_11xzRP9kuLM4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8936/image/master-9a381d866106eeead1c85bbd04797d84.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/12431"
     },
     {
       "id": "16257",
