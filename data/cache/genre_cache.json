@@ -155836,5 +155836,134 @@
         "rank": 73
       }
     ]
+  },
+  "GROTESQQQUE -グロテスク-": {
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Sci-Fi",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Anthology",
+        "rank": 96
+      },
+      {
+        "name": "Found Family",
+        "rank": 80
+      },
+      {
+        "name": "Monster Girl",
+        "rank": 79
+      },
+      {
+        "name": "Video Games",
+        "rank": 79
+      },
+      {
+        "name": "Gyaru",
+        "rank": 79
+      },
+      {
+        "name": "Vampire",
+        "rank": 79
+      },
+      {
+        "name": "Aliens",
+        "rank": 79
+      },
+      {
+        "name": "Post-Apocalyptic",
+        "rank": 75
+      },
+      {
+        "name": "Yuri",
+        "rank": 67
+      },
+      {
+        "name": "Battle Royale",
+        "rank": 66
+      },
+      {
+        "name": "Survival",
+        "rank": 66
+      },
+      {
+        "name": "Virtual World",
+        "rank": 65
+      },
+      {
+        "name": "LGBTQ+ Themes",
+        "rank": 62
+      },
+      {
+        "name": "Motorcycles",
+        "rank": 60
+      },
+      {
+        "name": "Cohabitation",
+        "rank": 60
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 60
+      },
+      {
+        "name": "Cute Girls Doing Cute Things",
+        "rank": 53
+      },
+      {
+        "name": "Kemonomimi",
+        "rank": 46
+      }
+    ]
+  },
+  "乃木坂春香の秘密": {
+    "genres": [
+      "Comedy",
+      "Ecchi",
+      "Romance"
+    ],
+    "tags": [
+      {
+        "name": "Otaku Culture",
+        "rank": 84
+      },
+      {
+        "name": "School",
+        "rank": 79
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 79
+      },
+      {
+        "name": "Parody",
+        "rank": 79
+      },
+      {
+        "name": "Maids",
+        "rank": 53
+      },
+      {
+        "name": "Love Triangle",
+        "rank": 40
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 20
+      },
+      {
+        "name": "Ojou-sama",
+        "rank": 20
+      },
+      {
+        "name": "Kuudere",
+        "rank": 20
+      }
+    ]
   }
 }
