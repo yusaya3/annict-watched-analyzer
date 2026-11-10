@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T01:51:00.829Z",
+  "generatedAt": "2026-11-10T23:51:47.387Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -44,7 +44,7 @@
     },
     {
       "username": "tmist",
-      "count": 532,
+      "count": 533,
       "exclusiveCount": 113,
       "missingCount": 0
     },
@@ -26214,8 +26214,8 @@
         "user1": "saya15",
         "user2": "tmist",
         "intersection": 171,
-        "union": 1173,
-        "similarity": 0.14578005115089515,
+        "union": 1174,
+        "similarity": 0.14565587734241908,
         "percentage": 14.6
       },
       {
@@ -26286,8 +26286,8 @@
         "user1": "animemitaro",
         "user2": "tmist",
         "intersection": 325,
-        "union": 1336,
-        "similarity": 0.2432634730538922,
+        "union": 1337,
+        "similarity": 0.24308152580403888,
         "percentage": 24.3
       },
       {
@@ -26358,8 +26358,8 @@
         "user1": "hanu",
         "user2": "tmist",
         "intersection": 186,
-        "union": 924,
-        "similarity": 0.2012987012987013,
+        "union": 925,
+        "similarity": 0.20108108108108108,
         "percentage": 20.1
       },
       {
@@ -26430,9 +26430,9 @@
         "user1": "hitobi_syuto",
         "user2": "tmist",
         "intersection": 258,
-        "union": 1243,
-        "similarity": 0.2075623491552695,
-        "percentage": 20.8
+        "union": 1244,
+        "similarity": 0.20739549839228297,
+        "percentage": 20.7
       },
       {
         "user1": "hitobi_syuto",
@@ -26501,10 +26501,10 @@
       {
         "user1": "fs495",
         "user2": "tmist",
-        "intersection": 99,
+        "intersection": 100,
         "union": 1237,
-        "similarity": 0.08003233629749394,
-        "percentage": 8
+        "similarity": 0.08084074373484236,
+        "percentage": 8.1
       },
       {
         "user1": "fs495",
@@ -26534,72 +26534,72 @@
         "user1": "tmist",
         "user2": "saya15",
         "intersection": 171,
-        "union": 1173,
-        "similarity": 0.14578005115089515,
+        "union": 1174,
+        "similarity": 0.14565587734241908,
         "percentage": 14.6
       },
       {
         "user1": "tmist",
         "user2": "animemitaro",
         "intersection": 325,
-        "union": 1336,
-        "similarity": 0.2432634730538922,
+        "union": 1337,
+        "similarity": 0.24308152580403888,
         "percentage": 24.3
       },
       {
         "user1": "tmist",
         "user2": "hanu",
         "intersection": 186,
-        "union": 924,
-        "similarity": 0.2012987012987013,
+        "union": 925,
+        "similarity": 0.20108108108108108,
         "percentage": 20.1
       },
       {
         "user1": "tmist",
         "user2": "hitobi_syuto",
         "intersection": 258,
-        "union": 1243,
-        "similarity": 0.2075623491552695,
-        "percentage": 20.8
+        "union": 1244,
+        "similarity": 0.20739549839228297,
+        "percentage": 20.7
       },
       {
         "user1": "tmist",
         "user2": "fs495",
-        "intersection": 99,
+        "intersection": 100,
         "union": 1237,
-        "similarity": 0.08003233629749394,
-        "percentage": 8
+        "similarity": 0.08084074373484236,
+        "percentage": 8.1
       },
       {
         "user1": "tmist",
         "user2": "tmist",
-        "intersection": 532,
-        "union": 532,
+        "intersection": 533,
+        "union": 533,
         "similarity": 1,
         "percentage": 100
       },
       {
         "user1": "tmist",
         "user2": "shimbaco",
-        "intersection": 74,
+        "intersection": 75,
         "union": 1014,
-        "similarity": 0.07297830374753451,
-        "percentage": 7.3
+        "similarity": 0.07396449704142012,
+        "percentage": 7.4
       },
       {
         "user1": "tmist",
         "user2": "white_tiny_cat",
         "intersection": 11,
-        "union": 646,
-        "similarity": 0.017027863777089782,
+        "union": 647,
+        "similarity": 0.017001545595054096,
         "percentage": 1.7
       },
       {
         "user1": "tmist",
         "user2": "pomeranian_dev",
         "intersection": 12,
-        "union": 557,
-        "similarity": 0.02154398563734291,
+        "union": 558,
+        "similarity": 0.021505376344086023,
         "percentage": 2.2
       },
       {
@@ -26645,10 +26645,10 @@
       {
         "user1": "shimbaco",
         "user2": "tmist",
-        "intersection": 74,
+        "intersection": 75,
         "union": 1014,
-        "similarity": 0.07297830374753451,
-        "percentage": 7.3
+        "similarity": 0.07396449704142012,
+        "percentage": 7.4
       },
       {
         "user1": "shimbaco",
@@ -26718,8 +26718,8 @@
         "user1": "white_tiny_cat",
         "user2": "tmist",
         "intersection": 11,
-        "union": 646,
-        "similarity": 0.017027863777089782,
+        "union": 647,
+        "similarity": 0.017001545595054096,
         "percentage": 1.7
       },
       {
@@ -26790,8 +26790,8 @@
         "user1": "pomeranian_dev",
         "user2": "tmist",
         "intersection": 12,
-        "union": 557,
-        "similarity": 0.02154398563734291,
+        "union": 558,
+        "similarity": 0.021505376344086023,
         "percentage": 2.2
       },
       {
@@ -26856,8 +26856,8 @@
           "tmist"
         ],
         "intersection": 325,
-        "union": 1336,
-        "similarity": 0.2432634730538922,
+        "union": 1337,
+        "similarity": 0.24308152580403888,
         "percentage": 24.3
       },
       {
@@ -26886,9 +26886,9 @@
           "tmist"
         ],
         "intersection": 258,
-        "union": 1243,
-        "similarity": 0.2075623491552695,
-        "percentage": 20.8
+        "union": 1244,
+        "similarity": 0.20739549839228297,
+        "percentage": 20.7
       },
       {
         "pair": [
@@ -26906,8 +26906,8 @@
           "tmist"
         ],
         "intersection": 186,
-        "union": 924,
-        "similarity": 0.2012987012987013,
+        "union": 925,
+        "similarity": 0.20108108108108108,
         "percentage": 20.1
       },
       {
@@ -26966,8 +26966,8 @@
           "tmist"
         ],
         "intersection": 171,
-        "union": 1173,
-        "similarity": 0.14578005115089515,
+        "union": 1174,
+        "similarity": 0.14565587734241908,
         "percentage": 14.6
       },
       {
@@ -27005,20 +27005,20 @@
           "fs495",
           "tmist"
         ],
-        "intersection": 99,
+        "intersection": 100,
         "union": 1237,
-        "similarity": 0.08003233629749394,
-        "percentage": 8
+        "similarity": 0.08084074373484236,
+        "percentage": 8.1
       },
       {
         "pair": [
           "tmist",
           "shimbaco"
         ],
-        "intersection": 74,
+        "intersection": 75,
         "union": 1014,
-        "similarity": 0.07297830374753451,
-        "percentage": 7.3
+        "similarity": 0.07396449704142012,
+        "percentage": 7.4
       },
       {
         "pair": [
@@ -27096,8 +27096,8 @@
           "pomeranian_dev"
         ],
         "intersection": 12,
-        "union": 557,
-        "similarity": 0.02154398563734291,
+        "union": 558,
+        "similarity": 0.021505376344086023,
         "percentage": 2.2
       },
       {
@@ -27136,8 +27136,8 @@
           "white_tiny_cat"
         ],
         "intersection": 11,
-        "union": 646,
-        "similarity": 0.017027863777089782,
+        "union": 647,
+        "similarity": 0.017001545595054096,
         "percentage": 1.7
       },
       {
@@ -33056,18 +33056,18 @@
           "url": "https://annict.com/works/13052"
         },
         {
-          "id": "17514",
-          "title": "THE RIBBON HERO リボンヒーロー",
-          "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
-          "season": "2026年夏",
-          "url": "https://annict.com/works/17514"
-        },
-        {
           "id": "17379",
           "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
           "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
           "season": "2026年夏",
           "url": "https://annict.com/works/17379"
+        },
+        {
+          "id": "17514",
+          "title": "THE RIBBON HERO リボンヒーロー",
+          "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
+          "season": "2026年夏",
+          "url": "https://annict.com/works/17514"
         },
         {
           "id": "16475",
@@ -33204,7 +33204,7 @@
         },
         {
           "id": "16679",
-          "title": "ザ・レンチキュラーズ",
+          "title": "ザ・レンチキュラーズ a/",
           "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
           "season": "2025年秋",
           "url": "https://annict.com/works/16679"
@@ -65786,18 +65786,18 @@
         "url": "https://annict.com/works/16632"
       },
       {
-        "id": "17514",
-        "title": "THE RIBBON HERO リボンヒーロー",
-        "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
-        "season": "2026年夏",
-        "url": "https://annict.com/works/17514"
-      },
-      {
         "id": "17379",
         "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
         "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
         "season": "2026年夏",
         "url": "https://annict.com/works/17379"
+      },
+      {
+        "id": "17514",
+        "title": "THE RIBBON HERO リボンヒーロー",
+        "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
+        "season": "2026年夏",
+        "url": "https://annict.com/works/17514"
       },
       {
         "id": "6528",
@@ -66375,7 +66375,7 @@
       },
       {
         "id": "16679",
-        "title": "ザ・レンチキュラーズ",
+        "title": "ザ・レンチキュラーズ a/",
         "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
         "season": "2025年秋",
         "url": "https://annict.com/works/16679"
@@ -66395,18 +66395,18 @@
         "url": "https://annict.com/works/10087"
       },
       {
-        "id": "14965",
-        "title": "ダンダダン 第2期",
-        "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/14965"
-      },
-      {
         "id": "14001",
         "title": "薫る花は凛と咲く",
         "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/14001"
+      },
+      {
+        "id": "14965",
+        "title": "ダンダダン 第2期",
+        "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/14965"
       },
       {
         "id": "13744",
@@ -66460,7 +66460,7 @@
       {
         "id": "14040",
         "title": "CITY THE ANIMATION",
-        "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+        "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/14040"
       },
@@ -66591,18 +66591,18 @@
         "url": "https://annict.com/works/14296"
       },
       {
-        "id": "15115",
-        "title": "不思議の国でアリスと -Dive in Wonderland-",
-        "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/15115"
-      },
-      {
         "id": "15395",
         "title": "人妻の唇は缶チューハイの味がして",
         "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/15395"
+      },
+      {
+        "id": "15115",
+        "title": "不思議の国でアリスと -Dive in Wonderland-",
+        "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/15115"
       },
       {
         "id": "15116",
@@ -69347,6 +69347,13 @@
         "image": "https://image.annict.com/GP50tD97p5Y9SkBLUNQ8Wiubd868jP6NT5S_ooGb4Jo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/86/image/master-dc3b61625394f85812fcc7557bd19f27.jpg@webp",
         "season": "1995年秋",
         "url": "https://annict.com/works/3298"
+      },
+      {
+        "id": "3707",
+        "title": "耳をすませば",
+        "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+        "season": "1995年夏",
+        "url": "https://annict.com/works/3707"
       },
       {
         "id": "237",
@@ -74463,14 +74470,14 @@
       },
       "tmist": {
         "username": "tmist",
-        "workCount": 532,
-        "totalHours": 2567.4,
-        "totalDays": 107,
-        "wakingDays": 160.5,
+        "workCount": 533,
+        "totalHours": 2572.2,
+        "totalDays": 107.2,
+        "wakingDays": 160.8,
         "lifePercentage": 4.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 507,
+          "tvCount": 508,
           "movieCount": 22,
           "ovaCount": 3
         }
@@ -78828,18 +78835,18 @@
                 "url": "https://annict.com/works/16632"
               },
               {
-                "id": "17514",
-                "title": "THE RIBBON HERO リボンヒーロー",
-                "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/17514"
-              },
-              {
                 "id": "17379",
                 "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
                 "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17379"
+              },
+              {
+                "id": "17514",
+                "title": "THE RIBBON HERO リボンヒーロー",
+                "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17514"
               },
               {
                 "id": "6528",
@@ -84000,7 +84007,7 @@
               },
               {
                 "id": "16679",
-                "title": "ザ・レンチキュラーズ",
+                "title": "ザ・レンチキュラーズ a/",
                 "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16679"
@@ -84020,18 +84027,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14965",
-                "title": "ダンダダン 第2期",
-                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14965"
-              },
-              {
                 "id": "14001",
                 "title": "薫る花は凛と咲く",
                 "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14001"
+              },
+              {
+                "id": "14965",
+                "title": "ダンダダン 第2期",
+                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14965"
               },
               {
                 "id": "13744",
@@ -84085,7 +84092,7 @@
               {
                 "id": "14040",
                 "title": "CITY THE ANIMATION",
-                "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14040"
               },
@@ -84216,18 +84223,18 @@
                 "url": "https://annict.com/works/14296"
               },
               {
-                "id": "15115",
-                "title": "不思議の国でアリスと -Dive in Wonderland-",
-                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15115"
-              },
-              {
                 "id": "15395",
                 "title": "人妻の唇は缶チューハイの味がして",
                 "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15395"
+              },
+              {
+                "id": "15115",
+                "title": "不思議の国でアリスと -Dive in Wonderland-",
+                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15115"
               },
               {
                 "id": "15116",
@@ -114003,14 +114010,14 @@
         },
         {
           "year": 1995,
-          "totalCount": 10,
+          "totalCount": 11,
           "countsByUser": {
             "saya15": 1,
             "animemitaro": 0,
             "hanu": 0,
             "hitobi_syuto": 0,
             "fs495": 5,
-            "tmist": 1,
+            "tmist": 2,
             "shimbaco": 2,
             "white_tiny_cat": 0,
             "pomeranian_dev": 1
@@ -114072,6 +114079,13 @@
                 "image": "https://image.annict.com/GP50tD97p5Y9SkBLUNQ8Wiubd868jP6NT5S_ooGb4Jo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/86/image/master-dc3b61625394f85812fcc7557bd19f27.jpg@webp",
                 "season": "1995年秋",
                 "url": "https://annict.com/works/3298"
+              },
+              {
+                "id": "3707",
+                "title": "耳をすませば",
+                "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                "season": "1995年夏",
+                "url": "https://annict.com/works/3707"
               }
             ],
             "shimbaco": [
@@ -145417,7 +145431,7 @@
           "maxYearCount": 108,
           "yearCounts": {
             "1993": 1,
-            "1995": 1,
+            "1995": 2,
             "2000": 1,
             "2001": 1,
             "2004": 1,
@@ -145461,6 +145475,13 @@
                 "image": "https://image.annict.com/GP50tD97p5Y9SkBLUNQ8Wiubd868jP6NT5S_ooGb4Jo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/86/image/master-dc3b61625394f85812fcc7557bd19f27.jpg@webp",
                 "season": "1995年秋",
                 "url": "https://annict.com/works/3298"
+              },
+              {
+                "id": "3707",
+                "title": "耳をすませば",
+                "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                "season": "1995年夏",
+                "url": "https://annict.com/works/3707"
               }
             ],
             "2000": [
@@ -148116,7 +148137,7 @@
               },
               {
                 "id": "16679",
-                "title": "ザ・レンチキュラーズ",
+                "title": "ザ・レンチキュラーズ a/",
                 "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16679"
@@ -148136,18 +148157,18 @@
                 "url": "https://annict.com/works/10087"
               },
               {
-                "id": "14965",
-                "title": "ダンダダン 第2期",
-                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/14965"
-              },
-              {
                 "id": "14001",
                 "title": "薫る花は凛と咲く",
                 "image": "https://image.annict.com/hZxbyYI-EUoJBxQq5js7N8E-Vt8R6kJiUS_HbrQeQ5k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10834/image/master-f401325fbcef1d52e10c6196966c39ac.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14001"
+              },
+              {
+                "id": "14965",
+                "title": "ダンダダン 第2期",
+                "image": "https://image.annict.com/kVdZtteKIvgrooSWdSKkGb2jdqqHX1WMC7mX4bcg0Xc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11605/image/master-8806c321d875c26bb9f06edc8915360b.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/14965"
               },
               {
                 "id": "13744",
@@ -148201,7 +148222,7 @@
               {
                 "id": "14040",
                 "title": "CITY THE ANIMATION",
-                "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14040"
               },
@@ -148332,18 +148353,18 @@
                 "url": "https://annict.com/works/14296"
               },
               {
-                "id": "15115",
-                "title": "不思議の国でアリスと -Dive in Wonderland-",
-                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15115"
-              },
-              {
                 "id": "15395",
                 "title": "人妻の唇は缶チューハイの味がして",
                 "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15395"
+              },
+              {
+                "id": "15115",
+                "title": "不思議の国でアリスと -Dive in Wonderland-",
+                "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15115"
               },
               {
                 "id": "15116",
@@ -148831,18 +148852,18 @@
                 "url": "https://annict.com/works/16632"
               },
               {
-                "id": "17514",
-                "title": "THE RIBBON HERO リボンヒーロー",
-                "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
-                "season": "2026年夏",
-                "url": "https://annict.com/works/17514"
-              },
-              {
                 "id": "17379",
                 "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
                 "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
                 "season": "2026年夏",
                 "url": "https://annict.com/works/17379"
+              },
+              {
+                "id": "17514",
+                "title": "THE RIBBON HERO リボンヒーロー",
+                "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
+                "season": "2026年夏",
+                "url": "https://annict.com/works/17514"
               },
               {
                 "id": "6528",
@@ -149225,7 +149246,7 @@
             ]
           },
           "bucketCounts": {
-            "pre_2005": 6,
+            "pre_2005": 7,
             "2006_2010": 10,
             "2011_2015": 45,
             "2016_2020": 79,
@@ -154744,7 +154765,7 @@
           ],
           "year": 2025,
           "commonInYearCount": 20,
-          "totalCommon": 99
+          "totalCommon": 100
         },
         {
           "pair": [
@@ -154780,7 +154801,7 @@
           ],
           "year": 2018,
           "commonInYearCount": 12,
-          "totalCommon": 74
+          "totalCommon": 75
         },
         {
           "pair": [
@@ -207209,7 +207230,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 532,
+          "totalWatched": 533,
           "genres": [
             {
               "id": "nichijou",
@@ -207217,7 +207238,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 93,
-              "percentage": 17.5,
+              "percentage": 17.4,
               "animes": [
                 {
                   "id": "16391",
@@ -207877,8 +207898,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 66,
-              "percentage": 12.4,
+              "count": 67,
+              "percentage": 12.6,
               "animes": [
                 {
                   "id": "17108",
@@ -207987,7 +208008,7 @@
                 },
                 {
                   "id": "16679",
-                  "title": "ザ・レンチキュラーズ",
+                  "title": "ザ・レンチキュラーズ a/",
                   "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16679"
@@ -208334,6 +208355,13 @@
                   "image": "https://image.annict.com/ArQyOYimABxln29gc1_4lQUXY-dEh54yWVtd9BAt1vg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/319/image/master-23bcc1245d72d109e0f4c41a95cb424a.jpg@webp",
                   "season": "2007年春",
                   "url": "https://annict.com/works/3618"
+                },
+                {
+                  "id": "3707",
+                  "title": "耳をすませば",
+                  "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                  "season": "1995年夏",
+                  "url": "https://annict.com/works/3707"
                 },
                 {
                   "id": "237",
@@ -208822,7 +208850,7 @@
               "icon": "fa-solid fa-meteor",
               "color": "#6366f1",
               "count": 54,
-              "percentage": 10.2,
+              "percentage": 10.1,
               "animes": [
                 {
                   "id": "13052",
@@ -210162,7 +210190,7 @@
                 {
                   "id": "14040",
                   "title": "CITY THE ANIMATION",
-                  "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                  "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                   "season": "2025年夏",
                   "url": "https://annict.com/works/14040"
                 },
@@ -211093,7 +211121,7 @@
               "icon": "fa-solid fa-mug-saucer",
               "color": "#10b981",
               "count": 93,
-              "percentage": 17.5,
+              "percentage": 17.4,
               "animes": [
                 {
                   "id": "16391",
@@ -211753,8 +211781,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 66,
-              "percentage": 12.4,
+              "count": 67,
+              "percentage": 12.6,
               "animes": [
                 {
                   "id": "17108",
@@ -211863,7 +211891,7 @@
                 },
                 {
                   "id": "16679",
-                  "title": "ザ・レンチキュラーズ",
+                  "title": "ザ・レンチキュラーズ a/",
                   "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16679"
@@ -212210,6 +212238,13 @@
                   "image": "https://image.annict.com/ArQyOYimABxln29gc1_4lQUXY-dEh54yWVtd9BAt1vg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/319/image/master-23bcc1245d72d109e0f4c41a95cb424a.jpg@webp",
                   "season": "2007年春",
                   "url": "https://annict.com/works/3618"
+                },
+                {
+                  "id": "3707",
+                  "title": "耳をすませば",
+                  "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                  "season": "1995年夏",
+                  "url": "https://annict.com/works/3707"
                 },
                 {
                   "id": "237",
@@ -226897,14 +226932,14 @@
           "labelEn": "Romance / Rom-Com",
           "icon": "fa-solid fa-heart",
           "color": "#ec4899",
-          "totalWorksAcrossUsers": 709,
+          "totalWorksAcrossUsers": 710,
           "userCounts": {
             "saya15": 95,
             "animemitaro": 145,
             "hanu": 58,
             "hitobi_syuto": 168,
             "fs495": 91,
-            "tmist": 66,
+            "tmist": 67,
             "shimbaco": 71,
             "white_tiny_cat": 10,
             "pomeranian_dev": 5
@@ -226915,7 +226950,7 @@
             "hanu": 10,
             "hitobi_syuto": 17.3,
             "fs495": 11.3,
-            "tmist": 12.4,
+            "tmist": 12.6,
             "shimbaco": 12.8,
             "white_tiny_cat": 8,
             "pomeranian_dev": 13.5
@@ -230938,7 +230973,7 @@
               },
               {
                 "id": "16679",
-                "title": "ザ・レンチキュラーズ",
+                "title": "ザ・レンチキュラーズ a/",
                 "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16679"
@@ -231285,6 +231320,13 @@
                 "image": "https://image.annict.com/ArQyOYimABxln29gc1_4lQUXY-dEh54yWVtd9BAt1vg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/319/image/master-23bcc1245d72d109e0f4c41a95cb424a.jpg@webp",
                 "season": "2007年春",
                 "url": "https://annict.com/works/3618"
+              },
+              {
+                "id": "3707",
+                "title": "耳をすませば",
+                "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                "season": "1995年夏",
+                "url": "https://annict.com/works/3707"
               },
               {
                 "id": "237",
@@ -231932,7 +231974,7 @@
             "hanu": 10.7,
             "hitobi_syuto": 12.6,
             "fs495": 8.5,
-            "tmist": 17.5,
+            "tmist": 17.4,
             "shimbaco": 16.7,
             "white_tiny_cat": 4,
             "pomeranian_dev": 10.8
@@ -239544,7 +239586,7 @@
             "hanu": 8,
             "hitobi_syuto": 6.3,
             "fs495": 10.3,
-            "tmist": 10.2,
+            "tmist": 10.1,
             "shimbaco": 7.2,
             "white_tiny_cat": 13.6,
             "pomeranian_dev": 10.8
@@ -251276,7 +251318,7 @@
               {
                 "id": "14040",
                 "title": "CITY THE ANIMATION",
-                "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14040"
               },
@@ -305260,7 +305302,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 532,
+          "totalWatched": 533,
           "genres": [
             {
               "id": "drama",
@@ -306393,8 +306435,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 76,
-              "percentage": 14.3,
+              "count": 77,
+              "percentage": 14.4,
               "animes": [
                 {
                   "id": "17108",
@@ -306545,7 +306587,7 @@
                 },
                 {
                   "id": "16679",
-                  "title": "ザ・レンチキュラーズ",
+                  "title": "ザ・レンチキュラーズ a/",
                   "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16679"
@@ -306920,6 +306962,13 @@
                   "image": "https://image.annict.com/1eF2CEjkGlyfCQp6YdF7_MCnLSZgtxzkUP5qgY7umbU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/610/image/master-7d0fd10fa1ac45cc2a229dde271ad738.jpg@webp",
                   "season": "2008年冬",
                   "url": "https://annict.com/works/1418"
+                },
+                {
+                  "id": "3707",
+                  "title": "耳をすませば",
+                  "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                  "season": "1995年夏",
+                  "url": "https://annict.com/works/3707"
                 },
                 {
                   "id": "237",
@@ -308282,7 +308331,7 @@
               "icon": "fa-solid fa-skull",
               "color": "#475569",
               "count": 29,
-              "percentage": 5.5,
+              "percentage": 5.4,
               "animes": [
                 {
                   "id": "16822",
@@ -308521,7 +308570,7 @@
                 {
                   "id": "14040",
                   "title": "CITY THE ANIMATION",
-                  "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                  "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                   "season": "2025年夏",
                   "url": "https://annict.com/works/14040"
                 },
@@ -310269,8 +310318,8 @@
               "label": "恋愛 / ラブコメ",
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
-              "count": 76,
-              "percentage": 14.3,
+              "count": 77,
+              "percentage": 14.4,
               "animes": [
                 {
                   "id": "17108",
@@ -310421,7 +310470,7 @@
                 },
                 {
                   "id": "16679",
-                  "title": "ザ・レンチキュラーズ",
+                  "title": "ザ・レンチキュラーズ a/",
                   "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                   "season": "2025年秋",
                   "url": "https://annict.com/works/16679"
@@ -310796,6 +310845,13 @@
                   "image": "https://image.annict.com/1eF2CEjkGlyfCQp6YdF7_MCnLSZgtxzkUP5qgY7umbU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/610/image/master-7d0fd10fa1ac45cc2a229dde271ad738.jpg@webp",
                   "season": "2008年冬",
                   "url": "https://annict.com/works/1418"
+                },
+                {
+                  "id": "3707",
+                  "title": "耳をすませば",
+                  "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                  "season": "1995年夏",
+                  "url": "https://annict.com/works/3707"
                 },
                 {
                   "id": "237",
@@ -318551,14 +318607,14 @@
           "labelEn": "Romance / Rom-Com",
           "icon": "fa-solid fa-heart",
           "color": "#ec4899",
-          "totalWorksAcrossUsers": 893,
+          "totalWorksAcrossUsers": 894,
           "userCounts": {
             "saya15": 126,
             "animemitaro": 201,
             "hanu": 82,
             "hitobi_syuto": 214,
             "fs495": 109,
-            "tmist": 76,
+            "tmist": 77,
             "shimbaco": 71,
             "white_tiny_cat": 11,
             "pomeranian_dev": 3
@@ -318569,7 +318625,7 @@
             "hanu": 14.2,
             "hitobi_syuto": 22.1,
             "fs495": 13.6,
-            "tmist": 14.3,
+            "tmist": 14.4,
             "shimbaco": 12.8,
             "white_tiny_cat": 8.8,
             "pomeranian_dev": 8.1
@@ -323859,7 +323915,7 @@
               },
               {
                 "id": "16679",
-                "title": "ザ・レンチキュラーズ",
+                "title": "ザ・レンチキュラーズ a/",
                 "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
                 "season": "2025年秋",
                 "url": "https://annict.com/works/16679"
@@ -324234,6 +324290,13 @@
                 "image": "https://image.annict.com/1eF2CEjkGlyfCQp6YdF7_MCnLSZgtxzkUP5qgY7umbU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/610/image/master-7d0fd10fa1ac45cc2a229dde271ad738.jpg@webp",
                 "season": "2008年冬",
                 "url": "https://annict.com/works/1418"
+              },
+              {
+                "id": "3707",
+                "title": "耳をすませば",
+                "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+                "season": "1995年夏",
+                "url": "https://annict.com/works/3707"
               },
               {
                 "id": "237",
@@ -348397,7 +348460,7 @@
               {
                 "id": "14040",
                 "title": "CITY THE ANIMATION",
-                "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+                "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/14040"
               },
@@ -349026,7 +349089,7 @@
             "hanu": 8,
             "hitobi_syuto": 3.4,
             "fs495": 5.1,
-            "tmist": 5.5,
+            "tmist": 5.4,
             "shimbaco": 7.6,
             "white_tiny_cat": 6.4,
             "pomeranian_dev": 10.8

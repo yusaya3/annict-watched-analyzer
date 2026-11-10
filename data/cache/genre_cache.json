@@ -155965,5 +155965,46 @@
         "rank": 20
       }
     ]
+  },
+  "ザ・レンチキュラーズ a/": {
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "School",
+        "rank": 79
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 79
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Mixed Media",
+        "rank": 79
+      },
+      {
+        "name": "Urban",
+        "rank": 79
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 60
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 60
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 60
+      }
+    ]
   }
 }

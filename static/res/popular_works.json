@@ -1,7 +1,35 @@
 {
-  "generatedAt": "2026-11-08T22:37:51.779Z",
-  "count": 17402,
+  "generatedAt": "2026-11-10T23:51:30.239Z",
+  "count": 17406,
   "works": [
+    {
+      "id": "18373",
+      "title": "れでぃ×ばとる！",
+      "image": "https://image.annict.com/R4fmvI2LNqgOYE8eCp4gLcLGPCIg6_Ald-9Vr3TZRbk/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16890/image/master-eefc93453489ea71d98e1f27bad2692b.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18373"
+    },
+    {
+      "id": "18372",
+      "title": "ダビデ　王になった少年",
+      "image": "https://image.annict.com/i0e4hj3EHTsh0T5TRoovD6zXFHKcEEd_EAlE-U7dKNg/s:328:437/plain/s3://annict-user-contents/no-image.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18372"
+    },
+    {
+      "id": "18371",
+      "title": "オロチ -Seventh Echoes-",
+      "image": "https://image.annict.com/dv4PMJu4VtuLxNg0psBwswVtfsHgGOcdQ1l8Zros3SM/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16889/image/master-59b9a5311fc915e502c6b9bab14c73a4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18371"
+    },
+    {
+      "id": "18370",
+      "title": "俺の死亡フラグが留まるところを知らない",
+      "image": "https://image.annict.com/O_WHTJM4gsVxc7TlsV4QntLcgFgcpliCjbwtxNIaJcw/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16888/image/master-0e563e41106ae0109d0de33ad10d2304.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18370"
+    },
     {
       "id": "18369",
       "title": "SPY×FAMILY 劇場版第2弾",
