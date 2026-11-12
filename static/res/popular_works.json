@@ -1,7 +1,35 @@
 {
-  "generatedAt": "2026-11-12T01:15:31.632Z",
-  "count": 17409,
+  "generatedAt": "2026-11-12T23:56:47.428Z",
+  "count": 17413,
   "works": [
+    {
+      "id": "18380",
+      "title": "レイ・ガン",
+      "image": "https://image.annict.com/l5XRwM7bFyxrfPfzzEsaKLfpjxKwzpYUeIXthwLOyjU/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16897/image/master-c2d8dde70a598e4fb27d7d55a65499c4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18380"
+    },
+    {
+      "id": "18379",
+      "title": "ファースト・ライト",
+      "image": "https://image.annict.com/jYeRhIVj_-ahAHGUP-iDQvDNkGrl1-n5fSXNuTz6r6E/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16896/image/master-6b6627be07563e53e10e508b88634963.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18379"
+    },
+    {
+      "id": "18378",
+      "title": "ザ・スカルキング",
+      "image": "https://image.annict.com/SFJsiSzUIMpY2kLNTeWdiy0uEl087-RMh2m95n9aeU4/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16895/image/master-1f09674430b8ff7ed05808670ebf2a65.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18378"
+    },
+    {
+      "id": "18377",
+      "title": "ゾンビダム　エンドレス・ラブ",
+      "image": "https://image.annict.com/eOHbKCPOy-8r0GiZDdgHAlvqIDWQfOcIzBy85xuOS7s/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16894/image/master-f8f74a94e5a17ad865f6f1029e26f9d7.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18377"
+    },
     {
       "id": "18376",
       "title": "ビッグ・トリップ",
