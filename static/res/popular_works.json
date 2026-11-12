@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-11-10T23:51:30.239Z",
-  "count": 17406,
+  "generatedAt": "2026-11-12T01:15:31.632Z",
+  "count": 17409,
   "works": [
+    {
+      "id": "18376",
+      "title": "ビッグ・トリップ",
+      "image": "https://image.annict.com/aaSzpSdXy5U6eSausbNqB_8glkNzSJ7lNCuybAaAe6A/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16893/image/master-584c8984ee57455d54c79258c771d203.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18376"
+    },
+    {
+      "id": "18375",
+      "title": "氷の国のスイフティ 北極危機一髪!",
+      "image": "https://image.annict.com/fHLtH3AdzOCf3qUhev1L7KuMTIP-ThuyJNDmfarqseM/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16892/image/master-208610e4ef598b0c469b4d42c839f158.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18375"
+    },
+    {
+      "id": "18374",
+      "title": "七つ屋 志のぶの宝石匣",
+      "image": "https://image.annict.com/9_6wnUK3ldmPFpF2GUVPj9fHFnzd4298Xn-HO_8INng/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16891/image/master-0cca791c3953c1b7ef60dfac219872f4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18374"
+    },
     {
       "id": "18373",
       "title": "れでぃ×ばとる！",
