@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-11-08T22:37:57.793Z",
-  "count": 812,
+  "fetchedAt": "2026-11-14T00:06:42.546Z",
+  "count": 813,
   "animes": [
     {
       "id": "10404",
@@ -795,18 +795,18 @@
       "url": "https://annict.com/works/14300"
     },
     {
-      "id": "11028",
-      "title": "男女の友情は成立する？（いや、しないっ!!）",
-      "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/11028"
-    },
-    {
       "id": "12588",
       "title": "紫雲寺家の子供たち",
       "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/12588"
+    },
+    {
+      "id": "11028",
+      "title": "男女の友情は成立する？（いや、しないっ!!）",
+      "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/11028"
     },
     {
       "id": "13891",
@@ -1598,6 +1598,13 @@
       "image": "https://image.annict.com/OWtz2ZsULvcfCyipP_1OEUuoqSdObIfE1IJOPbU2F8A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7135/image/master-b637547ec0bb4688d4a859d9a352489a.jpg@webp",
       "season": "2023年夏",
       "url": "https://annict.com/works/10604"
+    },
+    {
+      "id": "9723",
+      "title": "幻日のヨハネ -SUNSHINE in the MIRROR-",
+      "image": "https://image.annict.com/9Gw7CVpCPRMgEpUF6jsLOKs2uihr1AcWTCvtwJAfCAQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6642/image/master-1fbe28f7af912872970914bf1c6e346f.jpg@webp",
+      "season": "2023年夏",
+      "url": "https://annict.com/works/9723"
     },
     {
       "id": "9696",
@@ -4652,18 +4659,18 @@
       "url": "https://annict.com/works/1965"
     },
     {
-      "id": "6090",
-      "title": "劇場版 HUNTER×HUNTER -The LAST MISSION-",
-      "image": "https://image.annict.com/ucSaqKVkLKU6NT45XB4gxogMAU9V2Lvay1jHus2lqYY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2860/image/master-b56a34d81a9fb5076b15e4e6f65c2ab1.jpg@webp",
-      "season": "2013年秋",
-      "url": "https://annict.com/works/6090"
-    },
-    {
       "id": "9239",
       "title": "進撃の巨人 OAD シリーズ",
       "image": "https://image.annict.com/_FbGfQX5r9_wOAYuZSe1P_KSxWadgs4ctb3ghWf7q8A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6185/image/master-7e014420f59c7e7980d6f1cc861dabcd.jpg@webp",
       "season": "2013年秋",
       "url": "https://annict.com/works/9239"
+    },
+    {
+      "id": "6090",
+      "title": "劇場版 HUNTER×HUNTER -The LAST MISSION-",
+      "image": "https://image.annict.com/ucSaqKVkLKU6NT45XB4gxogMAU9V2Lvay1jHus2lqYY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2860/image/master-b56a34d81a9fb5076b15e4e6f65c2ab1.jpg@webp",
+      "season": "2013年秋",
+      "url": "https://annict.com/works/6090"
     },
     {
       "id": "4020",
