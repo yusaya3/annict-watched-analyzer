@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-11-14T22:50:42.969Z",
-  "count": 17417,
+  "generatedAt": "2026-11-15T23:18:04.952Z",
+  "count": 17420,
   "works": [
+    {
+      "id": "18387",
+      "title": "映画 おでかけ子ザメ 水のまちの思い出",
+      "image": "https://image.annict.com/efovKjRFNJ2GnKh6Q5YCKJd-ZMzLrVgpQoh1DhwGwMs/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16904/image/master-08e88f147a7c2ad3188250102f268b5a.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18387"
+    },
+    {
+      "id": "18386",
+      "title": "Iron Boy",
+      "image": "https://image.annict.com/me0mbkDymDk-RSEY_4Ut1tr1t1CFWm9r0Q_sDN5mtRo/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16903/image/master-2e5ff5bcde65fce37420a6b41ead4088.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18386"
+    },
+    {
+      "id": "18385",
+      "title": "カーセブンでゆる△査定 「カーセブンの”セブン”ってなに？」",
+      "image": "https://image.annict.com/6bTEHThZNVmKpOHVr76Ni4_dQzq7LTmfV6y7ieRhOWU/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16902/image/master-b3e447a6ca6ecbfcb8cb291ecad5e1f7.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18385"
+    },
     {
       "id": "18384",
       "title": "Pupa",
