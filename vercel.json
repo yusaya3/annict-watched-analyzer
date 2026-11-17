@@ -4,7 +4,7 @@
     "api/index.js": {
       "maxDuration": 60,
       "memory": 1024,
-      "includeFiles": "data/**,config/**,static/**"
+      "includeFiles": "data/cache/**,config/**,static/res/bootstrap.json,static/res/work-genres.json,static/res/popular/**"
     }
   },
   "rewrites": [

@@ -3,16 +3,20 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const AnnictClient = require('../lib/annict-client.js');
+const { writePopularSplitAssets, getShardIndex } = require('../scripts/build-popular-split.js');
 
 const isVercel = !!process.env.VERCEL;
 const RES_DIR = isVercel ? '/tmp/res' : path.resolve(__dirname, '../static/res');
 const BUNDLED_RES_DIR = path.resolve(__dirname, '../static/res');
-const POPULAR_WORKS_FILE = path.join(RES_DIR, 'popular_works.json');
-const BUNDLED_POPULAR_WORKS_FILE = path.join(BUNDLED_RES_DIR, 'popular_works.json');
+const POPULAR_DIR = path.join(RES_DIR, 'popular');
+const BUNDLED_POPULAR_DIR = path.join(BUNDLED_RES_DIR, 'popular');
+const IMG_PREFIX = 'https://image.annict.com/';
 
 async function fetchHtml(url) {
   try {
     const res = await fetch(url, {
+      signal: AbortSignal.timeout(12000),
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
       }
@@ -24,64 +28,43 @@ async function fetchHtml(url) {
   }
 }
 
-function parseCards($, seenIds) {
-  const works = [];
-  $('.c-work-card').each((_, el) => {
-    const $card = $(el);
-    const $titleLink = $card.find('.c-work-card__work-title a, a[title]');
-    const title = $card.find('.c-work-card__work-title').text().trim() || $titleLink.attr('title') || '';
-    const href = $card.find('a[href^="/works/"]').attr('href') || '';
-    const idMatch = href.match(/\/works\/(\d+)/);
-    if (!idMatch) return;
-    const id = idMatch[1];
-    if (seenIds && seenIds.has(String(id))) return;
-
-    let image = '';
-    $card.find('source').each((_, s) => {
-      const srcset = $(s).attr('srcset') || '';
-      const match2x = srcset.match(/([^\s,]+)\s+2x/);
-      if (match2x && !image) image = match2x[1];
-    });
-    if (!image) {
-      $card.find('source').each((_, s) => {
-        const srcset = $(s).attr('srcset') || '';
-        const match = srcset.split(',')[0].trim().split(' ')[0];
-        if (match && !image) image = match;
+function loadExistingWorks() {
+  const targetPopularDir = fs.existsSync(path.join(POPULAR_DIR, 'index.json')) ? POPULAR_DIR : BUNDLED_POPULAR_DIR;
+  const indexFile = path.join(targetPopularDir, 'index.json');
+  if (fs.existsSync(indexFile)) {
+    try {
+      const idxData = JSON.parse(fs.readFileSync(indexFile, 'utf8'));
+      const imgMaps = Array.from({ length: 16 }, (_, i) => {
+        const f = path.join(targetPopularDir, `imgs_${String(i).padStart(2, '0')}.json`);
+        if (fs.existsSync(f)) {
+          try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch (e) {}
+        }
+        return {};
       });
-    }
-    if (!image) {
-      image = $card.find('img').attr('src') || '';
-    }
-    if (image && image.includes('color-white-')) {
-      image = '';
-    }
-
-    works.push({
-      id,
-      title,
-      image,
-      season: '',
-      url: `https://annict.com/works/${id}`
-    });
-  });
-  return works;
+      return (idxData.items || []).map(([id, title, season]) => {
+        const shard = imgMaps[getShardIndex(id)];
+        const rawImg = shard ? (shard[id] || '') : '';
+        const image = rawImg && !rawImg.startsWith('http') ? `${IMG_PREFIX}${rawImg}` : rawImg;
+        return {
+          id: String(id),
+          title: title || '',
+          season: season || '',
+          image,
+          url: `https://annict.com/works/${id}`
+        };
+      });
+    } catch (e) {}
+  }
+  return [];
 }
 
 /**
  * Annictの新規登録アニメ (/works/newest) をチェックし、
- * 既存マスターに含まれていない作品があれば自動取得して popular_works.json に追記保存する。
+ * 人気順リストのランキング秩序を壊さないよう末尾へ追記して分割インデックスを更新する
  */
 async function syncNewestWorks(maxCheckPages = 5) {
-  // 1. 既存の popular_works.json を読み込み
-  let targetFile = fs.existsSync(POPULAR_WORKS_FILE) ? POPULAR_WORKS_FILE : BUNDLED_POPULAR_WORKS_FILE;
-  let masterData = { count: 0, works: [] };
-  if (fs.existsSync(targetFile)) {
-    try {
-      masterData = JSON.parse(fs.readFileSync(targetFile, 'utf8'));
-    } catch (e) {}
-  }
-
-  const existingIdSet = new Set((masterData.works || []).map(w => String(w.id)));
+  const existingWorks = loadExistingWorks();
+  const existingIdSet = new Set(existingWorks.map(w => String(w.id)));
   console.log(`[SyncWorks] 既存のAnnict作品マスター: ${existingIdSet.size}作品`);
 
   const newWorks = [];
@@ -92,52 +75,29 @@ async function syncNewestWorks(maxCheckPages = 5) {
     if (!html) break;
 
     const $ = cheerio.load(html);
-    const pageCards = parseCards($);
+    const pageCards = AnnictClient.parseWorkCards($, existingIdSet);
     if (pageCards.length === 0) break;
 
-    let newCountOnPage = 0;
-    for (const work of pageCards) {
-      if (!existingIdSet.has(String(work.id))) {
-        existingIdSet.add(String(work.id));
-        newWorks.push(work);
-        newCountOnPage++;
-      }
-    }
-
-    console.log(`[SyncWorks] ページ ${page}: 新規作品 ${newCountOnPage} 件検出`);
-
-    // もしこのページで新規作品が0件、または既知作品との重複が大部分なら、それ以降の過去ページはすでに登録済みなので終了
-    if (newCountOnPage === 0) {
-      console.log(`[SyncWorks] 既知の作品に到達したため、新着作品チェックを完了します。`);
-      break;
-    }
+    newWorks.push(...pageCards);
+    console.log(`[SyncWorks] ページ ${page}: 新規作品 ${pageCards.length} 件検出`);
   }
 
   if (newWorks.length > 0) {
-    console.log(`[SyncWorks] 合計 ${newWorks.length} 件の新規追加作品を検出！作品マスターを更新します...`);
-    // 新着作品を先頭に追加（マスター全体を最新化）
-    const updatedWorks = [...newWorks, ...(masterData.works || [])];
-    const payload = {
-      generatedAt: new Date().toISOString(),
-      count: updatedWorks.length,
-      works: updatedWorks
-    };
+    console.log(`[SyncWorks] 合計 ${newWorks.length} 件の新規追加作品を検出！末尾に追記して更新します...`);
+    const updatedWorks = [...existingWorks, ...newWorks];
 
     try {
-      const outDir = path.dirname(POPULAR_WORKS_FILE);
-      if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-      fs.writeFileSync(POPULAR_WORKS_FILE, JSON.stringify(payload, null, 2), 'utf8');
-
-      if (BUNDLED_POPULAR_WORKS_FILE !== POPULAR_WORKS_FILE) {
-        fs.writeFileSync(BUNDLED_POPULAR_WORKS_FILE, JSON.stringify(payload, null, 2), 'utf8');
+      writePopularSplitAssets(updatedWorks, POPULAR_DIR);
+      if (BUNDLED_POPULAR_DIR !== POPULAR_DIR) {
+        writePopularSplitAssets(updatedWorks, BUNDLED_POPULAR_DIR);
       }
       console.log(`[SyncWorks] 作品マスター更新完了: 計 ${updatedWorks.length} 作品`);
     } catch (e) {
-      console.warn(`[SyncWorks] ファイル保存エラー:`, e.message);
+      console.warn('[SyncWorks] ファイル保存エラー:', e.message);
     }
     return { added: newWorks.length, total: updatedWorks.length };
   } else {
-    console.log(`[SyncWorks] 新規追加作品はありません（最新状態です）。`);
+    console.log('[SyncWorks] 新規追加作品はありません（最新状態です）。');
     return { added: 0, total: existingIdSet.size };
   }
 }

@@ -23,6 +23,14 @@
     "annictId": "1358",
     "source": "annict_hires"
   },
+  "10146": {
+    "workId": "10146",
+    "title": "OVA『ToHeart2ダンジョントラベラーズ』",
+    "annictId": null,
+    "url": "",
+    "source": "none",
+    "cachedAt": 1794907937337
+  },
   "10162": {
     "workId": "10162",
     "title": "吟遊黙示録 マイネリーベ -wieder-",
@@ -35,10 +43,31 @@
     "annictId": "15874",
     "source": "annict_search_hires"
   },
+  "10204": {
+    "workId": "10204",
+    "title": "NG騎士ラムネ&40総集編",
+    "annictId": "15650",
+    "url": "https://image.annict.com/8J5TbwaKb4icBI8kmTwoFeh6GdN0AVNm6u4ekxikoxM/s:640:853/plain/s3://annict-user-contents/shrine/workimage/12267/image/master-01d5c3804995a960e940bc8529756ded.jpg",
+    "source": "annict_search_hires"
+  },
   "10234": {
     "url": "https://image.annict.com/wcsnv2zG5IlPtbaiyhufxTtSgUyz17d_KRITPv6bIRM/s:640:853/plain/s3://annict-user-contents/shrine/workimage/88/image/master-2baf496766c3a55a2ecc8ed669a508ee.jpg",
     "annictId": "2108",
     "source": "annict_hires"
+  },
+  "10267": {
+    "workId": "10267",
+    "title": "ツバサ・クロニクル（第1シリーズ）",
+    "annictId": "12319",
+    "url": "https://image.annict.com/UyvhyLoivzsP4EdIq3Ge8R3Fs2E5E965EAAIk0vxjV0/s:640:853/plain/s3://annict-user-contents/shrine/workimage/15555/image/master-f6870cbe12d2546b6245ec6b63638306.jpg",
+    "source": "annict_search_hires"
+  },
+  "10268": {
+    "workId": "10268",
+    "title": "ツバサ・クロニクル（第2シリーズ）",
+    "annictId": "1318",
+    "url": "https://image.annict.com/CuRKHt3OzJlYaFttmhjYcVMHB9EBoWEsLWr-vvgNaJg/s:640:853/plain/s3://annict-user-contents/shrine/workimage/4032/image/master-e7e8374942e83a7d638843872b206b20.jpg",
+    "source": "annict_search_hires"
   },
   "10281": {
     "url": "https://image.annict.com/qFNG0NnB6hvMMyak1iZ0ZkvNkBbKF-y_TmSQmnatWoQ/s:640:853/plain/s3://annict-user-contents/shrine/workimage/12615/image/master-460fac5ca15a19a71f301b4b9db47083.jpg",
@@ -84,6 +113,20 @@
     "annictId": null,
     "source": "none"
   },
+  "10689": {
+    "workId": "10689",
+    "title": "エルフを狩るモノたち FIRST IMPRESSION",
+    "annictId": "273",
+    "url": "https://image.annict.com/A411buPgDUwXxfjdCgYSA96q4uNsoVmZuz_S7stO0oY/s:640:853/plain/s3://annict-user-contents/shrine/workimage/14800/image/master-f0184aafa3f4e8a4e6e21dd64854a82c.jpg",
+    "source": "annict_search_hires"
+  },
+  "10690": {
+    "workId": "10690",
+    "title": "エルフを狩るモノたち SECOND IMPRESSION",
+    "annictId": "273",
+    "url": "https://image.annict.com/A411buPgDUwXxfjdCgYSA96q4uNsoVmZuz_S7stO0oY/s:640:853/plain/s3://annict-user-contents/shrine/workimage/14800/image/master-f0184aafa3f4e8a4e6e21dd64854a82c.jpg",
+    "source": "annict_search_hires"
+  },
   "10693": {
     "url": "https://image.annict.com/M6-PO6DETnGP3DfKkZq0I-oq5ZeKftf2cBCkewFmWyE/s:640:853/plain/s3://annict-user-contents/shrine/workimage/129/image/master-330ddb0c9aea1cb85b2ca07221dbebd1.jpg",
     "annictId": "865",
@@ -114,6 +157,13 @@
     "title": "フラクタル",
     "annictId": "1901",
     "url": "https://image.annict.com/8d6Zbpuru3GqCOvaCqUhaLS1MqKwbwmLSzSmI8wiDYs/s:640:853/plain/s3://annict-user-contents/shrine/workimage/1170/image/master-139a7c3985233193e9ffb3df2c76fd5d.jpg",
+    "source": "annict_search_hires"
+  },
+  "11273": {
+    "workId": "11273",
+    "title": "探検ドリランド(第１期)",
+    "annictId": "1244",
+    "url": "https://image.annict.com/Ccw6GydS3I-fIGCv7DNKvYgmc2Gya8aoVQWMvoTNs2k/s:640:853/plain/s3://annict-user-contents/shrine/workimage/52/image/master-85dedb98399838064faddce9d056c07f.jpg",
     "source": "annict_search_hires"
   },
   "11425": {
@@ -191,6 +241,27 @@
     "annictId": "17851",
     "source": "annict_search_hires"
   },
+  "20952": {
+    "workId": "20952",
+    "title": "テイルズ オブ シンフォニア THE ANIMATION　シルヴァラント編",
+    "annictId": "2844",
+    "url": "https://image.annict.com/ZG7ea2URE-G1T-3nq6ZdRv9e8yQ1jBh0mtwGXS_mEMI/s:640:853/plain/s3://annict-user-contents/shrine/workimage/11415/image/master-020fa83cfb2a29a020255f5d9951444a.jpg",
+    "source": "annict_search_hires"
+  },
+  "20953": {
+    "workId": "20953",
+    "title": "テイルズ オブ シンフォニア THE ANIMATION　テセアラ編",
+    "annictId": "14829",
+    "url": "https://image.annict.com/L-HUOyyjgh_s5AICmppCZ-AWkj7Ur1Ua78D7dpoSsAw/s:640:853/plain/s3://annict-user-contents/shrine/workimage/11424/image/master-9c3b472e1f0f649517251b91514eaad9.jpg",
+    "source": "annict_search_hires"
+  },
+  "20962": {
+    "workId": "20962",
+    "title": "FAIRY TAIL　第1話～第48話",
+    "annictId": "18258",
+    "url": "https://image.annict.com/d-CkhToslbjegLGSK2XIqZkLX80_hcoJ1DZw-JZ8bx8/s:640:853/plain/s3://annict-user-contents/shrine/workimage/16721/image/master-49957478f4477e2746538643c4016605.jpg",
+    "source": "annict_search_hires"
+  },
   "20976": {
     "url": "",
     "annictId": null,
@@ -206,10 +277,31 @@
     "annictId": "18283",
     "source": "annict_search_hires"
   },
+  "21020": {
+    "workId": "21020",
+    "title": "NARUTO-ナルト- 疾風伝　風影奪還編",
+    "annictId": "18297",
+    "url": "https://image.annict.com/JzJaXD6GpO1Ns_mcCK33skbqvKBvYLvBLz5QiCV076c/s:640:853/plain/s3://annict-user-contents/shrine/workimage/16807/image/master-65501abd2598cfc4e466efa40a72bac8.jpg",
+    "source": "annict_search_hires"
+  },
+  "21052": {
+    "workId": "21052",
+    "title": "NARUTO-ナルト- 疾風伝　オリジナル(1) 過去編",
+    "annictId": "18297",
+    "url": "https://image.annict.com/JzJaXD6GpO1Ns_mcCK33skbqvKBvYLvBLz5QiCV076c/s:640:853/plain/s3://annict-user-contents/shrine/workimage/16807/image/master-65501abd2598cfc4e466efa40a72bac8.jpg",
+    "source": "annict_search_hires"
+  },
   "21178": {
     "url": "https://image.annict.com/cS6FRBV36fHKCl3RyjjkoDfYGwa2tMwl5sBI5zp9g1s/s:640:853/plain/s3://annict-user-contents/shrine/workimage/1461/image/master-d46752568fc2324cd5ad1755b95bf599.jpg",
     "annictId": "4893",
     "source": "annict_hires"
+  },
+  "21359": {
+    "workId": "21359",
+    "title": "テイルズ オブ ゼスティリア ザ クロス　第2期",
+    "annictId": "5089",
+    "url": "https://image.annict.com/G_AU_0e_HlZDakEWYeXMgL_jD-whLq7RGsihuMoXFa8/s:640:853/plain/s3://annict-user-contents/shrine/workimage/1869/image/master-cb87bb8d16769417b6f21cc8e7a863ab.jpg",
+    "source": "annict_search_hires"
   },
   "21366": {
     "url": "https://image.annict.com/yqLKYx-L_SwfO6e1sMXEyPG4yLALQKEWxdRuPFNDDCE/s:640:853/plain/s3://annict-user-contents/shrine/workimage/14538/image/master-26028c5fe8848079e224504682661237.jpg",
@@ -282,6 +374,13 @@
     "url": "https://image.annict.com/_oFQGSVEgwS0o6bUjR93OkqVl9Z0IDhRhDxTQvwVnz8/s:640:853/plain/s3://annict-user-contents/shrine/workimage/94/image/master-b1039262c50b26ac9a3b48757ba5f0a5.jpg",
     "annictId": "997",
     "source": "annict_hires"
+  },
+  "22412": {
+    "workId": "22412",
+    "title": "FAIRY TAIL ファイナルシリーズ",
+    "annictId": "6005",
+    "url": "https://image.annict.com/i7t4uSTPA3p2SJ_tzi4bQjRUu_7EznsTKaAubwt6DgA/s:640:853/plain/s3://annict-user-contents/shrine/workimage/3002/image/master-a92375dae9c640a42307850597637450.jpg",
+    "source": "annict_search_hires"
   },
   "22418": {
     "workId": "22418",
@@ -368,8 +467,10 @@
     "source": "annict_hires"
   },
   "23380": {
-    "url": "",
+    "workId": "23380",
+    "title": "真・女神転生 デビチル デビルチルドレン",
     "annictId": null,
+    "url": "",
     "source": "none"
   },
   "23559": {
@@ -397,6 +498,13 @@
     "annictId": "6439",
     "source": "annict_search_hires"
   },
+  "23686": {
+    "workId": "23686",
+    "title": "BAYONETTA Bloody Fate　(ベヨネッタ ブラッディフェイト)",
+    "annictId": "3860",
+    "url": "https://image.annict.com/r5PPrIHpjhy9e_BRpaGMVACBwZazUWCphNDIRDOVJSY/s:640:853/plain/s3://annict-user-contents/shrine/workimage/1213/image/master-33ffa3e65101f1030ef9d067b0013f8f.jpg",
+    "source": "annict_search_hires"
+  },
   "23756": {
     "url": "https://image.annict.com/UIPrQkhr_LFbd51LS2ar-TX0WAhWHsTpubiiKLg3nhs/s:640:853/plain/s3://annict-user-contents/shrine/workimage/3959/image/master-321f2524f3e8f0e155f82900c26377ee.jpg",
     "annictId": "6945",
@@ -406,6 +514,13 @@
     "url": "https://image.annict.com/W_GDQYcA3eY0A91q3HIvDofIYJ1R2Jn2Wxa9dsv9qQA/s:640:853/plain/s3://annict-user-contents/shrine/workimage/3963/image/master-eb00561192b2b2addaf55cda42f68851.jpg",
     "annictId": "6948",
     "source": "annict_hires"
+  },
+  "24024": {
+    "workId": "24024",
+    "title": "Re:ゼロから始める異世界生活　2nd season",
+    "annictId": "7541",
+    "url": "https://image.annict.com/UupoSLjQLBgvehzwbnZxbgeWMM5H_nF33F5ysQfD7GY/s:640:853/plain/s3://annict-user-contents/shrine/workimage/4615/image/master-082de4cffebd5d22ffcfeefad5c496bd.jpg",
+    "source": "annict_search_hires"
   },
   "24241": {
     "workId": "24241",
@@ -730,6 +845,14 @@
     "annictId": "10976",
     "source": "annict_hires"
   },
+  "27258": {
+    "workId": "27258",
+    "title": "映画プリキュアオールスターズＦ",
+    "annictId": null,
+    "url": "",
+    "source": "none",
+    "cachedAt": 1794907936377
+  },
   "27279": {
     "url": "",
     "annictId": null,
@@ -915,6 +1038,13 @@
     "url": "https://image.annict.com/Yc1zgJEXYooXfHci1qg3ol-qNLkSokrqiFc8CfBL3kY/s:640:853/plain/s3://annict-user-contents/shrine/workimage/12333/image/master-58a4ad7e605f2e85d8aeeea41f13704c.jpg",
     "annictId": "15724",
     "source": "annict_hires"
+  },
+  "29138": {
+    "workId": "29138",
+    "title": "装甲騎兵ボトムズ 幻影篇",
+    "annictId": "2813",
+    "url": "https://image.annict.com/7hInHloPgiJ50fU7Js3V0-LV9xlLw6A1xSpdH2skqf8/s:640:853/plain/s3://annict-user-contents/shrine/workimage/3200/image/master-58d28c2e962c433467948dd13cf3af9a.jpg",
+    "source": "annict_search_hires"
   },
   "29256": {
     "workId": "29256",

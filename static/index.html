@@ -3,782 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Annict Watched Analyzer | アニメ視聴傾向・シンクロ率比較</title>
-  <!-- Google Fonts & FontAwesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Annict Watched Analyzer | アニメ視聴傾向・シンクロ率・AI類似探索</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css?v=2.8" />
-  <!-- アプリアイコン (Option 2) -->
   <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-  <!-- お試し機能 (Labs) 専用CSS (削除時はこの1行を消せばOK) -->
-  <link rel="stylesheet" href="./labs/labs.css?v=2.1" />
-  <link rel="stylesheet" href="./labs/party-lab.css?v=2.2" />
-  <link rel="stylesheet" href="./labs/similarity-search.css?v=20261019_ui" />
-  <!-- テーマの初期判定・即時適用（チラつき防止） -->
+  <link rel="stylesheet" href="./css/tokens.css?v=3.0" />
+  <link rel="stylesheet" href="./css/layout.css?v=3.0" />
+  <link rel="stylesheet" href="./css/components.css?v=3.0" />
+  <link rel="stylesheet" href="./css/views.css?v=3.0" />
   <script>
-    (function() {
+    (function () {
       try {
-        const saved = localStorage.getItem('annict_theme');
-        const theme = saved || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
+        var saved = localStorage.getItem('annict_theme');
+        document.documentElement.setAttribute('data-theme', saved || 'dark');
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
-  <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div class="header-brand">
-        <img src="./icon.png" alt="Annict Watched Analyzer Logo" class="brand-logo-img" />
-        <div>
-          <h1>Annict Watched Analyzer</h1>
-          <p class="subtitle"><span>Annict アニメ視聴傾向</span>・<span>共通アニメ</span>・<span>シンクロ率の多角分析</span></p>
-        </div>
-      </div>
-      <div class="header-actions">
-        <button id="btn-theme-toggle" class="btn-theme-toggle" title="テーマを切り替え (ダーク / ライト)" aria-label="テーマ切り替え">
-          <i class="fa-solid fa-sun"></i>
+  <div id="app-shell" class="app-shell">
+    <!-- モバイルドロワー用バックドロップ -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- 左サイドバーナビゲーション -->
+    <aside id="app-sidebar" class="app-sidebar" aria-label="メインナビゲーション">
+      <div class="sidebar-header">
+        <a href="#venn" class="sidebar-brand" data-nav="venn">
+          <img src="./icon.png" alt="Logo" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-name">Annict Analyzer</span>
+            <span class="brand-sub">視聴分析ワークスペース</span>
+          </div>
+        </a>
+        <button id="btn-sidebar-collapse" class="btn-icon-sm sidebar-collapse-btn" title="サイドバーを折りたたむ" aria-label="サイドバー切り替え">
+          <i class="fa-solid fa-angles-left"></i>
         </button>
-        <div id="api-status-tag" class="meta-tag" title="Annict API 接続状態">
-          <span id="api-status-text"><i class="fa-solid fa-bolt text-gold"></i> API確認中...</span>
-        </div>
-        <div id="data-meta" class="meta-tag">
-          <i class="fa-solid fa-clock"></i> <span id="meta-updated">読込中...</span>
-        </div>
-        <button id="btn-open-user-modal" class="btn btn-primary" title="比較するユーザーを編集">
-          <i class="fa-solid fa-user-gear"></i> ユーザー設定
-        </button>
-        <button id="btn-reload" class="btn btn-outline" title="データを再読み込み">
-          <i class="fa-solid fa-rotate-right"></i> 更新
+        <button id="btn-sidebar-close-mobile" class="btn-icon-sm sidebar-close-mobile" title="閉じる" aria-label="メニューを閉じる">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-    </header>
 
-    <!-- Navigation Tabs -->
-    <nav class="nav-tabs">
-      <button class="tab-btn active" data-tab="tab-venn">
-        <i class="fa-solid fa-chart-pie"></i> ベン図比較
-      </button>
-      <button class="tab-btn" data-tab="tab-similarity">
-        <i class="fa-solid fa-handshake"></i> シンクロ率
-      </button>
-      <button class="tab-btn" data-tab="tab-group">
-        <i class="fa-solid fa-users"></i> グループ分析
-      </button>
-      <button class="tab-btn" data-tab="tab-insights">
-        <i class="fa-solid fa-lightbulb"></i> インサイト
-      </button>
-      <button class="tab-btn" data-tab="tab-labs">
-        <i class="fa-solid fa-chart-line"></i> 視聴アナリティクス
-      </button>
-      <button class="tab-btn" data-tab="tab-genre-lab">
-        <i class="fa-solid fa-flask-vial"></i> ジャンル実験室
-      </button>
-      <button class="tab-btn" data-tab="tab-search">
-        <i class="fa-solid fa-magnifying-glass"></i> 作品検索
-      </button>
-      <button class="tab-btn" data-tab="tab-party">
-        <i class="fa-solid fa-dice"></i> パーティーLab
-      </button>
-      <button class="tab-btn" data-tab="tab-similarity-search">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> 類似アニメ検索
-      </button>
-      <button class="tab-btn" data-tab="tab-episode-similarity">
-        <i class="fa-solid fa-list-ol"></i> エピソード類似検索
-      </button>
-      <button class="tab-btn" data-tab="tab-story-similarity">
-        <i class="fa-solid fa-brain"></i> ストーリー構造類似検索
-      </button>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-      <!-- 1. ベン図タブ -->
-      <section id="tab-venn" class="tab-pane active">
-        <div class="pane-controls">
-          <div class="user-select-bar">
-            <span class="control-label"><i class="fa-solid fa-users"></i> ベン図で比較・確認するユーザー (1〜3人):</span>
-            <div id="venn-user-checkboxes" class="user-chips">
-              <!-- JSで動的生成 -->
-            </div>
-          </div>
-          <div class="control-hints">
-            <small class="text-muted"><i class="fa-solid fa-circle-info"></i> 円や重なり領域をクリックすると、該当するアニメ一覧が下部に大きく表示されます（1人〜3人対応）</small>
-          </div>
-        </div>
-
-        <div class="venn-layout">
-          <div class="venn-stage card">
-            <div id="venn-chart"></div>
-            <div id="venn-empty-msg" class="venn-empty-state" style="display: none;">
-              <div class="empty-icon">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <p class="empty-title">ユーザーを1人〜3人選択してください</p>
-              <p class="empty-desc">上部のチップをクリックしてユーザーを選択すると、共通・固有の視聴作品ベン図と作品一覧が表示されます</p>
-            </div>
-          </div>
-
-          <aside class="detail-panel card">
-            <div class="panel-header">
-              <h3 id="detail-title"><i class="fa-solid fa-list-check"></i> 作品リスト</h3>
-              <span id="detail-badge" class="badge">0 作品</span>
-            </div>
-            <p id="detail-desc" class="panel-desc">ベン図の領域をクリックしてください。</p>
-            <div class="panel-filter">
-              <input type="text" id="detail-search" placeholder="この領域内を絞り込み..." class="input-text" />
-            </div>
-            <div id="detail-anime-list" class="anime-cards-grid anime-list-scroll">
-              <div class="empty-list-placeholder">
-                <i class="fa-solid fa-arrow-up"></i>
-                <p>上のベン図の各サークルまたは交差領域をクリックすると作品が表示されます</p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- 2. シンクロ率マトリクスタブ -->
-      <section id="tab-similarity" class="tab-pane">
-        <div class="similarity-layout">
-          <div class="card">
-            <div class="card-header">
-              <h3><i class="fa-solid fa-table-cells"></i> 視聴シンクロ率マトリクス</h3>
-              <p class="card-desc">共通して見ている作品数 ÷ どちらかが見ている全作品数 (%)</p>
-            </div>
-            <div class="table-scroll-hint">
-              <i class="fa-solid fa-arrows-left-right"></i> 左右にスクロールして全ユーザーを確認できます
-            </div>
-            <div class="table-responsive">
-              <table id="similarity-table" class="data-table">
-                <!-- JSで動的描画 -->
-              </table>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h3><i class="fa-solid fa-trophy"></i> シンクロ率ランキング</h3>
-              <p class="card-desc">趣味や好みが最も近いペア</p>
-            </div>
-            <div id="ranking-list" class="ranking-container">
-              <!-- JSで動的描画 -->
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. 視点別・他ユーザーの視聴カバー率 -->
-        <div class="card similarity-coverage-card">
-          <div class="card-header coverage-header-wrap">
-            <div class="coverage-header-main">
-              <h3><i class="fa-solid fa-chart-simple text-pink"></i> 視点別・他ユーザーの視聴カバー率</h3>
-              <p class="card-desc">「自分が観ている全作品（100%）」の中で、相手が何％観ているか（個別割合）</p>
-            </div>
-            <div class="coverage-user-filter-bar">
-              <span class="coverage-filter-label"><i class="fa-solid fa-user-check"></i> 基準にする自分:</span>
-              <div id="sim-coverage-user-chips" class="user-chips">
-                <!-- JSでユーザーチップ生成 -->
-              </div>
-            </div>
-          </div>
-          <div id="sim-coverage-content" class="sim-coverage-content">
-            <!-- JSで動的描画 -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. グループ分析タブ (和集合 & 誰も見ていないAnnict全作品) -->
-      <section id="tab-group" class="tab-pane">
-        <!-- 上部コントロール: ユーザー選択バー -->
-        <div class="card group-control-card">
-          <div class="user-select-bar-header">
-            <div class="control-label-group">
-              <span class="control-label"><i class="fa-solid fa-users"></i> 対象ユーザーの選択:</span>
-              <span class="text-muted small" id="group-selected-summary">読込中...</span>
-            </div>
-            <div class="user-select-actions">
-              <button type="button" id="btn-group-select-all" class="btn btn-xs btn-outline">全選択</button>
-              <button type="button" id="btn-group-deselect-all" class="btn btn-xs btn-outline">全解除</button>
-            </div>
-          </div>
-          <div id="group-user-checkboxes" class="user-chips mt-2">
-            <!-- JSで全ユーザーのチェックボックス動的生成 -->
-          </div>
-        </div>
-
-        <!-- メインカード: サブタブ切り替え & フィルター & 一覧 -->
-        <div class="card mt-3">
-          <!-- サブナビゲーション（切り替えタブ） -->
-          <div class="group-subnav-bar">
-            <div class="group-subnav-tabs">
-              <button type="button" class="group-subtab-btn active" data-subtab="union">
-                <i class="fa-solid fa-circle-nodes"></i> 誰かが見ている作品（和集合）
-                <span id="badge-group-union-count" class="badge badge-subtab">0 作品</span>
-              </button>
-              <button type="button" class="group-subtab-btn" data-subtab="unwatched">
-                <i class="fa-solid fa-sparkles text-gold"></i> 誰も見ていない作品（Annict全作品）
-                <span id="badge-group-unwatched-count" class="badge badge-subtab">0 作品</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- サブタブ説明文 -->
-          <div class="group-subtab-header">
-            <p id="group-subtab-desc" class="card-desc">
-              選択したユーザーのうち「誰か1人以上が見ている作品」の全一覧です。
-            </p>
-          </div>
-
-          <!-- ツールバー（検索・年代フィルター・ソート） -->
-          <div class="group-toolbar">
-            <div class="search-bar-wrap flex-grow">
-              <i class="fa-solid fa-magnifying-glass search-icon-embed"></i>
-              <input type="text" id="group-search-input" placeholder="タイトルで絞り込み検索..." class="input-text group-search-input" />
-              <button type="button" id="btn-group-clear-search" class="btn-clear-input" style="display: none;" title="検索ワードをクリア">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </div>
-
-            <!-- 年代フィルターチップ -->
-            <div class="era-filter-group" id="group-era-filters">
-              <button type="button" class="chip-btn active" data-era="all">すべて</button>
-              <button type="button" class="chip-btn" data-era="2020s">2020年代</button>
-              <button type="button" class="chip-btn" data-era="2010s">2010年代</button>
-              <button type="button" class="chip-btn" data-era="2000s">2000年代</button>
-              <button type="button" class="chip-btn" data-era="classic">〜1990年代</button>
-            </div>
-
-            <!-- 並び替えソート（和集合時のみ有効、未視聴時はAnnict人気順） -->
-            <div class="group-sort-wrap" id="group-sort-container">
-              <label for="group-sort-select" class="small text-muted"><i class="fa-solid fa-arrow-down-short-wide"></i> 並び替え:</label>
-              <select id="group-sort-select" class="select-sort">
-                <option value="watchers">視聴人数が多い順</option>
-                <option value="season-desc">公開年が新しい順</option>
-                <option value="season-asc">公開年が古い順</option>
-                <option value="title">タイトル順</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 一覧表示件数ステータス -->
-          <div class="group-results-meta">
-            <span id="group-results-count-text" class="small text-muted">表示中: 0 件</span>
-          </div>
-
-          <!-- 作品グリッドコンテナ -->
-          <div id="group-works-grid" class="anime-cards-grid mt-2">
-            <!-- JSで動的描画 -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. インサイトタブ -->
-      <section id="tab-insights" class="tab-pane">
-        <div class="insights-grid">
-          <!-- 全員が見ているアニメ -->
-          <div class="card insight-card">
-            <div class="card-header border-gold">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-crown text-gold"></i> 全員が見ているアニメ</h3>
-                <span id="badge-all-watched" class="badge badge-gold">0</span>
-              </div>
-              <p class="card-desc">参加メンバー全員が「見た」と記録している作品</p>
-            </div>
-            <div id="list-all-watched" class="anime-cards-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-
-          <!-- この人だけが見ているアニメ -->
-          <div class="card insight-card">
-            <div class="card-header border-purple">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-gem text-purple"></i> この人だけが見ているアニメ</h3>
-                <div id="exclusive-user-selector" class="chip-selector">
-                  <!-- JSでユーザー切替ボタン -->
-                </div>
-              </div>
-              <p class="card-desc">他のメンバーは誰も見ていない、その人独自の鑑賞作品</p>
-            </div>
-            <div id="list-exclusive" class="anime-cards-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-
-          <!-- この人以外みんな見ているアニメ -->
-          <div class="card insight-card">
-            <div class="card-header border-red">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-user-slash text-red"></i> この人以外みんな見ているアニメ</h3>
-                <div id="missing-user-selector" class="chip-selector">
-                  <!-- JSでユーザー切替ボタン -->
-                </div>
-              </div>
-              <p class="card-desc">自分以外の全員が見ているのに、まだ手をつけていない作品</p>
-            </div>
-            <div id="list-missing" class="anime-cards-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. 視聴アナリティクス タブ -->
-      <section id="tab-labs" class="tab-pane">
-        <div class="analytics-banner">
-          <div class="analytics-title">
-            <i class="fa-solid fa-chart-line text-blue"></i>
-            <span>視聴傾向アナリティクス</span>
-          </div>
-          <p class="analytics-subtitle text-muted">「総視聴時間」「年代別タイムライン」「制作スタジオ別視聴傾向」「14ジャンル別分類」の多角データ分析ダッシュボードです。</p>
-        </div>
-
-        <div id="labs-content-container" class="labs-grid">
-          <!-- ① 総視聴時間セクション -->
-          <div class="card">
-            <div class="card-header">
-              <h3><i class="fa-solid fa-fire-flame-curved text-gold"></i> 総視聴時間</h3>
-            </div>
-            <div id="labs-calorie-cards" class="calorie-cards-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-
-          <!-- ② 年代別タイムラインセクション -->
-          <div class="card">
-            <div class="card-header">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-timeline text-blue"></i> 年代別タイムライン</h3>
-                <div class="timeline-mode-toggle">
-                  <button type="button" class="btn-timeline-mode active" data-timeline-mode="1year">
-                    <i class="fa-solid fa-calendar-days"></i> 1年ごと
-                  </button>
-                  <button type="button" class="btn-timeline-mode" data-timeline-mode="5years">
-                    <i class="fa-solid fa-layer-group"></i> 5年ごと
-                  </button>
-                </div>
-              </div>
-              <p class="card-desc">各年代・1年ごとの視聴本数分布と各年の視聴アニメ一覧</p>
-            </div>
-            <div id="labs-timeline-bars" class="timeline-bars-container">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-
-          <!-- ③ 制作スタジオ別視聴傾向セクション -->
-          <div class="card">
-            <div class="card-header">
-              <h3><i class="fa-solid fa-palette text-pink"></i> 制作スタジオ別視聴傾向</h3>
-              <p class="card-desc">京都アニメーション、動画工房、シャフト、ufotableなど、どの制作会社のアニメを好んで見ているか</p>
-            </div>
-            <div id="labs-studio-cards" class="studio-users-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-
-          <!-- ④ ジャンル別視聴傾向セクション -->
-          <div class="card">
-            <div class="card-header">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-shapes text-purple"></i> ジャンル別視聴傾向（14カテゴリ）</h3>
-                <span id="badge-genre-total" class="badge">14カテゴリ分類</span>
-              </div>
-              <p class="card-desc">作品の属性・タグ情報から重複を整理した14カテゴリへ高精度に分類。各メンバーの視聴傾向を比較します</p>
-            </div>
-            
-            <!-- ユーザーごとのトップジャンル要約カード -->
-            <div id="labs-genre-user-summaries" class="genre-user-summary-grid">
-              <!-- JSで描画 -->
-            </div>
-
-            <!-- ジャンル別詳細比較（プログレスバー＆作品展開） -->
-            <div class="genre-comparison-container mt-4">
-              <div class="genre-filter-bar">
-                <span class="text-muted" style="font-size:0.85rem;"><i class="fa-solid fa-circle-info"></i> 各ジャンル枠をクリックすると、各メンバーが視聴した該当作品リストが展開されます</span>
-              </div>
-              <div id="labs-genre-breakdown-list" class="genre-breakdown-list">
-                <!-- JSで描画 -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. ジャンル実験室 タブ -->
-      <section id="tab-genre-lab" class="tab-pane">
-        <div class="analytics-banner">
-          <div class="analytics-title">
-            <i class="fa-solid fa-flask-vial text-purple"></i>
-            <span>ジャンル分類 精度改善実験室（スコアリング方式）</span>
-          </div>
-          <p class="analytics-subtitle text-muted">従来の「if文優先度方式」から、AniList公式ジャンル＋タグランク値＋タイトルによる「重み付けスコアリング方式」へ刷新した新分類エンジンを検証・比較できます。現在の本番環境（視聴アナリティクス）はそのまま保持されています。</p>
-        </div>
-
-        <!-- 実験室サブナビゲーション -->
-        <div class="genre-lab-subnav">
-          <button class="genre-lab-subnav-btn active" data-lab-subtab="diff">
-            <i class="fa-solid fa-code-compare"></i> 新旧分類の変更差分 <span id="badge-diff-count" class="badge badge-purple">計算中...</span>
+      <nav class="sidebar-nav">
+        <!-- グループ 1 -->
+        <div class="nav-group">
+          <div class="nav-group-label">メンバー比較・関係性</div>
+          <button type="button" class="nav-item active" data-view="venn">
+            <span class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span>
+            <span class="nav-label">ベン図比較</span>
           </button>
-          <button class="genre-lab-subnav-btn" data-lab-subtab="scored">
-            <i class="fa-solid fa-chart-pie"></i> 新スコアリング分類結果
+          <button type="button" class="nav-item" data-view="similarity">
+            <span class="nav-icon"><i class="fa-solid fa-handshake"></i></span>
+            <span class="nav-label">シンクロ率・カバー率</span>
           </button>
-          <button class="genre-lab-subnav-btn" data-lab-subtab="inspector">
-            <i class="fa-solid fa-calculator"></i> 作品スコア内訳シミュレーター
+          <button type="button" class="nav-item" data-view="insights">
+            <span class="nav-icon"><i class="fa-solid fa-lightbulb"></i></span>
+            <span class="nav-label">視聴インサイト</span>
+          </button>
+          <button type="button" class="nav-item" data-view="group">
+            <span class="nav-icon"><i class="fa-solid fa-layer-group"></i></span>
+            <span class="nav-label">グループ作品カタログ</span>
           </button>
         </div>
 
-        <!-- サブタブ 1: 新旧比較・差分一覧 -->
-        <div id="genre-lab-subtab-diff" class="genre-lab-subpane active">
-          <div class="card">
-            <div class="card-header">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-wand-magic-sparkles text-gold"></i> 新方式での分類改善・変更差分</h3>
-                <span id="diff-summary-tag" class="meta-tag">読込中...</span>
-              </div>
-              <p class="card-desc">従来のルールで「魔法少女」「日常」「ミリタリー」等に誤判定されていた作品が、新スコアリング方式でどう改善されたかを一目で確認できます</p>
-            </div>
-
-            <!-- クイックフィルタ＆検索バー -->
-            <div class="diff-filter-bar">
-              <div class="diff-chips-filter">
-                <span class="diff-filter-label"><i class="fa-solid fa-filter"></i> 変更元ジャンル:</span>
-                <div id="diff-filter-chips" class="chip-selector">
-                  <!-- JSで動的生成 -->
-                </div>
-              </div>
-              <div class="diff-search-box">
-                <input type="text" id="diff-search-input" placeholder="差分作品をタイトルで絞り込み..." class="input-text input-sm" />
-                <span id="diff-filtered-count" class="badge">0 件</span>
-              </div>
-            </div>
-
-            <!-- 差分カードグリッド -->
-            <div id="diff-cards-grid" class="diff-cards-grid">
-              <!-- JSで描画 -->
-            </div>
-          </div>
-        </div>
-
-        <!-- サブタブ 2: 新スコアリング結果ダッシュボード -->
-        <div id="genre-lab-subtab-scored" class="genre-lab-subpane" style="display: none;">
-          <div class="card">
-            <div class="card-header">
-              <div class="header-with-badge">
-                <h3><i class="fa-solid fa-shapes text-purple"></i> 新スコアリング方式：ジャンル別視聴傾向（15カテゴリ）</h3>
-                <span class="badge badge-purple">新スコアリングエンジン</span>
-              </div>
-              <p class="card-desc">重み付けスコアにより各作品が最も相応しい1ジャンルに高精度に割り当てられた最新の視聴傾向です</p>
-            </div>
-            
-            <div id="lab-scored-user-summaries" class="genre-user-summary-grid">
-              <!-- JSで描画 -->
-            </div>
-
-            <div class="genre-comparison-container mt-4">
-              <div class="genre-filter-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
-                <span class="text-muted" style="font-size: 0.85rem;"><i class="fa-solid fa-circle-info"></i> 各ジャンル枠をクリックすると作品リストが展開されます（「全員」タブで全体一覧、「@ユーザー」タブで個人別）</span>
-                <div class="genre-expand-actions" style="display: flex; gap: 0.5rem;">
-                  <button type="button" id="btn-lab-expand-all" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 0.3rem 0.7rem;">
-                    <i class="fa-solid fa-angles-down"></i> すべて展開
-                  </button>
-                  <button type="button" id="btn-lab-collapse-all" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 0.3rem 0.7rem;">
-                    <i class="fa-solid fa-angles-up"></i> すべて折りたたむ
-                  </button>
-                </div>
-              </div>
-              <div id="lab-scored-breakdown-list" class="genre-breakdown-list">
-                <!-- JSで描画 -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- サブタブ 3: 作品スコア内訳シミュレーター -->
-        <div id="genre-lab-subtab-inspector" class="genre-lab-subpane" style="display: none;">
-          <div class="card">
-            <div class="card-header">
-              <h3><i class="fa-solid fa-calculator text-blue"></i> 作品スコア内訳シミュレーター</h3>
-              <p class="card-desc">作品名を入力すると、AniListの全タグ・ジャンルと、15カテゴリそれぞれへの獲得スコア内訳をリアルタイムに視覚化します</p>
-            </div>
-
-            <div class="inspector-search-wrap">
-              <div class="input-box-wrapper" style="flex:1;">
-                <input type="text" id="inspector-title-input" placeholder="作品名を入力（例: チェンソーマン、進撃の巨人、葬送のフリーレン...）" class="input-inner" />
-              </div>
-              <button id="btn-inspect-score" class="btn btn-primary">
-                <i class="fa-solid fa-chart-simple"></i> スコアを診断
-              </button>
-            </div>
-
-            <!-- 代表例クイック選択ボタン -->
-            <div class="inspector-quick-presets">
-              <span class="text-muted" style="font-size:0.85rem;"><i class="fa-solid fa-lightbulb"></i> 診断おすすめ作品:</span>
-              <button class="btn-preset-title" data-title="チェンソーマン">チェンソーマン</button>
-              <button class="btn-preset-title" data-title="葬送のフリーレン">葬送のフリーレン</button>
-              <button class="btn-preset-title" data-title="進撃の巨人">進撃の巨人</button>
-              <button class="btn-preset-title" data-title="その着せ替え人形は恋をする">その着せ替え人形は恋をする</button>
-              <button class="btn-preset-title" data-title="リコリス・リコイル">リコリス・リコイル</button>
-              <button class="btn-preset-title" data-title="薬屋のひとりごと">薬屋のひとりごと</button>
-              <button class="btn-preset-title" data-title="Dr.STONE">Dr.STONE</button>
-            </div>
-
-            <div id="inspector-result-container" class="inspector-result-container mt-4" style="display: none;">
-              <!-- JSで診断結果を描画 -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. 作品検索タブ -->
-      <section id="tab-search" class="tab-pane">
-        <div class="card">
-          <div class="card-header">
-            <h3><i class="fa-solid fa-magnifying-glass"></i> 作品検索・逆引き</h3>
-            <p class="card-desc">気になるアニメタイトルを入力して、誰が見ているかチェックできます</p>
-          </div>
-          <div class="search-bar-wrap">
-            <input type="text" id="global-search-input" placeholder="作品名で検索（例: まどか、フリーレン、ガンダム...）" class="input-text input-large" />
-            <span id="search-count" class="badge">0 件ヒット</span>
-          </div>
-          <div id="global-search-results" class="anime-cards-grid mt-4">
-            <!-- JSで描画 -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 8. パーティーLab タブ -->
-      <section id="tab-party" class="tab-pane">
-        <div class="party-banner">
-          <div class="party-title">
-            <i class="fa-solid fa-dice text-pink"></i>
-            <span>パーティーLab（布教・上映会・偏愛レーダー）</span>
-          </div>
-          <p class="party-desc">友達との通話やオフ会で盛り上がる！あなたへのおすすめ作を算出する「布教マッチング」、今夜観る作品を決める「上映会ルーレット」、スタジオ愛を競う「偏愛レーダー」を実験実装しています。</p>
-        </div>
-
-        <!-- パーティーLab サブナビゲーション -->
-        <div class="party-subnav">
-          <button class="party-subnav-btn active" data-party-subtab="fukyo">
-            <i class="fa-solid fa-bullhorn"></i> 布教マッチング
+        <!-- グループ 2 -->
+        <div class="nav-group">
+          <div class="nav-group-label">視聴傾向・ジャンル</div>
+          <button type="button" class="nav-item" data-view="analytics">
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-label">視聴アナリティクス</span>
           </button>
-          <button class="party-subnav-btn" data-party-subtab="roulette">
-            <i class="fa-solid fa-dice"></i> 上映会ルーレット
-          </button>
-          <button class="party-subnav-btn" data-party-subtab="radar">
-            <i class="fa-solid fa-palette"></i> クリエイター・声優レーダー
+          <button type="button" class="nav-item" data-view="genre">
+            <span class="nav-icon"><i class="fa-solid fa-shapes"></i></span>
+            <span class="nav-label">ジャンル分析 &amp; 診断</span>
+            <span class="nav-badge">15分類</span>
           </button>
         </div>
 
-        <!-- サブペイン 1: 布教マッチング -->
-        <div id="party-subtab-fukyo" class="party-subpane active">
-          <div class="fukyo-control-card">
-            <div class="fukyo-user-selector">
-              <div class="fukyo-user-box">
-                <label><i class="fa-solid fa-user-check text-pink"></i> 布教する人（推薦者）</label>
-                <select id="fukyo-from-user" class="fukyo-select"></select>
-              </div>
-              <button id="fukyo-swap-btn" class="fukyo-swap-btn" title="入れ替え">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
-              </button>
-              <div class="fukyo-user-box">
-                <label><i class="fa-solid fa-bullseye text-purple"></i> 布教される人（対象者）</label>
-                <select id="fukyo-to-user" class="fukyo-select"></select>
-              </div>
-            </div>
-            <div class="fukyo-summary-bar">
-              <span id="fukyo-summary-text">集計中...</span>
-              <small class="text-muted"><i class="fa-solid fa-circle-info"></i> 対象者の好み（スタジオ・年代・ジャンル）から相性を推測してランキング化しています</small>
-            </div>
-          </div>
+        <!-- グループ 3 -->
+        <div class="nav-group">
+          <div class="nav-group-label">検索・AI探索</div>
+          <button type="button" class="nav-item" data-view="search">
+            <span class="nav-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="nav-label">作品検索・逆引き</span>
+          </button>
+          <button type="button" class="nav-item" data-view="story">
+            <span class="nav-icon"><i class="fa-solid fa-brain"></i></span>
+            <span class="nav-label">ストーリー構造類似検索</span>
+            <span class="nav-badge nav-badge-ai">AI</span>
+          </button>
+        </div>
+      </nav>
 
-          <div id="fukyo-results-grid" class="fukyo-cards-grid">
-            <!-- JSで動的生成 -->
+      <div class="sidebar-footer">
+        <div class="sidebar-meta-row">
+          <span id="api-status-badge" class="status-pill" title="Annict API接続状態">
+            <i class="fa-solid fa-bolt"></i> <span id="api-status-text">確認中...</span>
+          </span>
+        </div>
+        <div class="sidebar-meta-row">
+          <span class="meta-updated-text" id="meta-updated" title="データ更新日時">
+            <i class="fa-regular fa-clock"></i> 読込中...
+          </span>
+        </div>
+        <div class="sidebar-footer-actions">
+          <button type="button" id="btn-theme-toggle" class="btn btn-ghost btn-sm flex-1" title="ダーク / ライトテーマ切替">
+            <i class="fa-solid fa-sun"></i> <span>テーマ</span>
+          </button>
+          <button type="button" id="btn-reload" class="btn btn-ghost btn-sm flex-1" title="全ユーザーの最新データを同期">
+            <i class="fa-solid fa-rotate-right"></i> <span>同期</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- メインワークスペース -->
+    <div class="main-wrapper">
+      <!-- スティッキー・トップバー -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="btn-mobile-menu" class="btn-icon-sm mobile-menu-btn" aria-label="メニューを開く">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-heading">
+            <h1 id="topbar-title" class="topbar-title">ベン図比較</h1>
+            <p id="topbar-subtitle" class="topbar-subtitle">1〜3人の視聴作品をインタラクティブなベン図で重ねて比較</p>
           </div>
         </div>
-
-        <!-- サブペイン 2: 上映会ルーレット -->
-        <div id="party-subtab-roulette" class="party-subpane">
-          <div class="roulette-container">
-            <div class="roulette-config-card">
-              <div class="pane-controls" style="margin-bottom: 1rem;">
-                <div class="user-select-bar">
-                  <span class="control-label"><i class="fa-solid fa-users"></i> 参加者を選択:</span>
-                  <div id="roulette-user-chips" class="user-checkboxes"></div>
-                </div>
-                <div class="filter-actions" style="margin-top: 0.5rem;">
-                  <button id="btn-roulette-select-all" class="btn btn-sm btn-outline">全選択</button>
-                  <button id="btn-roulette-deselect-all" class="btn btn-sm btn-outline">全解除</button>
-                </div>
-              </div>
-
-              <div style="margin-bottom: 0.8rem;">
-                <label class="control-label" style="display:block;margin-bottom:0.4rem;"><i class="fa-solid fa-sliders"></i> 抽選モード:</label>
-                <div class="roulette-mode-group">
-                  <button class="roulette-mode-btn active" data-mode="unwatched">
-                    <span>🌟 完全初見枠</span>
-                    <span class="mode-sub">参加者全員が誰も見ていない人気作</span>
-                  </button>
-                  <button class="roulette-mode-btn" data-mode="common">
-                    <span>💖 全員履修済み枠</span>
-                    <span class="mode-sub">参加者全員が見ている共通作（語り合い）</span>
-                  </button>
-                  <button class="roulette-mode-btn" data-mode="host">
-                    <span>🎁 布教プレゼン枠</span>
-                    <span class="mode-sub">誰か1人だけ見ていて他が未視聴の作</span>
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label class="control-label" style="display:block;margin-bottom:0.4rem;"><i class="fa-regular fa-calendar"></i> 年代フィルター:</label>
-                <div id="roulette-era-chips" class="era-filter-group" style="display:flex;gap:0.4rem;flex-wrap:wrap;">
-                  <button class="chip-btn active" data-era="all">すべて</button>
-                  <button class="chip-btn" data-era="2020s">2020年代</button>
-                  <button class="chip-btn" data-era="2010s">2010年代</button>
-                  <button class="chip-btn" data-era="2000s">2000年代</button>
-                  <button class="chip-btn" data-era="older">〜1990年代</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- ルーレットステージ -->
-            <div class="roulette-stage-card">
-              <div id="roulette-reel-box" class="roulette-reel-box">
-                <div class="roulette-initial-msg">
-                  <i class="fa-solid fa-dice"></i>
-                  <p>「ルーレットを回す」を押すとスロットがスタートします！</p>
-                </div>
-              </div>
-              <button id="btn-spin-roulette" class="roulette-spin-btn">
-                <i class="fa-solid fa-shuffle"></i> 🎰 ルーレットを回す！
-              </button>
-
-              <div id="roulette-winner-container" style="display: none; margin-top: 1.75rem;">
-                <!-- JSで当選カードを挿入 -->
-              </div>
-            </div>
+        <div class="topbar-right">
+          <div id="topbar-users-summary" class="topbar-users-summary" title="クリックで比較メンバーを管理">
+            <i class="fa-solid fa-users"></i>
+            <span id="topbar-users-label">読込中...</span>
           </div>
+          <button type="button" id="btn-open-user-modal" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-user-gear"></i> <span>メンバー設定</span>
+          </button>
         </div>
+      </header>
 
-        <!-- サブペイン 3: クリエイター・声優・スタジオ偏愛レーダー -->
-        <div id="party-subtab-radar" class="party-subpane">
-          <!-- カテゴリ切替チップ -->
-          <div class="radar-type-toggle-bar" style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
-            <button class="chip-btn active" data-radar-type="va">
-              <i class="fa-solid fa-microphone-lines"></i> よく見ている声優 TOP10
-            </button>
-            <button class="chip-btn" data-radar-type="creator">
-              <i class="fa-solid fa-clapperboard"></i> 監督・脚本家
-            </button>
-            <button class="chip-btn" data-radar-type="studio">
-              <i class="fa-solid fa-building"></i> 制作会社 (スタジオ)
-            </button>
-          </div>
-
-          <div class="card mb-4">
-            <div class="card-header">
-              <h3 id="radar-section-title"><i class="fa-solid fa-microphone-lines text-pink"></i> 各ユーザーの「よく見ている声優」TOP10</h3>
-              <p id="radar-section-desc" class="card-desc">各ユーザーが最も多く出演作を視聴している人気声優ランキングと作品数です</p>
-            </div>
-            <div id="radar-users-grid" class="radar-grid">
-              <!-- JSで動的生成 -->
-            </div>
-          </div>
-
-          <div class="studio-battle-card">
-            <div class="card-header">
-              <h3 id="radar-battle-title"><i class="fa-solid fa-trophy text-gold"></i> 声優別・履修数バトル（誰が一番見てる？）</h3>
-              <p id="radar-battle-desc" class="card-desc">声優ごとに出演作を最も多く視聴しているユーザーに王冠マークが付きます</p>
-            </div>
-            <div id="radar-battle-table-container" class="studio-battle-table-wrap">
-              <!-- JSでテーブル生成 -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 9. 類似アニメ検索タブ (作品あらすじ版) -->
-      <section id="tab-similarity-search" class="tab-pane">
-        <!-- JS (similarity-search.js) で動的描画 -->
-      </section>
-
-      <!-- 10. エピソード類似アニメ検索タブ (全話あらすじ版) -->
-      <section id="tab-episode-similarity" class="tab-pane">
-        <!-- JS (episode-similarity.js) で動的描画 -->
-      </section>
-
-      <!-- 11. ストーリー構造類似アニメ検索タブ (LLM構造化要約×デュアルベクトル版) -->
-      <section id="tab-story-similarity" class="tab-pane">
-        <!-- JS (story-similarity.js) で動的描画 -->
-      </section>
-    </main>
+      <!-- コンテンツ領域（各ビュー） -->
+      <main id="main-content" class="main-content">
+        <!-- 1. ベン図比較 -->
+        <section id="view-venn" class="view-pane active" data-view="venn"></section>
+        <!-- 2. シンクロ率・カバー率 -->
+        <section id="view-similarity" class="view-pane" data-view="similarity"></section>
+        <!-- 3. 視聴インサイト -->
+        <section id="view-insights" class="view-pane" data-view="insights"></section>
+        <!-- 4. グループ作品カタログ -->
+        <section id="view-group" class="view-pane" data-view="group"></section>
+        <!-- 5. 視聴アナリティクス -->
+        <section id="view-analytics" class="view-pane" data-view="analytics"></section>
+        <!-- 6. ジャンル分析 & 診断（メイン格上げ） -->
+        <section id="view-genre" class="view-pane" data-view="genre"></section>
+        <!-- 7. 作品検索・逆引き -->
+        <section id="view-search" class="view-pane" data-view="search"></section>
+        <!-- 8. ストーリー構造類似検索 -->
+        <section id="view-story" class="view-pane" data-view="story"></section>
+      </main>
+    </div>
   </div>
 
-  <!-- ユーザー管理モーダル -->
-  <div id="user-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-dialog">
+  <!-- ユーザー管理・追加モーダル -->
+  <div id="user-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="user-modal-title" style="display: none;">
+    <div class="modal-dialog modal-lg">
       <div class="modal-header">
-        <h3><i class="fa-solid fa-users-gear text-pink"></i> 比較ユーザーの管理・追加</h3>
-        <button id="btn-close-user-modal" class="btn-icon">&times;</button>
+        <h3 id="user-modal-title"><i class="fa-solid fa-users-gear text-pink"></i> 比較ユーザーの管理・追加</h3>
+        <button type="button" id="btn-close-user-modal" class="btn-icon-sm" aria-label="閉じる">&times;</button>
       </div>
       <div class="modal-body">
-        <p class="modal-desc">Annict のユーザーIDを指定して、アニメ視聴データを自動取得・比較できます。</p>
-
-        <!-- ユーザー追加フォーム -->
+        <p class="modal-desc">Annict のユーザーIDを追加すると、視聴データがブラウザに保存され、全分析に即座に反映されます。</p>
         <div class="add-user-box">
-          <label for="new-username-input" class="form-label">新しいAnnictユーザーIDを追加:</label>
+          <label for="new-username-input" class="form-label">新しいAnnictユーザーIDを追加</label>
           <div class="input-with-button">
-            <div class="input-box-wrapper">
+            <div class="input-prefix-wrap">
               <span class="input-prefix">@</span>
-              <input type="text" id="new-username-input" placeholder="ユーザーID (例: shimbaco)" class="input-inner" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <input type="text" id="new-username-input" class="input-clean" placeholder="ユーザーID (例: shimbaco)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
-            <button id="btn-add-user" class="btn btn-primary">
+            <button type="button" id="btn-add-user" class="btn btn-primary">
               <i class="fa-solid fa-plus"></i> 追加して分析
             </button>
           </div>
-          <small class="text-muted">※Annictで公開されているアカウントのユーザーIDを入力してください</small>
-
+          <small class="text-muted">※ Annictで公開されているアカウントのIDを指定してください</small>
         </div>
 
-        <!-- 登録済みユーザーリスト -->
-        <div class="current-users-box">
-          <div class="modal-actions-bar">
-            <h4>登録ユーザー一覧（チェックで分析対象を選択）:</h4>
-            <div class="user-select-actions">
-              <button type="button" id="btn-modal-select-all" class="btn btn-xs btn-outline">全選択</button>
-              <button type="button" id="btn-modal-deselect-all" class="btn btn-xs btn-outline">全解除</button>
-            </div>
-          </div>
-          <div id="modal-user-list" class="modal-user-list">
-            <!-- JSで動的生成 -->
+        <div class="modal-section-header">
+          <h4>登録メンバー一覧 <span id="modal-users-count" class="badge">0人</span></h4>
+          <div class="btn-group">
+            <button type="button" id="btn-modal-select-all" class="btn btn-outline btn-xs">全選択</button>
+            <button type="button" id="btn-modal-deselect-all" class="btn btn-outline btn-xs">1人のみ残す</button>
           </div>
         </div>
+        <div id="modal-user-list" class="modal-user-list"></div>
 
-        <!-- ローディング・プログレス表示 -->
-        <div id="user-modal-loading" class="modal-loading-box" style="display: none;">
-          <div class="spinner"></div>
-          <p id="user-modal-status">Annictからデータを取得中...</p>
+        <div id="user-modal-loading" class="modal-loading-bar" style="display: none;">
+          <div class="spinner-sm"></div>
+          <span id="user-modal-status">処理中...</span>
         </div>
       </div>
       <div class="modal-footer">
-        <button id="btn-refresh-all" class="btn btn-outline" title="全ユーザーの最新データを再取得">
+        <button type="button" id="btn-refresh-all" class="btn btn-outline">
           <i class="fa-solid fa-arrows-rotate"></i> 全データを再同期
         </button>
-        <button id="btn-done-user-modal" class="btn btn-primary">完了</button>
+        <button type="button" id="btn-done-user-modal" class="btn btn-primary">完了</button>
       </div>
     </div>
   </div>
 
-  <!-- 画像プレビューモーダル -->
-  <div id="image-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-dialog image-modal-dialog">
+  <!-- 画像拡大モーダル -->
+  <div id="image-modal" class="modal-overlay" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-image">
       <div class="modal-header">
         <h3 id="image-modal-title">作品キービジュアル</h3>
-        <button id="btn-close-image-modal" class="btn-icon">&times;</button>
+        <button type="button" id="btn-close-image-modal" class="btn-icon-sm" aria-label="閉じる">&times;</button>
       </div>
       <div class="modal-body text-center">
         <img id="image-modal-img" src="" alt="" class="modal-large-img" />
@@ -786,33 +224,69 @@
     </div>
   </div>
 
-  <!-- パーティーLab 声優・クリエイター作品一覧モーダル -->
-  <div id="radar-works-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-dialog radar-modal-dialog">
+  <!-- ペア共通作品プレビューモーダル -->
+  <div id="pair-common-modal" class="modal-overlay" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-xl">
       <div class="modal-header">
-        <h3 id="radar-modal-title"><i class="fa-solid fa-film text-pink"></i> 視聴作品一覧</h3>
-        <button id="btn-close-radar-modal" class="btn-icon">&times;</button>
+        <h3 id="pair-modal-title"><i class="fa-solid fa-handshake text-pink"></i> 共通視聴作品</h3>
+        <button type="button" id="btn-close-pair-modal" class="btn-icon-sm" aria-label="閉じる">&times;</button>
       </div>
       <div class="modal-body">
-        <div id="radar-modal-content" class="radar-modal-works-grid"></div>
+        <div id="pair-modal-meta" class="pair-modal-meta"></div>
+        <div id="pair-modal-grid" class="anime-cards-grid"></div>
       </div>
       <div class="modal-footer">
-        <button id="btn-done-radar-modal" class="btn btn-secondary">閉じる</button>
+        <button type="button" id="btn-pair-open-venn" class="btn btn-primary">
+          <i class="fa-solid fa-chart-pie"></i> ベン図比較でこのペアを開く
+        </button>
+        <button type="button" id="btn-done-pair-modal" class="btn btn-outline">閉じる</button>
       </div>
     </div>
   </div>
 
-  <!-- D3.js, Venn.js CDN & fallback -->
+  <!-- カスタム確認モーダル（alert / confirm 代替） -->
+  <div id="confirm-modal" class="modal-overlay" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h3 id="confirm-modal-title">確認</h3>
+        <button type="button" id="btn-close-confirm-modal" class="btn-icon-sm" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-modal-message" class="modal-desc"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn-confirm-cancel" class="btn btn-outline">キャンセル</button>
+        <button type="button" id="btn-confirm-ok" class="btn btn-primary">実行する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- トースト通知コンテナ -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/venn.js@0.2.20/build/venn.min.js"></script>
-  <script src="./analyzer.js?v=2.1"></script>
-  <script src="./app.js?v=2.8"></script>
-  <!-- お試し機能 (Labs) 専用スクリプト (削除時はこの1行を消せばOK) -->
-  <script src="./labs/labs.js?v=2.1"></script>
-  <script src="./labs/genre-lab.js?v=2.1"></script>
-  <script src="./labs/party-lab.js?v=2.2"></script>
-  <script src="./labs/similarity-search.js?v=1.0"></script>
-  <script src="./labs/episode-similarity.js?v=1.0"></script>
-  <script src="./labs/story-similarity.js?v=20261019_ui"></script>
+
+  <!-- Core Shared Engines (Single Source UMD) -->
+  <script src="./core/genre-engine.js?v=3.0"></script>
+  <script src="./core/studio-dictionary.js?v=3.0"></script>
+  <script src="./core/analyzer-engine.js?v=3.0"></script>
+  <script src="./core/storage.js?v=3.0"></script>
+  <script src="./core/ui-utils.js?v=3.0"></script>
+  <script src="./core/store.js?v=3.0"></script>
+
+  <!-- Feature Views (8 Views) -->
+  <script src="./views/venn-view.js?v=3.0"></script>
+  <script src="./views/similarity-view.js?v=3.0"></script>
+  <script src="./views/insights-view.js?v=3.0"></script>
+  <script src="./views/group-view.js?v=3.0"></script>
+  <script src="./views/analytics-view.js?v=3.0"></script>
+  <script src="./views/genre-view.js?v=3.0"></script>
+  <script src="./views/search-view.js?v=3.0"></script>
+  <script src="./views/story-view.js?v=3.0"></script>
+
+  <!-- Application Entry -->
+  <script src="./app.js?v=3.0"></script>
 </body>
 </html>

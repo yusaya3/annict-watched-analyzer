@@ -8,7 +8,7 @@ const path = require('path');
 const USERS_FILE = path.resolve(__dirname, '../config/users.json');
 
 function main() {
-  const action = process.argv[2]; // 'add', 'remove', 'list'
+  const action = process.argv[2];
   const username = (process.argv[3] || '').trim().replace(/^@/, '');
 
   if (!fs.existsSync(USERS_FILE)) {
@@ -22,12 +22,13 @@ function main() {
       console.error('エラー: 追加するユーザー名を指定してください');
       process.exit(1);
     }
-    if (!users.includes(username)) {
+    const existingIdx = users.findIndex(u => u.toLowerCase() === username.toLowerCase());
+    if (existingIdx === -1) {
       users.push(username);
       fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
       console.log(`[OK] ユーザー @${username} を追加しました`);
     } else {
-      console.log(`[INFO] ユーザー @${username} は既に登録されています`);
+      console.log(`[INFO] ユーザー @${users[existingIdx]} は既に登録されています`);
     }
   } else if (action === 'remove') {
     if (!username) {

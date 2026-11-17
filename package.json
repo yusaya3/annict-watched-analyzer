@@ -1,14 +1,17 @@
 {
   "name": "annict-watched-analyzer",
-  "version": "2.0.0",
-  "description": "最新のAnnictに対応したアニメ視聴傾向・シンクロ率比較ツール",
+  "version": "3.0.0",
+  "description": "最新のAnnictに対応したアニメ視聴傾向・シンクロ率・15ジャンル・AIストーリー構造類似比較ワークスペース",
   "main": "bin/annict-analyzer.js",
   "scripts": {
     "start": "node bin/annict-analyzer.js",
-    "build": "node scripts/build-work-genres.js",
+    "build": "node scripts/rebuild-reports.js",
+    "build:genres": "node scripts/build-work-genres.js",
+    "build:story": "node scripts/build-story-buckets.js",
+    "build:popular": "node scripts/build-popular-split.js",
     "fetch": "node bin/annict-analyzer.js --fetch-only",
     "serve": "node bin/annict-analyzer.js --serve-only",
-    "record-test": "node test/record_test.js"
+    "test": "node test/test_v3_comprehensive.js"
   },
   "keywords": [
     "annict",

@@ -2,67 +2,55 @@
 
 const fs = require('fs');
 const path = require('path');
-const Analyzer = require('../lib/analyzer.js');
-const ExperimentalAnalyzer = require('../lib/labs/experimental-analyzer.js');
-const { GenreClient, classifyAnime } = require('../lib/labs/genre-client.js');
+const { buildBootstrapPayload } = require('./build-bootstrap.js');
+const { buildWorkGenres } = require('./build-work-genres.js');
 
 async function main() {
-  console.log('=== Annict純正画像仕様で全レポート（analysis.json & venns.json）の再ビルド開始 ===');
+  console.log('=== 超軽量ブートストラップ & ジャンル辞書の再ビルド開始 ===');
   const cacheDir = path.resolve(__dirname, '../data/cache');
   const resDir = path.resolve(__dirname, '../static/res');
+  const usersConfigPath = path.resolve(__dirname, '../config/users.json');
 
-  const userFiles = fs.readdirSync(cacheDir).filter(f => f.endsWith('.json') && !f.includes('genre') && !f.includes('image'));
+  let usersOrder = [];
+  if (fs.existsSync(usersConfigPath)) {
+    try {
+      usersOrder = JSON.parse(fs.readFileSync(usersConfigPath, 'utf8'));
+    } catch (e) {}
+  }
+
+  const userFiles = fs.readdirSync(cacheDir).filter(
+    f => f.endsWith('.json') && !f.includes('genre') && !f.includes('image') && !f.includes('hires')
+  );
   const userWatchedLists = {};
+  const lowerKeyMap = new Map();
 
   for (const f of userFiles) {
     try {
       const u = JSON.parse(fs.readFileSync(path.join(cacheDir, f), 'utf8'));
-      if (u.username && u.animes) {
+      if (u.username && Array.isArray(u.animes)) {
         userWatchedLists[u.username] = u.animes;
+        lowerKeyMap.set(u.username.toLowerCase(), u.username);
       }
     } catch (e) {}
   }
 
-  const users = Object.keys(userWatchedLists);
-  console.log(`対象ユーザー (${users.length}名):`, users.join(', '));
+  const finalUsers = usersOrder.length > 0
+    ? usersOrder.filter(u => lowerKeyMap.has(String(u).toLowerCase()))
+    : Object.keys(userWatchedLists);
 
-  const analyzer = new Analyzer(userWatchedLists);
-  const report = analyzer.buildFullReport();
+  console.log(`対象ユーザー (${finalUsers.length}名):`, finalUsers.join(', '));
 
-  // Labs レポート
-  try {
-    const exp = new ExperimentalAnalyzer(analyzer.userWatchedLists);
-    const genreClient = new GenreClient();
-    const genreMap = {};
-    for (const [u, list] of Object.entries(analyzer.userWatchedLists)) {
-      for (const a of list) {
-        if (!genreMap[a.title]) {
-          const entry = genreClient.cache[a.title] || { genres: [], tags: [] };
-          genreMap[a.title] = {
-            genres: entry.genres || [],
-            tags: entry.tags || [],
-            category: classifyAnime(entry.genres || [], entry.tags || [], a.title)
-          };
-        }
-      }
-    }
-    report.labs = exp.generateLabsReport(genreMap);
-  } catch (labsErr) {
-    console.warn('Labs生成エラー:', labsErr.message);
-  }
+  const bootstrapPayload = buildBootstrapPayload(userWatchedLists, finalUsers);
+  const bootstrapFile = path.join(resDir, 'bootstrap.json');
+  fs.mkdirSync(resDir, { recursive: true });
+  fs.writeFileSync(bootstrapFile, JSON.stringify(bootstrapPayload), 'utf8');
+  console.log(`bootstrap.json を更新しました (${Math.round(fs.statSync(bootstrapFile).size / 1024)} KB)`);
 
-  // analysis.json 保存
-  const analysisFile = path.join(resDir, 'analysis.json');
-  fs.writeFileSync(analysisFile, JSON.stringify(report, null, 2), 'utf8');
-  console.log(`analysis.json を更新しました (${(fs.statSync(analysisFile).size / 1024 / 1024).toFixed(2)} MB)`);
-
-  // venns.json 生成（初期3ユーザー）
-  const vennSets = analyzer.generateVennSets(users.slice(0, 3));
-  const vennFile = path.join(resDir, 'venns.json');
-  fs.writeFileSync(vennFile, JSON.stringify({ users: users.slice(0, 3), vennSets }, null, 2), 'utf8');
-  console.log(`venns.json を更新しました`);
-
-  console.log('=== 再ビルド完了（Annict純正仕様） ===');
+  buildWorkGenres();
+  console.log('=== 再ビルド完了 ===');
 }
 
-main().catch(console.error);
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
