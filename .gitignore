@@ -3,7 +3,7 @@ node_modules/
 
 # Scratch & Temporary test scripts
 scratch/
-test/
+test/*
 !test/test_v3_comprehensive.js
 
 # Python cache
