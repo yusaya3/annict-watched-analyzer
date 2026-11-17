@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T23:18:20.087Z",
+  "generatedAt": "2026-11-17T02:15:31.055Z",
   "users": [
     "saya15",
     "animemitaro",
@@ -44,8 +44,8 @@
     },
     {
       "username": "tmist",
-      "count": 533,
-      "exclusiveCount": 113,
+      "count": 534,
+      "exclusiveCount": 114,
       "missingCount": 0
     },
     {
@@ -26228,9 +26228,9 @@
         "user1": "saya15",
         "user2": "tmist",
         "intersection": 171,
-        "union": 1175,
-        "similarity": 0.14553191489361703,
-        "percentage": 14.6
+        "union": 1176,
+        "similarity": 0.14540816326530612,
+        "percentage": 14.5
       },
       {
         "user1": "saya15",
@@ -26300,8 +26300,8 @@
         "user1": "animemitaro",
         "user2": "tmist",
         "intersection": 325,
-        "union": 1337,
-        "similarity": 0.24308152580403888,
+        "union": 1338,
+        "similarity": 0.2428998505231689,
         "percentage": 24.3
       },
       {
@@ -26372,8 +26372,8 @@
         "user1": "hanu",
         "user2": "tmist",
         "intersection": 186,
-        "union": 925,
-        "similarity": 0.20108108108108108,
+        "union": 926,
+        "similarity": 0.20086393088552915,
         "percentage": 20.1
       },
       {
@@ -26444,8 +26444,8 @@
         "user1": "hitobi_syuto",
         "user2": "tmist",
         "intersection": 258,
-        "union": 1244,
-        "similarity": 0.20739549839228297,
+        "union": 1245,
+        "similarity": 0.20722891566265061,
         "percentage": 20.7
       },
       {
@@ -26516,8 +26516,8 @@
         "user1": "fs495",
         "user2": "tmist",
         "intersection": 100,
-        "union": 1237,
-        "similarity": 0.08084074373484236,
+        "union": 1238,
+        "similarity": 0.08077544426494346,
         "percentage": 8.1
       },
       {
@@ -26548,47 +26548,47 @@
         "user1": "tmist",
         "user2": "saya15",
         "intersection": 171,
-        "union": 1175,
-        "similarity": 0.14553191489361703,
-        "percentage": 14.6
+        "union": 1176,
+        "similarity": 0.14540816326530612,
+        "percentage": 14.5
       },
       {
         "user1": "tmist",
         "user2": "animemitaro",
         "intersection": 325,
-        "union": 1337,
-        "similarity": 0.24308152580403888,
+        "union": 1338,
+        "similarity": 0.2428998505231689,
         "percentage": 24.3
       },
       {
         "user1": "tmist",
         "user2": "hanu",
         "intersection": 186,
-        "union": 925,
-        "similarity": 0.20108108108108108,
+        "union": 926,
+        "similarity": 0.20086393088552915,
         "percentage": 20.1
       },
       {
         "user1": "tmist",
         "user2": "hitobi_syuto",
         "intersection": 258,
-        "union": 1244,
-        "similarity": 0.20739549839228297,
+        "union": 1245,
+        "similarity": 0.20722891566265061,
         "percentage": 20.7
       },
       {
         "user1": "tmist",
         "user2": "fs495",
         "intersection": 100,
-        "union": 1237,
-        "similarity": 0.08084074373484236,
+        "union": 1238,
+        "similarity": 0.08077544426494346,
         "percentage": 8.1
       },
       {
         "user1": "tmist",
         "user2": "tmist",
-        "intersection": 533,
-        "union": 533,
+        "intersection": 534,
+        "union": 534,
         "similarity": 1,
         "percentage": 100
       },
@@ -26596,25 +26596,25 @@
         "user1": "tmist",
         "user2": "shimbaco",
         "intersection": 75,
-        "union": 1014,
-        "similarity": 0.07396449704142012,
+        "union": 1015,
+        "similarity": 0.07389162561576355,
         "percentage": 7.4
       },
       {
         "user1": "tmist",
         "user2": "white_tiny_cat",
         "intersection": 11,
-        "union": 647,
-        "similarity": 0.017001545595054096,
+        "union": 648,
+        "similarity": 0.016975308641975308,
         "percentage": 1.7
       },
       {
         "user1": "tmist",
         "user2": "pomeranian_dev",
         "intersection": 12,
-        "union": 558,
-        "similarity": 0.021505376344086023,
-        "percentage": 2.2
+        "union": 559,
+        "similarity": 0.02146690518783542,
+        "percentage": 2.1
       },
       {
         "user1": "shimbaco",
@@ -26660,8 +26660,8 @@
         "user1": "shimbaco",
         "user2": "tmist",
         "intersection": 75,
-        "union": 1014,
-        "similarity": 0.07396449704142012,
+        "union": 1015,
+        "similarity": 0.07389162561576355,
         "percentage": 7.4
       },
       {
@@ -26732,8 +26732,8 @@
         "user1": "white_tiny_cat",
         "user2": "tmist",
         "intersection": 11,
-        "union": 647,
-        "similarity": 0.017001545595054096,
+        "union": 648,
+        "similarity": 0.016975308641975308,
         "percentage": 1.7
       },
       {
@@ -26804,9 +26804,9 @@
         "user1": "pomeranian_dev",
         "user2": "tmist",
         "intersection": 12,
-        "union": 558,
-        "similarity": 0.021505376344086023,
-        "percentage": 2.2
+        "union": 559,
+        "similarity": 0.02146690518783542,
+        "percentage": 2.1
       },
       {
         "user1": "pomeranian_dev",
@@ -26870,8 +26870,8 @@
           "tmist"
         ],
         "intersection": 325,
-        "union": 1337,
-        "similarity": 0.24308152580403888,
+        "union": 1338,
+        "similarity": 0.2428998505231689,
         "percentage": 24.3
       },
       {
@@ -26900,8 +26900,8 @@
           "tmist"
         ],
         "intersection": 258,
-        "union": 1244,
-        "similarity": 0.20739549839228297,
+        "union": 1245,
+        "similarity": 0.20722891566265061,
         "percentage": 20.7
       },
       {
@@ -26920,8 +26920,8 @@
           "tmist"
         ],
         "intersection": 186,
-        "union": 925,
-        "similarity": 0.20108108108108108,
+        "union": 926,
+        "similarity": 0.20086393088552915,
         "percentage": 20.1
       },
       {
@@ -26980,9 +26980,9 @@
           "tmist"
         ],
         "intersection": 171,
-        "union": 1175,
-        "similarity": 0.14553191489361703,
-        "percentage": 14.6
+        "union": 1176,
+        "similarity": 0.14540816326530612,
+        "percentage": 14.5
       },
       {
         "pair": [
@@ -27020,8 +27020,8 @@
           "tmist"
         ],
         "intersection": 100,
-        "union": 1237,
-        "similarity": 0.08084074373484236,
+        "union": 1238,
+        "similarity": 0.08077544426494346,
         "percentage": 8.1
       },
       {
@@ -27030,8 +27030,8 @@
           "shimbaco"
         ],
         "intersection": 75,
-        "union": 1014,
-        "similarity": 0.07396449704142012,
+        "union": 1015,
+        "similarity": 0.07389162561576355,
         "percentage": 7.4
       },
       {
@@ -27110,9 +27110,9 @@
           "pomeranian_dev"
         ],
         "intersection": 12,
-        "union": 558,
-        "similarity": 0.021505376344086023,
-        "percentage": 2.2
+        "union": 559,
+        "similarity": 0.02146690518783542,
+        "percentage": 2.1
       },
       {
         "pair": [
@@ -27150,8 +27150,8 @@
           "white_tiny_cat"
         ],
         "intersection": 11,
-        "union": 647,
-        "similarity": 0.017001545595054096,
+        "union": 648,
+        "similarity": 0.016975308641975308,
         "percentage": 1.7
       },
       {
@@ -33665,6 +33665,13 @@
           "url": "https://annict.com/works/8467"
         },
         {
+          "id": "6736",
+          "title": "犬王",
+          "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+          "season": "2022年春",
+          "url": "https://annict.com/works/6736"
+        },
+        {
           "id": "9316",
           "title": "おにぱん！",
           "image": "https://image.annict.com/FLPGdQgmTJkv-mD-fi27W31Tp-SHNOqmkyltUDZxtI8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6242/image/master-bdbe20344180c7649378b51364c43065.jpg@webp",
@@ -35587,7 +35594,7 @@
       "white_tiny_cat": [],
       "pomeranian_dev": []
     },
-    "totalUniqueAnimes": 2621
+    "totalUniqueAnimes": 2622
   },
   "userWatchedLists": {
     "saya15": [
@@ -66514,18 +66521,18 @@
         "url": "https://annict.com/works/13046"
       },
       {
-        "id": "11307",
-        "title": "公女殿下の家庭教師",
-        "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/11307"
-      },
-      {
         "id": "13809",
         "title": "雨と君と",
         "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/13809"
+      },
+      {
+        "id": "11307",
+        "title": "公女殿下の家庭教師",
+        "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/11307"
       },
       {
         "id": "10353",
@@ -66612,18 +66619,18 @@
         "url": "https://annict.com/works/14296"
       },
       {
-        "id": "15395",
-        "title": "人妻の唇は缶チューハイの味がして",
-        "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
-        "season": "2025年夏",
-        "url": "https://annict.com/works/15395"
-      },
-      {
         "id": "15115",
         "title": "不思議の国でアリスと -Dive in Wonderland-",
         "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
         "season": "2025年夏",
         "url": "https://annict.com/works/15115"
+      },
+      {
+        "id": "15395",
+        "title": "人妻の唇は缶チューハイの味がして",
+        "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
+        "season": "2025年夏",
+        "url": "https://annict.com/works/15395"
       },
       {
         "id": "15116",
@@ -68248,6 +68255,13 @@
         "image": "https://image.annict.com/VDudeKfflWvLm28AArnTUINOowZAg1yma5jzYSekIis/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5217/image/master-cfff62d6da18f17a3221c2709b6467e3.jpg@webp",
         "season": "2022年春",
         "url": "https://annict.com/works/8139"
+      },
+      {
+        "id": "6736",
+        "title": "犬王",
+        "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+        "season": "2022年春",
+        "url": "https://annict.com/works/6736"
       },
       {
         "id": "9316",
@@ -74491,14 +74505,14 @@
       },
       "tmist": {
         "username": "tmist",
-        "workCount": 533,
-        "totalHours": 2572.2,
-        "totalDays": 107.2,
-        "wakingDays": 160.8,
+        "workCount": 534,
+        "totalHours": 2577,
+        "totalDays": 107.4,
+        "wakingDays": 161.1,
         "lifePercentage": 4.4,
         "titleLevel": "超ヘビー (2,000h+)",
         "breakdown": {
-          "tvCount": 508,
+          "tvCount": 509,
           "movieCount": 22,
           "ovaCount": 3
         }
@@ -84146,18 +84160,18 @@
                 "url": "https://annict.com/works/13046"
               },
               {
-                "id": "11307",
-                "title": "公女殿下の家庭教師",
-                "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/11307"
-              },
-              {
                 "id": "13809",
                 "title": "雨と君と",
                 "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/13809"
+              },
+              {
+                "id": "11307",
+                "title": "公女殿下の家庭教師",
+                "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/11307"
               },
               {
                 "id": "10353",
@@ -84244,18 +84258,18 @@
                 "url": "https://annict.com/works/14296"
               },
               {
-                "id": "15395",
-                "title": "人妻の唇は缶チューハイの味がして",
-                "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15395"
-              },
-              {
                 "id": "15115",
                 "title": "不思議の国でアリスと -Dive in Wonderland-",
                 "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15115"
+              },
+              {
+                "id": "15395",
+                "title": "人妻の唇は缶チューハイの味がして",
+                "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15395"
               },
               {
                 "id": "15116",
@@ -91115,14 +91129,14 @@
         },
         {
           "year": 2022,
-          "totalCount": 284,
+          "totalCount": 285,
           "countsByUser": {
             "saya15": 35,
             "animemitaro": 59,
             "hanu": 45,
             "hitobi_syuto": 43,
             "fs495": 59,
-            "tmist": 37,
+            "tmist": 38,
             "shimbaco": 6,
             "white_tiny_cat": 0,
             "pomeranian_dev": 0
@@ -93049,6 +93063,13 @@
                 "image": "https://image.annict.com/VDudeKfflWvLm28AArnTUINOowZAg1yma5jzYSekIis/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5217/image/master-cfff62d6da18f17a3221c2709b6467e3.jpg@webp",
                 "season": "2022年春",
                 "url": "https://annict.com/works/8139"
+              },
+              {
+                "id": "6736",
+                "title": "犬王",
+                "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                "season": "2022年春",
+                "url": "https://annict.com/works/6736"
               },
               {
                 "id": "9316",
@@ -145487,7 +145508,7 @@
             "2019": 11,
             "2020": 9,
             "2021": 16,
-            "2022": 37,
+            "2022": 38,
             "2023": 52,
             "2024": 101,
             "2025": 108,
@@ -146861,6 +146882,13 @@
                 "image": "https://image.annict.com/VDudeKfflWvLm28AArnTUINOowZAg1yma5jzYSekIis/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5217/image/master-cfff62d6da18f17a3221c2709b6467e3.jpg@webp",
                 "season": "2022年春",
                 "url": "https://annict.com/works/8139"
+              },
+              {
+                "id": "6736",
+                "title": "犬王",
+                "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                "season": "2022年春",
+                "url": "https://annict.com/works/6736"
               },
               {
                 "id": "9316",
@@ -148290,18 +148318,18 @@
                 "url": "https://annict.com/works/13046"
               },
               {
-                "id": "11307",
-                "title": "公女殿下の家庭教師",
-                "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/11307"
-              },
-              {
                 "id": "13809",
                 "title": "雨と君と",
                 "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/13809"
+              },
+              {
+                "id": "11307",
+                "title": "公女殿下の家庭教師",
+                "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/11307"
               },
               {
                 "id": "10353",
@@ -148388,18 +148416,18 @@
                 "url": "https://annict.com/works/14296"
               },
               {
-                "id": "15395",
-                "title": "人妻の唇は缶チューハイの味がして",
-                "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
-                "season": "2025年夏",
-                "url": "https://annict.com/works/15395"
-              },
-              {
                 "id": "15115",
                 "title": "不思議の国でアリスと -Dive in Wonderland-",
                 "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
                 "season": "2025年夏",
                 "url": "https://annict.com/works/15115"
+              },
+              {
+                "id": "15395",
+                "title": "人妻の唇は缶チューハイの味がして",
+                "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
+                "season": "2025年夏",
+                "url": "https://annict.com/works/15395"
               },
               {
                 "id": "15116",
@@ -149285,7 +149313,7 @@
             "2006_2010": 10,
             "2011_2015": 45,
             "2016_2020": 79,
-            "2021_present": 392
+            "2021_present": 393
           }
         },
         "shimbaco": {
@@ -207279,7 +207307,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 533,
+          "totalWatched": 534,
           "genres": [
             {
               "id": "nichijou",
@@ -207948,7 +207976,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 67,
-              "percentage": 12.6,
+              "percentage": 12.5,
               "animes": [
                 {
                   "id": "17108",
@@ -209286,8 +209314,8 @@
               "label": "歴史 / 戦記 / ミリタリー",
               "icon": "fa-solid fa-shield-halved",
               "color": "#64748b",
-              "count": 50,
-              "percentage": 9.4,
+              "count": 51,
+              "percentage": 9.6,
               "animes": [
                 {
                   "id": "15557",
@@ -209505,6 +209533,13 @@
                   "image": "https://image.annict.com/cT5BxrWNxjZVl8J6OLXxNFoFb642hwycx2N2nWxuHWw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6039/image/master-5ffdfbf7e8289abd39d40bb95765cd84.jpg@webp",
                   "season": "2022年春",
                   "url": "https://annict.com/works/9107"
+                },
+                {
+                  "id": "6736",
+                  "title": "犬王",
+                  "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                  "season": "2022年春",
+                  "url": "https://annict.com/works/6736"
                 },
                 {
                   "id": "7999",
@@ -211831,7 +211866,7 @@
               "icon": "fa-solid fa-heart",
               "color": "#ec4899",
               "count": 67,
-              "percentage": 12.6,
+              "percentage": 12.5,
               "animes": [
                 {
                   "id": "17108",
@@ -227006,7 +227041,7 @@
             "hanu": 10,
             "hitobi_syuto": 17.3,
             "fs495": 11.3,
-            "tmist": 12.6,
+            "tmist": 12.5,
             "shimbaco": 12.8,
             "white_tiny_cat": 8,
             "pomeranian_dev": 13.5
@@ -242863,14 +242898,14 @@
           "labelEn": "Historical & Military",
           "icon": "fa-solid fa-shield-halved",
           "color": "#64748b",
-          "totalWorksAcrossUsers": 449,
+          "totalWorksAcrossUsers": 450,
           "userCounts": {
             "saya15": 92,
             "animemitaro": 80,
             "hanu": 36,
             "hitobi_syuto": 61,
             "fs495": 75,
-            "tmist": 50,
+            "tmist": 51,
             "shimbaco": 37,
             "white_tiny_cat": 15,
             "pomeranian_dev": 3
@@ -242881,7 +242916,7 @@
             "hanu": 6.2,
             "hitobi_syuto": 6.3,
             "fs495": 9.3,
-            "tmist": 9.4,
+            "tmist": 9.6,
             "shimbaco": 6.7,
             "white_tiny_cat": 12,
             "pomeranian_dev": 8.1
@@ -245522,6 +245557,13 @@
                 "image": "https://image.annict.com/cT5BxrWNxjZVl8J6OLXxNFoFb642hwycx2N2nWxuHWw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6039/image/master-5ffdfbf7e8289abd39d40bb95765cd84.jpg@webp",
                 "season": "2022年春",
                 "url": "https://annict.com/works/9107"
+              },
+              {
+                "id": "6736",
+                "title": "犬王",
+                "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                "season": "2022年春",
+                "url": "https://annict.com/works/6736"
               },
               {
                 "id": "7999",
@@ -305365,7 +305407,7 @@
         },
         "tmist": {
           "username": "tmist",
-          "totalWatched": 533,
+          "totalWatched": 534,
           "genres": [
             {
               "id": "drama",
@@ -307555,7 +307597,7 @@
               "icon": "fa-solid fa-burst",
               "color": "#ef4444",
               "count": 68,
-              "percentage": 12.8,
+              "percentage": 12.7,
               "animes": [
                 {
                   "id": "16856",
@@ -308040,8 +308082,8 @@
               "label": "アイドル / 音楽",
               "icon": "fa-solid fa-music",
               "color": "#eab308",
-              "count": 49,
-              "percentage": 9.2,
+              "count": 50,
+              "percentage": 9.4,
               "animes": [
                 {
                   "id": "13537",
@@ -308301,6 +308343,13 @@
                   "image": "https://image.annict.com/ujmVLnQz66hoPTPaXdSuQv3uqiKvehQ8EcBMXhi2DT0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5572/image/master-ba848e0f29caf1cd3623139841d158b1.jpg@webp",
                   "season": "2022年春",
                   "url": "https://annict.com/works/8478"
+                },
+                {
+                  "id": "6736",
+                  "title": "犬王",
+                  "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                  "season": "2022年春",
+                  "url": "https://annict.com/works/6736"
                 },
                 {
                   "id": "9316",
@@ -330815,7 +330864,7 @@
             "hanu": 14,
             "hitobi_syuto": 9.3,
             "fs495": 10.2,
-            "tmist": 12.8,
+            "tmist": 12.7,
             "shimbaco": 8.3,
             "white_tiny_cat": 15.2,
             "pomeranian_dev": 13.5
@@ -351407,14 +351456,14 @@
           "labelEn": "Idol / Music",
           "icon": "fa-solid fa-music",
           "color": "#eab308",
-          "totalWorksAcrossUsers": 291,
+          "totalWorksAcrossUsers": 292,
           "userCounts": {
             "saya15": 62,
             "animemitaro": 56,
             "hanu": 16,
             "hitobi_syuto": 63,
             "fs495": 23,
-            "tmist": 49,
+            "tmist": 50,
             "shimbaco": 16,
             "white_tiny_cat": 4,
             "pomeranian_dev": 2
@@ -351425,7 +351474,7 @@
             "hanu": 2.8,
             "hitobi_syuto": 6.5,
             "fs495": 2.9,
-            "tmist": 9.2,
+            "tmist": 9.4,
             "shimbaco": 2.9,
             "white_tiny_cat": 3.2,
             "pomeranian_dev": 5.4
@@ -353240,6 +353289,13 @@
                 "image": "https://image.annict.com/ujmVLnQz66hoPTPaXdSuQv3uqiKvehQ8EcBMXhi2DT0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/5572/image/master-ba848e0f29caf1cd3623139841d158b1.jpg@webp",
                 "season": "2022年春",
                 "url": "https://annict.com/works/8478"
+              },
+              {
+                "id": "6736",
+                "title": "犬王",
+                "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+                "season": "2022年春",
+                "url": "https://annict.com/works/6736"
               },
               {
                 "id": "9316",
@@ -358279,9 +358335,9 @@
       ]
     },
     "genreDiffReport": {
-      "totalWorks": 2621,
+      "totalWorks": 2622,
       "sameCount": 1526,
-      "diffCount": 1095,
+      "diffCount": 1096,
       "diffPercentage": 42,
       "diffs": [
         {
@@ -371648,6 +371704,25 @@
             "タグ: Super Power (+80)",
             "タグ: Swordplay (+76)",
             "タグ: Guns (+83)"
+          ]
+        },
+        {
+          "id": "6736",
+          "title": "犬王",
+          "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+          "season": "2022年春",
+          "url": "https://annict.com/works/6736",
+          "watchedBy": [
+            "tmist"
+          ],
+          "legacyCategory": "history_military",
+          "scoredCategory": "idol_music",
+          "score": 478,
+          "topReasons": [
+            "タグ: Band (+147)",
+            "タグ: Musical Theater (+110)",
+            "タグ: Rock Music (+101)",
+            "公式ジャンル: Music (+120)"
           ]
         },
         {

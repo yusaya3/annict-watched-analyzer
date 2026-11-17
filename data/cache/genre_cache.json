@@ -156006,5 +156006,78 @@
         "rank": 60
       }
     ]
+  },
+  "犬王": {
+    "genres": [
+      "Adventure",
+      "Music",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Band",
+        "rank": 92
+      },
+      {
+        "name": "Anachronism",
+        "rank": 92
+      },
+      {
+        "name": "Musical Theater",
+        "rank": 92
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 88
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 88
+      },
+      {
+        "name": "Dancing",
+        "rank": 86
+      },
+      {
+        "name": "Rock Music",
+        "rank": 84
+      },
+      {
+        "name": "Historical",
+        "rank": 82
+      },
+      {
+        "name": "Disability",
+        "rank": 82
+      },
+      {
+        "name": "Tragedy",
+        "rank": 80
+      },
+      {
+        "name": "Crossdressing",
+        "rank": 79
+      },
+      {
+        "name": "Curses",
+        "rank": 79
+      },
+      {
+        "name": "Acting",
+        "rank": 77
+      },
+      {
+        "name": "Time Skip",
+        "rank": 71
+      },
+      {
+        "name": "Samurai",
+        "rank": 60
+      },
+      {
+        "name": "Demons",
+        "rank": 57
+      }
+    ]
   }
 }

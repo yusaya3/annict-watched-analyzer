@@ -1,7 +1,42 @@
 {
-  "generatedAt": "2026-11-15T23:18:04.952Z",
-  "count": 17420,
+  "generatedAt": "2026-11-17T02:15:10.231Z",
+  "count": 17425,
   "works": [
+    {
+      "id": "18392",
+      "title": "ダイヤモンドの功罪",
+      "image": "https://image.annict.com/dkjwLLbAb2jr0BC1LMCDERD60znJcchPnQtVx5X9jDw/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16909/image/master-77f95a62491743a0cf2edbe7f09d9e15.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18392"
+    },
+    {
+      "id": "18391",
+      "title": "「スター・ウォーズ／マンダロリアン・アンド・グローグー」特別アニメーション「おかえり、スター・ウォーズ」",
+      "image": "https://image.annict.com/ISVv5An43q06JEAET3UPdTIXzm8B53tv41uQcRy8k3I/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16908/image/master-fcc3764a9957d1630a906877983be25e.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18391"
+    },
+    {
+      "id": "18390",
+      "title": "ディズニーヴィランズの悪夢",
+      "image": "https://image.annict.com/nl6DA6u5fq1_Ka73BQdVSrFwoFxIDSRBTa4R3pMqZk0/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16907/image/master-10ef00fef859c11cf0984d39cab4bd3c.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18390"
+    },
+    {
+      "id": "18389",
+      "title": "ディズニー あいぼうたちの大ぼうけん：アナと雪の女王のなかまたち",
+      "image": "https://image.annict.com/0XRdCFj5nk4PQEXtuAp6aanK6wK5Nv7nFxGPCzF9s28/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16906/image/master-8f19fb252f985c122e312674979503e3.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18389"
+    },
+    {
+      "id": "18388",
+      "title": "ディズニー あいぼうたちの大ぼうけん",
+      "image": "https://image.annict.com/SK8Z9FxFZsFjusBBdaEn15enWXCzre0swRdwyolK1ow/s:328:437/plain/s3://annict-user-contents/shrine/workimage/16905/image/master-b292244efb89f6b58f5c1eb650240ad4.jpg@webp",
+      "season": "",
+      "url": "https://annict.com/works/18388"
+    },
     {
       "id": "18387",
       "title": "映画 おでかけ子ザメ 水のまちの思い出",
