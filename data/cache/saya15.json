@@ -1,14 +1,42 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-10-16T21:52:50.907Z",
-  "count": 798,
+  "fetchedAt": "2026-11-14T00:06:42.546Z",
+  "count": 813,
   "animes": [
+    {
+      "id": "10404",
+      "title": "メイドインアビス 目覚める神秘",
+      "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/10404"
+    },
+    {
+      "id": "17108",
+      "title": "どこよりも遠い場所にいる君へ",
+      "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/17108"
+    },
     {
       "id": "16716",
       "title": "ガールズ&パンツァー 最終章 第5話",
-      "image": "https://image.annict.com/scP49W0PWXiL7aNdJ9BK4_bs3a2JBFa1eY3gUivZWDA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-c5a4def72a3e0d1ca73de81645d858a7.jpg@webp",
+      "image": "https://image.annict.com/TZQubNnYRtKOu-zLxYr4sfKI990CvdcierdtKHUIO18/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13371/image/master-dc1cab13332c0f3aefc7c476daa61613.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/16716"
+    },
+    {
+      "id": "16454",
+      "title": "BanG Dream! Ave Mujica prima aurora",
+      "image": "https://image.annict.com/HRL2v_aBUq1_ncMccZy7cMu4PG89wlU7Oh5JTqqmoy8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13721/image/master-732a8b5a667c048bb3e3a7f7e8fa8949.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/16454"
+    },
+    {
+      "id": "12433",
+      "title": "ヤマトよ永遠に REBEL3199 第七章",
+      "image": "https://image.annict.com/uEBn6dgys8AXTFkfY-S4sORhldgvcBEQ9ihl-o5nqzI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8938/image/master-7243c2926c6c0808f0c2eca7d50e3cf9.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/12433"
     },
     {
       "id": "13582",
@@ -60,6 +88,20 @@
       "url": "https://annict.com/works/15724"
     },
     {
+      "id": "6187",
+      "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
+      "image": "https://image.annict.com/nr7QZFIlpI3I4rRmpYDVH2l7vkZAJ7eXZA4K74k9W7k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3011/image/master-6244ab85520b0f4548a73d749585eb86.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/6187"
+    },
+    {
+      "id": "16714",
+      "title": "透明な夜に駆ける君と、目に見えない恋をした。",
+      "image": "https://image.annict.com/iIyJyoUC_Sd0rOMzwyu5Y3nW-e3qW_XhlE1FWAzXmBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13365/image/master-017e6ac7967bb9d006452c1b5392e58f.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16714"
+    },
+    {
       "id": "16677",
       "title": "才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました",
       "image": "https://image.annict.com/3LpuREylKYTukf5ziKpzPsH-WfwyjZ040hAVFPXf0ug/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13335/image/master-61b4e073917fce879baa3abe6ac568a1.jpg@webp",
@@ -102,18 +144,18 @@
       "url": "https://annict.com/works/16519"
     },
     {
-      "id": "15036",
-      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
-      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/15036"
-    },
-    {
       "id": "16468",
       "title": "ブチ切れ令嬢は報復を誓いました。～魔導書の力で祖国を叩き潰します～",
       "image": "https://image.annict.com/RToBSwB7kkS_Hhi92T9NpH2BUg22C8QXIu-yAQgMP4c/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13121/image/master-568839b5393488f9db3f67636bcb99c9.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16468"
+    },
+    {
+      "id": "15036",
+      "title": "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
+      "image": "https://image.annict.com/CBueHOZXZgurLa22QPxyNMgBWwnpAiqLeoQT8wcm9VM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11675/image/master-ac10f81d939bf2b8305a8980b3b940a8.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/15036"
     },
     {
       "id": "17354",
@@ -149,6 +191,13 @@
       "image": "https://image.annict.com/rydEKApTSiBxnvARwNvoJSUJkQ75RGz5aM8fPG9zn9U/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10881/image/master-23a4556020234e7e3d5514d96bab1b51.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/14066"
+    },
+    {
+      "id": "15658",
+      "title": "上伊那ぼたん、酔へる姿は百合の花",
+      "image": "https://image.annict.com/gBt2NREqOE19OoLR40oUufsX_2nlQctqHfnOtYgpuvE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12279/image/master-65d9315d52e2f4394e589447f3562d07.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/15658"
     },
     {
       "id": "16424",
@@ -298,6 +347,13 @@
       "url": "https://annict.com/works/16129"
     },
     {
+      "id": "12432",
+      "title": "ヤマトよ永遠に REBEL3199 第六章 碧い迷宮",
+      "image": "https://image.annict.com/wFM1akswSarR0-GvVOByGC3_TVn9Cm7-Jkry4_fyVjQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8937/image/master-70480fcdb3760f490873c082b0d51e4c.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/12432"
+    },
+    {
       "id": "14068",
       "title": "葬送のフリーレン 第2期",
       "image": "https://image.annict.com/jwa0Go8DRf-3PBS1310d4e7FyqGC1YmBF91-2AyW9vc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10883/image/master-98786d89ec6444270ef90fd52604b178.jpg@webp",
@@ -375,18 +431,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "15912",
-      "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
-      "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/15912"
-    },
-    {
       "id": "14309",
       "title": "エリスの聖杯",
       "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/14309"
+    },
+    {
+      "id": "15912",
+      "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
+      "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/15912"
     },
     {
       "id": "14075",
@@ -445,6 +501,13 @@
       "url": "https://annict.com/works/16427"
     },
     {
+      "id": "12431",
+      "title": "ヤマトよ永遠に REBEL3199 第五章 白熱の銀河大戦",
+      "image": "https://image.annict.com/OQqydmsVyoZSoMb4h72VdEeNHA4bHd_11xzRP9kuLM4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8936/image/master-9a381d866106eeead1c85bbd04797d84.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/12431"
+    },
+    {
       "id": "16257",
       "title": "ウマ娘 シンデレラグレイ 第2クール",
       "image": "https://image.annict.com/8vrOe7Gkngo-HnJVPUVpQ0tLYP2bCJuVyHemcysXacA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13171/image/master-6cffbf34c742e1746faa821ba815d1ac.jpg@webp",
@@ -459,18 +522,18 @@
       "url": "https://annict.com/works/16253"
     },
     {
-      "id": "14006",
-      "title": "最後にひとつだけお願いしてもよろしいでしょうか",
-      "image": "https://image.annict.com/jbD56FSQoxrhlC7Oih1DFS5U9eA3qsqllYsoy-4Cjyc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10833/image/master-836fa8d5e5fa590832594158d9951c46.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/14006"
-    },
-    {
       "id": "16250",
       "title": "かぐや様は告らせたい 大人への階段",
       "image": "https://image.annict.com/rqZAyi6WKvfcgtNBegzWT8rMu7V6wTYCVGKX8um7rZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12954/image/master-def3c9606281e89b8587c52037556e58.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16250"
+    },
+    {
+      "id": "14006",
+      "title": "最後にひとつだけお願いしてもよろしいでしょうか",
+      "image": "https://image.annict.com/jbD56FSQoxrhlC7Oih1DFS5U9eA3qsqllYsoy-4Cjyc/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10833/image/master-836fa8d5e5fa590832594158d9951c46.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/14006"
     },
     {
       "id": "13763",
@@ -536,18 +599,18 @@
       "url": "https://annict.com/works/13829"
     },
     {
-      "id": "12617",
-      "title": "転生悪女の黒歴史",
-      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/12617"
-    },
-    {
       "id": "16511",
       "title": "ある日、お姫様になってしまった件について",
       "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16511"
+    },
+    {
+      "id": "12617",
+      "title": "転生悪女の黒歴史",
+      "image": "https://image.annict.com/c1VJtZvNKNHvRiUZ-0q0oHTO7HexzYpgPFTscwJoyxA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9175/image/master-3f9e9bacdcdcf6061000bf120c50bd07.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/12617"
     },
     {
       "id": "15744",
@@ -576,6 +639,13 @@
       "image": "https://image.annict.com/rT-YfSfvWALj9NCzBYLuetvrGO0IClkxfqzMtaqdl6g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13195/image/master-f242feccf23b91a6ae70aba3267d51cd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16537"
+    },
+    {
+      "id": "12430",
+      "title": "ヤマトよ永遠に REBEL3199 第四章 水色の乙女",
+      "image": "https://image.annict.com/tO8gvqrQr2CBpOI4Z1AHm-LtHTYI35zdSjD8YRE-Y70/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8935/image/master-081b2bffabc0c61c3c5e71ede6f54aac.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/12430"
     },
     {
       "id": "10087",
@@ -781,6 +851,13 @@
       "url": "https://annict.com/works/10641"
     },
     {
+      "id": "12429",
+      "title": "ヤマトよ永遠に REBEL3199 第三章 群青のアステロイド",
+      "image": "https://image.annict.com/jsodzcbJFdeeiTomjgHfWaP_Uwh7JDSkh_VIHp4SBKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8934/image/master-e7f765218312eb3d55b0c69a4679f9ef.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/12429"
+    },
+    {
       "id": "12840",
       "title": "薬屋のひとりごと 第2期",
       "image": "https://image.annict.com/wrJriRXbECSG5FfKeiLqPCo3kxZHSKm7GSMRBG9Pel8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9451/image/master-cddda6c76f2d122c4838eb5045bba9c4.jpg@webp",
@@ -970,6 +1047,13 @@
       "url": "https://annict.com/works/12826"
     },
     {
+      "id": "12428",
+      "title": "ヤマトよ永遠に REBEL3199 第二章 赤日の出撃",
+      "image": "https://image.annict.com/5CMkWk3yyAX4HcJJFUT02we-jMauU79FnLad66wfBnI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8933/image/master-ab2c68be8f739b60ea0b6fa61f82083d.jpg@webp",
+      "season": "2024年秋",
+      "url": "https://annict.com/works/12428"
+    },
+    {
       "id": "10976",
       "title": "【推しの子】第2期",
       "image": "https://image.annict.com/GsbZV7TlyBqDrwjFgBxsG3uctlcB_AUqrD2endxxHN0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7410/image/master-d1c5cc8f35168ddaa9b9b0b6d5c62f63.jpg@webp",
@@ -1073,6 +1157,13 @@
       "image": "https://image.annict.com/7-zi2H8yHsvkqUYZphrAe78GquEFCNrQe02p0ouZGgE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8896/image/master-72b939f88edca3807305a7636f45f3e4.jpg@webp",
       "season": "2024年夏",
       "url": "https://annict.com/works/12363"
+    },
+    {
+      "id": "9283",
+      "title": "ヤマトよ永遠に REBEL3199 第一章 黒の侵略",
+      "image": "https://image.annict.com/tpja6tRM9p8gC1uREf0WtKRjkb7jY7il3BaSjw8yJag/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6208/image/master-00df35369774a6ca533c6806cbcfe85f.jpg@webp",
+      "season": "2024年夏",
+      "url": "https://annict.com/works/9283"
     },
     {
       "id": "11002",
@@ -1507,6 +1598,13 @@
       "image": "https://image.annict.com/OWtz2ZsULvcfCyipP_1OEUuoqSdObIfE1IJOPbU2F8A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7135/image/master-b637547ec0bb4688d4a859d9a352489a.jpg@webp",
       "season": "2023年夏",
       "url": "https://annict.com/works/10604"
+    },
+    {
+      "id": "9723",
+      "title": "幻日のヨハネ -SUNSHINE in the MIRROR-",
+      "image": "https://image.annict.com/9Gw7CVpCPRMgEpUF6jsLOKs2uihr1AcWTCvtwJAfCAQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6642/image/master-1fbe28f7af912872970914bf1c6e346f.jpg@webp",
+      "season": "2023年夏",
+      "url": "https://annict.com/works/9723"
     },
     {
       "id": "9696",
@@ -3275,7 +3373,7 @@
     {
       "id": "5121",
       "title": "メイドインアビス",
-      "image": "https://image.annict.com/iqhb70quZr0XXw8V4LdAYr1XJTyL_nyu3I1oWL0w8q8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-7b78b78cd777a2f15f2d9d80c9e29258.jpg@webp",
+      "image": "https://image.annict.com/1p4ELBtnpohSNp6tTew4GX041Ahj4QLVFYeiA1QZaBw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1938/image/master-788df4f73959e2afd118a0336b4b2036.jpg@webp",
       "season": "2017年夏",
       "url": "https://annict.com/works/5121"
     },
@@ -3378,18 +3476,18 @@
       "url": "https://annict.com/works/5137"
     },
     {
-      "id": "4715",
-      "title": "劇場版 魔法科高校の劣等生 星を呼ぶ少女",
-      "image": "https://image.annict.com/YBcF_2dAuCogAB33_0RRwEnGEJA-7cy3sbHW-SzB0Aw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1896/image/master-3e36242d81372834b142c8fd01dda756.jpg@webp",
-      "season": "2017年春",
-      "url": "https://annict.com/works/4715"
-    },
-    {
       "id": "5067",
       "title": "名探偵コナン から紅の恋歌",
       "image": "https://image.annict.com/MW_wiFcVSF-Gn4xyBj2s8OZC6qZEvFEhLRIJgvP0pT4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1860/image/master-1b878d06a757bbbb551d1567632b264c.jpg@webp",
       "season": "2017年春",
       "url": "https://annict.com/works/5067"
+    },
+    {
+      "id": "4715",
+      "title": "劇場版 魔法科高校の劣等生 星を呼ぶ少女",
+      "image": "https://image.annict.com/YBcF_2dAuCogAB33_0RRwEnGEJA-7cy3sbHW-SzB0Aw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1896/image/master-3e36242d81372834b142c8fd01dda756.jpg@webp",
+      "season": "2017年春",
+      "url": "https://annict.com/works/4715"
     },
     {
       "id": "5210",
@@ -3572,6 +3670,13 @@
       "image": "https://image.annict.com/YCeFP9gLiFcNqkTBZD58qff9hz9pIKLKCgkByxX2YGA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1422/image/master-e5829f534aea230c79dbcc0adbff2eaf.jpg@webp",
       "season": "2016年夏",
       "url": "https://annict.com/works/4840"
+    },
+    {
+      "id": "4278",
+      "title": "聲の形",
+      "image": "https://image.annict.com/dg-CvwaboezRBk3-cpwlmt5wV-7sCIIO9x4lwnbZ0cA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1347/image/master-cfe01824b40bdac204a49de738226762.jpg@webp",
+      "season": "2016年夏",
+      "url": "https://annict.com/works/4278"
     },
     {
       "id": "4618",
@@ -4554,18 +4659,18 @@
       "url": "https://annict.com/works/1965"
     },
     {
-      "id": "6090",
-      "title": "劇場版 HUNTER×HUNTER -The LAST MISSION-",
-      "image": "https://image.annict.com/ucSaqKVkLKU6NT45XB4gxogMAU9V2Lvay1jHus2lqYY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2860/image/master-b56a34d81a9fb5076b15e4e6f65c2ab1.jpg@webp",
-      "season": "2013年秋",
-      "url": "https://annict.com/works/6090"
-    },
-    {
       "id": "9239",
       "title": "進撃の巨人 OAD シリーズ",
       "image": "https://image.annict.com/_FbGfQX5r9_wOAYuZSe1P_KSxWadgs4ctb3ghWf7q8A/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6185/image/master-7e014420f59c7e7980d6f1cc861dabcd.jpg@webp",
       "season": "2013年秋",
       "url": "https://annict.com/works/9239"
+    },
+    {
+      "id": "6090",
+      "title": "劇場版 HUNTER×HUNTER -The LAST MISSION-",
+      "image": "https://image.annict.com/ucSaqKVkLKU6NT45XB4gxogMAU9V2Lvay1jHus2lqYY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/2860/image/master-b56a34d81a9fb5076b15e4e6f65c2ab1.jpg@webp",
+      "season": "2013年秋",
+      "url": "https://annict.com/works/6090"
     },
     {
       "id": "4020",

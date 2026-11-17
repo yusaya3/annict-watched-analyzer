@@ -1,7 +1,7 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-10-18T21:13:47.178Z",
-  "count": 530,
+  "fetchedAt": "2026-11-17T02:15:29.074Z",
+  "count": 534,
   "animes": [
     {
       "id": "17108",
@@ -37,6 +37,13 @@
       "image": "https://image.annict.com/PHqtOFvCb74yRvr1tS8pfyksu3QWCjL-vu92UB4TOhw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10936/image/master-095e409dc271710ea69a5daeef87e1e4.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/14132"
+    },
+    {
+      "id": "17361",
+      "title": "正反対な君と僕 第2期",
+      "image": "https://image.annict.com/oVyF1obog-Znz3DXUNybLBZ9vFNmdWto0Vd_bDR19Jw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14085/image/master-1c590be6a79ed57fee0c369823774871.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17361"
     },
     {
       "id": "15881",
@@ -102,18 +109,18 @@
       "url": "https://annict.com/works/7915"
     },
     {
-      "id": "17057",
-      "title": "ワールド イズ ダンシング",
-      "image": "https://image.annict.com/Gnm-a0VUcPM80wMiYD7uwIVq9TuoKF88WPwEjTi4118/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13749/image/master-e7fbce99be950b53cb9f4e1313ea5bf1.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17057"
-    },
-    {
       "id": "16910",
       "title": "乙女怪獣キャラメリゼ",
       "image": "https://image.annict.com/JQ50BpR0I5IPcCi0A_NjfCbslkSZn0xYUpE0j3p0Fhs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13561/image/master-ae45ecb0cbbe0d2a308734dfec8cbb05.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16910"
+    },
+    {
+      "id": "17057",
+      "title": "ワールド イズ ダンシング",
+      "image": "https://image.annict.com/Gnm-a0VUcPM80wMiYD7uwIVq9TuoKF88WPwEjTi4118/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13749/image/master-e7fbce99be950b53cb9f4e1313ea5bf1.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17057"
     },
     {
       "id": "16856",
@@ -151,18 +158,18 @@
       "url": "https://annict.com/works/16632"
     },
     {
-      "id": "17514",
-      "title": "THE RIBBON HERO リボンヒーロー",
-      "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17514"
-    },
-    {
       "id": "17379",
       "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
       "image": "https://image.annict.com/-vr0jx2VNXBWrxJAu_1xDTKY5GZ7cbGIv3YuOJy09Z4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14107/image/master-b785867c75db81f106eae3672fc5a428.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17379"
+    },
+    {
+      "id": "17514",
+      "title": "THE RIBBON HERO リボンヒーロー",
+      "image": "https://image.annict.com/qjC_QUXo1vOp55WLJjoEcCft1g6VeDu57yr3ZDcdbPg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14250/image/master-706e78800877f374807a972c55b1cf38.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17514"
     },
     {
       "id": "6528",
@@ -179,18 +186,18 @@
       "url": "https://annict.com/works/17069"
     },
     {
-      "id": "16475",
-      "title": "SEKIRO: NO DEFEAT",
-      "image": "https://image.annict.com/_mlLh80YWYHesFFM4PGmfAmT-Wx1LKM5YGpqAS1rSM8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13127/image/master-f7d3b501c2aba8561fd03c56e77da57f.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16475"
-    },
-    {
       "id": "13779",
       "title": "トイ・ストーリー5",
       "image": "https://image.annict.com/yiTCjsBFy-bi95YGgsqiXw-Bt6PHZOQ4B1rErvw1SfE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10583/image/master-14a8b84fbf88a345a7518cdd47d0d29e.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/13779"
+    },
+    {
+      "id": "16475",
+      "title": "SEKIRO: NO DEFEAT",
+      "image": "https://image.annict.com/_mlLh80YWYHesFFM4PGmfAmT-Wx1LKM5YGpqAS1rSM8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13127/image/master-f7d3b501c2aba8561fd03c56e77da57f.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16475"
     },
     {
       "id": "16726",
@@ -298,18 +305,18 @@
       "url": "https://annict.com/works/16598"
     },
     {
-      "id": "12933",
-      "title": "淡島百景",
-      "image": "https://image.annict.com/dOqumD-pSxOJUZxflq73CvN3oZ9ot32rFk2GsSFkrZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9611/image/master-bd18143786a1ffa657fbae0bcd57bcf7.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/12933"
-    },
-    {
       "id": "16507",
       "title": "キルアオ",
       "image": "https://image.annict.com/PvY59I_WEqdspg5HeAUomoG0uM_OIjF_Tk8CP6Iw0CA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13161/image/master-5743073e795d23e9e509102e3f6049af.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16507"
+    },
+    {
+      "id": "12933",
+      "title": "淡島百景",
+      "image": "https://image.annict.com/dOqumD-pSxOJUZxflq73CvN3oZ9ot32rFk2GsSFkrZs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9611/image/master-bd18143786a1ffa657fbae0bcd57bcf7.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/12933"
     },
     {
       "id": "14000",
@@ -634,13 +641,6 @@
       "url": "https://annict.com/works/14934"
     },
     {
-      "id": "13808",
-      "title": "ワンダンス",
-      "image": "https://image.annict.com/R-0yDpSVejxMh9XKEGuaIWEQq1-5JHqxKfvfSM8cMx0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10618/image/master-650beeafa5c9324cf06870fe1fb19876.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/13808"
-    },
-    {
       "id": "13630",
       "title": "SANDA",
       "image": "https://image.annict.com/PyKNr08wyXe_Kjk6vip7h51-tEE_WOEKrZZNfJi-7Ew/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10418/image/master-9154e3d61dda9992902347e305650d76.jpg@webp",
@@ -648,11 +648,11 @@
       "url": "https://annict.com/works/13630"
     },
     {
-      "id": "16509",
-      "title": "藤本タツキ 17-26",
-      "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+      "id": "13808",
+      "title": "ワンダンス",
+      "image": "https://image.annict.com/R-0yDpSVejxMh9XKEGuaIWEQq1-5JHqxKfvfSM8cMx0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10618/image/master-650beeafa5c9324cf06870fe1fb19876.jpg@webp",
       "season": "2025年秋",
-      "url": "https://annict.com/works/16509"
+      "url": "https://annict.com/works/13808"
     },
     {
       "id": "16511",
@@ -660,6 +660,13 @@
       "image": "https://image.annict.com/FVHUVnaX_oLu7o7tqybab4v13ICf5s3AW36fwuh4-KY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13165/image/master-251213859229e7a27421bef1e13f9912.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16511"
+    },
+    {
+      "id": "16509",
+      "title": "藤本タツキ 17-26",
+      "image": "https://image.annict.com/LIuClDMSRFiTnuXbpeZG6t2WXd5xTjfmJv5sAW8Ravs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13163/image/master-d28ec527f07f073626de71847461775b.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16509"
     },
     {
       "id": "15109",
@@ -704,18 +711,18 @@
       "url": "https://annict.com/works/16111"
     },
     {
-      "id": "16655",
-      "title": "藤本タツキ 17-26 Part2",
-      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/16655"
-    },
-    {
       "id": "16654",
       "title": "藤本タツキ 17-26 Part1",
       "image": "https://image.annict.com/lrqxOMxx5WdBxpxcYPj6rSDtZzQoQBCGgKfaBJzgfAM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13302/image/master-2140e43327a44fda96160d851dda96dd.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16654"
+    },
+    {
+      "id": "16655",
+      "title": "藤本タツキ 17-26 Part2",
+      "image": "https://image.annict.com/2t7jsaS18txQoFiL6sEAisyqRv7KcVrh_mD6x4_9hv0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13301/image/master-58b43a0e333dcdb0cd6fbb93fcc4401a.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/16655"
     },
     {
       "id": "13048",
@@ -740,7 +747,7 @@
     },
     {
       "id": "16679",
-      "title": "ザ・レンチキュラーズ",
+      "title": "ザ・レンチキュラーズ a/",
       "image": "https://image.annict.com/aOcLCRwwz6_Tnd_LUbcFzt0ZHA1vCVxAbK-vOipWaH4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13339/image/master-61f6bf20594865f11e87f0477fb93d63.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16679"
@@ -825,7 +832,7 @@
     {
       "id": "14040",
       "title": "CITY THE ANIMATION",
-      "image": "https://image.annict.com/3T-vGNH5DQ5Wa2Y0psGs0P0RMtlAM1DEeXe3HyLlX8o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-660281ac277c2ab1e854304bcaa5d859.jpg@webp",
+      "image": "https://image.annict.com/6m_svGFZSpnqThXiIlSoxTL38GxiRENiL9wBXRgP5fs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10858/image/master-3b136feb0a8b3c6e5afff754f0b5cb20.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/14040"
     },
@@ -858,18 +865,18 @@
       "url": "https://annict.com/works/13046"
     },
     {
-      "id": "11307",
-      "title": "公女殿下の家庭教師",
-      "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/11307"
-    },
-    {
       "id": "13809",
       "title": "雨と君と",
       "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13809"
+    },
+    {
+      "id": "11307",
+      "title": "公女殿下の家庭教師",
+      "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/11307"
     },
     {
       "id": "10353",
@@ -2594,6 +2601,13 @@
       "url": "https://annict.com/works/8139"
     },
     {
+      "id": "6736",
+      "title": "犬王",
+      "image": "https://image.annict.com/DXL_8AvNOB_1PRbSyGcVI-vDSwT39LxqKlHfrE_-fdk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3694/image/master-c612d1dbd8a992031935975398a06b28.jpg@webp",
+      "season": "2022年春",
+      "url": "https://annict.com/works/6736"
+    },
+    {
       "id": "9316",
       "title": "おにぱん！",
       "image": "https://image.annict.com/FLPGdQgmTJkv-mD-fi27W31Tp-SHNOqmkyltUDZxtI8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6242/image/master-bdbe20344180c7649378b51364c43065.jpg@webp",
@@ -3189,18 +3203,18 @@
       "url": "https://annict.com/works/4996"
     },
     {
-      "id": "4624",
-      "title": "NEW GAME!",
-      "image": "https://image.annict.com/s21Tf_L9yHcdEMXUW-RmuJoCECI2toq4T2ho8g52y-o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1374/image/master-fabc362d5aaaca07bbbd2b1c75b90e1a.jpg@webp",
-      "season": "2016年夏",
-      "url": "https://annict.com/works/4624"
-    },
-    {
       "id": "4278",
       "title": "聲の形",
       "image": "https://image.annict.com/dg-CvwaboezRBk3-cpwlmt5wV-7sCIIO9x4lwnbZ0cA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1347/image/master-cfe01824b40bdac204a49de738226762.jpg@webp",
       "season": "2016年夏",
       "url": "https://annict.com/works/4278"
+    },
+    {
+      "id": "4624",
+      "title": "NEW GAME!",
+      "image": "https://image.annict.com/s21Tf_L9yHcdEMXUW-RmuJoCECI2toq4T2ho8g52y-o/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1374/image/master-fabc362d5aaaca07bbbd2b1c75b90e1a.jpg@webp",
+      "season": "2016年夏",
+      "url": "https://annict.com/works/4624"
     },
     {
       "id": "4618",
@@ -3609,6 +3623,13 @@
       "url": "https://annict.com/works/3680"
     },
     {
+      "id": "3203",
+      "title": "借りぐらしのアリエッティ",
+      "image": "https://image.annict.com/84SXZNjJWFXHPYKCoE0rC8RMz78are6rKzJcHWBTHF8/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1336/image/master-5bb3068fa4c21d5b17ac7db79fa05f3c.jpg@webp",
+      "season": "2010年夏",
+      "url": "https://annict.com/works/3203"
+    },
+    {
       "id": "669",
       "title": "けいおん！！",
       "image": "https://image.annict.com/NqagTh58bqvbwvlDmOv_NGKYsSgUx4nNgv1L-dx2uvI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/306/image/master-23365662b7445eb8c3a1880ac0bc5a21.jpg@webp",
@@ -3705,6 +3726,13 @@
       "image": "https://image.annict.com/GP50tD97p5Y9SkBLUNQ8Wiubd868jP6NT5S_ooGb4Jo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/86/image/master-dc3b61625394f85812fcc7557bd19f27.jpg@webp",
       "season": "1995年秋",
       "url": "https://annict.com/works/3298"
+    },
+    {
+      "id": "3707",
+      "title": "耳をすませば",
+      "image": "https://image.annict.com/1cajRIL9u3NcaN4adzQb1a9Lai2q1qnz4HYGv-Ze8ws/s:220:293/plain/s3://annict-user-contents/shrine/workimage/715/image/master-fcc76970d4f783212149aad947147764.jpg@webp",
+      "season": "1995年夏",
+      "url": "https://annict.com/works/3707"
     },
     {
       "id": "237",
