@@ -99,13 +99,39 @@
     return false;
   }
 
+  const _genreNormIndexCache = new WeakMap();
+
+  function getGenreNormIndex(genreMap) {
+    if (!genreMap || typeof genreMap !== 'object') return null;
+    let cached = _genreNormIndexCache.get(genreMap);
+    const keyCount = Object.keys(genreMap).length;
+    if (cached && cached.sizeHint === keyCount) return cached.map;
+
+    const normMap = new Map();
+    const toLookup = GenreEngine.normalizeTitleLookupKey;
+    for (const [k, entry] of Object.entries(genreMap)) {
+      if (!entry) continue;
+      let cat = entry.c || entry.category;
+      if ((!cat || cat === 'other') && (Array.isArray(entry.genres) || Array.isArray(entry.g) || Array.isArray(entry.tags) || Array.isArray(entry.t))) {
+        cat = GenreEngine.classifyAnimeScored(entry.genres || entry.g || [], entry.tags || entry.t || [], k);
+      }
+      if (!cat || cat === 'other' || !GenreEngine.GENRE_DEF_MAP[cat]) continue;
+      const nk = toLookup ? toLookup(k) : k.toLowerCase();
+      if (nk && !normMap.has(nk)) normMap.set(nk, cat);
+    }
+    _genreNormIndexCache.set(genreMap, { sizeHint: keyCount, map: normMap });
+    return normMap;
+  }
+
   /**
    * 作品ID/タイトル向けのジャンル解決ヘルパー
+   * 1) genreMap直接一致 -> 2) 動的スコア再判定 -> 3) シリーズ正規化一致 -> 4) タイトルスコア推論
    * @param {string} title
    * @param {Object} genreMap
    * @returns {string}
    */
   function resolveCategoryId(title, genreMap) {
+    if (!title) return 'other';
     const entry = genreMap ? genreMap[title] : null;
     const directCat = entry?.c || entry?.category;
     if (directCat && directCat !== 'other' && GenreEngine.GENRE_DEF_MAP[directCat]) {
@@ -117,10 +143,21 @@
       const scored = GenreEngine.classifyAnimeScored(genres, tags, title);
       if (scored && scored !== 'other') return scored;
     }
-    if (directCat && GenreEngine.GENRE_DEF_MAP[directCat]) {
-      const inferred = GenreEngine.inferCategoryFromTitle(title);
-      return inferred || 'other';
+
+    if (genreMap && GenreEngine.getTitleMatchCandidates) {
+      const normMap = getGenreNormIndex(genreMap);
+      if (normMap && normMap.size > 0) {
+        const candidates = GenreEngine.getTitleMatchCandidates(title);
+        for (let i = 0; i < candidates.length; i++) {
+          const hit = normMap.get(candidates[i]);
+          if (hit) return hit;
+        }
+      }
     }
+
+    const byTitle = GenreEngine.classifyAnimeScored([], [], title);
+    if (byTitle && byTitle !== 'other') return byTitle;
+
     return GenreEngine.inferCategoryFromTitle(title) || 'other';
   }
 

@@ -193,6 +193,8 @@
     }
   }
 
+  const GENRE_SCHEMA_VER = 'v3.1';
+
   async function fetchFreshWorkGenres() {
     try {
       let res = await fetch('./res/work-genres.json');
@@ -204,13 +206,15 @@
           const prev = state.genreMap[t];
           if (!prev || prev.c !== val?.c) {
             hasNewOrChanged = true;
-            break;
+          }
+          if (!prev || prev.c === 'other' || (val?.c && val.c !== 'other')) {
+            state.genreMap[t] = val;
           }
         }
-        Object.assign(state.genreMap, data);
         invalidateCategoryCache();
         await root.AppStorage.saveWorkGenres(state.genreMap);
         await root.AppStorage.saveMeta('genreSyncAt', Date.now());
+        await root.AppStorage.saveMeta('genreSchemaVer', GENRE_SCHEMA_VER);
         if (hasNewOrChanged && state.report) {
           recalculate();
         }
@@ -220,11 +224,12 @@
 
   async function loadWorkGenres() {
     try {
-      const [cached, lastSync] = await Promise.all([
+      const [cached, lastSync, schemaVer] = await Promise.all([
         root.AppStorage.loadWorkGenres(),
-        root.AppStorage.loadMeta('genreSyncAt')
+        root.AppStorage.loadMeta('genreSyncAt'),
+        root.AppStorage.loadMeta('genreSchemaVer')
       ]);
-      if (cached && Object.keys(cached).length > 0) {
+      if (cached && Object.keys(cached).length > 0 && schemaVer === GENRE_SCHEMA_VER) {
         Object.assign(state.genreMap, cached);
         invalidateCategoryCache();
         // 24時間以上経過していればバックグラウンドで最新辞書を同期（永久古辞書防止）
@@ -363,13 +368,20 @@
 
     // 4並列バッチで未登録作のジャンルをAniListから補完
     if (result.workGenres && typeof result.workGenres === 'object') {
-      Object.assign(state.genreMap, result.workGenres);
+      for (const [t, val] of Object.entries(result.workGenres)) {
+        const prev = state.genreMap[t];
+        if (!prev || prev.c === 'other' || (val?.c && val.c !== 'other')) {
+          state.genreMap[t] = val;
+        }
+      }
       invalidateCategoryCache();
       await root.AppStorage.saveWorkGenres(state.genreMap);
     }
 
     if (root.GenreEngine?.fetchAniListMediaInBrowser) {
-      const unmapped = animes.filter(a => a?.title && !state.genreMap[a.title]).slice(0, 8);
+      const unmapped = animes
+        .filter(a => a?.title && !state.genreMap[a.title] && getWorkCategory(a.title) === 'other')
+        .slice(0, 8);
       if (unmapped.length > 0) {
         if (onProgress) onProgress(`新規 ${unmapped.length} 作品のジャンルを照合中...`);
         for (let i = 0; i < unmapped.length; i += 4) {

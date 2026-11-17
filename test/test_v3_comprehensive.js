@@ -8,7 +8,7 @@ const { chromium } = require('playwright');
 const { createApp } = require('../bin/annict-analyzer.js');
 const GenreEngine = require('../static/core/genre-engine.js');
 const StudioDictionary = require('../static/core/studio-dictionary.js');
-const { AnalyzerEngine, matchEra } = require('../static/core/analyzer-engine.js');
+const { AnalyzerEngine, matchEra, resolveCategoryId } = require('../static/core/analyzer-engine.js');
 const { GenreClient } = require('../lib/labs/genre-client.js');
 const { buildBootstrapPayload } = require('../scripts/build-bootstrap.js');
 const { PersistentMapCache } = require('../lib/services/cache-service.js');
@@ -36,6 +36,19 @@ async function run() {
   }
   assert.strictEqual(GenreEngine.scoreAnimeDetailed([], [], '銀魂').category, 'comedy');
   assert.strictEqual(GenreEngine.scoreAnimeDetailed(['Adventure', 'Comedy', 'Fantasy'], [], 'ダンジョン飯').category, 'sf_fantasy');
+  assert.strictEqual(GenreEngine.scoreAnimeDetailed(['Adventure', 'Fantasy', 'Slice of Life'], [], '29歳独身中堅冒険者の日常').category, 'nichijou');
+  assert.strictEqual(resolveCategoryId('超かぐや姫！(劇場版)', { '超かぐや姫！': { c: 'sf_fantasy' } }), 'sf_fantasy');
+  assert.strictEqual(resolveCategoryId('藤本タツキ 17-26 Part1', { '藤本タツキ 17-26': { c: 'sf_fantasy' } }), 'sf_fantasy');
+  assert.strictEqual(resolveCategoryId('Wake Up, Girls! 続・劇場版', { 'Wake Up, Girls！': { c: 'idol_music' } }), 'idol_music');
+  assert.strictEqual(resolveCategoryId('ちっちゃな雪使いシュガー 特別編「その胸にあるもの」', { 'ちっちゃな雪使いシュガー': { c: 'sf_fantasy' } }), 'sf_fantasy');
+  assert.strictEqual(resolveCategoryId('モンスター娘のいる日常OAD', { 'モンスター娘のいる日常': { c: 'romance' } }), 'romance');
+  assert.strictEqual(resolveCategoryId('約束のネバーランド', {}), 'horror_suspense');
+  const builtWg = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../static/res/work-genres.json'), 'utf8'));
+  assert.strictEqual(builtWg['ツインズひなひま']?.c, 'drama');
+  assert.strictEqual(builtWg['プラノサウルス ガチコセイブツ部']?.c, 'comedy');
+  assert.strictEqual(builtWg['坂本ですが？']?.c, 'comedy');
+  assert(builtWg['憑物語']?.c && builtWg['憑物語'].c !== 'other', '憑物語 must not be other');
+  assert.strictEqual(builtWg['超かぐや姫！(劇場版)']?.c, 'sf_fantasy');
   assert.strictEqual(matchEra('', 'classic'), false);
   assert.strictEqual(matchEra('', 'unknown'), true);
   assert.strictEqual(matchEra('1995年春', 'classic'), true);

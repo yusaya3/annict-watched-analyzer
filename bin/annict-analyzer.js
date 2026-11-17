@@ -7,7 +7,7 @@ const path = require('path');
 const express = require('express');
 
 const AnnictClient = require('../lib/annict-client.js');
-const { AnalyzerEngine } = require('../static/core/analyzer-engine.js');
+const { AnalyzerEngine, resolveCategoryId } = require('../static/core/analyzer-engine.js');
 const {
   GENRE_DEFINITIONS,
   TITLE_ALIASES,
@@ -15,6 +15,7 @@ const {
   classifyAnimeScored
 } = require('../static/core/genre-engine.js');
 const { buildBootstrapPayload } = require('../scripts/build-bootstrap.js');
+const { buildWorkGenresMap } = require('../scripts/build-work-genres.js');
 const { PersistentMapCache } = require('../lib/services/cache-service.js');
 const { fetchAnnictOgImage, resolveSimilarityImage } = require('../lib/services/image-resolver.js');
 
@@ -121,11 +122,12 @@ function loadCachedUserWatched(username) {
 }
 
 function loadCompactGenreMap() {
-  const staticPath = path.join(BUNDLED_RES_DIR, 'work-genres.json');
-  if (fs.existsSync(staticPath)) {
-    try {
-      return JSON.parse(fs.readFileSync(staticPath, 'utf8'));
-    } catch (e) {}
+  for (const staticPath of [path.join(RES_DIR, 'work-genres.json'), path.join(BUNDLED_RES_DIR, 'work-genres.json')]) {
+    if (fs.existsSync(staticPath)) {
+      try {
+        return JSON.parse(fs.readFileSync(staticPath, 'utf8'));
+      } catch (e) {}
+    }
   }
   return {};
 }
@@ -168,12 +170,7 @@ async function runAnalysis(userList, forceRefresh = false, options = {}) {
 
       if (!isVercel && persistBootstrap) {
         try {
-          const compact = {};
-          for (const [title, entry] of Object.entries(genreClient.cache || {})) {
-            const genres = entry.genres || [];
-            const tags = entry.tags || [];
-            compact[title] = { c: classifyAnimeScored(genres, tags, title), g: genres };
-          }
+          const compact = buildWorkGenresMap(genreClient.cache, path.join(BUNDLED_RES_DIR, 'story/index.json'));
           fs.mkdirSync(RES_DIR, { recursive: true });
           fs.writeFileSync(path.join(RES_DIR, 'work-genres.json'), JSON.stringify(compact), 'utf8');
         } catch (e) {}
@@ -535,6 +532,7 @@ function createApp() {
       const workGenres = {};
       try {
         const titles = animes.map(a => a.title).filter(Boolean);
+        const compactBase = loadCompactGenreMap();
         await runWithGenreWriteLock(async () => {
           const { GenreClient } = require('../lib/labs/genre-client.js');
           const genreClient = new GenreClient();
@@ -544,7 +542,11 @@ function createApp() {
             const entry = resolvedMap[t] || genreClient.cache[t] || { genres: [], tags: [] };
             const genres = entry.genres || [];
             const tags = entry.tags || [];
-            workGenres[t] = { c: classifyAnimeScored(genres, tags, t), g: genres };
+            let c = classifyAnimeScored(genres, tags, t);
+            if (c === 'other') {
+              c = resolveCategoryId(t, compactBase);
+            }
+            workGenres[t] = { c, g: genres };
           }
         }).catch(() => {});
       } catch (genreErr) {}
@@ -575,11 +577,7 @@ function createApp() {
       }
       const { GenreClient } = require('../lib/labs/genre-client.js');
       const genreClient = new GenreClient();
-      const compactMap = {};
-      for (const [title, entry] of Object.entries(genreClient.cache || {})) {
-        const genres = entry.genres || [];
-        compactMap[title] = { c: classifyAnimeScored(genres, entry.tags || [], title), g: genres };
-      }
+      const compactMap = buildWorkGenresMap(genreClient.cache, path.join(BUNDLED_RES_DIR, 'story/index.json'));
       res.json(compactMap);
     } catch (err) {
       res.status(500).json({ error: err.message });

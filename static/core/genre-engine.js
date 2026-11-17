@@ -69,21 +69,21 @@
     if (!title) return 'other';
     const t = String(title);
 
-    if (/(?:異世界|転生|転移|悪役令嬢|追放|スライム|魔王|勇者|チート|治癒|スキル|ステータス|レベル|ダンジョン|冒険者|聖女|公爵|辺境|ギルド|鑑定|テイマー|錬金術|魔術|魔導|セカンドライフ|無双|召喚|スローライフ)/i.test(t) && !/ダンジョンに出会いを|ダンまち/i.test(t)) {
+    if (/(?:異世界|転生|転移|悪役令嬢|追放|スライム|魔王|勇者|チート|治癒|スキル|ステータス|レベル|ダンジョン|冒険者|聖女|公爵|辺境|ギルド|鑑定|テイマー|錬金術|魔術|魔導|セカンドライフ|無双|召喚|スローライフ|精霊幻想記|セリア先生のドキドキ|リーゼロッテのわくわく)/i.test(t) && !/ダンジョンに出会いを|ダンまち/i.test(t)) {
       return 'isekai';
     }
-    if (/(?:魔法少女|プリキュア|魔女|変身ヒロイン|マギカ|マジカル|ウィッチ|セーラー)/i.test(t)) return 'mahou_shoujo';
+    if (/(?:魔法少女|プリキュア|魔女|変身ヒロイン|マギカ|マジカル|ウィッチ|セーラー)/i.test(t) && !/リーゼロッテのわくわくまじかる/i.test(t)) return 'mahou_shoujo';
     if (/(?:ガンダム|メカ|ロボ|ロボット|マクロス|エヴァ|パトレイバー|ダイナ|カイザー|トランスフォーマー|ギア|バルキリー|イデオン|マジンガー)/i.test(t)) return 'mecha';
-    if (/(?:サッカー|野球|バスケ|バレー|テニス|ゴルフ|競走|レース|水泳|ボクシング|格闘|相撲|将棋|囲碁|かるた|麻雀|ダンス|体操|自転車|ペダル|フットボール|陸上|卓球|ボウリング|競馬)/i.test(t)) return 'sports';
-    if (/(?:アイドル|バンド|ライブ|ソング|ミュージック|うた|歌|メロディ|オーケストラ|吹奏楽|ピアノ|ギター|合唱|ボーカル|シンガー)/i.test(t)) return 'idol_music';
-    if (/(?:恋|愛|彼女|彼氏|カノジョ|カレシ|ラブコメ|告白|好き|同棲|結婚|許嫁|ウェディング|キス|両想い|片想い|失恋|初恋|純情|初体験|カップル|お見合い|プロポーズ|ハレ婚)/i.test(t)) return 'romance';
+    if (/(?:サッカー|野球|バスケ|バレー|テニス|ゴルフ|競走|レース|水泳|ボクシング|格闘|相撲|将棋|囲碁|かるた|麻雀|ダンス|体操|自転車|ペダル|フットボール|陸上|卓球|ボウリング|競馬|イナズマイレブン|(?:^|[\s「『])カーズ(?:$|[\s」』\d・]))/i.test(t)) return 'sports';
+    if (/(?:アイドル|バンド|ライブ|ソング|ミュージック|うた|歌|メロディ|オーケストラ|吹奏楽|ピアノ|ギター|合唱|ボーカル|シンガー|Wake Up,\s*Girls|Run Run Lantern|LONELINESS WILL SHINE|Cirque le coeur|Music\s*Video|(?:^|[\s」』\)])MV(?:$|[\s「『\(]))/i.test(t)) return 'idol_music';
+    if (/(?:恋|愛|彼女|彼氏|カノジョ|カレシ|ラブコメ|告白|好き|同棲|結婚|許嫁|ウェディング|キス|両想い|片想い|失恋|初恋|純情|初体験|カップル|お見合い|プロポーズ|ハレ婚|レンチキュラーズ|古見さんは|エロマンガ先生|少女たちは荒野|はじめてのギャル)/i.test(t)) return 'romance';
     if (/(?:日常|キャンプ|キャン△|ごちうさ|うさぎ|きんいろ|のんのん|ゆる|ぼっち|きらら|ほのぼの|カフェ|喫茶|暮らし|生活|女子会|散歩|家族|ごちそう|料理|ごはん|食堂|のんびり)/i.test(t)) return 'nichijou';
-    if (/(?:青春|ドラマ|絆|家族|友情|仕事|部活|お仕事|吹奏楽|クラシック|人生|再生|旅立ち|成長|君の嘘|聲の形|あの花|よりもい|いろは|ユーフォ)/i.test(t)) return 'drama';
+    if (/(?:青春|ドラマ|絆|家族|友情|仕事|部活|お仕事|吹奏楽|クラシック|人生|再生|旅立ち|成長|君の嘘|聲の形|あの花|よりもい|いろは|ユーフォ|あかね噺|あかね小噺|かぐや姫の物語|ツインズひなひま|リメンバー・ミー|ReLIFE|一週間フレンズ)/i.test(t)) return 'drama';
     if (/(?:殺人|探偵|推理|事件|サスペンス|ホラー|怪談|呪い|幽霊|サイコ|デス|死|密室|ミステリー|サイコパス|謎|陰謀|悪夢|ゴースト)/i.test(t)) return 'horror_suspense';
     if (/(?:武将|戦国|幕末|歴史|三国志|大河|軍|兵|艦隊|戦艦|空母|ミリタリー|戦争|部隊|大戦|帝国|皇国|侍|新選組|維新)/i.test(t)) return 'history_military';
-    if (/(?:ギャグ|コメディ|コメディー|バカ|コント|パロディ|お笑い|珍道中|騒動|ハチャメチャ|漫才|おバカ)/i.test(t)) return 'comedy';
-    if (/(?:バトル|ファイト|バスター|ブレード|ソード|ストライク|ファイター|アサシン|ハンター|ウォリアー|リベンジ|復讐|激闘|討伐|拳|格闘|戦士|ウォーズ)/i.test(t)) return 'action';
-    if (/(?:SF|ファンタジー|エイリアン|アンドロイド|サイボーグ|宇宙|惑星|異星|次元|魔術|魔法|エルフ|ドラゴン|ダンジョン|タイムトラベル|冒険)/i.test(t)) return 'sf_fantasy';
+    if (/(?:ギャグ|コメディ|コメディー|バカ|コント|パロディ|お笑い|珍道中|騒動|ハチャメチャ|漫才|おバカ|プラノサウルス|鬼灯の冷徹|坂本ですが|だがしかし|生徒会役員共|斉木楠雄)/i.test(t)) return 'comedy';
+    if (/(?:バトル|ファイト|バスター|ブレード|ソード|ストライク|ファイター|アサシン|ハンター|ウォリアー|リベンジ|復讐|激闘|討伐|拳|格闘|戦士|ウォーズ|7FATES|CHAKHO|ポケットモンスター|ポケモン|\bFate\s*[\/:]|ソウルイーター|SOUL EATER|テラフォーマーズ|TERRAFORMARS|亜人|青の祓魔師)/i.test(t)) return 'action';
+    if (/(?:SF|ファンタジー|エイリアン|アンドロイド|サイボーグ|宇宙|惑星|異星|次元|魔術|魔法|エルフ|ドラゴン|ダンジョン|タイムトラベル|冒険|超かぐや姫|ニューサーガ|ドンキホーテ幻の花|もうひとつの未来を|サイバーパンク|FAIRY TAIL|マッシュル|どろろ|HELLO WORLD|ブレイブストーリー|ドロヘドロ|アリスと蔵六|夜桜四重奏|雪使いシュガー|藤本タツキ 17-26)/i.test(t)) return 'sf_fantasy';
     return 'other';
   }
 
@@ -128,7 +128,7 @@
 
     // 1. 異世界 / 転生 (isekai)
     const hasIsekaiTag = tagMap.has('Isekai') || tagMap.has('Reverse Isekai');
-    const hasIsekaiTitle = /(?:異世界|転生|転移|悪役令嬢|追放され|魔王様|勇者(?:パーティー)?|スライム.*件|チート|治癒魔法|無職転生|陰の実力者|オーバーロード|この素晴らしい世界に祝福を|このすば|Re:ゼロ|盾の勇者|本好きの下剋上|賢者の弟子|ベヒーモス|聖女なのに|Sランクになってた|シンデレラ・シェフ|第七王子|貴族転生)/i.test(t);
+    const hasIsekaiTitle = /(?:異世界|転生|転移|悪役令嬢|追放され|魔王様|勇者(?:パーティー)?|スライム.*件|チート|治癒魔法|無職転生|陰の実力者|オーバーロード|この素晴らしい世界に祝福を|このすば|Re:ゼロ|盾の勇者|本好きの下剋上|賢者の弟子|ベヒーモス|聖女なのに|Sランクになってた|シンデレラ・シェフ|第七王子|貴族転生|精霊幻想記|セリア先生のドキドキ|リーゼロッテのわくわくまじかる)/i.test(t);
     if (hasIsekaiTag || hasIsekaiTitle) {
       if (tagMap.has('Isekai')) addScore('isekai', getTag('Isekai') * 2.0, `タグ: Isekai(${getTag('Isekai')})`);
       if (tagMap.has('Reverse Isekai')) addScore('isekai', getTag('Reverse Isekai') * 1.8, 'タグ: Reverse Isekai');
@@ -171,7 +171,7 @@
       const st = sportsTags[i];
       if (tagMap.has(st)) addScore('sports', getTag(st) * 1.4, `競技タグ: ${st}`);
     }
-    if (/(?:メジャー|MAJOR|ハイキュー|黒子のバスケ|ブルーロック|ダイヤのA|スラムダンク|弱虫ペダル|Free!|キャプテン翼|テニスの王子様|MFゴースト|頭文字D|イニシャルD|3月のライオン|ちはやふる|ヒカルの碁|ウマ娘)/i.test(t)) {
+    if (/(?:メジャー|MAJOR|ハイキュー|黒子のバスケ|ブルーロック|ダイヤのA|スラムダンク|弱虫ペダル|Free!|キャプテン翼|テニスの王子様|MFゴースト|頭文字D|イニシャルD|3月のライオン|ちはやふる|ヒカルの碁|ウマ娘|イナズマイレブン|(?:^|[\s「『])カーズ(?:$|[\s」』\d・]))/i.test(t)) {
       addScore('sports', 150, '代表スポーツタイトル');
     }
 
@@ -184,7 +184,10 @@
       const isPureMusic = !g.has('Action') && !g.has('Fantasy');
       addScore('idol_music', isPureMusic ? 120 : 60, '公式ジャンル: Music');
     }
-    if (/(?:アイドルマスター|IDOLM＠STER|アイマス|Jupiter|シンデレラガールズ|ミリオンライブ|シャイニーカラーズ|SideM|ラブライブ|バンドリ|BanG Dream|ぼっち・ざ・ろっく|ガールズバンドクライ|ガルクラ|トゲナシトゲアリ|D4DJ|アイカツ|プリパラ|ゾンビランドサガ|ヒプノシスマイク|プロジェクトセカイ|プロセカ|初音ミク)/i.test(t)) {
+    if (g.size === 0 && /(?:Animation\s*Music\s*Video|アニメーション\s*Music\s*Video|Music\s*Video|(?:^|[\s」』\)])MV(?:$|[\s「『\(]))/i.test(t)) {
+      addScore('idol_music', 90, 'ミュージックビデオ / MV判定');
+    }
+    if (/(?:アイドルマスター|IDOLM＠STER|アイマス|Jupiter|シンデレラガールズ|ミリオンライブ|シャイニーカラーズ|SideM|ラブライブ|バンドリ|BanG Dream|ぼっち・ざ・ろっく|ガールズバンドクライ|ガルクラ|トゲナシトゲアリ|D4DJ|アイカツ|プリパラ|ゾンビランドサガ|ヒプノシスマイク|プロジェクトセカイ|プロセカ|初音ミク|Wake Up,\s*Girls|Run Run Lantern|LONELINESS WILL SHINE|Cirque le coeur)/i.test(t)) {
       addScore('idol_music', 150, '代表音楽・アイドルタイトル');
     }
 
@@ -197,7 +200,7 @@
       const pure = !g.has('Romance') && !g.has('Slice of Life') && !g.has('Action');
       addScore('comedy', pure ? 70 : 35, '公式ジャンル: Comedy');
     }
-    if (/(?:銀魂|あそびあそばせ|男子高校生の日常|斉木楠雄|女子高生の無駄づかい|てーきゅう|ポプテピピック|ぐらんぶる|邪神ちゃん|ヒナまつり|これはゾンビですか|でじこ|しかのこのこのこ|さばげぶっ|日常|こちら葛飾区|こち亀|バカとテスト|おねがい！ポコタ|生徒会の一存|ひつじのショーン|クックルン|Di Gi Charat|みらくる! ぱんぞう|おれたちイジワルケイ|ドンキーコング|ハウス・オブ・マウス|BPS バトルプログラマーシラセ|破産富豪)/i.test(t)) {
+    if (/(?:銀魂|あそびあそばせ|男子高校生の日常|斉木楠雄|女子高生の無駄づかい|てーきゅう|ポプテピピック|ぐらんぶる|邪神ちゃん|ヒナまつり|これはゾンビですか|でじこ|しかのこのこのこ|さばげぶっ|(?:^|\s)日常(?:\s|$|[（\(])|こちら葛飾区|こち亀|バカとテスト|おねがい！ポコタ|生徒会の一存|ひつじのショーン|クックルン|Di Gi Charat|みらくる! ぱんぞう|おれたちイジワルケイ|ドンキーコング|ハウス・オブ・マウス|BPS バトルプログラマーシラセ|破産富豪|プラノサウルス|鬼灯の冷徹|坂本ですが|だがしかし|生徒会役員共)/i.test(t)) {
       addScore('comedy', 140, '代表コメディタイトル');
     }
 
@@ -235,7 +238,7 @@
     if (tagMap.has('Dating Sim') || tagMap.has('Visual Novel')) {
       if (g.has('Romance') || tagMap.has('Female Harem')) addScore('romance', 80, 'タグ: 恋愛ノベル原作');
     }
-    if (/(?:その着せ替え人形|着せ恋|僕の心のヤバイやつ|五等分の花嫁|かぐや様|とらドラ|やはり俺の青春|俺ガイル|カノジョも彼女|女神のカフェテラス|わたしが恋人になれるわけないじゃん|わたなれ|神のみぞ知るセカイ|神のみ|政宗くんのリベンジ|シスター・プリンセス|シスプリ|citrus|シトラス|Фなるあぷろーち|ウィッシュ|W ～ウィッシュ～|漣蒼士|あんた私のことを好きだったの|これは二度目で最後の初恋|君主様に胸やけ|小さい潜水艦に恋をした|冴えない彼女|冴えカノ|ニセコイ|君に届け|アオハライド|山田くんとLv999|お隣の天使様|恋は雨上がりのように|ゴールデンタイム|高嶺のハナさん|疑似ハーレム|ロシデレ|時々ボソッとロシア語でデレる隣のアーリャさん|負けヒロインが多すぎる|マケイン)/i.test(t)) {
+    if (/(?:その着せ替え人形|着せ恋|僕の心のヤバイやつ|五等分の花嫁|かぐや様|とらドラ|やはり俺の青春|俺ガイル|カノジョも彼女|女神のカフェテラス|わたしが恋人になれるわけないじゃん|わたなれ|神のみぞ知るセカイ|神のみ|政宗くんのリベンジ|シスター・プリンセス|シスプリ|citrus|シトラス|Фなるあぷろーち|ウィッシュ|W ～ウィッシュ～|漣蒼士|あんた私のことを好きだったの|これは二度目で最後の初恋|君主様に胸やけ|小さい潜水艦に恋をした|冴えない彼女|冴えカノ|ニセコイ|君に届け|アオハライド|山田くんとLv999|お隣の天使様|恋は雨上がりのように|ゴールデンタイム|高嶺のハナさん|疑似ハーレム|ロシデレ|時々ボソッとロシア語でデレる隣のアーリャさん|負けヒロインが多すぎる|マケイン|レンチキュラーズ|古見さんは|エロマンガ先生|少女たちは荒野|はじめてのギャル|みだらな青ちゃん)/i.test(t)) {
       addScore('romance', 150, '代表恋愛/ラブコメタイトル');
     }
 
@@ -257,7 +260,7 @@
     if (tagMap.has('Youth')) addScore('drama', getTag('Youth') * 1.1 * dramaMult, 'タグ: Youth (青春)');
     if (tagMap.has('Ensemble Cast') && g.has('Drama')) addScore('drama', 70 * dramaMult, 'タグ: Ensemble Cast (群像劇)');
     if (tagMap.has('Melodrama')) addScore('drama', getTag('Melodrama') * 1.0 * dramaMult, 'タグ: Melodrama');
-    if (/(?:宇宙よりも遠い場所|よりもい|SHIROBAKO|花咲くいろは|サクラクエスト|白い砂のアクアトープ|ヴァイオレット・エヴァーガーデン|響け！ユーフォニアム|四月は君の嘘|あの日見た花|あの花|CLANNAD|クラナド|聲の形|リズと青い鳥|銀の匙|Silver Spoon|ビーバーになる時|ルックバック|さよならの朝に約束の花をかざろう|氷菓|プラネテス|波よ聞いてくれ|スキップとローファー|バクマン|BLUE GIANT|平家物語|東京マグニチュード|花緑青|僕らの雨いろプロトコル|クジラの話|あの夏)/i.test(t)) {
+    if (/(?:宇宙よりも遠い場所|よりもい|SHIROBAKO|花咲くいろは|サクラクエスト|白い砂のアクアトープ|ヴァイオレット・エヴァーガーデン|響け！ユーフォニアム|四月は君の嘘|あの日見た花|あの花|CLANNAD|クラナド|聲の形|リズと青い鳥|銀の匙|Silver Spoon|ビーバーになる時|ルックバック|さよならの朝に約束の花をかざろう|氷菓|プラネテス|波よ聞いてくれ|スキップとローファー|バクマン|BLUE GIANT|平家物語|東京マグニチュード|花緑青|僕らの雨いろプロトコル|クジラの話|あの夏|あかね噺|あかね小噺|かぐや姫の物語|ツインズひなひま|リメンバー・ミー|ReLIFE|一週間フレンズ)/i.test(t)) {
       addScore('drama', 150, '代表ドラマ/青春タイトル');
     }
 
@@ -303,7 +306,7 @@
     if (tagMap.has('Nudity')) addScore('ecchi', getTag('Nudity') * 1.2, 'タグ: Nudity');
     if (tagMap.has('Fanservice')) addScore('ecchi', getTag('Fanservice') * 0.8, 'タグ: Fanservice');
     if (tagMap.has('Ecchi')) addScore('ecchi', getTag('Ecchi') * 1.1, 'タグ: Ecchi');
-    if (/(?:変ゼミ|To LOVEる|ハイスクールD×D|ヨスガノソラ|監獄学園|魔装学園|新妹魔王|異種族レビュアーズ|回復術士|ド級編隊|ギルティホール|最近、妹のようすが|妹ちょ|お姉さまに恋してる|オトボク)/i.test(t)) {
+    if (/(?:変ゼミ|To LOVEる|ハイスクールD×D|ヨスガノソラ|監獄学園|魔装学園|新妹魔王|異種族レビュアーズ|回復術士|ド級編隊|ギルティホール|最近、妹のようすが|妹ちょ|お姉さまに恋してる|オトボク|うしろの正面カムイさん)/i.test(t)) {
       addScore('ecchi', 150, '代表お色気タイトル');
     }
 
@@ -319,7 +322,7 @@
     if (tagMap.has('Shounen') && g.has('Action')) addScore('action', getTag('Shounen') * 0.9, 'タグ: Shounen');
     if (tagMap.has('Kaiju')) addScore('action', getTag('Kaiju') * 0.9, 'タグ: Kaiju');
     if (tagMap.has('Revenge') && g.has('Action')) addScore('action', getTag('Revenge') * 0.9, 'タグ: Revenge');
-    if (/(?:チェンソーマン|呪術廻戦|鬼滅の刃|進撃の巨人|リコリス・リコイル|僕のヒーローアカデミア|ヒロアカ|ワンパンマン|モブサイコ|BLEACH|NARUTO|ナルト|ONE PIECE|ワンピース|ドラゴンボール|HUNTER×HUNTER|ハンターハンター|ブラッククローバー|東京喰種|Fate\/stay night|Fate\/Zero|空の境界|キルラキル|アクセル・ワールド|ストライク・ザ・ブラッド|超電磁砲|レールガン|シャナ|デート・ア・ライブ|ブラック★ロックシューター|シーキューブ|C3|心臓に復讐|Mr.War|AKIBA’S TRIP|リボンヒーロー|LAZARUS)/i.test(t)) {
+    if (/(?:チェンソーマン|呪術廻戦|鬼滅の刃|進撃の巨人|リコリス・リコイル|僕のヒーローアカデミア|ヒロアカ|ワンパンマン|モブサイコ|BLEACH|NARUTO|ナルト|ONE PIECE|ワンピース|ドラゴンボール|HUNTER×HUNTER|ハンターハンター|ブラッククローバー|東京喰種|Fate\/stay night|Fate\/Zero|\bFate\s*[\/:]|空の境界|キルラキル|アクセル・ワールド|ストライク・ザ・ブラッド|超電磁砲|レールガン|シャナ|デート・ア・ライブ|ブラック★ロックシューター|シーキューブ|C3|心臓に復讐|Mr.War|AKIBA’S TRIP|リボンヒーロー|LAZARUS|7FATES|CHAKHO|ポケットモンスター|ポケモン|ソウルイーター|SOUL EATER|テラフォーマーズ|TERRAFORMARS|亜人|青の祓魔師)/i.test(t)) {
       addScore('action', 150, '代表アクションタイトル');
     }
 
@@ -338,7 +341,7 @@
     if (tagMap.has('Virtual World')) addScore('sf_fantasy', getTag('Virtual World') * 1.1, 'タグ: Virtual World');
     if (tagMap.has('Urban Fantasy')) addScore('sf_fantasy', getTag('Urban Fantasy') * 0.8, 'タグ: Urban Fantasy');
     if (tagMap.has('Post-Apocalyptic')) addScore('sf_fantasy', getTag('Post-Apocalyptic') * 0.9, 'タグ: Post-Apocalyptic');
-    if (/(?:葬送のフリーレン|フリーレン|魔女の旅々|ダンジョン飯|ダンまち|ダンジョンに出会いを|STEINS;GATE|シュタゲ|Dr.STONE|ドクターストーン|サマーウォーズ|とある魔術|禁書目録|メイドインアビス|ウィストリア|シャンフロ|シャングリラ・フロンティア|SAO|ソードアート|電脳コイル|攻殻機動隊|ヴィヴィ|Vivy|寄生獣|ハクメイとミコチ|虫師|夏目友人帳|宇宙戦艦ヤマト|マギ The labyrinth|マギ シンドバッド|マリオ|プラスティック・メモリーズ|プラメモ|BEATLESS|ビートレス|AYAKA|トイ・ストーリー|神椿市|FF:U|ファイナルファンタジー|グルグル|魔法陣グルグル|ワンダーエッグ|xxxHOLiC|ホリック|COWBOY BEBOP|カウボーイビバップ|しらぬひ|サイレント・ウィッチ|とんがり帽子のアトリエ|ある魔女が死ぬまで|魔術師クノン)/i.test(t)) {
+    if (/(?:葬送のフリーレン|フリーレン|魔女の旅々|ダンジョン飯|ダンまち|ダンジョンに出会いを|STEINS;GATE|シュタゲ|Dr.STONE|ドクターストーン|サマーウォーズ|とある魔術|禁書目録|メイドインアビス|ウィストリア|シャンフロ|シャングリラ・フロンティア|SAO|ソードアート|電脳コイル|攻殻機動隊|ヴィヴィ|Vivy|寄生獣|ハクメイとミコチ|虫師|夏目友人帳|宇宙戦艦ヤマト|マギ The labyrinth|マギ シンドバッド|マリオ|プラスティック・メモリーズ|プラメモ|BEATLESS|ビートレス|AYAKA|トイ・ストーリー|神椿市|FF:U|ファイナルファンタジー|グルグル|魔法陣グルグル|ワンダーエッグ|xxxHOLiC|ホリック|COWBOY BEBOP|カウボーイビバップ|しらぬひ|サイレント・ウィッチ|とんがり帽子のアトリエ|ある魔女が死ぬまで|魔術師クノン|超かぐや姫|強くてニューサーガ|大喜利ニューサーガ|井戸端会議でニューサーガ|ちっちゃな雪使いシュガー|藤本タツキ 17-26|ドンキホーテ幻の花|もうひとつの未来を|サイバーパンク|FAIRY TAIL|マッシュル|どろろ|HELLO WORLD|ブレイブストーリー|ドロヘドロ|アリスと蔵六|夜桜四重奏)/i.test(t)) {
       addScore('sf_fantasy', 140, '代表SF/ファンタジータイトル');
     }
 
@@ -517,6 +520,103 @@
     }
   }
 
+  function normalizeTitleLookupKey(title) {
+    if (!title) return '';
+    return String(title)
+      .normalize('NFKC')
+      .toLowerCase()
+      .replace(/[\s\-_・:：!！?？~～〜～,，.。\/／\\\(\)（）\[\]「」『』【】〈〉《》'"’”]+/g, '')
+      .trim();
+  }
+
+  function isValidLookupKey(key) {
+    if (!key) return false;
+    const isAsciiOnly = /^[\x00-\x7F]+$/.test(key);
+    return isAsciiOnly ? key.length >= 4 : key.length >= 3;
+  }
+
+  function getTitleMatchCandidates(title) {
+    if (!title) return [];
+    const seen = new Set();
+    const out = [];
+    const pushKey = (raw) => {
+      const k = normalizeTitleLookupKey(raw);
+      if (isValidLookupKey(k) && !seen.has(k)) {
+        seen.add(k);
+        out.push(k);
+      }
+    };
+
+    const s = String(title).normalize('NFKC').trim();
+    pushKey(s);
+    const n1 = normalizeAniListTitle(s, 1);
+    pushKey(n1);
+    const n2 = normalizeAniListTitle(s, 2);
+    pushKey(n2);
+
+    const stripDerived = (raw) => String(raw || '')
+      .replace(/^(?:TVアニメ|テレビアニメ|アニメ|映画|劇場版|完全版|続・劇場版|新・)\s*/i, '')
+      .replace(/\s*(?:特別編|総集編|完結編|ミニアニメ(?:劇場)?|OVA|OAD|SP|番外編|外伝|セレクション).*$/i, '')
+      .replace(/\s*(?:続・劇場版|劇場版|Part\s*\d+|前篇|後篇|前編|後編|[ⅠⅡⅢⅣⅤ].*|[（(][^）)]*[)）]|「[^」]*」|『[^』]*』).*$/i, '')
+      .replace(/\s*(?:第?\s*[0-9一二三四五六七八九十]+[期クール部章]|\d+nd|\d+rd|\d+th|\s+[0-9]+)$/i, '')
+      .trim();
+
+    const d1 = stripDerived(s);
+    pushKey(d1);
+    const d2 = stripDerived(n1);
+    pushKey(d2);
+    const d3 = stripDerived(d2);
+    pushKey(d3);
+
+    const noTrailDigit = d3.replace(/([^\d\-:\.])[1-9]$/, '$1').trim();
+    if (noTrailDigit && noTrailDigit !== d3) pushKey(noTrailDigit);
+
+    const bookMatch = s.match(/『([^』]{3,})』/);
+    if (bookMatch && bookMatch[1]) pushKey(bookMatch[1]);
+
+    const headChunk = d1.split(/\s+/)[0];
+    if (headChunk && normalizeTitleLookupKey(headChunk).length >= 5) {
+      pushKey(headChunk);
+    }
+
+    return out;
+  }
+
+  const STORY_GENRE_TOKEN_MAP = {
+    'ロボット/メカ': 'mecha',
+    'ロボ/メカ': 'mecha',
+    'スポーツ/競技': 'sports',
+    'ホラー/サスペンス/推理': 'horror_suspense',
+    '歴史/戦記': 'history_military',
+    '戦争/ミリタリー': 'history_military',
+    'ライブ/ラジオ/etc.': 'idol_music',
+    'アイドル/音楽': 'idol_music',
+    '恋愛/ラブコメ': 'romance',
+    '日常/ほのぼの': 'nichijou',
+    'コメディ/ギャグ': 'comedy',
+    'ドラマ/青春': 'drama',
+    'アクション/バトル': 'action',
+    'SF/ファンタジー': 'sf_fantasy',
+    '異世界/転生': 'isekai',
+    '魔法少女/バトルヒロイン': 'mahou_shoujo',
+    'エッチ/お色気': 'ecchi'
+  };
+
+  function mapStoryGenresToCategory(genreStr, title) {
+    const byTitle = classifyAnimeScored([], [], title || '');
+    if (byTitle && byTitle !== 'other') return byTitle;
+
+    const tokens = String(genreStr || '').split(/[,、]/).map(s => s.trim()).filter(Boolean);
+    for (let i = 0; i < tokens.length; i++) {
+      const tok = tokens[i];
+      if (tok === 'ショート' || tok === 'キッズ/ファミリー') continue;
+      if (STORY_GENRE_TOKEN_MAP[tok]) return STORY_GENRE_TOKEN_MAP[tok];
+    }
+    if (tokens.includes('キッズ/ファミリー')) return 'nichijou';
+    if (tokens.includes('ショート')) return 'comedy';
+    return 'other';
+  }
+
   return {
     GENRE_DEFINITIONS,
     GENRE_DEF_MAP,
@@ -525,6 +625,9 @@
     scoreAnimeDetailed,
     classifyAnimeScored,
     normalizeAniListTitle,
+    normalizeTitleLookupKey,
+    getTitleMatchCandidates,
+    mapStoryGenresToCategory,
     selectBestAniListMedia,
     fetchAniListMediaInBrowser
   };
