@@ -429,7 +429,7 @@
     }
 
     /**
-     * 年代別タイムライン分析（1年ごと・5年ごと・共通黄金期）
+     * 年代別タイムライン分析（1年ごと・5年ごと）
      */
     calculateTimeline() {
       const yearsByUser = {};
@@ -506,53 +506,11 @@
         return { year, totalCount, countsByUser, animesByUser };
       });
 
-      const goldenYears = [];
-      for (let i = 0; i < this.users.length - 1; i++) {
-        const u1 = this.users[i];
-        const map1 = this.userAnimeMaps[u1];
-        const list1 = map1 ? Array.from(map1.values()) : [];
-        for (let j = i + 1; j < this.users.length; j++) {
-          const u2 = this.users[j];
-          const map2 = this.userAnimeMaps[u2];
-          const yearCommon = {};
-          let totalCommon = 0;
-
-          for (let k = 0; k < list1.length; k++) {
-            const a = list1[k];
-            if (map2 && map2.has(String(a.id))) {
-              totalCommon++;
-              const y = extractYear(a.season);
-              if (y) yearCommon[y] = (yearCommon[y] || 0) + 1;
-            }
-          }
-
-          let bestYear = null;
-          let bestCount = 0;
-          for (const [y, cnt] of Object.entries(yearCommon)) {
-            if (cnt > bestCount) {
-              bestCount = cnt;
-              bestYear = parseInt(y, 10);
-            }
-          }
-
-          if (bestYear) {
-            goldenYears.push({
-              pair: [u1, u2],
-              year: bestYear,
-              commonInYearCount: bestCount,
-              totalCommon
-            });
-          }
-        }
-      }
-      goldenYears.sort((a, b) => b.commonInYearCount - a.commonInYearCount);
-
       return {
         eraBuckets,
         allYears,
         yearStats,
-        yearsByUser,
-        goldenYears
+        yearsByUser
       };
     }
 

@@ -44,7 +44,7 @@
               <div class="card-header-row">
                 <div>
                   <h3 class="card-title"><i class="fa-solid fa-timeline text-blue"></i> 年代別タイムライン</h3>
-                  <p class="card-desc">各放送年・年代別の視聴作品数分布と「2人の共通黄金期」を表示します。</p>
+                  <p class="card-desc">各放送年（1年ごと）・年代（5年ごと）の視聴作品数分布を表示します。</p>
                 </div>
                 <div class="subtabs-bar">
                   <button type="button" class="subtab-btn active" data-tl-mode="1year">
@@ -56,7 +56,6 @@
                 </div>
               </div>
             </div>
-            <div id="analytics-golden-years" class="chips-wrap" style="margin-bottom:0.85rem;"></div>
             <div id="analytics-timeline-list" class="timeline-list"></div>
           </div>
 
@@ -184,7 +183,6 @@
 
     renderTimeline(report) {
       const listEl = this.container.querySelector('#analytics-timeline-list');
-      const goldenEl = this.container.querySelector('#analytics-golden-years');
       const tl = report.labs?.timelineReport;
       if (!listEl || !tl) return;
 
@@ -192,14 +190,6 @@
       const yearsByUser = tl.yearsByUser || {};
       const colors = root.UIUtils.USER_COLORS;
       const esc = root.UIUtils.escapeHtml;
-
-      if (goldenEl) {
-        const golden = (tl.goldenYears || []).slice(0, 6);
-        goldenEl.innerHTML = golden.length > 0
-          ? `<span class="small text-muted" style="font-weight:700;"><i class="fa-solid fa-star text-gold"></i> 共通黄金期:</span>` +
-            golden.map(g => `<span class="badge badge-gold">@${esc(g.pair[0])} × @${esc(g.pair[1])}: ${g.year}年 (${g.commonInYearCount}作)</span>`).join('')
-          : '';
-      }
 
       if (this.timelineMode === '5years') {
         const buckets = tl.eraBuckets || [];
