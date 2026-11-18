@@ -56,6 +56,23 @@ async function run() {
   assert.strictEqual(StudioDictionary.identifyStudio('異能バトルは日常系のなかで')?.name, 'TRIGGER');
   assert.strictEqual(StudioDictionary.identifyStudio('ワンパンマン 第2期')?.name, 'J.C.STAFF');
   assert.strictEqual(StudioDictionary.identifyStudio('BNA ビー・エヌ・エー')?.name, 'TRIGGER');
+  assert.strictEqual(StudioDictionary.identifyStudio('先輩はおとこのこ')?.name, 'project No.9');
+  assert.strictEqual(StudioDictionary.identifyStudio('ゆるゆり さん☆ハイ！')?.name, 'TYOアニメーションズ');
+  assert.strictEqual(StudioDictionary.identifyStudio('HUNTER×HUNTER')?.name, '日本アニメーション');
+  assert.strictEqual(StudioDictionary.identifyStudio('HUNTER×HUNTER(2011)')?.name, 'マッドハウス');
+  assert.strictEqual(StudioDictionary.identifyStudio('Kanon')?.name, '東映アニメーション');
+  assert.strictEqual(StudioDictionary.identifyStudio('Kanon（新）')?.name, '京都アニメーション');
+  assert.deepStrictEqual(StudioDictionary.identifyStudios('SPY×FAMILY'), ['WIT STUDIO', 'CloverWorks']);
+  assert.strictEqual(StudioDictionary.normalizeStudioName('Kyoto Animation'), '京都アニメーション');
+  assert.strictEqual(StudioDictionary.normalizeStudioName('SHAFT (シャフト)'), 'シャフト');
+  assert.strictEqual(StudioDictionary.normalizeStudioName('Bandai Namco Filmworks'), 'サンライズ');
+  assert.strictEqual(StudioDictionary.normalizeStudioName('NHK'), null);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('負けヒロインが多すぎる！', builtWg), ['A-1 Pictures']);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('アキバ冥途戦争', builtWg), ['P.A.WORKS']);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('アイカツ！-アイドルカツドウ！-', builtWg), ['サンライズ']);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('無彩限のファントム・ワールド', builtWg), ['京都アニメーション']);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('怪物王女-Princess Resurrection-', builtWg), ['マッドハウス']);
+  assert.deepStrictEqual(StudioDictionary.resolveStudiosForAnime('THE IDOLM@STER', builtWg), ['A-1 Pictures']);
 
   // story 全128バケットスコア[0, 1000]クランプ & featured正規化 & popular #1 検証
   const popIndex = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../static/res/popular/index.json'), 'utf8'));
@@ -427,6 +444,15 @@ async function run() {
     await page.screenshot({ path: path.join(SS_DIR, 'pc_05b_analytics_timeline.png') });
     await page.locator('.timeline-row-head').first().click();
     await page.waitForSelector('.timeline-drawer .anime-card', { timeout: 3000 });
+    await page.locator('#analytics-studio-grid').scrollIntoViewIfNeeded();
+    await page.waitForSelector('#analytics-studio-grid .studio-card .studio-item', { timeout: 5000 });
+    await page.locator('#analytics-studio-grid .studio-item-head').first().click();
+    await page.waitForSelector('#analytics-studio-grid .studio-item.open .anime-card', { timeout: 5000 });
+    const moreStudioBtns = await page.locator('#analytics-studio-grid .js-studio-more-btn').count();
+    assert(moreStudioBtns >= 1, 'Expected expandable full-studio toggle button');
+    await page.locator('#analytics-studio-grid .js-studio-more-btn').first().click();
+    await page.waitForTimeout(200);
+    await page.screenshot({ path: path.join(SS_DIR, 'pc_05c_analytics_studios.png') });
     console.log('  ✔ 視聴アナリティクス (プロフィール・時間・1年タイムライン遅延展開・スタジオ) 確認完了');
 
     // ジャンル分析 & 診断ビュー

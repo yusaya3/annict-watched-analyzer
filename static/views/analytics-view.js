@@ -63,7 +63,7 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title"><i class="fa-solid fa-palette text-pink"></i> 制作スタジオ別視聴傾向</h3>
-              <p class="card-desc">主要14アニメ制作会社の履修数ランキング。スタジオ名をクリックすると該当作品を確認できます。</p>
+              <p class="card-desc">アニメ制作会社別の履修数ランキング（上位表示）。スタジオ名をクリックすると該当作品を確認できます。</p>
             </div>
             <div id="analytics-studio-grid" class="studio-grid"></div>
           </div>
@@ -328,37 +328,22 @@
       if (!grid) return;
       const esc = root.UIUtils.escapeHtml;
 
-      grid.innerHTML = '';
-      Object.values(stats).forEach(uStat => {
-        const card = document.createElement('div');
-        card.className = 'studio-card';
-        const topStudios = (uStat.rankings || []).slice(0, 6);
-
-        const listHtml = topStudios.length === 0
-          ? '<p class="small text-muted">該当する主要スタジオ作品がありません</p>'
-          : topStudios.map((st, idx) => `
-              <div class="studio-item" data-studio-idx="${idx}">
-                <div class="studio-item-head">
-                  <span style="display:flex;align-items:center;gap:0.45rem;">
-                    <span class="text-muted">#${idx + 1}</span>
-                    <span style="width:10px;height:10px;border-radius:50%;background:${st.color};display:inline-block;"></span>
-                    <span>${esc(st.name)}</span>
-                  </span>
-                  <span class="small text-muted">${st.count}作 <i class="fa-solid fa-chevron-down"></i></span>
-                </div>
-                <div class="studio-item-body"></div>
-              </div>
-            `).join('');
-
-        card.innerHTML = `
-          <div class="card-header-row">
-            <strong><i class="fa-solid fa-user text-pink"></i> @${esc(uStat.username)}</strong>
-            <span class="badge badge-pink">${esc(uStat.studioTitle)}</span>
+      const buildStudioItemsHtml = (list, offset = 0) => list.map((st, idx) => `
+        <div class="studio-item" data-studio-idx="${offset + idx}">
+          <div class="studio-item-head">
+            <span style="display:flex;align-items:center;gap:0.45rem;">
+              <span class="text-muted">#${offset + idx + 1}</span>
+              <span style="width:10px;height:10px;border-radius:50%;background:${st.color};display:inline-block;"></span>
+              <span>${esc(st.name)}</span>
+            </span>
+            <span class="small text-muted">${st.count}作 <i class="fa-solid fa-chevron-down"></i></span>
           </div>
-          <div class="stack-md" style="gap:0.45rem;">${listHtml}</div>
-        `;
+          <div class="studio-item-body"></div>
+        </div>
+      `).join('');
 
-        card.querySelectorAll('.studio-item').forEach(item => {
+      const bindStudioItems = (containerEl, allRankings) => {
+        containerEl.querySelectorAll('.studio-item').forEach(item => {
           const head = item.querySelector('.studio-item-head');
           const body = item.querySelector('.studio-item-body');
           const idx = parseInt(item.getAttribute('data-studio-idx'), 10);
@@ -369,7 +354,7 @@
             item.classList.toggle('open', willOpen);
             if (willOpen && !loaded) {
               loaded = true;
-              const animes = topStudios[idx]?.animes || [];
+              const animes = allRankings[idx]?.animes || [];
               body.innerHTML = `
                 <div class="anime-cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:0.55rem;">
                   ${animes.map(a => root.UIUtils.createAnimeCardHtml(a, { showGenre: false })).join('')}
@@ -379,6 +364,56 @@
             }
           });
         });
+      };
+
+      grid.innerHTML = '';
+      Object.values(stats).forEach(uStat => {
+        const card = document.createElement('div');
+        card.className = 'studio-card';
+        const allRankings = uStat.rankings || [];
+        const topStudios = allRankings.slice(0, 6);
+        const restStudios = allRankings.slice(6);
+
+        const listHtml = topStudios.length === 0
+          ? '<p class="small text-muted">該当する制作スタジオデータがありません</p>'
+          : buildStudioItemsHtml(topStudios, 0);
+
+        const moreHtml = restStudios.length > 0
+          ? `<div class="studio-more-container stack-md" style="gap:0.45rem;display:none;"></div>
+             <button type="button" class="btn btn-outline btn-xs js-studio-more-btn" style="align-self:flex-start;">
+               <i class="fa-solid fa-chevron-down"></i> 他 ${restStudios.length} 社を表示
+             </button>`
+          : '';
+
+        card.innerHTML = `
+          <div class="card-header-row">
+            <strong><i class="fa-solid fa-user text-pink"></i> @${esc(uStat.username)}</strong>
+            <span class="badge badge-pink">${esc(uStat.studioTitle)}</span>
+          </div>
+          <div class="stack-md studio-top-list" style="gap:0.45rem;">${listHtml}</div>
+          ${moreHtml}
+        `;
+
+        const topListEl = card.querySelector('.studio-top-list');
+        if (topListEl) bindStudioItems(topListEl, allRankings);
+
+        const moreBtn = card.querySelector('.js-studio-more-btn');
+        const moreContainer = card.querySelector('.studio-more-container');
+        if (moreBtn && moreContainer) {
+          let renderedRest = false;
+          moreBtn.addEventListener('click', () => {
+            const isHidden = moreContainer.style.display === 'none';
+            if (isHidden && !renderedRest) {
+              renderedRest = true;
+              moreContainer.innerHTML = buildStudioItemsHtml(restStudios, 6);
+              bindStudioItems(moreContainer, allRankings);
+            }
+            moreContainer.style.display = isHidden ? 'flex' : 'none';
+            moreBtn.innerHTML = isHidden
+              ? `<i class="fa-solid fa-chevron-up"></i> 上位6社のみ表示`
+              : `<i class="fa-solid fa-chevron-down"></i> 他 ${restStudios.length} 社を表示`;
+          });
+        }
 
         grid.appendChild(card);
       });

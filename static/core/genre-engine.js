@@ -410,9 +410,29 @@
     return scoreAnimeDetailed(genres, tags, title).category;
   }
 
+  const ROMAN_ASCII_MAP = {
+    'Ⅰ': 'I', 'Ⅱ': 'II', 'Ⅲ': 'III', 'Ⅳ': 'IV', 'Ⅴ': 'V',
+    'Ⅵ': 'VI', 'Ⅶ': 'VII', 'Ⅷ': 'VIII', 'Ⅸ': 'IX', 'Ⅹ': 'X'
+  };
+
+  function replaceRomanNumerals(str) {
+    return String(str || '').replace(/[Ⅰ-Ⅹ]/g, ch => ROMAN_ASCII_MAP[ch] || ch);
+  }
+
+  function toHiragana(str) {
+    return String(str || '').replace(/[\u30A1-\u30F6]/g, ch =>
+      String.fromCharCode(ch.charCodeAt(0) - 0x60)
+    );
+  }
+
+  function extractYearHint(str) {
+    const m = String(str || '').match(/((?:19|20)\d{2})/);
+    return m ? parseInt(m[1], 10) : null;
+  }
+
   function normalizeAniListTitle(title, stage = 1) {
     if (!title) return '';
-    let cleaned = String(title)
+    let cleaned = replaceRomanNumerals(String(title))
       .replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
       .replace(/\s*[\(（][^\)）]+[\)）]/g, '')
       .replace(/\s*\[[^\]]+\]/g, '')
@@ -424,6 +444,7 @@
     if (stage >= 2) {
       cleaned = cleaned
         .replace(/\s*[~〜～][^~〜～]+[~〜～]/g, '')
+        .replace(/\s*[―—][^―—]+[―—]\s*$/g, '')
         .replace(/\s+:[^:]+$/g, '')
         .replace(/\s+-.+$/g, '')
         .trim();
@@ -431,58 +452,106 @@
     return cleaned || title;
   }
 
-  function selectBestAniListMedia(candidates, searchTitle) {
+  function extractAniListStudios(media) {
+    if (!media?.studios?.edges) return [];
+    const edges = media.studios.edges.filter(e => e && e.node?.name && e.node.isAnimationStudio);
+    const main = [];
+    const all = [];
+    for (let i = 0; i < edges.length; i++) {
+      const name = String(edges[i].node.name).trim();
+      if (!name) continue;
+      if (!all.includes(name)) all.push(name);
+      if (edges[i].isMain && !main.includes(name)) main.push(name);
+    }
+    return main.length > 0 ? main : all;
+  }
+
+  function selectBestAniListMedia(candidates, searchTitle, expectedYear = null) {
     if (!candidates || candidates.length === 0) return null;
-    if (candidates.length === 1) return candidates[0];
     const norm = (s) => {
       if (!s) return '';
-      return String(s).toLowerCase()
-        .replace(/[！-～]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
-        .replace(/\s*[\(（][^\)）]+[\)）]/g, '')
-        .replace(/[\s\-_・:：\(\)（）「」『』【】\/]/g, '')
-        .trim();
+      return toHiragana(
+        replaceRomanNumerals(String(s))
+          .normalize('NFKC')
+          .toLowerCase()
+          .replace(/\s*[\(（][^\)）]+[\)）]/g, '')
+          .replace(/[\s\-_・･:：!！?？~～〜～,，.。\/／\\\(\)（）\[\]「」『』【】〈〉《》'"’”☆♥♡♪+＋×―—]+/g, '')
+      ).trim();
     };
     const normSearch = norm(searchTitle);
+    const normBase = norm(normalizeAniListTitle(searchTitle, 2));
+    const targetYear = expectedYear || extractYearHint(searchTitle);
     const fmtScores = { TV: 100, MOVIE: 100, TV_SHORT: 70, OVA: 40, ONA: 30, SPECIAL: 10, MUSIC: 0 };
-    let best = candidates[0];
+
+    let best = null;
     let bestScore = -Infinity;
+    let bestTitleScore = 0;
+
     for (let i = 0; i < candidates.length; i++) {
       const cand = candidates[i];
-      let score = 0;
       const nNat = norm(cand.title?.native);
       const nRom = norm(cand.title?.romaji);
       const nEng = norm(cand.title?.english);
-      const nSyn = (cand.synonyms || []).map(norm);
-      if (nNat === normSearch || nRom === normSearch) score += 1000;
-      else if (nEng === normSearch) score += 950;
-      else if (nSyn.includes(normSearch)) score += 900;
-      else if (nNat.startsWith(normSearch) || nRom.startsWith(normSearch)) score += 500;
-      else if (nNat.includes(normSearch) || nRom.includes(normSearch)) score += 200;
+      const nSyn = (cand.synonyms || []).map(norm).filter(Boolean);
+      const allCandNorms = [nNat, nRom, nEng, ...nSyn].filter(Boolean);
+
+      let titleScore = 0;
+      if (normSearch && (nNat === normSearch || nRom === normSearch)) titleScore = 1000;
+      else if (normSearch && nEng === normSearch) titleScore = 950;
+      else if (normSearch && nSyn.includes(normSearch)) titleScore = 900;
+      else if (normBase && normBase.length >= 2 && allCandNorms.includes(normBase)) titleScore = 750;
+      else if (normSearch && ((nNat && nNat.startsWith(normSearch)) || (nRom && nRom.startsWith(normSearch)) || (nNat && nNat.length >= 3 && normSearch.startsWith(nNat)))) titleScore = 500;
+      else if (normSearch && ((nNat && normSearch.length >= 3 && nNat.includes(normSearch)) || (nRom && normSearch.length >= 3 && nRom.includes(normSearch)) || (nNat && nNat.length >= 4 && normSearch.includes(nNat)))) titleScore = 250;
+      else if (normBase && normBase.length >= 4 && allCandNorms.some(c => c.startsWith(normBase) || normBase.startsWith(c))) titleScore = 220;
+
+      // タイトル文字列との妥当な一致が無い誤候補（別作品）は除外
+      if (normSearch && titleScore === 0) continue;
+
+      let score = titleScore;
+      const candYear = cand.startDate?.year || null;
+      if (targetYear && candYear) {
+        const diff = Math.abs(targetYear - candYear);
+        if (diff === 0) score += 450;
+        else if (diff === 1) score += 200;
+        else if (diff >= 3) score -= 350;
+      }
+
       score += fmtScores[cand.format] || 0;
       score += Math.min(100, Math.log10((cand.popularity || 0) + 1) * 20);
-      if (score > bestScore) { bestScore = score; best = cand; }
+      if (score > bestScore) {
+        bestScore = score;
+        best = cand;
+        bestTitleScore = titleScore;
+      }
     }
-    return best;
+    return bestTitleScore > 0 ? best : null;
   }
 
   /**
-   * ブラウザからAniList GraphQL APIを直接叩いてタグ・ジャンルを取得（サーバー同一選定基準）
+   * ブラウザからAniList GraphQL APIを直接叩いてタグ・ジャンル・制作会社を取得（サーバー同一選定基準）
    */
-  async function fetchAniListMediaInBrowser(title) {
+  async function fetchAniListMediaInBrowser(title, expectedYear = null) {
     if (!title || typeof fetch !== 'function') return null;
     const cleanTitle = normalizeAniListTitle(title, 1);
 
     const query = `
       query ($search: String) {
-        Page(page: 1, perPage: 6) {
+        Page(page: 1, perPage: 8) {
           media(search: $search, type: ANIME, sort: SEARCH_MATCH) {
             id
             format
             popularity
+            startDate { year }
             synonyms
             title { romaji english native }
             genres
             tags { name rank isMediaSpoiler }
+            studios {
+              edges {
+                isMain
+                node { name isAnimationStudio }
+              }
+            }
           }
         }
       }
@@ -504,16 +573,22 @@
     };
 
     try {
-      let mediaList = await querySearch(title);
-      if (mediaList.length === 0 && cleanTitle && cleanTitle !== title) {
-        mediaList = await querySearch(cleanTitle);
+      let bestMedia = selectBestAniListMedia(await querySearch(title), title, expectedYear);
+      if (!bestMedia && cleanTitle && cleanTitle !== title) {
+        bestMedia = selectBestAniListMedia(await querySearch(cleanTitle), title, expectedYear);
       }
-      if (mediaList.length === 0) return null;
+      if (!bestMedia) {
+        const subTitle = normalizeAniListTitle(title, 2);
+        if (subTitle && subTitle !== cleanTitle && subTitle !== title) {
+          bestMedia = selectBestAniListMedia(await querySearch(subTitle), title, expectedYear);
+        }
+      }
+      if (!bestMedia) return null;
 
-      const bestMedia = selectBestAniListMedia(mediaList, title);
       return {
         genres: bestMedia.genres || [],
-        tags: (bestMedia.tags || []).filter(tag => !tag.isMediaSpoiler).map(tag => ({ name: tag.name, rank: tag.rank }))
+        tags: (bestMedia.tags || []).filter(tag => !tag.isMediaSpoiler).map(tag => ({ name: tag.name, rank: tag.rank })),
+        studios: extractAniListStudios(bestMedia)
       };
     } catch (e) {
       return null;
@@ -628,6 +703,8 @@
     normalizeTitleLookupKey,
     getTitleMatchCandidates,
     mapStoryGenresToCategory,
+    extractAniListStudios,
+    extractYearHint,
     selectBestAniListMedia,
     fetchAniListMediaInBrowser
   };

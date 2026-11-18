@@ -552,44 +552,64 @@
     }
 
     /**
-     * 制作スタジオ傾向分析（単一ソース・リアルタイム計算対応）
+     * 制作スタジオ傾向分析（公式キャッシュデータ優先 + 辞書フォールバック）
+     * @param {Object} genreMap
      */
-    calculateStudioPreferences() {
+    calculateStudioPreferences(genreMap = {}) {
       const studioStatsByUser = {};
       const studios = StudioDictionary?.STUDIOS || [];
-      const identify = StudioDictionary?.identifyStudio || (() => null);
+      const resolveStudios = StudioDictionary?.resolveStudiosForAnime
+        ? (anime, gMap) => StudioDictionary.resolveStudiosForAnime(anime, gMap)
+        : (anime) => {
+            const st = StudioDictionary?.identifyStudio ? StudioDictionary.identifyStudio(anime?.title) : null;
+            return st ? [st.name] : [];
+          };
+      const getMeta = StudioDictionary?.getStudioMeta || ((name) => ({ name, short: name, color: '#64748b' }));
+      const totalDistinctStudios = new Map();
 
       for (let i = 0; i < this.users.length; i++) {
         const username = this.users[i];
         const list = this.userAnimeMaps[username] ? Array.from(this.userAnimeMaps[username].values()) : [];
         const studioMap = new Map();
 
-        for (let s = 0; s < studios.length; s++) {
-          const st = studios[s];
-          studioMap.set(st.name, {
-            name: st.name,
-            short: st.short,
-            color: st.color,
-            count: 0,
-            animes: []
-          });
-        }
-
         for (let j = 0; j < list.length; j++) {
           const anime = list[j];
-          const studio = identify(anime.title);
-          if (studio) {
-            const entry = studioMap.get(studio.name);
-            if (entry) {
-              entry.count++;
-              entry.animes.push(anime);
+          const studioNames = resolveStudios(anime, genreMap);
+          if (!studioNames || studioNames.length === 0) continue;
+
+          const seenForWork = new Set();
+          for (let k = 0; k < studioNames.length; k++) {
+            const stName = studioNames[k];
+            if (!stName || seenForWork.has(stName)) continue;
+            seenForWork.add(stName);
+
+            let entry = studioMap.get(stName);
+            if (!entry) {
+              const meta = getMeta(stName);
+              entry = {
+                name: meta.name,
+                short: meta.short,
+                color: meta.color,
+                count: 0,
+                animes: []
+              };
+              studioMap.set(stName, entry);
+              if (!totalDistinctStudios.has(meta.name)) {
+                totalDistinctStudios.set(meta.name, meta);
+              }
             }
+            entry.count++;
+            entry.animes.push(anime);
           }
         }
 
         const rankings = Array.from(studioMap.values())
           .filter(s => s.count > 0)
-          .sort((a, b) => b.count - a.count);
+          .map(s => ({
+            ...s,
+            animes: sortAnimes(s.animes, 'season-desc')
+          }))
+          .sort((a, b) => b.count - a.count || compareTitlesJa(a.name, b.name));
 
         const studioTitle = rankings.length > 0
           ? `${rankings[0].name} 最多 (${rankings[0].count}作品)`
@@ -603,7 +623,7 @@
       }
 
       return {
-        allStudios: studios,
+        allStudios: totalDistinctStudios.size > 0 ? Array.from(totalDistinctStudios.values()) : studios,
         studioStatsByUser
       };
     }
@@ -745,7 +765,7 @@
       const labs = {
         calorieReport: this.calculateCalories(),
         timelineReport: this.calculateTimeline(),
-        studioReport: this.calculateStudioPreferences(),
+        studioReport: this.calculateStudioPreferences(genreMap),
         genreReportScored: this.calculateGenres(genreMap)
       };
 

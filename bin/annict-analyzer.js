@@ -155,17 +155,37 @@ async function runAnalysis(userList, forceRefresh = false, options = {}) {
   try {
     const { GenreClient } = require('../lib/labs/genre-client.js');
     const allTitles = [];
+    const allWorks = [];
+    const workMetaByTitle = {};
     for (const animes of Object.values(watchedLists)) {
       for (const a of animes) {
-        if (a.title) allTitles.push(a.title);
+        if (a?.title) {
+          allTitles.push(a.title);
+          if (!workMetaByTitle[a.title]) {
+            workMetaByTitle[a.title] = { id: a.id, season: a.season || '' };
+            allWorks.push(a);
+          }
+        }
       }
     }
     await runWithGenreWriteLock(async () => {
       const genreClient = new GenreClient();
       const elapsedMs = Date.now() - analysisStartTime;
       const timeBudgetMs = isVercel ? Math.max(4000, 46000 - elapsedMs) : 300000;
-      genreMap = await genreClient.resolveGenres(allTitles, null, timeBudgetMs);
+      genreMap = await genreClient.resolveGenres(allTitles, null, timeBudgetMs, { workMetaByTitle });
       remainingGenres = genreClient.lastRemainingCount || 0;
+
+      const remainingBudget = (isVercel ? 48000 : 320000) - (Date.now() - analysisStartTime);
+      if (remainingBudget > 4000) {
+        await genreClient.enrichStudiosFromAnnict(allWorks, isVercel ? 10 : 40, Math.min(remainingBudget - 1000, isVercel ? 5000 : 25000));
+        for (const t of Object.keys(genreMap)) {
+          const cachedStudios = genreClient.cache[t]?.studios;
+          if (Array.isArray(cachedStudios) && cachedStudios.length > 0 && (!genreMap[t].studios || genreMap[t].studios.length === 0)) {
+            genreMap[t].studios = cachedStudios;
+          }
+        }
+      }
+
       if (typeof onGenreUpdated === 'function') onGenreUpdated();
 
       if (!isVercel && persistBootstrap) {
@@ -532,21 +552,34 @@ function createApp() {
       const workGenres = {};
       try {
         const titles = animes.map(a => a.title).filter(Boolean);
+        const workMetaByTitle = {};
+        for (const a of animes) {
+          if (a?.title && !workMetaByTitle[a.title]) {
+            workMetaByTitle[a.title] = { id: a.id, season: a.season || '' };
+          }
+        }
         const compactBase = loadCompactGenreMap();
         await runWithGenreWriteLock(async () => {
           const { GenreClient } = require('../lib/labs/genre-client.js');
           const genreClient = new GenreClient();
-          const resolvedMap = await genreClient.resolveGenres(titles, null, 15000);
+          const resolvedMap = await genreClient.resolveGenres(titles, null, 15000, { workMetaByTitle });
+          await genreClient.enrichStudiosFromAnnict(animes, 12, 4000).catch(() => 0);
           genreScoreIndex.invalidate();
           for (const t of titles) {
-            const entry = resolvedMap[t] || genreClient.cache[t] || { genres: [], tags: [] };
+            const cacheEntry = genreClient.cache[t];
+            const entry = resolvedMap[t] || cacheEntry || { genres: [], tags: [], studios: [] };
             const genres = entry.genres || [];
             const tags = entry.tags || [];
             let c = classifyAnimeScored(genres, tags, t);
             if (c === 'other') {
               c = resolveCategoryId(t, compactBase);
             }
-            workGenres[t] = { c, g: genres };
+            const studios = (Array.isArray(cacheEntry?.studios) && cacheEntry.studios.length > 0)
+              ? cacheEntry.studios
+              : ((Array.isArray(entry.studios) && entry.studios.length > 0)
+                  ? entry.studios
+                  : (Array.isArray(compactBase[t]?.s) ? compactBase[t].s : []));
+            workGenres[t] = studios.length > 0 ? { c, g: genres, s: studios } : { c, g: genres };
           }
         }).catch(() => {});
       } catch (genreErr) {}

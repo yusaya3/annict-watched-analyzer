@@ -193,7 +193,24 @@
     }
   }
 
-  const GENRE_SCHEMA_VER = 'v3.1';
+  const GENRE_SCHEMA_VER = 'v3.2';
+
+  function mergeWorkGenreEntry(prev, val) {
+    if (!val || typeof val !== 'object') return { changed: false, entry: prev };
+    if (!prev) {
+      return { changed: true, entry: val };
+    }
+    const nextCat = (prev.c === 'other' || (val.c && val.c !== 'other')) ? (val.c || prev.c) : prev.c;
+    const prevS = Array.isArray(prev.s) ? prev.s : [];
+    const nextS = (Array.isArray(val.s) && val.s.length > 0) ? val.s : prevS;
+    const prevG = Array.isArray(prev.g) ? prev.g : [];
+    const nextG = (Array.isArray(val.g) && val.g.length > 0) ? val.g : prevG;
+    const studiosChanged = nextS.length !== prevS.length || nextS.some((x, idx) => x !== prevS[idx]);
+    const changed = nextCat !== prev.c || studiosChanged;
+    const entry = { c: nextCat, g: nextG };
+    if (nextS.length > 0) entry.s = nextS;
+    return { changed, entry };
+  }
 
   async function fetchFreshWorkGenres() {
     try {
@@ -203,13 +220,9 @@
         const data = await res.json();
         let hasNewOrChanged = false;
         for (const [t, val] of Object.entries(data)) {
-          const prev = state.genreMap[t];
-          if (!prev || prev.c !== val?.c) {
-            hasNewOrChanged = true;
-          }
-          if (!prev || prev.c === 'other' || (val?.c && val.c !== 'other')) {
-            state.genreMap[t] = val;
-          }
+          const { changed, entry } = mergeWorkGenreEntry(state.genreMap[t], val);
+          if (changed) hasNewOrChanged = true;
+          if (entry) state.genreMap[t] = entry;
         }
         invalidateCategoryCache();
         await root.AppStorage.saveWorkGenres(state.genreMap);
@@ -366,13 +379,11 @@
     const existingCanonical = state.registeredUsers.find(u => u.toLowerCase() === lower);
     const canonicalName = existingCanonical || cleanUser;
 
-    // 4並列バッチで未登録作のジャンルをAniListから補完
+    // 4並列バッチで未登録作のジャンル・制作会社をAniListから補完
     if (result.workGenres && typeof result.workGenres === 'object') {
       for (const [t, val] of Object.entries(result.workGenres)) {
-        const prev = state.genreMap[t];
-        if (!prev || prev.c === 'other' || (val?.c && val.c !== 'other')) {
-          state.genreMap[t] = val;
-        }
+        const { entry } = mergeWorkGenreEntry(state.genreMap[t], val);
+        if (entry) state.genreMap[t] = entry;
       }
       invalidateCategoryCache();
       await root.AppStorage.saveWorkGenres(state.genreMap);
@@ -380,18 +391,22 @@
 
     if (root.GenreEngine?.fetchAniListMediaInBrowser) {
       const unmapped = animes
-        .filter(a => a?.title && !state.genreMap[a.title] && getWorkCategory(a.title) === 'other')
+        .filter(a => a?.title && !state.genreMap[a.title])
         .slice(0, 8);
       if (unmapped.length > 0) {
-        if (onProgress) onProgress(`新規 ${unmapped.length} 作品のジャンルを照合中...`);
+        if (onProgress) onProgress(`新規 ${unmapped.length} 作品のジャンル・制作会社を照合中...`);
         for (let i = 0; i < unmapped.length; i += 4) {
           if (deletedInFlight.has(lower)) return 'aborted';
           await Promise.all(unmapped.slice(i, i + 4).map(async (a) => {
             try {
-              const media = await root.GenreEngine.fetchAniListMediaInBrowser(a.title);
+              const yearHint = root.GenreEngine.extractYearHint ? root.GenreEngine.extractYearHint(a.season || a.title) : null;
+              const media = await root.GenreEngine.fetchAniListMediaInBrowser(a.title, yearHint);
               if (media) {
                 const cat = root.GenreEngine.classifyAnimeScored(media.genres, media.tags, a.title);
-                state.genreMap[a.title] = { c: cat, g: media.genres };
+                const studios = Array.isArray(media.studios) ? media.studios : [];
+                const nextEntry = { c: cat, g: media.genres || [] };
+                if (studios.length > 0) nextEntry.s = studios;
+                state.genreMap[a.title] = nextEntry;
               }
             } catch (e) {}
           }));
