@@ -131,7 +131,7 @@
             </div>
             <div class="profile-stat-line">
               <span class="text-muted">最多スタジオ</span>
-              <strong>${topStudio ? `${esc(topStudio.short)} (${topStudio.count})` : '-'}</strong>
+              <strong>${topStudio ? `${esc(topStudio.name)} (${topStudio.count})` : '-'}</strong>
             </div>
             <div class="profile-stat-line">
               <span class="text-muted">最多ジャンル</span>

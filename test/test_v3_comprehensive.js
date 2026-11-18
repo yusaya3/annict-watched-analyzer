@@ -438,6 +438,11 @@ async function run() {
     await page.waitForSelector('#analytics-profile-grid .member-profile-card', { timeout: 5000 });
     await page.waitForTimeout(280);
     assert.strictEqual(await page.locator('#analytics-golden-years').count(), 0, 'analytics-golden-years must be removed');
+    const profileText = await page.locator('#analytics-profile-grid').textContent();
+    assert(profileText.includes('A-1 Pictures ('), 'Expected full studio name A-1 Pictures in profile overview');
+    assert(profileText.includes('SILVER LINK. ('), 'Expected full studio name SILVER LINK. in profile overview');
+    assert(profileText.includes('J.C.STAFF ('), 'Expected full studio name J.C.STAFF in profile overview');
+    assert(profileText.includes('P.A.WORKS ('), 'Expected full studio name P.A.WORKS in profile overview');
     await page.screenshot({ path: path.join(SS_DIR, 'pc_05_analytics_dark.png') });
     await page.locator('#analytics-timeline-list').scrollIntoViewIfNeeded();
     await page.waitForTimeout(200);

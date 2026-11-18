@@ -387,6 +387,14 @@
   gap: 0.5rem;
 }
 
+.profile-stat-line > span:first-child {
+  flex-shrink: 0;
+}
+
+.profile-stat-line > strong {
+  text-align: right;
+}
+
 .calorie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
