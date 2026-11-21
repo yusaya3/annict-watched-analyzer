@@ -1,7 +1,7 @@
 {
   "username": "hanu",
-  "fetchedAt": "2026-11-10T01:50:49.144Z",
-  "count": 578,
+  "fetchedAt": "2026-11-21T00:33:59.065Z",
+  "count": 579,
   "animes": [
     {
       "id": "10404",
@@ -16,6 +16,13 @@
       "image": "https://image.annict.com/P-ibcUW112ITRCJa5LGNUuJZvgzmd77G5QvcMSkWsLs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14817/image/master-56ce3f39ed76a7bc30ba27c1d65c9b07.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/16294"
+    },
+    {
+      "id": "18263",
+      "title": "無脳魔女 ブレインレス・ウィッチ",
+      "image": "https://image.annict.com/vwkVLihLIteyHBopEEmbYcVAS4PPe0z7sCyCHWyyLX0/s:220:293/plain/s3://annict-user-contents/shrine/workimage/16814/image/master-aacd660305a177cd88ae739d69eaaa2c.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/18263"
     },
     {
       "id": "13582",
@@ -102,18 +109,18 @@
       "url": "https://annict.com/works/16856"
     },
     {
-      "id": "11193",
-      "title": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
-      "image": "https://image.annict.com/zEQOZ1o5hwee-HNwTox_rDrmFKcYzEMkW6YJpgb0-bk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7557/image/master-5fc4fae4aea12c92792702557bdd7a65.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/11193"
-    },
-    {
       "id": "16606",
       "title": "ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。",
       "image": "https://image.annict.com/QHkUjsvvh3YNIm5BfkCmsyGS9O_NCL_8GQcg_cqk9eY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13261/image/master-1ac47c141a5c2f34019c8b0813a85e9d.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16606"
+    },
+    {
+      "id": "11193",
+      "title": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
+      "image": "https://image.annict.com/zEQOZ1o5hwee-HNwTox_rDrmFKcYzEMkW6YJpgb0-bk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7557/image/master-5fc4fae4aea12c92792702557bdd7a65.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/11193"
     },
     {
       "id": "10352",
@@ -151,13 +158,6 @@
       "url": "https://annict.com/works/16519"
     },
     {
-      "id": "14969",
-      "title": "株式会社マジルミエ 第2期",
-      "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/14969"
-    },
-    {
       "id": "16405",
       "title": "いびってこない義母と義姉",
       "image": "https://image.annict.com/Dx6E139C_jZImKheOJlnMIseEoS9P-e3-OWS2rVL78g/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13057/image/master-68f8958db02c56130ea41e69b8df4076.jpg@webp",
@@ -170,6 +170,13 @@
       "image": "https://image.annict.com/Jp4QMLYPC8eqy5_cbV_xOIwujSGClJstSCtkn9Lg838/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13197/image/master-a03297c312c70198eb6c5702b4f9e8f3.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16538"
+    },
+    {
+      "id": "14969",
+      "title": "株式会社マジルミエ 第2期",
+      "image": "https://image.annict.com/pTJafSHdw9RhU9P-EVYsATPWJySJxYR3pY-ygCIMUB4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11609/image/master-a6b2c4375d9730f6ef93741031ae1076.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/14969"
     },
     {
       "id": "16468",
@@ -340,18 +347,18 @@
       "url": "https://annict.com/works/17371"
     },
     {
-      "id": "17134",
-      "title": "パーフェクトアディクション",
-      "image": "https://image.annict.com/2OvAptUBjevxTx5lMBPwiq_kKP1gWGhRFq5qny0LrZU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13822/image/master-e2bb08977c751dd36a51892653ec6718.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/17134"
-    },
-    {
       "id": "16792",
       "title": "鎧真伝サムライトルーパー 第2クール",
       "image": "https://image.annict.com/mppxN3aIid_gf7h_OQnyfC_GE7hmguhR5aEWUO0fwnU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14329/image/master-740ff57eb8677cf6b724c40668897c7d.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/16792"
+    },
+    {
+      "id": "17134",
+      "title": "パーフェクトアディクション",
+      "image": "https://image.annict.com/2OvAptUBjevxTx5lMBPwiq_kKP1gWGhRFq5qny0LrZU/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13822/image/master-e2bb08977c751dd36a51892653ec6718.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/17134"
     },
     {
       "id": "17729",
@@ -480,18 +487,18 @@
       "url": "https://annict.com/works/16487"
     },
     {
-      "id": "16485",
-      "title": "LIAR GAME -ライアーゲーム-",
-      "image": "https://image.annict.com/rS5mhR1V8RjuDajhhRln3gv3Je5a9oc6GUpsIYPY9uQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13137/image/master-8adaa6e9720ca77f76a44c962864b801.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16485"
-    },
-    {
       "id": "15885",
       "title": "カナン様はあくまでチョロい",
       "image": "https://image.annict.com/XWHZimKuCj-vcLLQwC1X15Bgjb3n14nZRWJ56CHZVNM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12483/image/master-42cac70a14628a1d821bc4cb39825b16.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/15885"
+    },
+    {
+      "id": "16485",
+      "title": "LIAR GAME -ライアーゲーム-",
+      "image": "https://image.annict.com/rS5mhR1V8RjuDajhhRln3gv3Je5a9oc6GUpsIYPY9uQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13137/image/master-8adaa6e9720ca77f76a44c962864b801.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16485"
     },
     {
       "id": "16160",
@@ -627,18 +634,18 @@
       "url": "https://annict.com/works/15865"
     },
     {
-      "id": "16344",
-      "title": "スノウボールアース",
-      "image": "https://image.annict.com/oSr8gtbKl8Hg5VgcsImjAFuJObiUVypJyqI5E8Ob7-Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13040/image/master-012a40d7d144af60290d58a399169ce5.jpg@webp",
-      "season": "2026年春",
-      "url": "https://annict.com/works/16344"
-    },
-    {
       "id": "16207",
       "title": "最強の王様、二度目の人生は何をする？ SEASON2",
       "image": "https://image.annict.com/MN94sRZh4Vl6uo6eilO-o9B_v5JP26ozdgmZEeX3Hh4/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12919/image/master-5b1bb5557a69cdd436e6a24bc416159f.jpg@webp",
       "season": "2026年春",
       "url": "https://annict.com/works/16207"
+    },
+    {
+      "id": "16344",
+      "title": "スノウボールアース",
+      "image": "https://image.annict.com/oSr8gtbKl8Hg5VgcsImjAFuJObiUVypJyqI5E8Ob7-Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13040/image/master-012a40d7d144af60290d58a399169ce5.jpg@webp",
+      "season": "2026年春",
+      "url": "https://annict.com/works/16344"
     },
     {
       "id": "13537",
@@ -1299,18 +1306,18 @@
       "url": "https://annict.com/works/15405"
     },
     {
-      "id": "11528",
-      "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
-      "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/11528"
-    },
-    {
       "id": "15708",
       "title": "顔に出ない柏田さんと顔に出る太田君",
       "image": "https://image.annict.com/pt9ORSc8KL-Z-iIyusTDRLZ5vECfsIagNrvY2MsaUaE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12321/image/master-e9a4ce352a55717ea87c2b62eaa6857a.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/15708"
+    },
+    {
+      "id": "11528",
+      "title": "無職の英雄 ～別にスキルなんか要らなかったんだが～",
+      "image": "https://image.annict.com/YXh3KY7Fca3nRaUvjgJ-tlvub_Kf12wxINK8aspMJVo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12262/image/master-010491d443e1fa4c2ac461a60bf9cd3b.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/11528"
     },
     {
       "id": "15117",
@@ -1649,18 +1656,18 @@
       "url": "https://annict.com/works/13604"
     },
     {
-      "id": "11307",
-      "title": "公女殿下の家庭教師",
-      "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/11307"
-    },
-    {
       "id": "13809",
       "title": "雨と君と",
       "image": "https://image.annict.com/t2E34F3LDwYq3MMSOtcEocNFGxv4K2e0LSudjN2Tzlk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10621/image/master-6b120d1ea4586b44b0bdfcb182b0a063.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13809"
+    },
+    {
+      "id": "11307",
+      "title": "公女殿下の家庭教師",
+      "image": "https://image.annict.com/O0KO_VnkrIW3yPgYuuskqG81c9VwDDIomORzg31_ykY/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11404/image/master-1779a0b3a68df8602935b1849656d1e1.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/11307"
     },
     {
       "id": "10353",
@@ -1726,18 +1733,18 @@
       "url": "https://annict.com/works/14295"
     },
     {
-      "id": "14726",
-      "title": "出禁のモグラ",
-      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/14726"
-    },
-    {
       "id": "13428",
       "title": "異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～",
       "image": "https://image.annict.com/EvP4igyNDsRh2wuO_CaralzI4VZo_2xeoLo9Nb3aBeI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11853/image/master-d560c3e847c5bfeec1c384fdf4f15e45.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/13428"
+    },
+    {
+      "id": "14726",
+      "title": "出禁のモグラ",
+      "image": "https://image.annict.com/QcxG1NAUA1pqRoqDbNYdKMQ5g8LUpBRxBBQynFuohoA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11304/image/master-1319d03091d2b0667643f6fa06efe0dc.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/14726"
     },
     {
       "id": "14727",
@@ -1845,18 +1852,18 @@
       "url": "https://annict.com/works/14894"
     },
     {
-      "id": "15115",
-      "title": "不思議の国でアリスと -Dive in Wonderland-",
-      "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
-      "season": "2025年夏",
-      "url": "https://annict.com/works/15115"
-    },
-    {
       "id": "15395",
       "title": "人妻の唇は缶チューハイの味がして",
       "image": "https://image.annict.com/aFqLf9z3oM9-phyzplShfkywYoqNppAcWmb8zkRcTRg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12003/image/master-816b94dd747753a7cc308c26b40c166c.jpg@webp",
       "season": "2025年夏",
       "url": "https://annict.com/works/15395"
+    },
+    {
+      "id": "15115",
+      "title": "不思議の国でアリスと -Dive in Wonderland-",
+      "image": "https://image.annict.com/bpGRNn5rpGuYGfXNVemEMujT8uwJBR-DNJcJYs7Vu1Y/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11780/image/master-07f82762ee37b0f65dc4fcf9fd0f06b9.jpg@webp",
+      "season": "2025年夏",
+      "url": "https://annict.com/works/15115"
     },
     {
       "id": "16164",
@@ -1999,18 +2006,18 @@
       "url": "https://annict.com/works/12904"
     },
     {
-      "id": "11028",
-      "title": "男女の友情は成立する？（いや、しないっ!!）",
-      "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/11028"
-    },
-    {
       "id": "12588",
       "title": "紫雲寺家の子供たち",
       "image": "https://image.annict.com/cKgilW99qLC3jLgTgG9vVK4fGXHVMWmQ-RwP4HIvTYM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/9115/image/master-2ebc1021d378a1468e45cd8833862227.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/12588"
+    },
+    {
+      "id": "11028",
+      "title": "男女の友情は成立する？（いや、しないっ!!）",
+      "image": "https://image.annict.com/5SrQR-mp6vUlT_ubDMUhfDe0c42LJKdo8r6CCG95060/s:220:293/plain/s3://annict-user-contents/shrine/workimage/7452/image/master-bb18f876668b759b529e42c455baa154.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/11028"
     },
     {
       "id": "9259",
@@ -2034,18 +2041,18 @@
       "url": "https://annict.com/works/13746"
     },
     {
-      "id": "14139",
-      "title": "九龍ジェネリックロマンス",
-      "image": "https://image.annict.com/eRkF4MybQL-rygS95dQeUZGZERN8pqUUcrOOPwgznwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10950/image/master-16bd019afd4c389f742296ba95ae0c9b.jpg@webp",
-      "season": "2025年春",
-      "url": "https://annict.com/works/14139"
-    },
-    {
       "id": "13891",
       "title": "前橋ウィッチーズ",
       "image": "https://image.annict.com/u8fvCD-F9EfOb0tem7whpQscC1Tltkb3veuB7sMTlSQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10718/image/master-7471c0b7b7656bb44c75ec62d42d1ef2.jpg@webp",
       "season": "2025年春",
       "url": "https://annict.com/works/13891"
+    },
+    {
+      "id": "14139",
+      "title": "九龍ジェネリックロマンス",
+      "image": "https://image.annict.com/eRkF4MybQL-rygS95dQeUZGZERN8pqUUcrOOPwgznwk/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10950/image/master-16bd019afd4c389f742296ba95ae0c9b.jpg@webp",
+      "season": "2025年春",
+      "url": "https://annict.com/works/14139"
     },
     {
       "id": "12780",
@@ -2426,18 +2433,18 @@
       "url": "https://annict.com/works/11134"
     },
     {
-      "id": "12124",
-      "title": "MFゴースト 2nd Season",
-      "image": "https://image.annict.com/h7hRGOSp_i8itOq64cZYrnkFmOiiK3K3GE_XhuMp7Xg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8593/image/master-11e0709a97f7afe9f32a68e9f91c2db4.jpg@webp",
-      "season": "2024年秋",
-      "url": "https://annict.com/works/12124"
-    },
-    {
       "id": "13790",
       "title": "劇場版 進撃の巨人 完結編 THE LAST ATTACK",
       "image": "https://image.annict.com/cl83slRpQn7Ba3ZOKTzO3JjrnAX-QfXp2pDnRK9vC5s/s:220:293/plain/s3://annict-user-contents/shrine/workimage/10607/image/master-f2da99e9a674319c930128762496c5d6.jpg@webp",
       "season": "2024年秋",
       "url": "https://annict.com/works/13790"
+    },
+    {
+      "id": "12124",
+      "title": "MFゴースト 2nd Season",
+      "image": "https://image.annict.com/h7hRGOSp_i8itOq64cZYrnkFmOiiK3K3GE_XhuMp7Xg/s:220:293/plain/s3://annict-user-contents/shrine/workimage/8593/image/master-11e0709a97f7afe9f32a68e9f91c2db4.jpg@webp",
+      "season": "2024年秋",
+      "url": "https://annict.com/works/12124"
     },
     {
       "id": "10447",
