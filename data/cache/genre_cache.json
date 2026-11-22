@@ -164028,5 +164028,113 @@
     "genres": [],
     "tags": [],
     "studios": []
+  },
+  "青春ブタ野郎はディアフレンドの夢を見ない": {
+    "genres": [
+      "Drama",
+      "Psychological",
+      "Romance",
+      "Supernatural"
+    ],
+    "tags": [
+      {
+        "name": "Male Protagonist",
+        "rank": 96
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 79
+      },
+      {
+        "name": "Heterosexual",
+        "rank": 79
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 79
+      },
+      {
+        "name": "College",
+        "rank": 79
+      },
+      {
+        "name": "Urban",
+        "rank": 79
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 79
+      }
+    ],
+    "studios": [
+      "CloverWorks"
+    ]
+  },
+  "最終楽章 響け！ユーフォニアム 後編": {
+    "genres": [
+      "Drama",
+      "Music",
+      "Slice of Life"
+    ],
+    "tags": [],
+    "studios": [
+      "京都アニメーション"
+    ]
+  },
+  "最終楽章 響け！ユーフォニアム 前編": {
+    "genres": [
+      "Drama",
+      "Music",
+      "Slice of Life"
+    ],
+    "tags": [
+      {
+        "name": "Band",
+        "rank": 79
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 79
+      },
+      {
+        "name": "LGBTQ+ Themes",
+        "rank": 79
+      },
+      {
+        "name": "Bisexual",
+        "rank": 79
+      },
+      {
+        "name": "School Club",
+        "rank": 73
+      },
+      {
+        "name": "Classical Music",
+        "rank": 70
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 66
+      },
+      {
+        "name": "School",
+        "rank": 66
+      },
+      {
+        "name": "Primarily Female Cast",
+        "rank": 60
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 60
+      }
+    ],
+    "studios": [
+      "京都アニメーション"
+    ]
   }
 }
