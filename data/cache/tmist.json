@@ -1,14 +1,35 @@
 {
   "username": "tmist",
-  "fetchedAt": "2026-11-17T02:15:29.074Z",
-  "count": 534,
+  "fetchedAt": "2026-11-24T04:10:10.791Z",
+  "count": 537,
   "animes": [
+    {
+      "id": "9236",
+      "title": "魔法使いの夜",
+      "image": "https://image.annict.com/e_AtsNLfs1AA1mN4F3wKaif8WtAWvD9m0wNSHF-GW9k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6180/image/master-d2d442d4451ebe7e76c13666c678a863.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/9236"
+    },
     {
       "id": "17108",
       "title": "どこよりも遠い場所にいる君へ",
       "image": "https://image.annict.com/jFys4qcRUD0TQJ_8JhbydyZ9zmbQOXsl20Tr4_y8Qvw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13803/image/master-4081cccdb0641bc8dc9f3d22028152d3.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/17108"
+    },
+    {
+      "id": "16294",
+      "title": "GROTESQQQUE -グロテスク-",
+      "image": "https://image.annict.com/P-ibcUW112ITRCJa5LGNUuJZvgzmd77G5QvcMSkWsLs/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14817/image/master-56ce3f39ed76a7bc30ba27c1d65c9b07.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/16294"
+    },
+    {
+      "id": "17039",
+      "title": "装甲騎兵ボトムズ 灰色の魔女",
+      "image": "https://image.annict.com/wVdLNpMS8-_UPVNx7Se81u1Npxa_hKtE09EUUggjWBo/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13731/image/master-6e9c726b5c869402a7baf196ea3dbcc8.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/17039"
     },
     {
       "id": "17088",
@@ -3716,7 +3737,7 @@
     {
       "id": "3328",
       "title": "人狼 JIN-ROH",
-      "image": "https://image.annict.com/4Agd3POuKtAqjNib0vw_S4A-TVCXHLUX7owbES40LKI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1719/image/master-1b38ae0672ff226c82e66b3f6cf1474d.jpg@webp",
+      "image": "https://image.annict.com/Z-8QVh2_gAYqnW6l11LiN7_EDkOjacJhx7WKc9P4NgA/s:220:293/plain/s3://annict-user-contents/shrine/workimage/1719/image/master-d94609ae1638685ed4a5e6111f759e43.jpg@webp",
       "season": "2000年春",
       "url": "https://annict.com/works/3328"
     },

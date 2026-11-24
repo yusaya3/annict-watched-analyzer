@@ -164136,5 +164136,93 @@
     "studios": [
       "京都アニメーション"
     ]
+  },
+  "魔法使いの夜": {
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "tags": [
+      {
+        "name": "Magic",
+        "rank": 97
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 90
+      },
+      {
+        "name": "Witch",
+        "rank": 87
+      },
+      {
+        "name": "Urban",
+        "rank": 86
+      },
+      {
+        "name": "Female Protagonist",
+        "rank": 85
+      },
+      {
+        "name": "Kuudere",
+        "rank": 82
+      },
+      {
+        "name": "Fairy Tale",
+        "rank": 80
+      },
+      {
+        "name": "School",
+        "rank": 80
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 60
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 60
+      },
+      {
+        "name": "Philosophy",
+        "rank": 60
+      },
+      {
+        "name": "Robots",
+        "rank": 57
+      },
+      {
+        "name": "Werewolf",
+        "rank": 55
+      }
+    ],
+    "studios": [
+      "ufotable"
+    ]
+  },
+  "装甲騎兵ボトムズ 灰色の魔女": {
+    "genres": [
+      "Mecha",
+      "Sci-Fi"
+    ],
+    "tags": [
+      {
+        "name": "Military",
+        "rank": 79
+      },
+      {
+        "name": "War",
+        "rank": 79
+      },
+      {
+        "name": "Real Robot",
+        "rank": 73
+      }
+    ],
+    "studios": [
+      "Production I.G",
+      "サンライズ"
+    ]
   }
 }
