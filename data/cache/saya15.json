@@ -1,7 +1,7 @@
 {
   "username": "saya15",
-  "fetchedAt": "2026-11-14T00:06:42.546Z",
-  "count": 813,
+  "fetchedAt": "2026-11-25T02:54:39.439Z",
+  "count": 814,
   "animes": [
     {
       "id": "10404",
@@ -9,6 +9,13 @@
       "image": "https://image.annict.com/-VRkqOB0Nk9xR_TKFLcYHyxKY1eyE5wENQjid6CdBWQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13077/image/master-c6e9ab795a1e60c2168365998e408ee5.jpg@webp",
       "season": "2026年秋",
       "url": "https://annict.com/works/10404"
+    },
+    {
+      "id": "9236",
+      "title": "魔法使いの夜",
+      "image": "https://image.annict.com/e_AtsNLfs1AA1mN4F3wKaif8WtAWvD9m0wNSHF-GW9k/s:220:293/plain/s3://annict-user-contents/shrine/workimage/6180/image/master-d2d442d4451ebe7e76c13666c678a863.jpg@webp",
+      "season": "2026年秋",
+      "url": "https://annict.com/works/9236"
     },
     {
       "id": "17108",
@@ -123,18 +130,18 @@
       "url": "https://annict.com/works/11193"
     },
     {
-      "id": "16023",
-      "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
-      "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
-      "season": "2026年夏",
-      "url": "https://annict.com/works/16023"
-    },
-    {
       "id": "17353",
       "title": "ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～ 2nd Season",
       "image": "https://image.annict.com/Q5q3QVB8k7RnpByH6j18KCZZDvGAMvW3dBxEnylz9hE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/14079/image/master-71196005ff8e47daccb8b8bac054308f.jpg@webp",
       "season": "2026年夏",
       "url": "https://annict.com/works/17353"
+    },
+    {
+      "id": "16023",
+      "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
+      "image": "https://image.annict.com/k_e0nmy02t6H-Pnh5OFzwrjiWdFJq8O0R7gP8-UjKZQ/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12608/image/master-490243428a434b1b9b0b7d98cb0f3bea.jpg@webp",
+      "season": "2026年夏",
+      "url": "https://annict.com/works/16023"
     },
     {
       "id": "16519",
@@ -431,18 +438,18 @@
       "url": "https://annict.com/works/15168"
     },
     {
-      "id": "14309",
-      "title": "エリスの聖杯",
-      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
-      "season": "2026年冬",
-      "url": "https://annict.com/works/14309"
-    },
-    {
       "id": "15912",
       "title": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
       "image": "https://image.annict.com/W8PWowAdifK6-D9swq5tF3y1kp1zWZsJ5KCffBOsUhM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12504/image/master-c31750567fdc420cc86e07c8cf8f7cc7.jpg@webp",
       "season": "2026年冬",
       "url": "https://annict.com/works/15912"
+    },
+    {
+      "id": "14309",
+      "title": "エリスの聖杯",
+      "image": "https://image.annict.com/8RFpyDfZMWhzpZumPMMxoxPfb2nCZycykAOFbMIgqPE/s:220:293/plain/s3://annict-user-contents/shrine/workimage/11073/image/master-47bba90b1658e67daf92707b133cbf82.jpg@webp",
+      "season": "2026年冬",
+      "url": "https://annict.com/works/14309"
     },
     {
       "id": "14075",
@@ -543,18 +550,18 @@
       "url": "https://annict.com/works/13763"
     },
     {
-      "id": "15006",
-      "title": "嘆きの亡霊は引退したい 第2クール",
-      "image": "https://image.annict.com/NwxBuLGMkKlZVV-jBMNNWXtv18hqyCw7H12-wNyL1HM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12370/image/master-a09f70ef34062259b8b3e3c654ce860f.jpg@webp",
-      "season": "2025年秋",
-      "url": "https://annict.com/works/15006"
-    },
-    {
       "id": "16572",
       "title": "わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?） ～ネクストシャイン！～",
       "image": "https://image.annict.com/2Y-MWjFf3DGdHRo0MPovwJ5T0S6K5q-IU9vej_qc4YI/s:220:293/plain/s3://annict-user-contents/shrine/workimage/13238/image/master-b46897e4e53e8c7a07022e727da6fb77.jpg@webp",
       "season": "2025年秋",
       "url": "https://annict.com/works/16572"
+    },
+    {
+      "id": "15006",
+      "title": "嘆きの亡霊は引退したい 第2クール",
+      "image": "https://image.annict.com/NwxBuLGMkKlZVV-jBMNNWXtv18hqyCw7H12-wNyL1HM/s:220:293/plain/s3://annict-user-contents/shrine/workimage/12370/image/master-a09f70ef34062259b8b3e3c654ce860f.jpg@webp",
+      "season": "2025年秋",
+      "url": "https://annict.com/works/15006"
     },
     {
       "id": "15505",
@@ -2720,18 +2727,18 @@
       "url": "https://annict.com/works/6522"
     },
     {
-      "id": "6623",
-      "title": "超人高校生たちは異世界でも余裕で生き抜くようです！",
-      "image": "https://image.annict.com/A6D2AUKxh4xx7mS0cQSqAvUfSL_fBl2HoQXAcvxk85s/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3434/image/master-7c30e34a7d3c2076a1a4123e17f0094a.jpg@webp",
-      "season": "2019年秋",
-      "url": "https://annict.com/works/6623"
-    },
-    {
       "id": "6602",
       "title": "僕のヒーローアカデミア THE MOVIE ヒーローズ：ライジング",
       "image": "https://image.annict.com/u7-u23iBl0ElzdfM_EyUd_vYEiM3MMXbIAE2O5hRYxw/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3414/image/master-68c39359118fbe91741f871c748b1528.jpg@webp",
       "season": "2019年秋",
       "url": "https://annict.com/works/6602"
+    },
+    {
+      "id": "6623",
+      "title": "超人高校生たちは異世界でも余裕で生き抜くようです！",
+      "image": "https://image.annict.com/A6D2AUKxh4xx7mS0cQSqAvUfSL_fBl2HoQXAcvxk85s/s:220:293/plain/s3://annict-user-contents/shrine/workimage/3434/image/master-7c30e34a7d3c2076a1a4123e17f0094a.jpg@webp",
+      "season": "2019年秋",
+      "url": "https://annict.com/works/6623"
     },
     {
       "id": "6649",
